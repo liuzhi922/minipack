@@ -1,0 +1,211 @@
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes. 
+#############
+#	POWER	#
+#############
+
+@carrier_power_1 = 415
+@carrier_power_2 = 540
+@carrier_power_3 = 715
+@carrier_power_4 = 935
+@carrier_power_5 = 1175
+@carrier_power_6 = 1515
+
+#############
+#	COST	#
+#############
+
+@carrier_cost_1 = 60
+@carrier_cost_2 = 78
+@carrier_cost_3 = 102
+@carrier_cost_4 = 132
+@carrier_cost_5 = 168
+@carrier_cost_6 = 222
+
+#############
+#  REACTORS #
+#############
+
+########################
+# Fission Reactors
+########################
+
+utility_component_template = {
+	key = "SCX_CARRIER_FISSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_1"
+	icon_frame = 1
+	power = @carrier_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @carrier_cost_1
+		}	
+		upkeep = {
+			energy = 0.60
+			alloys = 0.06
+		}
+	}
+	
+	prerequisites = { "tech_fission_power" }
+	component_set = "power_core"
+	size_restriction = { SCX_Carrier }
+	upgrades_to = "SCX_CARRIER_FUSION_REACTOR"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+########################
+# Fusion Reactors
+########################
+
+utility_component_template = {
+	key = "SCX_CARRIER_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_2"
+	icon_frame = 1
+	power = @carrier_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @carrier_cost_2
+		}	
+		upkeep = {
+			energy = 0.78
+			alloys = 0.078
+		}
+	}
+	
+	prerequisites = { "tech_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { SCX_Carrier }
+	upgrades_to = "SCX_CARRIER_COLD_FUSION_REACTOR"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+########################
+# Cold Fusion Reactors
+########################
+
+utility_component_template = {
+	key = "SCX_CARRIER_COLD_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = @carrier_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @carrier_cost_3
+		}	
+		upkeep = {
+			energy = 1.015
+			alloys = 0.1015
+		}
+	}
+	
+	prerequisites = { "tech_cold_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { SCX_Carrier }
+	upgrades_to = "SCX_CARRIER_ANTIMATTER_REACTOR"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+########################
+# Antimatter Reactors
+########################
+
+utility_component_template = {
+	key = "SCX_CARRIER_ANTIMATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_4"
+	icon_frame = 1
+	power = @carrier_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @carrier_cost_4
+		}	
+		upkeep = {
+			energy = 1.32
+			alloys = 0.132
+		}
+	}
+	
+	prerequisites = { "tech_antimatter_power" }
+	component_set = "power_core"
+	size_restriction = { SCX_Carrier }
+	upgrades_to = "SCX_CARRIER_ZERO_POINT_REACTOR"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+########################
+# Zero-Point Reactors
+########################
+
+utility_component_template = {
+	key = "SCX_CARRIER_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @carrier_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @carrier_cost_5
+		}	
+		upkeep = {
+			energy = 1.715
+			alloys = 0.1715
+		}
+	}
+	
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	size_restriction = { SCX_Carrier }
+	upgrades_to = "SCX_CARRIER_DARK_MATTER_REACTOR"
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+####################
+# Engimatic Reactors
+####################
+
+utility_component_template = {
+	key = "SCX_CARRIER_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @carrier_power_6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @carrier_cost_6
+		}	
+		upkeep = {
+			energy = 2.23
+			alloys = 0.223
+		}
+	}
+	
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { SCX_Carrier }
+	
+	ai_weight = {
+		weight = 6
+	}
+}

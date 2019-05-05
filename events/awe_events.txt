@@ -1,0 +1,268 @@
+namespace = awe
+#Applies War Exhaustion Effect
+country_event = {
+	id = awe.1
+	title = "awe.1.name"
+	desc = {
+		text = "awe.1.desc"
+		trigger = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+	}
+	desc = {
+		text = "awe.1.desc.machine"
+		trigger = { has_authority = auth_machine_intelligence }
+	}
+	desc = {
+		text = awe.1.desc.hive
+		trigger = { has_authority = auth_hive_mind }
+	}
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_air_raid_siren
+	
+	trigger = {
+		ROOT = {
+			any_war = {
+				OR = {
+					AND = {
+						any_attacker = { is_country = ROOT }
+						attacker_war_exhaustion > 0.99
+					}
+					AND = {
+						any_defender = {is_country = ROOT }
+						defender_war_exhaustion > 0.99
+					}	
+				}
+			}
+			NOT = {
+				has_country_flag = suffering_exhaustion
+			}
+		}
+	}	
+	
+	immediate = {
+		set_country_flag = suffering_exhaustion
+		add_modifier = {
+			modifier = "exhaustion_stage_1"
+			days = -1
+		}
+		ROOT = { save_event_target_as = exhausted_country }		
+		country_event = { id = awe.3 days = 720 }
+
+	}
+	option = {
+		name = awe.1.a
+	}
+	option = {
+		trigger = {
+			OR = {
+				has_authority = auth_hive_mind
+				has_authority = auth_machine_intelligence
+				}
+			}
+		name = awe.1.b
+	}
+}
+#Check to see if country has exhaustion @ 100, if not, removes effects. Intended for multiple wars.
+country_event = {
+	id = awe.2
+	title = "awe.2.name"
+		desc = {
+		text = "awe.2.desc"
+		trigger = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+	}
+	desc = {
+		text = "awe.2.desc.machine"
+		trigger = { has_authority = auth_machine_intelligence }
+	}
+	desc = {
+		text = awe.2.desc.hive
+		trigger = { has_authority = auth_hive_mind }
+	}
+	picture = GFX_evt_space_station
+	show_sound = event_administrative_work
+		
+	trigger = {
+		OR = {
+			NOT = {
+				any_war = {
+					OR = {
+						AND = {
+							any_attacker = { is_country = ROOT }
+							attacker_war_exhaustion > 0.99
+						}
+						AND = {
+							any_defender = {is_country = ROOT }
+							defender_war_exhaustion > 0.99
+						}	
+					}
+				}
+			}	
+			is_at_war = no
+		}
+		has_country_flag = suffering_exhaustion
+		
+	}
+	
+	immediate = {
+		ROOT = {
+			remove_country_flag = suffering_exhaustion
+			remove_modifier = exhaustion_stage_1
+			remove_modifier = exhaustion_stage_2
+			remove_modifier = exhaustion_stage_3
+			remove_modifier = exhaustion_stage_4
+			remove_modifier = exhaustion_stage_5
+			remove_modifier = exhaustion_stage_6
+			remove_modifier = exhaustion_stage_7
+			remove_modifier = exhaustion_stage_8
+			remove_modifier = exhaustion_stage_9
+			remove_modifier = exhaustion_stage_10
+		}
+	}
+	option = {
+		name = GOOD
+	}
+}
+#Set Exhaustion up a level for every 12 months since the exhaustion started
+country_event = {
+	id = awe.3
+	title = "awe.3.name"
+	desc = "awe.3.desc"
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_air_raid_siren
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		ROOT = { has_country_flag = suffering_exhaustion }
+	}
+	
+	immediate = {
+		if = {
+			limit = { 
+				ROOT = {
+					has_modifier = "exhaustion_stage_1"
+				}
+			}
+			remove_modifier = "exhaustion_stage_1"
+			add_modifier = {
+				modifier = "exhaustion_stage_2"
+				days = -1
+			}
+			country_event = { id = awe.3 days = 720 }
+			break = yes
+		}
+		if = {
+			limit = { 
+				ROOT = {
+					has_modifier = "exhaustion_stage_2"
+				}
+			}
+			remove_modifier = "exhaustion_stage_2"
+			add_modifier = {
+				modifier = "exhaustion_stage_3"
+				days = -1
+			}
+			country_event = { id = awe.3 days = 720 }
+			break = yes
+		}
+		if = {
+			limit = { 
+				ROOT = {
+					has_modifier = "exhaustion_stage_3"
+				}
+			}
+			remove_modifier = "exhaustion_stage_3"
+			add_modifier = {
+				modifier = "exhaustion_stage_4"
+				days = -1
+			}
+			country_event = { id = awe.3 days = 720 }
+			break = yes
+		}
+		if = {
+			limit = { 
+				ROOT = {
+					has_modifier = "exhaustion_stage_4"
+				}
+			}
+			remove_modifier = "exhaustion_stage_4"
+			add_modifier = {
+				modifier = "exhaustion_stage_5"
+				days = -1
+			}
+			country_event = { id = awe.3 days = 720 }
+			break = yes
+		}
+		if = {
+			limit = { 
+				ROOT = {
+					has_modifier = "exhaustion_stage_5"
+				}
+			}
+			remove_modifier = "exhaustion_stage_5"
+			add_modifier = {
+				modifier = "exhaustion_stage_6"
+				days = -1
+			}
+			country_event = { id = awe.3 days = 720 }
+			break = yes
+		}
+		if = {
+			limit = { 
+				ROOT = {
+					has_modifier = "exhaustion_stage_6"
+				}
+			}
+			remove_modifier = "exhaustion_stage_6"
+			add_modifier = {
+				modifier = "exhaustion_stage_7"
+				days = -1
+			}
+			country_event = { id = awe.3 days = 720 }
+			break = yes
+		}
+		if = {
+			limit = { 
+				ROOT = {
+					has_modifier = "exhaustion_stage_7"
+				}
+			}
+			remove_modifier = "exhaustion_stage_7"
+			add_modifier = {
+				modifier = "exhaustion_stage_8"
+				days = -1
+			}
+			country_event = { id = awe.3 days = 720 }
+			break = yes
+		}
+		if = {
+			limit = { 
+				ROOT = {
+					has_modifier = "exhaustion_stage_8"
+				}
+			}
+			remove_modifier = "exhaustion_stage_8"
+			add_modifier = {
+				modifier = "exhaustion_stage_9"
+				days = -1
+			}
+			country_event = { id = awe.3 days = 720 }
+			break = yes
+		}
+		if = {
+			limit = { 
+				ROOT = {
+					has_modifier = "exhaustion_stage_9"
+				}
+			}
+			remove_modifier = "exhaustion_stage_9"
+			add_modifier = {
+				modifier = "exhaustion_stage_10"
+				days = -1
+			}
+			break = yes
+		}
+	}
+	option = {
+		name = awe.3.a
+	}
+}

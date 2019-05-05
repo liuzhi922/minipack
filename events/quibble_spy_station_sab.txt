@@ -1,0 +1,431 @@
+namespace = quibble_spy_station
+
+#######################################################################################################
+
+country_event = {  #SEND TO NEIGHBORS ###############
+	id = quibble_spy_station.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = tempstation
+		country_event  = { id = quibble_neighbors.1 } 
+	}
+}
+
+country_event = {  #SEND TO FUNDING #######################
+	id = quibble_spy_station.4
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = station
+		country_event  = { id = quibble_funding.1 } 
+	}
+}
+
+#######################################################################################################
+
+
+#FAIL - OPERATIVES DISCOVERED
+country_event = {
+	id = quibble_spy_station.702
+	title = "quibble_spy_station.702.name"
+	desc = "quibble_spy_station.702.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_11_room
+	}
+	diplomatic = yes
+
+	option = { # UNAACEPTABLE
+		name = quibble_spy_station.702.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			set_country_flag = fail_limit
+			country_event = { id = quibble_spy_station.7021 }
+			remove_country_flag = current_espionage2
+		}
+	}
+}
+
+country_event = { #AI REACTION TO DISAVOW
+	id = quibble_spy_station.7021
+	title = "quibble_spy_station.7021.name"
+	desc = "quibble_spy_station.7021.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:stationsabotagetarget
+		planet_background = event_target:stationsabotagetarget
+		graphical_culture = event_target:stationsabotagetarget
+		city_level = event_target:stationsabotagetarget
+		room = event_target:stationsabotagetarget.ruler
+	}
+
+	option = { # DISAVOW
+		name = quibble_spy_station.7021.a
+		event_target:stationsabotagetarget = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_low
+			}
+		}
+	}
+
+	option = { #FUCK YOU
+		name = quibble_spy_station.7021.b
+		event_target:stationsabotagetarget = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_high
+			}
+		}
+	}
+}
+
+
+#FAIL - JUST FAIL
+country_event = {
+	id = quibble_spy_station.703
+	title = "quibble_spy_station.703.name"
+	desc = "quibble_spy_station.703.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_17_room
+	}
+	diplomatic = yes
+
+	option = { #GIVE UP
+		name = quibble_spy_station.703.b
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			set_country_flag = fail_limit
+			remove_country_flag = current_espionage2
+		}
+	}
+}
+
+#FAIL - NEED ADDITIONAL FUNDS
+country_event = {
+	id = quibble_spy_station.704
+	title = "quibble_spy_station.704.name"
+	desc = "quibble_spy_station.704.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_17_room
+	}
+	diplomatic = yes
+
+	option = { #GIVE UP
+		name = quibble_spy_station.704.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			set_country_flag = fail_limit
+			remove_country_flag = current_espionage2
+		}
+	}
+
+	option = { #GIVE ADDTIONLAL FUNDS
+		name = quibble_spy_station.704.b
+		custom_gui = quibble_spy_option
+		allow = { 
+			resource_stockpile_compare = { resource = energy value >= 200 }
+		}
+		add_resource = { energy = -200 }
+		hidden_effect = {
+			random_list = {
+				10 = {
+					country_event = { id = quibble_spy_station.703 days = 60 random = 30 }
+				}
+				20 = {
+					country_event = { id = quibble_spy_station.602 days = 60 random = 30 }
+				}
+			}
+		}
+	}
+}
+
+
+#######################################################################################################
+
+
+country_event = {  #AGENTS READY TO ATTACK - LOW
+	id = quibble_spy_station.601
+	title = "quibble_spy_station.601.name"
+	desc = "quibble_spy_station.601.desc"
+	is_triggered_only = yes
+	custom_gui = quibble_spy_window
+	diplomatic = yes
+    picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_10_room
+	}
+
+	option = { #CALL OFF THE ATTACK
+		name = quibble_spy_station.601.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+	option = {#ATTACK
+		name = quibble_spy_station.601.b
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			event_target:stationsabotagetarget = { 
+				country_event = { id = quibble_spy_station.6 days = 3 }
+			}
+		}
+	}
+	option = {#TRY TO IMPROVE EFFECT
+		name = quibble_spy_station.601.d
+		custom_gui = quibble_spy_option
+		allow = { 
+			resource_stockpile_compare = { resource = energy value >= 250 }
+		}
+		add_resource = { energy = -250 }
+		hidden_effect = {
+			random_list = {
+				9 = {
+					country_event = { id = quibble_spy_station.601 days = 40 random = 10 }
+				}
+				25 = {
+					country_event = { id = quibble_spy_station.602 days = 40 random = 10 }
+				}
+			}
+		}
+	}
+	option = {#DELAY ATTACK
+		name = quibble_spy_station.601.c
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			country_event = { id = quibble_spy_station.601 days = 35 }
+		}
+	}
+}
+
+country_event = {  #AGENTS READY TO ATTACK - HIGH
+	id = quibble_spy_station.602
+	title = "quibble_spy_station.602.name"
+	desc = "quibble_spy_station.602.desc"
+	is_triggered_only = yes
+	custom_gui = quibble_spy_window
+	diplomatic = yes
+    picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_10_room
+	}
+
+	option = { #CALL OFF THE ATTACK
+		name = quibble_spy_station.602.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+	option = {#ATTACK
+		name = quibble_spy_station.602.b
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			event_target:stationsabotagetarget = { 
+				country_event = { id = quibble_spy_station.7 days = 3 }
+			}
+		}
+	}
+	option = {#DELAY ATTACK
+		name = quibble_spy_station.602.c
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			country_event = { id = quibble_spy_station.602 days = 35 }
+		}
+	}
+}
+
+country_event = {  #WIN LOW
+	id = quibble_spy_station.6
+	force_open = yes
+	is_triggered_only = yes
+
+
+	immediate = {
+		event_target:sab_station = {
+			starbase = {
+				set_starbase_module = {
+					slot = 1
+					module = quibble_sabotage_low
+				}
+			}
+		}
+		event_target:snitch_home = {
+			hidden_effect = {
+				remove_country_flag = fail_limit
+				remove_country_flag = current_espionage2
+			}
+		}
+		
+		country_event = { id = quibble_spy_station.711 days = 120 }
+	}
+
+	option = {
+		name = quibble_spy_station.6.a
+		ai_chance = {
+			factor = 100
+		}
+		event_target:snitch_home = {
+			country_event = { id = quibble_spy_station.621 }
+		}
+	}
+}
+
+country_event = {  #WIN LOW PLAYER
+	id = quibble_spy_station.621
+	title = "quibble_spy_station.621.name"
+	desc = "quibble_spy_station.621.desc"
+	show_sound = event_planetary_riot
+	force_open = yes
+	is_triggered_only = yes
+	
+	custom_gui = quibble_spy_window
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_13_room
+	}
+
+	diplomatic = yes
+
+	option = {
+		name = quibble_spy_station.621.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			remove_country_flag = current_espionage2
+		}
+	}
+}
+
+
+country_event = {  #WIN HIGH
+	id = quibble_spy_station.7
+	force_open = yes
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:sab_station = {
+			starbase = {
+				set_starbase_module = {
+					slot = 1
+					module = quibble_sabotage_high
+				}
+			}
+		}
+		event_target:snitch_home = {
+			hidden_effect = {
+				remove_country_flag = fail_limit
+				remove_country_flag = current_espionage2
+			}
+		}
+		country_event = { id = quibble_spy_station.711 days = 120 }
+	}
+
+	option = {
+		name = quibble_spy_station.7.a
+		ai_chance = {
+			factor = 100
+		}
+		event_target:snitch_home = {
+			country_event = { id = quibble_spy_station.721 }
+		}
+	}
+}
+
+country_event = {  #WIN HIGH PLAYER
+	id = quibble_spy_station.721
+	title = "quibble_spy_station.721.name"
+	desc = "quibble_spy_station.721.desc"
+	show_sound = event_planetary_riot
+	force_open = yes
+	is_triggered_only = yes
+	
+	custom_gui = quibble_spy_window
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_13_room
+	}
+
+	diplomatic = yes
+
+	option = {
+		name = quibble_spy_station.721.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			remove_country_flag = current_espionage2
+		}
+	}
+}
+
+country_event = {  #REMOVE STATION SABOTAGE
+	id = quibble_spy_station.711
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:sab_station = {
+			starbase = {
+				set_starbase_module = {
+					slot = 1
+					module = solar_panel_network
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_spy_station.711.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			event_target:snitch_home = {
+				remove_country_flag = fail_limit
+				country_event = { id = quibble_spy_station.821 }
+			}
+		}
+	}
+}
+		
+
+country_event = {  #BATTLE OVER
+	id = quibble_spy_station.821
+	title = "quibble_spy_station.821.name"
+	desc = "quibble_spy_station.821.desc"
+	show_sound = event_ship_bridge
+	force_open = yes
+	is_triggered_only = yes
+	
+	custom_gui = quibble_spy_window
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_15_room
+	}
+
+	diplomatic = yes
+
+	option = {
+		name = quibble_spy_station.821.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			remove_country_flag = current_espionage2
+		}
+	}
+}

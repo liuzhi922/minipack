@@ -1,0 +1,25 @@
+tech_quibble_cell_2 = {
+	cost = @tier2cost2
+	area = society
+	tier = 2
+    weight = @tier2weight2
+	category = { statecraft }	
+}
+
+tech_quibble_cell_3 = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+    weight = @tier2weight2
+	category = { statecraft }	
+	prerequisites = { "tech_quibble_cell_2" }
+}
+
+tech_quibble_cell_4 = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+    weight = @tier3weight3
+	category = { statecraft }
+	prerequisites = { "tech_quibble_cell_3" }	
+}

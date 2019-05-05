@@ -1,0 +1,20 @@
+triggered_opinion_both_exterminators_intelligence = {
+	trigger = {
+		has_authority = auth_machine_intelligence
+		NOT = { has_valid_civic = civic_machine_terminator }
+		FROM = {
+			is_ai = yes
+			has_valid_civic = civic_machine_terminator
+		}
+		NOT = {
+			AND = {
+				is_ai = yes
+				has_valid_civic = civic_machine_assimilator 
+			}
+		}
+	}
+
+	opinion = {
+		base = 100
+	}
+}

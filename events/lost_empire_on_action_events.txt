@@ -1,0 +1,18 @@
+#########################################
+#
+# on_action_events
+#
+#########################################
+
+namespace = zofe_action
+
+#Ascended Society Activation Check
+event = {
+	id = zofe_action.7
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = zofe_paradise_lost_activated
+	}
+}

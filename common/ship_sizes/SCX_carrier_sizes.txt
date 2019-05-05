@@ -1,0 +1,67 @@
+#reloadable with 'reload stats'
+# This file is where you start when you want to configure something new, then go to sections
+
+####################################
+
+@scx_carrier_formation_priority = 60
+@scx_carrier_collision_radius = 6
+
+@scx_carrier_hp = 1800
+@scx_carrier_evasion = 7
+@scx_carrier_build_time = 360
+
+@scx_carrier_upkeep_energy = 1.8
+@scx_carrier_upkeep_alloys = 0.6
+
+@speed_slow = 80
+@speed_default = 100
+@speed_fast = 120
+@speed_very_fast = 170
+
+SCX_Carrier = {
+	formation_priority = @scx_carrier_formation_priority
+	max_speed = @speed_default
+	acceleration = 0.2
+	rotation_speed = 0.15
+	collision_radius = @scx_carrier_collision_radius
+	max_hitpoints = @scx_carrier_hp
+	modifier = {
+		ship_evasion_add = @scx_carrier_evasion
+		ship_piracy_suppression_add = 6
+	}
+	size_multiplier = 8
+	fleet_slot_size = 4
+	section_slots = { "bow" = { locator = "part1" } "mid1" = { locator = "part2" } "mid2" = { locator = "part3" } }
+	num_target_locators = 4
+	is_space_station = no
+	icon_frame = 5
+	base_buildtime = @scx_carrier_build_time
+	can_have_federation_design = yes
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	
+	default_behavior = scx_bhv_carrier_def
+
+	prerequisites = { "tech_scx_carrier_1" }
+	
+	combat_disengage_chance = 1.00
+
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	
+	resources = {
+		category = ships
+		upkeep = {
+			energy = @scx_carrier_upkeep_energy
+			alloys = @scx_carrier_upkeep_alloys
+		}
+	}
+
+	min_upgrade_cost = {
+		alloys = 6
+	}
+}

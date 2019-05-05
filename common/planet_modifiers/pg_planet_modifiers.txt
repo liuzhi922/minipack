@@ -1,0 +1,6 @@
+pm_shrouded_world = {
+	spawn_chance = {
+	}
+	
+	modifier = "shrouded_world"
+}

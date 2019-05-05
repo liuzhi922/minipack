@@ -1,0 +1,321 @@
+namespace = spy_diplomacy
+
+#SABOTAGE FAIL
+country_event = {#first country - AGENTS DETECTED
+	id = spy_diplomacy.1
+	title = "spy_diplomacy.1.name"
+	desc = "spy_diplomacy.1.desc"
+	show_sound = event_default
+
+	is_triggered_only = yes
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:firstsabotagetarget
+		planet_background = event_target:firstsabotagetarget
+		graphical_culture = event_target:firstsabotagetarget
+		city_level = event_target:firstsabotagetarget
+		room = event_target:firstsabotagetarget.ruler
+	}
+	
+	option = {
+        name = spy_diplomacy.1.a
+        event_target:firstsabotagetarget = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_low
+			}
+		}
+		event_target:secondsabotagetarget = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_low
+			}
+		}
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+    }
+
+	option = {
+        name = spy_diplomacy.1.b
+        allow = { 
+			resource_stockpile_compare = { resource = energy value >= 200 }
+        }
+        add_resource = { energy = -200 }
+        event_target:firstsabotagetarget = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_low
+            }
+            add_resource = { energy = 200 }
+		}
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+	
+	option = {
+        name = spy_diplomacy.1.c
+        event_target:firstsabotagetarget = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_high
+            }
+		}
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+    }
+}
+
+
+country_event = {#SABOTAGE FAIL
+	id = spy_diplomacy.2
+	title = "spy_diplomacy.2.name"
+	desc = "spy_diplomacy.2.desc"
+	show_sound = event_default
+
+	is_triggered_only = yes
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:secondsabotagetarget
+		planet_background = event_target:secondsabotagetarget
+		graphical_culture = event_target:secondsabotagetarget
+		city_level = event_target:secondsabotagetarget
+		room = event_target:secondsabotagetarget.ruler
+	}
+	
+	option = {
+        name = spy_diplomacy.2.a
+        event_target:secondsabotagetarget = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_low
+			}
+		}
+		event_target:firstsabotagetarget = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_low
+			}
+		}
+	}
+	
+	option = {
+        name = spy_diplomacy.2.b
+        allow = { 
+			resource_stockpile_compare = { resource = energy value >= 200 }
+        }
+        add_resource = { energy = -200 }
+        event_target:secondsabotagetarget = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_low
+            }
+            add_resource = { energy = 200 }
+		}
+	}
+	
+	option = {
+        name = spy_diplomacy.2.c
+        event_target:secondsabotagetarget = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_high
+            }
+		}
+    }
+}
+
+
+country_event = {#BOOST RELATIONS FAIL.
+	id = spy_diplomacy.3
+	title = "spy_diplomacy.3.name"
+	desc = "spy_diplomacy.3.desc"
+	show_sound = event_default
+	location = event_target:firstsabotagetarget2
+
+	is_triggered_only = yes
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:firstsabotagetarget2
+		planet_background = event_target:firstsabotagetarget2
+		graphical_culture = event_target:firstsabotagetarget2
+		city_level = event_target:firstsabotagetarget2
+		room = event_target:firstsabotagetarget2.ruler
+	}
+	
+	option = {
+        name = spy_diplomacy.3.a
+        event_target:firstsabotagetarget2 = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_low
+			}
+		}
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+	option = {
+        name = spy_diplomacy.3.b
+        event_target:firstsabotagetarget2 = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_high
+			}
+		}
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+    }
+}
+
+country_event = {#BOOST RELATIONS FAIL.
+	id = spy_diplomacy.4
+	title = "spy_diplomacy.4.name"
+	desc = "spy_diplomacy.4.desc"
+	show_sound = event_default
+	location = event_target:secondsabotagetarget2
+
+	is_triggered_only = yes
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:secondsabotagetarget2
+		planet_background = event_target:secondsabotagetarget2
+		graphical_culture = event_target:secondsabotagetarget2
+		city_level = event_target:secondsabotagetarget2
+		room = event_target:secondsabotagetarget2.ruler
+	}
+	
+	option = {
+        name = spy_diplomacy.4.a
+        event_target:secondsabotagetarget2 = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_low
+			}
+		}
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+	option = {
+        name = spy_diplomacy.4.b
+        event_target:secondsabotagetarget2 = {
+			add_opinion_modifier = {
+				who = root
+				modifier = opinion_quibble_discovered_high
+			}
+		}
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+    }
+}
+
+
+
+###NOTIFY PLAYER SOMEONE HAS FUCKED WITH 'EM'
+###MEDIUM INCIDENT
+country_event = { #first country = player
+	id = spy_diplomacy.7
+	title = "spy_diplomacy.7.name"
+	desc = "spy_diplomacy.7.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	diplomatic = yes
+	show_sound = event_conversation
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_12_room
+	}
+
+	#k
+	option = {
+		name = spy_diplomacy.7.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+}
+
+country_event = { ### second country = player
+	id = spy_diplomacy.8
+	title = "spy_diplomacy.8.name"
+	desc = "spy_diplomacy.8.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	diplomatic = yes
+	show_sound = event_conversation
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_12_room
+	}
+
+	#k
+	option = {
+		name = spy_diplomacy.8.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+}
+
+###NOTIFY PLAYER SOMEONE HAS FUCKED WITH 'EM'
+###HIGH INCIDENT
+country_event = { #first country = player
+	id = spy_diplomacy.9
+	title = "spy_diplomacy.9.name"
+	desc = "spy_diplomacy.9.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	diplomatic = yes
+	show_sound = event_conversation
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_12_room
+	}
+
+	#k
+	option = {
+		name = spy_diplomacy.9.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+}
+
+country_event = { ### second country = player
+	id = spy_diplomacy.10
+	title = "spy_diplomacy.10.name"
+	desc = "spy_diplomacy.10.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	diplomatic = yes
+	show_sound = event_conversation
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_12_room
+	}
+
+	#k
+	option = {
+		name = spy_diplomacy.10.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+}

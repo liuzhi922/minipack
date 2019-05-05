@@ -1,0 +1,547 @@
+### System Resources
+
+time = {
+}
+
+
+### Basic Resources
+
+energy = {
+	tradable = yes
+	max = 50000
+	
+	deficit_modifier = energy_deficit #found in static modifiers
+
+	ai_weight = {
+		weight = 1
+	}
+
+	ai_wants = {
+		base = 0
+		modifier = {
+			add = 10000
+			years_passed > 45
+			is_megacorp = yes
+		}
+		modifier = {
+			add = 6000
+			is_megacorp = no
+			has_technology = tech_terrestrial_sculpting
+			has_resource = { type = energy amount < 5000 }
+			OR = {
+				has_resource = { type = food amount > 50 }
+				has_monthly_income = {
+					resource = food
+					value >= 0
+				}
+			}
+			OR = {
+				has_resource = { type = consumer_goods amount > 50 }
+				has_monthly_income = {
+					resource = consumer_goods
+					value >= 0
+				}
+				AND = {
+					is_gestalt = yes
+					NOT = { has_valid_civic = civic_machine_servitor }
+				}
+			}
+			OR = {
+				has_resource = { type = minerals amount > 2000 }
+				has_monthly_income = {
+					resource = minerals
+					value >= 50
+				}
+			}
+			OR = {
+				has_resource = { type = alloys amount > 200 }
+				has_monthly_income = {
+					resource = alloys
+					value >= 15
+				}
+			}
+			OR = {
+				has_resource = { type = rare_crystals amount > 5 }
+				has_monthly_income = {
+					resource = rare_crystals
+					value >= 0
+				}
+			}
+			OR = {
+				has_resource = { type = exotic_gases amount > 5 }
+				has_monthly_income = {
+					resource = exotic_gases
+					value >= 0
+				}
+			}
+			OR = {
+				has_resource = { type = volatile_motes amount > 5 }
+				has_monthly_income = {
+					resource = volatile_motes
+					value >= 0
+				}
+			}
+		}
+		modifier = {
+			add = 6000
+			is_megacorp = no
+			has_technology = tech_climate_restoration
+			has_resource = { type = energy amount < 10000 }
+			has_monthly_income = {
+				resource = energy
+				value >= 0
+			}
+			OR = {
+				has_resource = { type = food amount > 50 }
+				has_monthly_income = {
+					resource = food
+					value >= 0
+				}
+			}
+			OR = {
+				has_resource = { type = consumer_goods amount > 50 }
+				has_monthly_income = {
+					resource = consumer_goods
+					value >= 0
+				}
+				AND = {
+					is_gestalt = yes
+					NOT = { has_valid_civic = civic_machine_servitor }
+				}
+			}
+			OR = {
+				has_resource = { type = minerals amount > 2000 }
+				has_monthly_income = {
+					resource = minerals
+					value >= 50
+				}
+			}
+			OR = {
+				has_resource = { type = alloys amount > 200 }
+				has_monthly_income = {
+					resource = alloys
+					value >= 15
+				}
+			}
+			OR = {
+				has_resource = { type = rare_crystals amount > 5 }
+				has_monthly_income = {
+					resource = rare_crystals
+					value >= 0
+				}
+			}
+			OR = {
+				has_resource = { type = exotic_gases amount > 5 }
+				has_monthly_income = {
+					resource = exotic_gases
+					value >= 0
+				}
+			}
+			OR = {
+				has_resource = { type = volatile_motes amount > 5 }
+				has_monthly_income = {
+					resource = volatile_motes
+					value >= 0
+				}
+			}
+		}
+		modifier = {
+			add = 2500
+			has_resource = { type = energy amount < 1500 }
+		}#This makes the AI attempt to get to 2500 energy by selling resources. It will then exceed 1,500 and choose to spend those resources on other things.
+		modifier = {
+			add = 500000
+			is_difficulty > 2
+			years_passed > 20
+			has_resource = { type = energy amount > 1000 }
+			has_resource = { type = minerals amount > 2000 }
+			has_resource = { type = minerals amount > 5000 }
+			has_resource = { type = alloys amount > 5000 }
+			OR = {
+				has_resource = { type = consumer_goods amount > 5000 }
+				AND = {
+					is_gestalt = yes
+					NOT = { has_valid_civic = civic_machine_servitor }
+				}
+			}
+			OR = {
+				OR = {
+					NOT = { has_authority = auth_machine_intelligence }
+					has_valid_civic = civic_machine_servitor
+					has_valid_civic = civic_machine_assimilator
+				}
+				has_resource = { type = food amount > 5000 }
+			}
+		}
+	}
+}
+
+minerals = {
+	tradable = yes
+	market_amount = 100
+	market_price = 100
+	max = 15000
+	
+	deficit_modifier = minerals_deficit #found in static modifiers
+
+	ai_weight = {
+		weight = 10000
+	}
+
+	ai_wants = {
+		base = 1000
+		modifier = {
+			add = 1500
+			years_passed > 80
+		}
+		modifier = {
+			add = 9000
+			is_at_war = no
+			OR = {
+				has_resource = { type = food amount > 50 }
+				has_monthly_income = {
+					resource = food
+					value >= 0
+				}
+			}
+			OR = {
+				has_resource = { type = consumer_goods amount > 50 }
+				has_monthly_income = {
+					resource = consumer_goods
+					value >= 0
+				}
+				AND = {
+					is_gestalt = yes
+					NOT = { has_valid_civic = civic_machine_servitor }
+				}
+			}
+			OR = {
+				has_resource = { type = energy amount > 1000 }
+				has_monthly_income = {
+					resource = energy
+					value >= 0
+				}
+			}
+			OR = {
+				has_resource = { type = rare_crystals amount > 5 }
+				has_monthly_income = {
+					resource = rare_crystals
+					value >= 0
+				}
+			}
+			OR = {
+				has_resource = { type = exotic_gases amount > 5 }
+				has_monthly_income = {
+					resource = exotic_gases
+					value >= 0
+				}
+			}
+			OR = {
+				has_resource = { type = volatile_motes amount > 5 }
+				has_monthly_income = {
+					resource = volatile_motes
+					value >= 0
+				}
+			}
+		}
+		modifier = {
+			add = 500000
+			is_difficulty > 2
+			years_passed > 20
+			has_resource = { type = energy amount > 1000 }
+			has_resource = { type = minerals amount > 2000 }
+		}
+		modifier = {
+			add = 12000
+			has_resource = { type = energy amount > 1500 }
+		}
+		modifier = {
+			add = 20000
+			has_ascension_perk = ap_arcology_project
+		}
+	}
+}
+
+food = {
+	tradable = yes
+	market_amount = 100
+	market_price = 100
+	max = 15000 
+	
+	deficit_modifier = food_deficit #found in static modifiers
+	
+	ai_weight = {
+		weight = 15000
+	}
+
+	ai_wants = {
+		base = 2500
+		modifier = {
+			add = 500000
+			gai_difficulty = yes
+		}
+		modifier = {
+			add = 9000
+			has_resource = { type = energy amount > 8000 }
+			gai_difficulty = no
+		}
+	}#Growth decision
+}
+
+physics_research = {
+	ai_weight = {
+		weight = 1
+	}
+}
+
+society_research = {
+	ai_weight = {
+		weight = 1
+	}
+}
+
+engineering_research = {
+	ai_weight = {
+		weight = 1
+	}
+}
+
+influence = {
+	max = 1000
+	tooltip_decimals = 1
+	fixed_max_amount = yes
+	
+	deficit_modifier = influence_deficit #found in static modifiers
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+unity = {
+	ai_weight = {
+		weight = 1
+	}
+}
+
+###########################
+### Manufactured Resources  ###
+###########################
+
+alloys = {
+	tradable = yes
+	market_amount = 25
+	market_price = 100
+	max = 15000
+	
+	deficit_modifier = alloys_deficit
+	
+	ai_weight = {
+		weight = 1
+	}
+
+	ai_wants = {
+		base = 2000
+		modifier = {
+			add = 7000
+			OR = {
+				has_ascension_perk = ap_galactic_wonders_utopia
+				has_ascension_perk = ap_galactic_wonders_megacorp
+				has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+			}
+		}
+		modifier = {
+			add = 11000
+			OR = {
+				has_resource = { type = energy amount > 1500 }
+				has_monthly_income = {
+					resource = volatile_motes
+					value >= 0
+				}
+			}
+		}
+		modifier = {
+			add = 500000
+			gai_difficulty = yes
+		}
+	}
+}
+
+consumer_goods = {
+	tradable = yes
+	market_amount = 50
+	market_price = 100
+	max = 15000
+	
+	deficit_modifier = consumer_goods_deficit #found in static modifiers
+	
+	ai_weight = {
+		weight = 10000
+	}
+
+	ai_wants = {
+		base = 250
+		modifier = {
+			add = -250
+			NOR = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		modifier = {
+			add = 500000
+			gai_difficulty = yes
+			NOR = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		modifier = {
+			add = 9000
+			has_resource = { type = energy amount > 8000 }
+			gai_difficulty = no
+			NOR = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+	}
+}
+
+###########################
+### Advanced Resources  ###
+###########################
+
+volatile_motes = {
+	tradable = yes
+	market_amount = 10
+	market_price = 100
+	max = 15000
+	
+	prerequisites = { "tech_mine_volatile_motes" }
+	
+	deficit_modifier = volatile_motes_deficit #found in static modifiers
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	ai_wants = {
+		base = 150
+	}
+}
+
+exotic_gases = {
+	tradable = yes
+	market_amount = 10
+	market_price = 100
+	max = 15000
+	
+	prerequisites = { "tech_mine_exotic_gases" }
+	
+	deficit_modifier = exotic_gases_deficit #found in static modifiers
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	ai_wants = {
+		base = 150
+	}
+}
+
+rare_crystals = {
+	tradable = yes
+	market_amount = 10
+	market_price = 100
+	max = 15000
+	
+	prerequisites = { "tech_mine_rare_crystals" }
+	
+	deficit_modifier = rare_crystals_deficit #found in static modifiers
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	ai_wants = {
+		base = 150
+	}
+}
+
+
+###########################
+###    Rare Resources   ###
+###########################
+
+# Living Metal
+sr_living_metal = {
+	tradable = yes
+	market_amount = 5
+	market_price = 100
+	max = 15000
+	
+	prerequisites = { "tech_mine_living_metal" }
+	visibility_prerequisite = { always = yes }
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	ai_wants = {
+		base = 150
+	}
+}
+
+# Zro
+sr_zro = {
+	tradable = yes
+	market_amount = 5
+	market_price = 100
+	max = 15000
+	
+	prerequisites = { "tech_mine_zro" }
+	visibility_prerequisite = { always = yes }
+
+	ai_weight = {
+		weight = 1
+	}
+	
+	ai_wants = {
+		base = 150
+	}
+}
+
+# Dark Matter
+sr_dark_matter = {
+	tradable = yes
+	market_amount = 5
+	market_price = 100
+	max = 15000
+
+	prerequisites = { "tech_mine_dark_matter" }
+	visibility_prerequisite = { always = yes }
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	ai_wants = {
+		base = 150
+	}
+}
+
+nanites  = {
+	tradable = no
+	max = 15000
+
+	visibility_prerequisite = { always = yes }
+	
+	ai_weight = {
+		weight = 1
+	}
+	
+	ai_wants = {
+		base = 150
+	}
+}

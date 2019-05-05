@@ -1,0 +1,242 @@
+#############################
+###			ZoFE Weapons
+#############################
+
+
+#Psi Missile System
+
+component_set = {
+	key = "PSI_MISSILE_SYSTEM"
+	
+	icon = "GFX_ship_part_psi_missile_system"
+	icon_frame = 1
+}
+
+#Shadow Strike Craft
+
+component_set = {
+	key = "SHADOW_STRIKE_CRAFT"
+	
+	icon = "GFX_ship_part_shadow_strike_craft"
+	icon_frame = 1	
+}
+
+# Hellfire Autocannon
+
+component_set = {
+	key = "HELLFIRE_AUTOCANNONS"
+	
+	icon = "GFX_ship_part_hellfire_autocannons"
+	icon_frame = 1	
+}
+
+# Terror Cannon
+
+component_set = {
+	key = "TERROR_CANNON"
+	
+	icon = "GFX_ship_part_terror_cannon"
+	icon_frame = 1
+}
+
+#Ion Disruptor
+
+component_set = {
+	key = "ION_DISRUPTOR"
+	
+	icon = "GFX_ship_part_ion_disruptor"
+	icon_frame = 1	
+}
+
+# Resized Energy Lance
+
+component_set = {
+	key = "ENERGY_LANCE_2_LARGE"
+	
+	icon = "GFX_ship_part_energy_lance_2"
+	icon_frame = 1	
+}
+
+# Compact Omni Lance
+
+component_set = {
+	key = "COMPACT_OMNI_LANCE"
+	
+	icon = "GFX_ship_part_omni_lance"
+	icon_frame = 1	
+}
+
+# Omni Lance
+
+component_set = {
+	key = "OMNI_LANCE"
+	
+	icon = "GFX_ship_part_omni_lance"
+	icon_frame = 1	
+}
+
+# Resized Arc Emitter
+
+component_set = {
+	key = "ARC_EMITTER_2_LARGE"
+	
+	icon = "GFX_ship_part_arc_emitter_2"
+	icon_frame = 1	
+}
+
+# Compact Omni Arc Emitter
+
+component_set = {
+	key = "COMPACT_OMNI_EMITTER"
+	
+	icon = "GFX_ship_part_omni_emitter"
+	icon_frame = 1	
+}
+
+# Omni Arc Emitter
+
+component_set = {
+	key = "OMNI_EMITTER"
+	
+	icon = "GFX_ship_part_omni_emitter"
+	icon_frame = 1	
+}
+
+#Massive Autocannons
+
+component_set = {
+	key = "MASSIVE_AUTOCANNONS"
+	
+	icon = "GFX_ship_part_massive_autocannon"
+	icon_frame = 1
+}
+
+#Resized Giga Cannon
+
+component_set = {
+	key = "MASS_ACCELERATOR_2_LARGE"
+	
+	icon = "GFX_ship_part_mass_accelerator_2"
+	icon_frame = 1	
+}
+
+#Compact Omni Cannon
+
+component_set = {
+	key = "COMPACT_OMNI_CANNON"
+	
+	icon = "GFX_ship_part_omni_cannon"
+	icon_frame = 1
+}
+
+#Omni Cannon
+
+component_set = {
+	key = "OMNI_CANNON"
+	
+	icon = "GFX_ship_part_omni_cannon"
+	icon_frame = 1
+}
+
+#Portal Generator
+
+component_set = {
+	key = "PORTAL_GENERATOR"
+	
+	icon = "GFX_ship_part_portal_generator"
+	icon_frame = 1	
+}
+
+#Dragon Breath
+
+component_set = {
+	key = "DRAGON_BREATH"
+	
+	icon = "GFX_ship_part_dragon_breath"
+	icon_frame = 1	
+}
+
+#Stellarite Weapon
+
+component_set = {
+	key = "STELLARITE_WEAPON"
+	
+	icon = "GFX_ship_part_stellarite_weapon"
+	icon_frame = 1
+}
+
+#Dimensional Weapon
+
+component_set = {
+	key = "DIMENSIONAL_WEAPON"
+	
+	icon = "GFX_ship_part_dimensional_weapon"
+	icon_frame = 1
+}
+
+#Scrapper Weapon
+
+component_set = {
+	key = "SCRAPPER_WEAPON"
+	
+	icon = "GFX_ship_part_scrapper_weapon"
+	icon_frame = 1	
+}
+
+#Elder Tiyanki Weapon
+
+component_set = {
+	key = "ELDER_TIYANKI_WEAPON"
+	
+	icon = "GFX_ship_part_elder_tiyanki_weapon"
+	icon_frame = 1	
+}
+
+#Gray Goo Beam
+
+component_set = {
+	key = "GRAY_GOO_BEAM"
+	
+	icon = "GFX_ship_part_gray_goo_beam"
+	icon_frame = 1	
+}
+
+
+# Shields
+
+component_set = {
+	key = "psi_deflector"
+	
+	icon = "GFX_ship_part_psi_shield"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "DARK_ENERGY_SHIELD"
+	
+	icon = "GFX_ship_part_dark_energy_shield"
+	icon_frame = 1
+}
+
+# Armor
+
+component_set = {
+	key = "DARK_MATTER_PLATING"
+	
+	icon = "GFX_ship_part_dark_matter_plating"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "IMPROVED_DRAGON_ARMOR"
+	
+	icon = "GFX_ship_part_improved_dragon_armor"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "TITAN_ARMOR"
+	
+	icon = "GFX_ship_part_titan_armor"
+	icon_frame = 1
+}

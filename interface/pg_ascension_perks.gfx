@@ -1,0 +1,33 @@
+spriteTypes = {
+
+    spriteType = {
+		name = "GFX_ap_project_gestalt"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_project_gestalt.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_ascension_pc"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_project_gestalt.dds"
+		alwaystransparent = yes
+	}
+		spriteType = {
+		name = "GFX_ap_united_machines"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_united_machines.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_shrouded_worlds"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_shrouded_worlds.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_psionic_hive"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_psionic_hive.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_perfect_creatures"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_perfect_creature.dds"
+		alwaystransparent = yes
+	}
+}

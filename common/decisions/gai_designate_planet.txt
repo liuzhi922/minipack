@@ -1,0 +1,148 @@
+decision_gai_alloy = {
+	owned_planets_only = yes
+
+	potential = {
+		gai_focus_world = no
+		exists = owner
+		owner = { is_ai = no }
+		NOT = { owner = { has_country_flag = cf_hide_decisions } }
+	}
+	
+	effect = {
+		hidden_effect = {
+			custom_tooltip = describe_decision_gai_alloy
+			set_planet_flag = gai_alloy
+			add_modifier = { modifier = "gai_alloy_focus" days = -1 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+decision_gai_goods = {
+	owned_planets_only = yes
+
+	potential = {
+		gai_focus_world = no
+		exists = owner
+		owner = { is_ai = no }
+		NOT = { owner = { has_country_flag = cf_hide_decisions } }
+	}
+	
+	effect = {
+		hidden_effect = {
+			set_planet_flag = gai_goods
+			custom_tooltip = describe_decision_gai_goods
+			add_modifier = { modifier = "gai_goods_focus" days = -1 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+decision_gai_fleet = {
+	owned_planets_only = yes
+
+	potential = {
+		gai_focus_world = no
+		exists = owner
+		owner = { is_ai = no }
+		NOT = { owner = { has_country_flag = cf_hide_decisions } }
+	}
+	
+	effect = {
+		hidden_effect = {
+			custom_tooltip = describe_decision_gai_fleet
+			set_planet_flag = gai_fleet_planet
+			add_modifier = { modifier = "gai_fleet_focus" days = -1 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+decision_gai_unity = {
+	owned_planets_only = yes
+
+	potential = {
+		gai_focus_world = no
+		exists = owner
+		owner = { is_ai = no }
+		NOT = { owner = { has_country_flag = cf_hide_decisions } }
+	}
+	
+	effect = {
+		hidden_effect = {
+			set_planet_flag = gai_unity
+			custom_tooltip = describe_decision_gai_unity
+			add_modifier = { modifier = "gai_unity_focus" days = -1 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+decision_gai_tech = {
+	owned_planets_only = yes
+
+	potential = {
+		gai_focus_world = no
+		exists = owner
+		owner = { is_ai = no }
+		NOT = { owner = { has_country_flag = cf_hide_decisions } }
+	}
+	
+	effect = {
+		hidden_effect = {
+			set_planet_flag = gai_tech
+			custom_tooltip = describe_decision_gai_tech
+			add_modifier = { modifier = "gai_tech_focus" days = -1 }
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+decision_gai_focus_remove = {
+	owned_planets_only = yes
+
+	potential = {
+		gai_focus_world = yes
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			owner = { has_country_flag = gai_remove_modifiers }
+		}
+		NOT = { owner = { has_country_flag = cf_hide_decisions } }
+	}
+	
+	effect = {
+		hidden_effect = {
+			remove_planet_flag = gai_alloy
+			remove_planet_flag = gai_fleet_planet
+			remove_planet_flag = gai_goods
+			remove_planet_flag = gai_unity
+			remove_planet_flag = gai_tech
+			custom_tooltip = describe_decision_gai_focus_remove
+			remove_modifier = gai_alloy_focus
+			remove_modifier = gai_unity_focus
+			remove_modifier = gai_fleet_focus
+			remove_modifier = gai_goods_focus
+			remove_modifier = gai_tech_focus
+		}
+	}
+	
+	ai_weight = {
+		weight = 5
+	}	
+}

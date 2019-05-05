@@ -1,0 +1,27 @@
+﻿l_spanish:
+describe_decision_gai_alloy:0 "Indica a la IA que debe incentivar la producción de aleaciones en este planeta."
+decision_gai_alloy:0 "Incentivar Aleaciones"
+decision_gai_alloy_desc:0 "Indica a la IA que debe incentivar la producción de aleaciones en este planeta."
+
+describe_decision_gai_alloy_remove:0 "Elimina el incentivo a la producción de aleaciones en este planeta."
+decision_gai_alloy_remove:0 "Eliminar Incentivo a Aleaciones"
+decision_gai_alloy_remove_desc:0 "Elimina el incentivo a la producción de aleaciones en este planeta."
+
+describe_decision_gai_goods:0 "Indica a la IA que debe incentivar la producción de bienes de consumo en este planeta."
+decision_gai_goods:0 "Incentivar Bienes de Consumo"
+decision_gai_goods_desc:0 "You must use this with the balanced sector focus. Do not enable otherwise."
+
+describe_decision_gai_goods_remove:0 "Elimina el incentivo a la producción de bienes de consumo en este planeta."
+decision_gai_goods_remove:0 "Eliminar Incentivo a Bienes de Consumo"
+decision_gai_goods_remove_desc:0 "Elimina el incentivo a la producción de bienes de consumo en este planeta."
+
+st_balanced:0 "Use GAI"
+st_balanced_desc:0 "The sector will use a simplified version of the building weights from the Glavius's Ultimate AI mod."
+
+gai_goods_focus:0 "Consumer Goods Focus"
+decision_gai_goods_focus:0 "Use Decisions to disable focus"
+gai_goods_focus_desc:0 "This focus should only be used with the balanced sector focus!"
+
+gai_alloy_focus:0 "Alloy Focus"
+decision_gai_alloy_focus:0 "Use Decisions to disable focus"
+gai_alloy_focus_desc:0 "This focus should only be used with the balanced sector focus!"

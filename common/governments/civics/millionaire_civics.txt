@@ -1,0 +1,35 @@
+#Millionaire Civic
+civic_millionaire = {
+	pickable_at_start = yes				
+	modification = no	
+	icon = "gfx/interface/icons/governments/civics/civic_millionaire.dds"
+	
+    random_weight = {
+		base = 30
+		modifier = {
+			factor = 0
+			NOT = { host_has_dlc = "Utopia" }
+		}
+    }
+    possible = {
+        authority = {
+			OR = {
+				text = civic_tooltip_dic_imp
+				value = auth_dictatorial
+				value = auth_imperial
+			}
+		}
+		civics = {
+			nor = {
+			value = civic_vb_psi_touched_by_the_shroud
+			value = civic_vb_psi_soul_eater
+			value = civic_life_seeded
+			value = civic_isolated
+			}
+		}
+    }
+	
+	description = "civic_millionaire_effects"
+	modifier = {
+	}
+}

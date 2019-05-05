@@ -1,0 +1,132 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+minerals_expenditure_buffer = { # Buffer, will not be spent
+	resource = minerals 
+	type = expenditure
+	category = buffer
+	
+	potential = {
+		always = yes
+	}
+	
+	fraction = {
+		weight = 0.00
+	}	
+}
+
+minerals_expenditure_planets = {
+	resource = minerals 
+	type = expenditure
+	category = planets
+	
+	potential = {
+		always = yes
+	}
+	
+	static_min = {
+		base = 50000
+	}
+}
+
+minerals_expenditure_stations = {
+	resource = minerals 
+	type = expenditure
+	category = stations
+	
+	potential = {
+		always = yes
+	}
+	
+	static_min = {
+		base = 50000
+	}
+}
+
+minerals_expenditure_armies = {
+	resource = minerals 
+	type = expenditure
+	category = armies
+	
+	potential = {
+		has_resource = { type = minerals amount > 700 }
+		OR = {
+			used_naval_capacity_percent < 1
+			is_at_war = yes
+		}
+	}#AI tends to scrap armies when not at war. This prevents them from spamming and scrapping armies en masse
+	
+	static_min = {
+		base = 50000
+	}
+}
+
+minerals_expenditure_starbases_expand = {
+	resource = minerals 
+	type = expenditure
+	category = starbases
+	
+	potential = {
+		exploitable_planets > 2
+		resource_stockpile_compare = {
+			resource = minerals
+			value >= 2000
+		}
+	}
+	
+	static_min = {
+		base = 50000
+	}
+}
+
+############
+## Upkeep ##
+############
+minerals_upkeep_buffer = {	# Buffer, will not be spent
+	resource = minerals 
+	type = upkeep
+	category = buffer
+	
+	potential = {
+		always = yes
+	}
+	
+	fraction = {
+		weight = 0.00
+	}	
+}
+
+minerals_upkeep_planets = {
+	resource = minerals 
+	type = upkeep
+	category = planets
+	
+	potential = {
+		always = yes
+	}
+	
+	fraction = {
+		weight = 1
+	}	
+}
+
+minerals_upkeep_starbases = {
+	resource = minerals 
+	type = upkeep
+	category = starbases
+	
+	potential = {
+		always = yes
+	}
+	
+	fraction = {
+		weight = 0.0
+	}
+	
+	static_min = {
+		base = 500
+	}
+}

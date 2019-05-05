@@ -1,0 +1,25 @@
+NGameplay = {
+		WAR_EXHAUSTION_SHIP_KILLED_MULT		  = 0.5		# Multiplier of war exhaustion gained from ships
+		WAR_EXHAUSTION_ARMY_KILLED_MULT		  = 0.1	# Multiplier of war exhaustion gained from land battles (armies)
+		WAR_EXHAUSTION_PLANET_DESTRUCTION_DIV = 2.0		# War exhaustion from planets destroyed
+		WAR_EXHAUSTION_SYSTEM_OCCUPATION_MULT = 1.0		# War exhaustion from occupied systems
+		WAR_EXHAUSTION_PASSIVE_GAIN_YEARLY	  = 0.075	# The amount of yearly war exhaustion gained during war while under WAR_EXHAUSTION_PASSIVE_GAIN_CUTOFF
+		WAR_EXHAUSTION_PASSIVE_GAIN_CUTOFF	  = 1.0		# At this amount of war exhaustion (excluding occupation) you stop getting war exhaustion passively over time
+		WAR_EXHAUSTION_FROM_UNITS_CUTOFF	  = 1.0		# At this amount of war exhaustion (excluding occupation) you stop gaining war exhaustion from lost units
+		WAR_EXHAUSTION_HIGH_ALERT			  = 1.0		# Show alert if war exhaustion >= this
+		OCCUPATION_BASE_VALUE 					= 2.5		# Base value of occupied system, used for calculating relative occupation score of empire
+		OCCUPATION_PLANET_VALUE 				= 10	# Per planet in system
+		OCCUPATION_POP_VALUE 					= 1		# Per pop in system
+		OCCUPATION_STARBASE_VALUE 				= 10	# If starbase is upgraded
+		WAR_EXHAUSTION_HIGH_THRESHOLD		  = 2.0		# Apply negative modifier and show alert if war exhaustion >= this
+		ENFORCE_STATUS_QUO_ENABLED	 		  = no		# Can status quo be enforced at high WE?
+		ENFORCE_STATUS_QUO_MONTHS			  = 24			
+	}
+NAI = {
+		PEACE_WAR_EXHAUSTION_FACTOR = 150
+		PEACE_OCCUPATION_FACTOR = 150
+		PEACE_STATUS_QUO_FACTOR = -50
+		PEACE_HIGH_WE_STATUS_QUO_FACTOR = 150
+		PEACE_DEMAND_SURRENDER_FACTOR = -75
+		PEACE_RELATIVE_NAVY_STRENGTH_FACTOR = 100			
+}

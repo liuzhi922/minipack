@@ -1,0 +1,981 @@
+@high = 16
+@med = 8
+@low = 4
+
+@high_rare = 0.5
+@mid_rare = 0.25
+@low_rare = 0.1
+
+@planet_type_bonus = 1.5
+
+
+#Biolumen World 
+
+d_hunterreserve = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			district_farming_max = -1
+			job_researcher_add = 2
+			job_researcher_per_pop = 0.05 # 1 per 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 3
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_biolumen
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#Techno-Orgnaic World
+
+d_artificial_flora = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			planet_jobs_engineering_research_produces_mult = 0.10
+			job_researcher_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 3
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_technoorganic
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+d_peace_museum = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.20
+			job_culture_worker_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 2
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_technoorganic
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+	
+#Crystal World
+d_crystal_temple = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_templeresearcher_add = 2
+			job_templeresearcher_per_pop = 0.05 # 1 per 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 3
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_crystal
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+d_crystal_pillars = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			planet_jobs_food_produces_mult = 0.10
+			building_crystal_mines_max = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			building_crystal_mines_max = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			building_crystal_mines_max = 2
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_crystal
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#Floating World
+d_floating_islands = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_eludium_expert_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_eludium_expert_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_eludium_expert_add = 2
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_floating
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_tiyanki_cleanup = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+		district_generator_max = 2
+		job_tiyankicleanup_add = 5
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 5
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 5
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_graveyard
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_tiyanki_station = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+		planet_max_districts_add = 2
+		job_tiyankirecycler_add = 5
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 5
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 5
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_graveyard
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#Archive
+d_archive_dataports = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			planet_max_districts_add = -1
+			job_archivist_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 4
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 4
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_archive
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+d_interdimensional_lab = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_interdimensional_researcher_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 4
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 4
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_archive
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_virtual_obersvation_post = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+	
+		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_virtual_observers_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 4
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 4
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_archive
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_geothermal_slurry_site = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+	
+	planet_modifier = {
+		planet_miners_minerals_produces_mult = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_slurry_distillers_add = 1
+			job_slurry_distillers_per_pop = 0.04 # 1 per 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_alloy_drone_add = 2
+			job_gas_extraction_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_fabricator_add = 2
+			job_gas_extraction_drone_add = 1
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_geothermal
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_nightside_mining_operations = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+
+	use_weights_for_terraforming_swap_types = no
+	
+	planet_modifier = {
+		planet_miners_minerals_produces_mult = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_nightside_miner_add = 1
+			job_nightside_miner_per_pop = 0.04 # 1 per 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 2
+			job_crystal_mining_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_mining_drone_add = 2
+			job_crystal_mining_drone_add = 1
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_tidallylocked
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_ancient_motes = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+
+	use_weights_for_terraforming_swap_types = no
+	
+	planet_modifier = {
+		planet_jobs_energy_produces_mult = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_volatile_miner_add = 1
+			job_volatile_miner_per_pop = 0.04 # 1 per 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_technician_drone_add = 2
+			job_mote_harvesting_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_technician_drone_add = 2
+			job_mote_harvesting_drone_add = 1
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_superhabitable
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_biolumen_nature_preserve = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+
+	use_weights_for_terraforming_swap_types = no
+	
+	planet_modifier = {
+		planet_jobs_society_research_produces_mult = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_jungle_ranger_add = 1
+			job_jungle_ranger_per_pop = 0.04 # 1 per 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_technician_drone_add = 2
+			job_brain_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_technician_drone_add = 2
+			job_brain_drone_add = 1
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_biolumen
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_eludium_centre = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+
+	use_weights_for_terraforming_swap_types = no
+	
+	planet_modifier = {
+		planet_jobs_physics_research_produces_mult = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_eludium_expert_add = 1
+			job_eludium_expert_per_pop = 0.04 # 1 per 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_eludium_hive_add = 1
+			job_eludium_hive_per_pop = 0.04 # 1 per 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_eludium_robot_add = 1
+			job_eludium_robot_per_pop = 0.04 # 1 per 20
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_floating
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_crystal_guild = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+
+	use_weights_for_terraforming_swap_types = no
+	
+	planet_modifier = {
+		planet_jobs_food_produces_mult = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_crystal_carver_add = 1
+			job_crystal_carver_per_pop = 0.04 # 1 per 25
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_crystal_hive_add = 1
+			job_crystal_hive_per_pop = 0.04 # 1 per 25
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_crystal_robot_add = 1
+			job_crystal_robot_per_pop = 0.04 # 1 per 25
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_crystal
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_holy_temple = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = no
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_priest_add = 2
+			job_priest_per_pop = 0.05 # 1 per 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 3
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_crystal
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_graveyard_well = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+
+	use_weights_for_terraforming_swap_types = no
+	
+	planet_modifier = {
+		planet_jobs_energy_produces_mult = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_tiyanki_roughneck_add = 1
+			job_tiyanki_roughneck_per_pop = 0.04 # 1 per 25
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_gas_extraction_drone_add = 1
+			job_technician_drone_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_gas_extraction_drone_add = 1
+			job_technician_drone_add = 2
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_crystal
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_subsurface_assembly = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare
+
+	use_weights_for_terraforming_swap_types = no
+	
+	planet_modifier = {
+		planet_jobs_engineering_research_produces_mult = 0.05
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_synth_assembler_add = 1
+			job_synth_assembler_per_pop = 0.04 # 1 per 25
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+			job_brain_drone_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_alloy_drone_add = 1
+			job_brain_drone_add = 2
+		}
+	}
+
+	potential = {
+			is_planet_class = pc_crystal
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

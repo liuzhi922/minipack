@@ -1,0 +1,258 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+alloys_expenditure_buffer = { # Buffer, will not be spent
+	resource = alloys 
+	type = expenditure
+	category = buffer
+	
+	potential = {
+		always = no
+	}
+	
+	fraction = {
+		weight = 0.0
+	}	
+}
+
+alloys_expenditure_ships = {
+	resource = alloys 
+	type = expenditure
+	category = ships
+	
+	potential = {
+		IF = {
+			limit = {
+				OR = {
+					used_naval_capacity_percent < 0.95 #As of 2.2.7 the AI will scrap armies when it's over fleet capacity due to a bug. As such this acts as a hard cap for the AI fleets. 
+					is_at_war = yes
+				}
+			}
+			IF = {
+				limit = {
+					has_resource = { type = alloys amount > 175 }
+					OR = {
+						is_at_war = yes #Should always build when at war
+						AND = {
+							has_galactic_wonders = yes
+							has_resource = { type = influence amount > 200 }
+							has_resource = { type = alloys amount > 21000 } #For megastructures to be built the AI should save alloys
+						}
+						AND = {
+							has_galactic_wonders = no
+							IF = {
+								limit = { 
+									has_technology = tech_starbase_4
+								}
+								has_resource = { type = alloys amount > 1200 }
+							}
+							IF = {
+								limit = {
+									used_naval_capacity_percent > 0.9
+									has_resource = { type = influence amount > 200 }
+									has_ascension_perk = ap_voidborn
+									is_at_war = no
+								}
+								has_resource = { type = alloys amount > 3000 }
+							}
+							IF = {
+								limit = {
+									has_technology = tech_battleships
+								}
+								has_resource = { type = alloys amount > 2000 }
+							}#AI should save up for getting its largest ships built first (this helps to correct for the bug with federation fleets only getting corvettes)
+							ELSE_IF = {
+								limit = {
+									has_technology = tech_cruisers
+								}
+								has_resource = { type = alloys amount > 600 }
+							}
+							ELSE_IF = {
+								limit = {
+									ai_colonize_plans > 0
+									used_naval_capacity_percent > 0.35
+								}
+								has_resource = { type = alloys amount > 500 }
+							}#Colonies before navy
+						}
+					}
+				}
+				always = yes
+			}
+			ELSE = {
+				always = NO
+			}
+		}
+		ELSE = {
+			always = no
+		}
+	}
+	
+	static_min = {
+		base = 50000
+	}
+}
+
+alloys_expenditure_ship_upgrades = {
+	resource = alloys 
+	type = expenditure
+	category = ship_upgrades
+	
+	potential = {
+		years_passed > 15
+		OR = {
+			is_at_war = yes
+			has_resource = { type = minerals amount > 700 }
+		}
+	}
+	
+	static_min = {
+		base = 50000
+	}
+}
+
+
+alloys_expenditure_starbases = {
+	resource = alloys 
+	type = expenditure
+	category = starbases
+	
+	potential = {
+		always = yes
+	}
+	
+	fraction = {
+		weight = 0.0
+	}
+	
+	static_min = {
+		base = 150
+		modifier = {
+			add = 14850
+			OR = {
+				is_at_war = yes
+				has_resource = { type = minerals amount > 320 }
+			}
+			OR = {
+				has_resource = { type = alloys amount > 500 }
+				is_at_war = yes
+			}
+		}
+	}
+}
+
+alloys_expenditure_colonies_expand = {
+	resource = alloys 
+	type = expenditure
+	category = colonies
+	
+	potential = {
+		ai_colonize_plans > 0
+	}
+	
+	fraction = {
+		weight = 0.0
+	}
+
+	static_min = {
+		base = 15000
+	}
+}
+
+alloys_expenditure_planets = {
+	resource = alloys 
+	type = expenditure
+	category = planets
+	
+	potential = {
+		always = yes
+	}
+	
+	fraction = {
+		weight = 0
+	}
+	static_min = {
+		base = 15000
+	}
+}
+
+alloys_expenditure_megastructures = {
+	resource = alloys 
+	type = expenditure
+	category = megastructures
+	
+	potential = {
+		is_at_war = no
+		has_galactic_wonders = yes
+	}
+	
+	fraction = {
+		weight = 0
+	}
+
+	static_min = {
+		base = 20000
+	}
+}
+
+############
+## Upkeep ##
+############
+alloys_upkeep_buffer = {	# Buffer, will not be spent
+	resource = alloys 
+	type = upkeep
+	category = buffer
+	
+	potential = {
+		always = no
+	}
+	
+	fraction = {
+		weight = 1
+	}	
+}
+
+alloys_upkeep_ships = {
+	resource = alloys 
+	type = upkeep
+	category = ships
+	
+	potential = {
+		used_naval_capacity_percent < 0.99
+	}
+	
+	fraction = {
+		weight = 0.75
+	}
+}
+
+alloys_upkeep_ships_war = {
+	resource = alloys 
+	type = upkeep
+	category = ships
+	
+	potential = {
+		is_at_war = yes
+	}
+	
+	static_min = {
+		base = 50000
+	}
+}
+
+alloys_upkeep_planets = {
+	resource = alloys 
+	type = upkeep
+	category = planets
+	
+	potential = {
+		always = yes
+	}
+	
+	fraction = {
+		weight = 0.25
+	}
+}

@@ -1,0 +1,316 @@
+######################
+# Lost Empire Wargoals
+######################
+
+wg_total_annihilation = {
+	casus_belli = cb_total_annihilation
+
+	hide_if_no_cb = yes
+	total_war = no
+	
+	surrender_acceptance = -1000
+	war_exhaustion = 0.25
+	
+	set_defender_wargoal = wg_total_annihilation
+
+	potential = {
+		always = yes
+	}
+	possible = {
+		always = yes
+	}
+	
+	on_accept  = {
+		
+		save_event_target_as = Annihilator
+		hidden_effect = {
+			event_target:Annihilator = {
+				country_event = { id = lost_empire.16 }
+				remove_country_flag = ae_crusader
+			}
+			every_country = {
+				if = {
+					limit = {
+						NOT = { is_same_value = root }
+					}
+					add_opinion_modifier = { modifier = opinion_genocidal who = root }
+					add_threat = {
+						who = root
+						amount = 0.50
+					}	
+				}
+			}
+		}
+		from = {
+			hidden_effect = {
+				save_event_target_as = Annihilated
+				event_target:Annihilated = {
+					country_event = { id = lost_empire.13 }
+					remove_country_flag = ae_crusader
+				}
+			}
+			every_subject = {
+				hidden_effect = {
+					country_event = { id = lost_empire.14 }
+				}
+				every_owned_planet = {
+					destroy_colony = yes
+				}
+			}
+			every_owned_planet = {
+				destroy_colony = yes
+			}
+			every_owned_fleet = {
+				destroy_fleet = this
+			}
+		}
+		hidden_effect = {
+			every_playable_country = {
+				limit = {
+					NOR = {
+						is_same_value = from
+						is_same_value = root
+					}
+				}
+				country_event = { id = lost_empire.10 }
+			}	
+		}
+
+	}	
+	
+	on_status_quo = {
+	
+		hidden_effect = {
+			every_country = {
+				if = {
+					limit = {
+						NOT = { is_same_value = root }
+					}
+					add_opinion_modifier = { modifier = opinion_genocidal who = root }
+					add_threat = {
+						who = root
+						amount = 0.50
+					}	
+				}
+				if = {
+					limit = {
+						NOT = { is_same_value = from }
+					}
+					add_opinion_modifier = { modifier = opinion_genocidal who = from }
+					add_threat = {
+						who = from
+						amount = 0.50
+					}	
+				}
+			}
+			
+			root = {
+				save_event_target_as = Annihilator
+				remove_country_flag = ae_crusader
+				country_event = { id = lost_empire.17 }
+			}
+			
+			from = {
+				save_event_target_as = Annihilated
+				remove_country_flag = ae_crusader
+				country_event = { id = lost_empire.17 }
+			}
+			
+			every_playable_country = {
+				limit = {
+					NOT = {
+						is_same_value = root
+						is_same_value = from
+					}
+				}
+				country_event = { id = lost_empire.17 }
+			}	
+		}
+		
+		every_country = {
+			if = {
+				limit = { 	
+					OR = {
+						is_same_value = root
+						is_in_federation_with = root
+						AND = {
+							is_subject = yes
+							exists = overlord
+							overlord = { is_same_value = root }
+						}
+					}
+				}
+				every_controlled_planet = {
+					limit = { is_owned_by = from }
+					destroy_colony = yes
+					hidden_effect = {
+						solar_system = {
+							every_fleet_in_system = {
+								limit = {
+									is_ship_class = shipclass_starbase
+								}
+								destroy_fleet = this
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 	
+					OR = {
+						is_same_value = from
+						is_in_federation_with = from
+						AND = {
+							is_subject = yes
+							exists = overlord
+							overlord = { is_same_value = from }
+						}
+					}
+				}
+				every_controlled_planet = {
+					limit = { is_owned_by = root }
+					destroy_colony = yes
+					hidden_effect = {
+						solar_system = {
+							every_fleet_in_system = {
+								limit = {
+									is_ship_class = shipclass_starbase
+								}
+								destroy_fleet = this
+							}
+						}
+					}
+				}
+			}	
+		}
+	}
+	
+	ai_weight = {
+		weight = 200
+	}
+}
+
+wg_banish_ascendancy = {
+	casus_belli = cb_banish_ascendancy
+
+	hide_if_no_cb = yes
+	total_war = no
+	
+	surrender_acceptance = -100
+	war_exhaustion = 0.25
+	
+	set_defender_wargoal = wg_banish_ascendancy
+
+	potential = {
+		always = yes
+	}
+	possible = {
+		always = yes
+	}
+	
+	on_accept  = {
+		hidden_effect = {
+			save_event_target_as = Banisher
+			event_target:Banisher = {
+				country_event = { id = lost_empire.15 }
+				remove_country_flag = ae_crusader
+			}
+			from = {
+				save_event_target_as = Banished
+				remove_country_flag = ae_crusader
+				every_subject = {
+					set_subject_of = {
+						who = none
+					}
+				}
+				set_subject_of = {
+					who = event_target:Banisher
+					subject_type = banished_ascendancy
+				}				
+				country_event = { id = lost_empire.1002 }
+			}
+			every_playable_country = {
+				limit = {
+					NOT = {
+						is_same_value = root
+						is_same_value = from
+					}
+				}
+				country_event = { id = lost_empire.11 }
+			}	
+		}
+	}	
+	
+	on_status_quo = {
+		remove_country_flag = ae_crusader
+		from = {
+			remove_country_flag = ae_crusader
+			every_subject = {
+				set_subject_of = {
+					who = none
+				}
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+wg_dismantle_ascendancy = {
+	casus_belli = cb_dismantle
+
+	hide_if_no_cb = yes
+	total_war = yes
+	surrender_acceptance = -1000
+	
+	set_defender_wargoal = wg_fe_humiliation
+
+	potential = {
+		is_country_type = default
+		from = {
+			is_country_type = lost_empire
+		}
+	}
+	possible = {
+		always = yes
+	}
+	
+	on_accept  = {
+		hidden_effect = {
+			if = {
+				limit = {
+					overlord = {
+						is_country_type = lost_empire
+						is_same_value = from
+					}
+				}
+				set_subject_of = {
+					who = none
+				}
+			}	
+		}
+	}	
+	
+	on_status_quo = {
+		hidden_effect = {
+			if = {
+				limit = {
+					overlord = {
+						is_country_type = lost_empire
+						is_same_value = from
+					}
+				}
+				set_subject_of = {
+					who = none
+				}
+			}	
+		}
+	}
+	
+	ai_weight = {
+		weight = 200
+	}
+}
+

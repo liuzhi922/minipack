@@ -1,0 +1,492 @@
+namespace = quibble_spy
+
+#SABOTAGE RELATIONS
+
+country_event = { #SEND TO TARGET SELECT ##############################################################
+	id = quibble_spy.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = snitch_home
+		save_event_target_as = tempsabotage
+		country_event = { id = quibble_neighbors.1 }
+	}
+}
+
+
+
+country_event = { #SEND TO FUDNING LEVEL ##############################################################
+	id = quibble_spy.5
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = sabotage
+		country_event = { id = quibble_funding.1 }
+	}
+}
+
+#FAIL
+country_event = {
+	id = quibble_spy.6
+	title = "quibble.6.name"
+	desc = "quibble.6.desc"
+	show_sound = event_default
+
+	custom_gui = quibble_spy_window
+
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_6_room
+	}
+
+	diplomatic = yes
+
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					event_target:firstsabotagetarget = {
+						is_ai = no	
+					}
+				}
+				random_list = {
+					35 = { 
+						event_target:firstsabotagetarget = {
+							country_event = { id = quibble_spy_sab.51 } 
+						}
+					}
+					25 = {  }
+				}
+			}
+			if = {
+				limit = {
+					event_target:secondsabotagetarget = {
+						is_ai = no	
+					}
+				}
+				random_list = {
+					35 = { 
+						event_target:secondsabotagetarget = {
+							country_event = { id = quibble_spy_sab.61 } 
+						}
+					}
+					25 = {  }
+				}
+			}
+		}
+	}
+	option = {
+		name = quibble_spy.6.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			set_country_flag = fail_limit
+			remove_country_flag = current_espionage2
+			random_list = {
+				30 = { 
+					country_event = { id = spy_diplomacy.1 } 
+				}
+				30 = { 
+					country_event = { id = spy_diplomacy.2 } 
+				}
+				25 = {}
+			}
+		}
+	}
+}
+
+#MEDIUM EFFECT
+country_event = {
+	id = quibble_spy.7
+	title = "quibble.7.name"
+	desc = "quibble.7.desc"
+	show_sound = event_conversation
+
+	custom_gui = quibble_spy_window
+
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_4_room
+	}
+
+	diplomatic = yes
+
+	option = {
+		name = quibble_spy.7.a
+		custom_gui = quibble_spy_option
+
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			event_target:firstsabotagetarget = {
+				add_opinion_modifier = {
+					who = event_target:secondsabotagetarget
+					modifier = opinion_quibble_bad_medium
+				}
+			}
+			event_target:secondsabotagetarget = {
+				add_opinion_modifier = {
+					who = event_target:firstsabotagetarget
+					modifier = opinion_quibble_bad_medium
+				}
+			}
+			remove_country_flag = current_espionage2
+			if = {
+				limit = {
+					event_target:firstsabotagetarget = {
+						is_ai = no	
+					}
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = spy_diplomacy.7 } 
+				}
+			}
+			if = {
+				limit = {
+					event_target:secondsabotagetarget = {
+						is_ai = no	
+					}
+				}
+				event_target:secondsabotagetarget = {
+					country_event = { id = spy_diplomacy.8 } 
+				}
+			}
+		}
+	}
+}
+
+#HIGH EFFECT
+country_event = {
+	id = quibble_spy.8
+	title = "quibble.8.name"
+	desc = "quibble.8.desc"
+	show_sound = event_conversation
+
+	custom_gui = quibble_spy_window
+
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_4_room
+	}
+
+	diplomatic = yes
+
+	option = {
+		name = quibble_spy.8.a
+		custom_gui = quibble_spy_option
+		ai_chance = {
+			factor = 100
+		}
+
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			event_target:firstsabotagetarget = {
+				add_opinion_modifier = {
+					who = event_target:secondsabotagetarget
+					modifier = opinion_quibble_bad_high
+				}
+			}
+			event_target:secondsabotagetarget = {
+				add_opinion_modifier = {
+					who = event_target:firstsabotagetarget
+					modifier = opinion_quibble_bad_high
+				}
+			}
+			remove_country_flag = current_espionage2
+			if = {
+				limit = {
+					event_target:firstsabotagetarget = {
+						is_ai = no	
+					}
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = spy_diplomacy.9 } 
+				}
+			}
+			if = {
+				limit = {
+					event_target:secondsabotagetarget = {
+						is_ai = no	
+					}
+				}
+				event_target:secondsabotagetarget = {
+					country_event = { id = spy_diplomacy.10 } 
+				}
+			}
+		}
+	}
+}
+
+################################################################## COMPLICATION EVENTS #################################
+
+country_event = { ### OPPORTUNITY TO CRIT SUCCEED
+	id = quibble_spy.1000
+	title = "spy_diplomacy.1000.name"
+	desc = "spy_diplomacy.1000.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	diplomatic = yes
+	show_sound = event_default
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_2_room
+	}
+
+    option = { #DO IT
+		name = spy_diplomacy.1000.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			random_list = {
+				30 = { #PART 2
+					country_event = { id = quibble_spy.1100 days = 30 random = 10 }
+				}
+				20 = { #PART 3 - STILL MORE FUNDS
+					country_event = { id = quibble_spy.1100 days = 30 random = 10 }
+				}
+			}
+		}
+    }
+    
+    option = { #DONT DO IT
+		name = spy_diplomacy.1000.b
+        custom_gui = quibble_spy_option
+        
+        hidden_effect = {
+            random_list = {
+                10 = { #MEDIUM WIN
+                    country_event = { id = quibble_spy.7 days = 30 random = 10 }
+                }
+                30 = { #HIGH WIN
+                    country_event = { id = quibble_spy.8 days = 30 random = 10 }
+                }
+            }
+        }
+    }
+}
+
+country_event = { ### OOPRTUNITY TO CRIT SUCCEED - PART 2
+	id = quibble_spy.1100
+	title = "spy_diplomacy.1100.name"
+	desc = "spy_diplomacy.1100.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	diplomatic = yes
+	show_sound = event_conversation
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_17_room
+    }
+    
+    option = { #OBTAIN OFFICAL GEAR
+		name = spy_diplomacy.1100.a
+		custom_gui = quibble_spy_option
+		allow = { 
+			resource_stockpile_compare = { 
+				resource = energy value >= 300
+			}
+			resource_stockpile_compare = { 
+				resource = alloys value >= 150
+			}
+			resource_stockpile_compare = { 
+				resource = influence value >= 100
+			}
+		}
+		add_resource = { energy = -300 }
+		add_resource = { alloys = -150 }
+		add_resource = { influence = -100 }
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			random_list = {
+				30 = { #WIN
+					country_event = { id = quibble_spy.1300 days = 30 random = 10 }
+				}
+				5 = { #FAIL THREE-WAY WAR
+					country_event = { id = quibble_spy.1400 days = 30 random = 10 }
+				}
+			}
+		}
+    }
+    
+    option = { #FUND THEM OURSEVLES
+		name = spy_diplomacy.1100.b
+        custom_gui = quibble_spy_option
+        allow = { 
+			resource_stockpile_compare = { 
+				resource = energy value >= 250
+			}
+			resource_stockpile_compare = { 
+				resource = alloys value >= 100
+			}
+			resource_stockpile_compare = { 
+				resource = influence value >= 50
+			}
+		}
+		add_resource = { energy = -250 }
+		add_resource = { alloys = -100 }
+		add_resource = { influence = -50 }
+        hidden_effect = {
+			remove_country_flag = fail_limit
+            random_list = {
+				30 = { #WIN
+					country_event = { id = quibble_spy.1300 days = 30 random = 10 }
+				}
+				10 = { #FAIL THREE-WAY WAR
+					country_event = { id = quibble_spy.1400 days = 30 random = 10 }
+				}
+			}
+        }
+	}
+	
+	option = { #THEY FUND THEMSELVES
+		name = spy_diplomacy.1100.c
+        custom_gui = quibble_spy_option
+        hidden_effect = {
+			remove_country_flag = fail_limit
+            random_list = {
+				30 = { #WIN
+					country_event = { id = quibble_spy.1300 days = 30 random = 10 }
+				}
+				25 = { #FAIL THREE-WAY WAR
+					country_event = { id = quibble_spy.1400 days = 30 random = 10 }
+				}
+			}
+        }
+    }
+}
+
+
+country_event = { ### NORMAL SUCESS - STIL MORE FUNDS
+	id = quibble_spy.1200
+	title = "spy_diplomacy.1200.name"
+	desc = "spy_diplomacy.1200.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	diplomatic = yes
+	show_sound = event_conversation
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_17_room
+    }
+
+    option = { #FUND THEM
+		name = spy_diplomacy.1200.a
+		custom_gui = quibble_spy_option
+		allow = { 
+			resource_stockpile_compare = { 
+				resource = energy value >= 50
+			}
+			resource_stockpile_compare = { 
+				resource = influence value >= 50
+			}
+		}
+		add_resource = { energy = -50 }
+		add_resource = { alloys = -50 }
+		add_resource = { influence = -50 }
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			random_list = {
+				10 = { #MEDIUM WIN
+					country_event = { id = quibble_spy.7 days = 20 random = 10 }
+				}
+				30 = { #HIGH WIN
+					country_event = { id = quibble_spy.8 days = 20 random = 10 }
+				}
+			}
+		}
+    }
+    
+    option = { #CANCEL
+		name = spy_diplomacy.1200.b
+        custom_gui = quibble_spy_option
+        hidden_effect = {
+			remove_country_flag = current_espionage2
+        }
+    }
+}
+
+
+
+country_event = { ### OPPRTUNITY TO CRIT SUCCEED - PART 4 - SUCCEED
+	id = quibble_spy.1300
+	title = "spy_diplomacy.1300.name"
+	desc = "spy_diplomacy.1300.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	diplomatic = yes
+	show_sound = event_planetary_riot
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_18_room
+    }
+
+    option = { #GOOD
+		name = spy_diplomacy.1300.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			remove_country_flag = current_espionage2
+			event_target:firstsabotagetarget = {
+				declare_war = {
+					target = event_target:secondsabotagetarget 
+					attacker_war_goal = wg_humiliation
+				}
+				capital_scope = {
+					add_planet_devastation = 10
+				}
+			}
+		}
+    }
+}
+
+country_event = { ### OOPRTUNITY TO CRIT SUCCEED - PART 5 - FAIL THREE-WAY WAR
+	id = quibble_spy.1400
+	title = "spy_diplomacy.1400.name"
+	desc = "spy_diplomacy.1400.desc"
+	custom_gui = quibble_spy_window
+	is_triggered_only = yes
+	diplomatic = yes
+	show_sound = event_ground_battle
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_19_room
+    }
+
+    option = { #OH SHIT
+		name = spy_diplomacy.1400.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			remove_country_flag = current_espionage2
+			event_target:firstsabotagetarget = {
+				declare_war = {
+					target = event_target:secondsabotagetarget 
+					attacker_war_goal = wg_humiliation
+				}
+				capital_scope = {
+					add_planet_devastation = 10
+				}
+			}
+
+			event_target:firstsabotagetarget = {
+				declare_war = {
+					target = event_target:snitch_home
+					attacker_war_goal = wg_humiliation
+				}
+			}
+			event_target:secondsabotagetarget = {
+				declare_war = {
+					target = event_target:snitch_home 
+					attacker_war_goal = wg_humiliation
+				}
+			}
+		}
+    }
+}

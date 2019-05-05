@@ -1,0 +1,267 @@
+namespace = vb_psi_souleater
+
+@staring_food = 700
+@starving = 150
+@hungry = 300
+@peckish = 450
+@fed = 600
+@well_fed = 750
+@full = 900
+@engorged = 1050
+@max = 1200
+@food_factor = 10
+
+#Initial setting for soul eaters
+country_event = {
+	id = vb_psi_souleater.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { has_civic = civic_vb_psi_soul_eater }
+	
+	immediate = {
+		modify_species = {
+			species = this
+			add_trait = trait_vb_psi_soul_eater
+		}
+		change_dominant_species = { species = last_created }
+		every_owned_pop = {
+			change_species = last_created
+		}
+		set_variable = {
+			which = vb_psi_food value = @staring_food
+		}
+		vb_psi_calculate_sustenance = yes
+	}
+}
+
+#Launching eating calculator
+event = {
+	id = vb_psi_souleater.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_civic = civic_vb_psi_soul_eater 
+				any_owned_pop = {
+					has_trait = trait_vb_psi_soul_eater
+				}
+			}
+			country_event = { id = vb_psi_souleater.3 }
+		}
+	}
+	
+}
+
+#Eating calculator
+country_event = {
+	id = vb_psi_souleater.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		while = {
+			limit = {
+				years_passed > 30
+				check_variable = { which = vb_psi_food value > 0 }
+				any_owned_pop = {
+					has_trait = trait_vb_psi_soul_eater
+					NOT = { has_pop_flag = vb_psi_fed }
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					has_trait = trait_vb_psi_soul_eater
+					NOT = { has_pop_flag = vb_psi_fed }
+				}
+				set_timed_pop_flag = {
+					flag = vb_psi_fed
+					days = 1
+				}
+				prev = {
+					change_variable = { which = vb_psi_food value = -1 }
+				}
+			}
+		}
+		while = {
+			limit = {
+				check_variable = { which = vb_psi_food value < @max }
+				any_owned_pop = {
+					NOR = {
+						has_trait = trait_vb_psi_soul_eater 
+						has_pop_flag = vb_psi_eaten
+						has_trait = trait_cybernetic
+						has_trait = trait_mechanical
+						has_trait = trait_machine_unit
+					}
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_trait = trait_vb_psi_soul_eater 
+						has_pop_flag = vb_psi_eaten
+						has_trait = trait_cybernetic
+						has_trait = trait_mechanical
+						has_trait = trait_machine_unit
+					}
+				}
+				set_timed_pop_flag = {
+					flag = vb_psi_eaten
+					days = 1
+				}
+				prev = {
+					change_variable = { which = vb_psi_food value = @food_factor }
+				}
+				IF = {
+					limit = {
+						OR = {
+							has_trait = trait_latent_psionic
+							has_trait = trait_psionic
+						}
+					}
+					prev = {
+						change_variable = { which = vb_psi_food value = @food_factor }
+					}
+				}
+				add_modifier = {
+					modifier = vb_psi_soul_malaise
+					days = 360
+				}
+				random_list = {
+					15 = { #Pop actually died
+						kill_pop = yes
+							every_country = {
+								limit = {
+									has_communications = ROOT
+									NOT = { is_country = ROOT }
+									is_same_species = PREV
+								}
+								add_opinion_modifier = { who = ROOT modifier = opinion_vb_psi_ate_our_species }
+							}
+						}
+					85 = {  }
+				}
+			}
+		}
+		vb_psi_calculate_sustenance = yes
+	}
+}
+
+
+#Launching eating calculator 2
+event = {
+	id = vb_psi_souleater.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_civic = civic_vb_psi_soul_eater 
+				any_owned_pop = {
+					has_trait = trait_vb_psi_soul_eater
+				}
+			}
+			country_event = { id = vb_psi_souleater.5 }
+		}
+	}
+	
+}
+
+#Eating calculator 2
+country_event = {
+	id = vb_psi_souleater.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		while = {
+			limit = {
+				years_passed > 5
+				check_variable = { which = vb_psi_food value > 0 }
+				any_owned_pop = {
+					has_trait = trait_vb_psi_soul_eater
+					NOT = { has_pop_flag = vb_psi_fed }
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					has_trait = trait_vb_psi_soul_eater
+					NOT = { has_pop_flag = vb_psi_fed }
+				}
+				set_timed_pop_flag = {
+					flag = vb_psi_fed
+					days = 1
+				}
+				prev = {
+					change_variable = { which = vb_psi_food value = -1 }
+				}
+			}
+		}
+		while = {
+			limit = {
+				check_variable = { which = vb_psi_food value < @max }
+				any_owned_pop = {
+					NOR = {
+						has_trait = trait_vb_psi_soul_eater 
+						has_pop_flag = vb_psi_eaten
+						has_trait = trait_cybernetic
+						has_trait = trait_mechanical
+						has_trait = trait_machine_unit
+					}
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = {
+						has_trait = trait_vb_psi_soul_eater 
+						has_pop_flag = vb_psi_eaten
+						has_trait = trait_cybernetic
+						has_trait = trait_mechanical
+						has_trait = trait_machine_unit
+					}
+				}
+				set_timed_pop_flag = {
+					flag = vb_psi_eaten
+					days = 1
+				}
+				prev = {
+					change_variable = { which = vb_psi_food value = @food_factor }
+				}
+				IF = {
+					limit = {
+						OR = {
+							has_trait = trait_latent_psionic
+							has_trait = trait_psionic
+						}
+					}
+					prev = {
+						change_variable = { which = vb_psi_food value = @food_factor }
+					}
+				}
+				add_modifier = {
+					modifier = vb_psi_soul_malaise
+					days = 360
+				}
+				random_list = {
+					15 = { #Pop actually died
+						kill_pop = yes
+							every_country = {
+								limit = {
+									has_communications = ROOT
+									NOT = { is_country = ROOT }
+									is_same_species = PREV
+								}
+								add_opinion_modifier = { who = ROOT modifier = opinion_vb_psi_ate_our_species }
+							}
+					}
+					85 = {  }
+				}
+			}
+		}
+		vb_psi_calculate_sustenance = yes
+	}
+}

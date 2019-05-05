@@ -1,0 +1,193 @@
+@cost0 = 0
+@cost1 = 5
+@cost2 = 10
+@cost3 = 20
+
+@power0 = -5
+@power1 = -10
+@power2 = -15
+@power3 = -25
+
+######################
+# ME_CARRIER COMPUTERS #
+######################
+
+utility_component_template = {
+	key = "SCX_COMBAT_COMPUTER_CARRIER_DEFAULT"
+	size = small
+	icon = "GFX_ship_part_computer_default"
+	icon_frame = 1
+	power = @power0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost0
+		}
+	}
+	ship_behavior = "scx_bhv_carrier_def"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { SCX_Carrier }
+	component_set = "combat_computers"
+	upgrades_to = "SCX_COMBAT_COMPUTER_CARRIER_BASIC"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "SCX_COMBAT_COMPUTER_CARRIER_BASIC"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_basic"
+	icon_frame = 1
+	power = @power1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost1
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { SCX_Carrier }
+	component_set = "combat_computers"
+	ship_behavior = "scx_bhv_carrier_def"
+	prerequisites = { "tech_combat_computers_1" }
+	upgrades_to = "SCX_COMBAT_COMPUTER_CARRIER_ADVANCED"
+	
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = 0.05
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.05
+	}
+	
+	ai_weight = {
+		weight = 2
+	}	
+}
+
+utility_component_template = {
+	key = "SCX_COMBAT_COMPUTER_CARRIER_ADVANCED"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_advanced"
+	icon_frame = 1
+	power = @power2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost2
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { SCX_Carrier }
+	component_set = "combat_computers"
+	ship_behavior = "scx_bhv_carrier_def"
+	prerequisites = { "tech_combat_computers_2" }
+	upgrades_to = "SCX_COMBAT_COMPUTER_CARRIER_SAPIENT"
+
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = 0.10
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.10
+	}
+	
+	ai_weight = {
+		weight = 3
+	}	
+}
+
+utility_component_template = {
+	key = "SCX_COMBAT_COMPUTER_CARRIER_SAPIENT"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { SCX_Carrier }
+	component_set = "combat_computers"
+	ship_behavior = "scx_bhv_carrier_def"
+	prerequisites = { "tech_combat_computers_3" }
+
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = 0.20
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.20
+	}
+	
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = ghost_signal_5_flag
+				has_global_flag = ghost_signal_4_flag
+				has_global_flag = ghost_signal_3_flag
+				has_global_flag = ghost_signal_2_flag
+				has_global_flag = ghost_signal_1_flag
+			}
+		}		
+	}	
+}
+
+
+utility_component_template = {
+	key = "SCX_COMBAT_COMPUTER_CARRIER_AUTONOMOUS"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { SCX_Carrier }
+	component_set = "combat_computers"
+	ship_behavior = "scx_bhv_carrier_def"
+	prerequisites = { "tech_combat_computers_autonomous" }
+
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = 0.20
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.20
+	}
+	
+	ai_weight = {
+		weight = 5	
+	}	
+}
+
+utility_component_template = {
+	key = "SCX_COMBAT_COMPUTER_CARRIER_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_precog"
+	icon_frame = 1
+	power = @power3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	class_restriction = { shipclass_military }
+	size_restriction = { SCX_Carrier }
+	component_set = "combat_computers"
+	ship_behavior = "scx_bhv_carrier_def"
+	prerequisites = { "tech_precognition_interface" }
+
+	modifier = {
+		ship_evasion_mult = 0.10
+	}
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = 0.15
+		weapon_type_strike_craft_weapon_fire_rate_mult = 0.15
+	}
+	
+	ai_weight = {
+		weight = 4
+	}	
+}

@@ -1,0 +1,470 @@
+namespace = quibble_spy_ai_warhelp
+
+country_event = { #LIST AND PICK FIRST TARGETS
+    id = quibble_spy_ai_warhelp.1
+    is_triggered_only = yes
+
+    immediate = {
+        random_neighbor_country = {
+            limit = {
+                AND = {
+                    is_country_type = default
+                    is_at_war_with = event_target:snitch_home
+                }
+            }
+            save_event_target_as = ai_atwarwith
+        }
+        country_event = { id = quibble_spy_ai_warhelp.2 }
+    }
+}
+
+country_event = { #FIND AND LIST SECOND COUNTRIES
+    id = quibble_spy_ai_warhelp.2
+    is_triggered_only = yes
+
+    immediate = {
+        event_target:ai_atwarwith = {
+			random_neighbor_country = {
+				limit = {
+					NOR = {
+                        is_at_war_with = event_target:snitch_home
+                        is_at_war_with = event_target:ai_atwarwith
+                        is_same_empire = event_target:snitch_home
+					}
+                    is_country_type = default
+                    has_communications = event_target:snitch_home
+                    has_communications = event_target:ai_atwarwith
+                }
+				save_event_target_as = target_1
+            }
+            random_neighbor_country = {
+				limit = {
+					NOR = {
+                        is_at_war_with = event_target:snitch_home
+                        is_at_war_with = event_target:ai_atwarwith
+                        is_same_empire = event_target:snitch_home
+                        is_same_value = event_target:target_1
+					}
+                    is_country_type = default
+                    has_communications = event_target:snitch_home
+                    has_communications = event_target:ai_atwarwith
+                }
+				save_event_target_as = target_2
+            }
+            random_neighbor_country = {
+				limit = {
+					NOR = {
+                        is_at_war_with = event_target:snitch_home
+                        is_at_war_with = event_target:ai_atwarwith
+                        is_same_empire = event_target:snitch_home
+                        is_same_value = event_target:target_1
+                        is_same_value = event_target:target_2
+					}
+                    is_country_type = default
+                    has_communications = event_target:snitch_home
+                    has_communications = event_target:ai_atwarwith
+                }
+				save_event_target_as = target_3
+            }
+            random_neighbor_country = {
+				limit = {
+					NOR = {
+                        is_at_war_with = event_target:snitch_home
+                        is_at_war_with = event_target:ai_atwarwith
+                        is_same_empire = event_target:snitch_home
+                        is_same_value = event_target:target_1
+                        is_same_value = event_target:target_2
+                        is_same_value = event_target:target_3
+					}
+                    is_country_type = default
+                    has_communications = event_target:snitch_home
+                    has_communications = event_target:ai_atwarwith
+                }
+				save_event_target_as = target_4
+            }
+            random_neighbor_country = {
+				limit = {
+					NOR = {
+                        is_at_war_with = event_target:snitch_home
+                        is_at_war_with = event_target:ai_atwarwith
+                        is_same_empire = event_target:snitch_home
+                        is_same_value = event_target:target_1
+                        is_same_value = event_target:target_2
+                        is_same_value = event_target:target_3
+                        is_same_value = event_target:target_4
+					}
+                    is_country_type = default
+                    has_communications = event_target:snitch_home
+                    has_communications = event_target:ai_atwarwith
+                }
+				save_event_target_as = target_5
+            }
+            random_neighbor_country = {
+				limit = {
+					NOR = {
+                        is_at_war_with = event_target:snitch_home
+                        is_at_war_with = event_target:ai_atwarwith
+                        is_same_empire = event_target:snitch_home
+                        is_same_value = event_target:target_1
+                        is_same_value = event_target:target_2
+                        is_same_value = event_target:target_3
+                        is_same_value = event_target:target_4
+                        is_same_value = event_target:target_5
+					}
+                    is_country_type = default
+                    has_communications = event_target:snitch_home
+                    has_communications = event_target:ai_atwarwith
+                }
+				save_event_target_as = target_6
+            }
+        }       
+    }
+
+    option = {
+        name = "quibble_spy_ai_warhelp.2.a"
+        trigger = { exists = event_target:station_target_1 }
+		allow = { exists = event_target:station_target_1 }
+        ai_chance = {
+            factor = 100
+
+            modifier = { 
+                factor = 0
+                opinion = { who = event_target:target_1 value = -50 }
+            }
+            modifier = { 
+                factor = 2.00
+                opinion = { who = event_target:target_1 value = 50 }
+            }
+            modifier = { 
+                factor = 2.00
+                event_target:target_1 = {
+                    opinion = { who = event_target:ai_atwarwith value = -50 }
+                }
+            }
+        }
+        hidden_effect = {
+            event_target:target_1 = {
+                save_event_target_as = ai_warhelper
+            }
+            country_event = { id = quibble_spy_ai_warhelp.3 }
+        }
+    }
+    option = {
+        name = "quibble_spy_ai_warhelp.2.b"
+        trigger = { exists = event_target:station_target_2 }
+		allow = { exists = event_target:station_target_2 }
+        ai_chance = {
+            factor = 100
+
+            modifier = { 
+                factor = 0
+                opinion = { who = event_target:target_2 value = -50 }
+            }
+            modifier = { 
+                factor = 2.00
+                opinion = { who = event_target:target_2 value = 50 }
+            }
+            modifier = { 
+                factor = 2.00
+                event_target:target_2 = {
+                    opinion = { who = event_target:ai_atwarwith value = -50 }
+                }
+            }
+        }
+        hidden_effect = {
+            event_target:target_2 = {
+                save_event_target_as = ai_warhelper
+            }
+            country_event = { id = quibble_spy_ai_warhelp.3 }
+        }
+    }
+    option = {
+        name = "quibble_spy_ai_warhelp.2.c"
+        trigger = { exists = event_target:station_target_3 }
+		allow = { exists = event_target:station_target_3 }
+        ai_chance = {
+            factor = 100
+
+            modifier = { 
+                factor = 0
+                opinion = { who = event_target:target_3 value = -50 }
+            }
+            modifier = { 
+                factor = 2.00
+                opinion = { who = event_target:target_3 value = 50 }
+            }
+            modifier = { 
+                factor = 2.00
+                event_target:target_3 = {
+                    opinion = { who = event_target:ai_atwarwith value = -50 }
+                }
+            }
+        }
+        hidden_effect = {
+            event_target:target_3 = {
+                save_event_target_as = ai_warhelper
+            }
+            country_event = { id = quibble_spy_ai_warhelp.3 }
+        }
+    }
+    option = {
+        name = "quibble_spy_ai_warhelp.2.d"
+        trigger = { exists = event_target:station_target_4 }
+		allow = { exists = event_target:station_target_4 }
+        ai_chance = {
+            factor = 100
+
+            modifier = { 
+                factor = 0
+                opinion = { who = event_target:target_4 value = -50 }
+            }
+            modifier = { 
+                factor = 2.00
+                opinion = { who = event_target:target_4 value = 50 }
+            }
+            modifier = { 
+                factor = 2.00
+                event_target:target_4 = {
+                    opinion = { who = event_target:ai_atwarwith value = -50 }
+                }
+            }
+        }
+        hidden_effect = {
+            event_target:target_4 = {
+                save_event_target_as = ai_warhelper
+            }
+            country_event = { id = quibble_spy_ai_warhelp.3 }
+        }
+    }
+    option = {
+        name = "quibble_spy_ai_warhelp.2.e"
+        trigger = { exists = event_target:station_target_5 }
+		allow = { exists = event_target:station_target_5 }
+        ai_chance = {
+            factor = 100
+
+            modifier = { 
+                factor = 0
+                opinion = { who = event_target:target_5 value = -50 }
+            }
+            modifier = { 
+                factor = 2.00
+                opinion = { who = event_target:target_5 value = 50 }
+            }
+            modifier = { 
+                factor = 2.00
+                event_target:target_5 = {
+                    opinion = { who = event_target:ai_atwarwith value = -50 }
+                }
+            }
+        }
+        hidden_effect = {
+            event_target:target_5 = {
+                save_event_target_as = ai_warhelper
+            }
+            country_event = { id = quibble_spy_ai_warhelp.3 }
+        }
+    }
+    option = {
+        name = "quibble_spy_ai_warhelp.2.f"
+        trigger = { exists = event_target:station_target_6 }
+		allow = { exists = event_target:station_target_6 }
+        ai_chance = {
+            factor = 100
+
+            modifier = { 
+                factor = 0
+                opinion = { who = event_target:target_6 value = -50 }
+            }
+            modifier = { 
+                factor = 2.00
+                opinion = { who = event_target:target_6 value = 50 }
+            }
+            modifier = { 
+                factor = 2.00
+                event_target:target_6 = {
+                    opinion = { who = event_target:ai_atwarwith value = -50 }
+                }
+            }
+        }
+        hidden_effect = {
+            event_target:target_6 = {
+                save_event_target_as = ai_warhelper
+            }
+            country_event = { id = quibble_spy_ai_warhelp.3 }
+        }
+    }   
+    option = {
+        name = "quibble_spy_ai_warhelp.2.f"
+        ai_chance = {
+            factor = 1
+        }
+        hidden_effect = {
+            country_event = { id = quibble_spy_ai_menu.2 }
+        }
+    }   
+}
+
+country_event = { #CHECK FOR PLAYER
+    id = quibble_spy_ai_warhelp.3
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                event_target:ai_warhelper = {
+                    is_ai = no	
+                }
+            }
+            event_target:ai_warhelper = {
+                country_event = { id = quibble_spy_ai_warhelp.5 } 
+            }
+        }
+        else = {
+            country_event = { id = quibble_spy_ai_warhelp.4 } 
+        }
+    }
+}
+
+country_event = { #IF HELPER IS AI, CHOOSE TO JOIN
+    id = quibble_spy_ai_warhelp.4
+    is_triggered_only = yes
+    hide_window = yes
+
+    immediate = {
+        random_list = {
+            20 = { #JOIN
+                modifier = { 
+                    factor = 3.00
+                    would_join_war = {
+                        attacker = event_target:snitch_home
+                        defender = event_target:ai_atwarwith
+                        side = event_target:snitch_home 
+                    }
+                }
+                event_target:ai_warhelper = {
+                    join_war = event_target:snitch_home 
+                }
+                event_target:ai_atwarwith = {
+                    add_opinion_modifier = {
+                        who = event_target:ai_warhelper
+                        modifier = opinion_quibble_joinedwar_against
+                    }
+                    country_event = { id = quibble_spy_ai_warhelp.6 }
+                }
+                event_target:snitch_home = {
+                    add_opinion_modifier = {
+                        who = event_target:ai_warhelper
+                        modifier = opinion_quibble_joinedwar_with_high
+                    }
+                }
+            }
+        
+            20 = { #NOT JOIN
+                modifier = { 
+                    factor = 3.40
+                    event_target:ai_warhelper = {
+                        opinion = { who = event_target:snitch_home value = -60 }
+                    }
+                }
+                modifier = { 
+                    factor = 3.40
+                    event_target:ai_warhelper = {
+                        opinion = { who = event_target:ai_atwarwith value = 50 }
+                    }
+                }
+                modifier = { 
+                    factor = 1.50
+                    event_target:ai_warhelper = {
+                        is_at_war = yes
+                    }
+                }
+                modifier = { 
+                    factor = 3.40
+                    relative_power = {
+                        who = event_target:ai_atwarwith
+                        category = fleet
+                        value > equivalent
+                    }
+                }
+            }
+        }
+    }
+}
+
+country_event = { #IF HELPER IS PLAYER, MAKE CHOICE
+    id = quibble_spy_ai_warhelp.5
+    title = "quibble_spy_ai_warhelp.5.name"
+    desc = "quibble_spy_ai_warhelp.5.desc"
+    is_triggered_only = yes
+    diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:snitch_home
+		planet_background = event_target:snitch_home
+		graphical_culture = event_target:snitch_home
+		city_level = event_target:snitch_home
+		room = event_target:snitch_home.ruler
+    }
+    
+    option = {
+        name = "quibble_spy_ai_warhelp.5.a" #join war
+        join_war = event_target:snitch_home 
+        event_target:ai_atwarwith = {
+            add_opinion_modifier = {
+                who = event_target:ai_warhelper
+                modifier = opinion_quibble_joinedwar_against
+            }
+        }
+        event_target:snitch_home = {
+            add_opinion_modifier = {
+                who = event_target:ai_warhelper
+                modifier = opinion_quibble_joinedwar_with_high
+            }
+        }
+    }
+
+    option = {
+        name = "quibble_spy_ai_warhelp.5.b" #refuse
+    }
+
+    option = {
+        name = "quibble_spy_ai_warhelp.5.c" #refuse, but give aid
+        allow = { 
+            resource_stockpile_compare = { resource = energy value >= 200 }
+            resource_stockpile_compare = { resource = alloys value >= 200 }
+		}
+        add_resource = { energy = -200 }
+        add_resource = { alloys = -200 }
+        event_target:snitch_home = {
+            add_opinion_modifier = {
+                who = event_target:ai_warhelper
+                modifier = opinion_quibble_joinedwar_with_low
+            }
+            add_resource = { energy = 200 }
+            add_resource = { alloys = 200 }
+        }
+    }
+}
+
+country_event = { #ALERT WAR TARGET THEY GOT DECCED ON
+    id = quibble_spy_ai_warhelp.6
+    title = "quibble_spy_ai_warhelp.6.name"
+    desc = "quibble_spy_ai_warhelp.6.desc"
+    is_triggered_only = yes
+    show_sound = event_conversation
+
+    diplomatic = yes
+
+    picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = news_room
+    }
+    
+    option = {
+        name = "quibble_spy_ai_warhelp.6"
+        ai_chance = {
+            factor = 100
+        }
+    }
+}

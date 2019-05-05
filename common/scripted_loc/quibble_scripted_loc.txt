@@ -1,0 +1,529 @@
+
+############################################################################################################
+##
+######### CELL NAMES
+##
+############################################################################################################
+
+defined_text = {  #ONE
+	name = get_cell_state_one
+	text = {
+		trigger = {
+			exists = event_target:longterm_cellone
+		}
+		localization_key = exists_cellone
+	}
+	text = {
+		trigger = {
+			NOT = {
+				exists = event_target:longterm_cellone
+			}
+		}
+		localization_key = not_exists_cellone
+	}
+}
+
+#######################################################################
+
+defined_text = {  #TWO
+	name = get_cell_state_two
+	text = {
+		trigger = {
+			exists = event_target:longterm_celltwo
+		}
+		localization_key = exists_celltwo
+	}
+	text = {
+		trigger = {
+			NOT = {
+				exists = event_target:longterm_celltwo
+			}
+		}
+		localization_key = not_exists_celltwo
+	}
+}
+
+#######################################################################
+
+defined_text = {  #THREE
+	name = get_cell_state_three
+	text = {
+		trigger = {
+			exists = event_target:longterm_cellthree
+		}
+		localization_key = exists_cellthree
+	}
+	text = {
+		trigger = {
+			NOT = {
+				exists = event_target:longterm_cellthree
+			}
+		}
+		localization_key = not_exists_cellthree
+	}
+}
+
+#######################################################################
+
+defined_text = {  #FOUR
+	name = get_cell_state_four
+	text = {
+		trigger = {
+			exists = event_target:longterm_cellfour
+		}
+		localization_key = exists_cellfour
+	}
+	text = {
+		trigger = {
+			NOT = {
+				exists = event_target:longterm_cellfour
+			}
+		}
+		localization_key = not_exists_cellfour
+	}
+}
+
+############################################################################################################
+##
+######### OPERATION TYPE
+##
+############################################################################################################
+
+defined_text = { #ONE
+	name = op_type_cell_one
+	text = {
+		trigger = {
+			event_target:longterm_cellone = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellone_industrial
+				}
+			}
+		}
+		localization_key = longterm_cellone_industrial
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellone = {
+				NOR = {
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellone_industrial
+					}
+				}
+				
+			}
+		}
+		localization_key = longterm_cellone_none
+	}
+}
+
+#######################################################################
+
+defined_text = { #TWO
+	name = op_type_cell_two
+	text = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_celltwo_industrial
+				}
+			}
+		}
+		localization_key = longterm_celltwo_industrial
+	}
+	text = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				NOR = {
+					has_relation_flag = {
+						who = root
+						flag = longterm_celltwo_industrial
+					}
+				}
+				
+			}
+		}
+		localization_key = longterm_celltwo_none
+	}
+}
+
+#######################################################################
+
+defined_text = { #THREE
+	name = op_type_cell_three
+	text = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellthree_industrial
+				}
+			}
+		}
+		localization_key = longterm_cellthree_industrial
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				NOR = {
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellthree_industrial
+					}
+				}
+				
+			}
+		}
+		localization_key = longterm_cellthree_none
+	}
+}
+
+#######################################################################
+
+defined_text = { #FOUR
+	name = op_type_cell_four
+	text = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellfour_industrial
+				}
+			}
+		}
+		localization_key = longterm_cellfour_industrial
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				NOR = {
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellfour_industrial
+					}
+				}
+				
+			}
+		}
+		localization_key = longterm_cellfour_none
+	}
+}
+
+
+############################################################################################################
+##
+######### CELL ONE FINANCE
+##
+############################################################################################################
+
+defined_text = { 
+	name = cellone_finance
+	text = {
+		trigger = {
+			event_target:longterm_cellone = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellone_finance_high
+				}
+			}
+		}
+		localization_key = cellone_finance_high
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellone = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellone_finance_medium
+				}
+			}
+		}
+		localization_key = cellone_finance_medium
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellone = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellone_finance_low_med
+				}
+			}
+		}
+		localization_key = cellone_finance_low_med
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellone = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellone_finance_low
+				}
+			}
+		}
+		localization_key = cellone_finance_low
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellone = {
+				NOR = {
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellone_finance_low
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellone_finance_low_med
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellone_finance_medium
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellone_finance_high
+					}
+				}
+			}
+		}
+		localization_key = cellone_finance_none
+	}
+}
+
+############################################################################################################
+##
+######### CELL TWO FINANCE
+##
+############################################################################################################
+
+defined_text = { 
+	name = celltwo_finance
+	text = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_celltwo_finance_high
+				}
+			}
+		}
+		localization_key = celltwo_finance_high
+	}
+	text = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_celltwo_finance_medium
+				}
+			}
+		}
+		localization_key = celltwo_finance_medium
+	}
+	text = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_celltwo_finance_low_med
+				}
+			}
+		}
+		localization_key = celltwo_finance_low_med
+	}
+	text = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_celltwo_finance_low
+				}
+			}
+		}
+		localization_key = celltwo_finance_low
+	}
+	text = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				NOR = {
+					has_relation_flag = {
+						who = root
+						flag = longterm_celltwo_finance_low
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_celltwo_finance_low_med
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_celltwo_finance_medium
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_celltwo_finance_high
+					}
+				}
+			}
+		}
+		localization_key = celltwo_finance_none
+	}
+}
+
+############################################################################################################
+##
+######### CELL THREE FINANCE
+##
+############################################################################################################
+
+defined_text = { 
+	name = cellthree_finance
+	text = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellthree_finance_high
+				}
+			}
+		}
+		localization_key = cellthree_finance_high
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellthree_finance_medium
+				}
+			}
+		}
+		localization_key = cellthree_finance_medium
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellthree_finance_low_med
+				}
+			}
+		}
+		localization_key = cellthree_finance_low_med
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellthree_finance_low
+				}
+			}
+		}
+		localization_key = cellthree_finance_low
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				NOR = {
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellthree_finance_low
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellthree_finance_low_med
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellthree_finance_medium
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellthree_finance_high
+					}
+				}
+			}
+		}
+		localization_key = cellthree_finance_none
+	}
+}
+
+############################################################################################################
+##
+######### CELL FOUR FINANCE
+##
+############################################################################################################
+
+defined_text = { 
+	name = cellfour_finance
+	text = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellfour_finance_high
+				}
+			}
+		}
+		localization_key = cellfour_finance_high
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellfour_finance_medium
+				}
+			}
+		}
+		localization_key = cellfour_finance_medium
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellfour_finance_low_med
+				}
+			}
+		}
+		localization_key = cellfour_finance_low_med
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				has_relation_flag = {
+					who = root
+					flag = longterm_cellfour_finance_low
+				}
+			}
+		}
+		localization_key = cellfour_finance_low
+	}
+	text = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				NOR = {
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellfour_finance_low
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellfour_finance_low_med
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellfour_finance_medium
+					}
+					has_relation_flag = {
+						who = root
+						flag = longterm_cellfour_finance_high
+					}
+				}
+			}
+		}
+		localization_key = cellfour_finance_none
+	}
+}

@@ -1,0 +1,34 @@
+# ##################
+# Placeholder Techs: breakthroughs in the fields of modding folk-lore and loadorderology have allowed us to reduce log spam by 99%
+# ##################
+tech_scx_dreadnought_1 = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }
+	weight = 0
+}
+
+tech_scx_dreadnought_build_speed = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }
+	weight = 0
+}
+
+tech_scx_dreadnought_hull_1 = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }
+	weight = 0
+}
+
+tech_scx_dreadnought_hull_2 = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }
+	weight = 0
+}

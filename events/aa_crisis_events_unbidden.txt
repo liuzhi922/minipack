@@ -1,0 +1,186 @@
+namespace = crisis
+
+@tier1unityreward = 6
+@tier1unitymin = 100
+@tier1unitymax = 500
+@tier2unityreward = 12
+@tier2unitymin = 150
+@tier2unitymax = 1000
+@tier3unityreward = 18
+@tier3unitymin = 250
+@tier3unitymax = 1500
+@tier4unityreward = 24
+@tier4unitymin = 350
+@tier4unitymax = 2000
+@tier5unityreward = 48
+@tier5unitymin = 700
+@tier5unitymax = 4000
+
+# Unbidden Diplomacy
+country_event = {
+	id = crisis.1050
+	title = "TRANSMISSION"
+
+	desc = {
+		text = crisis.1050.desc_01
+		trigger = {
+			NOR = { owner_species = { has_trait = trait_psionic has_trait = trait_mechanical } has_authority = auth_machine_intelligence }
+		}
+	}
+	desc = {
+		text = crisis.1050.desc_02
+		trigger = {
+			NOT = { owner_species = { has_trait = trait_psionic } }
+		}
+	}
+	desc = {
+		text = crisis.1050.desc_03
+		trigger = {
+			NOR = { owner_species = { has_trait = trait_psionic has_trait = trait_mechanical }  has_authority = auth_machine_intelligence }
+		}
+	}
+	desc = {
+		text = crisis.1050.desc_04
+		trigger = {
+			owner_species = { has_trait = trait_psionic }
+		}
+	}
+	desc = {
+		text = crisis.1050.desc_05
+		trigger = {
+			owner_species = { has_trait = trait_psionic }
+		}
+	}
+	desc = {
+		text = crisis.1050.desc_06
+		trigger = {
+			owner_species = { has_trait = trait_psionic }
+		}
+	}
+	desc = {
+		text = crisis.1050.desc_07
+		trigger = {
+			OR = {
+				owner_species = { has_trait = trait_mechanical }
+				has_authority = auth_machine_intelligence
+			}
+		}
+	}
+	desc = {
+		text = crisis.1050.desc_08
+		trigger = {
+			owner_species = { has_trait = trait_gestalt }
+		}
+	}
+	desc = {
+		text = crisis.1050.desc_09
+		trigger = {
+			owner_species = { has_trait = trait_corrupted }
+		}
+	}
+
+	diplomatic = yes
+	force_open = yes
+
+	picture_event_data = {
+		portrait = exd1
+		room = "extradimensional_room"
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = {
+			is_country_type = extradimensional
+		}
+	}
+
+	option = {
+		name = crisis.1050.a
+		response_text = crisis.1050.a.response
+		trigger = {
+			NOR = {
+				has_authority = auth_machine_intelligence
+				owner_species = { has_trait = trait_mechanical }
+				owner_species = { has_trait = trait_gestalt }
+			}
+		}
+	}
+	option = {
+		name = crisis.1050.b
+		trigger = {
+			OR = {
+				has_ethic = "ethic_pacifist"
+				has_ethic = "ethic_fanatic_pacifist"
+			}
+			NOT = { owner_species = { has_trait = trait_gestalt } }
+		}
+		response_text = crisis.1050.b.response
+	}
+	option = {
+		name = crisis.1050.c
+		trigger = {
+			OR = {
+				has_ethic = "ethic_militarist"
+				has_ethic = "ethic_fanatic_militarist"
+				has_authority = auth_machine_intelligence
+			}
+			NOT = { owner_species = { has_trait = trait_gestalt } }
+		}
+		response_text = crisis.1050.c.response
+	}
+	option = {
+		name = crisis.1050.d
+		trigger = {
+			OR = {
+				has_ethic = "ethic_xenophobe"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+			NOT = { owner_species = { has_trait = trait_gestalt } }
+		}
+		response_text = crisis.1050.d.response
+	}
+	option = {
+		name = crisis.1050.e
+		trigger = {
+			OR = {
+				has_ethic = "ethic_xenophile"
+				has_ethic = "ethic_fanatic_xenophile"
+			}
+			NOT = { owner_species = { OR = { has_trait = trait_gestalt has_trait = trait_mechanical } } }
+		}
+		response_text = crisis.1050.e.response
+	}
+	option = {
+		name = crisis.1050.f
+		trigger = {
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+			NOT = { owner_species = { OR = { has_trait = trait_gestalt has_trait = trait_psionic } } }
+		}
+		response_text = crisis.1050.f.response
+	}
+	option = {
+		name = crisis.1050.g
+		trigger = {
+			owner_species = { OR = { has_trait = trait_corrupted has_trait = trait_psionic } }
+		}
+		response_text = crisis.1050.g.response
+	}
+	option = {
+		name = crisis.1050.m
+		trigger = {
+			owner_species = { has_trait = trait_gestalt }
+		}
+		response_text = crisis.1050.m.response
+	}
+	option = {
+		name = crisis.1050.p
+		trigger = {
+			owner_species = { has_trait = trait_gestalt }
+		}
+		response_text = crisis.1050.p.response
+		}
+	}

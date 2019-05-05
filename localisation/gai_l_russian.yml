@@ -1,0 +1,27 @@
+﻿l_russian:
+describe_decision_gai_alloy:0 "Tells the sector AI to make this an alloy focused world"
+decision_gai_alloy:0 "GAI Alloy Focus"
+decision_gai_alloy_desc:0 "You must use this with the balanced sector focus. Do not enable otherwise."
+
+describe_decision_gai_alloy_remove:0 "Removes the alloy focus from this world"
+decision_gai_alloy_remove:0 "Remove Alloy Focus"
+decision_gai_alloy_remove_desc:0 "Removes the alloy focused world flag"
+
+describe_decision_gai_goods:0 "Tells the sector AI to make this a consumer goods focused world"
+decision_gai_goods:0 "GAI Goods Focus"
+decision_gai_goods_desc:0 "You must use this with the balanced sector focus. Do not enable otherwise."
+
+describe_decision_gai_goods_remove:0 "Removes the consumer goods focus from this world"
+decision_gai_goods_remove:0 "Remove Goods Focus"
+decision_gai_goods_remove_desc:0 "Removes the consumer goods focus from this world"
+
+st_balanced:0 "Use GAI"
+st_balanced_desc:0 "The sector will use a simplified version of the building weights from the Glavius's Ultimate AI mod."
+
+gai_goods_focus:0 "Consumer Goods Focus"
+decision_gai_goods_focus:0 "Use Decisions to disable focus"
+gai_goods_focus_desc:0 "This focus should only be used with the balanced sector focus!"
+
+gai_alloy_focus:0 "Alloy Focus"
+decision_gai_alloy_focus:0 "Use Decisions to disable focus"
+gai_alloy_focus_desc:0 "This focus should only be used with the balanced sector focus!"

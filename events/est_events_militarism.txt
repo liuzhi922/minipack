@@ -1,0 +1,248 @@
+namespace = est_militarism
+
+### MILITARISM ###
+
+#Militarism Adopt, gives bonus production while not under Naval Capacity.
+event = {
+	id = est_militarism.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = est_militarism_adopt_picked_flag
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				has_non_swapped_tradition = tr_est_militarism_adopt	
+			}
+			if = {	
+				limit = {
+					Not = {
+						used_naval_capacity_percent < 1.0
+					}
+				}
+				if = {
+					limit = {
+						Not = {
+							has_modifier = mod_est_militarism_adopt
+						}
+					}
+					add_modifier = {
+						modifier = "mod_est_militarism_adopt"
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_modifier = mod_est_militarism_adopt
+					}
+					remove_modifier = "mod_est_militarism_adopt"
+				}
+			}
+		}
+	}	
+}
+	
+#Militarism 5, leader gets xp trait.
+country_event = {
+	id = est_militarism.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_non_swapped_tradition = tr_est_militarism_5
+		from = {
+			Not = {
+				has_trait = leader_trait_admiral_est_militarism_5
+			}		
+			leader_class = admiral 
+		}
+	}
+
+	immediate = {
+		from = {
+			add_trait = leader_trait_admiral_est_militarism_5		
+		}
+	}
+}
+
+#Militarism 5, first 5 admirals require no upkeep
+country_event = {
+	id = est_militarism.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_non_swapped_tradition = tr_est_militarism_5
+	}
+
+	immediate = {
+		set_variable = {
+			which = var_est_militarism_5_count
+			value = 0
+		}
+		every_owned_leader = {
+			limit = {
+				leader_class = admiral
+				has_trait = leader_trait_admiral_est_militarism_5_free
+			}
+			owner = {
+				change_variable = {
+					which = var_est_militarism_5_count
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = var_est_militarism_5_count
+					value < 5
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					leader_class = admiral
+					Not = {
+						has_trait = leader_trait_admiral_est_militarism_5_free
+					}
+					owner = {
+						check_variable = {
+							which = var_est_militarism_5_count
+							value < 5
+						}
+					}
+				}
+				remove_trait = leader_trait_admiral_est_militarism_5
+				add_trait = leader_trait_admiral_est_militarism_5_free
+			}
+		}
+	}
+}
+
+### MIGHT ###
+
+#Might Adopt, gives bonus production while not under Naval Capacity.
+event = {
+	id = est_militarism.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = est_might_adopt_picked_flag
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				has_swapped_tradition = tr_est_might_adopt	
+			}
+			if = {	
+				limit = {
+					Not = {
+						used_naval_capacity_percent < 1.0
+					}
+				}
+				if = {
+					limit = {
+						Not = {
+							has_modifier = mod_est_might_adopt
+						}
+					}
+					add_modifier = {
+						modifier = "mod_est_might_adopt"
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_modifier = mod_est_might_adopt
+					}
+					remove_modifier = "mod_est_might_adopt"
+				}
+			}
+		}
+	}	
+}
+
+#Might 5, leader gets xp trait.
+country_event = {
+	id = est_militarism.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_swapped_tradition = tr_est_might_5
+		from = {
+			Not = {
+				has_trait = leader_trait_admiral_est_might_5
+			}		
+			leader_class = admiral 
+		}
+	}
+
+	immediate = {
+		from = {
+			add_trait = leader_trait_admiral_est_might_5
+		}
+	}
+}
+
+#Might 5, first 5 admirals require no upkeep
+country_event = {
+	id = est_militarism.6
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_swapped_tradition = tr_est_might_5
+	}
+
+	immediate = {
+		set_variable = {
+			which = var_est_might_5_count
+			value = 0
+		}
+		every_owned_leader = {
+			limit = {
+				leader_class = admiral
+				has_trait = leader_trait_admiral_est_might_5_free
+			}
+			owner = {
+				change_variable = {
+					which = var_est_might_5_count
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = var_est_might_5_count
+					value < 5
+				}
+			}
+			every_owned_leader = {
+				limit = {
+					leader_class = admiral
+					Not = {
+						has_trait = leader_trait_admiral_est_might_5_free
+					}
+					owner = {
+						check_variable = {
+							which = var_est_might_5_count
+							value < 5
+						}
+					}
+				}
+				remove_trait = leader_trait_admiral_est_might_5
+				add_trait = leader_trait_admiral_est_might_5_free
+			}
+		}
+	}
+}
+

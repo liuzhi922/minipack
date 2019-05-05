@@ -1,0 +1,41 @@
+# Assault Armies
+gestalt_army = {
+	damage = 1.2
+	morale_damage = 1.5
+	health = 3.75
+	morale = 4.0
+	collateral_damage = 0.5
+	war_exhaustion = 2.0
+	time = 180
+	icon_frame = 9
+	
+	resources = {
+		category = armies
+		cost = {
+			minerals = 250
+		}
+	}
+	
+	prerequisites = { "tech_gestalt_mod" }
+	potential = {
+		from = {
+			OR = {
+				NOT = { 
+				host_has_dlc = "Utopia" 
+				}
+				OR = {
+					has_trait = trait_gestalt
+					has_trait = trait_corrupted
+				}
+			}
+			NOR = {
+					has_trait = "trait_mechanical"
+					has_trait = "trait_machine_unit"
+				is_sapient = no
+			}
+		}
+		owner = {
+			NOT = { has_authority = auth_machine_intelligence }
+		}
+	}
+}

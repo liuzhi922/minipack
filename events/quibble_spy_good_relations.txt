@@ -1,0 +1,164 @@
+namespace = quibble_spy_good_relations
+country_event = {
+	id = quibble_spy_good_relations.5
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = tempboost
+		country_event = { id = quibble_neighbors.1 }
+	}
+}
+
+
+country_event = { #SEND TO FUNDING #######################################
+	id = quibble_spy_good_relations.4
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		save_event_target_as = boost
+		country_event = { id = quibble_funding.1 }
+	}
+}
+#############################################################################
+
+#FAIL
+country_event = {
+	id = quibble_spy_good_relations.6
+	title = "quibble_spy_good_relations.6.name"
+	desc = "quibble_spy_good_relations.6.desc"
+
+	custom_gui = quibble_spy_window
+
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_6_room
+	}
+
+	diplomatic = yes
+
+	option = {
+		name = quibble_spy_good_relations.6.a
+		custom_gui = quibble_spy_option
+
+		hidden_effect = {
+			set_country_flag = fail_limit
+			remove_country_flag = current_espionage2
+			random_list = {
+				30 = {
+					IF = { 
+						limit = {
+							event_target:secondsabotagetarget = {
+								is_ai = yes
+							}
+							
+						}
+						country_event = { id = spy_diplomacy.4 } 
+					}
+					ELSE = {
+
+					}
+				}
+				30 = {
+					IF = { 
+						limit = {
+							event_target:firstsabotagetarget = {
+								is_ai = yes
+							}
+							
+						}
+						country_event = { id = spy_diplomacy.3 } 
+					}
+					ELSE = {
+						
+					}
+				}
+			}
+		}
+	}
+}
+
+#MEDIUM EFFECT
+country_event = {
+	id = quibble_spy_good_relations.7
+	title = "quibble_spy_good_relations.7.name"
+	desc = "quibble_spy_good_relations.7.desc"
+
+	custom_gui = quibble_spy_window
+
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_2_room
+	}
+
+	diplomatic = yes
+
+	option = {
+		name = quibble_spy_good_relations.7.a
+		custom_gui = quibble_spy_option
+
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			event_target:firstsabotagetarget = {
+				add_opinion_modifier = {
+					who = event_target:secondsabotagetarget
+					modifier = opinion_quibble_good_medium
+				}
+			}
+			event_target:secondsabotagetarget = {
+				add_opinion_modifier = {
+					who = event_target:firstsabotagetarget
+					modifier = opinion_quibble_good_medium
+				}
+			}
+			remove_country_flag = current_espionage2
+		}
+
+	}
+}
+
+#HIGH EFFECT
+country_event = {
+	id = quibble_spy_good_relations.8
+	title = "quibble_spy_good_relations.8.name"
+	desc = "quibble_spy_good_relations.8.desc"
+
+	custom_gui = quibble_spy_window
+
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_3_room
+	}
+
+	diplomatic = yes
+
+	option = {
+		name = quibble_spy_good_relations.8.a
+		custom_gui = quibble_spy_option
+
+		hidden_effect = {
+			remove_country_flag = fail_limit
+			event_target:firstsabotagetarget = {
+				add_opinion_modifier = {
+					who = event_target:secondsabotagetarget
+					modifier = opinion_quibble_good_high
+				}
+			}
+			event_target:secondsabotagetarget = {
+				add_opinion_modifier = {
+					who = event_target:firstsabotagetarget
+					modifier = opinion_quibble_good_high
+				}
+			}
+			remove_country_flag = current_espionage2
+		}
+
+	}
+}
+
+

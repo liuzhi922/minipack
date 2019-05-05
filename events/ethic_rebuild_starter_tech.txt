@@ -1,0 +1,86 @@
+namespace = starter_tech
+
+event = {
+	id = starter_tech.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+					NOT = { has_country_flag = flag_startertech_set }
+					is_country_type = default
+			}
+			
+			if = {
+				limit = {
+					has_civic = civic_machine_cult
+				}
+				give_technology = { tech = tech_robotic_workers }
+			}
+			
+			if = {
+				limit = {
+					has_civic = civic_xenologist
+				}
+				give_technology = { tech = tech_genome_mapping }
+				give_technology = { tech = tech_alien_life_studies }
+			}						
+			
+
+			if = {
+				limit = {
+					has_civic = civic_corporate_dominion
+				}
+				give_technology = { tech = tech_space_trading }
+			}		
+
+			if = {
+				limit = {
+					has_civic = civic_keepers_harmony
+				}
+				give_technology = { tech = tech_paradise_dome }
+			}
+			
+			if = {
+				limit = {
+					has_civic = civic_terraforming
+				}
+				give_technology = { tech = tech_terrestrial_sculpting }
+			}		
+
+			if = {
+				limit = {
+					has_civic = civic_enlightment
+				}
+				give_technology = { tech = tech_heritage_site }
+			}	
+
+			if = {
+				limit = {
+					has_civic = civic_cyber_dictatorship
+				}
+				give_technology = { tech = tech_administrative_ai }
+			}			
+			
+			if = {
+				limit = {
+					has_civic = has_valid_civic = civic_commonwealth
+				}
+				give_technology = { tech = tech_universal_welfare }
+			}			
+			
+			if = {
+				limit = {
+					has_civic = has_valid_civic = civic_beacon_of_liberty
+				}
+				give_technology = { tech = tech_innovations }
+			}	
+			
+			
+			
+					
+			        set_country_flag = flag_startertech_set
+		}	
+	}
+}

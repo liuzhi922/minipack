@@ -1,0 +1,83 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_ship_part_omni_lance"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_omni_lance.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_omni_emitter"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_omni_emitter.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_massive_autocannon"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_massive_autocannon.dds"		
+	}
+	spriteType = {
+		name = "GFX_ship_part_omni_cannon"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_omni_cannon.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_hellfire_autocannons"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_hellfire_autocannons.dds"
+	}	
+	spriteType = {
+		name = "GFX_ship_part_ion_disruptor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_ion_disruptor.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_psi_missile_system"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_psi_missile_system.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_shadow_strike_craft"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_shadow_strike_craft.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_terror_cannon"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_terror_cannon.dds"
+	}	
+	spriteType = {
+		name = "GFX_ship_part_portal_generator"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_portal_generator.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_dragon_breath"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dragon_breath.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_stellarite_weapon"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_stellarite_weapon.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_dimensional_weapon"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dimensional_weapon.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_scrapper_weapon"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_scrapper_weapon.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_elder_tiyanki_weapon"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_elder_tiyanki_weapon.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_gray_goo_beam"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_gray_goo_beam.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_dark_energy_shield"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dark_energy_shield.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_dark_matter_plating"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_dark_matter_plating.dds"		
+	}
+	spriteType = {
+		name = "GFX_ship_part_improved_dragon_armor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_improved_dragon_armor.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_titan_armor"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_titan_armor.dds"
+	}
+}

@@ -1,0 +1,305 @@
+namespace = gai_space_farms
+#All event descriptions are now in the common\on actions\ folder
+#This event removes farms and generator districts in favor of offloading them to habitats.
+country_event = {
+	id = gai_space_farms.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		IF = {
+			limit = { NOT = { has_country_flag = gai_research_done } }
+			IF = {
+				limit = { 
+					is_ai = yes 
+					OR = {
+						has_monthly_income = { resource = physics_research  value > 3000 }
+						has_monthly_income = { resource = society_research  value > 3000 }
+						has_monthly_income = { resource = engineering_research  value > 3000 }
+					}
+				}
+				owner = { set_country_flag = gai_research_done }
+			}
+		}
+		IF = {
+			limit = {
+				NOT = { has_country_flag = gai_adjusted_districts }
+			}
+			IF = {
+				limit = {
+					owner = {
+						has_monthly_income = {
+							resource = consumer_goods
+							value > 30
+						}
+						has_monthly_income = {
+							resource = minerals
+							value > 80
+						}
+					}
+				}
+				random_owned_planet = {
+					limit = {
+						OR = {
+							has_building = building_research_lab_1
+							has_building = building_research_lab_2
+							has_building = building_research_lab_3
+							NOT = { has_planet_flag = gai_goods_okay }
+						}
+					}
+					set_timed_planet_flag = { flag = gai_goods_okay days = 720 }
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					OR = {
+						owner = {
+							is_hive_empire = no
+							has_monthly_income = {
+								resource = food
+								value > 300
+							}
+							has_ascension_perk = ap_voidborn
+						}
+						AND = {
+							owner = { 
+								is_hive_empire = no
+								has_monthly_income = {
+									resource = food
+									value > 300
+								}
+							}
+							any_owned_planet = { 
+								has_district = district_farming 
+								NOT = { gai_good_food = yes }
+								free_district_slots = 0
+								free_housing < -2
+								free_building_slots = 0
+							}
+						}
+						AND = { 
+							gai_uses_food = no
+							NOT = { has_country_flag = gai_machines_have_organics }
+							owner = {
+								has_monthly_income = {
+									resource = food
+									value > 0
+								}
+							}
+						}
+					}
+				}
+				IF = {
+					limit = {
+						any_owned_planet = { 
+							NOT = { gai_good_food = yes }
+							has_district = district_farming
+						}
+					}
+					country_event = { id = gai_space_farms.2 } #Districts
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					OR = {
+						owner = { 
+							has_monthly_income = {
+								resource = food
+								value > 300
+							}
+							has_ascension_perk = ap_voidborn
+						}
+						gai_uses_food = no
+					}
+				}
+				IF = {
+					limit = {
+						any_owned_planet = { 
+							is_planet_class = pc_habitat
+							has_building = building_hydroponics_farm
+						}
+					}
+					country_event = { id = gai_space_farms.5 } #Districts
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					owner = {
+						has_monthly_income = {
+							resource = energy
+							value > 300
+						}
+					}
+				}
+				IF = {
+					limit = {
+						any_owned_planet = { 
+							NOT = { gai_good_energy = yes }
+							has_district = district_generator
+						}
+					}
+					country_event = { id = gai_space_farms.3 } #Districts
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					owner = {
+						has_monthly_income = {
+							resource = energy
+							value > 1000
+						}
+					}
+				}
+				country_event = { id = gai_space_farms.30 } #Districts
+			}
+			if = {
+				limit = {
+					any_owned_planet = {
+						is_planet_class = pc_city
+						free_housing > 25
+					}
+				}
+				country_event = { id = gai_space_farms.6 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = gai_space_farms.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_country_flag = { flag = gai_adjusted_districts days = 45 }
+		IF = {
+			limit = {
+				any_owned_planet = { 
+					has_district = district_farming 
+					NOT = { gai_good_food = yes }
+					free_district_slots = 0
+					free_building_slots = 0
+					free_housing < -2
+					OR = {
+						num_free_districts = { type = district_mining value > 1 }
+						num_free_districts = { type = district_generator value > 1 }
+					}
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					has_district = district_farming 
+					NOT = { gai_good_food = yes }
+					free_district_slots = 0
+					free_building_slots = 0
+					free_housing < -2
+				}
+				remove_district = district_farming
+			}
+		}
+		ELSE = {
+			random_owned_planet = {
+				limit = {
+					NOT = { gai_good_food = yes }
+					has_district = district_farming
+				}
+				remove_district = district_farming
+				remove_district = district_farming
+			}
+		}
+	}
+}
+
+country_event = {
+	id = gai_space_farms.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_country_flag = { flag = gai_adjusted_districts days = 45 }
+		random_owned_planet = {
+			limit = {
+				NOT = { gai_good_energy = yes }
+				has_district = district_generator
+				OR = {
+					num_free_districts = { type = district_mining value > 1 }
+					free_housing < 20
+				}
+			}
+			remove_district = district_generator
+			remove_district = district_generator
+		}
+	}
+}
+
+country_event = {
+	id = gai_space_farms.30
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_country_flag = { flag = gai_adjusted_districts days = 45 }
+		random_owned_planet = {
+			limit = {
+				NOT = { gai_good_energy = yes }
+				has_district = district_generator
+				num_free_districts = { type = district_mining value > 1 }
+			}
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_generator
+		}
+	}
+}
+
+country_event = {
+	id = gai_space_farms.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_country_flag = { flag = gai_adjusted_districts days = 45 }
+		random_owned_planet = {
+			limit = {
+				has_building = building_hydroponics_farm
+				is_planet_class = pc_habitat
+			}
+			remove_building = building_hydroponics_farm 
+			remove_building = building_hydroponics_farm
+			remove_building = building_hydroponics_farm
+			remove_building = building_hydroponics_farm
+			remove_building = building_hydroponics_farm
+			remove_building = building_hydroponics_farm
+			remove_building = building_hydroponics_farm
+			remove_building = building_hydroponics_farm
+		}
+	}
+}
+
+country_event = {
+	id = gai_space_farms.6
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				is_planet_class = pc_city
+				free_housing > 25
+			}
+			remove_district = district_arcology_housing
+		}
+	}
+}

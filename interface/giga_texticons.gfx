@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_text_browndwarf"
+		texturefile = "gfx/interface/icons/text_icons/browndwarf.dds"
+	}
+}

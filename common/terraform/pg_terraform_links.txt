@@ -1,0 +1,391 @@
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_barren"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+		from = { has_modifier = terraforming_candidate }
+	}
+	
+	ai_weight = {
+		weight = 20
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_barren_cold"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+		from = { has_modifier = terraforming_candidate }
+	}
+	
+	ai_weight = {
+		weight = 20
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}		
+	}
+}
+
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_nuked"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_gaia"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_desert"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+terraform_link = {
+	from = "pc_arid"
+	to = "pc_shrouded_pg"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_savannah"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}		
+	}
+}
+
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_arctic"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_tundra"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_alpine"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_continental"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_tropical"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}
+
+terraform_link = {
+	to = "pc_shrouded_pg"
+	from = "pc_ocean"
+	
+	energy = 10000
+	duration = 1800
+	
+	condition = {
+		has_ascension_perk = ap_shrouded_worlds
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10
+			from = {
+				any_owned_pop = {
+						has_trait = trait_gestalt
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			from = {
+				is_colony = no
+			}
+		}
+	}
+}

@@ -1,0 +1,61 @@
+#This is here to remove the warning of unemployed pops when they're being assimilated
+
+gai_assimilation = {
+	category = pre_sapients
+	is_capped_by_modifier = no
+	clothes_texture_index = 2
+
+	possible = {
+		has_citizenship_type = { type = citizenship_assimilation }
+	}
+
+	planet_modifier = {
+	}
+	
+	resources = {
+	}
+	
+	weight = {
+		weight = 9000
+	}
+}
+
+fe_roboticist = {
+	category = precursor
+	is_capped_by_modifier = yes
+	building_icon = building_palace
+	clothes_texture_index = 2
+		
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = { 	
+			is_fallen_empire = yes
+			is_fallen_empire_spiritualist = no 
+			is_fallen_machine_empire = no
+		}
+		is_same_species = owner
+		NOR = {
+			has_trait = trait_mechanical
+			has_trait = trait_machine_unit
+		}
+	}
+	
+	planet_modifier = {
+		planet_pop_assembly_add = 20
+	}
+	
+	weight = {
+		weight = 50000
+
+		# crisis purge
+		modifier = {
+			factor = 0.01
+			planet.controller = {
+				OR = {
+					is_country_type = swarm
+					is_country_type = ai_empire
+				}
+			}
+		}
+	}
+}

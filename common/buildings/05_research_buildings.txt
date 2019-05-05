@@ -1,0 +1,647 @@
+#############
+# Science buildings
+#############
+building_research_lab_1 = {	
+	base_buildtime = 360
+
+	category = research
+	
+	potential = {
+		NOT = { owner = { has_country_flag = enough_research } }
+		NOT = { has_modifier = resort_colony }	
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+		OR = {
+			AND = {
+				num_pops >= 10
+				owner = {
+					has_monthly_income = {
+						resource = minerals
+						value >= 70
+					}
+				}
+			}
+			AND = {
+				exists = owner
+				owner = { is_ai = no }
+			}
+		}#Added check to prevent the AI from spamming these in a planets early days
+	}
+
+	allow = {
+		gai_simple_allow = yes
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = slave_colony
+			has_modifier = resort_colony
+		}
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_researcher_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 2
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 2
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 400
+		}
+		upkeep = {
+			energy = 4
+		}
+	}
+	
+	upgrades = {
+		"building_research_lab_2"
+	}
+	
+	prerequisites = {
+		"tech_basic_science_lab_1"
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_researcher_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes } 
+		}
+		text = job_brain_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes } 
+		}
+		text = job_calculator_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 50
+			free_amenities > 0 #Prevents running out of amenities
+			num_buildings = { type = building_research_lab_1 value < 2 } #Prevents AI falling behind on research to all but the most research dedicated players
+			NOR = {
+				has_building = building_research_lab_2
+				has_building = building_research_lab_3
+			}#Check for upgraded buildings
+		}
+		modifier = {
+			weight = 5000
+			num_buildings = { type = building_research_lab_1 value < 4 } #Well okay then.
+			free_amenities > 0 #Prevents running out of amenities
+			is_capital = no
+			NOR = {
+				has_building = building_research_lab_2
+				has_building = building_research_lab_3
+			}
+			gai_difficulty = yes
+		}
+	}#Removed pop check and put it in allow instead
+	
+	on_built = {
+		IF = {
+			limit = {
+				OWNER = {
+					is_ai = yes
+					OR = {
+						has_monthly_income = { 
+							resource = physics_research  
+							value > 2500 
+						}
+						has_monthly_income = { 
+							resource = society_research  
+							value > 2500 
+						}
+						has_monthly_income = { 
+							resource = engineering_research  
+							value > 2500 
+						}
+					}
+				}
+			}
+			owner = { set_country_flag = enough_research }
+		}
+		if = {
+			limit = { 
+				owner = { is_ai = no } 
+			}
+			planet = { set_timed_planet_flag = { flag = gai_maniacs_flag_thanks_man days = 2 } }
+		}
+	}#AI has planety of research and doesn't need more.
+
+}
+
+building_research_lab_2 = {	
+	base_buildtime = 480
+	can_build = no
+
+	category = research
+	
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	destroy_trigger = {
+		OR = {
+			has_modifier = slave_colony
+			has_modifier = resort_colony
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_researcher_add = 5
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 5
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_calculator_add = 5
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 600
+			exotic_gases = 50
+		}
+		upkeep = {
+			energy = 5
+			exotic_gases = 1
+		}
+	}
+	
+	upgrades = {
+		"building_research_lab_3"
+	}
+	
+	prerequisites = {
+		"tech_basic_science_lab_2"
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_researcher_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes } 
+		}
+		text = job_brain_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes } 
+		}
+		text = job_calculator_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			owner = {
+				NOT = { has_country_flag = gai_new_gas_building }
+			}
+			gai_has_exotic_gases = yes
+		}
+	}
+	
+	on_built = {
+		if = {
+			limit = { 
+				owner = { is_ai = no } 
+			}
+			planet = { set_timed_planet_flag = { flag = gai_maniacs_flag_thanks_man days = 2 } }
+		}
+	}
+	on_queued = {
+		IF = {
+			limit = {
+				owner = { has_technology = tech_construction_templates }
+			}
+			owner = { set_timed_country_flag = { flag = gai_new_gas_building days = 300 } }
+		}
+		ELSE_IF = {
+			limit = {
+				owner = { has_technology = tech_assembly_pattern }
+			}
+			owner = { set_timed_country_flag = { flag = gai_new_gas_building days = 420 } }
+		}
+		else = {
+			planet = { 
+				owner = { set_timed_country_flag = { flag = gai_new_gas_building days = 540 } }
+			}
+		}
+	}
+}
+
+building_research_lab_3 = {	
+	base_buildtime = 480
+	can_build = no
+
+	category = research
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		OR = {
+			has_modifier = slave_colony
+			has_modifier = resort_colony
+			AND = {
+				NOT = { has_planet_flag = gai_tech }
+				num_buildings = { type = building_research_lab_3 value > 2 }
+				exists = owner
+				owner = { is_ai = yes }
+			}
+			AND = {
+				num_buildings = { type = building_research_lab_3 value > 1 }
+				exists = owner
+				owner = { has_country_flag = gai_research_done }
+			}
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_researcher_add = 8
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 8
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_calculator_add = 8
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+			exotic_gases = 100
+		}
+		upkeep = {
+			energy = 6
+			exotic_gases = 2
+		}
+	}
+	
+	prerequisites = {
+		"tech_basic_science_lab_3"
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_researcher_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes } 
+		}
+		text = job_brain_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes } 
+		}
+		text = job_calculator_effect_desc
+	}	
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1
+			owner = {
+				NOT = { has_country_flag = gai_new_gas_building }
+			}
+			gai_has_exotic_gases = yes
+		}
+	}
+	
+	on_built = {
+		if = {
+			limit = { 
+				owner = { is_ai = no } 
+			}
+			planet = { set_timed_planet_flag = { flag = gai_maniacs_flag_thanks_man days = 2 } }
+		}
+	}
+	on_queued = {
+		IF = {
+			limit = {
+				owner = { has_technology = tech_construction_templates }
+			}
+			owner = { set_timed_country_flag = { flag = gai_new_gas_building days = 300 } }
+		}
+		ELSE_IF = {
+			limit = {
+				owner = { has_technology = tech_assembly_pattern }
+			}
+			owner = { set_timed_country_flag = { flag = gai_new_gas_building days = 420 } }
+		}
+		else = {
+			planet = { 
+				owner = { set_timed_country_flag = { flag = gai_new_gas_building days = 540 } }
+			}
+		}
+	}
+}
+
+building_institute = {
+	base_buildtime = 480
+	base_cap_amount = 1
+
+	category = research
+
+	potential = {
+		NOT = { has_modifier = resort_colony }	
+		NOT = { has_modifier = slave_colony }
+		exists = owner
+		owner = { is_regular_empire = yes }
+		NOT = { owner = { has_country_flag = gai_research_done } }
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = resort_colony
+			owner = { is_regular_empire = no }
+			owner = { has_country_flag = gai_research_done }
+		}
+	}
+	
+	convert_to = {
+		building_supercomputer
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	
+	planet_modifier = {
+		planet_researchers_produces_mult = 0.15
+		job_head_researcher_add = 1
+	}
+	
+	prerequisites = {
+		"tech_global_research_initiative"
+	}
+	
+	triggered_desc = {
+		text = job_head_researcher_effect_desc
+	}
+	
+	show_tech_unlock_if = { 
+		is_regular_empire = yes
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 10000
+			OR = {
+				has_building = building_research_lab_1
+				has_building = building_research_lab_2
+				has_building = building_research_lab_3
+				has_district = district_hab_science
+			}
+		}#Only build if a research lab is on the planet.
+		modifier = {
+			weight = 1
+			free_building_slots = 0
+		}#Repairs
+	}
+	
+	on_built = {
+		if = {
+			limit = { 
+				owner = { is_ai = no } 
+			}
+			planet = { set_timed_planet_flag = { flag = gai_maniacs_flag_thanks_man days = 2 } }
+		}
+	}
+}
+
+building_supercomputer = {
+	base_buildtime = 480
+	base_cap_amount = 1
+	icon = building_institute
+
+	category = research
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }	
+		NOT = { has_modifier = slave_colony }
+		exists = owner
+		owner = { is_gestalt = yes }
+		NOT = { owner = { has_country_flag = gai_research_done } }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+			owner = { is_gestalt = no }
+			owner = { has_country_flag = gai_research_done }
+		}
+	}
+	
+	convert_to = {
+		building_institute
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	
+	planet_modifier = {
+		planet_researchers_produces_mult = 0.15
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 1
+		}
+	}
+	
+	prerequisites = {
+		"tech_global_research_initiative"
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes } 
+		}
+		text = job_brain_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes } 
+		}
+		text = job_calculator_effect_desc
+	}	
+	
+	show_tech_unlock_if = { 
+		is_gestalt = yes
+	}
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 10000
+			OR = {
+				has_building = building_research_lab_1
+				has_building = building_research_lab_2
+				has_building = building_research_lab_3
+				has_district = district_hab_science
+			}
+		}#Only build if a research lab is on the planet.
+		modifier = {
+			weight = 1
+			free_building_slots = 0
+		}#Repairs
+	}
+	
+	on_built = {
+		if = {
+			limit = { 
+				owner = { is_ai = no } 
+			}
+			planet = { set_timed_planet_flag = { flag = gai_maniacs_flag_thanks_man days = 2 } }
+		}
+	}
+}

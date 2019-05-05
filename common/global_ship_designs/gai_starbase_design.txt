@@ -1,0 +1,16 @@
+# FE Starbase
+ship_design = {
+	name = "NAME_FE_STARBASE"
+	ship_size = starbase_outpost
+	country_type = awakened_fallen_empire
+	section = {
+		template = "OUTPOST_STARBASE_SECTION"
+		slot = "core"
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+	}
+	is_special_buildable = yes
+	allow_buildable_trigger = gai_ae_trigger
+}

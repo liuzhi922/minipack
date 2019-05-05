@@ -1,0 +1,124 @@
+NAI = {
+
+		EXPANSION_OWN_PRIORITY = 1000			# Priority on rebuilding destroyed starbases in colonized systems
+		EXPANSION_CUT_OFF_SYSTEM_PRIORITY = 10	# Priority on systems cut-off inside own territory
+		EXPANSION_BORDERING_PRIORITY = 50000		# How much will AI prioritize bordering systems when building starbases
+		EXPANSION_RESOURCE_PRIORITY = 2			# How much will AI prioritize resource-rich systems when building starbases
+		EXPANSION_COLONY_PRIORITY = 200			# How much will AI prioritize systems with colonizeable worlds when building starbases
+		EXPANSION_BYPASS_PRIORITY = 10			# How much will AI prioritize systems with bypasses when building starbases
+		EXPANSION_MIN_VALUE_FOR_HIGH_PRIO = 10	# How much value does a system need to be considered priority over building up existing systems in borders
+		EXPANSION_RANDOM_AMOUNT	= 50			# A random roll of this amount is added to each system's score when deciding where to expand next
+		EXPANSION_RESOURCE_GAIN_UPKEEP	= 0.5	# When checking candidate systems for outposts, the AI looks at the resources in the system and counts this fraction towards upkeep gain
+		
+		AI_MIN_HABITABILITY_TO_COLONIZE = 0.2	# AI will avoid colonizing planets with habitability lower than this.
+
+		MIN_ASSAULT_ARMIES = 20
+		MAX_ASSAULT_ARMIES = 60
+		ASSAULT_ARMIES_PER_POP = 0.20
+		
+		COMMERCIAL_PACT_ACCEPTANCE_NUM_PACTS = 0	# per existing commercial pact
+		
+		# These are used to determine where the AI should be upgrading its starbases
+		STARBASE_COLONY_SCORE = 25
+		STARBASE_HABITABLE_PLANET_SCORE = 0.1
+		STARBASE_MEGASTRUCTURE_SCORE = 1
+		STARBASE_BYPASS_SCORE = 2
+		STARBASE_CHOKEPOINT_SCORE = 4
+		STARBASE_HAZARD_CHOKEPOINT_SCORE_MULT = 1.5
+		
+		FLEET_DAMAGED_THRESHOLD_WAR = 0.3			# threshold when a fleet will be considered damaged and should return for repairs and avoid certain actions
+		FLEET_DAMAGED_THRESHOLD_PEACE = 0.7		# same but for peace
+		FLEET_ARMOR_DAMAGED_THRESHOLD_WAR = 0.3		# same as above but for armor
+		FLEET_ARMOR_DAMAGED_THRESHOLD_PEACE = 0.6	# same but for armor in peace 
+		
+		
+		TERRAFORM_SAVE_CREDITS = 55				# AI wants to have at least this much energy over after starting a terraforming
+		BLOCKERS_SAVE_CREDITS = 15					# Sector AI wants to have at least this much energy over after starting to clear a blocker
+		MEGASTRUCTURE_SAVE_INFLUENCE = 1			# AI wants to have at least this much influence over after starting a megastructure project
+		AI_AGGRESSIVENESS_PROPAGATOR_BOXED_IN_MULT = 100	# When a warlike 'propagator' personality is boxed in aggression is multiplied by this value
+		AI_AGGRESSIVENESS_BOXED_IN_MULT = 50	# When an AI can no longer peacefully expand aggression is multiplied by this value
+
+		MAX_PLANETS_FOR_BUDGET_FACTOR = 2		# At this amount of planets budget is normalized
+		MAX_SYSTEMS_FOR_BUDGET_FACTOR = 3 # At this amount of systems budget priority shifts to colonies	
+
+		MIN_NAVY_SIZE_FOR_ADMIRAL = 15		# AI wants a navy of at least this fleetsize before buying an admiral
+
+		
+		ABORT_MISSION_LIMIT = 0.5				# MilitaryPower fraction below this level will result in AI escaping battle
+		
+		MAX_EXPANSION_DISTANCE = 5				# Max number of jumps away AI will build starbases
+		MAX_EXPANSION_DISTANCE_SUBJECT = 5		# Max number of jumps away AI subjects will build starbases
+		
+		#####################FLEET##########################
+		MIN_FLEET_FOR_OPERATIONS = 800
+		MIN_FLEET_TO_RESTRICT_SYSTEM = 3000
+		MIN_FLEET_THREAT_TO_CRISIS = 12000
+
+		FLEET_GROUP_ABORT_MISSION_MULT = 1.1 # The wanted amount of fleet power needs to have increased by at least this much for the AI to reconsider a mission once commited
+
+		FLEET_COMBAT_INTERVENTION_MULT = 0.8 #  The AI wont try to intervene in a fleet combat unless that intervention puts us at this percentage of the enemy fleet ( i.e. we wont intervene if the enemy outnumbers us by 2 or more )
+		
+		WAR_DEFENSE_OWN_PRIO = 0					# Priority on defending own borders
+		WAR_DEFENSE_CONTROLLED_PRIO = 1				# Priority on defending conquered systems
+		WAR_DEFENSE_ALLY_PRIO = 0					# Priority on defending allies
+		WAR_DEFENSE_CLAIM_PRIO = 0				# Priority on defending claimed system we have conquered
+		WAR_DEFENSE_OWN_PLANET_PRIO = 0			# Priority on defending own planets in a controlled system
+		WAR_DEFENSE_OWN_PLANET_ENEMY_CONTROL_PRIO = 6 # Priority on defending own planets in an enemy controlled system
+
+		WAR_ATTACK_PLANET_PRIO = 2.0				# Priority on targeting enemy systems with planets
+		WAR_ATTACK_PLANET_CONTROLLED_SYSTEM_PRIO = 10.0				# Priority on targeting enemy planets in controlled systems
+		WAR_ATTACK_STARBASE_PRIO = 25				# Priority on targeting enemy systems with upgraded starbases
+		WAR_DEFEND_STARBASE_PRIO = 1.5				# Priority on defending systems with an upgraded starbase
+		WAR_ATTACK_MILITARY_FLEET_PRIO = 3.0		# Priority on targeting enemy military fleets
+		WAR_ATTACK_JUMP_DRIVE_FLEET_PRIO = 2.0		# Priority on targeting vulnerable jump-drive fleets that are in cooldown
+
+		DEFENSE_STRATEGY_ALLOTMENT_RATIO = 0.9	# How much of the defensive allotment of a country should ( as base ) put into each defensive target
+
+		FLEET_DAMAGED_THRESHOLD_WAR = 0.5			# threshold when a fleet will be considered damaged and should return for repairs and avoid certain actions
+		FLEET_DAMAGED_THRESHOLD_PEACE = 0.5		# same but for peace
+		FLEET_ARMOR_DAMAGED_THRESHOLD_WAR = 0.2		# same as above but for armor
+		FLEET_ARMOR_DAMAGED_THRESHOLD_PEACE = 0.5	# same but for armor in peace
+
+		ENEMY_FLEET_POWER_MULT = 1.2			# AI will need the fleet power of the enemy multiplied by this value to become offensive in an offensive war
+		ENEMY_ARMY_POWER_MULT = 1.2				# AI will need the military power of the enemy multiplied by this value to land armies on planet
+		ENEMY_NEUTRALS_FLEET_POWER_MULT = 1.1	# AI will need the fleet power of the enemy multiplied by this value to attack neutrals and space hostiles
+		ENEMY_FLEET_POWER_HOME_SYSTEM_MULT = 0.75 # AI will need the fleet power of the enemy multiplied by this value to attack hostiles in own systems
+				
+		#FLEET_GROUP_ABORT_MISSION_MULT = 2.0 # The wanted amount of fleet power needs to have increased by at least this much for the AI to reconsider a mission once commited
+		
+		MIN_WANTED_SCIENTISTS = 6						# Below this AI prioritizes influence spending to get more scientists
+		AI_MIN_CURRENCY_TO_SELL = 1500			# If the AI has less currency (energy) than this it will consider selling resources
+		AI_MIN_CURRENCY_INCOME_TO_SELL = 8	# If the AI has less currency (energy) gain last month than this it will consider selling resources
+		
+		
+		EXPANSION_RESOURCE_PRIORITY = 25		# How much will AI prioritize resource-rich systems when building starbases
+		EXPANSION_COLONY_PRIORITY = 200			# How much will AI prioritize systems with colonizeable worlds when building starbases
+		
+		AI_BUDGETING_START_YEARS = 7					# These variables are used for some of the AI's budgeting to ensure it prioritizes the right things early on
+		AI_BUDGETING_MID_YEARS = 35
+		AI_BUDGETING_LATE_YEARS = 80
+		
+		MIN_RESOURCES_TO_BUILD_ORBITAL_STATION = 1	# If a planet has less than this amount of minerals/research don't bother with a mining/research station here
+		
+		AI_MIN_HABITABILITY_TO_COLONIZE = 0.25	# AI will avoid colonizing planets with habitability lower than this.
+		
+		AI_ALLOWED_TO_BUY = { "minerals" "food" "alloys" "consumer_goods" "exotic_gases" "sr_dark_matter" "sr_zro" "rare_crystals" "volatile_motes" "sr_living_metal" }
+		AI_ALLOWED_TO_SELL = { "minerals" "food" "alloys" "consumer_goods" "exotic_gases" "sr_dark_matter" "sr_zro" "rare_crystals" "volatile_motes" "sr_living_metal" }
+		
+		SLAVE_BUY_EC_THRESHOLD = 500 # if we have less ec than this, dont buy slaves
+		SLAVE_BUY_UNEMPLOYMENT_THRESHOLD = 1 # if we have this many unemployed pops, dont buy slaves
+		SLAVE_BUY_HABITABILITY_THRESHOLD = 0.6 # if we cant find a planet with at least this much habitability for a prospective slave, dont buy it
+
+		SLAVE_SELL_EC_THRESHOLD = 250 # if we have more ec than this then don't sell any slaves
+		SLAVE_SELL_TOTAL_UNEMPLOYMENT_THRESHOLD = 4 # if we have at least this many unemployed pops across all planets, sell one of them
+		SLAVE_SELL_PLANET_UNEMPLOYMENT_THRESHOLD = 2 # if any one planet has at least this many unemployed pops, sell a slave
+		
+		MAX_CLAIM_DISTANCE = 6					# Max number of jumps away AI will make claims on
+		MAX_CLAIM_DISTANCE_SUBJECT = 3			# Max number of jumps away AI subjects will make claims on
+		CLAIM_RESOURCE_FACTOR = 2				# How much will AI prioritize resource-rich systems when making claims
+		CLAIM_BYPASS_FACTOR = 2					# How much will AI prioritize systems with bypasses when making claims
+		CLAIM_COLONY_FACTOR = 25				# How much will AI prioritize colonies when making claims
+		CLAIM_BORDERING_FACTOR = 100			# How much will AI prioritize bordering systems when making claims
+		
+		TRADE_VALUE_RESOURCE_INCOME_BASE = 200	# used for calculating resource income effect (lower = more value reduction from higher income)
+	}

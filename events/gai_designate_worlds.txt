@@ -1,0 +1,665 @@
+#This event sets up alloy/consumer goods planets
+#gai_remove_modifier.1 handles removing of these events
+#All event descriptions are now in the common\on actions\ folder
+namespace = gai_designate_worlds
+country_event = {
+	id = gai_designate_worlds.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		IF = {
+			limit = { years_passed > 2 }
+			IF = {
+				limit = {
+					NOR = { 
+						has_global_flag = disable_gai_arcology
+						has_country_flag = gai_tall_empire
+					}
+				}
+				IF = {
+					limit = {
+						NOT = { 
+							any_owned_planet = {
+								is_planet_class = pc_city
+							}
+						}
+					}
+					IF = {
+						limit = {
+							OR = {
+								NOT = { has_country_flag = gai_tall_megacorp }
+								AND = {
+									has_country_flag = gai_tall_megacorp
+									has_ascension_perk = ap_arcology_project
+								}
+							}
+						}
+						IF = {
+							limit = {
+								OR = {
+									is_regular_empire = yes
+									has_valid_civic = civic_machine_servitor
+								}
+								NOT = { 
+									any_owned_planet = { 
+										has_planet_flag = gai_goods
+										is_colony = yes
+									}
+								}
+							}
+							country_event = { id = gai_designate_worlds.3 } #Consumer goods
+						}
+						IF = {
+							limit = {
+								any_owned_planet = { 
+									has_planet_flag = gai_arc
+									is_colony = yes
+									OR = {
+										has_district = district_generator
+										has_district = district_mining
+										has_district = district_farming
+									}
+								}
+							}
+							country_event = { id = gai_designate_worlds.9 } #remove districts to go arcology
+						}
+						IF = {
+							limit = {
+								OR = {
+									has_monthly_income = {
+										resource = minerals
+										value > 500
+									}
+									NOT = {
+										any_owned_planet = { 
+											has_planet_flag = gai_alloy 
+											is_colony = yes
+										}
+									}
+								}
+							}
+							country_event = { id = gai_designate_worlds.2 } #Alloys
+						}
+						IF = {
+							limit = {
+								num_owned_planets > 8
+							}
+							IF = {
+								limit = {
+									used_naval_capacity_percent > 0.90
+									years_passed > 44
+								}
+								IF = {
+									limit = {
+										
+										NOT = { 
+											any_owned_planet = { 
+												has_planet_flag = gai_fleet_planet
+											}
+										}
+									}
+									country_event = { id = gai_designate_worlds.6 } #fleet
+								}
+							}
+							IF = {
+								limit = {
+									NOT = { has_country_flag = gai_clear_worlds }
+									has_ascension_perk = ap_arcology_project
+									has_monthly_income = {
+										resource = minerals
+										value > 100
+									}
+									has_monthly_income = {
+										resource = energy
+										value > 50
+									}
+								}
+								country_event = { id = gai_designate_worlds.4 } #Also removes districts for arcology project different from .9 as .9 is called AFTER .4
+							}
+							IF = {
+								limit = { 
+									not = { has_country_flag = gai_unity_complete } 
+									is_regular_empire = yes
+								}
+								IF = {
+									limit = {
+										num_owned_planets > 9
+										NOT = { any_owned_planet = { has_planet_flag = gai_unity } }
+									}
+									IF = {
+										limit = {
+											num_ascension_perks < 8
+										}
+										country_event = { id = gai_designate_worlds.7 }
+									}
+									ELSE_IF = {
+										limit = { num_ascension_perks = 8 }
+										country_event = { id = gai_designate_worlds.8 }
+									}
+								}
+							}
+							IF = {
+								limit = {
+									OR = {
+										AND = {
+											has_monthly_income = {
+												resource = minerals
+												value > 250
+											}
+											NOT = { 
+												any_owned_planet = { 
+													has_planet_flag = gai_tech_2
+												}
+											}
+										}
+										NOT = { 
+											any_owned_planet = { 
+												has_planet_flag = gai_tech
+											}
+										}
+									}
+								}
+								country_event = { id = gai_designate_worlds.5 } #Research
+							}
+						}
+						IF = {
+							limit = {
+								num_owned_planets > 15
+							}
+							IF = {
+								limit = {
+									used_naval_capacity_percent > 0.90
+									years_passed > 44
+								}
+								IF = {
+									limit = {
+										NOT = { 
+											any_owned_planet = { 
+												has_planet_flag = gai_fleet_planet_2
+											}
+										}
+									}
+									country_event = { id = gai_designate_worlds.6 } #fleet
+								}
+							}
+						}
+						IF = {
+							limit = {
+								years_passed > 50
+								OR = {
+									is_regular_empire = yes
+									has_valid_civic = civic_machine_servitor
+								}
+								NOT = { 
+									any_owned_planet = { 
+										has_planet_flag = gai_goods
+									}
+								}
+							}#Somehow the AI lost its goods world and no valid candidates exist (probably lost to a war).
+							IF = {
+								limit = {
+									has_monthly_income = {
+										resource = energy
+										value < 0
+									}
+									has_technology = tech_terrestrial_sculpting
+									any_planet_within_border = { 
+										is_colonizable = yes
+									}
+								}
+								every_owned_planet = {
+									remove_planet_flag = gai_fleet_planet
+									remove_planet_flag = gai_alloy
+									remove_planet_flag = gai_tech
+									remove_modifier = gai_alloy_focus
+									while = {
+										count = 25
+										remove_building = building_foundry_1
+										remove_building = building_foundry_2
+										remove_building = building_foundry_3
+										remove_building = building_research_lab_1
+										remove_building = building_research_lab_2
+										remove_building = building_research_lab_3
+										remove_building = building_robot_assembly_plant
+										remove_building = building_chemical_plant
+										remove_building = building_crystal_plant
+										remove_building = building_holo_theatres
+									}
+								}
+								IF = {
+									limit = {
+										OR = {
+											is_regular_empire = yes
+											has_valid_civic = civic_machine_servitor
+										}
+										NOT = { 
+											any_owned_planet = { 
+												has_planet_flag = gai_goods
+												is_colony = yes
+											}
+										}
+									}
+									country_event = { id = gai_designate_worlds.3 } #Consumer goods
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						any_owned_planet = {
+							is_planet_class = pc_city
+							free_district_slots = 0
+						}
+						NOT = {
+							any_owned_planet = {
+								has_planet_flag = gai_arc
+							}
+						}
+						has_monthly_income = {
+							resource = minerals
+							value > 100
+						}
+						has_monthly_income = {
+							resource = energy
+							value > 50
+						}
+					}
+					random_owned_planet = {
+						limit = {
+							num_districts = { type = district_mining value < 4 }
+						}
+						while = {
+							count = 25
+							remove_district = district_generator
+						}
+						while = {
+							count = 25
+							remove_district = district_mining
+						}
+						while = {
+							count = 25
+							remove_district = district_farming	
+						}
+						set_timed_planet_flag = { flag = gai_arc days = 36000 }
+						owner = { set_timed_country_flag = { flag = gai_just_cleared days = 3600 } }
+						owner = { set_timed_country_flag = { flag = gai_clear_worlds days = 3600 } }
+					}
+				}
+				else_if = {
+					limit = { NOT = { has_country_flag = gai_just_cleared } }
+					if = {
+						limit = {
+							any_owned_planet = {
+								is_planet_class = pc_city
+							}
+						}
+						set_timed_country_flag = { flag = gai_just_cleared days = 3600 }
+						every_owned_planet = {
+							limit = { gai_focus_world = yes }
+							remove_planet_flag = gai_alloy
+							remove_modifier = gai_alloy_focus
+							remove_planet_flag = gai_goods
+							remove_modifier = gai_goods_focus
+						}
+					}
+				}
+			}
+			IF = {
+				limit = {
+					has_country_flag = gai_tall_empire
+				}
+				IF = {
+					limit = {
+						NOT = { has_country_flag = gai_clear_worlds }
+						has_ascension_perk = ap_arcology_project
+						has_monthly_income = {
+							resource = minerals
+							value > 40
+						}
+						has_monthly_income = {
+							resource = energy
+							value > 40
+						}
+					}
+					country_event = { id = gai_designate_worlds.4 } #Also removes districts for arcology project different from .9 as .9 is called AFTER .4
+				}
+				IF = {
+					limit = {
+						any_owned_planet = { 
+							has_planet_flag = gai_arc
+							is_colony = yes
+							OR = {
+								has_district = district_generator
+								has_district = district_mining
+								has_district = district_farming
+							}
+						}
+					}
+					country_event = { id = gai_designate_worlds.9 } #remove districts to go arcology
+				}
+			}
+		}
+		ELSE = {
+			random_owned_planet = {
+				limit = { is_capital = yes }
+				set_planet_flag = gai_alloy
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = gai_designate_worlds.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		IF = {
+			limit = {
+				NOT = {
+					any_owned_planet = { 
+						has_planet_flag = gai_alloy 
+						is_colony = yes
+					}
+				}
+			}
+			IF = {
+				limit = {
+					NOT = {
+						any_owned_planet = { has_planet_flag = gai_alloy }
+					}
+				}
+				random_owned_planet = {
+					limit = {
+						num_pops > 3
+						OR = {
+							is_capital = no
+							gai_uses_goods = no
+						}
+						is_colony = yes
+						OR = {
+							planet_size > 14
+							years_passed > 30
+						}
+						is_under_colonization = no
+						NOR = { 
+							gai_focus_world = yes
+							gai_new_bad_focus_world = yes
+							is_planet_class = pc_habitat
+							has_planet_flag = gai_goods
+						}
+					}
+					set_planet_flag = gai_alloy
+					add_modifier = { modifier = "gai_alloy_focus" days = -1 }
+					set_timed_planet_flag = { flag = gai_new_alloys days = 3600 }
+				}
+			}
+		}
+		IF = {
+			limit = {
+				has_ascension_perk = ap_arcology_project
+			}
+			random_owned_planet = {
+				limit = {
+					has_planet_flag = gai_alloy
+				}
+				while = {
+					count = 25
+					remove_district = district_farming
+					remove_district = district_mining
+					remove_district = district_generator
+				}
+			}
+		}
+		IF = {
+			limit = {
+				any_owned_planet = { has_planet_flag = gai_alloy }
+				NOT = { any_owned_planet = { has_planet_flag = gai_new_alloys } }
+				has_monthly_income = {
+					resource = minerals
+					value > 333
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_capital = no
+					is_colony = yes
+					num_pops > 3
+					is_under_colonization = no
+					NOR = { 
+						gai_focus_world = yes
+						gai_new_bad_focus_world = yes
+						is_planet_class = pc_habitat
+					}
+				}
+				set_planet_flag = gai_alloy
+				add_modifier = { modifier = "gai_alloy_focus" days = -1 }
+				set_timed_planet_flag = { flag = gai_new_alloys days = 3600 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = gai_designate_worlds.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		IF = {
+			limit = {
+				OR = {
+					is_regular_empire = yes
+					has_valid_civic = civic_machine_servitor
+				}
+				NOT = { 
+					any_owned_planet = { 
+						has_planet_flag = gai_goods 
+						is_colony = yes
+					}
+				}
+			}
+			IF = {
+				limit = {
+					NOT = { 
+						any_owned_planet = { has_planet_flag = gai_goods }
+					}
+				}
+				random_owned_planet = {
+					limit = {
+						#is_capital = no
+						is_colony = yes
+						is_under_colonization = no
+						gai_focus_world = no
+						NOT = { is_planet_class = pc_habitat }
+						NOT = { gai_new_bad_focus_world = yes }
+					}
+					set_planet_flag = gai_goods
+					add_modifier = { modifier = "gai_goods_focus" days = -1 }
+				}
+			}
+		}
+		IF = {
+			limit = {
+				has_ascension_perk = ap_arcology_project
+			}
+			random_owned_planet = {
+				limit = {
+					has_planet_flag = gai_goods
+				}
+				while = {
+					count = 25
+					remove_district = district_farming
+					remove_district = district_mining
+					remove_district = district_generator
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = gai_designate_worlds.4
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				OR = {
+					gai_focus_world = yes
+					has_planet_flag = gai_tall_homeworld
+					owner = { has_country_flag = gai_tall_megacorp }
+				}
+			}
+			remove_modifier = resort_colony
+			remove_modifier = slave_colony
+			while = {
+				count = 25
+				remove_district = district_generator
+			}
+			while = {
+				count = 25
+				remove_district = district_mining
+			}
+			while = {
+				count = 25
+				remove_district = district_farming	
+			}
+			set_timed_planet_flag = { flag = gai_arc days = 36000 }
+			owner = { set_timed_country_flag = { flag = gai_clear_worlds days = 3600 } }
+		}
+	}
+}
+
+country_event = {
+	id = gai_designate_worlds.5
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				NOR = {
+					gai_focus_world = yes
+					is_planet_class = pc_habitat
+					gai_new_bad_focus_world = yes
+					is_under_colonization = yes
+					is_capital = yes
+					is_colony = no
+				}
+				OR = {
+					planet_size < 15
+					owner = { any_owned_planet = { has_planet_flag = gai_alloy } }
+				}
+			}
+			IF = {
+				limit = {
+					owner = {
+						any_owned_planet = {
+							has_planet_flag = gai_tech
+						}
+					}
+				}
+				set_planet_flag = gai_tech_2
+			}
+			set_planet_flag = gai_tech
+		}
+	}
+}
+
+country_event = {
+	id = gai_designate_worlds.6
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				NOR = {
+					gai_focus_world = yes
+					is_planet_class = pc_habitat
+					gai_new_bad_focus_world = yes
+					is_under_colonization = yes
+					is_capital = yes
+					is_colony = no
+				}
+				owner = { any_owned_planet = { has_planet_flag = gai_alloy } }
+			}
+			set_planet_flag = gai_fleet_planet
+			IF = {
+				limit = {
+					owner = { any_owned_planet = { has_planet_flag = gai_fleet_planet } }
+				}
+				set_planet_flag = gai_fleet_planet_2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = gai_designate_worlds.7
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				NOR = {
+					gai_focus_world = yes
+					is_planet_class = pc_habitat
+					gai_new_bad_focus_world = yes
+					is_under_colonization = yes
+					is_capital = yes
+					is_colony = no
+				}
+				owner = { any_owned_planet = { has_planet_flag = gai_alloy } }
+			}
+			set_planet_flag = gai_unity
+		}
+	}
+}
+
+country_event = {
+	id = gai_designate_worlds.8
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = gai_unity_complete
+		random_owned_planet = {
+			limit = {
+				has_planet_flag = gai_unity
+			}
+			remove_planet_flag = gai_unity
+		}
+	}
+}
+
+country_event = {
+	id = gai_designate_worlds.9
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_planet_flag = gai_arc
+				OR = {
+					has_district = district_generator
+					has_district = district_mining
+					has_district = district_farming
+				}
+			}
+			remove_modifier = resort_colony
+			remove_modifier = slave_colony
+			while = {
+				count = 25
+				remove_district = district_generator
+			}
+			while = {
+				count = 25
+				remove_district = district_mining
+			}
+			while = {
+				count = 25
+				remove_district = district_farming	
+			}
+		}
+	}
+}

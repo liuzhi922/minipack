@@ -1,0 +1,418 @@
+# Fallen Weaponry Projects
+
+#Psi Barrier
+special_project = {
+	key = "PROJECT_psi_deflector"
+	cost = 5000
+	#days_to_research = 360
+	tech_department = society_technology
+	picture = GFX_evt_society_research
+	icon = "gfx/interface/icons/situation_log/situation_log_society.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.2011 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Psi Missiles
+special_project = {
+	key = "PROJECT_PSI_MISSILES"
+	cost = 5000
+	#days_to_research = 360
+	tech_department = society_technology
+	picture = GFX_evt_society_research
+	icon = "gfx/interface/icons/situation_log/situation_log_society.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.2012 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Dark Matter Plating
+special_project = {
+	key = "PROJECT_DARK_MATTER_PLATING"
+	cost = 5000
+	#days_to_research = 360
+	tech_department = engineering_technology
+	picture = GFX_evt_society_research
+	icon = "gfx/interface/icons/situation_log/situation_log_engineering.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.2021 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Shadow Strike Craft
+special_project = {
+	key = "PROJECT_SHADOW_STRIKE_CRAFT"
+	cost = 5000
+	#days_to_research = 360
+	tech_department = engineering_technology
+	picture = GFX_evt_society_research
+	icon = "gfx/interface/icons/situation_log/situation_log_engineering.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.2022 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Improved Dragon Armor
+special_project = {
+	key = "PROJECT_IMPROVED_DRAGON_ARMOR"
+	cost = 5000
+	#days_to_research = 360
+	tech_department = engineering_technology
+	picture = GFX_evt_society_research
+	icon = "gfx/interface/icons/situation_log/situation_log_engineering.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.2031 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Hellfire Autocannon
+special_project = {
+	key = "PROJECT_HELLFIRE_AUTOCANNON"
+	cost = 5000
+	#days_to_research = 360
+	tech_department = engineering_technology
+	picture = GFX_evt_society_research
+	icon = "gfx/interface/icons/situation_log/situation_log_engineering.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.2032 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Titan Armor
+special_project = {
+	key = "PROJECT_TITAN_ARMOR"
+	cost = 5000
+	#days_to_research = 360
+	tech_department = engineering_technology
+	picture = GFX_evt_society_research
+	icon = "gfx/interface/icons/situation_log/situation_log_engineering.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.2041 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Terror Cannon
+special_project = {
+	key = "PROJECT_TERROR_CANNON"
+	cost = 5000
+	#days_to_research = 360
+	tech_department = engineering_technology
+	picture = GFX_evt_society_research
+	icon = "gfx/interface/icons/situation_log/situation_log_engineering.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.2042 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Dark Energy Shield
+special_project = {
+	key = "PROJECT_DARK_ENERGY_SHIELD"
+	cost = 5000
+	#days_to_research = 360
+	tech_department = physics_technology
+	picture = GFX_evt_society_research
+	icon = "gfx/interface/icons/situation_log/situation_log_physics.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.2051 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Ion Disruptor
+special_project = {
+	key = "PROJECT_ION_DISRUPTOR"
+	cost = 5000
+	#days_to_research = 360
+	tech_department = physics_technology
+	picture = GFX_evt_society_research
+	icon = "gfx/interface/icons/situation_log/situation_log_physics.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.2052 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Omni Arc Emitter
+special_project = {
+	key = "PROJECT_OMNI_EMITTER"
+	cost = 10000
+	#days_to_research = 360
+	tech_department = physics_technology
+	picture = GFX_evt_fallen_empire
+	icon = "gfx/interface/icons/situation_log/situation_log_physics.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.301 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Omni Lance
+special_project = {
+	key = "PROJECT_OMNI_LANCE"
+	cost = 10000
+	#days_to_research = 360
+	tech_department = physics_technology
+	picture = GFX_evt_fallen_empire
+	icon = "gfx/interface/icons/situation_log/situation_log_physics.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.302 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Omni Cannon
+special_project = {
+	key = "PROJECT_OMNI_CANNON"
+	cost = 10000
+	#days_to_research = 360
+	tech_department = engineering_technology
+	picture = GFX_evt_fallen_empire
+	icon = "gfx/interface/icons/situation_log/situation_log_engineering.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.303 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Massive Autocannons
+special_project = {
+	key = "PROJECT_MASSIVE_AUTOCANNONS"
+	cost = 10000
+	#days_to_research = 360
+	tech_department = engineering_technology
+	picture = GFX_evt_fallen_empire
+	icon = "gfx/interface/icons/situation_log/situation_log_engineering.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.304 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Portal Generator
+special_project = {
+	key = "PROJECT_PORTAL_GENERATOR"
+	cost = 15000
+	#days_to_research = 360
+	tech_department = physics_technology
+	picture = GFX_evt_fallen_empire_awakes
+	icon = "gfx/interface/icons/situation_log/situation_log_physics.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.401 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Dimensional Weapon
+special_project = {
+	key = "PROJECT_DIMENSIONAL_WEAPON"
+	cost = 15000
+	#days_to_research = 360
+	tech_department = physics_technology
+	picture = GFX_evt_fallen_empire_awakes
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.402 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Dragon Breath
+special_project = {
+	key = "PROJECT_DRAGON_BREATH"
+	cost = 15000
+	#days_to_research = 360
+	tech_department = physics_technology
+	picture = GFX_evt_fallen_empire_awakes
+	icon = "gfx/interface/icons/situation_log/situation_log_physics.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.403 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Stellarite Weapon
+special_project = {
+	key = "PROJECT_STELLARITE_WEAPON"
+	cost = 15000
+	#days_to_research = 360
+	tech_department = physics_technology
+	picture = GFX_evt_fallen_empire_awakes
+	icon = "gfx/interface/icons/situation_log/situation_log_physics.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.404 }
+	}
+	
+	on_fail = {
+	}
+}
+
+#Scrapper Weapon
+special_project = {
+	key = "PROJECT_SCRAPPER_WEAPON"
+	cost = 15000
+	#days_to_research = 360
+	tech_department = engineering_technology
+	picture = GFX_evt_fallen_empire_awakes
+	icon = "gfx/interface/icons/situation_log/situation_log_engineering.dds"
+	
+	event_scope = planet_event
+
+	abort_trigger = {
+	}
+	
+	on_success = {
+		planet_event = { id = fallen_weaponry.405 }
+	}
+	
+	on_fail = {
+	}
+}

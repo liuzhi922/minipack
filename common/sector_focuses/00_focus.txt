@@ -1,0 +1,3724 @@
+# Critially important things goes here, such as amenities, housing and countering crime
+# Should be blocked unless they are not needed
+basic = {
+	hidden = yes
+
+	clear_blockers = yes
+	district = {
+		key = district_city
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1000000
+				planet = {
+					planet_devastation < 1
+					years_passed > 10
+					count_pops > 11
+					free_housing < 4
+				}
+			}
+			modifier = {
+				weight = 1000000
+				planet = {
+					planet_devastation < 1
+					years_passed > 11
+					NOT = { has_planet_flag = gai_fleet_planet}
+					gai_focus_world = yes
+					free_housing < 10
+					free_amenities > 2
+				}
+			}#Focus worlds need more housing
+			modifier = {
+				weight = 25000
+				has_planet_flag = gai_arc
+			}
+			modifier = {
+				weight = 1000000
+				NOR = { 
+					num_free_districts = { type = district_mining_uncapped value > 0 }
+					num_free_districts = { type = district_generator_uncapped value > 0 }
+				}
+				num_free_districts = { type = district_mining value = 0 }
+				OR = {
+					num_free_districts = { type = district_generator value = 0 }
+					owner = {
+						has_monthly_income = {
+							resource = energy
+							value > 150
+						}
+					}
+				}
+				OR = {
+					owner = {
+						has_monthly_income = {
+							resource = food
+							value > 150
+						}
+					}
+					num_free_districts = { type = district_farming value = 0 }
+					owner = { gai_uses_food = no }
+				}
+			}
+		}
+	}
+
+	district = {
+		key = district_hive
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1000000
+				planet = {
+					planet_devastation < 1
+					years_passed > 10
+					count_pops > 11
+					free_housing < 4
+				}
+			}
+			modifier = {
+				weight = 1000000
+				planet = {
+					planet_devastation < 1
+					years_passed > 11
+					NOT = { has_planet_flag = gai_fleet_planet}
+					gai_focus_world = yes
+					free_housing < 10
+					free_amenities > 2
+				}
+			}#Focus worlds need more housing
+			modifier = {
+				weight = 1000000
+				num_free_districts = { type = district_mining value = 0 }
+				NOT = { is_planet_class = pc_hive }
+				NOR = { 
+					num_free_districts = { type = district_mining_uncapped value > 0 }
+					num_free_districts = { type = district_generator_uncapped value > 0 }
+				}
+				OR = {
+					num_free_districts = { type = district_generator value = 0 }
+					owner = {
+						has_monthly_income = {
+							resource = energy
+							value > 150
+						}
+					}
+				}
+				OR = {
+					owner = {
+						has_monthly_income = {
+							resource = food
+							value > 150
+						}
+					}
+					num_free_districts = { type = district_farming value = 0 }
+				}
+			}
+		}
+	}
+
+	district = {
+		key = district_nexus
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1000000
+				planet = {
+					planet_devastation < 1
+					years_passed > 10
+					count_pops > 11
+					free_housing < 4
+				}
+			}
+			modifier = {
+				weight = 1000000
+				planet = {
+					planet_devastation < 1
+					years_passed > 11
+					NOT = { has_planet_flag = gai_fleet_planet}
+					gai_focus_world = yes
+					free_housing < 10
+					free_amenities > 2
+				}
+			}#Focus worlds need more housing
+			modifier = {
+				weight = 1000000
+				NOT = { is_planet_class = pc_machine }
+				NOR = { 
+					num_free_districts = { type = district_mining_uncapped value > 0 }
+					num_free_districts = { type = district_generator_uncapped value > 0 }
+				}
+				num_free_districts = { type = district_mining value = 0 }
+				OR = {
+					num_free_districts = { type = district_generator value = 0 }
+					owner = {
+						has_monthly_income = {
+							resource = energy
+							value > 150
+						}
+					}
+				}
+				OR = {
+					owner = {
+						has_monthly_income = {
+							resource = food
+							value > 150
+						}
+					}
+					owner = { gai_uses_food = no }
+					num_free_districts = { type = district_farming value = 0 }
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_luxury_residence
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 75 #High weight to gurantee that if the below is true then the AI should build it
+				free_housing < 5 #Prevents the AI from running out of residences when nearly out of tiles
+				OR = {
+					free_jobs > 0 #prevents spamming of residence buildings when no jobs are open
+					AND = {
+						free_housing <= 0 #Prevents the AI from running out of residences when nearly out of tiles
+						not = { any_owned_pop = { is_unemployed = yes } }
+					}
+				}
+				free_district_slots = 0 #Do not build when city districts can still be built
+				NOT = { is_planet_class = pc_habitat }
+				IF = {
+					limit = {
+						has_building = building_luxury_residence
+						owner = {
+							has_technology = tech_paradise_dome
+							NOT = { has_country_flag = gai_new_crystal_building }
+							gai_has_crystals = yes
+						}
+					}
+					always = no
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_paradise_dome
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				NOT = { owner = { has_country_flag = gai_new_crystal_building } }
+				gai_has_crystals = yes
+			}
+		}
+	}
+
+	building = {
+		key = building_communal_housing
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 75 #High weight to gurantee that if the below is true then the AI should build it
+				free_housing < 5 #Prevents the AI from running out of residences when nearly out of tiles
+				OR = {
+					free_jobs > 0 #prevents spamming of residence buildings when no jobs are open
+					AND = {
+						free_housing <= 0 #Prevents the AI from running out of residences when nearly out of tiles
+						not = { any_owned_pop = { is_unemployed = yes } }
+					}
+				}
+				free_district_slots = 0 #Do not build when city districts can still be built
+				NOT = { is_planet_class = pc_habitat }
+				IF = {
+					limit = {
+						has_building = building_luxury_residence
+						owner = {
+							has_technology = tech_paradise_dome
+							NOT = { has_country_flag = gai_new_crystal_building }
+							gai_has_crystals = yes
+						}
+					}
+					always = no
+				}
+			}
+		}
+
+	}
+	
+	building = {
+		key = building_communal_housing_large
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				NOT = { owner = { has_country_flag = gai_new_crystal_building } }
+				gai_has_crystals = yes
+			}
+		}
+	}
+	
+	building = {
+		key = building_drone_storage
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 75 #High weight to gurantee that if the below is true then the AI should build it
+				free_housing < 5 #Prevents the AI from running out of residences when nearly out of tiles
+				OR = {
+					free_jobs > 0 #prevents spamming of residence buildings when no jobs are open
+					AND = {
+						free_housing <= 0 #Prevents the AI from running out of residences when nearly out of tiles
+						not = { any_owned_pop = { is_unemployed = yes } }
+					}
+				}
+				free_district_slots = 0 #Do not build when city districts can still be built
+				NOT = { is_planet_class = pc_habitat }
+				IF = {
+					limit = {
+						has_building = building_luxury_residence
+						owner = {
+							has_technology = tech_paradise_dome
+							NOT = { has_country_flag = gai_new_crystal_building }
+							gai_has_crystals = yes
+						}
+					}
+					always = no
+				}
+			}
+		}
+
+	}
+	
+	building = {
+		key = building_drone_megastorage
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				NOT = { owner = { has_country_flag = gai_new_crystal_building } }
+				gai_has_crystals = yes
+			}
+		}
+	}
+	
+	building = {
+		key = building_hive_warren
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 75 #High weight to gurantee that if the below is true then the AI should build it
+				free_housing < 5 #Prevents the AI from running out of residences when nearly out of tiles
+				OR = {
+					free_jobs > 0 #prevents spamming of residence buildings when no jobs are open
+					AND = {
+						free_housing <= 0 #Prevents the AI from running out of residences when nearly out of tiles
+						not = { any_owned_pop = { is_unemployed = yes } }
+					}
+				}
+				free_district_slots = 0 #Do not build when city districts can still be built
+				NOT = { is_planet_class = pc_habitat }
+				IF = {
+					limit = {
+						has_building = building_luxury_residence
+						owner = {
+							has_technology = tech_paradise_dome
+							NOT = { has_country_flag = gai_new_crystal_building }
+							gai_has_crystals = yes
+						}
+					}
+					always = no
+				}
+			}
+		}
+
+	}
+	
+	building = {
+		key = building_expanded_warren
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				NOT = { owner = { has_country_flag = gai_new_crystal_building } }
+				gai_has_crystals = yes
+			}
+		}
+	}
+	
+	building = {
+		key = building_holo_theatres
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				free_amenities < 5
+				has_upgraded_capital = yes #Added as the first level upgraded capital comes with amenities and allows this to be pushed off until 15 pops or 20.
+				OR = {
+					free_jobs < 3 #makes it come before any free_jobs = 0 building checks. This makes the build a high priority building.
+					NOT = { has_building = building_holo_theatres }
+					NOT = { has_building = building_hyper_entertainment_forum }
+				}
+			}
+		}
+
+	}
+
+	building = {
+		key = building_hyper_entertainment_forum
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_exotic_gases = yes
+				owner = {
+					NOT = { has_country_flag = gai_new_gas_building }
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 4
+					}
+				}
+			}
+		}
+
+	}
+
+	building = {
+		key = building_clinic
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				count_pops = { limit = { is_sapient = yes } count < 75 }
+				gai_stop_pop = no
+				NOT = { is_planet_class = pc_habitat }
+			}
+		}
+
+	}
+
+	building = {
+		key = building_hospital
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_exotic_gases = yes
+				NOT = { owner = { has_country_flag = gai_new_gas_building } }
+			}
+		}
+
+	}
+
+	building = {
+		key = building_maintenance_depot
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 75
+				free_amenities < 3
+				OR = {
+					free_jobs < 3
+					NOT = { has_building = building_maintenance_depot }
+				}
+				if = {
+					limit = { 
+						owner = { is_hive_empire = yes }
+					}
+					has_building = building_spawning_pool
+				}
+				if = {
+					limit = {
+						owner = { has_valid_civic = civic_machine_servitor }
+					}
+					OR = {
+						has_building = building_organic_sanctuary
+						has_building = building_organic_paradise
+					}
+				}
+			}
+		}
+
+	}
+
+	building = {
+		key = building_spawning_pool
+		weight = {
+			weight = 100
+		}
+	}
+	
+	building = {
+		key = building_overseer_homes
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				planet_crime > 15 #under 15 is usually handled by the planet upgrading its capital
+				free_jobs < 2 
+			}
+		}
+
+	}
+	
+	building = {
+		key = building_slave_huts
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50 #High weight to gurantee that if the below is true then the AI should build it
+				free_housing < 5 #Prevents the AI from running out of residences when nearly out of tiles
+				free_jobs > 0 #prevents spamming of residence buildings when no jobs are open
+				free_district_slots = 0 #Do not build when city districts can still be built
+			}
+		}
+
+	}
+
+	building = {
+		key = building_robot_assembly_plant
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				NOT = { is_planet_class = pc_habitat }
+				num_buildings = { type = any value < 15 }
+			}
+		}
+
+	}
+
+	building = {
+		key = building_machine_assembly_plant
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				NOT = { is_planet_class = pc_habitat }
+				num_buildings = { type = any value < 15 }
+			}
+		}
+
+	}
+	
+	building = {
+		key = building_nuumismatic_shrine
+		weight = {
+			weight = 75
+			modifier = {
+				factor = 0
+				is_planet_class = pc_habitat
+			}
+		}
+
+	}
+
+	building = {
+		key = building_precinct_house
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				planet_crime > 15
+				NOR = {
+					AND = {
+						has_building = building_precinct_house
+						owner = { has_technology = tech_colonial_centralization }
+					}
+					has_building = building_hall_judgment
+					num_buildings = { type = building_precinct_house value = 3 }
+				}
+			}
+			modifier = {
+				weight = 1
+				free_building_slots = 0
+			}#Enables repairs of damaged buildings
+		}
+
+	}
+	
+	building = {
+		key = building_hall_judgement
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				NOT = {owner = { has_country_flag = gai_new_gas_building } }
+				gai_has_exotic_gases = yes
+			}
+		}
+	}
+
+	building = { # in case it's been demolished for some reason
+		key = building_colony_shelter
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = {
+		key = building_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = {
+		key = building_major_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = {
+		key = building_system_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = { # in case it's been demolished for some reason
+		key = building_deployment_post
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = {
+		key = building_machine_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = {
+		key = building_machine_major_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = {
+		key = building_machine_system_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = {
+		key = building_hive_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = {
+		key = building_hive_major_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = { # in case it's been demolished for some reason
+		key = building_hab_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = {
+		key = building_hab_major_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = { # in case it's been demolished for some reason
+		key = building_resort_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = {
+		key = building_resort_major_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = { # in case it's been demolished for some reason
+		key = building_slave_capital
+		weight = {
+			weight = 100000
+		}
+	}
+
+	building = {
+		key = building_slave_major_capital
+		weight = {
+			weight = 100000
+		}
+	}
+}
+
+#############
+# GAI
+#############
+
+balanced = {
+
+	ai_weight = {
+		weight = 100
+	}
+	
+	district = {
+		key = district_generator
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 500
+				free_jobs < 3
+				NOT = { has_planet_flag = gai_arc }
+				owner = {
+					has_monthly_income = {
+						resource = energy
+						value < 150
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				owner = {
+					has_monthly_income = {
+						resource = energy
+						value < 0
+					}
+				}
+			}
+			modifier = {
+				weight = 250000
+				NOT = { has_planet_flag = gai_arc }
+				free_jobs = 0
+				num_free_districts = { type = district_mining value = 0 }
+			}
+		}
+	}
+
+	district = {
+		key = district_mining
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 500
+				free_jobs < 3
+				NOT = { has_planet_flag = gai_arc }
+			}
+			modifier = {
+				factor = 1.75
+				OR = {
+					gai_work_minerals = yes
+					gai_work_minerals_goods = yes
+				}
+			}
+			modifier = {
+				weight = 250000
+				NOT = { has_planet_flag = gai_arc }
+				OR = {
+					free_jobs = 0
+					any_owned_pop = {
+						is_unemployed = yes
+						NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+						NOR = {
+							is_pop_category = specialist
+							is_pop_category = ruler
+						}
+					}
+				}
+			}
+		}
+	}
+
+	district = {
+		key = district_farming
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 500
+				NOT = { has_planet_flag = gai_arc }
+				free_jobs < 3
+			}
+			modifier = {
+				factor = 2
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value < 0
+					}
+				}
+			}
+			modifier = {
+				weight = 250000
+				num_free_districts = { type = district_mining value = 0 }
+				num_free_districts = { type = district_generator value = 0 }
+				OR = {
+					free_jobs = 0
+					any_owned_pop = {
+						is_unemployed = yes
+						NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+						NOR = {
+							is_pop_category = specialist
+							is_pop_category = ruler
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	district = {
+		key = district_arcology_housing
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 5
+				free_jobs < 3
+				free_housing < 10
+			}
+		}
+	}
+	
+	district = {	
+		key = district_arcology_arms_industry
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 500
+				free_jobs < 3
+				owner = {
+					has_monthly_income = {
+						resource = minerals
+						value > 150
+					}
+				}
+			}
+		}
+	}
+	
+	district = {	
+		key = district_generator_uncapped
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 500
+				free_jobs < 3
+				OR = {
+					owner = {
+						has_monthly_income = {
+							resource = energy
+							value < 150
+						}
+					}
+					AND = {
+						num_free_districts = { type = district_mining_uncapped value = 0 }
+						owner = {
+							has_monthly_income = {
+								resource = food
+								value > 100
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				weight = 500000
+				gai_unemployed = yes
+			}
+		}
+	}
+	
+	district = {	
+		key = district_mining_uncapped
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 200000
+				free_jobs < 3
+				NOT = { has_planet_flag = gai_arc }
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					gai_work_minerals = yes
+					gai_work_minerals_goods = yes
+				}
+			}
+		}
+	}
+	
+	district = {	
+		key = district_farming_uncapped
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 500
+				free_jobs < 3
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value < 200
+					}
+				}
+			}
+		}
+	}
+		
+	district = {
+		key = district_arcology_civilian_industry
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 500
+				free_jobs < 3
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value < 200
+					}
+					has_monthly_income = {
+						resource = minerals
+						value > 99
+					}
+				}
+			}
+			modifier = {
+				weight = 50000
+				free_jobs < 3
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value < 0
+					}
+				}
+			}
+		}
+	}
+	
+	district = {
+		key = district_arcology_leisure
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1000
+				free_jobs < 3
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 200
+					}
+					has_monthly_income = {
+						resource = alloys
+						value > 500
+					}
+				}
+			}
+		}
+	}
+		
+	district = {
+		key = district_hab_housing
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 90000
+				planet = {
+					owner = { is_regular_empire = no }
+					num_districts = { type = district_hab_housing value < 2 }
+				}
+			}
+			modifier = {
+				weight = 90000
+				planet = {
+					owner = { is_regular_empire = yes }
+					num_districts = { type = district_hab_housing value < 2 }
+				}
+			}
+			modifier = {
+				weight = 90000
+				planet = {
+					owner = { 
+						is_regular_empire = yes
+						has_ascension_perk = ap_master_builders
+					}
+					num_districts = { type = district_hab_housing value < 3 }
+				}
+			}
+			modifier = {
+				factor = 0
+				planet = {
+					owner = { is_regular_empire = yes }
+					not = { has_district = district_hab_cultural } 
+				}
+			}
+		}
+	}
+	
+	district = {
+		key = district_hab_energy
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 20000
+				OR = {
+					owner = { 
+						has_monthly_income = {
+							resource = energy
+							value < 200
+						}
+					}
+					planet = { has_district = district_hab_energy }
+				}
+				NOT = { planet = { has_district = district_hab_science } }
+			}
+		}
+	}
+	
+	district = {
+		key = district_hab_cultural
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 80000
+				planet = {
+					NOT = { has_district = district_hab_cultural }
+				}
+			}
+		}
+	}
+	
+	district = {	
+		key = district_hab_science
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 9000
+				planet = {
+					NOT = { has_district = district_hab_energy }
+					NOT = { has_district = district_hab_cultural }
+				}
+				owner = {
+					has_monthly_income = {
+						resource = minerals
+						value > 80
+					}
+				}
+			}
+			modifier = {
+				weight = 9000
+				has_district = district_hab_cultural
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 6
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_district = district_hab_commercial
+			}
+		}
+	}
+	
+	district = {
+		key = district_hab_commercial
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 25000
+				OR = {
+					has_district = district_hab_commercial
+					owner = {
+						has_monthly_income = {
+							resource = consumer_goods
+							value < 6
+						}
+					}
+					owner = {
+						has_monthly_income = {
+							resource = minerals
+							value < 50
+						}
+					}
+					owner = {
+						has_monthly_income = {
+							resource = energy
+							value < 50
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_noble_estates
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 5
+				planet_devastation < 10
+				free_jobs < 2
+			}
+		}
+	}
+	
+	building = {
+		key = building_bureaucratic_complex
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 5
+				planet_devastation < 10
+				free_jobs < 2
+			}
+		}
+	}
+	
+	building = {
+		key = building_slave_processing
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 5
+				any_owned_pop = { is_enslaved = yes }
+			}
+		}
+	}
+	
+	building = {
+		key = building_psi_corps
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 5
+				gai_build_building = yes
+			}
+		}
+	}
+	
+	building = {
+		key = building_clone_vats
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				free_district_slots > 0
+				num_buildings = { type = any value < 15 }
+				NOT = { is_planet_class = pc_habitat }
+			}
+		}
+	}
+	
+	building = {
+		key = building_hydroponics_farm
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 75
+				NOT = { is_planet_class = pc_habitat }
+				OR = {
+					free_jobs < 3
+					gai_unemployed = yes
+				}
+				OR = {
+					num_free_districts = { type = district_farming value = 0 } 
+					free_district_slots = 0
+				}#Don't build when you can still get farming districts
+				owner = {
+					OR = {
+						is_mechanical_empire = no
+						AND = {
+							is_mechanical_empire = yes
+							OR = {
+								has_civic = civic_machine_servitor
+								has_civic = civic_machine_assimilator
+							}
+						}
+					}
+					has_monthly_income = {
+						resource = food
+						value < 0
+					}
+				}
+			}
+			modifier = {
+				weight = 75
+				OR = {
+					free_housing > 3
+					owner = { is_gestalt = no }
+				}
+				OR = {
+					free_jobs < 3
+					gai_unemployed = yes
+				}
+				OR = {
+					is_planet_class = pc_habitat
+					is_planet_class = pc_city
+				}
+				OR = {
+					owner = {
+						OR = {
+							is_mechanical_empire = no
+							AND = {
+								is_mechanical_empire = yes
+								OR = {
+									has_civic = civic_machine_servitor
+									has_civic = civic_machine_assimilator
+								}
+							}
+						}
+						has_monthly_income = {
+							resource = food
+							value < 125
+						}
+					}
+					has_building = building_hydroponics_farm
+				}
+			}
+			modifier = {
+				weight = 1
+				free_building_slots = 0
+			}#Enables repairs
+			modifier = {
+				factor = 0
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value > 1
+					}
+				}
+				is_planet_class = pc_city
+			}
+		}
+	}
+
+	building = {
+		key = building_food_processing_facility
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100 #Needs to be higher than building_hydroponics_farm
+				OR = {
+					num_districts = { type = district_farming value > 5 }
+					num_districts = { type = district_farming_uncapped value > 5 }
+					owner = { is_hive_empire = yes } #Constantly short on food for some reason
+					has_building = building_hydroponics_farm
+				}
+			}
+			modifier = {
+				weight = 1
+				has_building = building_food_processing_facility
+			}#enables repairs, capped to 1 so doesn't need to check if it has free_building_slots = 0
+		}
+
+	}
+	
+	building = {
+		key = building_food_processing_center
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				owner = { NOT = { has_country_flag = gai_new_mote_building } }
+				gai_has_motes = yes
+			}
+		}
+	}
+	
+	building = {
+		key = building_mineral_purification_plant
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				gai_build_building = yes
+				OR = {
+					owner = {
+						has_monthly_income = {
+							resource = minerals
+							value < 300
+						}
+					}
+					gai_good_minerals = yes
+				}
+			}
+		}
+
+	}
+	
+	building = {
+		key = building_mineral_purification_hub
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				owner = { NOT = { has_country_flag = gai_new_mote_building } }
+				gai_has_motes = yes
+			}
+		}
+	}
+	
+	building = {
+		key = building_energy_grid
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				gai_build_building = yes
+				OR = {
+					owner = {
+						has_monthly_income = {
+							resource = energy
+							value < 100
+						}
+					}
+					gai_good_energy = yes
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_energy_nexus
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				NOT = { owner = { has_country_flag = gai_new_gas_building } }
+				gai_has_exotic_gases = yes
+			}
+		}
+	}
+	
+	building = {
+		key = building_foundry_1
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 2
+				OR = {
+					planet_crime < 15
+					has_building = building_hall_judgment
+				}
+				is_capital = no
+				free_amenities > 2
+				free_jobs < 2
+				owner = {
+					has_monthly_income = {
+						resource = minerals
+						value > 150
+					}
+				}
+			}
+			modifier = {
+				weight = 100
+				planet = {
+					is_capital = yes
+					NOR = {
+						has_building = building_foundry_2
+						has_building = building_foundry_3
+					}
+					num_buildings = { type = building_foundry_1 value < 3 }
+				}
+			}
+			modifier = {
+				weight = 50
+				NOR = {
+					has_building = building_foundry_1
+					has_building = building_foundry_2
+					has_building = building_foundry_3
+				}
+			}
+			modifier = {
+				weight = 250
+				planet = {
+					has_planet_flag = gai_alloy
+					OR = {
+						free_amenities > 2
+						free_building_slots > 1
+					}
+					OR = {
+						planet_crime < 15
+						has_building = building_hall_judgment
+					}
+					free_housing > 2
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_foundry_2
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				owner = { 
+					NOT = { has_country_flag = gai_new_mote_building }
+					has_monthly_income = {
+						resource = minerals
+						value > 120
+					}
+				}
+				gai_has_motes = yes
+			}
+		}
+
+	}
+	
+	building = {
+		key = building_foundry_3
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				owner = { 
+					NOT = { has_country_flag = gai_new_mote_building }
+					has_monthly_income = {
+						resource = minerals
+						value > 120
+					}
+				}
+				gai_has_motes = yes
+			}
+		}
+	}
+	
+	building = {
+		key = building_factory_1
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				gai_work_minerals_goods = no
+				OR = {
+					planet_crime < 15
+					has_building = building_hall_judgment
+				}
+				is_capital = no
+				free_amenities > 2
+				free_jobs < 2
+				owner = {
+					has_monthly_income = {
+						resource = minerals
+						value > 75
+					}
+					has_monthly_income = {
+						resource = consumer_goods
+						value < 55
+					}
+				}
+			}
+			modifier = {
+				weight = 500
+				gai_work_minerals_goods = no
+				owner = {
+					has_resource = { 
+						type = consumer_goods 
+						amount < 5 
+					}
+					has_monthly_income = {
+						resource = consumer_goods
+						value < 0
+					}
+				}
+			}
+			modifier = {
+				weight = 250
+				planet = {
+					has_planet_flag = gai_goods
+					OR = {
+						free_amenities > 2
+						free_building_slots > 1
+					}
+					OR = {
+						planet_crime < 15
+						has_building = building_hall_judgment
+					}
+					free_housing > 2
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_factory_2
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				planet = {
+					owner = {
+						NOT = { has_country_flag = gai_new_crystal_building }
+						has_monthly_income = {
+							resource = minerals
+							value > 100
+						}
+						has_monthly_income = {
+							resource = consumer_goods
+							value < 80
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_factory_3
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				planet = {
+					owner = {
+						NOT = { has_country_flag = gai_new_crystal_building }
+						has_monthly_income = {
+							resource = minerals
+							value > 100
+						}
+						has_monthly_income = {
+							resource = consumer_goods
+							value < 80
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_refinery
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				owner = { 
+					has_monthly_income = {
+						resource = exotic_gases
+						value < 5
+					}
+				}
+				gai_build_building = yes
+				free_jobs < 2
+			}
+			modifier = {
+				weight = 100
+				owner = {
+					has_monthly_income = {
+						resource = exotic_gases
+						value < 0
+					}
+				}
+			}
+			modifier = {
+				weight = 1
+				has_building = building_refinery
+				free_building_slots = 0
+			}#Enables repairs
+		}
+	}
+	
+	building = {
+		key = building_chemical_plant
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				owner = { 
+					has_monthly_income = {
+						resource = volatile_motes
+						value < 5
+					}
+					NOT = {
+						has_country_flag = gai_new_mote_plant
+					}
+				}
+				gai_build_building = yes
+				free_jobs < 2
+			}
+			modifier = {
+				weight = 100
+				owner = {
+					has_monthly_income = {
+						resource = volatile_motes
+						value < 0
+					}
+					NOT = {
+						has_country_flag = gai_new_mote_plant
+					}
+				}
+			}
+			modifier = {
+				weight = 1
+				has_building = building_chemical_plant
+				free_building_slots = 0
+			}#Enables repairs
+		}
+	}
+	
+	building = {
+		key = building_crystal_plant
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				free_jobs < 2
+				owner = { 
+					has_monthly_income = {
+						resource = rare_crystals
+						value < 5
+					}
+					NOT = {
+						has_country_flag = gai_new_crystal_plant
+					}
+				}
+				gai_build_building = yes
+			}
+			modifier = {
+				weight = 100
+				owner = {
+					has_monthly_income = {
+						resource = rare_crystals
+						value < 0
+					}
+					NOT = {
+						has_country_flag = gai_new_crystal_plant
+					}
+				}
+			}
+			modifier = {
+				weight = 1
+				has_building = building_crystal_plant
+				free_building_slots = 0
+			}#Enables repairs
+		}
+	}
+	
+	building = {
+		key = building_nanite_transmuter
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 5
+				gai_build_building = yes
+				owner = { 
+					has_monthly_income = {
+						resource = nanites
+						value > 2
+					}
+				}
+			}#Nothing else uses the monthly income but new starships. As such the only important check is the number of nanites coming into the country.
+		}
+	}
+	
+	building = {
+		key = building_ministry_production
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				OR = {
+					has_building = building_factory_1
+					has_building = building_foundry_1
+					has_building = building_factory_2
+					has_building = building_foundry_2
+					has_building = building_factory_3
+					has_building = building_foundry_3
+				}
+			}#No reason to build before the factory and foundry are built
+		}
+	}
+	
+	building = {
+		key = building_production_center
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				OR = {
+					has_building = building_factory_1
+					has_building = building_foundry_1
+					has_building = building_factory_2
+					has_building = building_foundry_2
+					has_building = building_factory_3
+					has_building = building_foundry_3
+				}
+			}#No reason to build before the factory and foundry are built
+		}
+	}
+	
+	building = {
+		key = building_research_lab_1
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 25
+				
+				free_amenities > 2 #Prevents running out of amenities
+				num_buildings = { type = building_research_lab_1 value < 2 } #Prevents AI falling behind on research to all but the most research dedicated players
+				NOR = {
+					has_building = building_research_lab_2
+					has_building = building_research_lab_3
+				}#Check for upgraded buildings
+				OR = {
+					num_pops > 22
+					NOT = { owner = { has_country_flag = enough_research } }
+				}
+			}
+			modifier = {
+				weight = 25
+				num_buildings = { type = building_research_lab_1 value < 4 } #Well okay then.
+				free_building_slots > 1
+				NOR = {
+					has_building = building_research_lab_2
+					has_building = building_research_lab_3
+				}
+				gai_difficulty = yes
+				OR = {
+					num_pops > 22
+					NOT = { owner = { has_country_flag = enough_research } }
+				}
+			}
+			modifier = {
+				weight = 1
+				free_building_slots = 0
+				has_building = building_research_lab_1 #Repairs
+			}
+			modifier = {
+				weight = 250
+				has_planet_flag = gai_tech
+				free_amenities > 2 #Prevents running out of amenities
+				free_housing > 0 #Need open housing to support the pops
+				OR = {
+					planet_crime < 15
+					has_building = building_hall_judgment
+				}
+				OR = {
+					NOT = { owner = { has_technology = tech_global_research_initiative } }
+					has_building = building_institute
+					has_building = building_supercomputer
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_research_lab_2
+		weight = {
+			weight = 0
+			modifier = {
+			weight = 1
+				planet = { 
+					owner = {
+						NOT = { has_country_flag = gai_new_gas_building }
+						has_monthly_income = {
+							resource = exotic_gases
+							value >= 1
+						}
+						OR = {
+							AND = {
+								is_regular_empire = yes
+								has_monthly_income = {
+									resource = consumer_goods
+									value > 5
+								}
+							}
+							AND = {
+								is_regular_empire = no
+								has_monthly_income = {
+									resource = minerals
+									value > 75
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_research_lab_3
+		weight = {
+			weight = 0
+			modifier = {
+			weight = 1
+				planet = { 
+					owner = {
+						NOT = { has_country_flag = gai_new_gas_building }
+						has_monthly_income = {
+							resource = exotic_gases
+							value >= 1
+						}
+						OR = {
+							AND = {
+								is_regular_empire = yes
+								has_monthly_income = {
+									resource = consumer_goods
+									value > 5
+								}
+							}
+							AND = {
+								is_regular_empire = no
+								has_monthly_income = {
+									resource = minerals
+									value > 75
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_institute
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				OR = {
+					has_building = building_research_lab_1
+					has_building = building_research_lab_2
+					has_building = building_research_lab_3
+					has_district = district_hab_science
+				}
+			}#Only build if a research lab is on the planet.
+		}
+	}
+
+	building = {
+		key = building_supercomputer
+		weight = {
+		weight = 0
+		modifier = {
+			weight = 100
+				OR = { 
+					has_building = building_research_lab_1
+					has_building = building_research_lab_2
+					has_building = building_research_lab_3
+					has_district = district_hab_science
+				}
+			}#Only build if a research lab is on the planet.
+		}
+	}
+	
+	building = {
+		key = building_commercial_zone
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				free_jobs < 2
+				planet = { 
+					OR = {
+						has_building = building_holo_theatres
+						has_building = building_hyper_entertainment_forum
+					}
+					OR = {
+						has_building = building_research_lab_1  #Prevents AI falling behind on research to all but the most research dedicated players
+						has_building = building_research_lab_2
+						has_building = building_research_lab_3
+						owner = { has_country_flag = enough_research }
+					}
+					NOR = { 
+						has_building = building_commercial_zone
+						has_building = building_commercial_megaplex
+					}
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_commercial_megaplex
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				NOT = { owner = { has_country_flag = gai_new_crystal_building } }
+				gai_has_crystals = yes
+			}
+		}
+	}
+	
+	building = {
+		key = building_galactic_stock_exchange
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 5
+				planet = {
+					OR = {
+						has_building = building_commercial_megaplex
+						has_building = building_commercial_zone
+						has_district = district_hab_commercial
+					}
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_autochthon_monument
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				OR = {
+					has_building = building_research_lab_1
+					has_building = building_research_lab_2
+					has_building = building_research_lab_3
+					is_planet_class = pc_habitat
+					owner = { has_country_flag = enough_research }
+				}
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 10
+					}
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_heritage_site
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_hypercomms_forum
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_autocurating_vault
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_temple
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_holotemple
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_sacred_nexus
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_citadel_of_faith
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_hive_node
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value > 25
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_hive_cluster
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value > 25
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_hive_confluence
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				gai_has_crystals = yes
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value > 25
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+		
+	building = {
+		key = building_uplink_node
+		weight = {
+			weight = 100
+		}
+	}
+	
+	building = {
+		key = building_network_junction
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				owner = { NOT = { has_country_flag = gai_new_crystal_building } }
+			}
+		}
+	}
+	
+	building = {
+		key = building_system_conflux
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				owner = { NOT = { has_country_flag = gai_new_crystal_building } }
+			}
+		}
+	}
+	
+	building = {
+		key = building_alpha_hub
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				owner = { NOT = { has_country_flag = gai_new_crystal_building } }
+			}
+		}
+	}
+	
+		
+	building = {
+		key = building_organic_sanctuary
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				any_owned_pop = {
+					is_unemployed = yes 
+					has_citizenship_type = { type = citizenship_organic_trophy }
+				}
+			}
+			modifier = {
+				weight = 100
+				planet = {
+					owner = {
+						any_owned_pop = {
+							prevprev = { habitability = { who = prev value > 0.5 } }
+						}
+					}
+				}
+				NOR = {
+					has_building = building_organic_sanctuary
+					has_building = building_organic_paradise
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_organic_paradise
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_corporate_monument
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_corporate_site
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_corporate_forum
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_corporate_vault
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+				owner = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 8
+					}
+					NOT = { has_country_flag = gai_new_crystal_building }
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_drone_storage
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 7 #High weight to gurantee that if the below is true then the AI should build it
+				free_housing < 5 #Prevents the AI from running out of residences when nearly out of tiles
+				OR = {
+					free_jobs > 0 #prevents spamming of residence buildings when no jobs are open
+					AND = {
+						free_housing = 0 #Prevents the AI from running out of residences when nearly out of tiles
+						not = { any_owned_pop = { is_unemployed = yes } }
+					}
+				}
+				free_district_slots = 0 #Do not build when city districts can still be built
+				NOT = { is_planet_class = pc_habitat }
+			}
+			modifier = {
+				weight = 7 #High weight to gurantee that if the below is true then the AI should build it
+				is_planet_class = pc_habitat
+				free_housing < 4
+				OR = {
+					not = { any_owned_pop = { is_unemployed = yes } }
+					free_jobs > 0 #Servitors can run into a situation with no houses but free jobs open
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_drone_megastorage
+		weight = {
+			weight = 0#Needs to be higher than base building to gurantee the AI upgrades before it builds a new regular housing building
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+			}
+		}#Should always upgrade
+	}
+	
+	building = {
+		key = building_hive_warren
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 7 #High weight to gurantee that if the below is true then the AI should build it
+				free_housing < 5 #Prevents the AI from running out of residences when nearly out of tiles
+				OR = {
+					free_jobs > 0 #prevents spamming of residence buildings when no jobs are open
+					AND = {
+						free_housing = 0 #Prevents the AI from running out of residences when nearly out of tiles
+						not = { any_owned_pop = { is_unemployed = yes } }
+					}
+				}
+				free_district_slots = 0 #Do not build when city districts can still be built
+				NOT = { is_planet_class = pc_habitat }
+			}
+			modifier = {
+				weight = 7 #High weight to gurantee that if the below is true then the AI should build it
+				is_planet_class = pc_habitat
+				free_housing < 4
+				not = { any_owned_pop = { is_unemployed = yes } }
+			}
+		}
+	}
+	
+	building = {
+		key = building_expanded_warren
+		weight = {
+			weight = 0#Needs to be higher than base building to gurantee the AI upgrades before it builds a new regular housing building
+			modifier = {
+				weight = 1
+				gai_has_crystals = yes
+			}
+		}#Should always upgrade
+	}
+	
+	building = {
+		key = building_sentinel_posts
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				planet_crime > 15
+				gai_build_building = yes
+			}
+			modifier = {
+				weight = 1
+				has_building = building_sentinel_posts
+				free_building_slots = 0
+			}#Enables repairs of damaged buildings
+		}
+	}
+	
+	building = {
+		key = building_stronghold
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				num_pops >= 40
+				NOR = {
+					has_building = building_stronghold
+					has_building = building_fortress
+				}
+			}
+			modifier = {
+				weight = 50
+				NOT = { has_building = building_stronghold }
+				owner = {
+					used_naval_capacity_percent > 0.90
+					has_monthly_income = {
+						resource = alloys
+						value > 500
+					}
+				}
+			}
+			modifier = {
+				weight = 250
+				has_planet_flag = gai_fleet_planet
+				owner = { used_naval_capacity_percent > 0.8 }
+				free_amenities > 2 #Prevents running out of amenities
+				OR = {
+					planet_crime < 15
+					has_building = building_hall_judgment
+				}
+			}
+		}
+	}
+	
+	building = {
+		key = building_fortress
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 1
+				owner = { NOT = { has_country_flag = gai_new_mote_building } }
+				gai_has_motes = yes
+			}
+		}
+	}
+	
+	building = {
+		key = building_mote_harvesters
+		weight = {
+			weight = 20
+		}
+	}
+	
+	building = {
+		key = building_gas_extractors
+		weight = {
+			weight = 20
+		}
+	}
+	
+	building = {
+		key = building_crystal_mines
+		weight = {
+			weight = 20
+		}
+	}
+	
+	building = {
+		key = building_betharian_power_plant
+		weight = {
+			weight = 20
+		}
+	}
+	
+	building = {
+		key = building_xeno_zoo
+		weight = {
+			weight = 20
+		}
+	}
+	
+	building = {
+		key = building_waste_reprocessing_center
+		weight = {
+			weight = 200
+		}
+	}
+	
+	building = {
+		key = building_bureaucratic_complex
+		weight = {
+			weight = 5
+		}
+	}
+}
+
+#############
+# PRODUCTION FOCUS
+#############
+
+production = {
+	
+	ai_weight = {
+		weight = 0
+	}
+
+	district = {
+		key = district_generator
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner = { 
+					has_monthly_income = {
+						resource = energy
+						value < 8
+					}
+				}
+			}
+
+			modifier = {
+				factor = 2
+				free_housing < 0
+			}
+
+			modifier = {
+				factor = 3
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	district = {
+		key = district_mining
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner = { 
+					has_monthly_income = {
+						resource = minerals
+						value < 0
+					}
+				}
+			}
+
+			modifier = {
+				factor = 2
+				free_housing < 0
+			}
+
+			modifier = {
+				factor = 3
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	district = {
+		key = district_farming
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner = { 
+					has_monthly_income = {
+						resource = food
+						value < 5
+					}
+				}
+			}
+
+			modifier = {
+				factor = 2
+				free_housing < 0
+			}
+
+			modifier = {
+				factor = 3
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+
+			modifier = { # MI and Synth. Asc. don't build food unless they need it
+				factor = 0
+				owner = { 
+					OR = {
+						has_authority = auth_machine_intelligence
+						has_country_flag = synthetic_empire
+					}
+					has_monthly_income = {
+						resource = food
+						value >= 0
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_hydroponics_farm
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = food
+						value < 5
+					}
+				}
+			}
+
+			modifier = { # MI and Synth. Asc. don't build food unless they need it
+				factor = 0
+				owner = { 
+					OR = {
+						has_authority = auth_machine_intelligence
+						has_country_flag = synthetic_empire
+					}
+					has_monthly_income = {
+						resource = food
+						value >= 0
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_food_processing_facility
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = food
+						value < 5
+					}
+				}
+			}
+
+			modifier = { # MI and Synth. Asc. don't build food unless they need it
+				factor = 0
+				owner = { 
+					OR = {
+						has_authority = auth_machine_intelligence
+						has_country_flag = synthetic_empire
+					}
+					has_monthly_income = {
+						resource = food
+						value >= 0
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_food_processing_center
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = food
+						value < 5
+					}
+				}
+			}
+
+			modifier = { # MI and Synth. Asc. don't build food unless they need it
+				factor = 0
+				owner = { 
+					OR = {
+						has_authority = auth_machine_intelligence
+						has_country_flag = synthetic_empire
+					}
+					has_monthly_income = {
+						resource = food
+						value >= 0
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0
+				controller = {
+					OR = {
+						has_monthly_income = {
+							resource = volatile_motes
+							value < 1
+						}
+						has_monthly_income = {
+							resource = energy
+							value < 1
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_mineral_purification_plant
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = minerals
+						value < 5
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_energy_grid
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = energy
+						value < 10
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_energy_nexus
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = energy
+						value < 10
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0
+				controller = {
+					OR = {
+						has_monthly_income = {
+							resource = exotic_gases
+							value < 1
+						}
+						has_monthly_income = {
+							resource = energy
+							value < 1
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_bio_reactor
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 50
+				owner = {
+					has_ascension_perk = ap_arcology_project
+					has_monthly_income = {
+						resource = energy
+						value < 20
+					}
+					has_monthly_income = {
+						resource = food
+						value > 25
+					}
+					NOT = {
+						has_country_flag = gai_new_reactor_building
+					}
+				}
+			}	
+		}
+
+	}
+
+	building = {
+		key = building_mote_harvesters
+		weight = {
+			weight = 200
+		}
+	}
+
+	building = {
+		key = building_gas_extractors
+		weight = {
+			weight = 200
+		}
+	}
+
+	building = {
+		key = building_crystal_mines
+		weight = {
+			weight = 200
+		}
+	}
+
+	building = {
+		key = building_xeno_zoo
+		weight = {
+			weight = 200
+		}
+	}
+	
+	building = {
+		key = building_betharian_power_plant
+		weight = {
+			weight = 200
+		}
+	}
+	
+	building = {
+		key = building_betharian_power_plant
+		weight = {
+			weight = 200
+		}
+	}
+	
+	building = {
+		key = building_betharian_power_plant
+		weight = {
+			weight = 200
+		}
+	}
+	
+	building = {
+		key = building_betharian_power_plant
+		weight = {
+			weight = 200
+		}
+	}
+}
+
+#############
+# MANUFACTURING FOCUS
+#############
+
+manufacturing = {
+	ai_weight = {
+		weight = 0
+	}
+
+	district = {
+		key = district_generator
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner = { 
+					has_monthly_income = {
+						resource = energy
+						value < 8
+					}
+				}
+			}
+
+			modifier = {
+				factor = 2
+				free_housing < 0
+			}
+
+			modifier = {
+				factor = 3
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	district = {
+		key = district_mining
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner = { 
+					has_monthly_income = {
+						resource = minerals
+						value < 0
+					}
+				}
+			}
+
+			modifier = {
+				factor = 2
+				free_housing < 0
+			}
+
+			modifier = {
+				factor = 3
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	district = {
+		key = district_farming
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner = { 
+					has_monthly_income = {
+						resource = food
+						value < 5
+					}
+				}
+			}
+
+			modifier = {
+				factor = 2
+				free_housing < 0
+			}
+
+			modifier = {
+				factor = 3
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+
+			modifier = { # MI and Synth. Asc. don't build food unless they need it
+				factor = 0
+				owner = { 
+					OR = {
+						has_authority = auth_machine_intelligence
+						has_country_flag = synthetic_empire
+					}
+					has_monthly_income = {
+						resource = food
+						value >= 0
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_foundry_1
+		weight = {
+			weight = 1
+
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = alloys
+						value < 0
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_foundry_2
+		weight = {
+			weight = 1
+
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = alloys
+						value < 10
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0
+				controller = {
+					OR = {
+						has_monthly_income = {
+							resource = volatile_motes
+							value < 1
+						}
+						has_monthly_income = {
+							resource = energy
+							value < 5
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_foundry_3
+		weight = {
+			weight = 1
+
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = alloys
+						value < 20
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0
+				controller = {
+					OR = {
+						has_monthly_income = {
+							resource = volatile_motes
+							value < 2
+						}
+						has_monthly_income = {
+							resource = energy
+							value < 6
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_factory_1
+		weight = {
+			weight = 1
+
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = consumer_goods
+						value < 5
+					}
+					has_monthly_income = {
+						resource = minerals
+						value > 6
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_factory_2
+		weight = {
+			weight = 1
+
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = consumer_goods
+						value < 8
+					}
+					has_monthly_income = {
+						resource = minerals
+						value > 10
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0
+				controller = {
+					OR = {
+						has_monthly_income = {
+							resource = rare_crystals
+							value < 1
+						}
+						has_monthly_income = {
+							resource = energy
+							value < 5
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_factory_3
+		weight = {
+			weight = 1
+
+			modifier = {
+				factor = 5
+				owner = { 
+					has_monthly_income = {
+						resource = consumer_goods
+						value < 10
+					}
+					has_monthly_income = {
+						resource = minerals
+						value > 20
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0
+				controller = {
+					OR = {
+						has_monthly_income = {
+							resource = rare_crystals
+							value < 2
+						}
+						has_monthly_income = {
+							resource = energy
+							value < 6
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_refinery
+		weight = {
+			weight = 1
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_chemical_plant
+		weight = {
+			weight = 1
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_crystal_plant
+		weight = {
+			weight = 1
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_ministry_production
+		weight = {
+			weight = 2
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_production_center
+		weight = {
+			weight = 2
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#############
+# RESEARCH FOCUS
+#############
+
+research = {
+
+	ai_weight = {
+		weight = 0
+	}
+
+	district = {
+		key = district_generator
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner = { 
+					has_monthly_income = {
+						resource = energy
+						value < 8
+					}
+				}
+			}
+
+			modifier = {
+				factor = 2
+				free_housing < 0
+			}
+
+			modifier = {
+				factor = 3
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	district = {
+		key = district_mining
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner = { 
+					has_monthly_income = {
+						resource = minerals
+						value < 0
+					}
+				}
+			}
+
+			modifier = {
+				factor = 2
+				free_housing < 0
+			}
+
+			modifier = {
+				factor = 3
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	district = {
+		key = district_farming
+		weight = {
+			weight = 1
+			modifier = {
+				factor = 3
+				owner = { 
+					has_monthly_income = {
+						resource = food
+						value < 5
+					}
+				}
+			}
+
+			modifier = {
+				factor = 2
+				free_housing < 0
+			}
+
+			modifier = {
+				factor = 3
+				any_owned_pop = { 
+					OR = { 
+						is_unemployed = yes 
+						has_job = servant 
+					}
+				}
+			}
+
+			modifier = { # MI and Synth. Asc. don't build food unless they need it
+				factor = 0
+				owner = { 
+					OR = {
+						has_authority = auth_machine_intelligence
+						has_country_flag = synthetic_empire
+					}
+					has_monthly_income = {
+						resource = food
+						value >= 0
+					}
+				}
+			}
+
+			# No one to work it anyway
+			modifier = {
+				factor = 0
+				NOT = {
+					any_owned_pop = { 
+						OR = { 
+							is_unemployed = yes 
+							has_job = servant 
+						}
+					}
+				}
+			}
+		}
+	}
+
+	building = {
+		key = building_research_lab_1
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 25
+				free_amenities > 2 #Prevents running out of amenities
+				num_buildings = { type = building_research_lab_1 value < 2 } #Prevents AI falling behind on research to all but the most research dedicated players
+				NOR = {
+					has_building = building_research_lab_2
+					has_building = building_research_lab_3
+				}#Check for upgraded buildings
+				OR = {
+					num_pops > 22
+					NOT = { owner = { has_country_flag = enough_research } }
+				}
+			}
+			modifier = {
+				weight = 100
+				num_buildings = { type = building_research_lab_1 value < 4 } #Well okay then.
+				free_building_slots > 1
+				NOR = {
+					has_building = building_research_lab_2
+					has_building = building_research_lab_3
+				}
+				gai_difficulty = yes
+				OR = {
+					num_pops > 22
+					NOT = { owner = { has_country_flag = enough_research } }
+				}
+			}
+			modifier = {
+				weight = 1
+				free_building_slots = 0
+				has_building = building_research_lab_1 #Repairs
+			}
+		}
+
+	}
+
+	building = {
+		key = building_research_lab_2
+		weight = {
+			weight = 0
+			modifier = {
+			weight = 1
+				planet = { 
+					owner = {
+						NOT = { has_country_flag = gai_new_gas_building }
+						has_monthly_income = {
+							resource = exotic_gases
+							value >= 1
+						}
+						OR = {
+							AND = {
+								is_regular_empire = yes
+								has_monthly_income = {
+									resource = consumer_goods
+									value > 5
+								}
+							}
+							AND = {
+								is_regular_empire = no
+								has_monthly_income = {
+									resource = minerals
+									value > 75
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	building = {
+		key = building_research_lab_3
+		weight = {
+			weight = 0
+			modifier = {
+			weight = 1
+				planet = { 
+					owner = {
+						NOT = { has_country_flag = gai_new_gas_building }
+						has_monthly_income = {
+							resource = exotic_gases
+							value >= 1
+						}
+						OR = {
+							AND = {
+								is_regular_empire = yes
+								has_monthly_income = {
+									resource = consumer_goods
+									value > 5
+								}
+							}
+							AND = {
+								is_regular_empire = no
+								has_monthly_income = {
+									resource = minerals
+									value > 75
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	building = {
+		key = building_institute
+		weight = {
+			weight = 0
+			modifier = {
+				weight = 100
+				OR = {
+					has_building = building_research_lab_1
+					has_building = building_research_lab_2
+					has_building = building_research_lab_3
+					has_district = district_hab_science
+				}
+			}#Only build if a research lab is on the planet.
+		}
+
+	}
+
+	building = {
+		key = building_supercomputer
+		weight = {
+		weight = 0
+		modifier = {
+			weight = 100
+				OR = { 
+					has_building = building_research_lab_1
+					has_building = building_research_lab_2
+					has_building = building_research_lab_3
+					has_district = district_hab_science
+				}
+			}#Only build if a research lab is on the planet.
+		}
+	}
+}

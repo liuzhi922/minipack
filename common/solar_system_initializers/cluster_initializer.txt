@@ -1,0 +1,1237 @@
+# Steed Cluster; 8 systems
+
+# ruined unrepairable ringworld with deposits
+pg_cluster_01 = {
+    name = "Gamma Idiyanale"
+    class = sc_m
+    usage = misc_system_init
+    usage_odds = 0
+    flags = { pg_cluster pg_cluster_01 ruined_ring_system pirate_home_system pirate_system hostile_system }
+  
+    # star
+    planet = {
+      name = "Gamma Idiyanale"
+      class = "pc_m_star"
+          orbit_distance = 0
+          orbit_angle = 1
+          size = 25
+          has_ring = no
+      init_effect = {
+        set_deposit = d_energy_5
+        create_ambient_object = {
+          type = "abandoned_starbase_01_object"
+          location = this
+        }
+        create_ambient_object = {
+          type = "medium_debris_01_object"
+          location = this
+        }
+      }
+    }
+    change_orbit = 45
+  
+    planet = {
+      name = "I"
+          class = "pc_ringworld_habitable_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+          init_effect = {
+        set_deposit = d_physics_5
+              create_ambient_object = {
+                  type = "large_debris_object"
+                  location = THIS
+              }
+          }
+      }
+    planet = {
+      name = "II"
+          class = "pc_ringworld_tech_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+      }
+    planet = {
+      name = "III"
+          class = "pc_ringworld_habitable_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+          init_effect = {
+        set_deposit = d_living_metal_deposit
+              create_ambient_object = {
+                  type = "medium_debris_01_object"
+                  location = THIS
+              }
+          }
+      }
+    planet = {
+      name = "IV"
+          class = "pc_ringworld_seam_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+      }
+    planet = {
+      name = "V"
+          class = "pc_ringworld_habitable_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+          init_effect = {
+        set_deposit = d_alloys_3
+          }
+      }
+    planet = {
+      name = "VI"
+          class = "pc_ringworld_tech_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+      }
+    planet = {
+      name = "VII"
+          class = "pc_ringworld_habitable_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+          init_effect = {
+        set_deposit = d_exotic_gases_5
+              create_ambient_object = {
+                  type = "small_debris_object"
+                  location = THIS
+              }
+          }
+      }
+    planet = {
+      name = "VIII"
+          class = "pc_ringworld_seam_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+      }
+    planet = {
+      name = "IX"
+          class = "pc_ringworld_habitable_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+          init_effect = {
+        set_deposit = d_engineering_10
+              create_ambient_object = {
+                  type = "small_debris_object"
+                  location = THIS
+              }
+          }
+      }
+    planet = {
+      name = "X"
+          class = "pc_ringworld_seam_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+      }
+    planet = {
+      name = "XI"
+          class = "pc_ringworld_tech_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+      }
+    planet = {
+      name = "XII"
+          class = "pc_ringworld_seam_damaged"
+          orbit_angle = 30
+          orbit_distance = 0
+      }
+    init_effect = {
+          create_pirate_country = yes
+          random_system_planet = {
+              limit = { is_star = no }
+              event_target:pirate_country = {
+                  if = {
+                      limit = {
+                          NOT = {
+                              has_modifier = pirate_power
+                          }
+                      }
+                      add_modifier = {
+                          modifier = pirate_power
+                          days = -1
+                      }
+                  }
+              }
+              every_country = {
+                  establish_communications_no_message = event_target:pirate_country
+              }
+              create_fleet = {
+                  name = "NAME_Old_Guard"
+                  effect = {
+                      set_owner = event_target:pirate_country
+                      set_fleet_flag = pirate_home_system_fleet
+                      while = {
+                          count = 1
+                          create_ship = {
+                              name = random
+                              design = "NAME_Pirate_Galleon"
+                              graphical_culture = "pirate_01"
+                          }
+                      }
+                      set_fleet_stance = aggressive
+                      set_aggro_range_measure_from = self
+                      set_aggro_range = 250
+                      set_location = {
+                          target = prev
+                          distance = 90
+                          angle = 330
+                      }
+                      set_fleet_flag = pirate_home_system_fleet
+                  }
+              }
+              create_fleet = {
+                  name = "NAME_Scarred_Veterans"
+                  effect = {
+                      set_owner = event_target:pirate_country
+                      set_fleet_flag = pirate_home_system_fleet
+                      while = {
+                          count = 6
+                          create_ship = {
+                              name = random
+                              design = "NAME_Corsair"
+                              graphical_culture = "pirate_01"
+                          }
+                      }
+                      while = {
+                          count = 10
+                          create_ship = {
+                              name = random
+                              design = "NAME_Marauder"
+                              graphical_culture = "pirate_01"
+                          }
+                      }
+                      while = {
+                          count = 20
+                          create_ship = {
+                              name = random
+                              design = "NAME_Black_Earl"
+                              graphical_culture = "pirate_01"
+                          }
+                      }
+                      while = {
+                          count = 4
+                          create_ship = {
+                              name = random
+                              design = "NAME_Skull"
+                              graphical_culture = "pirate_01"
+                          }
+                      }
+                      set_fleet_flag = pirate_home_system_fleet
+                      set_formation_scale = 2
+                      set_fleet_stance = aggressive
+                      set_aggro_range_measure_from = self
+                      set_aggro_range = 250
+                      set_location = {
+                          target = prev
+                          distance = 90
+                          angle = 120
+                      }
+                  }
+              }
+              create_fleet = {
+                  name = "NAME_Young_Blood"
+                  effect = {
+                      set_owner = event_target:pirate_country
+                      create_ship_design = {
+                          design = "NAME_Reaver"
+                      }
+                      while = {
+                          count = 12
+                          create_ship = {
+                              name = random
+                              design = last_created_design
+                              graphical_culture = "pirate_01"
+                          }
+                      }
+                      set_location = {
+                          target = prev
+                          distance = 90
+                          angle = 200
+                      }
+                      set_fleet_stance = aggressive
+                      set_aggro_range_measure_from = self
+                      set_aggro_range = 150
+                      set_fleet_flag = pirate_home_system_fleet
+                      save_global_event_target_as = young_blood
+                  }
+              }
+          }
+      }
+  }
+  
+  # binary system
+  pg_cluster_02 = {
+    name = "Delta Dimanggan"
+    class = sc_binary_8
+    usage = misc_system_init
+    usage_odds = 0
+    flags = { pg_cluster pg_cluster_02 pirate_system hostile_system }
+  
+    # star
+    planet = {
+      name = "Delta Dimanggan Major"
+      class = "pc_g_star"
+          orbit_distance = 150
+          orbit_angle = 1
+          size = 30
+          has_ring = no
+      change_orbit = 45
+      planet = {
+        count = { min = 2 max = 4}
+        orbit_distance = 25
+        orbit_angle = { min = 70 max = 300 }
+        size = { min = 11 max = 25 }
+        change_orbit = @base_moon_distance
+        moon = {
+          count = { min = 0 max = 2}
+          class = random_non_colonizable
+          size = { min = 7 max = 9 }
+          orbit_distance = 5
+          orbit_angle = { min = 60 max = 300}
+          has_ring = no
+        }
+      }
+    }
+    planet = {
+      name = "Delta Dimanggan Minor"
+      class = "pc_k_star"
+          orbit_distance = 150
+          orbit_angle = 180
+          size = 25
+          has_ring = no
+      change_orbit = 45
+      planet = {
+        count = { min = 2 max = 4}
+        orbit_distance = 25
+        orbit_angle = { min = 70 max = 300 }
+        size = { min = 11 max = 25 }
+        change_orbit = @base_moon_distance
+        moon = {
+          count = { min = 0 max = 2}
+          class = random_non_colonizable
+          size = { min = 7 max = 9 }
+          orbit_distance = 5
+          orbit_angle = { min = 60 max = 300}
+          has_ring = no
+        }
+      }
+      planet = {
+        count = { min = 0 max = 1 }
+        class = pc_gaia
+        orbit_distance = 25
+        orbit_angle = { min = 70 max = 300 }
+        size = { min = 11 max = 25 }
+        change_orbit = @base_moon_distance
+        moon = {
+          count = { min = 0 max = 2}
+          class = random_non_colonizable
+          size = { min = 7 max = 9 }
+          orbit_distance = 5
+          orbit_angle = { min = 60 max = 300}
+          has_ring = no
+        }
+      }
+    }
+    init_effect = {
+          random_system_planet = {
+              limit = { is_star = no }
+              create_fleet = {
+                  name = "Reavers"
+                  effect = {
+                      set_owner = event_target:pirate_country
+                      create_ship_design = {
+                          design = "NAME_Reaver"
+                      }
+            random_list = {
+              20 = {
+                set_fleet_flag = tiyanki_hunter
+              }
+              80 = {
+                set_fleet_flag = empty_system
+              }
+            }
+                      while = {
+                          count = 12
+                          create_ship = {
+                              name = random
+                              design = last_created_design
+                              graphical_culture = "pirate_01"
+                          }
+                      }
+                      set_location = {
+                          target = prev
+                          distance = 90
+                          angle = 200
+                      }
+                      set_fleet_stance = aggressive
+                      set_aggro_range_measure_from = self
+                      set_aggro_range = 150
+                      save_global_event_target_as = young_blood
+            if = {
+              limit = { has_fleet_flag = tiyanki_hunter }
+              save_event_target_as = hunting_amoeba
+              queue_actions = {
+                wait = {
+                  # Cooldown until they start moving
+                  duration = 1 # 5000
+                  random = 1 #1000
+                }
+              }
+              else = {
+                queue_actions = {
+                  wait = {
+                    # Cooldown until they start moving
+                    duration = 1 # 5000
+                    random = 1 # 1000
+                  }
+                }
+              }
+            }
+                  }
+              }
+          }
+      }
+  }
+  
+  # Tiers
+  pg_cluster_03 = {
+    name = "Epsilon Lakapati"
+    class = sc_g
+    usage = misc_system_init
+    usage_odds = 0
+    flags = { pg_cluster pg_cluster_03 ruined_ring_system primitive_system }
+  
+    # star
+    planet = {
+      name = "Epsilon Lakapati"
+      class = "pc_g_star"
+          orbit_distance = 0
+          orbit_angle = 1
+          size = 30
+          has_ring = no
+    }
+    change_orbit = 45
+  
+    planet = {
+          class = "pc_ringworld_tech"
+          orbit_angle = -30
+          orbit_distance = 0
+      }
+      # actual habitat
+    planet = {
+          class = "pc_ringworld_habitable"
+          orbit_angle = 30
+          orbit_distance = 0
+          modifiers = none
+  
+          init_effect = {
+        # first species
+            create_species = {
+              name = "Vendrien"
+              class = random_non_machine
+              portrait = random
+              homeworld = THIS
+              extra_trait_points = 3
+              allow_negative_traits = no
+              traits = { trait = random_traits }
+            }
+            create_country = {
+              name = "Nations of the Tiers"
+              authority = random
+          day_zero_contact = no
+              civics = {
+                civic = civic_increasing_urbanization
+                civic = civic_atmospheric_pollution
+              }
+              species = last_created
+              ethos = {
+            ethic = "ethic_egalitarian"
+              ethic = "ethic_xenophile"
+              ethic = "ethic_militarist"
+          }
+              flag = {
+                icon = {
+                  category = "spherical"
+                  file = "flag_spherical_22.dds"
+                }
+                background= {
+                  category = "backgrounds"
+                  file = "new_dawn.dds"
+                }
+                colors={
+                  "dark_blue"
+                  "green"
+                  "null"
+                  "null"
+                }
+              }
+              type = primitive
+            }
+            last_created_country = {
+              set_graphical_culture = industrial_01
+              set_country_flag = early_space_age
+              set_primitive_age = early_space_age
+            }
+            set_owner = last_created_country
+        create_primitive_blockers = yes
+        while = {
+          count = 16
+          create_army = {
+            name = "International Tiers Peacekeeping Forces"
+            owner = last_created
+            species = last_created
+            type = "postatomic_army"
+          }
+        }
+        create_fleet = {
+          name = "Tiers Cooperation Space Station"
+          effect = {
+            set_owner = last_created_country
+            create_ship = {
+              name = "Tiers Cooperation Space Station"
+              design = "NAME_Space_Station"
+            }
+            set_location = PREV
+          }
+        }
+        while = {
+          count = 13
+          create_pop = {
+            species = last_created
+          }
+        }
+        add_building = building_primitive_farm
+        add_building = building_primitive_factory
+        add_building = building_primitive_mine
+        add_building = building_primitive_power_plant
+        add_building = building_primitive_capital
+        add_building = building_urban_dwellings
+        last_created_country = {
+          capital_scope = { set_name = "Tiers" }
+        }
+        # species 2
+            create_species = {
+              name = "Ardentan"
+              class = random_non_machine
+              portrait = random
+              homeworld = THIS
+              extra_trait_points = 2
+              traits = { trait = random_traits }
+            }
+        while = {
+          count = 13
+          create_pop = {
+            species = last_created
+          }
+        }
+        while = {
+          count = 16
+          create_army = {
+            name = "Nationalist Ardentan Army"
+            owner = last_created
+            species = last_created
+            type = "postatomic_army"
+          }
+        }
+        # species 3
+            create_species = {
+              name = "Verdancien"
+              class = random_non_machine
+              portrait = random
+              homeworld = THIS
+              traits = { trait = random_traits }
+            }
+        while = {
+          count = 13
+          create_pop = {
+            species = last_created
+          }
+        }
+        while = {
+          count = 16
+          create_army = {
+            name = "Free Revolutionary Verdancien Militias"
+            owner = last_created
+            species = last_created
+            type = "postatomic_army"
+          }
+        }
+          }
+      }
+  
+    planet = {
+          class = "pc_ringworld_tech"
+          orbit_angle = 30
+          orbit_distance = 0
+      }
+  
+      init_effect = {
+        random_system_planet = {
+            limit = { is_star = no }
+            create_fleet = {
+                name = "Reavers"
+                effect = {
+                    set_owner = event_target:pirate_country
+                    create_ship_design = {
+                        design = "NAME_Reaver"
+                    }
+          random_list = {
+            20 = {
+              set_fleet_flag = tiyanki_hunter
+            }
+            80 = {
+              set_fleet_flag = empty_system
+            }
+          }
+                    while = {
+                        count = 12
+                        create_ship = {
+                            name = random
+                            design = last_created_design
+                            graphical_culture = "pirate_01"
+                        }
+                    }
+                    set_location = {
+                        target = prev
+                        distance = 90
+                        angle = 200
+                    }
+                    set_fleet_stance = aggressive
+                    set_aggro_range_measure_from = self
+                    set_aggro_range = 150
+                    save_global_event_target_as = young_blood
+          if = {
+            limit = { has_fleet_flag = tiyanki_hunter }
+            save_event_target_as = hunting_amoeba
+            queue_actions = {
+              wait = {
+                # Cooldown until they start moving
+                duration = 1 # 5000
+                random = 1 #1000
+              }
+            }
+            else = {
+              queue_actions = {
+                wait = {
+                  # Cooldown until they start moving
+                  duration = 1 # 5000
+                  random = 1 # 1000
+                }
+              }
+            }
+          }
+                }
+            }
+        }
+          spawn_megastructure = {
+              type = "ring_world_ruined"
+              orbit_angle = 90
+              orbit_distance = 45
+              location = planet
+          }
+          spawn_megastructure = {
+              type = "ring_world_ruined"
+              orbit_angle = 180
+              orbit_distance = 45
+              location = planet
+          }
+          spawn_megastructure = {
+              type = "ring_world_ruined"
+              orbit_angle = 270
+              orbit_distance = 45
+              location = planet
+          }
+      }
+  }
+  
+  # trinary with one unrepairable ringworld with habitable segment
+  pg_cluster_04 = {
+    name = "Zeta Mapulon"
+    class = sc_trinary_2
+    usage = misc_system_init
+    usage_odds = 0
+    flags = { pg_cluster pg_cluster_04 ruined_ring_system }
+  
+    # star 1
+    planet = {
+      name = "1 Zeta Mapulon"
+      class = "pc_m_star"
+          orbit_distance = 0
+          orbit_angle = 1
+          size = 25
+          has_ring = no
+      init_effect = {
+        set_deposit = d_alloys_1
+              create_ambient_object = {
+                  type = "large_debris_object"
+                  location = THIS
+              }
+          }
+      change_orbit = 45
+      planet = {
+        name = "1-ZM-i"
+        class = "pc_ringworld_tech_damaged"
+        orbit_angle = 30
+            orbit_distance = 0
+      }
+      planet = {
+        name = "1-ZM-ii"
+        class = "pc_ringworld_seam_damaged"
+        orbit_angle = 30
+            orbit_distance = 0
+      }
+      planet = {
+        name = "1-ZM-iii"
+        class = "pc_ringworld_tech_damaged"
+        orbit_angle = 30
+            orbit_distance = 0
+      }
+      planet = {
+        name = "1-ZM-iiii"
+        class = "pc_ringworld_seam_damaged"
+        orbit_angle = 30
+            orbit_distance = 0
+      }
+      planet = {
+        name = "1-ZM-v"
+        class = "pc_ringworld_tech_damaged"
+        orbit_angle = 30
+            orbit_distance = 0
+      }
+      planet = {
+        name = "1-ZM-vi"
+        class = "pc_ringworld_seam_damaged"
+        orbit_angle = 30
+            orbit_distance = 0
+      }
+      planet = {
+        name = "1-ZM-vii"
+        class = "pc_ringworld_tech_damaged"
+        orbit_angle = 30
+            orbit_distance = 0
+      }
+      planet = {
+        name = "1-ZM-viii"
+        class = "pc_ringworld_seam_damaged"
+        orbit_angle = 30
+            orbit_distance = 0
+      }
+      planet = {
+        name = "1-ZM-ix"
+        class = "pc_ringworld_tech_damaged"
+        orbit_angle = 30
+            orbit_distance = 0
+      }
+      planet = {
+        name = "1-ZM-x"
+        class = "pc_ringworld_seam_damaged"
+        orbit_angle = 30
+            orbit_distance = 0
+      }
+      planet = {
+        name = "1-ZM-xi"
+        class = "pc_ringworld_habitable"
+        orbit_angle = 30
+            orbit_distance = 0
+        init_effect = {
+          add_deposit = d_city_ruins
+          add_deposit = d_bomb_crater
+          add_deposit = d_former_battlefield
+          add_deposit = d_ruined_arcology
+        }
+      }
+      planet = {
+        name = "1-ZM-xii"
+        class = "pc_ringworld_seam_damaged"
+        orbit_angle = 30
+            orbit_distance = 0
+      }
+    }
+    # star 2
+    planet = {
+      name = "2 Zeta Mapulon"
+      class = "pc_a_star"
+          orbit_distance = 400
+          orbit_angle = 120
+          size = 30
+          has_ring = no
+      init_effect = {
+        set_deposit = d_physics_4
+              create_ambient_object = {
+                  type = "large_debris_object"
+                  location = THIS
+              }
+          }
+      change_orbit = 45
+      planet = {
+        count = { min = 2 max = 4}
+        orbit_distance = 25
+        orbit_angle = { min = 70 max = 300 }
+        size = { min = 11 max = 25 }
+        change_orbit = @base_moon_distance
+        moon = {
+          count = { min = 0 max = 2}
+          class = random_non_colonizable
+          size = { min = 7 max = 9 }
+          orbit_distance = 5
+          orbit_angle = { min = 60 max = 300}
+          has_ring = no
+        }
+      }
+    }
+    # star 3
+    planet = {
+      name = "3 Zeta Mapulon"
+      class = "pc_b_star"
+          orbit_distance = 0
+          orbit_angle = 180
+          size = 30
+          has_ring = no
+      init_effect = {
+        set_deposit = d_alloys_3
+              create_ambient_object = {
+                  type = "large_debris_object"
+                  location = THIS
+              }
+          }
+      change_orbit = 45
+      planet = {
+        count = { min = 2 max = 4}
+        orbit_distance = 25
+        orbit_angle = { min = 70 max = 300 }
+        size = { min = 11 max = 25 }
+        change_orbit = @base_moon_distance
+        moon = {
+          count = { min = 0 max = 2}
+          class = random_non_colonizable
+          size = { min = 7 max = 9 }
+          orbit_distance = 5
+          orbit_angle = { min = 60 max = 300}
+          has_ring = no
+        }
+      }
+    }
+  }
+  
+  # Trinary
+  pg_cluster_05 = {
+    name = "Eta Mayari"
+    class = sc_trinary_3
+    usage = misc_system_init
+    usage_odds = 0
+    flags = { pg_cluster pg_cluster_05 }
+    # star
+    planet = {
+      name = "Eta Mayari"
+      class = "pc_g_star"
+          orbit_distance = 300
+          orbit_angle = 120
+          size = 30
+          has_ring = no
+      satellite_naming_policy = upper_case_roman_numerals
+      change_orbit = 30
+      planet = {
+        satellite_naming_policy = lower_case_latin_letters
+        count = { min = 2 max = 4}
+        orbit_distance = 25
+        orbit_angle = { min = 70 max = 300 }
+        size = { min = 11 max = 25 }
+        change_orbit = @base_moon_distance
+        moon = {
+          count = { min = 0 max = 2}
+          class = random_non_colonizable
+          size = { min = 7 max = 9 }
+          orbit_distance = 5
+          orbit_angle = { min = 60 max = 300}
+          has_ring = no
+        }
+      }
+    }
+    # star
+    planet = {
+      name = "Theta Mayari"
+      class = "pc_k_star"
+          orbit_distance = 0
+          orbit_angle = 120
+          size = 30
+          has_ring = no
+      satellite_naming_policy = upper_case_roman_numerals
+      init_effect = {
+        create_ambient_object = {
+          type = "abandoned_starbase_01_object"
+          location = this
+        }
+      }
+      change_orbit = 30
+      planet = {
+        satellite_naming_policy = lower_case_latin_letters
+        count = { min = 2 max = 4}
+        orbit_distance = 25
+        orbit_angle = { min = 70 max = 300 }
+        size = { min = 11 max = 25 }
+        change_orbit = @base_moon_distance
+        moon = {
+          count = { min = 0 max = 2}
+          class = random_non_colonizable
+          size = { min = 7 max = 9 }
+          orbit_distance = 5
+          orbit_angle = { min = 60 max = 300}
+          has_ring = no
+        }
+      }
+    }
+    # star
+    planet = {
+      name = "Iota Mayari"
+      class = "pc_f_star"
+          orbit_distance = 0
+          orbit_angle = 120
+          size = 30
+          has_ring = no
+      satellite_naming_policy = upper_case_roman_numerals
+      init_effect = {
+        create_ambient_object = {
+          type = "abandoned_starbase_01_object"
+          location = this
+        }
+      }
+      change_orbit = 30
+      planet = {
+        satellite_naming_policy = lower_case_latin_letters
+        count = { min = 2 max = 4}
+        orbit_distance = 25
+        orbit_angle = { min = 70 max = 300 }
+        size = { min = 11 max = 25 }
+        change_orbit = @base_moon_distance
+        moon = {
+          count = { min = 0 max = 2}
+          class = random_non_colonizable
+          size = { min = 7 max = 9 }
+          orbit_distance = 5
+          orbit_angle = { min = 60 max = 300}
+          has_ring = no
+        }
+      }
+    }
+  }
+  
+  # black hole with a shielded moon
+  pg_cluster_06 = {
+    name = "Delta Dalikamata"
+    class = sc_black_hole
+    usage = misc_system_init
+    usage_odds = 0
+    flags = { pg_cluster pg_cluster_06 }
+  
+    # star
+    planet = {
+      name = "Delta Dalikamata"
+      class = "pc_black_hole"
+          orbit_distance = 0
+          orbit_angle = 1
+          size = 30
+          has_ring = no
+    }
+    change_orbit = 45
+    planet = {
+      class = pc_gas_giant
+      count = { min = 0 max = 1 }
+      orbit_distance = 50
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      change_orbit = @base_moon_distance
+      moon = {
+        count = { min = 0 max = 1}
+        class = pc_shattered
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+        init_effect = {
+          set_deposit = d_engineering_3
+          create_ambient_object = {
+            type = "abandoned_starbase_01_object"
+            location = this
+          }
+          create_ambient_object = {
+            type = "medium_debris_01_object"
+            location = this
+          }
+        }
+      }
+    }
+    planet = {
+      class = pc_gas_giant
+      count = { min = 0 max = 1}
+      orbit_distance = 50
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      change_orbit = @base_moon_distance
+      moon = {
+        count = { min = 0 max = 1}
+        class = pc_shrouded
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+      moon = {
+        count = { min = 0 max = 1}
+        class = pc_shielded
+        size = { min = 10 max = 15 }
+        orbit_distance = 7
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+        modifiers = none
+            flags = { fallen_shield_world }
+            init_effect = { prevent_anomaly = yes }
+      }
+    }
+  }
+  
+  # asteroid system
+  pg_cluster_07 = {
+    name = "Iota Dumakulem"
+    class = sc_neutron_star
+    usage = misc_system_init
+    usage_odds = 0
+    flags = { pg_cluster pg_cluster_07 }
+  
+    # star
+    planet = {
+      name = "Iota Dumakulem"
+      class = "pc_neutron_star"
+          orbit_distance = 0
+          orbit_angle = 1
+          size = 30
+          has_ring = no
+    }
+    asteroid_belt = {
+      type = rocky_asteroid_belt
+      radius = 170
+    }
+    change_orbit = 170
+    planet = {
+      class = pc_asteroid
+      count = 9
+      orbit_distance = 0
+      orbit_angle = 40
+    }
+    asteroid_belt = {
+      type = rocky_asteroid_belt
+      radius = 210
+    }
+    change_orbit = 40
+    planet = {
+      class = pc_shattered
+      count = 1
+      orbit_distance = 0
+      orbit_angle = 51
+      init_effect = {
+        set_deposit = d_minerals_7
+      }
+    }
+    planet = {
+      class = pc_asteroid
+      count = 6
+      orbit_distance = 0
+      orbit_angle = 51
+    }
+    asteroid_belt = {
+      type = crystal_asteroid_belt
+      radius = 250
+    }
+    change_orbit = 40
+    planet = {
+      class = pc_crystal_asteroid
+      count = 3
+      orbit_distance = 0
+      orbit_angle = 60
+    }
+    planet = {
+      class = pc_crystal_asteroid
+      count = 3
+      orbit_distance = 0
+      orbit_angle = 60
+    }
+    asteroid_belt = {
+      type = icy_asteroid_belt
+      radius = 300
+    }
+    change_orbit = 50
+    planet = {
+      class = pc_ice_asteroid
+      count = 8
+      orbit_distance = 0
+      orbit_angle = 45
+    }
+  }
+  pg_cluster_home = {
+      class = sc_g
+      usage = misc_system_init
+      usage_odds = 0
+      flags = { pg_cluster pg_cluster_home }
+      
+      #star
+      planet = {
+          class = pc_g_star
+          orbit_distance = 0
+          orbit_angle = 1
+          size = 30
+          has_ring = no
+      }
+      planet = {
+		count = 1
+		orbit_distance = 40
+		class = pc_gaia
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 25 }
+        deposit_blockers = none
+		modifiers = none
+		init_effect = {
+			save_event_target_as = cluster_home_planet
+		}
+	}
+  }
+  
+  # giants with Amoeba
+  pg_cluster_08 = {
+    name = "Kappa Kataga"
+    class = sc_m_giant
+    usage = misc_system_init
+    usage_odds = 0
+    flags = { pg_cluster pg_cluster_08 hostile_system pirate_home_system pirate_system }
+  
+    # star
+    planet = {
+      name = "Kappa Kataga"
+      class = "pc_m_giant_star"
+          orbit_distance = 0
+          orbit_angle = 1
+          size = 30
+          has_ring = no
+    }
+    change_orbit = 50
+    planet = {
+      class = pc_gas_giant
+      count = { min = 1 max = 2 }
+      orbit_distance = 50
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      change_orbit = @base_moon_distance
+      moon = {
+        count = { min = 0 max = 4 }
+        class = random_non_colonizable
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+    }
+    planet = {
+      class = pc_gas_giant
+      count = { min = 0 max = 2 }
+      orbit_distance = 50
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      change_orbit = @base_moon_distance
+      moon = {
+        count = { min = 0 max = 1}
+        class = random_non_colonizable
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+      moon = {
+        count = { min = 0 max = 1}
+        class = rl_habitable_normal
+        size = { min = 12 max = 19 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+      moon = {
+        count = { min = 0 max = 2}
+        class = random_non_colonizable
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+    }
+    planet = {
+      class = pc_gas_giant
+      count = { min = 1 max = 2 }
+      orbit_distance = 50
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      change_orbit = @base_moon_distance
+      moon = {
+        count = { min = 0 max = 4 }
+        class = random_non_colonizable
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+    }
+    init_effect = {
+          create_amoeba_country = yes
+          random_system_planet = {
+              limit = { is_star = no }
+              save_event_target_as = grazing_grounds
+              event_target:amoeba_country = {
+                  create_fleet = {
+                      name = "NAME_Space_Amoeba_Hunters"
+                      effect = {
+                          set_owner = event_target:amoeba_country
+                          random_list = {
+                              20 = {
+                                  set_fleet_flag = tiyanki_hunter
+                              }
+                              70 = {
+                                  set_fleet_flag = empty_system
+                              }
+                          }
+                          while = {
+                              count = 4
+                              create_ship = {
+                                  name = ""
+                                  design = "NAME_Small_Space_Organism_Orange"
+                              }
+                          }
+                          while = {
+                              count = 1
+                              create_ship = {
+                                  name = ""
+                                  design = "NAME_Large_Space_Organism_Orange"
+                              }
+                          }
+                          set_location = PREVPREV
+                          set_fleet_stance = aggressive
+                          set_aggro_range_measure_from = self
+                          set_aggro_range = 20
+  
+                          if = {
+                              limit = { has_fleet_flag = tiyanki_hunter }
+                              save_event_target_as = hunting_amoeba
+                              queue_actions = {
+                                  wait = { # Cooldown until they start moving
+                                      duration = 5000
+                                      random = 1000
+                                  }
+                              }
+                              else = {
+                                  queue_actions = {
+                                      wait = { # Cooldown until they start moving
+                                          duration = 5000
+                                          random = 1000
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }

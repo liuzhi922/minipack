@@ -1,0 +1,267 @@
+
+
+anti_propaganda_funding = {
+	potential = {
+		is_ai = no
+		NOR = { 
+			
+			has_valid_civic = civic_police_state
+		}
+	}
+	
+	option = {
+		name = "low_anti_propaganda_funding"
+
+		policy_flags = {
+			low_anti_propaganda_funding
+		}
+
+	}
+
+	option = {
+		name = "low_med_anti_propaganda_funding"
+
+		valid = {
+			resource_stockpile_compare = { 
+				resource = energy value > 0
+			}
+		}
+
+		policy_flags = {
+			low_med_anti_propaganda_funding
+		}
+
+		modifier = {
+			country_energy_produces_mult = -0.02
+		}
+
+	}
+
+	option = {
+		name = "medium_anti_propaganda_funding"
+
+		valid = {
+			resource_stockpile_compare = { 
+				resource = energy value > 0
+			}
+		}
+
+		policy_flags = {
+			medium_anti_propaganda_funding
+		}
+
+		modifier = {
+			country_energy_produces_mult = -0.05
+		}
+	}
+
+	option = {
+		name = "high_anti_propaganda_funding"
+
+
+		valid = {
+			resource_stockpile_compare = { 
+				resource = energy value > 0
+			}
+		}
+
+		policy_flags = {
+			high_anti_propaganda_funding
+		}
+
+		modifier = {
+			country_energy_produces_mult = -0.10
+		}
+
+	}
+}
+
+anti_propaganda_funding_ai = {
+	potential = {
+		is_ai = yes
+		NOR = { 
+			
+			has_valid_civic = civic_police_state
+		}
+	}
+	
+	option = {
+		name = "low_anti_propaganda_funding"
+
+		policy_flags = {
+			low_anti_propaganda_funding
+		}
+
+	}
+
+	option = {
+		name = "low_med_anti_propaganda_funding"
+
+		valid = {
+			resource_stockpile_compare = { 
+				resource = energy value > 900
+			}
+		}
+
+		policy_flags = {
+			low_med_anti_propaganda_funding
+		}
+
+		modifier = {
+			country_energy_produces_mult = -0.02
+		}
+
+	}
+
+	option = {
+		name = "medium_anti_propaganda_funding"
+
+		valid = {
+			resource_stockpile_compare = { 
+				resource = energy value > 2000
+			}
+		}
+
+		policy_flags = {
+			medium_anti_propaganda_funding
+		}
+
+		modifier = {
+			country_energy_produces_mult = -0.05
+		}
+	}
+
+	option = {
+		name = "high_anti_propaganda_funding"
+
+		valid = {
+			resource_stockpile_compare = { 
+				resource = energy value > 5000
+			}
+		}
+
+		policy_flags = {
+			high_anti_propaganda_funding
+		}
+
+		modifier = {
+			country_energy_produces_mult = -0.10
+		}
+
+	}
+}
+
+
+anti_propaganda_funding_pc = { #POLICE STATE
+	potential = {
+		has_valid_civic = civic_police_state
+		is_country_type = default
+		is_ai = no
+	}
+	
+	option = {
+		name = "low_med_anti_propaganda_funding"
+	
+
+		policy_flags = {
+			low_med_anti_propaganda_funding
+		}
+
+	}
+
+	option = {
+		name = "medium_anti_propaganda_funding"
+		
+
+		valid = {
+			resource_stockpile_compare = { 
+				resource = energy value > 0
+			}
+		}
+
+		policy_flags = {
+			medium_anti_propaganda_funding
+		}
+
+		modifier = {
+			country_energy_produces_mult = -0.05
+		}
+
+	}
+
+	option = {
+		name = "high_anti_propaganda_funding"
+		
+		valid = {
+			resource_stockpile_compare = { 
+				resource = energy value > 0
+			}
+		}
+
+		policy_flags = {
+			high_anti_propaganda_funding
+		}
+
+		modifier = {
+			country_energy_produces_mult = -0.10
+		}
+
+	}
+}
+
+anti_propaganda_funding_pc_ai = { #POLICE STATE
+	potential = {
+		has_valid_civic = civic_police_state
+		is_country_type = default
+		is_ai = yes
+	}
+	
+	option = {
+		name = "low_med_anti_propaganda_funding"
+	
+
+		policy_flags = {
+			low_med_anti_propaganda_funding
+		}
+
+	}
+
+	option = {
+		name = "medium_anti_propaganda_funding"
+		
+
+		valid = {
+			resource_stockpile_compare = { 
+				resource = energy value > 2000
+			}
+		}
+
+		policy_flags = {
+			medium_anti_propaganda_funding
+		}
+
+		modifier = {
+			country_energy_produces_mult = -0.05
+		}
+
+	}
+
+	option = {
+		name = "high_anti_propaganda_funding"
+		
+		valid = {
+			resource_stockpile_compare = { 
+				resource = energy value > 5000
+			}
+		}
+
+		policy_flags = {
+			high_anti_propaganda_funding
+		}
+
+		modifier = {
+			country_energy_produces_mult = -0.10
+		}
+
+	}
+}

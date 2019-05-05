@@ -1,0 +1,40 @@
+namespace = gai_ai_early_game
+#This makes the AI quickly build new science and constructor ships.
+#I wish I could actually just queue the item in the starbase instead of cheating it into existance
+#All event descriptions are now in the common\on actions\ folder
+
+country_event = {
+	id = gai_dynamic_difficulty.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		IF = {
+			limit = { not = { has_global_flag = gai_dynamic_difficulty } }
+			#IF = {
+				#limit = { years_passed > 80 }
+				IF = {
+					limit = {
+						NOT = {
+							any_relation = {
+								OR = {
+									relative_power = {
+										who = root
+										category = fleet
+										value > equivalent
+									}
+									relative_power = {
+										who = root
+										category = technology
+										value > equivalent
+									}
+								}
+							}
+						}
+					}
+					set_global_flag = gai_dynamic_difficulty
+				}
+			#}
+		}
+	}
+}

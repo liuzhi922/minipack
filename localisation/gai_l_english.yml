@@ -1,0 +1,49 @@
+﻿l_english:
+describe_decision_gai_alloy:0 "Tells the sector AI to make this an alloy focused world"
+decision_gai_alloy:0 "GAI Alloy Focus"
+decision_gai_alloy_desc:0 "You must use this with the balanced sector focus. Do not enable otherwise."
+
+
+
+describe_decision_gai_goods:0 "Tells the sector AI to make this a consumer goods focused world"
+decision_gai_goods:0 "GAI Goods Focus"
+decision_gai_goods_desc:0 "You must use this with the balanced sector focus. Do not enable otherwise."
+
+
+st_balanced:0 "Use GAI"
+st_balanced_desc:0 "The sector will use the building weights from the Glavius's Ultimate AI mod."
+
+gai_goods_focus:0 "Consumer Goods Focus"
+decision_gai_goods_focus:0 "Use Decisions to disable focus"
+gai_goods_focus_desc:0 "This focus should only be used with the balanced sector focus!"
+
+gai_alloy_focus:0 "Alloy Focus"
+decision_gai_alloy_focus:0 "Use Decisions to disable focus"
+gai_alloy_focus_desc:0 "This focus should only be used with the balanced sector focus!"
+
+decision_gai_fleet:0 "Fleet Focus"
+decision_gai_fleet_desc:0 "You must use this with the balanced sector focus. Do not enable otherwise."
+
+
+describe_decision_gai_fleet:0 "Tells the sector AI to make this a fleet focused world"
+gai_fleet_focus:0 "GAI Fleet Focus"
+gai_fleet_focus_desc:0 "Use Decisions to disable focus"
+gai_fleet_focus_desc:0 "This focus should only be used with the balanced sector focus!"
+
+decision_gai_unity:0 "GAI Unity Focus"
+decision_gai_unity_desc:0 "You must use this with the balanced sector focus. Do not enable otherwise."
+describe_decision_gai_unity:0 "Tells the sector AI to make this a unity focused world"
+gai_unity_focus:0 "Unity Focus"
+gai_unity_focus_desc:0 "Use Decisions to disable focus"
+gai_unity_focus_desc:0 "This focus should only be used with the balanced sector focus!"
+
+decision_gai_tech:0 "GAI Technology Focus"
+decision_gai_tech_desc:0 "You must use this with the balanced sector focus. Do not enable otherwise."
+describe_decision_gai_tech:0 "Tells the sector AI to make this a tech focused world"
+gai_tech_focus:0 "Technology Focus"
+gai_tech_focus_desc:0 "Use Decisions to disable focus"
+gai_tech_focus_desc:0 "This focus should only be used with the balanced sector focus!"
+
+decision_gai_focus_remove:0 "Remove Current Focus"
+describe_decision_gai_focus_remove:0 "Removes the current focus from this world"
+decision_gai_focus_remove_desc:0 "Removes the current focused world flag"

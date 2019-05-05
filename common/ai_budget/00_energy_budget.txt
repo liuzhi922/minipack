@@ -1,0 +1,146 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+energy_expenditure_buffer = { # Buffer, will not be spent
+	resource = energy 
+	type = expenditure
+	category = buffer
+	
+	potential = {
+		always = no
+	}
+	
+	fraction = {
+		weight = 0.05
+	}	
+}
+
+energy_expenditure_colonies = {
+	resource = energy 
+	type = expenditure
+	category = trade
+	
+	potential = {
+		always = yes
+	}
+   
+    static_min = {
+        base = 10000
+    }	
+}
+
+energy_expenditure_decisions = {
+    resource = energy
+    type = expenditure
+    category = decisions
+   
+	potential = {
+		always = yes
+	}
+   
+    static_min = {
+        base = 30000
+    }	
+}
+
+energy_expenditure_edicts = {
+    resource = energy
+    type = expenditure
+    category = edicts
+   
+	potential = {
+		always = yes
+	}
+   
+    static_min = {
+        base = 30000
+    }	
+}
+
+energy_expenditure_leaders = {
+	resource = energy 
+	type = expenditure
+	category = leaders
+	
+	potential = {
+		always = yes
+	}
+	
+	fraction = {
+        weight = 0
+    }  
+   
+    static_min = {
+        base = 30000
+    }
+}
+
+energy_expenditure_deposit_blockers = {
+	resource = energy 
+	type = expenditure
+	category = deposit_blockers
+	
+	potential = {
+		always = yes
+	}
+   
+    static_min = {
+        base = 30000
+    }
+}
+
+energy_expenditure_megastructures = {
+	resource = energy 
+	type = expenditure
+	category = megastructures
+	
+	potential = {
+		is_country_type = default
+		is_at_war = no
+		has_galactic_wonders = yes
+	}
+	
+	fraction = {
+        weight = 0
+    }  
+   
+    static_min = {
+        base = 30000
+    }
+}
+
+
+############
+## Upkeep ##
+############
+
+energy_upkeep_country = { # Covers most other things
+	resource = energy 
+	type = upkeep
+	category = country
+	
+	potential = {
+		always = yes
+	}
+	
+	fraction = {
+		weight = 2
+	}	
+}
+
+energy_upkeep_armies = { # Prevents AI from having more than 60 armies.
+	resource = energy 
+	type = upkeep
+	category = armies
+	
+	potential = {
+		always = yes
+	}
+	
+	static_min = {
+		base = 60
+	}
+}

@@ -1,0 +1,35 @@
+namespace = utopia
+# Pick a Patron to contact
+country_event = {
+	id = utopia.3303
+	
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_list = {
+			25 = { country_event = { id = utopia.3304 } }	# The Whisperers in the Void
+			25 = { country_event = { id = utopia.3305 } }	# The Composer of Strands
+			25 = { country_event = { id = utopia.3306 } }	# The Eater of Worlds
+			25 = { country_event = { id = utopia.3307 } }	# The Instrument of Desire
+#			10 = { country_event = { id = pg.6 } }	# The Stranger
+			10 = { 
+				if = {
+					limit = { 
+						NOT = { has_global_flag = end_of_the_cycle }
+					}
+					country_event = { id = utopia.3308 }  # The End of the Cycle
+				}
+				else = {
+					random_list = {
+						25 = { country_event = { id = utopia.3304 } }	# The Whisperers in the Void
+						25 = { country_event = { id = utopia.3305 } }	# The Composer of Strands
+						25 = { country_event = { id = utopia.3306 } }	# The Eater of Worlds
+						25 = { country_event = { id = utopia.3307 } }	# The Instrument of Desire	
+#						10 = { country_event = { id = pg.6 } }	# The Stranger	
+					}
+				}					
+			}	
+		}
+	}
+}

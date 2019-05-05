@@ -1,0 +1,178 @@
+@section_cost = 30
+
+ship_section_template = {
+	key = "CORVETTE_MID_M1S1"
+	ship_size = corvette
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "corvette_M1S1_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { tech_missiles_1 }
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 10
+			owner = { has_technology = tech_torpedoes_1 }
+		}
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_01"
+		slot_size = torpedo
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	
+	small_utility_slots = 3
+	aux_utility_slots = 1
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = @section_cost
+		}
+	}
+}
+
+ship_section_template = {
+	key = "CORVETTE_MID_S3"
+	ship_size = corvette
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "corvette_S3_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_02"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_03"
+	}
+	
+	small_utility_slots = 3
+	aux_utility_slots = 1
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 10.0
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}
+		modifier = {
+			factor = 0.1
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0
+			owner = { has_technology = tech_torpedoes_1 }
+		}
+	}
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = @section_cost
+		}
+	}
+}
+
+ship_section_template = {
+	key = "CORVETTE_MID_S2PD1"
+	ship_size = corvette
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "corvette_S3_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1000
+			owner = { has_technology = tech_cruisers }
+		}
+		modifier = {
+			factor = 0
+			owner = { has_technology = tech_torpedoes_1 }
+		}
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_02"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_03"
+	}
+	
+	small_utility_slots = 3
+	aux_utility_slots = 1
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = @section_cost
+		}
+	}
+}
+
+#ship_section_template = {
+#	key = "CORVETTE_MID_S1"
+#	ship_size = corvette
+#	fits_on_slot = mid
+#	should_draw_components = yes
+#	entity = "corvette_S1_entity"
+#	icon = "GFX_ship_part_core_mid"
+#	
+#	# Unused by AI
+#	ai_weight = {
+#		factor = 0
+#	}
+#	
+#	component_slot = {
+#		name = "SMALL_GUN_01"
+#		slot_size = small
+#		slot_type = weapon
+#		locatorname = "small_gun_01"
+#	}
+#	
+#	small_utility_slots = 3
+#	medium_utility_slots = 2
+#	
+#	cost = 30
+#}

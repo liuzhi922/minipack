@@ -1,0 +1,113 @@
+#This event file calls all the sub events for the GAI mod.
+#I'm using this file so I can set a delay on all of the events in my mod. 
+#That way they wont all fire on the 1st of the month but will instead
+#be spread out throughout the year
+#My guess is that this will cause less impactful end of year headaches for players.
+
+namespace = gai_master_event
+
+event = {
+	id = gai_master_event.1
+	hide_window = yes
+    is_triggered_only = yes 
+	
+	immediate = {
+		set_timed_global_flag = { flag = gai_starbase_okay days = 5 } #Enables upgrading starbases from outpost to starport (prevents AI overbuilding stations)
+        every_playable_country = {
+			IF = {
+				limit = {
+					is_ai = yes
+					is_country_type = default
+				}
+				country_event = { id = gai_leader_firing.1 days = 1 random = 45 } #Fires "bad" leaders with arrested development and other negative traits
+				country_event = { id = gai_ai_starbase.1 days = 1 random = 280 }  #This event gurantees the AI ends up with a 6 shipyard+titan+colossus starbase. As of 2.2.7 it's impossible for the AI to replace modules through triggers.
+				country_event = { id = gai_designate_worlds.1 days = 1 random = 70 } #This event designates worlds to be alloy/consumer goods planets. It also is used to determine what planets to make Ecumenopolis planets.
+				country_event = { id = gai_fix_species.1 days = 1 random = 350 } #Bug fix event: Due to a bug with habitability traits this forces the AI to "modifiy" species to the correct habitability type.
+				IF = {
+					limit = {
+						NOT = { is_at_war = no }
+						NOT = { has_country_flag = gai_clear }
+					}
+					country_event = { id = gai_clear.6 days = 1 random = 7 }  #Bug fix event: Sends fleets to clear out space critters
+				}
+				country_event = { id = ai_fixmod_flag.2 days = 1 random = 14 }
+			}
+			IF = {
+				limit = { is_ai = no }
+				country_event = { id = gai_pops.2 days = 1 random = 240 }
+			}#Allows pops owned by human players to move jobs by setting a timed country flag.
+		}
+		IF = {
+			limit = {
+				any_country = { 
+					count >= 1
+					is_country_type = awakened_fallen_empire
+					NOT = { has_country_flag = gai_gave_design }
+				}
+			}
+			random_country = {
+				limit = { 
+					is_country_type = awakened_fallen_empire
+					NOT = { has_country_flag = gai_gave_design }
+				}
+				set_country_flag = gai_gave_design
+				create_ship_design = { design = "NAME_FE_STARBASE" }
+				add_ship_design = last_created_design
+				every_owned_starbase = {
+					set_starbase_module = {
+						slot = 0
+						module = shipyard
+					}
+					set_starbase_module = {
+						slot = 1
+						module = shipyard
+					}
+					set_starbase_module = {
+						slot = 2
+						module = shipyard
+					}
+					set_starbase_module = {
+						slot = 3
+						module = shipyard
+					}
+					set_starbase_module = {
+						slot = 4
+						module = shipyard
+					}
+					set_starbase_module = {
+						slot = 5
+						module = shipyard
+					}
+				}
+			}
+		}#This adds a starbase template to awakened fallen empires. It's needed in 2.2.7. It also changes all of their existing starbases into shipyards so they can really build up fleets.
+	}
+}#Yearly events
+
+event = {
+	id = gai_master_event.2
+	hide_window = yes
+    is_triggered_only = yes 
+	
+	immediate = {
+        every_playable_country = {
+			IF = {
+				limit = {
+					is_ai = yes
+					is_country_type = default
+				}
+				country_event = { id = gai_resettlement.2 days = 1 random = 25 } #This allows the ai to resettle pops from one planet to another.
+				country_event = { id = gai_space_farms.1 days = 1 random = 22 } #This removes farming districts from worlds once the AI has hydroponics farms on habitats. It will also remove generator districts in the case of gestalt since they can produce power in space.
+				IF = {
+					limit = { 
+						OR = { 
+							has_global_flag = ai_invasion_ongoing
+							has_global_flag = prethoryn_invasion_happened
+						}
+					}
+					country_event = { id = gai_crisis.1 days = 1 random = 10 } #Bug fix event: This event gurantees the crisis rapidly purges pops. This is here because sometimes they get stuck purging at a speed of +5 instead of +30 a month.
+				}
+			}
+		}
+	}
+}#monthly events

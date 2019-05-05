@@ -1,0 +1,17 @@
+objectTypes = {
+
+####################
+#	EXPUROOOOOOSION!
+####################
+	
+	pdxparticle = {
+		name = "scx_supercapital_explosion_particle"
+		type = "technosphere_explosion_effect"
+		scale = 3.0
+	}
+	
+	pdxparticle = {
+		name = "scx_capital_explosion_particle"
+		type = "technosphere_explosion_effect"
+		scale = 2.0
+	}

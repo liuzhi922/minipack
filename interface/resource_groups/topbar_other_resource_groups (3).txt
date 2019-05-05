@@ -1,0 +1,301 @@
+tb_others_group = {
+	resources = {
+		volatile_motes
+		exotic_gases
+		rare_crystals
+		sr_living_metal
+		sr_zro
+		sr_dark_matter
+		nanites
+		#AlphaMod
+			sr_actinides
+			sr_biomass
+			sr_electronics
+			sr_ice
+			sr_natural_fuels
+			sr_plastics
+			sr_precious_stones
+			sr_rare_metals
+			sr_wealth
+		#APSR - Anomalies, Planetary and Space Resources
+			apsr_knowledge
+		#automatic drones
+			automatic_drone
+		#Azur Lane Stellaris Mod
+			mind_club
+		#Cartman's Jobs and Buildings
+			medicine
+		#ESC
+			esc_enigmatic_energy
+			esc_gravitic_anomaly
+			esc_living_crystal
+			esc_psionic_charge
+			esc_transdimensional_vortex
+		#Fantastical Magiks
+			manacite
+		#Gigastructural Engineering & More
+			sr_iodizium
+			sr_solar_energy
+			sr_dwarven_steel
+		#Girls'Frontline
+			corechip
+		#Guilli's Planet Modifiers
+			gpm_arcane_technology
+		#Gwen's Additional Play Styles
+			sr_GAPS_psychic_power
+			sr_GAPS_water
+		#Honkai3rd Species Mod
+			honkai_energy
+		#Human Fallen Empires
+			hfe_sr_micro_robots
+		#Hypothetical Stars
+			sr_antimatter
+			sr_quark_gluon_plasma
+			sr_strange_matter
+		#Madoka Magica
+			grief_seed
+		#May the force be with you
+			sw_credit
+		#Mobile Suit Gundam Stellaris
+			cybernewtypes
+			efsf_pilots
+			efsf_ace_pilots		
+			luna_titanium
+			mobile_suits
+			newtypes
+			zeon_pilots
+			zeon_ace_pilots
+		#Planetary Diversity
+			sr_eludium
+			sr_acean
+		#Reaper civilization: ancient Vault
+			Tasrydine
+			stable_antimatte
+			Adamantium
+		#Stargate Universe
+			sr_ancient_zpm
+		#Star Wars Weapons
+			kyber_crystals
+			tibanna_gas
+		#Species Engineering
+			leng_breeder
+		#Stella Magica
+			stella_grief_cube
+		#The Decadence of Sanity--An Expanded Feature on Shroud
+			yin
+		#The Infinity Stones
+			sr_infinity_stone_soul
+			sr_infinity_stone_reality
+			sr_infinity_stone_time
+			sr_infinity_stone_space
+			sr_infinity_stone_power
+			sr_infinity_stone_mind
+		#The Zenith of Fallen Empires: Ancient Cache of Technology
+			acot_sr_dark_energy
+			acot_sr_light_matter
+			acot_sr_stellarite
+		#Twinks
+			virtue
+			ancient_knowldege
+			ambrosia
+			eternium
+			void_matter		
+		#United We Stand!
+			biomass
+			#Clone Armies
+				dna
+			#I am grunt
+				able_bodied_recruit
+				basic_officer
+				basic_solider
+				kinetic_ammo
+				military_equipment
+				plate_armor
+				vehicle_chasis
+				small_arms
+				supplies
+				combustible_mg_fuel
+				spare_parts
+			#Robot Armies
+				robotic_chasis	
+			#Take me to your leader
+				air_energy
+				dark_energy
+				earth_energy
+				fire_energy
+				gold_coins
+				light_energy
+				mind_energy
+				water_energy
+				xeno_abled_bodies
+				arcane_energy				
+		#Upper Limit
+			planetary_industry_equipments
+		#Not released yet
+			ukn_neutronium
+			ukn_electroweak_matter
+			ukn_quasi_matter
+			ukn_exotic_matter
+			ukn_exions
+			ukn_e3z0
+			ukn_tachyons
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default	
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market  
+}
+
+#Compatibility for Improved Topbar
+tb_extras_group = {
+resources = {
+		sr_living_metal
+		sr_zro
+		sr_dark_matter
+		nanites
+		#AlphaMod
+			sr_actinides
+			sr_biomass
+			sr_electronics
+			sr_ice
+			sr_natural_fuels
+			sr_plastics
+			sr_precious_stones
+			sr_rare_metals
+			sr_wealth
+		#APSR - Anomalies, Planetary and Space Resources
+			apsr_knowledge
+		#automatic drones
+			automatic_drone
+		#Azur Lane Stellaris Mod
+			mind_club
+		#Cartman's Jobs and Buildings
+			medicine
+		#ESC
+			esc_enigmatic_energy
+			esc_gravitic_anomaly
+			esc_living_crystal
+			esc_psionic_charge
+			esc_transdimensional_vortex
+		#Fantastical Magiks
+			manacite
+		#Gigastructural Engineering & More
+			sr_iodizium
+			sr_solar_energy
+			sr_dwarven_steel
+		#Girls'Frontline
+			corechip
+		#Guilli's Planet Modifiers
+			gpm_arcane_technology
+		#Gwen's Additional Play Styles
+			sr_GAPS_psychic_power
+			sr_GAPS_water
+		#Honkai3rd Species Mod
+			honkai_energy
+		#Human Fallen Empires
+			hfe_sr_micro_robots
+		#Hypothetical Stars
+			sr_antimatter
+			sr_quark_gluon_plasma
+			sr_strange_matter
+		#Madoka Magica
+			grief_seed
+		#May the force be with you
+			sw_credit
+		#Mobile Suit Gundam Stellaris
+			cybernewtypes
+			efsf_pilots
+			efsf_ace_pilots		
+			luna_titanium
+			mobile_suits
+			newtypes
+			zeon_pilots
+			zeon_ace_pilots
+		#Planetary Diversity
+			sr_eludium
+			sr_acean	
+		#Reaper civilization: ancient Vault
+			Tasrydine
+			stable_antimatte
+			Adamantium
+		#Stargate Universe
+			sr_ancient_zpm
+		#Star Wars Weapons
+			kyber_crystals
+			tibanna_gas
+		#Species Engineering
+			leng_breeder
+		#Stella Magica
+			stella_grief_cube
+		#The Decadence of Sanity--An Expanded Feature on Shroud
+			yin
+		#The Infinity Stones
+			sr_infinity_stone_soul
+			sr_infinity_stone_reality
+			sr_infinity_stone_time
+			sr_infinity_stone_space
+			sr_infinity_stone_power
+			sr_infinity_stone_mind
+		#The Zenith of Fallen Empires: Ancient Cache of Technology
+			acot_sr_dark_energy
+			acot_sr_light_matter
+			acot_sr_stellarite
+		#Twinks
+			virtue
+			ancient_knowldege
+			ambrosia
+			eternium
+			void_matter		
+		#United We Stand!
+			biomass
+			#Clone Armies
+				dna
+			#I am grunt
+				able_bodied_recruit
+				basic_officer
+				basic_solider
+				kinetic_ammo
+				military_equipment
+				plate_armor
+				vehicle_chasis
+				small_arms
+				supplies
+				combustible_mg_fuel
+				spare_parts
+			#Robot Armies
+				robotic_chasis	
+			#Take me to your leader
+				air_energy
+				dark_energy
+				earth_energy
+				fire_energy
+				gold_coins
+				light_energy
+				mind_energy
+				water_energy
+				xeno_abled_bodies
+				arcane_energy				
+		#Upper Limit
+			planetary_industry_equipments
+		#Not released yet
+			ukn_neutronium
+			ukn_electroweak_matter
+			ukn_quasi_matter
+			ukn_exotic_matter
+			ukn_exions
+			ukn_e3z0
+			ukn_tachyons	
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default	
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}

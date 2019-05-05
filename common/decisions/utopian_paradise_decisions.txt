@@ -1,0 +1,55 @@
+# Paradise Creation
+decision_paradise_creation = {
+	owned_planets_only = yes
+	
+	prerequisites = {
+		"tech_paradise_creation"
+	}
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = 1000
+			energy = 10000
+			minerals = 10000
+		}
+	}
+	
+	potential = {
+		NOT = { has_modifier = penal_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = pm_Utopian_Paradise }
+		OR = {
+			is_planet_class = pc_gaia
+			is_planet_class = pc_ringworld_habitable
+		}
+		owner = { 
+			is_regular_empire = yes
+			is_country_type = ascended_empire
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = decision_paradise_creation_no_districts
+			num_districts = { type = any value < 1 }
+			num_buildings = { type = any value < 2 }
+		}
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = pm_Utopian_Paradise
+			days = -1
+		}	
+		hidden_effect = {
+			validate_planet_buildings_and_districts = yes
+			clear_deposits = yes
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

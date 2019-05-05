@@ -1,0 +1,58 @@
+namespace = quibble_test
+
+
+###############################
+### CELL ONE ###
+###############################
+
+country_event = {
+    id = quibble_test.1
+    is_triggered_only = yes
+    hide_window = yes
+
+    immediate = {
+        random_list = {
+            10 = { ### WIN
+                modifier = {
+                    add = 1100
+                }
+                country_event = { id = quibble_test.6 }
+            }
+            10 = { ###### LOSE #####
+                modifier = {
+                    add = 110
+                }
+                country_event = { id = quibble_test.7 }
+            }
+        }
+    }
+}
+
+
+
+###################################
+### CELL ONE - WIN/LOSE RESULTS - TALLY UP ###
+###################################
+
+country_event = {
+    id = quibble_test.6
+    is_triggered_only = yes
+
+
+    option = {
+        name = quibble_test.6
+    }
+}
+
+    
+
+
+country_event = {
+    id = quibble_test.7
+    is_triggered_only = yes
+
+
+    option = {
+        name = quibble_test.7
+    }
+}

@@ -1,0 +1,153 @@
+# ####################
+#  Energy Lance
+# ####################
+
+
+# ## Resized Energy Lance 2
+weapon_component_template = {
+	key = "ENERGY_LANCE_2_LARGE"
+	size = large
+	entity = "large_laser_gun_entity"
+	type = instant
+	
+	icon = "GFX_ship_part_energy_lance_2"
+	icon_frame = 1
+	
+	static_rotation = yes
+	firing_arc = 25.0
+	min_range = 10.0
+	use_ship_kill_target = no
+
+	damage = { min = 320 max = 800 }
+	windup = { min = 1 max = 19 }
+	total_fire_time = 70
+	range = 90.0
+	accuracy = 0.85
+	shield_damage = 0.5
+	armor_damage = 2
+	hull_damage = 1.5
+	tracking = 0
+	power = -120
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t7_cost
+			rare_crystals = @l_t7_rare
+		}		
+		upkeep = {
+			energy = @l_t7_upkeep_energy
+			alloys = @l_t7_upkeep_alloys
+		}
+	}
+	
+	prerequisites = { "tech_resized_energy_lance_2" }
+	component_set = "ENERGY_LANCE_2_LARGE"
+	projectile_gfx = "resized_tachyon_lance"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+	ai_tag_weight = 0
+	upgrades_to = "COMPACT_OMNI_LANCE"
+	
+}
+
+
+# ####################
+#  Arc Emitter
+# ####################
+
+
+# ## Arc Emitter 2
+weapon_component_template = {
+	key = "ARC_EMITTER_2_LARGE"
+	size = large
+	entity = "large_laser_gun_entity"
+	type = instant
+	
+	icon = "GFX_ship_part_arc_emitter_2"
+	icon_frame = 1
+	
+	static_rotation = yes
+	firing_arc = 25.0
+	min_range = 10.0
+	use_ship_kill_target = no
+
+	damage = { min = 1 max = 680 }
+	windup = { min = 1 max = 19 }
+	total_fire_time = 71
+	range = 90.0
+	accuracy = 1
+	hull_damage = 1
+	shield_damage = 1
+	shield_penetration = 0.5
+	armor_damage = 1
+	armor_penetration = 0.5
+	tracking = 0
+	power = -120
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t7_cost
+			rare_crystals = @l_t7_rare
+		}		
+		upkeep = {
+			energy = @l_t7_upkeep_energy
+			alloys = @l_t7_upkeep_alloys
+		}
+	}
+	
+	prerequisites = { "tech_resized_arc_emitter_2" }
+	component_set = "ARC_EMITTER_2_LARGE"
+	projectile_gfx = "resized_arc_emitter_2"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_anti_hull }
+	ai_tag_weight = 0
+	upgrades_to = "COMPACT_OMNI_EMITTER"
+	
+}
+
+# ## Mass Accelerator 2
+weapon_component_template = {
+	type = instant
+	
+	key = "MASS_ACCELERATOR_2_LARGE"
+	size = large
+	entity = "large_kinetic_gun_entity"
+	
+	icon = "GFX_ship_part_mass_accelerator_2"
+	icon_frame = 1
+	
+	static_rotation = yes
+	firing_arc = 25.0
+	min_range = 10.0
+	use_ship_kill_target = no
+	
+	damage = { min = 360 max = 1040 }
+	windup = { min = 1 max = 19 }
+	total_fire_time = 80
+	range = 120.0
+	accuracy = 0.75
+	hull_damage = 1.25
+	shield_damage = 1.5
+	armor_damage = 0.75
+	tracking = 0
+	power = -120
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t7_cost
+			rare_crystals = @l_t7_rare
+		}		
+		upkeep = {
+			energy = @l_t7_upkeep_energy
+			alloys = @l_t7_upkeep_alloys
+		}
+	}
+	
+	prerequisites = { "tech_resized_mass_accelerator_2" }
+	component_set = "MASS_ACCELERATOR_2_LARGE"
+	projectile_gfx = "resized_adv_kinetic_artillery"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield }
+	ai_tag_weight = 0
+	upgrades_to = "COMPACT_OMNI_CANNON"
+}

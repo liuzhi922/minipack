@@ -1,0 +1,43 @@
+
+
+anti_spy_map_mode = {
+	icon = "GFX_quibble_anti_spy"
+    enable_terra_incognita = yes
+    
+    #ANTI LOW
+    color = {
+        value = rgb { 155 0 0 } 
+        custom_tooltip = "ANTI_LOW"
+        condition = {
+			has_policy_flag = low_anti_propaganda_funding
+        }
+    }
+
+    #ANTI LOW MED
+    color = {
+        value = rgb { 132 68 0 } 
+        custom_tooltip = "ANTI_LOW_MID"
+        condition = {
+			has_policy_flag = low_med_anti_propaganda_funding
+        }
+    }
+
+    #ANTI MEDIUM
+	color = {
+		value = rgb { 247 238 0 } 
+		custom_tooltip = "ANTI_MID"
+		condition = {
+            has_policy_flag = medium_anti_propaganda_funding
+		}
+    }
+    
+    #ANTI HIGH
+	color = {
+		value = rgb { 59 209 0 } 
+		custom_tooltip = "ANTI_HIGH"
+		condition = {
+            has_policy_flag = high_anti_propaganda_funding
+		}
+    }
+
+}

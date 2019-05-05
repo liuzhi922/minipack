@@ -1,0 +1,3 @@
+is_millionaire = {
+	has_valid_civic = civic_millionaire
+}

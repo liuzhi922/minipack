@@ -1,0 +1,39 @@
+﻿l_english:
+
+ col_ae_capital_utopian:0 "Utopian Capital"
+ col_ae_capital_utopian_desc:0 "The Utopian Capital of an Ascended Empire."
+ col_ae_colony_utopian:0 "Utopian World"
+ col_ae_colony_utopian_desc:0 "A Utopian World of an Ascended Empire."
+
+ district_utopian_city:0 "Utopian City District"
+ district_utopian_city_desc:0 "Districts of a Utopian City is built and engineered to perfection. They are self-sufficient and no upkeep is required."
+ 
+ district_utopian_leisure:0 "Utopian Leisure District"
+ district_utopian_leisure_desc:0 "The Leisure Districts of a Utopian World keeps its citizens enteretained, and live out the rest of their lives in total bliss, untroubled by the worries from the outside world."
+ 
+ decision_paradise_creation_no_districts:0 "£trigger_no£ The planet must be unspoiled by district and building development."
+ 
+ decision_paradise_creation:0 "Paradise Creation"
+ decision_paradise_creation_desc:0 "When nature is engineered to perfection, its unparalleled beauty among the known universe would be a fitting a legacy to leave for our young. Utopian Paradise Worlds are created from §Y$pc_gaia$§! or §Y$pc_ringworld_habitable$§!."
+ 
+ tech_paradise_creation:0 "Utopian Worlds"
+ tech_paradise_creation_desc:0 "Combining our mastery in terraforming, landscaping and engineering, we can create a true wonder in the universe and a Utopian world for our citizens to live." 
+ 
+ tech_fe_ancient_factory:1 "Autonomous Fabricators"
+ tech_fe_ancient_factory_desc:1 "Powered by dark matter and fully autonomous, this marvel of engineering is the pinnacle of technology and industry, and can only be built on Utopian Worlds."
+ 
+ tech_fe_dark_matter_power_plant:0 "Dark Matter Power Plant"
+ tech_fe_dark_matter_power_plant_desc:0 "Powered by dark matter and fully autonomous, this marvel of engineering is the pinnacle of technology and industry, and can only be built on Utopian Worlds."
+ 
+ tech_fe_agri_processing_complex:0 "Agri-Processing Complex"
+ tech_fe_agri_processing_complex_desc:0 "Powered by dark matter and fully autonomous, this marvel of engineering is the pinnacle of technology and industry, and can only be built on Utopian Worlds."
+ 
+ building_fe_ancient_factory:1 "Autonomous Fabricators"
+ building_fe_ancient_factory_desc:1 "Powered by dark matter and fully autonomous, this marvel of engineering is the pinnacle of technology and industry, and can only be built on Utopian Worlds."
+ 
+ building_fe_dark_matter_power_plant:0 "Dark Matter Power Plant"
+ building_fe_dark_matter_power_plant_desc:0 "Powered by dark matter and fully autonomous, this marvel of engineering is the pinnacle of technology and industry, and can only be built on Utopian Worlds."
+ 
+ building_fe_agri_processing_complex:0 "Agri-Processing Complex"
+ building_fe_agri_processing_complex_desc:0 "Powered by dark matter and fully autonomous, this marvel of engineering is the pinnacle of technology and industry, and can only be built on Utopian Worlds."
+ 

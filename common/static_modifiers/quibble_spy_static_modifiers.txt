@@ -1,0 +1,87 @@
+
+tech_eng_espionage_boost = {
+    country_engineering_tech_research_speed = 0.10
+}
+
+tech_phys_espionage_boost = {
+    country_physics_tech_research_speed = 0.10
+}
+
+tech_soc_espionage_boost = {
+    country_society_tech_research_speed = 0.10
+}
+
+
+
+quibble_station_mod = {
+    shipclass_starbase_damage_mult = 0.50
+}
+
+
+
+
+
+quibble_low_cellone_finance = {
+    country_base_influence_produces_add = -0.3
+}
+
+quibble_low_med_cellone_finance = {
+    country_base_influence_produces_add = -0.5
+}
+
+quibble_medium_cellone_finance = {
+    country_base_influence_produces_add = -1
+}
+
+quibble_high_cellone_finance = {
+    country_base_influence_produces_add = -1.5
+}
+#################################################################
+quibble_low_celltwo_finance = {
+    country_base_influence_produces_add = -0.3
+}
+
+quibble_low_med_celltwo_finance = {
+    country_base_influence_produces_add = -0.5
+}
+
+quibble_medium_celltwo_finance = {
+    country_base_influence_produces_add = -1
+}
+
+quibble_high_celltwo_finance = {
+    country_base_influence_produces_add = -1.5
+}
+#################################################################
+quibble_low_cellthree_finance = {
+    country_base_influence_produces_add = -0.3
+}
+
+quibble_low_med_cellthree_finance = {
+    country_base_influence_produces_add = -0.5
+}
+
+quibble_medium_cellthree_finance = {
+    country_base_influence_produces_add = -1
+}
+
+quibble_high_cellthree_finance = {
+    country_base_influence_produces_add = -1.5
+}
+###############################################################
+quibble_low_cellfour_finance = {
+    country_base_influence_produces_add = -0.3
+}
+
+quibble_low_med_cellfour_finance = {
+    country_base_influence_produces_add = -0.5
+}
+
+quibble_medium_cellfour_finance = {
+    country_base_influence_produces_add = -1
+}
+
+quibble_high_cellfour_finance = {
+    country_base_influence_produces_add = -1.5
+}
+

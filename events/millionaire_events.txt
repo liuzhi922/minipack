@@ -1,0 +1,90 @@
+namespace = millionaire
+
+country_event = {
+	id = millionaire.1
+    hide_window = yes
+	is_triggered_only = yes
+	
+	#trigger = { has_civic = civic_millionaire }
+    immediate = {
+        #set_country_flag = "millionaire"
+        if = {
+            limit = { is_millionaire = yes }
+			random_owned_leader = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_ruler_millionaire
+				add_ruler_trait = leader_trait_ruler_millionaire
+				set_age = 3492
+				set_skill = 5
+			}
+        }
+    }
+}
+
+country_event = {
+    id = millionaire.2
+    title = millionaire.2.title
+    desc = millionaire.2.desc
+    picture = GFX_evt_robot_assembly_plant
+
+    is_triggered_only = yes
+
+    trigger = { 
+		end_game_years_passed >= 20
+		is_millionaire = yes 
+	}
+
+	option = {
+		name = "millionaire.2.a"
+		capital_scope = {
+			enable_special_project = {
+				name = "SYNTHESIS"
+				location = this
+				owner = root
+			}
+		}
+	}
+}
+
+country_event = {
+    id = millionaire.3
+    title = millionaire.3.title
+    desc = millionaire.3.desc
+    picture = GFX_evt_robot_assembly_plant
+
+    is_triggered_only = yes
+
+    trigger = { is_millionaire = yes }
+
+	option = {
+		name = "millionaire.3.a"
+		capital_scope = {
+			enable_special_project = {
+				name = "LAUNCH"
+				location = this
+				owner = root
+			}
+		}
+	}
+}
+
+country_event = {
+    id = millionaire.4
+    title = millionaire.4.title
+    desc = millionaire.4.desc
+    picture = GFX_evt_robot_assembly_plant
+
+    is_triggered_only = yes
+
+    trigger = { is_millionaire = yes }
+
+        option = {
+            name = millionaire.4.a
+            owner = {
+			    add_modifier = {
+				    modifier = loop
+				    days = -1
+			}
+        }
+    }
+}

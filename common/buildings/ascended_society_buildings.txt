@@ -1,0 +1,1594 @@
+@feupkeep = 4
+@feproduction = 12
+
+@b4time = 180
+@b4cost = 150
+@b4effect = 5
+@b4upkeep = 2.5
+
+@b5time = 180
+@b5cost = 180
+@b5effect = 8
+@b5upkeep = 3
+
+@b6time = 180
+@b6cost = 360
+@b6upkeep = 4
+
+@b7time = 360
+@b7cost = 720
+@b7upkeep = 8
+
+@b8time = 720
+@b8cost = 1440
+@b8upkeep = 12
+
+
+#Central Square
+
+building_central_square = {
+	base_buildtime = @b7time
+	can_build = yes
+	can_demolish = yes
+
+	base_cap_amount = 1
+	
+	category = unity
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	show_tech_unlock_if = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+	
+	planet_modifier = {
+		pop_government_ethic_attraction = 0.25
+		job_culture_worker_add = 10
+	}
+	
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b7cost
+			rare_crystals = 50
+		}
+		upkeep = {
+			energy = @b7upkeep
+			rare_crystals = 2
+		}
+	}
+	
+	prerequisites = {
+		"tech_central_square"
+	}
+	
+	ai_weight = {
+		factor = 2
+	}	
+}
+
+
+##Spiritualist
+
+#Tier 1
+building_sacred_ground = {
+	base_buildtime = @b6time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = unity
+	
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				has_ethic = ethic_spiritualist		
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = {
+		is_spiritualist = yes
+	}
+	
+	planet_modifier = {
+		job_priest_add = 1
+		pop_ethic_spiritualist_attraction_mult = 0.1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b6cost
+		}
+		produces = {
+			unity = 4
+		}
+		upkeep = {
+			energy = 4
+		}
+	}
+	
+	prerequisites = {
+		"tech_ascended_society_1"
+	}
+	
+	triggered_desc = {
+		text = job_priest_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+#Tier 2
+building_altar_of_worship = {
+	base_buildtime = @b7time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = unity
+
+	potential = {
+		exists = owner
+		owner = { has_ethic = ethic_fanatic_spiritualist }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		has_ethic = ethic_fanatic_spiritualist		
+	}
+	
+	planet_modifier = {
+		job_priest_add = 5
+		pop_ethic_spiritualist_attraction_mult = 0.25
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b7cost
+		}
+		produces = {
+			unity = 8
+		}
+		upkeep = {
+			food = @b7upkeep
+			energy = 4
+		}
+	}
+	
+	prerequisites = {
+		"tech_ascended_society_2"
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#Tier 3
+building_consecrated_tomb = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = unity
+	
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = { 
+			is_country_type = ascended_empire
+			has_ethic = ethic_fanatic_spiritualist
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		has_fully_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { has_ethic = ethic_fanatic_spiritualist }
+	
+	planet_modifier = {
+		job_priest_add = 10
+		pop_ethic_spiritualist_attraction_mult = 0.5
+		pop_happiness = 0.1
+		planet_jobs_unity_produces_mult = 0.10
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+			rare_crystals = 150
+		}
+		produces = {
+			unity = 12
+		}
+		upkeep = {
+			energy = @b8upkeep
+			rare_crystals = 4
+		}
+	}
+
+	prerequisites = {
+		"tech_ascended_society_3"
+	}
+
+	ai_weight = {
+		weight = 50
+	}
+}
+
+##Materialist
+
+#Tier 1
+building_technolith = {
+	base_buildtime = @b6time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = research
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_materialist = yes
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		is_materialist = yes
+	}
+	
+	planet_modifier = {
+		pop_ethic_materialist_attraction_mult = 0.1
+		planet_researchers_produces_mult = 0.1
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b6cost
+			rare_crystals = 50
+		}
+		produces = {
+			engineering_research = 5
+			physics_research = 5
+			society_research = 5
+		}
+		upkeep = {
+			energy = @b6upkeep
+			rare_crystals = 1
+		}
+	}	
+	
+	prerequisites = {
+		"tech_ascended_society_1"
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+#Tier 2
+building_high_tech_industries = {
+	base_buildtime = @b7time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = manufacturing
+	
+	potential = {
+		exists = owner
+		owner = { has_ethic = ethic_fanatic_materialist }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		has_ethic = ethic_fanatic_materialist		
+	}
+	
+	planet_modifier = {
+		pop_ethic_materialist_attraction_mult = 0.25
+		planet_jobs_consumer_goods_produces_mult = 0.25
+		job_artisan_add = 5
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b7cost
+			rare_crystals = 100
+		}
+		upkeep = {
+			energy = @b7upkeep
+			rare_crystals = 2
+		}
+	}
+	
+	prerequisites = {
+		"tech_ascended_society_2"
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+	
+}
+
+#Tier 3
+building_magnificent_university = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = research
+	
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = { 
+			is_country_type = ascended_empire
+			has_ethic = ethic_fanatic_materialist
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		has_fully_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { has_ethic = ethic_fanatic_materialist }
+	
+	planet_modifier = {
+		pop_ethic_materialist_attraction_mult = 0.5
+		planet_researchers_produces_mult = 0.5
+		job_head_researcher_add = 1
+		job_researcher_add = 4
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+			rare_crystals = 150
+			exotic_gases = 150
+		}
+		produces = {
+			engineering_research = 25
+			physics_research = 25
+			society_research = 25
+		}
+		upkeep = {
+			energy = @b7upkeep
+			rare_crystals = 5
+			exotic_gases = 2
+		}
+	}
+			
+	prerequisites = {
+		"tech_ascended_society_3"
+	}
+
+	ai_weight = {
+		weight = 50
+	}
+}
+
+##Xenophile
+
+#Tier 1
+building_xeno_garden = {
+	base_buildtime = @b7time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = amenity
+	
+	potential = {
+		exists = owner
+		owner = { is_xenophile = yes }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		is_xenophile = yes	
+	}
+	
+	planet_modifier = {
+		pop_ethic_xenophile_attraction_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+		planet_amenities_add = 10
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b7cost
+		}
+		produces = {
+			society_research = 4
+		}
+		upkeep = {
+			food = @b7upkeep
+			energy = @b7upkeep
+		}
+	}
+	
+	prerequisites = {
+		"tech_ascended_society_2"
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+#Tier 2
+building_xeno_culture_centre = {
+	base_buildtime = @b6time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = unity
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_ethic = ethic_fanatic_xenophile
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		has_ethic = ethic_fanatic_xenophile
+	}
+	
+	planet_modifier = {
+		pop_ethic_xenophile_attraction_mult = 0.25
+		planet_immigration_pull_mult = 0.25
+		job_culture_worker_add = 5
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b6cost
+		}
+		produces = {
+			unity = 8
+		}
+		upkeep = {
+			energy = @b6upkeep
+		}
+	}
+		
+	
+	prerequisites = {
+		"tech_ascended_society_1"
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+
+
+#Tier 3
+building_xeno_museum = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = research
+	
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = { 
+			is_country_type = ascended_empire
+			has_ethic = ethic_fanatic_xenophile
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_fully_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { has_ethic = ethic_fanatic_xenophile }
+	
+	planet_modifier = {
+		pop_ethic_xenophile_attraction_mult = 0.50
+		planet_immigration_pull_mult = 0.50
+		job_head_researcher_add = 1
+		job_researcher_add = 4
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+		}
+		produces = {
+			society_research = 12
+		}
+		upkeep = {
+			energy = @b8upkeep
+		}
+	}
+		
+	prerequisites = {
+		"tech_ascended_society_3"
+	}
+	
+	ai_weight = {
+		weight = 50
+	}
+}
+
+##Xenophobe
+
+#Tier `
+building_statue_of_purity = {
+	base_buildtime = @b7time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = unity
+	
+	potential = {
+		exists = owner
+		owner = { is_xenophobe = yes }
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		is_xenophobe = yes	
+	}
+	
+	planet_modifier = {
+		pop_ethic_xenophobe_attraction_mult = 0.1
+		planet_immigration_pull_mult = -0.1
+		pop_growth_speed = 0.1
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b7cost
+			rare_crystals = 50
+		}
+		produces = {
+			unity = 8
+		}
+		upkeep = {
+			energy = @b7upkeep
+			rare_crystals = 1
+		}
+	}	
+	
+	prerequisites = {
+		"tech_ascended_society_2"
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+#Tier 2
+building_immigration_bureau = {
+	base_buildtime = @b6time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = government
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_ethic = ethic_fanatic_xenophobe
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		has_ethic = ethic_fanatic_xenophobe
+	}
+	
+	planet_modifier = {
+		pop_ethic_xenophobe_attraction_mult = 0.25
+		planet_immigration_pull_mult = -0.25
+		job_administrator_add = 1
+		job_enforcer_add = 5
+	}
+	
+	triggered_desc = {
+		text = job_enforcer_effect_desc
+	}
+	
+	triggered_desc = {
+		text = job_administrator_effect_desc
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b6cost
+		}
+		upkeep = {
+			energy = @b6upkeep
+		}
+	}	
+	
+	prerequisites = {
+		"tech_ascended_society_1"
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+
+#Tier 3
+building_altar_of_purity = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = unity
+	
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = { 
+			is_country_type = ascended_empire
+			has_ethic = ethic_fanatic_xenophobe
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_fully_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { has_ethic = ethic_fanatic_xenophobe }
+	
+	planet_modifier = {
+		pop_ethic_xenophobe_attraction_mult = 0.5
+		planet_immigration_pull_mult = -0.5
+		pop_happiness = 0.1
+		job_administrator_add = 1
+		job_culture_worker_add = 5
+		job_enforcer_add = 10
+	}
+	
+	triggered_desc = {
+		text = job_administrator_effect_desc
+	}
+	
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}
+	
+	triggered_desc = {
+		text = job_enforcer_effect_desc
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+			rare_crystals = 150
+		}
+		produces = {
+			unity = 12
+		}
+		upkeep = {
+			energy = @b8upkeep
+			rare_crystals = 5
+		}
+	}	
+
+		
+	prerequisites = {
+		"tech_ascended_society_3"
+	}
+	
+	ai_weight = {
+		weight = 50
+	}
+}
+
+##Militarist
+
+#Tier 1
+building_hunting_grounds = {
+	base_buildtime = @b6time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = unity
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_militarist = yes
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		is_militarist = yes
+	}
+	
+	planet_modifier = {
+		pop_ethic_militarist_attraction_mult = 0.1
+		planet_amenities_add = 5
+	}
+	
+	army_modifier = {
+		army_starting_experience_add = 100
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+		}
+		produces = {
+			unity = 4
+		}
+		upkeep = {
+			food = @b6upkeep
+		}
+	}	
+	
+	prerequisites = {
+		"tech_ascended_society_1"
+	}
+	
+	ai_weight = {
+		weight = 30
+	}
+}
+
+#Tier 2
+building_fortified_bunker = {
+	base_buildtime = @b7time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = army
+	
+	potential = {
+		owner = { has_ethic = ethic_fanatic_militarist }
+		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = resort_colony }	
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		has_ethic = ethic_fanatic_militarist		
+	}
+	
+	planet_modifier = {
+		pop_ethic_militarist_attraction_mult = 0.25
+		planet_housing_add = 4
+		job_soldier_add = 4
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b7cost
+			volatile_motes = 50
+		}	
+		upkeep = {
+			energy = @b7upkeep
+			volatile_motes = 1
+		}
+	}
+	
+	triggered_desc = {
+		text = job_soldier_effect_desc
+	}	
+	
+	prerequisites = {
+		"tech_ascended_society_2"
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#Tier 3
+building_fallen_monument = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = unity
+	
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = { 
+			is_country_type = ascended_empire
+			has_ethic = ethic_fanatic_militarist
+		}
+		NOT = { is_planet_class = pc_habitat }
+	}
+	
+	allow = {
+		has_fully_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { has_ethic = ethic_fanatic_militarist }
+	
+	planet_modifier = {
+		pop_ethic_militarist_attraction_mult = 0.5
+		planet_army_build_speed_mult = 0.5
+		pop_happiness = 0.1
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+		}	
+		produces = {
+			unity = 12
+		}
+		upkeep = {
+			energy = @b8upkeep
+		}
+	}
+	
+	prerequisites = {
+		"tech_ascended_society_3"
+	}
+	
+	ai_weight = {
+		weight = 50
+	}
+}
+
+##Pacifist
+
+#Tier 1
+building_garden_of_eden = {
+	base_buildtime = @b6time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+
+	category = amenity
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_pacifist = yes
+		}
+		NOT = { has_modifier = slave_colony }
+		NOT = { is_planet_class = pc_habitat }	
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		is_pacifist = yes
+	}
+	
+	planet_modifier = {
+		pop_ethic_pacifist_attraction_mult = 0.1
+		planet_amenities_add = 10
+		job_clerk_add = 1
+	}
+	
+	triggered_desc = {
+		text = job_clerk_effect_desc
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b6cost
+		}	
+		upkeep = {
+			energy = @b6upkeep
+		}
+	}
+		
+	prerequisites = {
+		"tech_ascended_society_1"
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+#Tier 2
+building_dome_of_life = {
+	base_buildtime = @b7time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+
+	category = amenity
+	
+	potential = {
+		exists = owner
+		owner = { has_ethic = ethic_fanatic_pacifist }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		has_ethic = ethic_fanatic_pacifist		
+	}
+	
+	planet_modifier = {
+		pop_ethic_pacifist_attraction_mult = 0.25
+		planet_amenities_add = 25
+		planet_housing_add = 25
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b7cost
+		}	
+		upkeep = {
+			energy = @b7upkeep
+		}
+	}	
+	
+	prerequisites = {
+		"tech_ascended_society_2"
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#Tier 3
+building_beacon_of_peace = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = unity
+	
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = { 
+			is_country_type = ascended_empire
+			has_ethic = ethic_fanatic_pacifist
+		}
+		NOT = { is_planet_class = pc_habitat }		
+	}
+	
+	allow = {
+		has_fully_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { has_ethic = ethic_fanatic_pacifist }
+	
+	planet_modifier = {
+		pop_ethic_pacifist_attraction_mult = 0.50
+		trade_value_mult = 0.25
+		pop_happiness = 0.25
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+		}
+		produces = {
+			unity = 12
+		}		
+		upkeep = {
+			energy = @b8upkeep
+		}
+	}	
+		
+	prerequisites = {
+		"tech_ascended_society_3"
+	}
+	
+	ai_weight = {
+		weight = 50
+	}
+}
+
+##Authoritarian
+
+#Tier 1
+building_authoritarian_statue = {
+	base_buildtime = @b6time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = unity
+	
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				is_authoritarian = yes
+			}
+		}
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		is_authoritarian = yes
+	}
+	
+	planet_modifier = {
+		pop_ethic_authoritarian_attraction_mult = 0.1
+		planet_stability_add = 5
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b6cost
+		}
+		produces = {
+			unity = 4
+		}		
+		upkeep = {
+			energy = @b6upkeep
+		}
+	}	
+	
+	prerequisites = {
+		"tech_ascended_society_1"
+	}
+	
+	ai_weight = {
+		weight = 30
+	}
+}
+
+#Tier 2
+building_labor_camp = {
+	base_buildtime = @b7time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = government
+	
+	potential = {
+		exists = owner
+		owner = { has_ethic = ethic_fanatic_authoritarian }
+		NOT = { has_modifier = resort_colony }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		has_ethic = ethic_fanatic_authoritarian		
+	}
+	
+	planet_modifier = {
+		pop_ethic_authoritarian_attraction_mult = 0.25
+		planet_jobs_slave_produces_mult = 0.25
+		pop_cat_slave_political_power = -0.25
+	}	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b7cost
+		}
+		upkeep = {
+			energy = @b7upkeep		
+		}
+	}
+	
+	prerequisites = {
+		"tech_ascended_society_2"
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#Tier 3
+building_secret_police_hq = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = government
+	
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = { 
+			is_country_type = ascended_empire
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		NOT = { is_planet_class = pc_habitat }		
+	}
+	
+	allow = {
+		has_fully_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { has_ethic = ethic_fanatic_authoritarian }
+	
+	planet_modifier = {
+		pop_ethic_authoritarian_attraction_mult = 0.50
+		planet_stability_add = 50
+		job_enforcer_add = 10
+	}	
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+		}
+		upkeep = {
+			energy = @b8upkeep		
+		}
+	}
+	
+	triggered_desc = {
+		text = job_enforcer_effect_desc
+	}
+		
+	prerequisites = {
+		"tech_ascended_society_3"
+	}
+	
+	ai_weight = {
+		weight = 50
+	}
+}
+
+##Egalitarian
+
+#Tier 1
+building_statue_of_liberty = {
+	base_buildtime = @b6time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = unity
+	
+	potential = {
+		exists = owner
+		owner = {
+			is_egalitarian = yes
+		}
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		is_egalitarian = yes
+	}
+	
+	planet_modifier = {
+		pop_ethic_egalitarian_attraction_mult = 0.1
+		trade_value_mult = 0.05
+		job_culture_worker_add = 1
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b6cost
+		}
+		produces = {
+			unity = 4
+		}
+		upkeep = {
+			energy = @b6upkeep
+		}
+	}
+	
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}
+	
+	prerequisites = {
+		"tech_ascended_society_1"
+	}
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+#Tier 2
+building_civilian_teleportation = {
+	base_buildtime = @b7time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = amenity
+	
+	potential = {
+		exists = owner
+		owner = { has_ethic = ethic_fanatic_egalitarian }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	show_tech_unlock_if = { 
+		has_ethic = ethic_fanatic_egalitarian		
+	}
+	
+	planet_modifier = {
+		pop_ethic_egalitarian_attraction_mult = 0.25
+		pop_growth_from_immigration = 0.25
+		planet_migration_all_mult = 0.25
+		planet_amenities_add = 25		
+		trade_value_add = 25
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b7cost
+			rare_crystals = 100
+		}
+		produces = {
+			physics_research = 4
+		}
+		upkeep = {
+			energy = @b7upkeep
+			rare_crystals = 2
+		}
+	}
+	
+	prerequisites = {
+		"tech_ascended_society_2"
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+	
+}
+
+#Tier 3
+building_supreme_court = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	base_cap_amount = 1
+	
+	category = government
+	
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = { 
+			is_country_type = ascended_empire
+			has_ethic = ethic_fanatic_egalitarian
+		}
+		NOT = { is_planet_class = pc_habitat }		
+	}
+	
+	show_tech_unlock_if = { has_ethic = ethic_fanatic_egalitarian }
+	
+	allow = {
+		has_fully_upgraded_capital = yes
+		has_building = building_central_square
+	}
+	
+	planet_modifier = {
+		pop_ethic_egalitarian_attraction_mult = 0.50
+		planet_stability_add = 50
+		pop_happiness = 0.1
+		job_enforcer_add = 10
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+		}
+		produces = {
+			unity = 12
+		}
+		upkeep = {
+			energy = @b8upkeep
+		}
+	}
+	
+	triggered_desc = {
+		text = job_enforcer_effect_desc
+	}
+	
+		
+	prerequisites = {
+		"tech_ascended_society_3"
+	}
+	
+	ai_weight = {
+		weight = 50
+	}
+}
+
+
+##Matter Generator
+building_matter_generator = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	
+	category = manufacturing
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b7cost
+		}
+		produces = {
+			minerals = 40
+		}
+		upkeep = {
+			energy = 50
+		}
+	}
+	
+	prerequisites = {
+		"tech_matter_generator"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+building_synthetic_dark_matter = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	
+	category = manufacturing
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+		}
+		produces = {
+			sr_dark_matter = 1
+		}
+		upkeep = {
+			energy = @b8upkeep
+		}
+	}
+	
+	prerequisites = {
+		"tech_synthetic_dark_matter"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+building_synthetic_living_metal = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	
+	category = manufacturing
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+		}
+		produces = {
+			sr_living_metal = 1
+		}
+		upkeep = {
+			energy = @b8upkeep
+		}
+	}
+	
+	prerequisites = {
+		"tech_synthetic_living_metal"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+
+building_synthetic_zro = {
+	base_buildtime = @b8time
+	can_build = yes
+	can_demolish = yes
+	
+	category = manufacturing
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b8cost
+		}
+		produces = {
+			sr_zro = 1
+		}
+		upkeep = {
+			energy = @b8upkeep
+		}
+	}
+
+	prerequisites = {
+		"tech_synthetic_zro"
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

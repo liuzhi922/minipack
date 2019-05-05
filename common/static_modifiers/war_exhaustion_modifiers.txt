@@ -1,0 +1,70 @@
+exhaustion_stage_1 = {
+	name = "War Exhaustion (Stage 1)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.1
+		planet_jobs_produces_mult = -0.1
+		pop_happiness = -0.1
+}
+exhaustion_stage_2 = {
+	name = "War Exhaustion (Stage 2)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.2
+		planet_jobs_produces_mult = -0.2
+		pop_happiness = -0.2
+}
+exhaustion_stage_3 = {
+	name = "War Exhaustion (Stage 3)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.3
+		planet_jobs_produces_mult = -0.3
+		pop_happiness = -0.3
+}
+exhaustion_stage_4 = {
+	name = "War Exhaustion (Stage 4)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.4
+		planet_jobs_produces_mult = -0.4
+		pop_happiness = -0.4
+}
+exhaustion_stage_5 = {
+	name = "War Exhaustion (Stage 5)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.5
+		planet_jobs_produces_mult = -0.5
+		pop_happiness = -0.5
+}
+exhaustion_stage_6 = {
+	name = "War Exhaustion (Stage 6)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.6
+		planet_jobs_produces_mult = -0.6
+		pop_happiness = -0.6
+}
+exhaustion_stage_7 = {
+	name = "War Exhaustion (Stage 7)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.7
+		planet_jobs_produces_mult = -0.7
+		pop_happiness = -0.7
+}
+exhaustion_stage_8 = {
+	name = "War Exhaustion (Stage 8)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.8
+		planet_jobs_produces_mult = -0.8
+		pop_happiness = -0.8
+}
+exhaustion_stage_9 = {
+	name = "War Exhaustion (Stage 9)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.9
+		planet_jobs_produces_mult = -0.9
+		pop_happiness = -0.9
+}
+exhaustion_stage_10 = {
+	name = "War Exhaustion (Stage 10)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -1
+		planet_jobs_produces_mult = -1
+		pop_happiness = -1
+}

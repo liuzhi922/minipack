@@ -1,0 +1,28 @@
+############################
+#
+# Ascended Society Events
+#
+############################
+
+namespace = ascended_society
+
+# Central Square Built
+country_event = {
+	id = ascended_society.1
+	title = ascended_society.1.name
+	desc = ascended_society.1.desc
+	picture = GFX_evt_news_room
+	
+	trigger = {
+		NOT = { has_country_flag = central_square_built }
+		any_owned_planet = { has_building = building_central_square }
+	}
+	
+	immediate = {
+		owner = { set_country_flag = central_square_built }
+	}
+
+	option = {
+		name = ascended_society.1.a	
+	}
+}

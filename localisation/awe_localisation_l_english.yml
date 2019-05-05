@@ -1,0 +1,15 @@
+﻿l_english:
+
+ awe.1.name:0 "War Exhaustion at Tipping Point"
+ awe.1.desc:0 "Our empire is starting to fall apart at the seams attempting to support one of our wars, and War Exhaustion is at critical mass. We will start suffering penalties to our happiness and influence if we continue fighting, and our civilian sector may strike if we refuse to end the war sooner rather than later."
+ awe.1.desc.machine:0 "The Intelligence is strained, and our drones are starting to suffer from uplink issues and maintenance. Calculations suggest ending conflict with whatever nation has inflicted war exhaustion on us, else the mainframe will continue to suffer debilitating penalties."
+ awe.1.desc.hive:0 "The link between our drones is weakening. Our ability to sustain our consciousness in this conflict can only bring penalties to our hive, should we stay persistant about this war."
+ awe.1.a:0 "Its only going to get worse from here"
+ awe.1.b:0 "We must persist"
+ awe.2.name:0 "Facilities recover from War Effort"
+ awe.2.desc:0 "The end of a war that has been debilitating us has ended, and our empire is hastily recovering from the effort. We should avoid trying to strain ourselves in conflict to such an extent again."
+ awe.2.desc.hive:0 "Our Uplink to our Drones is now restored, as the debilitating conflict has ended. Our control over the hive is at maximum once again!"
+ awe.2.desc.machine:0 "Processing Power has been normalized, as the conflict is over. Units are returning to normal operation. Optimal Efficiency achieved once more"
+ awe.3.name:0 "Exhaustion increases"
+ awe.3.desc:0 "Our War Exhaustion is taking a toll on our empire, and our penalties for staying at war has gone up! We need to resolve this war soon!"
+ awe.3.a:0 "We must Endure" 

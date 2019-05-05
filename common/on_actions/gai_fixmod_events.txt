@@ -1,0 +1,45 @@
+on_yearly_pulse = {
+	events = {
+		gai_master_event.1 #This event file handles all of the yearly events for the GAI mod.
+		gai_survey_pops.1 #Fires only once
+	}
+}
+
+on_game_start = {
+	events = {
+		ai_fixmod_flag.1 #Sets this mods global flag so that other modders can check if this mod is running.
+		gai_survey_pops.1 #Finds the empires prefered habitability so the AI can terraform to that planet type.
+	}
+}
+
+
+on_press_begin = {
+	events = {
+		gai_strategy_scan.1 #Sets up AI strategies in the early game
+	}
+}
+
+on_monthly_pulse = {
+	events = {
+		gai_master_event.2 #This event file handles all of the monthly events for the GAI mod.
+	}
+}
+
+on_planet_transfer = {
+	events = {
+		gai_remove_modifier.1 #This removes modifiers and flags set by this mod.
+		gai_pops.1 #This allows the swarm to purge pops as I lockout job evaluation for pops that are already employed. 
+	}
+}
+
+on_war_beginning = {
+	events = {
+		gai_clear.1 #Removes all fleet orders from all ships when a war starts (Affects involved countries only)
+	}
+}
+
+on_war_ended = {
+	events = {
+		gai_clear.1 #Removes all fleet orders from all ships when a war ends (Affects involved countries only)
+	}
+}

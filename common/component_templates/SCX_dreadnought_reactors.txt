@@ -1,0 +1,211 @@
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes. 
+#############
+#	POWER	#
+#############
+
+@dreadnought_power_1 = 830
+@dreadnought_power_2 = 1080
+@dreadnought_power_3 = 1430
+@dreadnought_power_4 = 1870
+@dreadnought_power_5 = 2350
+@dreadnought_power_6 = 3030
+
+#############
+#	COST	#
+#############
+
+@dreadnought_cost_1 = 120
+@dreadnought_cost_2 = 156
+@dreadnought_cost_3 = 204
+@dreadnought_cost_4 = 264
+@dreadnought_cost_5 = 336
+@dreadnought_cost_6 = 444
+
+#############
+#  REACTORS #
+#############
+
+########################
+# Fission Reactors
+########################
+
+utility_component_template = {
+	key = "SCX_DREADNOUGHT_FISSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_1"
+	icon_frame = 1
+	power = @dreadnought_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @dreadnought_cost_1
+		}	
+		upkeep = {
+			energy = 1.20
+			alloys = 0.120
+		}
+	}
+	
+	prerequisites = { "tech_fission_power" }
+	component_set = "power_core"
+	size_restriction = { SCX_Dreadnought }
+	upgrades_to = "SCX_DREADNOUGHT_FUSION_REACTOR"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+########################
+# Fusion Reactors
+########################
+
+utility_component_template = {
+	key = "SCX_DREADNOUGHT_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_2"
+	icon_frame = 1
+	power = @dreadnought_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @dreadnought_cost_2
+		}	
+		upkeep = {
+			energy = 1.56
+			alloys = 0.156
+		}
+	}
+	
+	prerequisites = { "tech_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { SCX_Dreadnought }
+	upgrades_to = "SCX_DREADNOUGHT_COLD_FUSION_REACTOR"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+########################
+# Cold Fusion Reactors
+########################
+
+utility_component_template = {
+	key = "SCX_DREADNOUGHT_COLD_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = @dreadnought_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @dreadnought_cost_3
+		}	
+		upkeep = {
+			energy = 2.03
+			alloys = 0.203
+		}
+	}
+	
+	prerequisites = { "tech_cold_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { SCX_Dreadnought }
+	upgrades_to = "SCX_DREADNOUGHT_ANTIMATTER_REACTOR"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+########################
+# Antimatter Reactors
+########################
+
+utility_component_template = {
+	key = "SCX_DREADNOUGHT_ANTIMATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_4"
+	icon_frame = 1
+	power = @dreadnought_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @dreadnought_cost_4
+		}	
+		upkeep = {
+			energy = 2.64
+			alloys = 0.264
+		}
+	}
+	
+	prerequisites = { "tech_antimatter_power" }
+	component_set = "power_core"
+	size_restriction = { SCX_Dreadnought }
+	upgrades_to = "SCX_DREADNOUGHT_ZERO_POINT_REACTOR"
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+########################
+# Zero-Point Reactors
+########################
+
+utility_component_template = {
+	key = "SCX_DREADNOUGHT_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @dreadnought_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @dreadnought_cost_5
+		}	
+		upkeep = {
+			energy = 3.43
+			alloys = 0.343
+		}
+	}
+	
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	size_restriction = { SCX_Dreadnought }
+	upgrades_to = "SCX_DREADNOUGHT_DARK_MATTER_REACTOR"
+	
+	ai_weight = {
+		weight = 5
+	}
+}
+
+####################
+# Engimatic Reactors
+####################
+
+utility_component_template = {
+	key = "SCX_DREADNOUGHT_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @dreadnought_power_6
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @dreadnought_cost_6
+		}	
+		upkeep = {
+			energy = 4.46
+			alloys = 0.446
+		}
+	}
+	
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { SCX_Dreadnought }
+	
+	ai_weight = {
+		weight = 6
+	}
+}

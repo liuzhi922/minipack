@@ -1,0 +1,9 @@
+
+@energy_trait_points = 2
+@energy_max_traits = 5
+
+
+ENERGY = {
+	species_trait_points = @energy_trait_points
+	species_max_traits = @energy_max_traits
+}

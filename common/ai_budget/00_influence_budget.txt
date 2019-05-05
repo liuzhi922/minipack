@@ -1,0 +1,105 @@
+## Categories used in this file must have use_for_ai_budget = yes defined in economic_categories ##
+## It is possible to have multiple entries with the same category and resource ##
+
+#################
+## Expenditure ##
+#################
+influence_expenditure_buffer = { # Buffer, will not be spent
+	resource = influence 
+	type = expenditure
+	category = buffer
+	
+	potential = {
+		always = no
+	}
+	
+	fraction = {
+		weight = 0
+	}
+	
+}
+
+influence_expenditure_decisions = {
+	resource = influence 
+	type = expenditure
+	category = decisions
+	
+	potential = {
+		OR = {
+			has_resource = { type = influence amount > 350 }
+			years_passed > 100
+		}
+	}
+	
+	static_min = {
+		base = 500
+	}
+}
+
+influence_expenditure_edicts = {
+	resource = influence 
+	type = expenditure
+	category = edicts
+	
+	potential = {
+		OR = {
+			has_resource = { type = influence amount > 410 }
+			is_at_war = yes
+		}
+	}
+	
+	static_min = {
+		base = 500
+	}
+}
+
+influence_expenditure_stations = {
+	resource = influence 
+	type = expenditure
+	category = stations
+	
+	potential = {
+		always = yes
+	}
+	
+	static_min = {
+		base = 500
+	}
+}
+
+influence_expenditure_megastructures = {
+	resource = influence 
+	type = expenditure
+	category = megastructures
+	
+	potential = {
+		has_resource = { type = influence amount > 300 }
+	}
+	
+	static_min = {
+		base = 500
+	}
+}
+
+influence_expenditure_claims = {
+	resource = influence 
+	type = expenditure
+	category = claims
+	
+	potential = {
+		OR = {
+			has_resource = { type = influence amount > 500 }
+			is_at_war = yes
+		}
+		NOT = {
+			OR = {
+  	 			has_ethic = ethic_fanatic_pacifist
+   				has_ethic = ethic_pacifist
+    		}	
+		}
+	}
+	
+	static_min = {
+		base = 500
+	}
+}

@@ -1,0 +1,22 @@
+##############################################################
+###	PORTRAITS SETTINGS
+###
+### Which portraits are used is set in 
+### common\species_classes\00_species_classes.txt
+###
+###	This file configures how portraits and planet backgrounds are built.
+###	Default position orientation is lower left.
+##############################################################
+
+portraits = {
+	sectoid_naked = {
+		entity = "sectoid_portrait_entity" clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "skrump_greetings" 
+		character_textures = {
+			"gfx/models/portraits/sectoid/grey_naked.dds"
+			"gfx/models/portraits/sectoid/grey_uniform_1.dds"
+			"gfx/models/portraits/sectoid/grey_uniform_2.dds"
+			"gfx/models/portraits/sectoid/grey_uniform_3.dds"
+			"gfx/models/portraits/sectoid/grey_uniform_4.dds"
+		}
+	}
+	

@@ -1,0 +1,99 @@
+############################
+#
+# Titan Weapon Events
+#
+############################
+
+namespace = titan_weapons
+
+country_event = {
+	id = titan_weapons.5
+	title = OK
+	desc = OK
+	
+	hide_window = yes
+	
+	trigger = {
+		NOT = { has_country_flag = portal_generator_researched }
+		is_ai = no
+		has_technology = "tech_portal_generator"	
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	
+	immediate = {
+		set_country_flag = portal_generator_researched
+		root = { country_event = { id = titan_weapons.6 } }
+	}
+}		
+
+
+
+country_event = {
+	id = titan_weapons.6
+	title = titan_weapons.6.name
+	desc = titan_weapons.6.desc
+	picture = GFX_evt_dimensional_horror
+	location = root
+
+	is_triggered_only = yes
+
+	option = {
+		name = titan_weapons.6.a
+		hidden_effect = {
+			solar_system = {
+				random_system_planet = {
+					limit = { is_star = yes }
+					save_event_target_as = local_star
+				}
+				create_country = {
+					name = "Dimensional Horror"
+					type = faction
+					auto_delete = yes
+					flag = {
+						icon= {
+							category = "special"
+							file = "extradimensional_02.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "circle.dds"
+						}
+						colors={
+							"black"
+							"red"
+							"null"
+							"null"
+						}
+					}
+					effect = {
+						establish_communications_no_message = root.owner
+						save_global_event_target_as = worm_invader
+						create_fleet = {
+							name = "YOUR WORLDS ARE MINE"
+							settings = { spawn_debris = no }
+							effect = {
+								set_owner = event_target:worm_invader
+								create_ship_design = {
+									design = "NAME_Dimensional_Horror"
+								}
+								create_ship = {
+									design = last_created_design
+									name = "NAME_Worm-in-Waiting"
+								}
+								set_location = {
+									target = event_target:local_star
+									distance = 40
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,27 @@
+namespace = gai_pops
+#This allows swarm/ai_empire purge to actually happen. It's here because my pops do not change jobs unless they're unemployed or this flag is set on the planet
+#All event descriptions are now in the common\on actions\ folder
+event = {
+	id = gai_pops.1
+	hide_window = yes
+    is_triggered_only = yes 
+	
+	immediate = {
+		every_country = {
+			limit = { is_country_type = default }
+			country_event = { id = gai_pops.2 days = 14 random = 7 }
+		}
+	}
+}
+
+country_event = {
+	id = gai_pops.2
+	hide_window = yes
+    is_triggered_only = yes 
+	
+	immediate = {
+		every_owned_planet = {
+			set_timed_planet_flag = { flag = gai_maniacs_flag_thanks_man days = 2 }
+		}
+	}
+}

@@ -1,0 +1,7 @@
+NGameplay = {
+		DECADENCE_INCREASE = 0.2	# How much does decadence increase per time?
+}
+
+NAI = {
+		FALLEN_EMPIRE_FLEET_SIZE = 200		# Fallen empires will have fleets of max this size
+}

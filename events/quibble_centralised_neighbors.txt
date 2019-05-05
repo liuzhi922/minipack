@@ -1,0 +1,2731 @@
+namespace = quibble_neighbors
+country_event = { #FIRST TARGET FIND AND LIST
+	id = quibble_neighbors.1
+    is_triggered_only = yes
+    hide_window = yes
+	#############################################################################
+	##
+	# LIST FIRST COUNTRIES.
+	##
+	##############################################################################
+	immediate = {
+		save_event_target_as = snitch_home
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+			}
+			save_event_target_as = target_1
+		}
+
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOT = {
+					is_same_value = event_target:target_1
+				}
+			}
+			save_event_target_as = target_2
+		}
+
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+				}
+
+			}
+			save_event_target_as = target_3
+		}
+
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+                    is_same_value = event_target:target_3
+				}
+
+			}
+			save_event_target_as = target_4
+		}
+
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+                    is_same_value = event_target:target_3
+                    is_same_value = event_target:target_4
+				}
+
+			}
+			save_event_target_as = target_5
+		}
+
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+                    is_same_value = event_target:target_3
+                    is_same_value = event_target:target_4
+                    is_same_value = event_target:target_5
+				}
+
+			}
+			save_event_target_as = target_6
+		}
+
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+                    is_same_value = event_target:target_3
+                    is_same_value = event_target:target_4
+                    is_same_value = event_target:target_5
+                    is_same_value = event_target:target_6
+				}
+
+			}
+			save_event_target_as = target_7
+		}
+
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+                    is_same_value = event_target:target_3
+                    is_same_value = event_target:target_4
+                    is_same_value = event_target:target_5
+                    is_same_value = event_target:target_6
+				}
+
+			}
+			save_event_target_as = target_8
+		}
+
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+                    is_same_value = event_target:target_3
+                    is_same_value = event_target:target_4
+                    is_same_value = event_target:target_5
+                    is_same_value = event_target:target_6
+                    is_same_value = event_target:target_7
+				}
+			}
+			save_event_target_as = target_9
+		}
+
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+                    is_same_value = event_target:target_3
+                    is_same_value = event_target:target_4
+                    is_same_value = event_target:target_5
+                    is_same_value = event_target:target_6
+                    is_same_value = event_target:target_7
+                    is_same_value = event_target:target_8
+                    is_same_value = event_target:target_9
+				}
+			}
+			save_event_target_as = target_10
+		}
+
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+                    is_same_value = event_target:target_3
+                    is_same_value = event_target:target_4
+                    is_same_value = event_target:target_5
+                    is_same_value = event_target:target_6
+                    is_same_value = event_target:target_7
+                    is_same_value = event_target:target_8
+                    is_same_value = event_target:target_9
+                    is_same_value = event_target:target_10
+				}
+			}
+			save_event_target_as = target_11
+        }
+        
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+                    is_same_value = event_target:target_3
+                    is_same_value = event_target:target_4
+                    is_same_value = event_target:target_5
+                    is_same_value = event_target:target_6
+                    is_same_value = event_target:target_7
+                    is_same_value = event_target:target_8
+                    is_same_value = event_target:target_9
+                    is_same_value = event_target:target_10
+                    is_same_value = event_target:target_11
+                    is_same_value = event_target:target_12
+				}
+			}
+			save_event_target_as = target_12
+        }
+        
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+                    is_same_value = event_target:target_3
+                    is_same_value = event_target:target_4
+                    is_same_value = event_target:target_5
+                    is_same_value = event_target:target_6
+                    is_same_value = event_target:target_7
+                    is_same_value = event_target:target_8
+                    is_same_value = event_target:target_9
+                    is_same_value = event_target:target_10
+                    is_same_value = event_target:target_11
+                    is_same_value = event_target:target_12
+                    is_same_value = event_target:target_13
+				}
+			}
+			save_event_target_as = target_13
+        }
+        
+		random_neighbor_country = {
+			limit = {
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = fallen_empire
+						}
+					}
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+					}
+					has_communications = event_target:snitch_home
+				}
+				IF = {
+					limit = {
+						event_target:snitch_home = {
+							is_country_type = default
+						}
+					}
+					is_country_type = default
+					has_communications = event_target:snitch_home
+				}
+				NOR = {
+                    is_same_value = event_target:target_1
+                    is_same_value = event_target:target_2
+                    is_same_value = event_target:target_3
+                    is_same_value = event_target:target_4
+                    is_same_value = event_target:target_5
+                    is_same_value = event_target:target_6
+                    is_same_value = event_target:target_7
+                    is_same_value = event_target:target_8
+                    is_same_value = event_target:target_9
+                    is_same_value = event_target:target_10
+                    is_same_value = event_target:target_11
+                    is_same_value = event_target:target_12
+                    is_same_value = event_target:target_13
+                    is_same_value = event_target:target_14
+				}
+			}
+			save_event_target_as = target_14
+		}
+		country_event = { id = quibble_neighbors.2 }
+	}
+}
+
+############################################################################################################
+##
+# PICK FIRST COUNTRIES
+##
+###########################################################################################################
+country_event = { ###FIRST TARGET FIND AND LIST
+	id = quibble_neighbors.2
+	title = "quibble_neighbors.2"
+	desc = {
+		trigger = {
+			event_target:snitch_home = {
+				is_same_value = event_target:tempsabotage
+			}
+		}
+		text = "quibble_neighbors.2.desc.a"
+	}
+	desc = {
+		trigger = {
+			event_target:snitch_home = {
+				is_same_value = event_target:tempboost
+			}
+		}
+		text = "quibble_neighbors.2.desc.b"
+	}
+	desc = {
+		trigger = {
+			event_target:snitch_home = {
+				is_same_value = event_target:tempstation
+			}
+		}
+		text = "quibble_neighbors.2.desc.c"
+	}
+	is_triggered_only = yes
+	custom_gui = quibble_spy_window
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+	diplomatic = yes
+
+	
+	option = {
+		name = quibble_neighbors.2.a
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_1 }
+		allow = { exists = event_target:target_1 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_1 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_1 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_1 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.5 }
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.b
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_2 }
+		allow = { exists = event_target:target_2 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_2 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_2 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_2 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.c
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_3 }
+		allow = { exists = event_target:target_3 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_3 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_3 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_3 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.d
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_4 }
+		allow = { exists = event_target:target_4 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_4 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_4 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_4 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.e
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_5 }
+		allow = { exists = event_target:target_5 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_5 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_5 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_5 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+			
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.f
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_6 }
+		allow = { exists = event_target:target_6 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_6 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_6 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_6 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.g
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_7 }
+		allow = { exists = event_target:target_7 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_7 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_7 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_7 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.h
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_8 }
+		allow = { exists = event_target:target_8 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_8 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_8 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_8 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.i
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_9 }
+		allow = { exists = event_target:target_9 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_9 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_9 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_9 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.j
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_10 }
+		allow = { exists = event_target:target_10 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_10 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_10 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_10 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.k
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_11 }
+		allow = { exists = event_target:target_11 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_11 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_11 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_11 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.l
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_12 }
+		allow = { exists = event_target:target_12 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_12 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_12 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_12 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.m
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_13 }
+		allow = { exists = event_target:target_13 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_13 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_13 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_13 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.2.n
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:target_14 }
+		allow = { exists = event_target:target_14 }
+		
+		hidden_effect = {
+			IF = {
+				limit = {
+					OR = {
+						is_same_value = event_target:tempsabotage
+						is_same_value = event_target:tempboost
+					}
+				}
+				event_target:target_14 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_neighbors.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:temptech
+				}
+				event_target:target_14 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				country_event = { id = quibble_spy_tech.3 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempstation
+				}
+				event_target:target_14 = {
+					save_event_target_as = firstsabotagetarget
+				}
+				event_target:firstsabotagetarget = {
+					country_event = { id = quibble_neighbors.5 }
+				}
+			}
+		}
+	}
+	option = { #QUIT
+		name = quibble_neighbors.2.o
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+}
+
+
+###########################################################################################################
+##
+# LIST SECOND COUNTRIES
+##
+############################################################################################################
+
+country_event = { #SECOND COUNTRY FILTER
+	id = quibble_neighbors.3
+	title = "quibble.3.name"
+	desc = "quibble.3.desc"
+	hide_window = yes
+	is_triggered_only = yes
+
+	#FIND SECOND COUNTRIES
+
+	immediate = {
+		event_target:firstsabotagetarget = {
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+				}
+				save_event_target_as = second_target_1
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+					}
+				}
+				save_event_target_as = second_target_2
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+					}
+
+				}
+				save_event_target_as = second_target_3
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+						is_same_value = event_target:second_target_3
+					}
+
+				}
+				save_event_target_as = second_target_4
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+						is_same_value = event_target:second_target_3
+						is_same_value = event_target:second_target_4	
+					}
+				}
+				save_event_target_as = second_target_5
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+						is_same_value = event_target:second_target_3
+						is_same_value = event_target:second_target_4
+						is_same_value = event_target:second_target_5
+					}
+				}
+				save_event_target_as = second_target_6
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+						is_same_value = event_target:second_target_3
+						is_same_value = event_target:second_target_4
+						is_same_value = event_target:second_target_5
+						is_same_value = event_target:second_target_6
+					}
+				}
+				save_event_target_as = second_target_7
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+						is_same_value = event_target:second_target_3
+						is_same_value = event_target:second_target_4
+						is_same_value = event_target:second_target_5
+						is_same_value = event_target:second_target_6
+						is_same_value = event_target:second_target_7
+					}
+
+				}
+				save_event_target_as = second_target_8
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+						is_same_value = event_target:second_target_3
+						is_same_value = event_target:second_target_4
+						is_same_value = event_target:second_target_5
+						is_same_value = event_target:second_target_6
+						is_same_value = event_target:second_target_7
+						is_same_value = event_target:second_target_8
+			
+					}
+
+				}
+				save_event_target_as = second_target_9
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+						is_same_value = event_target:second_target_3
+						is_same_value = event_target:second_target_4
+						is_same_value = event_target:second_target_5
+						is_same_value = event_target:second_target_6
+						is_same_value = event_target:second_target_7
+						is_same_value = event_target:second_target_8
+						is_same_value = event_target:second_target_9
+					}
+
+				}
+				save_event_target_as = second_target_10
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+						is_same_value = event_target:second_target_3
+						is_same_value = event_target:second_target_4
+						is_same_value = event_target:second_target_5
+						is_same_value = event_target:second_target_6
+						is_same_value = event_target:second_target_7
+						is_same_value = event_target:second_target_8
+						is_same_value = event_target:second_target_9
+						is_same_value = event_target:second_target_10
+					}
+				}
+				save_event_target_as = second_target_11
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+						is_same_value = event_target:second_target_3
+						is_same_value = event_target:second_target_4
+						is_same_value = event_target:second_target_5
+						is_same_value = event_target:second_target_6
+						is_same_value = event_target:second_target_7
+						is_same_value = event_target:second_target_8
+						is_same_value = event_target:second_target_9
+						is_same_value = event_target:second_target_10
+						is_same_value = event_target:second_target_11
+					}
+				}
+				save_event_target_as = second_target_12
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+						is_same_value = event_target:second_target_3
+						is_same_value = event_target:second_target_4
+						is_same_value = event_target:second_target_5
+						is_same_value = event_target:second_target_6
+						is_same_value = event_target:second_target_7
+						is_same_value = event_target:second_target_8
+						is_same_value = event_target:second_target_9
+						is_same_value = event_target:second_target_10
+						is_same_value = event_target:second_target_11
+						is_same_value = event_target:second_target_12
+					}
+
+				}
+				save_event_target_as = second_target_13
+			}
+			random_neighbor_country = {
+				limit = {
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = fallen_empire
+							}
+						}
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+						}
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					IF = {
+						limit = {
+							event_target:snitch_home = {
+								is_country_type = default
+							}
+						}
+						is_country_type = default
+						has_communications = event_target:snitch_home
+						has_communications = event_target:firstsabotagetarget
+					}
+					NOR = {
+						is_same_value = event_target:second_target_1
+						is_same_value = event_target:second_target_2
+						is_same_value = event_target:second_target_3
+						is_same_value = event_target:second_target_4
+						is_same_value = event_target:second_target_5
+						is_same_value = event_target:second_target_6
+						is_same_value = event_target:second_target_7
+						is_same_value = event_target:second_target_8
+						is_same_value = event_target:second_target_9
+						is_same_value = event_target:second_target_10
+						is_same_value = event_target:second_target_11
+						is_same_value = event_target:second_target_12
+						is_same_value = event_target:second_target_13
+					}
+				}
+				save_event_target_as = second_target_14
+			}
+		}
+		country_event = { id = quibble_neighbors.4 }
+	}
+}
+
+############################################################################################################
+##
+# PICK SECOND COUNTRIES
+##
+###########################################################################################################
+
+country_event = { #SECOND TARGET LIST
+	id = quibble_neighbors.4
+	title = "quibble.4.name"
+	desc = "quibble.4.desc"
+	force_open = yes
+	is_triggered_only = yes
+	custom_gui = quibble_spy_window
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+	diplomatic = yes
+
+	option = {
+		name = quibble_neighbors.4.a
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_1 }
+		allow = { exists = event_target:second_target_1 }
+		
+		hidden_effect = {
+			event_target:second_target_1 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.4.b
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_2 }
+		allow = { exists = event_target:second_target_2 }
+
+		hidden_effect = {
+			event_target:second_target_2 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.4.c
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_3 }
+		allow = { exists = event_target:second_target_3 }
+		
+		hidden_effect = {
+			event_target:second_target_3 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.4.d
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_4 }
+		allow = { exists = event_target:second_target_4 }
+		
+		hidden_effect = {
+			event_target:second_target_4 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+	option = {
+		name = quibble_neighbors.4.e
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_5 }
+		allow = { exists = event_target:second_target_5 }
+		
+		hidden_effect = {
+			event_target:second_target_5 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+	option = {
+		name = quibble_neighbors.4.f
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_6 }
+		allow = { exists = event_target:second_target_6 }
+		
+		hidden_effect = {
+			event_target:second_target_6 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+	option = {
+		name = quibble_neighbors.4.g
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_7 }
+		allow = { exists = event_target:second_target_7 }
+		
+		hidden_effect = {
+			event_target:second_target_7 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+	option = {
+		name = quibble_neighbors.4.h
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_8 }
+		allow = { exists = event_target:second_target_8 }
+		
+		hidden_effect = {
+			event_target:second_target_8 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+		}
+	}
+	option = {
+		name = quibble_neighbors.4.i
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_9 }
+		allow = { exists = event_target:second_target_9 }
+		
+		hidden_effect = {
+			event_target:second_target_9 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+	option = {
+		name = quibble_neighbors.4.j
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_10 }
+		allow = { exists = event_target:second_target_10 }
+		
+		hidden_effect = {
+			event_target:second_target_10 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+	option = {
+		name = quibble_neighbors.4.k
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_11 }
+		allow = { exists = event_target:second_target_11 }
+		
+		hidden_effect = {
+			event_target:second_target_11 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+	option = {
+		name = quibble_neighbors.4.l
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_12 }
+		allow = { exists = event_target:second_target_12 }
+		
+		hidden_effect = {
+			event_target:second_target_12 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+	option = {
+		name = quibble_neighbors.4.m
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_13 }
+		allow = { exists = event_target:second_target_13 }
+		
+		hidden_effect = {
+			event_target:second_target_13 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+	option = {
+		name = quibble_neighbors.4.n
+		custom_gui = quibble_spy_option
+		trigger = { exists = event_target:second_target_14 }
+		allow = { exists = event_target:second_target_14 }
+		
+		hidden_effect = {
+			event_target:second_target_14 = {
+				save_event_target_as = secondsabotagetarget
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempsabotage
+				}
+				country_event = { id = quibble_spy.5 }
+			}
+			IF = {
+				limit = {
+					is_same_value = event_target:tempboost
+				}
+				country_event = { id = quibble_spy_good_relations.4 }
+			}
+		}
+	}
+	option = { #QUIT
+		name = quibble_neighbors.4.o
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+}
+
+############################################################################################################
+##
+# LIST STARBASES
+##
+###########################################################################################################
+
+country_event = { #SETUP SYSTEM AND STARBASE FLAGS
+	id = quibble_neighbors.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_system_within_border = {
+			limit = {
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem1
+		}
+
+		random_system_within_border = {
+			limit = {
+				NOT = {
+					is_same_value = event_target:firstsystem1
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem2
+		}
+
+
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem3
+		}
+
+
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+					is_same_value = event_target:firstsystem3
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem4
+		}
+
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+					is_same_value = event_target:firstsystem3
+					is_same_value = event_target:firstsystem4
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem5
+		}
+
+
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+					is_same_value = event_target:firstsystem3
+					is_same_value = event_target:firstsystem4
+					is_same_value = event_target:firstsystem5
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem6
+		}
+
+
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+					is_same_value = event_target:firstsystem3
+					is_same_value = event_target:firstsystem4
+					is_same_value = event_target:firstsystem5
+					is_same_value = event_target:firstsystem6
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem7
+		}
+
+
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+					is_same_value = event_target:firstsystem3
+					is_same_value = event_target:firstsystem4
+					is_same_value = event_target:firstsystem5
+					is_same_value = event_target:firstsystem6
+					is_same_value = event_target:firstsystem7
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem8
+		}
+
+	
+
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+					is_same_value = event_target:firstsystem3
+					is_same_value = event_target:firstsystem4
+					is_same_value = event_target:firstsystem5
+					is_same_value = event_target:firstsystem6
+					is_same_value = event_target:firstsystem7
+					is_same_value = event_target:firstsystem8
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem9
+		}
+
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+					is_same_value = event_target:firstsystem3
+					is_same_value = event_target:firstsystem4
+					is_same_value = event_target:firstsystem5
+					is_same_value = event_target:firstsystem6
+					is_same_value = event_target:firstsystem7
+					is_same_value = event_target:firstsystem8
+					is_same_value = event_target:firstsystem9
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem10
+		}
+
+	
+
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+					is_same_value = event_target:firstsystem3
+					is_same_value = event_target:firstsystem4
+					is_same_value = event_target:firstsystem5
+					is_same_value = event_target:firstsystem6
+					is_same_value = event_target:firstsystem7
+					is_same_value = event_target:firstsystem8
+					is_same_value = event_target:firstsystem9
+					is_same_value = event_target:firstsystem10
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem11
+		}
+
+
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+					is_same_value = event_target:firstsystem3
+					is_same_value = event_target:firstsystem4
+					is_same_value = event_target:firstsystem5
+					is_same_value = event_target:firstsystem6
+					is_same_value = event_target:firstsystem7
+					is_same_value = event_target:firstsystem8
+					is_same_value = event_target:firstsystem9
+					is_same_value = event_target:firstsystem10
+					is_same_value = event_target:firstsystem11
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem12
+		}
+
+	
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+					is_same_value = event_target:firstsystem3
+					is_same_value = event_target:firstsystem4
+					is_same_value = event_target:firstsystem5
+					is_same_value = event_target:firstsystem6
+					is_same_value = event_target:firstsystem7
+					is_same_value = event_target:firstsystem8
+					is_same_value = event_target:firstsystem9
+					is_same_value = event_target:firstsystem10
+					is_same_value = event_target:firstsystem11
+					is_same_value = event_target:firstsystem12
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem13
+		}
+
+		
+
+		random_system_within_border = {
+			limit = {
+				NOR = {
+					is_same_value = event_target:firstsystem1
+					is_same_value = event_target:firstsystem2
+					is_same_value = event_target:firstsystem3
+					is_same_value = event_target:firstsystem4
+					is_same_value = event_target:firstsystem5
+					is_same_value = event_target:firstsystem6
+					is_same_value = event_target:firstsystem7
+					is_same_value = event_target:firstsystem8
+					is_same_value = event_target:firstsystem9
+					is_same_value = event_target:firstsystem10
+					is_same_value = event_target:firstsystem11
+					is_same_value = event_target:firstsystem12
+					is_same_value = event_target:firstsystem13
+				}
+				exists = starbase
+				starbase = {
+					has_starbase_size >= starbase_starport
+				}
+				event_target:snitch_home = {
+					intel_level = { 
+						level >= high
+						system = prev
+					}
+				}
+			}
+			save_event_target_as = firstsystem14
+		}
+		event_target:snitch_home = {
+			country_event = { id = quibble_neighbors.6 }
+		}
+	}
+}
+
+############################################################################################################
+##
+# PICK STARBASES
+##
+###########################################################################################################
+
+country_event = { #CHOOSE SYSTEM, SELECT STARBASE
+	id = quibble_neighbors.6
+	title = "quibble_spy_station.3.name"
+	desc = "quibble_spy_station.3.desc"
+	is_triggered_only = yes
+	custom_gui = quibble_spy_window
+	diplomatic = yes
+    picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_16_room
+	}
+
+	option = {
+		name = quibble_neighbors.6.a
+		custom_gui = quibble_spy_option
+		trigger = { 
+			exists = event_target:firstsystem1
+		
+		}
+
+		allow = { 
+			exists = event_target:firstsystem1
+	
+		}
+
+		hidden_effect = {	
+			event_target:firstsystem1 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.b
+		custom_gui = quibble_spy_option
+		trigger = { 
+			exists = event_target:firstsystem2
+		
+		}
+
+		allow = { 
+			exists = event_target:firstsystem2
+	
+		}
+		hidden_effect = {	
+			event_target:firstsystem2 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.c
+		custom_gui = quibble_spy_option	
+		trigger = { 
+			exists = event_target:firstsystem3
+		
+		}
+
+		allow = { 
+			exists = event_target:firstsystem3
+	
+		}
+		hidden_effect = {	
+			event_target:firstsystem3 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.d
+		custom_gui = quibble_spy_option	
+		trigger = { 
+			exists = event_target:firstsystem4
+	 
+		}
+
+		allow = { 
+			exists = event_target:firstsystem4
+	
+		}
+		hidden_effect = {	
+			event_target:firstsystem4 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.e
+		custom_gui = quibble_spy_option
+		trigger = { 
+			exists = event_target:firstsystem5
+		
+		}
+
+		allow = { 
+			exists = event_target:firstsystem5
+	
+		}
+		hidden_effect = {	
+			event_target:firstsystem5 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.f
+		custom_gui = quibble_spy_option	
+		trigger = { 
+			exists = event_target:firstsystem6
+	 
+		}
+
+		allow = { 
+			exists = event_target:firstsystem6
+	
+		}
+		hidden_effect = {	
+			event_target:firstsystem6 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.g
+		custom_gui = quibble_spy_option	
+		trigger = { 
+			exists = event_target:firstsystem7
+	 
+		}
+
+		allow = { 
+			exists = event_target:firstsystem7
+	
+		}
+		hidden_effect = {	
+			event_target:firstsystem8 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.h
+		custom_gui = quibble_spy_option	
+		trigger = { 
+			exists = event_target:firstsystem8
+	 
+		}
+
+		allow = { 
+			exists = event_target:firstsystem8
+	
+		}
+		hidden_effect = {	
+			event_target:firstsystem8 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.i
+		custom_gui = quibble_spy_option	
+		trigger = { 
+			exists = event_target:firstsystem9
+	 
+		}
+
+		allow = { 
+			exists = event_target:firstsystem9
+	
+		}
+		hidden_effect = {	
+			event_target:firstsystem9 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.j
+		custom_gui = quibble_spy_option	
+		trigger = { 
+			exists = event_target:firstsystem10
+			
+		}
+
+		allow = { 
+			exists = event_target:firstsystem10
+		
+		}
+		hidden_effect = {	
+			event_target:firstsystem10 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.k
+		custom_gui = quibble_spy_option	
+		trigger = { 
+			exists = event_target:firstsystem11
+		 
+		}
+
+		allow = { 
+			exists = event_target:firstsystem11
+		
+		}
+		hidden_effect = {	
+			event_target:firstsystem11 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.l
+		custom_gui = quibble_spy_option	
+		trigger = { 
+			exists = event_target:firstsystem12
+		 
+		}
+
+		allow = { 
+			exists = event_target:firstsystem12
+		
+		}
+		hidden_effect = {	
+			event_target:firstsystem12 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.m
+		custom_gui = quibble_spy_option	
+		trigger = { 
+			exists = event_target:firstsystem13
+			
+		}
+
+		allow = { 
+			exists = event_target:firstsystem13
+		
+		}
+		hidden_effect = {	
+			event_target:firstsystem13 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = {
+		name = quibble_neighbors.6.n
+		custom_gui = quibble_spy_option	
+		trigger = { 
+			exists = event_target:firstsystem14
+		 
+		}
+
+		allow = { 
+			exists = event_target:firstsystem14
+		
+		}
+		hidden_effect = {	
+			event_target:firstsystem14 = {
+				save_event_target_as = sab_station
+			}
+			country_event = { id = quibble_spy_station.4 }
+		}
+	}
+
+	option = { #QUIT
+		name = quibble_neighbors.6.o
+		custom_gui = quibble_spy_option	
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+}

@@ -1,0 +1,14 @@
+spriteTypes = {
+
+    spriteType = {
+        name = "GFX_quibble_spy"
+        texturefile = "gfx/interface/icons/quibble_spy.dds"
+        noOfFrames = 2
+    }
+
+    spriteType = {
+        name = "GFX_quibble_anti_spy"
+        texturefile = "gfx/interface/icons/quibble_spy2.dds"
+        noOfFrames = 2
+    }
+}

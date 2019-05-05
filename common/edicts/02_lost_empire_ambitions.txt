@@ -1,0 +1,156 @@
+#######################
+# Lost Empire Ambitions
+#######################
+
+renounce_ascendancy = {
+	is_ambition = yes
+
+	length = 0
+
+	potential = {
+		is_country_type = ascended_empire
+		NOR = {
+			has_valid_civic = civic_fanatic_purifiers
+			has_valid_civic = civic_machine_terminator	
+			has_valid_civic = civic_machine_assimilator
+			has_valid_civic = civic_hive_devouring_swarm
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = is_at_war
+			is_at_war = no
+		}
+		NOT = {
+			has_country_flag = lost_empire
+		}
+		custom_tooltip = {
+			fail_text = new_ascended_empire
+			NOT = {
+				has_country_flag = new_ascended_empire
+			}
+		}
+	}
+
+
+	effect = {
+		custom_tooltip = renounce_ascendancy
+		hidden_effect = { 
+			country_event = { id = lost_empire.1001 } 
+		}
+	}
+
+	ai_weight = {
+		weight = 0.5
+			modifier = {
+                factor = 0
+                has_ethic = ethic_fanatic_xenophobe
+            }
+            modifier = {
+                factor = 0
+                has_ethic = ethic_fanatic_militarist
+            }
+            modifier = {
+                factor = 0
+                has_ethic = ethic_fanatic_authoritarian
+            }
+            modifier = {
+                factor = 0
+                has_ethic = ethic_gestalt_consciousness
+            }
+			modifier = {
+				factor = 0
+				num_owned_planets > 10
+			}
+			modifier = {
+				factor = 0
+				fleet_power > 100000
+			}
+	}
+}
+
+reclaim_ascendancy = {
+	
+	is_ambition = yes
+
+	length = 0
+
+	potential = {
+		is_country_type = lost_empire
+		OR = {
+			has_country_flag = lost_empire_mobilized
+			has_country_flag = reclaim_ascendancy_edict_gained
+		}
+		OR = {
+			is_subject = no
+			AND = {
+				is_subject = yes
+				any_country = {
+					is_country_type = ascended_empire
+					is_overlord_to = root
+				}
+			}
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = is_at_war
+			is_at_war = no
+		}
+	}
+
+
+	effect = {
+		custom_tooltip = reclaim_ascendancy
+		hidden_effect = { 
+			country_event = { id = lost_empire.3 }
+			if = {
+				limit = {
+					has_country_flag = lost_empire_mobilized
+				}
+				remove_country_flag = lost_empire_mobilized
+			}
+			if = {
+				limit = {
+					has_country_flag = reclaim_ascendancy_edict_gained
+				}
+				remove_country_flag = reclaim_ascendancy_edict_gained
+			}
+			if = {
+				limit = {
+					is_subject = yes
+				}
+				set_country_flag = rebel_lost_empire
+				random_country = {
+					limit = { 
+						is_country_type = ascended_empire
+						is_overlord_to = root
+					}
+					set_country_flag = rebel_lost_empire_overlord
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+			modifier = {
+				factor = 2
+				has_ethic = ethic_fanatic_xenophobe
+			}
+			modifier = {
+				factor = 2
+				has_ethic = ethic_fanatic_militarist
+			}
+			modifier = {
+				factor = 2
+				has_ethic = ethic_fanatic_authoritarian
+			}
+			modifier = {
+				factor = 2
+				relative_power = { who = overlord value >= equivalent }
+			}
+	}
+}

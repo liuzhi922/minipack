@@ -1,0 +1,17 @@
+
+#Scope type varies depending on what is selected
+# This = selected object or player country
+# From = player country
+
+quibble_button_effect = {
+	potential = {
+		always = yes
+	}
+	allow = {
+		always = yes
+	}
+	
+	effect = {
+		country_event = { id = quibble_spy_menu.1 }	
+	}
+}

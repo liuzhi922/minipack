@@ -1,0 +1,176 @@
+namespace = ai_policy_change
+
+country_event = {
+	id = ai_policy_change.1 #FILTER COUNTRY TYPES, GIVE FLAG
+	is_triggered_only = yes
+    hide_window = yes
+
+    trigger = {
+        is_ai = yes
+        NOT = {
+            has_country_flag = policy_change_recent
+        }
+    }
+    
+    immediate = {
+        IF = {
+            limit = {
+                is_country_type = default
+                NOT = {
+                    has_valid_civic = civic_police_state
+                    has_valid_civic = civic_shadow_council
+                }
+            }
+            country_event = { id = ai_policy_change.2 }
+        }
+        IF = {
+            limit = {
+                has_valid_civic = civic_shadow_council
+            }
+            country_event = { id = ai_policy_change.5 }
+        }
+        ELSE = {
+
+        }
+    }
+}
+
+
+country_event = {#DEFUALT AI COUNTRIES SET FLAG
+	id = ai_policy_change.2 
+	is_triggered_only = yes
+    hide_window = yes
+
+	immediate = {
+        set_timed_country_flag = {
+			flag = policy_change_recent
+            days = 1460
+        }
+        random_list = {
+            10 = {
+                modifier = { 
+                    factor = 2
+                    has_monthly_income = { resource = energy value < 550 }
+                }
+                root = {
+                    set_policy = {
+                        policy = anti_propaganda_funding_ai
+                        option = high_anti_propaganda_funding
+                        cooldown = yes
+                    }
+                }
+            }
+            10 = {
+                modifier = { 
+                    factor = 2
+                    has_monthly_income = { resource = energy value < 300 }
+                }
+                root = {
+                    set_policy = {
+                        policy = anti_propaganda_funding_ai
+                        option = medium_anti_propaganda_funding
+                        cooldown = yes
+                    }
+                }
+            }
+            10 = {
+                modifier = { 
+                    factor = 2
+                    has_monthly_income = { resource = energy value < 200 }
+                }
+                root = {
+                    set_policy = {
+                        policy = anti_propaganda_funding_ai
+                        option = low_med_anti_propaganda_funding
+                        cooldown = yes
+                    }
+                }
+            }
+            10 = {
+                modifier = { 
+                    factor = 2
+                    has_monthly_income = { resource = energy value < 0 }
+                }
+                root = {
+                    set_policy = {
+                        policy = anti_propaganda_funding_ai
+                        option = low_anti_propaganda_funding
+                        cooldown = yes
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+country_event = { #SHADOW COUNCIL AI
+	id = ai_policy_change.5
+	is_triggered_only = yes
+    hide_window = yes
+
+	immediate = {
+        set_timed_country_flag = {
+			flag = policy_change_recent
+            days = 450
+        }
+        
+        random_list = {
+            10 = {
+                modifier = { 
+                    factor = 2
+                    has_monthly_income = { resource = energy value < 450 }
+                }
+                root = {
+                    set_policy = {
+                        policy = anti_propaganda_funding_ai
+                        option = high_anti_propaganda_funding
+                        cooldown = yes
+                    }
+                }
+            }
+            10 = {
+                modifier = { 
+                    factor = 2
+                    has_monthly_income = { resource = energy value < 300 }
+                }
+                root = {
+                    set_policy = {
+                        policy = anti_propaganda_funding_ai
+                        option = medium_anti_propaganda_funding
+                        cooldown = yes
+                    }
+                }
+            }
+            10 = {
+                modifier = { 
+                    factor = 2
+                    has_monthly_income = { resource = energy value < 200 }
+                }
+                root = {
+                    set_policy = {
+                        policy = anti_propaganda_funding_ai
+                        option = low_med_anti_propaganda_funding
+                        cooldown = yes
+                    }
+                }
+            }
+            10 = {
+                modifier = { 
+                    factor = 2
+                    has_monthly_income = { resource = energy value < 0 }
+                }
+                root = {
+                    set_policy = {
+                        policy = anti_propaganda_funding_ai
+                        option = low_anti_propaganda_funding
+                        cooldown = yes
+                    }
+                }
+            }
+        }
+    }
+}

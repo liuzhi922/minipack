@@ -1,0 +1,4584 @@
+district_generator = {
+	base_buildtime = 240
+	min_for_deposits_on_planet = 0
+	max_for_deposits_on_planet = 999
+	show_on_uncolonized = {
+		habitable_structure = no
+		NOT = {
+			is_planet_class = pc_machine
+		}
+		NOT = {
+			is_planet_class = pc_hive
+		}
+		NOT = {
+			is_planet_class = pc_city
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NOT = {
+			is_planet_class = pc_asteroid_base
+		}
+		NOT = {
+			is_planet_class = pc_moon_base
+		}
+		NOT = {
+			is_planet_class = pc_habitable_asteroid
+		}
+		NOT = {
+			is_planet_class = pc_luna
+		}
+		NOT = {
+			is_planet_class = pc_barren_cold_habitable
+		}
+		NOT = {
+			is_planet_class = pc_barren_habitable
+		}
+		NOT = {
+			is_planet_class = pc_frozen_habitable
+		}
+		NOT = {
+			is_planet_class = pc_molten_habitable
+		}
+		NOT = {
+			is_planet_class = pc_mem_vazuran_habitat
+		}
+		NOT = {
+			is_planet_class = pc_ecocity
+		}
+		NOT = {
+			is_planet_class = pc_archive
+		}
+		NOT = {
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_outpost
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	potential = {
+		habitable_structure = no
+		NOT = {
+			is_planet_class = pc_machine
+		}
+		NOT = {
+			is_planet_class = pc_hive
+		}
+		NOT = {
+			is_planet_class = pc_city
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NOT = {
+			is_planet_class = pc_asteroid_base
+		}
+		NOT = {
+			is_planet_class = pc_moon_base
+		}
+		NOT = {
+			is_planet_class = pc_habitable_asteroid
+		}
+		NOT = {
+			is_planet_class = pc_luna
+		}
+		NOT = {
+			is_planet_class = pc_barren_cold_habitable
+		}
+		NOT = {
+			is_planet_class = pc_barren_habitable
+		}
+		NOT = {
+			is_planet_class = pc_frozen_habitable
+		}
+		NOT = {
+			is_planet_class = pc_molten_habitable
+		}
+		NOT = {
+			is_planet_class = pc_mem_vazuran_habitat
+		}
+		NOT = {
+			is_planet_class = pc_ecocity
+		}
+		NOT = {
+			is_planet_class = pc_archive
+		}
+		NOT = {
+			has_modifier = pm_Utopian_Paradise
+		}
+		NOT = {
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_outpost
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	allow = {
+		NOT = {
+			has_modifier = resort_colony
+		}
+		IF = {
+			limit = {
+				exists = owner
+				owner = {
+					is_ai = yes
+				}
+			}
+			OR = {
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value > -1
+					}
+				}
+				num_free_districts = {
+					type = district_farming
+					value = 0
+				}
+			}
+			OR = {
+				free_jobs < 2
+				controller = {
+					is_ai = no
+				}
+				owner = {
+					is_ai = no
+				}
+				AND = {
+					free_jobs < 4
+					exists = owner
+					owner = {
+						has_monthly_income = {
+							resource = energy
+							value < 0
+						}
+						has_monthly_income = {
+							resource = food
+							value > -1
+						}
+					}
+				}
+				AND = {
+					gai_good_energy = yes
+					free_jobs < 3
+				}
+				num_free_districts = {
+					type = district_generator
+					value = 0
+				}
+				free_district_slots = 0
+			}
+			years_passed > 4
+		}
+	}
+	conversion_ratio = 1
+	convert_to = {
+		district_generator_uncapped
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 1
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_socialistic
+				}
+			}
+			energy = 0.15
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		modifier = {
+			job_technician_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			job_technician_drone_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_technician_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_fe_acolyte_generator_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_valid_civic = civic_labour_unions
+					has_valid_civic = civic_socialistic
+				}
+			}
+		}
+		modifier = {
+			job_technician_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_technoorganic
+		}
+		modifier = {
+			planet_housing_add = 3
+			job_technician_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_technoorganic
+		}
+		modifier = {
+			job_technician_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_technoorganic
+		}
+		modifier = {
+			job_technician_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_graveyard
+		}
+		modifier = {
+			planet_housing_add = 3
+			job_technician_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_graveyard
+		}
+		modifier = {
+			job_technician_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_graveyard
+		}
+		modifier = {
+			job_technician_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_floating
+		}
+		modifier = {
+			planet_housing_add = 3
+			job_technician_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_floating
+		}
+		modifier = {
+			job_technician_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_floating
+		}
+		modifier = {
+			job_technician_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_biolumen
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_technician_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_biolumen
+		}
+		modifier = {
+			job_technician_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_biolumen
+		}
+		modifier = {
+			job_technician_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_geothermal
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_technician_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_geothermal
+		}
+		modifier = {
+			job_technician_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_geothermal
+		}
+		modifier = {
+			job_technician_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_tidallylocked
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_technician_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_tidallylocked
+		}
+		modifier = {
+			job_technician_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_tidallylocked
+		}
+		modifier = {
+			job_technician_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = job_technician_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
+	prerequisites = {
+		tech_power_plant_1
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 10
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			weight = 1
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 8
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 2
+			free_housing < 0
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 4
+			owner = {
+				OR = {
+					is_machine_empire = yes
+					is_mechanical_empire = yes
+				}
+				has_monthly_income = {
+					resource = energy
+					value < 50
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 3
+			any_owned_pop = {
+				OR = {
+					is_unemployed = yes
+					has_job = servant
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 0
+			free_jobs > 0
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			weight = 500
+			NOT = {
+				has_planet_flag = gai_arc
+			}
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 150
+				}
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 0
+				}
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 250000
+			NOT = {
+				has_planet_flag = gai_arc
+			}
+			free_jobs = 0
+			num_free_districts = {
+				type = district_mining
+				value = 0
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.0003
+			NOR = {
+				any_owned_pop = {
+					has_job = clerk
+				}
+				free_jobs < 3
+				AND = {
+					owner = {
+						is_gestalt = yes
+					}
+					OR = {
+						free_amenities > 12
+						free_jobs < 4
+					}
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				is_machine_empire = yes
+				resource_income_compare = {
+					resource = energy
+					value < 10
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				is_machine_empire = yes
+				resource_income_compare = {
+					resource = energy
+					value < 20
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			str_good_energy = yes
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0
+			has_planet_flag = ecumen
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.001
+			free_district_slots = 0
+			free_housing < 2
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.05
+			free_amenities < -5
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_building = building_energy_grid
+				has_building = building_energy_nexus
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_deficit = energy
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_stockpile_compare = {
+					resource = energy
+					value < 50
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_stockpile_compare = {
+					resource = energy
+					value < 100
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 4
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -60
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -50
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -30
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -20
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -10
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -5
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.85
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value > 10
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value > 30
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value > 60
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.7
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value > 120
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			NOT = {
+				owner = {
+					has_country_flag = acceptable_energy_economy
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				has_country_flag = fine_energy_economy
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				has_country_flag = good_energy_economy
+			}
+			has_global_flag = str_enabled_flag
+		}
+	}
+	ai_resource_production = {
+		energy = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+district_mining = {
+	base_buildtime = 240
+	min_for_deposits_on_planet = 0
+	max_for_deposits_on_planet = 999
+	show_on_uncolonized = {
+		habitable_structure = no
+		NOT = {
+			is_planet_class = pc_machine
+		}
+		NOT = {
+			is_planet_class = pc_hive
+		}
+		NOT = {
+			is_planet_class = pc_city
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NOT = {
+			is_planet_class = pc_asteroid_base
+		}
+		NOT = {
+			is_planet_class = pc_moon_base
+		}
+		NOT = {
+			is_planet_class = pc_habitable_asteroid
+		}
+		NOT = {
+			is_planet_class = pc_luna
+		}
+		NOT = {
+			is_planet_class = pc_barren_cold_habitable
+		}
+		NOT = {
+			is_planet_class = pc_barren_habitable
+		}
+		NOT = {
+			is_planet_class = pc_frozen_habitable
+		}
+		NOT = {
+			is_planet_class = pc_molten_habitable
+		}
+		NOT = {
+			is_planet_class = pc_mem_vazuran_habitat
+		}
+		NOT = {
+			is_planet_class = pc_ecocity
+		}
+		NOT = {
+			is_planet_class = pc_archive
+		}
+		NOT = {
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_outpost
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	potential = {
+		habitable_structure = no
+		NOT = {
+			is_planet_class = pc_machine
+		}
+		NOT = {
+			is_planet_class = pc_hive
+		}
+		NOT = {
+			is_planet_class = pc_city
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NOT = {
+			is_planet_class = pc_asteroid_base
+		}
+		NOT = {
+			is_planet_class = pc_moon_base
+		}
+		NOT = {
+			is_planet_class = pc_habitable_asteroid
+		}
+		NOT = {
+			is_planet_class = pc_luna
+		}
+		NOT = {
+			is_planet_class = pc_barren_cold_habitable
+		}
+		NOT = {
+			is_planet_class = pc_barren_habitable
+		}
+		NOT = {
+			is_planet_class = pc_frozen_habitable
+		}
+		NOT = {
+			is_planet_class = pc_molten_habitable
+		}
+		NOT = {
+			is_planet_class = pc_mem_vazuran_habitat
+		}
+		NOT = {
+			is_planet_class = pc_ecocity
+		}
+		NOT = {
+			is_planet_class = pc_archive
+		}
+		NOT = {
+			has_modifier = pm_Utopian_Paradise
+		}
+		NOT = {
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_outpost
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	allow = {
+		NOT = {
+			has_modifier = resort_colony
+		}
+		IF = {
+			limit = {
+				exists = owner
+				owner = {
+					is_ai = yes
+				}
+			}
+			OR = {
+				owner = {
+					has_monthly_income = {
+						resource = food
+						value > -1
+					}
+				}
+				num_free_districts = {
+					type = district_farming
+					value = 0
+				}
+			}
+			OR = {
+				AND = {
+					gai_good_minerals = yes
+					free_jobs < 3
+				}
+				AND = {
+					free_jobs < 4
+					exists = owner
+					owner = {
+						has_monthly_income = {
+							resource = minerals
+							value < 40
+						}
+					}
+				}
+				num_free_districts = {
+					type = district_mining
+					value = 0
+				}
+				free_district_slots = 0
+				free_jobs < 2
+				controller = {
+					is_ai = no
+				}
+				any_owned_pop = {
+					is_unemployed = yes
+					NOT = {
+						has_citizenship_type = {
+							type = citizenship_organic_trophy
+						}
+					}
+					NOR = {
+						is_pop_category = specialist
+						is_pop_category = ruler
+					}
+				}
+			}
+			years_passed > 6
+		}
+	}
+	conversion_ratio = 1
+	convert_to = {
+		district_mining_uncapped
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 1
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_socialistic
+				}
+			}
+			energy = 0.15
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_mining_guilds
+				}
+			}
+			energy = 0.15
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		modifier = {
+			job_mining_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			job_mining_drone_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_fe_acolyte_mine_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_mining_guilds
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_miner_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_keepers_harmony
+			}
+		}
+		modifier = {
+			planet_amenities_add = -1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_valid_civic = civic_labour_unions
+					has_valid_civic = civic_socialistic
+				}
+			}
+		}
+		modifier = {
+			job_miner_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_graveyard
+		}
+		modifier = {
+			planet_housing_add = 3
+			job_miner_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_graveyard
+		}
+		modifier = {
+			job_mining_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_graveyard
+		}
+		modifier = {
+			job_mining_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_crystal
+		}
+		modifier = {
+			planet_housing_add = 3
+			job_miner_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_crystal
+		}
+		modifier = {
+			job_mining_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_crystal
+		}
+		modifier = {
+			job_mining_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_floating
+		}
+		modifier = {
+			planet_housing_add = 3
+			job_miner_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_floating
+		}
+		modifier = {
+			job_mining_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_floating
+		}
+		modifier = {
+			job_mining_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_geothermal
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_miner_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_geothermal
+		}
+		modifier = {
+			job_mining_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_geothermal
+		}
+		modifier = {
+			job_mining_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_superhabitable
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_miner_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_superhabitable
+		}
+		modifier = {
+			job_mining_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_superhabitable
+		}
+		modifier = {
+			job_mining_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_tradition = tr_plentiful_industry_3
+			}
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_mining_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_tradition = tr_plentiful_industry_3
+			}
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_mining_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_tradition = tr_plentiful_industry_3
+			}
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_miner_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_tradition = tr_plentiful_industry_3
+			}
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_fe_acolyte_mine_add = 1
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_miner_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+	prerequisites = {
+		tech_mechanized_mining
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 14
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			weight = 1
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				has_monthly_income = {
+					resource = minerals
+					value < 0
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 2
+			free_housing < 0
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 3
+			any_owned_pop = {
+				OR = {
+					is_unemployed = yes
+					has_job = servant
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 0
+			free_housing > 0
+			NOT = {
+				any_owned_pop = {
+					OR = {
+						is_unemployed = yes
+						has_job = servant
+					}
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			weight = 500
+			NOT = {
+				has_planet_flag = gai_arc
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 1.75
+			OR = {
+				gai_work_minerals = yes
+				gai_work_minerals_goods = yes
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 250000
+			NOT = {
+				has_planet_flag = gai_arc
+			}
+			OR = {
+				free_jobs = 0
+				any_owned_pop = {
+					is_unemployed = yes
+					NOT = {
+						has_citizenship_type = {
+							type = citizenship_organic_trophy
+						}
+					}
+					NOR = {
+						is_pop_category = specialist
+						is_pop_category = ruler
+					}
+				}
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 4
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value < 22000
+				}
+				has_ascension_perk = ap_arcology_project
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 6
+			owner = {
+				beta_arcology = yes
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				is_machine_empire = yes
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 3000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 4000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 5000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 6000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 7000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 8000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 10000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.01
+			free_amenities < -5
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_building = building_mineral_purification_plant
+				has_building = building_mineral_purification_hub
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				has_deficit = minerals
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value < 100
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value < 50
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 4
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value < 20.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 4
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value < 30.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value < 40.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value < 50.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value < 75.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 100
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 150
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 200
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 250
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 300.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 500.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			NOT = {
+				owner = {
+					has_country_flag = acceptable_mineral_economy
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				has_country_flag = fine_mineral_economy
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				has_country_flag = good_mineral_economy
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			str_good_minerals = yes
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.1
+			has_planet_modifier = pm_mineral_poor
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.005
+			has_planet_flag = ecumen
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0
+			has_planet_flag = ecumen
+			free_district_slots = 0
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.001
+			free_district_slots = 0
+			free_housing < 2
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.0003
+			NOR = {
+				any_owned_pop = {
+					OR = {
+						has_job = clerk
+						AND = {
+							is_shackled_robot = yes
+							is_unemployed = yes
+						}
+					}
+				}
+				free_jobs < 3
+				AND = {
+					owner = {
+						is_gestalt = yes
+					}
+					OR = {
+						free_amenities > 12
+						free_jobs < 4
+					}
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 50
+			any_owned_pop = {
+				is_shackled_robot = yes
+				is_unemployed = yes
+			}
+			has_global_flag = str_enabled_flag
+		}
+	}
+	ai_resource_production = {
+		minerals = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+district_farming = {
+	base_buildtime = 240
+	min_for_deposits_on_planet = 0
+	max_for_deposits_on_planet = 999
+	show_on_uncolonized = {
+		habitable_structure = no
+		NOT = {
+			is_planet_class = pc_machine
+		}
+		NOT = {
+			is_planet_class = pc_hive
+		}
+		NOT = {
+			is_planet_class = pc_city
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NOT = {
+			is_planet_class = pc_asteroid_base
+		}
+		NOT = {
+			is_planet_class = pc_moon_base
+		}
+		NOT = {
+			is_planet_class = pc_habitable_asteroid
+		}
+		NOT = {
+			is_planet_class = pc_luna
+		}
+		NOT = {
+			is_planet_class = pc_barren_cold_habitable
+		}
+		NOT = {
+			is_planet_class = pc_barren_habitable
+		}
+		NOT = {
+			is_planet_class = pc_frozen_habitable
+		}
+		NOT = {
+			is_planet_class = pc_molten_habitable
+		}
+		NOT = {
+			is_planet_class = pc_mem_vazuran_habitat
+		}
+		NOT = {
+			is_planet_class = pc_ecocity
+		}
+		NOT = {
+			is_planet_class = pc_archive
+		}
+		NOT = {
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_outpost
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	potential = {
+		habitable_structure = no
+		NOT = {
+			is_planet_class = pc_machine
+		}
+		NOT = {
+			is_planet_class = pc_hive
+		}
+		NOT = {
+			is_planet_class = pc_city
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NOT = {
+			is_planet_class = pc_asteroid_base
+		}
+		NOT = {
+			is_planet_class = pc_moon_base
+		}
+		NOT = {
+			is_planet_class = pc_habitable_asteroid
+		}
+		NOT = {
+			is_planet_class = pc_luna
+		}
+		NOT = {
+			is_planet_class = pc_barren_cold_habitable
+		}
+		NOT = {
+			is_planet_class = pc_barren_habitable
+		}
+		NOT = {
+			is_planet_class = pc_frozen_habitable
+		}
+		NOT = {
+			is_planet_class = pc_molten_habitable
+		}
+		NOT = {
+			is_planet_class = pc_mem_vazuran_habitat
+		}
+		NOT = {
+			is_planet_class = pc_ecocity
+		}
+		NOT = {
+			is_planet_class = pc_archive
+		}
+		NOT = {
+			has_modifier = pm_Utopian_Paradise
+		}
+		NOT = {
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_outpost
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	allow = {
+		NOT = {
+			has_modifier = resort_colony
+		}
+		IF = {
+			limit = {
+				exists = owner
+				owner = {
+					is_ai = yes
+				}
+			}
+			exists = owner
+			owner = {
+				gai_uses_food = yes
+			}
+			OR = {
+				free_jobs < 2
+				AND = {
+					free_jobs < 3
+					gai_good_food = yes
+				}
+				AND = {
+					free_jobs < 4
+					owner = {
+						has_monthly_income = {
+							resource = food
+							value < 30
+						}
+					}
+				}
+				free_district_slots = 0
+				num_free_districts = {
+					type = district_farming
+					value = 0
+				}
+				any_owned_pop = {
+					is_unemployed = yes
+					NOT = {
+						has_citizenship_type = {
+							type = citizenship_organic_trophy
+						}
+					}
+					NOR = {
+						is_pop_category = specialist
+						is_pop_category = ruler
+					}
+				}
+			}
+		}
+	}
+	conversion_ratio = 1
+	convert_to = {
+		district_farming_uncapped
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 1
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_socialistic
+				}
+			}
+			energy = 0.15
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_agrarian_idyll
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		modifier = {
+			job_agri_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			job_agri_drone_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_farmer_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_fe_acolyte_farm_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_valid_civic = civic_labour_unions
+					has_valid_civic = civic_socialistic
+				}
+			}
+		}
+		modifier = {
+			job_farmer_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_technoorganic
+		}
+		modifier = {
+			planet_housing_add = 3
+			job_farmer_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_technoorganic
+		}
+		modifier = {
+			job_agri_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_technoorganic
+		}
+		modifier = {
+			job_agri_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_crystal
+		}
+		modifier = {
+			planet_housing_add = 3
+			job_farmer_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_crystal
+		}
+		modifier = {
+			job_agri_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_crystal
+		}
+		modifier = {
+			job_agri_drone_add = 3
+			planet_housing_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_biolumen
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_farmer_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_biolumen
+		}
+		modifier = {
+			job_agri_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_biolumen
+		}
+		modifier = {
+			job_agri_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_superhabitable
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_farmer_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_superhabitable
+		}
+		modifier = {
+			job_agri_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_superhabitable
+		}
+		modifier = {
+			job_agri_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			is_planet_class = pc_tidallylocked
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_farmer_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+			is_planet_class = pc_tidallylocked
+		}
+		modifier = {
+			job_agri_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+			is_planet_class = pc_tidallylocked
+		}
+		modifier = {
+			job_agri_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = job_agri_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_farmer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+	prerequisites = {
+		tech_industrial_farming
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 14
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			weight = 1
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				has_monthly_income = {
+					resource = food
+					value < 5
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 2
+			free_housing < 0
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 3
+			any_owned_pop = {
+				OR = {
+					is_unemployed = yes
+					has_job = servant
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 0
+			free_housing > 0
+			NOT = {
+				any_owned_pop = {
+					OR = {
+						is_unemployed = yes
+						has_job = servant
+					}
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				OR = {
+					is_mechanical_empire = no
+					AND = {
+						is_mechanical_empire = yes
+						OR = {
+							has_civic = civic_machine_servitor
+							has_civic = civic_machine_assimilator
+						}
+					}
+				}
+				has_monthly_income = {
+					resource = energy
+					value < 5
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				is_mechanical_empire = yes
+				NOR = {
+					has_civic = civic_machine_servitor
+					has_civic = civic_machine_assimilator
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			weight = 500
+			NOT = {
+				has_planet_flag = gai_arc
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				has_monthly_income = {
+					resource = food
+					value < 30
+				}
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			weight = 250000
+			num_free_districts = {
+				type = district_mining
+				value = 0
+			}
+			num_free_districts = {
+				type = district_generator
+				value = 0
+			}
+			OR = {
+				free_jobs = 0
+				any_owned_pop = {
+					is_unemployed = yes
+					NOT = {
+						has_citizenship_type = {
+							type = citizenship_organic_trophy
+						}
+					}
+					NOR = {
+						is_pop_category = specialist
+						is_pop_category = ruler
+					}
+				}
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 2.5
+			owner = {
+				is_hive_empire = yes
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			str_good_food = yes
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.005
+			has_planet_flag = ecumen
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0
+			has_planet_flag = ecumen
+			free_district_slots = 0
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.07
+			free_amenities < -5
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_building = building_food_processing_facility
+				has_building = building_food_processing_center
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.001
+			free_district_slots = 0
+			free_housing < 2
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.0003
+			NOR = {
+				any_owned_pop = {
+					OR = {
+						has_job = clerk
+						AND = {
+							is_shackled_robot = yes
+							is_unemployed = yes
+						}
+					}
+				}
+				free_jobs < 3
+				AND = {
+					owner = {
+						is_gestalt = yes
+					}
+					OR = {
+						free_amenities > 12
+						free_jobs < 4
+					}
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 50
+			any_owned_pop = {
+				is_shackled_robot = yes
+				is_unemployed = yes
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				is_mechanical_empire = yes
+				NOR = {
+					has_civic = civic_machine_servitor
+					has_civic = civic_machine_assimilator
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			years_passed > 10
+			owner = {
+				resource_stockpile_compare = {
+					resource = food
+					value < 100
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			years_passed > 10
+			owner = {
+				resource_stockpile_compare = {
+					resource = food
+					value < 200
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			years_passed > 10
+			owner = {
+				resource_stockpile_compare = {
+					resource = food
+					value < 300
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = food
+					value > 4000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = food
+					value > 5000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = food
+					value > 6000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				has_deficit = food
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_stockpile_compare = {
+					resource = food
+					value < 100
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value < -40
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value < -30
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value < -20
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value < -10
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value < 0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 10
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 20
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 30
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 40
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 60
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 80
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 100
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 150
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				is_hive_empire = yes
+				years_passed < 30
+				resource_income_compare = {
+					resource = food
+					value < 30
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			NOT = {
+				owner = {
+					has_country_flag = acceptable_food_economy
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				has_country_flag = fine_food_economy
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				has_country_flag = good_food_economy
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.7
+			owner = {
+				is_machine_empire = yes
+				resource_income_compare = {
+					resource = food
+					value > 20
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				needs_food_at_all = no
+			}
+			has_global_flag = str_enabled_flag
+		}
+	}
+	ai_resource_production = {
+		food = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+district_generator_uncapped = {
+	base_buildtime = 240
+	icon = district_generator
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		OR = {
+			is_planet_class = pc_hive
+			is_planet_class = pc_machine
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	potential = {
+		OR = {
+			is_planet_class = pc_hive
+			is_planet_class = pc_machine
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NOT = {
+			has_modifier = pm_Utopian_Paradise
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	allow = {
+		NOT = {
+			has_modifier = resort_colony
+		}
+		exists = owner
+		exists = controller
+		OR = {
+			free_jobs < 2
+			controller = {
+				is_ai = no
+			}
+			owner = {
+				is_ai = no
+			}
+			gai_good_energy = yes
+			free_district_slots = 0
+		}
+	}
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 1
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_socialistic
+				}
+			}
+			energy = 0.15
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		modifier = {
+			job_technician_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			job_technician_drone_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_technician_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_fe_acolyte_generator_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_valid_civic = civic_labour_unions
+					has_valid_civic = civic_socialistic
+				}
+			}
+		}
+		modifier = {
+			job_technician_add = 1
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = job_technician_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 3
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			weight = 1
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			weight = 1
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 8
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 2
+			free_housing < 0
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 3
+			any_owned_pop = {
+				OR = {
+					is_unemployed = yes
+					has_job = servant
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 0
+			free_jobs > 0
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			weight = 500
+			NOT = {
+				has_planet_flag = gai_arc
+			}
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 150
+				}
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 0.001
+			NOR = {
+				any_owned_pop = {
+					has_job = clerk
+				}
+				free_jobs < 3
+				AND = {
+					owner = {
+						is_gestalt = yes
+					}
+					free_amenities > 10
+					free_jobs < 6
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				is_machine_empire = yes
+				resource_income_compare = {
+					resource = energy
+					value < 10
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				is_machine_empire = yes
+				resource_income_compare = {
+					resource = energy
+					value < 20
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			str_good_energy = yes
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.005
+			has_planet_flag = ecumen
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0
+			has_planet_flag = ecumen
+			free_district_slots = 0
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.001
+			free_district_slots = 0
+			free_housing < 2
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.05
+			free_amenities < -5
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_building = building_energy_grid
+				has_building = building_energy_nexus
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_deficit = energy
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 4
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -150
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -100
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -75
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -50
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -30
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value < -10
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.85
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value > 10
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.85
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value > 30
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.65
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value > 60
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.4
+			owner = {
+				resource_income_compare = {
+					resource = energy
+					value > 120
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+	}
+	ai_resource_production = {
+		energy = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+district_mining_uncapped = {
+	base_buildtime = 240
+	icon = district_mining
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		OR = {
+			is_planet_class = pc_hive
+			is_planet_class = pc_machine
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	potential = {
+		OR = {
+			is_planet_class = pc_hive
+			is_planet_class = pc_machine
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NOT = {
+			has_modifier = pm_Utopian_Paradise
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	allow = {
+		NOT = {
+			has_modifier = resort_colony
+		}
+		exists = owner
+		exists = controller
+		OR = {
+			free_jobs < 2
+			controller = {
+				is_ai = no
+			}
+			owner = {
+				is_ai = no
+			}
+			gai_good_minerals = yes
+			free_district_slots = 0
+		}
+	}
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 1
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_socialistic
+				}
+			}
+			energy = 0.15
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		modifier = {
+			job_mining_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			job_mining_drone_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_fe_acolyte_mine_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_keepers_harmony
+			}
+		}
+		modifier = {
+			planet_amenities_add = -1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_valid_civic = civic_labour_unions
+					has_valid_civic = civic_socialistic
+				}
+			}
+		}
+		modifier = {
+			job_miner_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_tradition = tr_plentiful_industry_3
+			}
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_mining_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_tradition = tr_plentiful_industry_3
+			}
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_mining_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_tradition = tr_plentiful_industry_3
+			}
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_miner_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_tradition = tr_plentiful_industry_3
+			}
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+			job_fe_acolyte_mine_add = 1
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_miner_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+	prerequisites = {
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 3
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			weight = 1
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			weight = 1
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				has_monthly_income = {
+					resource = minerals
+					value < 0
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 2
+			free_housing < 0
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 3
+			any_owned_pop = {
+				OR = {
+					is_unemployed = yes
+					has_job = servant
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 0
+			free_housing > 0
+			NOT = {
+				any_owned_pop = {
+					OR = {
+						is_unemployed = yes
+						has_job = servant
+					}
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			weight = 200000
+			NOT = {
+				has_planet_flag = gai_arc
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				gai_work_minerals = yes
+				gai_work_minerals_goods = yes
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				is_machine_empire = yes
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.2
+			years_passed > 30
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.3
+			years_passed > 50
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			years_passed > 100
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 3000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 4000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 5000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 6000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 7000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 8000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				resource_stockpile_compare = {
+					resource = minerals
+					value > 10000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.01
+			free_amenities < -5
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_building = building_mineral_purification_plant
+				has_building = building_mineral_purification_hub
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 4
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value < 30.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value < 40.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value < 50.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value < 75.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.85
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 100
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.85
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 150
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.85
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 200
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.85
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 250
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value > 300.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				resource_income_compare = {
+					resource = minerals
+					value < 500.0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			str_good_minerals = yes
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.1
+			has_planet_modifier = pm_mineral_poor
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0
+			has_planet_flag = ecumen
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.001
+			free_district_slots = 0
+			free_housing < 2
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.001
+			NOR = {
+				any_owned_pop = {
+					OR = {
+						has_job = clerk
+						AND = {
+							is_shackled_robot = yes
+							is_unemployed = yes
+						}
+					}
+				}
+				free_jobs < 3
+				AND = {
+					owner = {
+						is_gestalt = yes
+					}
+					free_amenities > 10
+					free_jobs < 6
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+	}
+	ai_resource_production = {
+		minerals = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+district_farming_uncapped = {
+	base_buildtime = 240
+	icon = district_farming
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		OR = {
+			is_planet_class = pc_hive
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	potential = {
+		OR = {
+			is_planet_class = pc_hive
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_shrouded_pg
+		}
+		NOT = {
+			is_planet_class = pc_dyson_swarm
+		}
+		NOT = {
+			has_modifier = pm_Utopian_Paradise
+		}
+		NAND = {
+			is_planet_class = pc_ringworld_habitable
+			OR = {
+				has_global_flag = ringworld_districts_v2
+				has_global_flag = lrsk_megastrcutre_district_rework_mod_active
+			}
+		}
+	}
+	allow = {
+		NOT = {
+			has_modifier = resort_colony
+		}
+		exists = owner
+		exists = controller
+		OR = {
+			free_jobs < 2
+			controller = {
+				is_ai = no
+			}
+			owner = {
+				is_ai = no
+			}
+			gai_good_food = yes
+			free_district_slots = 0
+		}
+	}
+	conversion_ratio = 1
+	convert_to = {
+		district_farming
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 1
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_socialistic
+				}
+			}
+			energy = 0.15
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_housing_agrarian_idyll
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+			}
+		}
+		modifier = {
+			job_agri_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		modifier = {
+			job_agri_drone_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_farmer_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_fe_acolyte_farm_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_valid_civic = civic_labour_unions
+					has_valid_civic = civic_socialistic
+				}
+			}
+		}
+		modifier = {
+			job_farmer_add = 1
+		}
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = job_agri_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_farmer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 3
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			weight = 1
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			weight = 1
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				has_monthly_income = {
+					resource = food
+					value < 5
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 2
+			free_housing < 0
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 3
+			any_owned_pop = {
+				OR = {
+					is_unemployed = yes
+					has_job = servant
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			factor = 0
+			free_housing > 0
+			NOT = {
+				any_owned_pop = {
+					OR = {
+						is_unemployed = yes
+						has_job = servant
+					}
+				}
+			}
+			NOT = {
+				has_global_flag = gai_enabled_flag
+			}
+			NOT = {
+				has_global_flag = str_enabled_flag
+			}
+		}
+		modifier = {
+			weight = 500
+			NOT = {
+				has_planet_flag = gai_arc
+			}
+			owner = {
+				has_monthly_income = {
+					resource = food
+					value < 150
+				}
+			}
+			has_global_flag = gai_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				is_hive_empire = yes
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			years_passed > 40
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			years_passed > 100
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			str_good_food = yes
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0
+			has_planet_flag = ecumen
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.07
+			free_amenities < -5
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_building = building_food_processing_facility
+				has_building = building_food_processing_center
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.001
+			free_district_slots = 0
+			free_housing < 2
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.001
+			NOR = {
+				any_owned_pop = {
+					OR = {
+						has_job = clerk
+						AND = {
+							is_shackled_robot = yes
+							is_unemployed = yes
+						}
+					}
+				}
+				free_jobs < 3
+				AND = {
+					owner = {
+						is_gestalt = yes
+					}
+					free_amenities > 10
+					free_jobs < 6
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				is_mechanical_empire = yes
+				NOR = {
+					has_civic = civic_machine_servitor
+					has_civic = civic_machine_assimilator
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 1.5
+			years_passed > 10
+			owner = {
+				resource_stockpile_compare = {
+					resource = food
+					value < 100
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = food
+					value > 4000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = food
+					value > 5000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_stockpile_compare = {
+					resource = food
+					value > 6000
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_deficit = food
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value < -40
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 3
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value < -30
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value < -20
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value < -10
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value < 0
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 10
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 20
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 30
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 40
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 50
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0.5
+			owner = {
+				resource_income_compare = {
+					resource = food
+					value > 100
+				}
+			}
+			has_global_flag = str_enabled_flag
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				needs_food_at_all = no
+			}
+			has_global_flag = str_enabled_flag
+		}
+	}
+	ai_resource_production = {
+		food = 1
+		trigger = {
+			always = yes
+		}
+	}
+}

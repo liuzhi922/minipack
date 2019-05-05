@@ -1,0 +1,559 @@
+namespace = pg
+
+@staring_food = 700
+
+# Project Gestalt
+country_event = {
+	id = pg.1
+	title = "pg.1.name"
+	desc = "pg.1.desc"
+	picture = GFX_evt_psionics
+	show_sound = event_the_great_awakening
+
+	is_triggered_only = yes
+
+	option = {
+		name = "pg.1.a"
+		capital_scope = {
+			enable_special_project = {
+				name = "PROJECT_GESTALT"
+				location = this
+				owner = root
+			}
+		}
+	}
+}
+# Energy Age
+country_event = {
+	id = pg.2
+	title = "pg.2.name"
+	desc = "pg.2.desc"
+	picture = GFX_evt_psionics
+	show_sound = event_the_great_awakening
+
+	is_triggered_only = yes
+
+	immediate = {
+			give_technology = {
+				tech = tech_gestalt_mod message = no
+			}
+        set_country_flag = energy_age
+
+		create_species = {
+			is_mod = no
+			name = this
+			namelist = this
+			plural = this
+			class = "GESTALT"
+			portrait = "unbidden_blue"
+			traits = {
+				trait = "trait_gestalt"
+			}
+
+			pops_auto_growth = 1.0
+
+			pops_can_be_colonizers = yes
+			pops_can_migrate = yes
+			pops_can_reproduce = yes
+			pops_can_join_factions = yes
+			pop_maintenance = 1
+			can_generate_leaders = yes
+			pops_can_be_slaves = no
+			pops_have_happiness = yes
+		        consumer_goods = yes
+
+			effect = {
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				species = {
+					OR = {
+						has_trait = trait_psionic
+				        has_trait = trait_latent_psionic
+                    }
+				}
+			}
+			change_species = last_created
+		}
+
+		every_owned_ship = {
+			limit = {
+				is_ship_class = shipclass_colonizer
+				species = {
+					OR = {
+						has_trait = trait_psionic
+				        has_trait = trait_latent_psionic
+                    }
+				}
+			}
+			change_species = last_created
+		}
+
+		every_owned_army = {
+			limit = {
+				exists = species
+				exists = planet
+				species = {
+					OR = {
+						has_trait = trait_psionic
+				        has_trait = trait_latent_psionic
+                    }
+				}
+			}
+			planet = {
+				create_army = {
+					name = random
+					owner = root
+					type = "gestalt_army"
+					species = this
+				}
+			}
+			remove_army = yes
+		}
+
+		every_owned_leader = {
+			change_species = last_created
+			change_leader_portrait = species
+		}
+		every_pool_leader = {
+			change_species = last_created
+			change_leader_portrait = species
+		}
+		change_dominant_species = {
+			species = last_created
+		}
+
+		every_owned_leader = {
+			limit = {
+				species = {
+					has_trait = trait_gestalt
+				}
+			}
+			if = {
+				limit = {
+					leader_class = ruler
+				}
+				add_ruler_trait = leader_trait_ruler_gestalt
+				remove_trait = leader_trait_ruler_chosen
+				remove_trait = leader_trait_ruler_psionic
+			}
+		}
+	}
+}
+
+# Ascension For Soul Eaters
+country_event = {
+	id = pg.3
+	title = "pg.3.name"
+	desc = "pg.3.desc"
+	picture = GFX_evt_psionics
+	show_sound = event_the_great_awakening
+
+	is_triggered_only = yes
+
+	immediate = {
+			give_technology = {
+				tech = tech_gestalt_mod message = no
+			}
+       set_country_flag = ascended_soul_eaters
+
+		create_species = {
+			is_mod = no
+			name = this
+			namelist = this
+			plural = this
+			class = "GESTALTSE"
+			portrait = "unbidden_red"
+			traits = {
+				trait = "trait_corrupted"
+				trait = "trait_vb_psi_soul_eater"
+			}
+
+			pops_auto_growth = 1.0
+
+			pops_can_be_colonizers = yes
+			pops_can_migrate = yes
+			pops_can_reproduce = yes
+			pops_can_join_factions = yes
+			pop_maintenance = 1
+			can_generate_leaders = yes
+			pops_can_be_slaves = no
+			pops_have_happiness = yes
+		        consumer_goods = yes
+			}	#can also be pop_ethics = { some_ethic some_other_ethic etc }
+
+		every_owned_pop = {
+			limit = {
+				species = {
+				    has_trait = trait_vb_psi_soul_eater
+				}
+			}
+			change_species = last_created
+		}
+
+		every_owned_ship = {
+			limit = {
+				is_ship_class = shipclass_colonizer
+				species = {
+				    has_trait = trait_vb_psi_soul_eater
+				}
+			}
+			change_species = last_created
+		}
+
+		every_owned_army = {
+			limit = {
+				exists = species
+				exists = planet
+				species = {
+				    has_trait = trait_vb_psi_soul_eater
+				}
+			}
+			planet = {
+				create_army = {
+					name = random
+					owner = root
+					type = "gestalt_army"
+					species = this
+				}
+			}
+			remove_army = yes
+		}
+
+		every_owned_leader = {
+			change_species = last_created
+			change_leader_portrait = species
+		}
+		every_pool_leader = {
+			change_species = last_created
+			change_leader_portrait = species
+		}
+		change_dominant_species = {
+			species = last_created
+		}
+
+		every_owned_leader = {
+			limit = {
+				species = {
+					has_trait = trait_gestalt
+				}
+			}
+			if = {
+				limit = {
+					leader_class = ruler
+				}
+				add_ruler_trait = leader_trait_ruler_gestalt
+			}
+		}
+	}
+}
+
+#Contact with The Stranger
+#country_event = {
+#	id = pg.6
+#	title = "pg.6.name"
+#	desc = "pg.6.desc"
+#	diplomatic = yes
+#	force_open = yes
+#	
+#	picture_event_data = {
+#		portrait = shroud1
+#		room = shroud_room
+#	}
+#	
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		set_country_flag = shroud_diplomacy_engaged
+#	}
+#	
+#	after = {
+#		hidden_effect = {
+#			remove_country_flag = shroud_diplomacy_engaged
+#		}
+#	}
+#	
+#	option = {
+#		name = "pg.6.a"
+#		custom_tooltip = "stranger.y.tooltip"
+#		add_modifier = { modifier = stranger_present days = 1200 }
+#		hidden_effect = {
+#			set_country_flag = soul_eaters
+#		    change_government = { civic = civic_vb_psi_soul_eater }
+#			country_event = { id = vortex.2 } 
+#			every_owned_pop = {
+#				limit = {
+#					species = { NOT = { has_trait = trait_mechanical }}
+#				}
+#				modify_species = {
+#					species = this
+#					add_trait = trait_vb_psi_soul_eater
+#				}
+#			}
+#				set_variable = {
+#					which = vb_psi_food value = @staring_food
+#				}
+#				vb_psi_calculate_sustenance = yes	
+#				country_event = { id = vb_psi_souleater.4 }
+#				set_country_flag = shroud_diplomacy_engaged
+#			}
+#		}
+#	option = {
+#		name = "exit.vortex"
+#		custom_tooltip = "exit.vortex.tooltip"
+#		default_hide_option = yes
+#	}
+#}
+
+#Single Mind 2.0
+country_event = {
+	id = pg.4
+	title = "pg.4.name"
+	desc = "pg.4.desc"
+	picture = GFX_evt_robot_assembly_plant
+	show_sound = event_laboratory_sound
+	
+	is_triggered_only = yes
+
+	immediate = {
+		create_species = {
+			is_mod = yes
+			name = this
+			namelist = this
+			plural = this
+			class = "ROBOT"
+			portrait = "default_robot"
+			traits = {
+				trait = "trait_machine_unit"
+				trait = "trait_singlemind"
+			}
+			
+			effect = {
+				if = { limit = { host_has_dlc = "Synthetic Dawn Story Pack" }
+				prev = {
+					switch = {
+						trigger = species_portrait
+						sd_art_robot = { PREV = { change_species_characteristics = { portrait = sd_art_robot } } }
+						sd_avi_robot = { PREV = { change_species_characteristics = { portrait = sd_avi_robot } } }
+						sd_fun_robot = { PREV = { change_species_characteristics = { portrait = sd_fun_robot } } }
+						sd_hum_robot = { PREV = { change_species_characteristics = { portrait = sd_hum_robot } } }
+						sd_mam_robot = { PREV = { change_species_characteristics = { portrait = sd_mam_robot } } }
+						sd_mol_robot = { PREV = { change_species_characteristics = { portrait = sd_mol_robot } } }
+						sd_pla_robot = { PREV = { change_species_characteristics = { portrait = sd_pla_robot } } }
+						sd_rep_robot = { PREV = { change_species_characteristics = { portrait = sd_rep_robot } } }
+						}
+					}
+				}
+				
+				save_event_target_as = new_single_mind_species
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				species = {
+					has_trait = trait_mechanical 
+				}
+			}
+			change_species = event_target:new_single_mind_species
+		}
+
+		every_owned_ship = {
+			limit = {
+				is_ship_class = shipclass_colonizer
+				species = {
+					has_trait = trait_mechanical
+				}
+			}
+			change_species = event_target:new_single_mind_species
+		}
+
+		every_owned_army = {
+			limit = {
+				exists = species
+				exists = planet
+				species = {
+					has_trait = trait_mechanical
+				}
+				army_type = robotic_army
+			}
+			modify_army = {
+				name = random
+				type = "machine_assault_1"
+				species = event_target:new_single_mind_species
+			}
+		}
+
+		every_owned_army = {
+			limit = {
+				exists = species
+				exists = planet
+				species = {
+					has_trait = trait_mechanical
+				}
+				army_type = robotic_defense_army
+			}
+			modify_army = {
+				name = random
+				type = "machine_defense"
+				species = event_target:new_single_mind_species
+			}
+		}
+	}
+	
+	option = {
+		name = "pg.4.a"
+		hidden_effect = {
+			country_remove_ethic = ethic_fanatic_authoritarian
+			country_remove_ethic = ethic_authoritarian
+			country_remove_ethic = ethic_fanatic_egalitarian
+			country_remove_ethic = ethic_egalitarian
+			country_remove_ethic = ethic_fanatic_xenophobe
+			country_remove_ethic = ethic_xenophobe
+			country_remove_ethic = ethic_fanatic_xenophile
+			country_remove_ethic = ethic_xenophile
+			country_remove_ethic = ethic_fanatic_militarist
+			country_remove_ethic = ethic_militarist
+			country_remove_ethic = ethic_fanatic_pacifist
+			country_remove_ethic = ethic_pacifist	
+			country_remove_ethic = ethic_fanatic_spiritualist
+			country_remove_ethic = ethic_spiritualist
+			country_remove_ethic = ethic_fanatic_materialist
+			country_remove_ethic = ethic_materialist
+
+			country_add_ethic = ethic_gestalt_consciousness
+			change_government = {
+				authority = auth_machine_intelligence
+				civics = {
+					civic = civic_machine_unitary_cohesion
+					civic = civic_machine_zero_waste_protocols
+				}
+			}
+			every_owned_planet = {
+				if = {
+					limit = { has_building = building_colony_shelter }
+					remove_building = building_colony_shelter
+					add_building = building_deployment_post
+				}
+				else = {}
+				if = {
+					limit = { has_building = building_capital }
+					remove_building = building_capital
+					add_building = building_machine_capital
+				}
+				else = {}
+				if = {
+					limit = { has_building = building_major_capital }
+					remove_building = building_major_capital
+					add_building = building_machine_major_capital
+				}
+				else = {}
+				if = {
+					limit = { has_building = building_system_capital }
+					remove_building = building_system_capital
+					add_building = building_machine_system_capital
+				}
+				else = {}
+			}
+			create_leader = {
+						class = ruler
+						species = this
+						skill = 10
+						traits = {
+							trait = leader_trait_ruler_machine_intelligence
+				}
+			}
+			assign_leader = last_created_leader
+		}
+	}
+}
+
+#Psionic Hive Mind
+#country_event = {
+#	id = pg.7
+#	title = "pg.7.name"
+#	desc = "pg.7.desc"
+#	picture = GFX_evt_psionics
+#	show_sound = event_the_great_awakening
+#	
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		modify_species = {
+#			species = this
+#			add_trait = trait_hive_mind
+#		}
+#	}
+#	
+#	option = {
+#		name = "pg.7.a"
+#		hidden_effect = {
+#			country_remove_ethic = ethic_fanatic_authoritarian
+#			country_remove_ethic = ethic_authoritarian
+#			country_remove_ethic = ethic_fanatic_egalitarian
+#			country_remove_ethic = ethic_egalitarian
+#			country_remove_ethic = ethic_fanatic_xenophobe
+#			country_remove_ethic = ethic_xenophobe
+#			country_remove_ethic = ethic_fanatic_xenophile
+#			country_remove_ethic = ethic_xenophile
+#			country_remove_ethic = ethic_fanatic_militarist
+#			country_remove_ethic = ethic_militarist
+#			country_remove_ethic = ethic_fanatic_pacifist
+#			country_remove_ethic = ethic_pacifist	
+#			country_remove_ethic = ethic_fanatic_spiritualist
+#			country_remove_ethic = ethic_spiritualist
+#			country_remove_ethic = ethic_fanatic_materialist
+#			country_remove_ethic = ethic_materialist
+#
+#			country_add_ethic = ethic_gestalt_consciousness
+#			change_government = {
+#				authority = auth_hive_mind
+#				civics = {
+#					civic = civic_hive_subspace_ephapse
+#					civic = civic_hive_one_mind
+#				}
+#			}
+#			every_owned_planet = {
+#				if = {
+#					limit = { has_building = building_capital }
+#					remove_building = building_capital
+#					add_building = building_hive_capital
+#				}
+#				else = {}
+#				if = {
+#					limit = { has_building = building_major_capital }
+#					remove_building = building_major_capital
+#					add_building = building_hive_major_capital
+#				}
+#				else = {}
+#			}
+#			create_leader = {
+#				class = ruler
+#				species = owner_main_species
+#				skill = 10
+#				traits = { 
+#					trait = leader_trait_ruler_hive_mind 
+#					trait = leader_trait_ruler_chosen
+#				}
+#			}
+#			assign_leader = last_created_leader
+#		}
+#	}
+#}
+
+country_event = {
+	id = pg.8
+	title = "pg.8.name"
+	desc = "pg.8.desc"
+	picture = GFX_evt_psionics
+	show_sound = event_the_great_awakening
+
+	is_triggered_only = yes
+
+	immediate = {
+		modify_species = {
+			species = THIS
+			add_trait = trait_perfect_creature
+		}
+	}
+}

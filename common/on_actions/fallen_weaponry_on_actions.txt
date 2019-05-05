@@ -1,0 +1,7 @@
+
+on_game_start = {
+	events = {
+		fallen_weaponry.1
+		zofe_action.4
+	}
+}

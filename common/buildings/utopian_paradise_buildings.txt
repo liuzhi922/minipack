@@ -1,0 +1,190 @@
+##Utopian Paradise Buildings
+
+building_fe_ancient_factory = {
+	base_buildtime = 600
+	can_build = yes
+	can_demolish = yes
+
+	base_cap_amount = 3
+	
+	category = resource
+	
+	potential = {
+		has_modifier = pm_Utopian_Paradise
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	planet_modifier = {
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			sr_dark_matter = 100
+		}
+		produces = {
+			minerals = 400
+		}
+		upkeep = {
+			energy = 50
+			sr_dark_matter = 1
+		}
+	}
+		
+	upgrades = {
+	}
+	
+	prerequisites = {
+		"tech_fe_ancient_factory"
+	}	
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 5
+			owner = { 
+				has_monthly_income = {
+					resource = minerals
+					value < 10
+				}
+			}
+		}
+	}
+
+	ai_resource_production = {
+		minerals = 2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+
+building_fe_dark_matter_power_plant = {
+	base_buildtime = 600
+	can_build = yes
+	can_demolish = yes
+
+	base_cap_amount = 3
+	
+	category = resource
+	
+	potential = {
+		has_modifier = pm_Utopian_Paradise
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	planet_modifier = {
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			sr_dark_matter = 100
+		}
+		produces = {
+			energy = 400
+		}
+		upkeep = {
+			sr_dark_matter = 1
+		}
+	}
+		
+	upgrades = {
+	}
+	
+	prerequisites = {
+		tech_fe_dark_matter_power_plant
+	}
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 5
+			owner = { 
+				has_monthly_income = {
+					resource = energy
+					value < 20
+				}
+			}
+		}
+	}
+
+	ai_resource_production = {
+		energy = 2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+building_fe_agri_processing_complex = {
+	base_buildtime = 600
+	can_build = yes
+	can_demolish = yes
+	icon = building_nano_forge
+	base_cap_amount = 3
+	
+	category = resource
+	
+	potential = {
+		has_modifier = pm_Utopian_Paradise
+	}
+	
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+	
+	planet_modifier = {
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			sr_dark_matter = 100
+		}
+		produces = {
+			food = 400
+		}
+		upkeep = {
+			energy = 50
+			sr_dark_matter = 1
+		}
+	}
+		
+	upgrades = {
+	}
+	
+	prerequisites = {
+		"tech_fe_agri_processing_complex"
+	}	
+	
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 5
+			owner = { 
+				has_monthly_income = {
+					resource = minerals
+					value < 10
+				}
+			}
+		}
+	}
+
+	ai_resource_production = {
+		minerals = 2
+		trigger = {
+			always = yes
+		}
+	}
+}

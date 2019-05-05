@@ -1,0 +1,40 @@
+pc_shrouded_pg = {
+	entity = "shroud_planet"
+	entity_scale = 11
+	picture = pc_shrouded_pg
+	tile_set = pc_shrouded_pg
+	icon_frame = 23
+	
+	atmosphere_color 		= hsv { 0.0 0.9 0.45	}		#DONE
+	atmosphere_intensity 	= 0.5
+	atmosphere_width 		= 1.5
+
+	city_color_lut = "gfx/portraits/misc/colorcorrection_all.dds"
+
+	min_distance_from_sun = 40
+	max_distance_from_sun = 1000
+	
+	modifier = {
+		planet_jobs_produces_mult = 0.15
+		pop_housing_usage_mult = -0.15
+        pop_citizen_happiness = 0.1
+	}
+	
+	spawn_odds = 0
+	extra_orbit_size = 1
+	extra_planet_count = 2
+	
+	can_be_moon = no
+	chance_of_ring = 0.0
+	
+	planet_size = { min = 10 max = 25 }
+	moon_size = { min = 6 max = 10 }
+	
+	allowed_archetypes = {
+		ENERGY
+	}
+
+	colonizable = yes
+	starting_planet = no
+	show_city = yes
+}

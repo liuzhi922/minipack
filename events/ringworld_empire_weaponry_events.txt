@@ -1,0 +1,1242 @@
+##############################
+#### 	   	ZoFE Weaponry
+####			By Kolyn
+##############################
+
+
+namespace = ringworld_weaponry
+
+
+#Hidden Weapon Facility
+planet_event = {
+	id = ringworld_weaponry.1
+	title = ringworld_weaponry.1.name
+	
+	picture = GFX_evt_society_research
+	
+	desc = {
+		trigger = { owner = { has_ethic = ethic_fanatic_spiritualist } }
+		text = "ringworld_weaponry.1.desc"
+	}
+	desc = {
+		trigger = { owner = { has_ethic = ethic_fanatic_materialist } }
+		text = "ringworld_weaponry.1.desc.02"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_xenophile } }
+		text = "ringworld_weaponry.1.desc.03"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_xenophobe } }
+		text = "ringworld_weaponry.1.desc.04"
+	}
+	desc = {
+		trigger = { owner = {  has_ethic = ethic_fanatic_militarist } }
+		text = "ringworld_weaponry.1.desc.05"
+	}
+	desc = {
+		trigger = { owner = {  has_ethic = ethic_fanatic_pacifist } }
+		text = "ringworld_weaponry.1.desc.06"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_authoritarian } }
+		text = "ringworld_weaponry.1.desc.07"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_egalitarian } }
+		text = "ringworld_weaponry.1.desc.08"
+	}
+	desc = { 
+		trigger = { owner = {  has_authority = "auth_hive_mind" } }
+		text = "ringworld_weaponry.1.desc.09"
+	}
+	desc = { 
+		trigger = { owner = {  has_authority = "auth_machine_intelligence" } }
+		text = "ringworld_weaponry.1.desc.10"
+	}
+	
+	trigger = {
+		has_planet_flag = ringworld_start
+		is_original_owner = root.owner
+		NOT = {
+			has_planet_flag = weapons_facility_raided
+		}
+		owner = {
+			is_country_type = ascended_empire
+		}
+		end_game_years_passed >= 0
+	}
+	
+	mean_time_to_happen = {
+		years = 5
+	}
+	
+	immediate = {
+		set_planet_flag = weapons_facility_raided
+	}
+	
+	option = {
+		name = ringworld_weaponry.1.a
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_psi_deflector
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_psi_deflector
+				add_tech_progress = {
+					tech = tech_psi_deflector
+					progress = 0.10
+				}
+			}	
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_psi_missile_system
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_psi_missile_system
+				add_tech_progress = {
+					tech = tech_psi_missile_system
+					progress = 0.10
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}	
+	}
+	
+	option = {
+		name = ringworld_weaponry.1.b
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_dark_matter_plating
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_dark_matter_plating
+				add_tech_progress = {
+					tech = tech_dark_matter_plating
+					progress = 0.10
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_shadow_strike_craft
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_shadow_strike_craft
+				add_tech_progress = {
+					tech = tech_shadow_strike_craft
+					progress = 0.10
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}	
+	}
+	
+	option = {
+		name = ringworld_weaponry.1.c
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_xenophile
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_improved_dragon_armor
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_improved_dragon_armor
+				add_tech_progress = {
+					tech = tech_improved_dragon_armor
+					progress = 0.10
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_hellfire_autocannons
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_hellfire_autocannons
+				add_tech_progress = {
+					tech = tech_hellfire_autocannons
+					progress = 0.10
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}	
+	}
+	
+	option = {
+		name = ringworld_weaponry.1.d
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_titan_armor
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_titan_armor
+				add_tech_progress = {
+					tech = tech_titan_armor
+					progress = 0.10
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_terror_cannon
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_terror_cannon
+				add_tech_progress = {
+					tech = tech_terror_cannon
+					progress = 0.10
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.1.e
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_titan_armor
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_titan_armor
+				add_tech_progress = {
+					tech = tech_titan_armor
+					progress = 0.10
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_hellfire_autocannons
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_hellfire_autocannons
+				add_tech_progress = {
+					tech = tech_hellfire_autocannons
+					progress = 0.10
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.1.f
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_improved_dragon_armor
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_improved_dragon_armor
+				add_tech_progress = {
+					tech = tech_improved_dragon_armor
+					progress = 0.10
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_ion_disruptor
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_ion_disruptor
+				add_tech_progress = {
+					tech = tech_ion_disruptor
+					progress = 0.10
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}	
+	}
+	
+	option = {
+		name = ringworld_weaponry.1.g
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_dark_matter_plating
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_dark_matter_plating
+				add_tech_progress = {
+					tech = tech_dark_matter_plating
+					progress = 0.10
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_terror_cannon
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_terror_cannon
+				add_tech_progress = {
+					tech = tech_terror_cannon
+					progress = 0.10
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}	
+	}
+	
+	option = {
+		name = ringworld_weaponry.1.h
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_dark_energy_shield
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_dark_energy_shield
+				add_tech_progress = {
+					tech = tech_dark_energy_shield
+					progress = 0.10
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_shadow_strike_craft
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_shadow_strike_craft
+				add_tech_progress = {
+					tech = tech_shadow_strike_craft
+					progress = 0.10
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}	
+	}
+	
+	option = {
+		name = ringworld_weaponry.1.i
+		trigger = {
+			root.owner = {
+				has_authority = auth_hive_mind
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_psi_deflector
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_psi_deflector
+				add_tech_progress = {
+					tech = tech_psi_deflector
+					progress = 0.05
+				}
+			}	
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_psi_missile_system
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_psi_missile_system
+				add_tech_progress = {
+					tech = tech_psi_missile_system
+					progress = 0.10
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}	
+	}
+	
+	option = {
+		name = ringworld_weaponry.1.j
+		trigger = {
+			root.owner = {
+				has_authority = auth_machine_intelligence
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_dark_energy_shield
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_dark_energy_shield
+				add_tech_progress = {
+					tech = tech_dark_energy_shield
+					progress = 0.10
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_ion_disruptor
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_ion_disruptor
+				add_tech_progress = {
+					tech = tech_ion_disruptor
+					progress = 0.10
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}
+	}
+}
+
+
+#Omni Weaponry
+planet_event = {
+	id = ringworld_weaponry.2
+	title = ringworld_weaponry.2.name
+
+	picture = GFX_evt_fallen_empire
+	
+	desc = {
+		trigger = { owner = {  has_ethic = ethic_fanatic_spiritualist } }
+		text = "ringworld_weaponry.2.desc"
+	}
+	desc = {
+		trigger = { owner = {  has_ethic = ethic_fanatic_materialist } }
+		text = "ringworld_weaponry.2.desc.02"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_xenophile } }
+		text = "ringworld_weaponry.2.desc.03"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_xenophobe } }
+		text = "ringworld_weaponry.2.desc.04"
+	}
+	desc = {
+		trigger = { owner = {  has_ethic = ethic_fanatic_militarist } }
+		text = "ringworld_weaponry.2.desc.05"
+	}
+	desc = {
+		trigger = { owner = {  has_ethic = ethic_fanatic_pacifist } }
+		text = "ringworld_weaponry.2.desc.06"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_authoritarian } }
+		text = "ringworld_weaponry.2.desc.07"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_egalitarian } }
+		text = "ringworld_weaponry.2.desc.08"
+	}
+	desc = { 
+		trigger = { owner = {  has_authority = "auth_hive_mind" } }
+		text = "ringworld_weaponry.2.desc.09"
+	}
+	desc = { 
+		trigger = { owner = {  has_authority = "auth_machine_intelligence" } }
+		text = "ringworld_weaponry.2.desc.10"
+	}
+	
+	trigger = {
+		has_planet_flag = ringworld_start
+		is_original_owner = root.owner
+		has_planet_flag = weapons_facility_raided
+		NOT = {
+			has_planet_flag = omni_weapons_raided
+		}
+		owner = {
+			is_country_type = ascended_empire
+		}
+		end_game_years_passed >= 10
+	}
+	
+	mean_time_to_happen = {
+		years = 5
+	}
+	
+	immediate = {
+		set_planet_flag = omni_weapons_raided
+	}
+	
+	option = {
+		name = ringworld_weaponry.2.a
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_emitter
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_omni_emitter
+				add_tech_progress = {
+					tech = tech_omni_emitter
+					progress = 0.05
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.2.b
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_lance
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_omni_lance
+				add_tech_progress = {
+					tech = tech_omni_lance
+					progress = 0.05
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.2.c
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_xenophile
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_cannon
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_omni_cannon
+				add_tech_progress = {
+					tech = tech_omni_cannon
+					progress = 0.05
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.2.d
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_massive_autocannons
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_massive_autocannons
+				add_tech_progress = {
+					tech = tech_massive_autocannons
+					progress = 0.05
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.2.e
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_massive_autocannons
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_massive_autocannons
+				add_tech_progress = {
+					tech = tech_massive_autocannons
+					progress = 0.05
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.2.f
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_cannon
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_omni_cannon
+				add_tech_progress = {
+					tech = tech_omni_cannon
+					progress = 0.05
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.2.g
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_emitter
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_omni_emitter
+				add_tech_progress = {
+					tech = tech_omni_emitter
+					progress = 0.05
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.2.h
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_lance
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_omni_lance
+				add_tech_progress = {
+					tech = tech_omni_lance
+					progress = 0.05
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.2.i
+		trigger = {
+			root.owner = {
+				has_authority = auth_hive_mind
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_cannon
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_omni_cannon
+				add_tech_progress = {
+					tech = tech_omni_cannon
+					progress = 0.05
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.2.j
+		trigger = {
+			root.owner = {
+				has_authority = auth_machine_intelligence
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_lance
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_omni_lance
+				add_tech_progress = {
+					tech = tech_omni_lance
+					progress = 0.05
+				}
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+}
+
+#Titan Weaponry
+planet_event = {
+	id = ringworld_weaponry.3
+	title = ringworld_weaponry.3.name
+
+	picture = GFX_evt_fallen_empire_awakes
+	
+	desc = {
+		trigger = { owner = {  has_ethic = ethic_fanatic_spiritualist } }
+		text = "ringworld_weaponry.3.desc"
+	}
+	desc = {
+		trigger = { owner = {  has_ethic = ethic_fanatic_materialist } }
+		text = "ringworld_weaponry.3.desc.02"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_xenophile } }
+		text = "ringworld_weaponry.3.desc.03"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_xenophobe } }
+		text = "ringworld_weaponry.3.desc.04"
+	}
+	desc = {
+		trigger = { owner = {  has_ethic = ethic_fanatic_militarist } }
+		text = "ringworld_weaponry.3.desc.05"
+	}
+	desc = {
+		trigger = { owner = {  has_ethic = ethic_fanatic_pacifist } }
+		text = "ringworld_weaponry.3.desc.06"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_authoritarian } }
+		text = "ringworld_weaponry.3.desc.07"
+	}
+	desc = { 
+		trigger = { owner = {  has_ethic = ethic_fanatic_egalitarian } }
+		text = "ringworld_weaponry.3.desc.08"
+	}
+	desc = { 
+		trigger = { owner = {  has_authority = "auth_hive_mind" } }
+		text = "ringworld_weaponry.3.desc.09"
+	}
+	desc = { 
+		trigger = { owner = {  has_authority = "auth_machine_intelligence" } }
+		text = "ringworld_weaponry.3.desc.10"
+	}
+	
+	trigger = {
+		has_planet_flag = ringworld_start
+		is_original_owner = root.owner
+		AND = {
+			has_planet_flag = weapons_facility_raided
+			has_planet_flag = omni_weapons_raided
+		}
+		NOT = {
+			has_planet_flag = titan_weapons_raided
+		}
+		owner = {
+			is_country_type = ascended_empire
+		}
+		end_game_years_passed >= 15
+	}
+	
+	mean_time_to_happen = {
+		years = 5
+	}
+	
+	immediate = {
+		set_planet_flag = titan_weapons_raided
+	}
+	
+	option = {
+		name = ringworld_weaponry.3.a
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_spiritualist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_portal_generator
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_portal_generator
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.3.b
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_dimensional_weapon
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_dimensional_weapon
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.3.c
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_xenophile
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_dragon_breath
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_dragon_breath
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.3.d
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_stellarite_weapon
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_stellarite_weapon
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.3.e
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_stellarite_weapon
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_stellarite_weapon
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.3.f
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_elder_tiyanki_weapon
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_elder_tiyanki_weapon
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.3.g
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_gray_goo_beam
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_gray_goo_beam
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.3.h
+		trigger = {
+			root.owner = {
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_dimensional_weapon
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_dimensional_weapon
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = ringworld_weaponry.3.i
+		trigger = {
+			root.owner = {
+				has_authority = auth_hive_mind
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_gray_goo_beam
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_gray_goo_beam
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+
+	option = {
+		name = ringworld_weaponry.3.j
+		trigger = {
+			root.owner = {
+				has_authority = auth_machine_intelligence
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_scrapper_weapon
+					}
+				}
+			}
+			root.owner = {
+				add_research_option = tech_scrapper_weapon
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+}
+

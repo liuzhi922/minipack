@@ -1,0 +1,98 @@
+###########################################
+#      		ZoFE Goliath Events
+#		  		  By Kolyn
+###########################################
+
+namespace = goliath
+
+
+#Goliath discovery
+planet_event = {
+	id = goliath.1
+	title = goliath.1.name
+	desc = goliath.1.desc
+	picture = GFX_evt_fallen_empire_awakes
+	show_sound = event_alien_signal
+	
+	trigger = {
+		OR = {
+			has_planet_flag = fallen_spiritualist_capital
+			has_planet_flag = fallen_materialist_capital
+			has_planet_flag = fallen_xenophile_capital
+			has_planet_flag = fallen_xenophobe_capital
+			has_planet_flag = fallen_machine_capital
+		}
+		exists = owner
+		owner = {
+			is_country_type = ascended_empire
+			NOT = { has_country_flag = goliath_discovered }
+			has_country_flag = fe_shipset_chosen
+		}
+		end_game_years_passed >= 20
+	}
+	
+	mean_time_to_happen = {
+		years = 20
+	}
+	
+	immediate = {
+		owner = {
+			set_country_flag = goliath_discovered
+		}
+	}
+	
+	option = {
+		name = goliath.1.a
+		root.owner = { 
+			add_research_option = tech_fe_goliath
+			add_tech_progress = {
+				tech = tech_fe_goliath
+				progress = 0.10
+			}
+		}	
+	}
+	
+	option = {
+		name = goliath.1.b
+		root.owner = { 
+			add_resource = { influence = 1000 }
+		}	
+	}
+}
+
+#AI gets Goliath too
+country_event = {
+	id = goliath.2
+	title = goliath.2.name
+	
+	hide_window = yes
+	
+	trigger = {
+		is_country_type = ascended_empire
+		is_ai = yes
+		has_technology = tech_fe_titans
+		has_technology = tech_fe_battlecruisers
+		NOT = { has_technology = tech_fe_goliath }
+		any_owned_planet = {
+			NOR = {
+				has_planet_flag = fallen_spiritualist_capital
+				has_planet_flag = fallen_materialist_capital
+				has_planet_flag = fallen_xenophile_capital
+				has_planet_flag = fallen_xenophobe_capital
+				has_planet_flag = fallen_machine_capital
+			}
+		}
+		any_country = {
+			is_country_type = ascended_empire
+			has_technology = tech_fe_goliath
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	immediate = {
+		give_technology = { tech = tech_fe_goliath }
+	}
+}

@@ -1,0 +1,95 @@
+﻿l_polish:
+
+ ####################################
+ # SHIPS/STRUCTURES
+ ####################################
+
+ SCX_CARRIER: "Carrier"
+
+ SCX_Carrier: "Carrier"
+ SCX_Carrier_plural: "Carriers"
+ 
+ ###################################
+ # SHIP COMPONENTS
+ ###################################
+ 
+ SCX_CARRIER_FISSION_REACTOR:1 "$FISSION_REACTOR$"
+ SCX_CARRIER_FUSION_REACTOR:1 "$FUSION_REACTOR$"
+ SCX_CARRIER_COLD_FUSION_REACTOR:1 "$COLD_FUSION_REACTOR$"
+ SCX_CARRIER_ANTIMATTER_REACTOR:1 "$ANTIMATTER_REACTOR$"
+ SCX_CARRIER_ZERO_POINT_REACTOR:1 "$ZERO_POINT_REACTOR$"
+ SCX_CARRIER_DARK_MATTER_REACTOR:1 "$DARK_MATTER_REACTOR$"
+ 
+ SCX_CARRIER_SHIP_THRUSTER_1:0 "$SHIP_THRUSTER_1$"
+ SCX_CARRIER_SHIP_THRUSTER_1_DESC:0 "$SHIP_THRUSTER_1_DESC$"
+ SCX_CARRIER_SHIP_THRUSTER_2:0 "$SHIP_THRUSTER_2$"
+ SCX_CARRIER_SHIP_THRUSTER_2_DESC:0 "$SHIP_THRUSTER_2_DESC$"
+ SCX_CARRIER_SHIP_THRUSTER_3:0 "$SHIP_THRUSTER_3$"
+ SCX_CARRIER_SHIP_THRUSTER_3_DESC:0 "$SHIP_THRUSTER_3_DESC$"
+ SCX_CARRIER_SHIP_THRUSTER_4:0 "$SHIP_THRUSTER_4$"
+ SCX_CARRIER_SHIP_THRUSTER_4_DESC:0 "$SHIP_THRUSTER_4_DESC$"
+ SCX_CARRIER_SHIP_THRUSTER_5:0 "$SHIP_THRUSTER_5$"
+ SCX_CARRIER_SHIP_THRUSTER_5_DESC:0 "$SHIP_THRUSTER_5_DESC$"
+ 
+ ###################################
+ # SHIP COMPUTERS
+ ###################################
+ 
+ SCX_COMBAT_COMPUTER_CARRIER_DEFAULT:0 "Basic Combat Computer"
+ SCX_COMBAT_COMPUTER_CARRIER_BASIC:0 "Combat Computer (Carrier)"
+ SCX_COMBAT_COMPUTER_CARRIER_ADVANCED:0 "Advanced Combat Computer (Carrier)"
+ SCX_COMBAT_COMPUTER_CARRIER_SAPIENT:0 "Sapient Combat Computer (Carrier)"
+ SCX_COMBAT_COMPUTER_CARRIER_AUTONOMOUS:0 "Autonomous Ship Intellect (Carrier)"
+ SCX_COMBAT_COMPUTER_CARRIER_PRECOG:0 "Precognitive Interface (Carrier)"
+ 
+ SCX_CARRIER_DEF_BEHAVIOR_DESC:0 "§HCarrier behavior:§! The ship will stay behind the rest of the fleet and provide strike craft support."
+ 
+ ####################################
+ # TECH STUFF
+ ####################################
+ 
+ tech_scx_carrier_1: "Carriers"
+ tech_scx_carrier_1_desc: "New facilities and fleet doctrine adaptations allow for the construction of Carrier-class military vessels."
+
+ TECH_UNLOCK_SCX_CARRIER_CONSTRUCTION_TITLE: "§HUnlocks Ship Type:§! Carrier"
+ TECH_UNLOCK_SCX_CARRIER_CONSTRUCTION_DESC: "§HCarrier§!\nA capital ship specialised for strike craft deployment. It is equipped with minimal armaments but is capable of continuously fabricating and launching massive numbers of smallcraft."
+ 
+ tech_scx_carrier_hull_1:0 "Improved Carrier Hulls"
+ tech_scx_carrier_hull_1_desc:0 "Advances in building techniques will allow for the construction of sturdier and more durable carriers."
+ tech_scx_carrier_hull_2:0 "Advanced Carrier Hulls"
+ tech_scx_carrier_hull_2_desc:0 "The latest generation of carriers hulls have optimized structural integrity fields and improved bulkheads."
+ tech_scx_carrier_build_speed:0 "Standardized Carrier Patterns"
+ tech_scx_carrier_build_speed_desc:0 "Establishing new standards for the modeling and construction of carriers greatly improves the efficiency of the production pipeline."
+ 
+ ####################################
+ # Dynamic Modifiers
+ ####################################
+ 
+ mod_shipsize_SCX_Carrier_build_speed_mult: "Carrier Build Speed"
+ mod_shipsize_SCX_Carrier_build_cost_mult: "Carrier Build Cost"
+ mod_shipsize_SCX_Carrier_hull_add: "Carrier Hull Points"
+
+ ####################################
+ # SHIP SECTIONS
+ ####################################
+ 
+ # Carrier
+ 
+ SCX_Carrier_BOW_M1S2SHB_1: "Coverage Bow"
+ SCX_Carrier_BOW_M2S4_2: "Pinpoint Bow"
+ SCX_Carrier_BOW_M3S2: "Barrage Bow"
+
+ SCX_Carrier_MID1_M4SHB: "Fleet Carrier Core 1"
+ SCX_Carrier_MID1_S4LHB_2: "Super Carrier Core 1"
+ SCX_Carrier_MID1_S4LHB_3: "Graviton Catapult Core 1"
+
+ SCX_Carrier_MID2_M4SHB: "Fleet Carrier Core 2"
+ SCX_Carrier_MID2_S4LHB_2: "Super Carrier Core 2"
+ SCX_Carrier_MID2_S4LHB_3: "Graviton Catapult Core 2"
+
+ SCX_Carrier_STERN_M1S2_1: "Fussilade Stern"
+ SCX_Carrier_STERN_M1S2_2: "Barrier Stern"
+ SCX_Carrier_STERN_M2: "Broadside Stern"
+ SCX_Carrier_STERN_S4_1: "Barrage Stern"
+ SCX_Carrier_STERN_S4_2: "Pinpoint Stern"
+ SCX_Carrier_STERN_S4_3: "Coverage Stern"

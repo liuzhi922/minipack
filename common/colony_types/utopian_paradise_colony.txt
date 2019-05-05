@@ -1,0 +1,48 @@
+# Capital Planet
+col_ae_capital_utopian = {
+	icon = 10
+
+	potential = {
+		is_capital = yes
+		exists = owner
+		owner = { 
+			is_country_type = ascended_empire
+			is_gestalt = no
+		}
+		has_modifier = pm_Utopian_Paradise
+	}
+	
+	planet_modifier = {
+		planet_stability_add = 25
+		planet_amenities_add = 25
+		planet_crime_mult = -1
+	}
+
+	weight_modifier = {
+		base = 10000
+	}
+}
+
+col_ae_colony_utopian = {
+	icon = 11
+
+	potential = {
+		is_capital = no
+		exists = owner
+		owner = { 
+			is_country_type = ascended_empire
+			is_gestalt = no
+		}
+		has_modifier = pm_Utopian_Paradise
+	}
+	
+	planet_modifier = {
+		planet_stability_add = 10
+		planet_amenities_add = 10
+		planet_crime_mult = -1
+	}
+
+	weight_modifier = {
+		base = 10000
+	}
+}

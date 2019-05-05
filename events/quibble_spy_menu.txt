@@ -1,0 +1,2959 @@
+namespace = quibble_spy_menu
+
+#TRIGGER MENU
+country_event = { 
+	id = quibble_spy_menu.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no	
+	}
+
+	immediate = { 
+		IF = {
+			limit = {
+				has_country_flag = in_menu
+			}
+		}
+		ELSE = {
+			country_event = { id = quibble_spy_menu.2 }
+		}
+	}
+}
+
+
+#ONGOING
+country_event = {
+	id = quibble_spy_menu.3
+	title = "quibble_spy_menu.3.name"
+	desc = "quibble_spy_menu.3.desc"
+	is_triggered_only = yes
+
+
+	custom_gui = quibble_spy_window
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+	
+
+	option = {
+		name = quibble_spy_menu.3.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			country_event = { id = quibble_spy_menu.2 }
+			remove_country_flag = in_menu
+		}
+	}
+}
+
+#MENU
+country_event = {
+	id = quibble_spy_menu.2
+	title = "quibble_spy_menu.2.name"
+	desc = "quibble_spy_menu.2.desc"
+	is_triggered_only = yes
+	show_sound = event_default
+
+	custom_gui = quibble_spy_window
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	immediate = { 
+		set_country_flag = in_menu
+	}
+
+	option = {
+		#GOOD RELATIONS
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.2.b
+		trigger = { }
+		hidden_effect = { 
+			IF = {
+				limit = {
+					has_country_flag = current_espionage2
+				}
+				country_event = { id = quibble_spy_menu.3 }
+			}
+			ELSE = {
+				country_event = { id = quibble_spy_good_relations.5 }
+				save_event_target_as = tempboost
+				set_country_flag = current_espionage2
+				remove_country_flag = in_menu
+			}
+		}
+
+	}
+
+	option = {
+		#BAD RELATIONS
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.2.a
+		trigger = { }
+		hidden_effect = { 
+			IF = {
+				limit = {
+					has_country_flag = current_espionage2
+				}
+				country_event = { id = quibble_spy_menu.3 }
+			}
+			ELSE = {
+				country_event = { id = quibble_spy.4 } 
+				save_event_target_as = tempsabotage
+				remove_country_flag = in_menu
+			}
+		}
+	}
+
+
+	option = {
+		#STATION SABOTAGE
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.2.f
+		trigger = { }
+		hidden_effect = { 
+			IF = {
+				limit = {
+					has_country_flag = current_espionage2
+				}
+				country_event = { id = quibble_spy_menu.3 }
+			}
+			ELSE = {
+				country_event = { id = quibble_spy_station.3 } 
+				save_event_target_as = tempstation
+				remove_country_flag = in_menu
+			}
+		}
+	}
+
+	option = { #INTELLIGENCE CELLS
+		custom_gui = quibble_spy_option
+		#QUIT
+		name = quibble_spy_menu.2.e
+		trigger = {
+			is_country_type = default
+		}
+		
+		hidden_effect = {
+			country_event = { id = quibble_spy_menu.5 } 
+			remove_country_flag = in_menu
+		}
+	}
+
+	option = {
+		custom_gui = quibble_spy_option
+		#QUIT
+		name = quibble_spy_menu.2.c
+		
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+			remove_country_flag = in_menu
+		}
+	}
+}
+
+country_event = { #ONGOING OPERATION
+	id = quibble_spy_menu.4
+	title = "quibble_spy_menu.4.name"
+	desc = "quibble_spy_menu.4.desc"
+	is_triggered_only = yes
+	show_sound = event_default
+
+	custom_gui = quibble_spy_window
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	option = {
+		custom_gui = quibble_spy_option
+		#QUIT
+		name = quibble_spy_menu.4.a
+		hidden_effect = {
+			remove_country_flag = in_menu
+		}
+	}
+}
+#######################################################################################
+
+#INTELLIGENCE CELL MENU
+country_event = {
+	id = quibble_spy_menu.5
+	title = "quibble_spy_menu.5.name"
+	desc = "quibble_spy_menu.5.desc"
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	immediate = { 
+		save_event_target_as = snitch_home
+	}
+	########################################################################
+	option = {
+		#ASSIGN CELL 1
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.a
+		trigger = { 
+			NOT = {
+				exists = event_target:longterm_cellone
+			}
+		}
+		hidden_effect = { 
+			set_country_flag = cell1
+			country_event = { id = quibble_spy_menu.81 }
+		}
+	}
+	option = {
+		#REASSIGN CELL 1
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.b
+		trigger = { 
+			exists = event_target:longterm_cellone
+		}
+		allow = {
+			custom_tooltip = {
+				text = ongoing_operation
+				event_target:longterm_cellone = {
+					NOR = {
+						has_relation_flag = {
+							who = event_target:snitch_home
+							flag = longterm_cellone_industrial
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = { 
+			set_country_flag = cell1
+			clear_global_event_target = longterm_cellone
+			country_event = { id = quibble_spy_menu.811 }
+			country_event = { id = quibble_spy_menu.81 }
+		}
+
+	}
+	option = {
+		#MANAGE CELL 1
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.c
+		trigger = { 
+			exists = event_target:longterm_cellone
+		}
+		hidden_effect = { 
+			country_event = { id = quibble_spy_menu.11 }
+		}
+
+	}
+	#########################################################################
+	option = {
+		#ASSIGN CELL 2
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.d
+		trigger = { 
+			NOT = {
+				exists = event_target:longterm_celltwo
+			}
+		}
+		allow = {
+			owner = {
+				has_technology = tech_quibble_cell_2
+			}
+		}
+		hidden_effect = { 
+			set_country_flag = cell2
+			country_event = { id = quibble_spy_menu.81 }
+			
+		}
+
+	}
+	option = {
+		#REASSIGN CELL 2
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.e
+		trigger = { 
+			exists = event_target:longterm_celltwo
+			
+		}
+		allow = {
+			custom_tooltip = {
+				text = ongoing_operation
+				event_target:longterm_celltwo = {
+					NOR = {
+						has_relation_flag = {
+							who = event_target:snitch_home
+							flag = longterm_celltwo_industrial
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = { 
+			clear_global_event_target = longterm_celltwo
+			set_country_flag = cell2
+			country_event = { id = quibble_spy_menu.811 }
+			country_event = { id = quibble_spy_menu.81 }
+		}
+
+	}
+	option = {
+		#MANAGE CELL 2
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.f
+		trigger = { 
+			exists = event_target:longterm_celltwo
+		}
+		hidden_effect = { 
+			country_event = { id = quibble_spy_menu.12 }
+		}
+
+	}
+	##############################################################################
+	option = {
+		#ASSIGN CELL 3
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.g
+		trigger = { 
+			NOT = {
+				exists = event_target:longterm_cellthree
+			}
+		}
+		allow = {
+			owner = {
+				has_technology = tech_quibble_cell_3
+			}
+		}
+		hidden_effect = { 
+			set_country_flag = cell3
+			country_event = { id = quibble_spy_menu.81 }
+		}
+
+	}
+	option = {
+		#REASSIGN CELL 3
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.h
+		trigger = { 
+			exists = event_target:longterm_cellthree
+			
+		}
+		allow = {
+			custom_tooltip = {
+				text = ongoing_operation
+				event_target:longterm_cellthree = {
+					NOR = {
+						has_relation_flag = {
+							who = event_target:snitch_home
+							flag = longterm_cellthree_industrial
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = { 
+			clear_global_event_target = longterm_cellthree
+			set_country_flag = cell3
+			country_event = { id = quibble_spy_menu.811 }
+			country_event = { id = quibble_spy_menu.81 }
+		}
+
+	}
+	option = {
+		#MANAGE CELL 3
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.i
+		trigger = { 
+			exists = event_target:longterm_cellthree
+		}
+		hidden_effect = { 
+			country_event = { id = quibble_spy_menu.13 }
+		}
+	}
+	############################################################################
+	option = {
+		#ASSIGN CELL 4
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.j
+		trigger = { 
+			NOT = {
+				exists = event_target:longterm_cellfour
+			}
+		}
+		allow = {
+			owner = {
+				has_technology = tech_quibble_cell_4
+			}
+
+		}
+		hidden_effect = { 
+			set_country_flag = cell4
+			country_event = { id = quibble_spy_menu.81 }
+		}
+
+	}
+	option = {
+		#REASSIGN CELL 4
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.k
+		trigger = { 
+			exists = event_target:longterm_cellfour
+			
+		}
+		allow = {
+			custom_tooltip = {
+				text = ongoing_operation
+				event_target:longterm_cellfour = {
+					NOR = {
+						has_relation_flag = {
+							who = event_target:snitch_home
+							flag = longterm_cellfour_industrial
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = { 
+			set_country_flag = cell4
+			clear_global_event_target = longterm_cellfour
+			country_event = { id = quibble_spy_menu.811 }
+			country_event = { id = quibble_spy_menu.81 }
+		}
+
+	}
+	option = {
+		#MANAGE CELL 4
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.l
+		trigger = { 
+			exists = event_target:longterm_cellfour
+		}
+		hidden_effect = { 
+			country_event = { id = quibble_spy_menu.14 }
+		}
+
+	}
+	option = {
+		#BACK TO MAIN MENU
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.p
+		hidden_effect = { 
+			country_event = { id = quibble_spy_menu.2 }
+		}
+	}
+	option = {
+		#QUIT
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.5.q
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+			remove_country_flag = in_menu
+		}
+	}
+}
+
+#############################################################################################################
+country_event = { # PICK COUNTRY
+    id = quibble_spy_menu.81
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_neighbor_country = {
+			limit = {
+				NOR = {
+					has_country_flag = filter
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+				has_communications = event_target:snitch_home
+				is_country_type = default
+			}
+			save_global_event_target_as = 2target_1
+			set_country_flag = filter
+		}
+		random_neighbor_country = {
+			limit = {
+				NOR = {
+					has_country_flag = filter
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+				has_communications = event_target:snitch_home
+				is_country_type = default
+			}
+			save_global_event_target_as = 2target_2
+			set_country_flag = filter
+		}
+		random_neighbor_country = {
+			limit = {
+				NOR = {
+					has_country_flag = filter
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+				has_communications = event_target:snitch_home
+				is_country_type = default
+			}
+			save_global_event_target_as = 2target_3
+			set_country_flag = filter
+		}
+		random_neighbor_country = {
+			limit = {
+				NOR = {
+					has_country_flag = filter
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+				has_communications = event_target:snitch_home
+				is_country_type = default
+			}
+			save_global_event_target_as = 2target_4
+			set_country_flag = filter
+		}
+		random_neighbor_country = {
+			limit = {
+				NOR = {
+					has_country_flag = filter
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+				has_communications = event_target:snitch_home
+				is_country_type = default
+			}
+			save_global_event_target_as = 2target_5
+			set_country_flag = filter
+		}
+		random_neighbor_country = {
+			limit = {
+				NOR = {
+					has_country_flag = filter
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+				has_communications = event_target:snitch_home
+				is_country_type = default
+			}
+			save_global_event_target_as = 2target_6
+			set_country_flag = filter
+		}
+		random_neighbor_country = {
+			limit = {
+				NOR = {
+					has_country_flag = filter
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+				has_communications = event_target:snitch_home
+				is_country_type = default
+			}
+			save_global_event_target_as = 2target_7
+			set_country_flag = filter
+		}
+		random_neighbor_country = {
+			limit = {
+				NOR = {
+					has_country_flag = filter
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+				has_communications = event_target:snitch_home
+				is_country_type = default
+			}
+			save_global_event_target_as = 2target_8
+			set_country_flag = filter
+		}
+		random_neighbor_country = {
+			limit = {
+				NOR = {
+					has_country_flag = filter
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+				has_communications = event_target:snitch_home
+				is_country_type = default
+			}
+			save_global_event_target_as = 2target_9
+			set_country_flag = filter
+		}
+		random_neighbor_country = {
+			limit = {
+				NOR = {
+					has_country_flag = filter
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+				has_communications = event_target:snitch_home
+				is_country_type = default
+			}
+			save_global_event_target_as = 2target_10
+			set_country_flag = filter
+		}
+		country_event = { id = quibble_spy_menu.8 }
+	}
+}
+	
+country_event = { # PICK COUNTRY
+    id = quibble_spy_menu.811
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		event_target:2target_1 = {
+			remove_country_flag = filter
+			clear_global_event_target = 2target_1
+		}
+		event_target:2target_2 = {
+			remove_country_flag = filter
+			clear_global_event_target = 2target_2
+		}
+		event_target:2target_3 = {
+			remove_country_flag = filter
+			clear_global_event_target = 2target_3
+		}
+		event_target:2target_4 = {
+			remove_country_flag = filter
+			clear_global_event_target = 2target_4
+		}
+		event_target:2target_5 = {
+			remove_country_flag = filter
+			clear_global_event_target = 2target_5
+		}
+		event_target:2target_6 = {
+			remove_country_flag = filter
+			clear_global_event_target = 2target_6
+		}
+		event_target:2target_7 = {
+			remove_country_flag = filter
+			clear_global_event_target = 2target_7
+		}
+		event_target:2target_8 = {
+			remove_country_flag = filter
+			clear_global_event_target = 2target_8
+		}
+		event_target:2target_9 = {
+			remove_country_flag = filter
+			clear_global_event_target = 2target_9
+		}
+		event_target:2target_10 = {
+			remove_country_flag = filter
+			clear_global_event_target = 2target_10
+		}
+	}
+}
+
+	
+################################################################################################################
+country_event = { # PICK COUNTRY
+    id = quibble_spy_menu.8
+    title = "quibble_spy_menu.8.name"
+	desc = "quibble_spy_menu.8.desc"
+	is_triggered_only = yes
+	custom_gui = quibble_spy_window_longterm
+	picture_event_data = {
+		portrait = event_target:current_marauder_diplomacy
+		room = quibble_5_room
+	}
+	diplomatic = yes
+
+	option = {
+		name = quibble_spy_menu.8.e
+		custom_gui = quibble_spy_option
+		trigger = {
+			OR = {
+				has_country_flag = cell1
+				has_country_flag = cell2
+				has_country_flag = cell3
+				has_country_flag = cell4
+			}
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_country_flag = cell1
+				}
+				remove_country_flag = cell1
+				country_event = { id = quibble_spy_menu.661 }
+				country_event = { id = quibble_spy_menu.5 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell2
+				}
+				remove_country_flag = cell2
+				country_event = { id = quibble_spy_menu.662 }
+				country_event = { id = quibble_spy_menu.5 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell3
+				}
+				remove_country_flag = cell3
+				country_event = { id = quibble_spy_menu.663 }
+				country_event = { id = quibble_spy_menu.5 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell4
+				}
+				remove_country_flag = cell4
+				country_event = { id = quibble_spy_menu.664 }
+				country_event = { id = quibble_spy_menu.5 }
+			}
+		}
+	}
+
+	option = {
+		name = quibble_spy_menu.8.a
+		custom_gui = quibble_spy_option
+		trigger = { 
+			exists = event_target:2target_1
+			event_target:2target_1 = {
+				NOR = {
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+			}
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_country_flag = cell1
+				}
+				event_target:2target_1 = {
+					save_global_event_target_as = longterm_cellone
+				}
+				remove_country_flag = cell1
+				country_event = { id = quibble_spy_menu.11 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell2
+				}
+				event_target:2target_1 = {
+					save_global_event_target_as = longterm_celltwo
+				}
+				remove_country_flag = cell2
+				country_event = { id = quibble_spy_menu.12 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell3
+				}
+				event_target:2target_1 = {
+					save_global_event_target_as = longterm_cellthree
+				}
+				remove_country_flag = cell3
+				country_event = { id = quibble_spy_menu.13 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell4
+				}
+				event_target:2target_1 = {
+					save_global_event_target_as = longterm_cellfour
+				}
+				remove_country_flag = cell4
+				country_event = { id = quibble_spy_menu.14 }
+			}
+			country_event = { id = quibble_spy_menu.811 }
+		}
+	}
+	
+	option = {
+		name = quibble_spy_menu.8.b
+		custom_gui = quibble_spy_option
+		trigger = { 
+            exists = event_target:2target_2
+            event_target:2target_2 = {
+				NOR = {
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+			}
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_country_flag = cell1
+				}
+				event_target:2target_2 = {
+					save_global_event_target_as = longterm_cellone
+				}
+				remove_country_flag = cell1
+				country_event = { id = quibble_spy_menu.11 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell2
+				}
+				event_target:2target_2 = {
+					save_global_event_target_as = longterm_celltwo
+				}
+				remove_country_flag = cell2
+				country_event = { id = quibble_spy_menu.12 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell3
+				}
+				event_target:2target_2 = {
+					save_global_event_target_as = longterm_cellthree
+				}
+				remove_country_flag = cell3
+				country_event = { id = quibble_spy_menu.13 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell4
+				}
+				event_target:2target_2 = {
+					save_global_event_target_as = longterm_cellfour
+				}
+				remove_country_flag = cell4
+				country_event = { id = quibble_spy_menu.14 }
+			}
+			country_event = { id = quibble_spy_menu.811 }
+		}
+	}
+	option = {
+		name = quibble_spy_menu.8.c
+		custom_gui = quibble_spy_option
+		trigger = { 
+            exists = event_target:2target_3
+            event_target:2target_3 = {
+				NOR = {
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+			}
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_country_flag = cell1
+				}
+				event_target:2target_3 = {
+					save_global_event_target_as = longterm_cellone
+				}
+				remove_country_flag = cell1
+				country_event = { id = quibble_spy_menu.11 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell2
+				}
+				event_target:2target_3 = {
+					save_global_event_target_as = longterm_celltwo
+				}
+				remove_country_flag = cell2
+				country_event = { id = quibble_spy_menu.12 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell3
+				}
+				event_target:2target_3 = {
+					save_global_event_target_as = longterm_cellthree
+				}
+				remove_country_flag = cell3
+				country_event = { id = quibble_spy_menu.13 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell4
+				}
+				event_target:2target_3 = {
+					save_global_event_target_as = longterm_cellfour
+				}
+				remove_country_flag = cell4
+				country_event = { id = quibble_spy_menu.14 }
+			}
+			country_event = { id = quibble_spy_menu.811 }
+		}
+	}
+	option = {
+		name = quibble_spy_menu.8.d
+		custom_gui = quibble_spy_option
+		trigger = { 
+            exists = event_target:2target_4
+            event_target:2target_4 = {
+				NOR = {
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+			}
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_country_flag = cell1
+				}
+				event_target:2target_4 = {
+					save_global_event_target_as = longterm_cellone
+				}
+				remove_country_flag = cell1
+				country_event = { id = quibble_spy_menu.11 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell2
+				}
+				event_target:2target_4 = {
+					save_global_event_target_as = longterm_celltwo
+				}
+				remove_country_flag = cell2
+				country_event = { id = quibble_spy_menu.12 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell3
+				}
+				event_target:2target_4 = {
+					save_global_event_target_as = longterm_cellthree
+				}
+				remove_country_flag = cell3
+				country_event = { id = quibble_spy_menu.13 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell4
+				}
+				event_target:2target_4 = {
+					save_global_event_target_as = longterm_cellfour
+				}
+				remove_country_flag = cell4
+				country_event = { id = quibble_spy_menu.14 }
+			}
+			country_event = { id = quibble_spy_menu.811 }
+		}
+	}
+	option = {
+		name = quibble_spy_menu.8.f
+		custom_gui = quibble_spy_option
+		trigger = { 
+            exists = event_target:2target_5
+            event_target:2target_5 = {
+				NOR = {
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+			}
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_country_flag = cell1
+				}
+				event_target:2target_5 = {
+					save_global_event_target_as = longterm_cellone
+				}
+				remove_country_flag = cell1
+				country_event = { id = quibble_spy_menu.11 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell2
+				}
+				event_target:2target_5 = {
+					save_global_event_target_as = longterm_celltwo
+				}
+				remove_country_flag = cell2
+				country_event = { id = quibble_spy_menu.12 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell3
+				}
+				event_target:2target_5 = {
+					save_global_event_target_as = longterm_cellthree
+				}
+				remove_country_flag = cell3
+				country_event = { id = quibble_spy_menu.13 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell4
+				}
+				event_target:2target_5 = {
+					save_global_event_target_as = longterm_cellfour
+				}
+				remove_country_flag = cell4
+				country_event = { id = quibble_spy_menu.14 }
+			}
+			country_event = { id = quibble_spy_menu.811 }
+		}
+	}
+	option = {
+		name = quibble_spy_menu.8.g
+		custom_gui = quibble_spy_option
+		trigger = { 
+            exists = event_target:2target_6
+            event_target:2target_6 = {
+				NOR = {
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+			}
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_country_flag = cell1
+				}
+				event_target:2target_6 = {
+					save_global_event_target_as = longterm_cellone
+				}
+				remove_country_flag = cell1
+				country_event = { id = quibble_spy_menu.11 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell2
+				}
+				event_target:2target_6 = {
+					save_global_event_target_as = longterm_celltwo
+				}
+				remove_country_flag = cell2
+				country_event = { id = quibble_spy_menu.12 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell3
+				}
+				event_target:2target_6 = {
+					save_global_event_target_as = longterm_cellthree
+				}
+				remove_country_flag = cell3
+				country_event = { id = quibble_spy_menu.13 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell4
+				}
+				event_target:2target_6 = {
+					save_global_event_target_as = longterm_cellfour
+				}
+				remove_country_flag = cell4
+				country_event = { id = quibble_spy_menu.14 }
+			}
+			country_event = { id = quibble_spy_menu.811 }
+		}
+	}
+	option = {
+		name = quibble_spy_menu.8.h
+		custom_gui = quibble_spy_option
+		trigger = { 
+            exists = event_target:2target_7
+            event_target:2target_7 = {
+				NOR = {
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+			}
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_country_flag = cell1
+				}
+				event_target:2target_7 = {
+					save_global_event_target_as = longterm_cellone
+				}
+				remove_country_flag = cell1
+				country_event = { id = quibble_spy_menu.11 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell2
+				}
+				event_target:2target_7 = {
+					save_global_event_target_as = longterm_celltwo
+				}
+				remove_country_flag = cell2
+				country_event = { id = quibble_spy_menu.12 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell3
+				}
+				event_target:2target_7 = {
+					save_global_event_target_as = longterm_cellthree
+				}
+				remove_country_flag = cell3
+				country_event = { id = quibble_spy_menu.13 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell4
+				}
+				event_target:2target_7 = {
+					save_global_event_target_as = longterm_cellfour
+				}
+				remove_country_flag = cell4
+				country_event = { id = quibble_spy_menu.14 }
+			}
+			country_event = { id = quibble_spy_menu.811 }
+		}
+	}
+	option = {
+		name = quibble_spy_menu.8.i
+		custom_gui = quibble_spy_option
+		trigger = { 
+            exists = event_target:2target_8
+            event_target:2target_8 = {
+				NOR = {
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+			}
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_country_flag = cell1
+				}
+				event_target:2target_8 = {
+					save_global_event_target_as = longterm_cellone
+				}
+				remove_country_flag = cell1
+				country_event = { id = quibble_spy_menu.11 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell2
+				}
+				event_target:2target_8 = {
+					save_global_event_target_as = longterm_celltwo
+				}
+				remove_country_flag = cell2
+				country_event = { id = quibble_spy_menu.12 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell3
+				}
+				event_target:2target_8 = {
+					save_global_event_target_as = longterm_cellthree
+				}
+				remove_country_flag = cell3
+				country_event = { id = quibble_spy_menu.13 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell4
+				}
+				event_target:2target_8 = {
+					save_global_event_target_as = longterm_cellfour
+				}
+				remove_country_flag = cell4
+				country_event = { id = quibble_spy_menu.14 }
+			}
+			country_event = { id = quibble_spy_menu.811 }
+		}
+	}
+	option = {
+		name = quibble_spy_menu.8.j
+		custom_gui = quibble_spy_option
+		trigger = { 
+            exists = event_target:2target_9
+            event_target:2target_9 = {
+				NOR = {
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+			}
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_country_flag = cell1
+				}
+				event_target:2target_9 = {
+					save_global_event_target_as = longterm_cellone
+				}
+				remove_country_flag = cell1
+				country_event = { id = quibble_spy_menu.11 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell2
+				}
+				event_target:2target_9 = {
+					save_global_event_target_as = longterm_celltwo
+				}
+				remove_country_flag = cell2
+				country_event = { id = quibble_spy_menu.12 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell3
+				}
+				event_target:2target_9 = {
+					save_global_event_target_as = longterm_cellthree
+				}
+				remove_country_flag = cell3
+				country_event = { id = quibble_spy_menu.13 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell4
+				}
+				event_target:2target_9 = {
+					save_global_event_target_as = longterm_cellfour
+				}
+				remove_country_flag = cell4
+				country_event = { id = quibble_spy_menu.14 }
+			}
+			country_event = { id = quibble_spy_menu.811 }
+		}
+	}
+	option = {
+		name = quibble_spy_menu.8.k
+		custom_gui = quibble_spy_option
+		trigger = { 
+            exists = event_target:2target_10
+            event_target:2target_10 = {
+				NOR = {
+					is_same_value = event_target:longterm_cellone
+					is_same_value = event_target:longterm_celltwo
+					is_same_value = event_target:longterm_cellthree
+					is_same_value = event_target:longterm_cellfour
+				}
+			}
+		}
+		hidden_effect = {
+			IF = {
+				limit = {
+					has_country_flag = cell1
+				}
+				event_target:2target_10 = {
+					save_global_event_target_as = longterm_cellone
+				}
+				remove_country_flag = cell1
+				country_event = { id = quibble_spy_menu.11 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell2
+				}
+				event_target:2target_10 = {
+					save_global_event_target_as = longterm_celltwo
+				}
+				remove_country_flag = cell2
+				country_event = { id = quibble_spy_menu.12 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell3
+				}
+				event_target:2target_10 = {
+					save_global_event_target_as = longterm_cellthree
+				}
+				remove_country_flag = cell3
+				country_event = { id = quibble_spy_menu.13 }
+			}
+			IF = {
+				limit = {
+					has_country_flag = cell4
+				}
+				event_target:2target_10 = {
+					save_global_event_target_as = longterm_cellfour
+				}
+				remove_country_flag = cell4
+				country_event = { id = quibble_spy_menu.14 }
+			}
+			country_event = { id = quibble_spy_menu.811 }
+		}
+	}
+}
+#######################################################################################
+##
+#MANAGE CELL 1
+##
+#######################################################################################
+
+country_event = {
+	id = quibble_spy_menu.11
+	title = "quibble_spy_menu.11.name"
+	desc = {
+		trigger = {
+			event_target:longterm_cellone = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellone_industrial
+				}
+			}
+		}
+		text = "menu.11.cellone_op_industrial"
+	}
+	desc = {
+		trigger = {
+			event_target:longterm_cellone = {
+				NOR = {
+					has_relation_flag = {
+						who = event_target:snitch_home
+						flag = longterm_cellone_industrial
+					}
+				}
+			}
+		}
+		text = "menu.11.cellone_op_none"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	option = {
+		#CHOOSE FOCUS
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.11.f
+		allow = {
+			custom_tooltip = {
+				text = ongoing_operation
+				event_target:longterm_cellone = {
+					NOR = {
+						has_relation_flag = {
+							who = event_target:snitch_home
+							flag = longterm_cellone_industrial
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = quibble_spy_menu.1111 }
+	}
+	option = {
+		#FINANCE THE OPERATION
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.11.h
+		country_event = { id = quibble_spy_menu.111 }
+	}
+	option = {
+		#BACK
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.12.b
+		country_event = { id = quibble_spy_menu.5 }
+	}
+}
+
+###################################################################################################
+##
+# CELL ONE FOCUS
+##
+###################################################################################################
+
+country_event = {
+	id = quibble_spy_menu.1111
+	title = "quibble_spy_menu.1111.name"
+	desc = {
+		trigger = {
+			event_target:longterm_cellone = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellone_industrial
+				}
+			}
+		}
+		text = "menu.1111.cellone_op_industrial"
+	}
+	desc = {
+		trigger = {
+			event_target:longterm_cellone = {
+				NOR = {
+					has_relation_flag = {
+						who = event_target:snitch_home
+						flag = longterm_cellone_industrial
+					}
+				}
+			}
+		}
+		text = "menu.1111.cellone_op_none"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+	option = {
+		#INDUSTRIAL
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.1111.f
+		hidden_effect = {
+			event_target:longterm_cellone = {
+				set_timed_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellone_industrial
+					days = 721
+				}
+			}
+		}
+		country_event = { id = quibble_spy_menu.11 }
+		country_event = { id = quibble_longterm.1011 }
+	}
+
+	option = {
+		#BACK
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.1111.b
+		country_event = { id = quibble_spy_menu.11 }
+	}
+}
+#####################################################################################################
+##
+### CELL ONE FINANCE
+##
+#####################################################################################################
+
+country_event = {
+	id = quibble_spy_menu.111
+	title = "quibble_spy_menu.111.name"
+	desc = {
+		trigger = {
+			event_target:longterm_cellone = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellone_industrial
+				}
+			}
+		}
+		text = "menu.1111.cellone_op_industrial"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	option = { #NONE
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.f
+		hidden_effect = {
+			event_target:longterm_cellone = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellone_finance_none
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellone_finance
+				}
+				remove_modifier = quibble_low_cellone_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellone_finance
+				}
+				remove_modifier = quibble_low_med_cellone_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellone_finance
+				}
+				remove_modifier = quibble_medium_cellone_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellone_finance
+				}
+				remove_modifier = quibble_high_cellone_finance
+			}
+		}
+		country_event = { id = quibble_spy_menu.11 }
+	}
+	option = { #LOW
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.a
+		
+		country_event = { id = quibble_spy_menu.11 }
+		hidden_effect = {
+			event_target:longterm_cellone = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellone_finance_low
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellone_finance
+				}
+				remove_modifier = quibble_low_med_cellone_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellone_finance
+				}
+				remove_modifier = quibble_medium_cellone_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellone_finance
+				}
+				remove_modifier = quibble_high_cellone_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_low_cellone_finance
+			days = -1
+		}
+	}
+	option = { # LOW MID
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.b
+		
+		hidden_effect = {
+			event_target:longterm_cellone = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellone_finance_low_med
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellone_finance
+				}
+				remove_modifier = quibble_low_cellone_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellone_finance
+				}
+				remove_modifier = quibble_medium_cellone_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellone_finance
+				}
+				remove_modifier = quibble_high_cellone_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_low_med_cellone_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.11 }
+	}
+	option = { # MEDIUM
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.c
+		
+		hidden_effect = {
+			event_target:longterm_cellone = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellone_finance_medium
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellone_finance
+				}
+				remove_modifier = quibble_low_med_cellone_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellone_finance
+				}
+				remove_modifier = quibble_low_cellone_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellone_finance
+				}
+				remove_modifier = quibble_high_cellone_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_medium_cellone_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.11 }
+	}
+	option = { # HIGH
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.d
+		
+		hidden_effect = {
+			event_target:longterm_cellone = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellone_finance_high
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellone_finance
+				}
+				remove_modifier = quibble_low_med_cellone_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellone_finance
+				}
+				remove_modifier = quibble_low_cellone_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellone_finance
+				}
+				remove_modifier = quibble_medium_cellone_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_high_cellone_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.11 }
+	}
+}
+
+
+#############################################################################################
+##
+#MANAGE CELL 2
+##
+#############################################################################################
+
+country_event = {
+	id = quibble_spy_menu.12
+	title = "quibble_spy_menu.12.name"
+	desc = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_celltwo_industrial
+				}
+			}
+		}
+		text = "menu.12.celltwo_op_industrial"
+	}
+	desc = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				NOR = {
+					has_relation_flag = {
+						who = event_target:snitch_home
+						flag = longterm_celltwo_industrial
+					}
+				}
+			}
+		}
+		text = "menu.12.celltwo_op_none"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	option = {
+		#CHOOSE FOCUS
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.11.f
+		allow = {
+			custom_tooltip = {
+				custom_tooltip = {
+					text = ongoing_operation
+					event_target:longterm_celltwo = {
+						NOR = {
+							has_relation_flag = {
+								who = event_target:snitch_home
+								flag = longterm_celltwo_industrial
+							}
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = quibble_spy_menu.1222 }
+	}
+	option = {
+		#FINANCE THE OPERATION
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.11.h
+		country_event = { id = quibble_spy_menu.122 }
+	}
+	option = {
+		#BACK
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.12.b
+		country_event = { id = quibble_spy_menu.5 }
+	}
+}
+
+###################################################################################################
+##
+# CELL TWO FOCUS
+##
+###################################################################################################
+
+country_event = {
+	id = quibble_spy_menu.1222
+	title = "quibble_spy_menu.1222.name"
+	desc = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_celltwo_industrial
+				}
+			}
+		}
+		text = "menu.1222.celltwo_op_industrial"
+	}
+	desc = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				NOR = {
+					has_relation_flag = {
+						who = event_target:snitch_home
+						flag = longterm_celltwo_industrial
+					}
+				}
+			}
+		}
+		text = "menu.1222.celltwo_op_none"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+	option = {
+		#INDUSTRIAL
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.1111.f
+		hidden_effect = {
+			event_target:longterm_celltwo = {
+				set_timed_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_celltwo_industrial
+					days = 721
+				}
+			}
+		}
+		country_event = { id = quibble_spy_menu.12 }
+		country_event = { id = quibble_longterm.1012 }
+	}
+
+	option = {
+		#BACK
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.1111.b
+		country_event = { id = quibble_spy_menu.12 }
+	}
+}
+
+################################################################################################
+##
+#CELL TWO FINANCE
+##
+################################################################################################
+
+country_event = {
+	id = quibble_spy_menu.122
+	title = "quibble_spy_menu.122.name"
+	desc = {
+		trigger = {
+			event_target:longterm_celltwo = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_celltwo_industrial
+				}
+			}
+		}
+		text = "menu.122.celltwo_op_industrial"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	option = { #NONE
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.f
+		
+		hidden_effect = {
+			event_target:longterm_celltwo = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_celltwo_finance_none
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_celltwo_finance
+				}
+				remove_modifier = quibble_low_celltwo_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_celltwo_finance
+				}
+				remove_modifier = quibble_low_med_celltwo_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_celltwo_finance
+				}
+				remove_modifier = quibble_medium_celltwo_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_celltwo_finance
+				}
+				remove_modifier = quibble_high_celltwo_finance
+			}
+		}
+		country_event = { id = quibble_spy_menu.12 }
+	}
+	option = { #LOW
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.a
+		
+		hidden_effect = {
+			event_target:longterm_celltwo = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_celltwo_finance_low
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_celltwo_finance
+				}
+				remove_modifier = quibble_low_med_celltwo_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_celltwo_finance
+				}
+				remove_modifier = quibble_medium_celltwo_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_celltwo_finance
+				}
+				remove_modifier = quibble_high_celltwo_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_low_celltwo_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.12 }
+	}
+	option = { # LOW MID
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.b
+		
+		hidden_effect = {
+			event_target:longterm_celltwo = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_celltwo_finance_low_med
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_celltwo_finance
+				}
+				remove_modifier = quibble_low_celltwo_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_celltwo_finance
+				}
+				remove_modifier = quibble_medium_celltwo_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_celltwo_finance
+				}
+				remove_modifier = quibble_high_celltwo_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_low_med_celltwo_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.12 }
+	}
+	option = { # MEDIUM
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.c
+		
+		hidden_effect = {
+			event_target:longterm_celltwo = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_celltwo_finance_medium
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_celltwo_finance
+				}
+				remove_modifier = quibble_low_celltwo_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_celltwo_finance
+				}
+				remove_modifier = quibble_low_med_celltwo_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_celltwo_finance
+				}
+				remove_modifier = quibble_high_celltwo_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_medium_celltwo_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.12 }
+	}
+	option = { # HIGH
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.d
+		
+		hidden_effect = {
+			event_target:longterm_celltwo = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_celltwo_finance_high
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_celltwo_finance
+				}
+				remove_modifier = quibble_low_celltwo_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_celltwo_finance
+				}
+				remove_modifier = quibble_low_med_celltwo_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_celltwo_finance
+				}
+				remove_modifier = quibble_medium_celltwo_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_high_celltwo_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.12 }
+	}
+}
+
+#############################################################################################
+##
+#MANAGE CELL 3
+##
+#############################################################################################
+
+country_event = {
+	id = quibble_spy_menu.13
+	title = "quibble_spy_menu.13.name"
+	desc = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellthree_industrial
+				}
+			}
+		}
+		text = "menu.13.cellthree_op_industrial"
+	}
+	desc = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				NOR = {
+					has_relation_flag = {
+						who = event_target:snitch_home
+						flag = longterm_cellthree_industrial
+					}
+				}
+			}
+		}
+		text = "menu.13.cellthree_op_none"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	option = {
+		#CHOOSE FOCUS
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.13.f
+		allow = {
+			custom_tooltip = {
+				custom_tooltip = {
+					text = ongoing_operation
+					event_target:longterm_cellthree = {
+						NOR = {
+							has_relation_flag = {
+								who = event_target:snitch_home
+								flag = longterm_cellthree_industrial
+							}
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = quibble_spy_menu.1333 }
+	}
+	option = {
+		#FINANCE THE OPERATION
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.13.h
+		country_event = { id = quibble_spy_menu.133 }
+	}
+	option = {
+		#BACK
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.13.b
+		country_event = { id = quibble_spy_menu.5 }
+	}
+}
+
+###################################################################################################
+##
+# CELL THREE FOCUS
+##
+###################################################################################################
+
+country_event = {
+	id = quibble_spy_menu.1333
+	title = "quibble_spy_menu.1333.name"
+	desc = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellthree_industrial
+				}
+			}
+		}
+		text = "menu.1333.cellthree_op_industrial"
+	}
+	desc = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				NOR = {
+					has_relation_flag = {
+						who = event_target:snitch_home
+						flag = longterm_cellthree_industrial
+					}
+				}
+			}
+		}
+		text = "menu.1333.cellthree_op_none"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+	option = {
+		#INDUSTRIAL
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.1333.f
+		hidden_effect = {
+			event_target:longterm_cellthree = {
+				set_timed_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellthree_industrial
+					days = 721
+				}
+			}
+		}
+		country_event = { id = quibble_spy_menu.13 }
+		country_event = { id = quibble_longterm.1013 }
+	}
+
+	option = {
+		#BACK
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.1333.b
+		country_event = { id = quibble_spy_menu.13 }
+	}
+}
+
+#######################################################################################################
+##
+#CELL THREE FINANCE
+##
+#######################################################################################################
+
+country_event = {
+	id = quibble_spy_menu.133
+	title = "quibble_spy_menu.133.name"
+	desc = {
+		trigger = {
+			event_target:longterm_cellthree = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellthree_industrial
+				}
+			}
+		}
+		text = "menu.133.cellthree_op_industrial"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	option = { #NONE
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.f
+		
+		hidden_effect = {
+			event_target:longterm_cellthree = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellthree_finance_none
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellthree_finance
+				}
+				remove_modifier = quibble_low_cellthree_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellthree_finance
+				}
+				remove_modifier = quibble_low_med_cellthree_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellthree_finance
+				}
+				remove_modifier = quibble_medium_cellthree_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellthree_finance
+				}
+				remove_modifier = quibble_high_cellthree_finance
+			}
+		}
+		country_event = { id = quibble_spy_menu.13 }
+	}
+	option = { #LOW
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.a
+		
+		hidden_effect = {
+			event_target:longterm_cellthree = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellthree_finance_low
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellthree_finance
+				}
+				remove_modifier = quibble_low_med_cellthree_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellthree_finance
+				}
+				remove_modifier = quibble_medium_cellthree_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellthree_finance
+				}
+				remove_modifier = quibble_high_cellthree_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_low_cellthree_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.13 }
+	}
+	option = { # LOW MID
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.b
+		
+		hidden_effect = {
+			event_target:longterm_cellthree = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellthree_finance_low_med
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellthree_finance
+				}
+				remove_modifier = quibble_low_cellthree_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellthree_finance
+				}
+				remove_modifier = quibble_medium_cellthree_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellthree_finance
+				}
+				remove_modifier = quibble_high_cellthree_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_low_med_cellthree_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.13 }
+	}
+	option = { # MEDIUM
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.c
+		
+		hidden_effect = {
+			event_target:longterm_cellthree = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellthree_finance_medium
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellthree_finance
+				}
+				remove_modifier = quibble_low_cellthree_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellthree_finance
+				}
+				remove_modifier = quibble_low_med_cellthree_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellthree_finance
+				}
+				remove_modifier = quibble_high_cellthree_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_medium_cellthree_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.13 }
+	}
+	option = { # HIGH
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.d
+		
+		hidden_effect = {
+			event_target:longterm_cellthree = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellthree_finance_high
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellthree_finance
+				}
+				remove_modifier = quibble_low_cellthree_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellthree_finance
+				}
+				remove_modifier = quibble_low_med_cellthree_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellthree_finance
+				}
+				remove_modifier = quibble_medium_cellthree_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_high_cellthree_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.13 }
+	}
+}
+
+#############################################################################################
+##
+#MANAGE CELL 4
+##
+#############################################################################################
+
+country_event = {
+	id = quibble_spy_menu.14
+	title = "quibble_spy_menu.14.name"
+	desc = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellfour_industrial
+				}
+			}
+		}
+		text = "menu.14.cellfour_op_industrial"
+	}
+	desc = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				NOR = {
+					has_relation_flag = {
+						who = event_target:snitch_home
+						flag = longterm_cellfour_industrial
+					}
+				}
+			}
+		}
+		text = "menu.14.cellfour_op_none"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	option = {
+		#CHOOSE FOCUS
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.14.f
+		allow = {
+			custom_tooltip = {
+				custom_tooltip = {
+					text = ongoing_operation
+					event_target:longterm_cellfour = {
+						NOR = {
+							has_relation_flag = {
+								who = event_target:snitch_home
+								flag = longterm_cellfour_industrial
+							}
+						}
+					}
+				}
+			}
+		}
+		country_event = { id = quibble_spy_menu.1444 }
+	}
+	option = {
+		#FINANCE THE OPERATION
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.14.h
+		country_event = { id = quibble_spy_menu.144 }
+	}
+	option = {
+		#BACK
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.14.b
+		country_event = { id = quibble_spy_menu.5 }
+	}
+}
+
+###################################################################################################
+##
+# CELL FOUR FOCUS
+##
+###################################################################################################
+
+country_event = {
+	id = quibble_spy_menu.1444
+	title = "quibble_spy_menu.1444.name"
+	desc = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellfour_industrial
+				}
+			}
+		}
+		text = "menu.1444.cellfour_op_industrial"
+	}
+	desc = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				NOR = {
+					has_relation_flag = {
+						who = event_target:snitch_home
+						flag = longterm_cellfour_industrial
+					}
+				}
+			}
+		}
+		text = "menu.1444.cellfour_op_none"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+	option = {
+		#INDUSTRIAL
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.1444.f
+		hidden_effect = {
+			event_target:longterm_cellfour = {
+				set_timed_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellfour_industrial
+					days = 721
+				}
+			}
+		}
+		country_event = { id = quibble_spy_menu.14 }
+		country_event = { id = quibble_longterm.1014 }
+	}
+
+	option = {
+		#BACK
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.1444.b
+		country_event = { id = quibble_spy_menu.14 }
+	}
+}
+
+#######################################################################################################
+##
+#CELL FOUR FINANCE
+##
+#######################################################################################################
+
+country_event = {
+	id = quibble_spy_menu.144
+	title = "quibble_spy_menu.144.name"
+	desc = {
+		trigger = {
+			event_target:longterm_cellfour = {
+				has_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellfour_industrial
+				}
+			}
+		}
+		text = "menu.144.cellfour_op_industrial"
+	}
+	is_triggered_only = yes
+	show_sound = event_default
+	custom_gui = quibble_spy_window_longterm
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	option = { #NONE
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.f
+		
+		hidden_effect = {
+			event_target:longterm_cellfour = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellfour_finance_none
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellfour_finance
+				}
+				remove_modifier = quibble_low_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellfour_finance
+				}
+				remove_modifier = quibble_low_med_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellfour_finance
+				}
+				remove_modifier = quibble_medium_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellfour_finance
+				}
+				remove_modifier = quibble_high_cellfour_finance
+			}
+		}
+		country_event = { id = quibble_spy_menu.14 }
+	}
+	option = { #LOW
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.a
+		
+		hidden_effect = {
+			event_target:longterm_cellfour = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellfour_finance_low
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellfour_finance
+				}
+				remove_modifier = quibble_low_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellfour_finance
+				}
+				remove_modifier = quibble_low_med_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellfour_finance
+				}
+				remove_modifier = quibble_medium_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellfour_finance
+				}
+				remove_modifier = quibble_high_cellfour_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_low_cellfour_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.14 }
+	}
+	option = { # LOW MID
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.b
+		
+		hidden_effect = {
+			event_target:longterm_cellfour = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellfour_finance_low_med
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellfour_finance
+				}
+				remove_modifier = quibble_low_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellfour_finance
+				}
+				remove_modifier = quibble_low_med_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellfour_finance
+				}
+				remove_modifier = quibble_medium_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellfour_finance
+				}
+				remove_modifier = quibble_high_cellfour_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_low_med_cellfour_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.14 }
+	}
+	option = { # MEDIUM
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.c
+		
+		hidden_effect = {
+			event_target:longterm_cellfour = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellfour_finance_medium
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellfour_finance
+				}
+				remove_modifier = quibble_low_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellfour_finance
+				}
+				remove_modifier = quibble_low_med_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellfour_finance
+				}
+				remove_modifier = quibble_medium_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellfour_finance
+				}
+				remove_modifier = quibble_high_cellfour_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_medium_cellfour_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.14 }
+	}
+	option = { # HIGH
+		custom_gui = quibble_spy_option
+		name = quibble_spy_menu.111.d
+		
+		hidden_effect = {
+			event_target:longterm_cellfour = {
+				set_relation_flag = {
+					who = event_target:snitch_home
+					flag = longterm_cellfour_finance_high
+				}
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_cellfour_finance
+				}
+				remove_modifier = quibble_low_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_low_med_cellfour_finance
+				}
+				remove_modifier = quibble_low_med_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_medium_cellfour_finance
+				}
+				remove_modifier = quibble_medium_cellfour_finance
+			}
+			IF = {
+				limit = {
+					has_modifier = quibble_high_cellfour_finance
+				}
+				remove_modifier = quibble_high_cellfour_finance
+			}
+		}
+		add_modifier = {
+			modifier = quibble_high_cellfour_finance
+			days = -1
+		}
+		country_event = { id = quibble_spy_menu.14 }
+	}
+}
+
+##############################################################################################################
+##
+#  #REMOVE CELL FUNDING
+##
+##############################################################################################################
+
+country_event = { #REMOVE CELL ONE FUNDING
+	id = quibble_spy_menu.661
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		IF = {
+			limit = {
+				has_modifier = quibble_low_cellone_finance
+			}
+			remove_modifier = quibble_low_cellone_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_low_med_cellone_finance
+			}
+			remove_modifier = quibble_low_med_cellone_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_medium_cellone_finance
+			}
+			remove_modifier = quibble_medium_cellone_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_high_cellone_finance
+			}
+			remove_modifier = quibble_high_cellone_finance
+		}
+	}
+}
+
+
+
+
+
+country_event = { #REMOVE CELL TWO FUNDING
+	id = quibble_spy_menu.662
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		IF = {
+			limit = {
+				has_modifier = quibble_low_celltwo_finance
+			}
+			remove_modifier = quibble_low_celltwo_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_low_med_celltwo_finance
+			}
+			remove_modifier = quibble_low_med_celltwo_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_medium_celltwo_finance
+			}
+			remove_modifier = quibble_medium_celltwo_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_high_celltwo_finance
+			}
+			remove_modifier = quibble_high_celltwo_finance
+		}
+	}
+}
+
+
+
+
+
+country_event = { #REMOVE CELL THREE FUNDING
+	id = quibble_spy_menu.663
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		IF = {
+			limit = {
+				has_modifier = quibble_low_cellthree_finance
+			}
+			remove_modifier = quibble_low_cellthree_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_low_med_cellthree_finance
+			}
+			remove_modifier = quibble_low_med_cellthree_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_medium_cellthree_finance
+			}
+			remove_modifier = quibble_medium_cellthree_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_high_cellthree_finance
+			}
+			remove_modifier = quibble_high_cellthree_finance
+		}
+	}
+}
+
+
+
+
+country_event = { #REMOVE CELL FOUR FUNDING
+	id = quibble_spy_menu.664
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		IF = {
+			limit = {
+				has_modifier = quibble_low_cellfour_finance
+			}
+			remove_modifier = quibble_low_cellfour_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_low_med_cellfour_finance
+			}
+			remove_modifier = quibble_low_med_cellfour_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_medium_cellfour_finance
+			}
+			remove_modifier = quibble_medium_cellfour_finance
+		}
+		IF = {
+			limit = {
+				has_modifier = quibble_high_cellfour_finance
+			}
+			remove_modifier = quibble_high_cellfour_finance
+		}
+	}
+}
+
+country_event = { #REMOVE CELL ONE FUNDING
+	id = quibble_spy_menu.701
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		clear_global_event_target = longterm_cellone
+	}
+}
+
+country_event = { #REMOVE CELL TWO FUNDING
+	id = quibble_spy_menu.702
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		clear_global_event_target = longterm_celltwo
+	}
+}
+
+country_event = { #REMOVE CELL THREE FUNDING
+	id = quibble_spy_menu.703
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		clear_global_event_target = longterm_cellthree
+	}
+}
+
+country_event = { #REMOVE CELL FOUR FUNDING
+	id = quibble_spy_menu.704
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		clear_global_event_target = longterm_cellfour
+	}
+}
+
+country_event = { #REMOVE CELL FOUR FUNDING
+	id = quibble_spy_menu.900
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		remove_country_flag = in_menu
+		remove_country_flag = current_espionage2
+	}
+}

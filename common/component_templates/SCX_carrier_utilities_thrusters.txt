@@ -1,0 +1,163 @@
+# Icons set here are the ones show in the actual slot.
+
+@carrier_power_1 = -60
+@carrier_power_2 = -90
+@carrier_power_3 = -120
+@carrier_power_4 = -150
+@carrier_power_5 = -180
+
+@carrier_cost1 = 18
+@carrier_cost2 = 36
+@carrier_cost3 = 54
+@carrier_cost4 = 72
+@carrier_cost5 = 90
+
+#############
+# THRUSTERS #
+#############
+
+### 1
+
+utility_component_template = {
+	key = "SCX_CARRIER_SHIP_THRUSTER_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = @carrier_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @carrier_cost1
+		}
+	}
+	
+	modifier = {
+	}
+		
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "thruster_components"
+	size_restriction = { SCX_Carrier }
+	upgrades_to = "SCX_CARRIER_SHIP_THRUSTER_2"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+### 2
+
+utility_component_template = {
+	key = "SCX_CARRIER_SHIP_THRUSTER_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = @carrier_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @carrier_cost2
+		}
+	}
+	
+	modifier = {
+		ship_speed_mult = 0.25
+		ship_evasion_add = 3
+	}
+		
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { SCX_Carrier }
+	upgrades_to = "SCX_CARRIER_SHIP_THRUSTER_3"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+### 3
+
+utility_component_template = {
+	key = "SCX_CARRIER_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = @carrier_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @carrier_cost3
+		}
+	}
+	
+	modifier = {
+		ship_speed_mult = 0.50
+		ship_evasion_add = 5
+	}
+
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "thruster_components"
+	size_restriction = { SCX_Carrier }
+	upgrades_to = "SCX_CARRIER_SHIP_THRUSTER_4"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+### 4
+
+utility_component_template = {
+	key = "SCX_CARRIER_SHIP_THRUSTER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @carrier_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @carrier_cost4
+		}
+	}
+	
+	modifier = {
+		ship_speed_mult = 0.75
+		ship_evasion_add = 8
+	}
+
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	size_restriction = { SCX_Carrier }
+	
+	ai_weight = {
+		weight = 4
+	}
+}
+
+### 5
+
+utility_component_template = {
+	key = "SCX_CARRIER_SHIP_THRUSTER_5"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = @carrier_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @carrier_cost5
+		}
+	}
+	
+	modifier = {
+		ship_base_speed_mult = 1.00
+		ship_evasion_add = 10
+	}
+
+	prerequisites = { "tech_dark_matter_propulsion" }
+	component_set = "thruster_components"
+	size_restriction = { SCX_Carrier }
+	
+	ai_weight = {
+		weight = 5
+	}
+}

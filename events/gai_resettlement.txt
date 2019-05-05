@@ -1,0 +1,2030 @@
+namespace = gai_resettlement
+#This resettles AI pops from one world to another in order to make the AI grow as quickly as possible
+#All event descriptions are now in the common\on actions\ folder
+
+event = {
+	id = gai_resettlement.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_playable_country = {
+			limit = {
+				is_ai = yes
+				is_country_type = "default"
+			}
+			country_event = { id = gai_resettlement.2 days = 1 random = 25 }
+		}
+	}
+}
+
+country_event = {
+	id = gai_resettlement.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		IF = { #Exchange an unemployed slave pop for a resident/full citizenship pop that is in a worker tier job
+			limit = {
+				any_owned_planet = {
+					has_building_construction = no
+					is_controlled_by = root
+					NOR = {
+						num_pops = 1
+						AND = {
+							num_pops > 4
+							num_pops < 11
+						}
+						num_pops = 15
+						num_pops = 20
+						num_pops = 25
+						num_pops = 30
+						num_pops = 35
+						num_pops = 40
+						num_pops = 45
+						num_pops = 50
+						num_pops = 55
+						num_pops = 60
+						num_pops = 65
+						num_pops = 70
+						num_pops = 75
+						num_pops = 80
+					}
+					any_owned_pop = {
+						is_unemployed = yes
+						NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+						NOR = {
+							is_pop_category = specialist
+							is_pop_category = ruler
+						}
+					}
+				}
+				any_owned_planet = {
+					is_controlled_by = root
+					free_jobs > 0
+					free_housing > 0
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_controlled_by = root
+					has_building_construction = no
+					NOR = {
+						num_pops = 1
+						AND = {
+							num_pops > 4
+							num_pops < 11
+						}
+						num_pops = 15
+						num_pops = 20
+						num_pops = 25
+						num_pops = 30
+						num_pops = 35
+						num_pops = 40
+						num_pops = 45
+						num_pops = 50
+						num_pops = 55
+						num_pops = 60
+						num_pops = 65
+						num_pops = 70
+						num_pops = 75
+						num_pops = 80
+					}
+					any_owned_pop = {
+						is_unemployed = yes
+						NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+						NOR = {
+							is_pop_category = specialist
+							is_pop_category = ruler
+						}
+					}
+				}
+				planet_event = { id = gai_resettlement.201 }
+			}
+		}#Exchange an unemployed slave pop for a resident/full citizenship pop that is in a worker tier job
+		ELSE_IF = { #Move bio_trophies to new worlds that are ready to house them
+			limit = {
+				any_owned_planet = {
+					is_controlled_by = root
+					count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count > 2 }
+				}
+				any_owned_planet = {
+					is_controlled_by = root
+					OR = {
+						has_building = building_organic_sanctuary 
+						has_building = building_organic_paradise
+					}
+					NOT = { count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count >= 1 } }
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					OR = {
+						has_building = building_organic_sanctuary 
+						has_building = building_organic_paradise
+					}
+					NOT = { count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count >= 1 } }
+				}
+				planet_event = { id = gai_resettlement.90 }
+			}
+		} #Move bio_trophies to new worlds that are ready to house them
+		ELSE_IF = { #Move unemployed slaves to new worlds with free jobs
+			limit = {
+				any_owned_planet = {
+					is_controlled_by = root
+					any_owned_pop = {
+						OR = {
+							has_job = servant
+							has_job = slave_toiler
+							is_unemployed = yes
+						}
+						has_citizenship_type = { type = citizenship_slavery }
+					}
+				}
+				any_owned_planet = {
+					is_controlled_by = root
+					any_owned_pop = {
+						is_unemployed = no
+						is_pop_category = worker
+						OR = {
+							has_citizenship_type = { type = citizenship_full }
+							has_citizenship_type = { type = citizenship_limited }
+						}
+					}
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_controlled_by = root
+					any_owned_pop = {
+						OR = {
+							has_job = servant
+							has_job = slave_toiler
+							is_unemployed = yes
+						}
+						has_citizenship_type = { type = citizenship_slavery }
+					}
+				}
+				planet_event = { id = gai_resettlement.200 }
+			}
+		}#Move unemployed slaves to new worlds with free jobs
+		ELSE_IF = { #If any city world has free jobs and housing move pops to them.
+			limit = {
+				any_owned_planet = {
+					is_controlled_by = root 
+					is_planet_class = pc_city
+					is_under_colonization = no
+					is_colony = yes
+					free_housing > 0
+					free_jobs > 0
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_controlled_by = root
+					is_planet_class = pc_city
+					is_under_colonization = no
+					is_colony = yes
+					free_housing > 0
+					free_jobs > 0
+				}
+				IF = {
+					limit = { 
+						NOT = { has_planet_flag = gai_maniacs_flag_thanks_man }
+					}
+					set_planet_flag = gai_maniacs_flag_thanks_man
+				}
+				planet_event = { id = gai_resettlement.8 }
+			}
+		} #If any habitat has free jobs and housing move pops to them.
+		ELSE_IF = { #If any habitat has free jobs and housing move pops to them.
+			limit = {
+				any_owned_planet = {
+					is_controlled_by = root 
+					is_planet_class = pc_habitat
+					is_under_colonization = no
+					is_colony = yes
+					free_housing > 0
+					free_jobs > 0
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_controlled_by = root
+					is_planet_class = pc_habitat
+					is_under_colonization = no
+					is_colony = yes
+					free_housing > 0
+					free_jobs > 0
+				}
+				planet_event = { id = gai_resettlement.8 }
+			}
+		} #If any habitat has free jobs and housing move pops to them.
+		ELSE_IF = { #Machine Empires race to 10 pops on a planet
+			limit = {
+				is_machine_empire = yes
+			}
+			IF = {
+				limit = {
+					is_machine_empire = yes
+					any_owned_planet = {
+					is_controlled_by = root 
+						count_pops = { limit = { is_robotic_species = yes } count < 10 }
+						NOT = { is_planet_class = pc_habitat }
+						free_jobs > 0
+						is_colony = yes
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+				}
+				IF = {
+					LIMIT = {
+						has_valid_civic = civic_machine_assimilator
+						any_owned_planet = {
+							is_controlled_by = root
+							count_pops = { limit = { has_trait = trait_cybernetic } count < 1 }
+							is_colony = yes
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+						any_owned_planet = {
+					is_controlled_by = root
+							count_pops = { limit = { has_trait = trait_cybernetic } count > 1 }
+						}
+					}
+					random_owned_planet = {
+						limit = { 
+							count_pops = { limit = { has_trait = trait_cybernetic } count < 1 }
+							is_colony = yes
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+						planet_event = { id = gai_resettlement.3 }
+					}
+				}
+				ELSE_IF = {
+					LIMIT = {
+						any_owned_planet = {
+					is_controlled_by = root
+							count_pops = { limit = { is_robotic_species = yes } count < 1 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+					}
+					random_owned_planet = {
+						limit = { 
+							count_pops = { limit = { is_robotic_species = yes } count < 1 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+						planet_event = { id = gai_resettlement.3 }
+					}
+				}#Servitors can get into this problem.
+				ELSE_IF = {
+					LIMIT = {
+						any_owned_planet = {
+							is_controlled_by = root 
+							count_pops = { limit = { is_robotic_species = yes } count = 9 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+							
+						}
+					}
+					random_owned_planet = {
+						limit = { 
+							count_pops = { limit = { is_robotic_species = yes } count = 9 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+							
+						}
+						planet_event = { id = gai_resettlement.3 }
+					}
+					break = yes
+				}
+				ELSE_IF = {
+					LIMIT = {
+						any_owned_planet = {
+							is_controlled_by = root 
+							count_pops = { limit = { is_robotic_species = yes } count = 8 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+							
+						}
+					}
+					random_owned_planet = {
+						limit = { 
+							count_pops = { limit = { is_robotic_species = yes } count = 8 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+							
+						}
+						planet_event = { id = gai_resettlement.3 }
+					}
+					break = yes
+				}
+				ELSE_IF = {
+					LIMIT = {
+						any_owned_planet = {
+					is_controlled_by = root 
+							count_pops = { limit = { is_robotic_species = yes } count = 7 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+							
+						}
+					}
+					random_owned_planet = {
+						limit = { 
+							count_pops = { limit = { is_robotic_species = yes } count = 7 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+							
+						}
+						planet_event = { id = gai_resettlement.3 }
+					}
+					break = yes
+				}
+				ELSE_IF = {
+					LIMIT = {
+						any_owned_planet = {
+					is_controlled_by = root 
+							count_pops = { limit = { is_robotic_species = yes } count = 6 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+							
+						}
+					}
+					random_owned_planet = {
+						limit = { 
+							count_pops = { limit = { is_robotic_species = yes } count = 6 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+							
+						}
+						planet_event = { id = gai_resettlement.3 }
+					}
+					break = yes
+				}
+				ELSE_IF = {
+					LIMIT = {
+						any_owned_planet = {
+					is_controlled_by = root 
+							count_pops = { limit = { is_robotic_species = yes } count = 5 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+							
+						}
+					}
+					random_owned_planet = {
+						limit = { 
+							count_pops = { limit = { is_robotic_species = yes } count = 5 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+							
+						}
+						planet_event = { id = gai_resettlement.3 }
+					}
+					break = yes
+				}
+				ELSE_IF = {
+					LIMIT = {
+						any_owned_planet = {
+					is_controlled_by = root 
+							count_pops = { limit = { is_robotic_species = yes } count = 4 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+					}
+					random_owned_planet = {
+						limit = { 
+							count_pops = { limit = { is_robotic_species = yes } count = 4 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+						planet_event = { id = gai_resettlement.3 }
+					}
+					break = yes
+				}
+				ELSE_IF = {
+					LIMIT = {
+						any_owned_planet = {
+					is_controlled_by = root 
+							count_pops = { limit = { is_robotic_species = yes } count = 3 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+					}
+					random_owned_planet = {
+						limit = { 
+							count_pops = { limit = { is_robotic_species = yes } count = 3 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+						planet_event = { id = gai_resettlement.3 }
+					}
+					break = yes
+				}
+				ELSE_IF = {
+					LIMIT = {
+						any_owned_planet = {
+					is_controlled_by = root 
+							count_pops = { limit = { is_robotic_species = yes } count = 2 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+					}
+					random_owned_planet = {
+						limit = { 
+							count_pops = { limit = { is_robotic_species = yes } count = 2 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+						planet_event = { id = gai_resettlement.3 }
+					}
+					break = yes
+				}
+				ELSE_IF = {
+					LIMIT = {
+						any_owned_planet = {
+					is_controlled_by = root
+							count_pops = { limit = { is_robotic_species = yes } count = 1 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+					}
+					random_owned_planet = {
+						limit = { 
+							count_pops = { limit = { is_robotic_species = yes } count = 1 }
+							NOT = { is_planet_class = pc_habitat }
+							is_colony = yes
+							free_housing > 0
+							free_jobs > 0
+							is_under_colonization = no
+							has_orbital_bombardment = no
+						}
+						planet_event = { id = gai_resettlement.3 }
+					}
+					break = yes
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					any_owned_planet = {
+						is_controlled_by = root
+						count_pops = { 
+							limit = { 
+								has_citizenship_type = { type = citizenship_slavery }
+								is_sapient = yes
+							} 
+							count > 1 
+						}
+						owner = { has_authority = auth_machine_intelligence }
+					}
+					any_owned_planet = {
+						is_controlled_by = root
+						NOT = { count_pops = { limit = { has_citizenship_type = { type = citizenship_slavery } } count >= 1 } }
+					}
+				}
+				random_owned_planet = {
+					limit = { NOT = { count_pops = { limit = { has_citizenship_type = { type = citizenship_slavery } } count >= 1 } } }
+					planet_event = { id = gai_resettlement.95 }
+				}
+			}
+			ELSE_IF = {
+				limit = {
+					any_owned_planet = {
+						is_controlled_by = root
+						count_pops = { limit = { has_citizenship_type = { type = citizenship_slavery } } count > 38 }
+						owner = { has_authority = auth_machine_intelligence }
+					}
+					any_owned_planet = {
+						is_controlled_by = root
+					 
+								
+						NOT = { count_pops = { limit = { has_citizenship_type = { type = citizenship_slavery } } count >= 38 } }
+					}
+				}
+				random_owned_planet = {
+					limit = { NOT = { count_pops = { limit = { has_citizenship_type = { type = citizenship_slavery } } count >= 38 } } }
+	  
+					planet_event = { id = gai_resettlement.96 }
+				}
+			}
+			IF = {
+				limit = {
+					has_valid_civic = civic_machine_servitor
+				}
+				IF = {
+					limit = {
+						any_owned_planet = {
+					is_controlled_by = root
+							has_building = building_organic_sanctuary 
+							count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count > 18 }
+						}
+						any_owned_planet = {
+					is_controlled_by = root
+							has_building = building_organic_sanctuary 
+							count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count < 18 }
+						}
+					}
+					random_owned_planet = {
+						limit = {
+							has_building = building_organic_sanctuary 
+							count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count < 18 }
+						}
+						planet_event = { id = gai_resettlement.9 }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						any_owned_planet = {
+					is_controlled_by = root
+							has_building = building_organic_paradise 
+							count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count > 40 }
+						}
+						any_owned_planet = {
+					is_controlled_by = root
+							has_building = building_organic_paradise 
+							count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count < 40 }
+						}
+					}
+					random_owned_planet = {
+						limit = {
+							has_building = building_organic_paradise
+							count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count < 40 }
+						}
+						planet_event = { id = gai_resettlement.9 }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						any_owned_planet = {
+							is_controlled_by = root
+							count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count > 2 }
+						}
+						any_owned_planet = {
+							is_controlled_by = root
+							OR = {
+								has_building = building_organic_sanctuary 
+								has_building = building_organic_paradise
+							}
+							NOT = { count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count > 1 } }
+						}
+					}
+					random_owned_planet = {
+						limit = {
+							OR = {
+								has_building = building_organic_sanctuary 
+								has_building = building_organic_paradise
+							}
+							NOT = { count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count > 1 } }
+						}
+						planet_event = { id = gai_resettlement.90 }
+					}
+				}
+			}
+			break = yes
+		}#Machine Empires race to 10 pops on a planet
+		IF = { #Hive empires race to 5 pops on a planet (spawning pool)
+			LIMIT = {
+				is_hive_empire = yes
+			}
+			IF = {
+				limit = {
+					any_owned_planet = {
+						is_controlled_by = root 
+						num_pops < 5
+						NOT = { is_planet_class = pc_habitat }
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+				}
+				random_owned_planet = {
+					limit = { 
+						is_controlled_by = root 
+						num_pops < 5
+						NOT = { is_planet_class = pc_habitat }
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+					planet_event = { id = gai_resettlement.70 }
+				}
+			}
+		}#Hive empires race to 5 pops on a planet (spawning pool)
+		ELSE_IF = { #Regular empires race to 10 pops on a planet
+			limit = {
+				is_regular_empire = yes
+				any_owned_planet = {
+					is_controlled_by = root 
+					count_pops = { 
+						limit = { 
+			 
+							is_sapient = yes
+									
+		
+							OR = {
+								has_citizenship_type = { type = citizenship_full }
+								has_citizenship_type = { type = citizenship_limited }
+								has_citizenship_type = { type = citizenship_slavery }
+							}
+						} 
+						count < 10 
+					}
+					NOT = { is_planet_class = pc_habitat }
+					is_colony = yes
+					free_housing > 0
+					free_jobs > 0
+					is_under_colonization = no
+					has_orbital_bombardment = no
+				}
+			}
+			IF = {
+				LIMIT = {
+					any_owned_planet = {
+					is_controlled_by = root 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 9 
+						}
+						NOT = { is_planet_class = pc_habitat }
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+						
+					}
+					
+							   
+								 
+				}
+				random_owned_planet = {
+					limit = { 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 9
+						}
+						NOT = { is_planet_class = pc_habitat }
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+						
+					}
+					planet_event = { id = gai_resettlement.7 }
+				}
+				break = yes
+			}
+			  
+   
+			ELSE_IF = {
+				LIMIT = {
+						
+					any_owned_planet = {
+					is_controlled_by = root 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 8 
+						}
+						NOT = { is_planet_class = pc_habitat }
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+						
+					}
+				}
+				random_owned_planet = {
+					limit = { 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 8 
+						}
+						NOT = { is_planet_class = pc_habitat }
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+						
+					}
+					planet_event = { id = gai_resettlement.7 }
+				}
+				break = yes
+			}
+			ELSE_IF = {
+				LIMIT = {
+					any_owned_planet = {
+					is_controlled_by = root 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 7 
+						}
+						NOT = { is_planet_class = pc_habitat }
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+						
+					}
+				}
+				random_owned_planet = {
+					limit = { 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 7 
+						}
+						NOT = { is_planet_class = pc_habitat }
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+						
+					}
+					planet_event = { id = gai_resettlement.7 }
+				}
+				break = yes
+			}
+			ELSE_IF = {
+				LIMIT = {
+					any_owned_planet = {
+					is_controlled_by = root 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 6 
+						}
+						NOT = { is_planet_class = pc_habitat }
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+				}
+				random_owned_planet = {
+					limit = { 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 6 
+						}
+						NOT = { is_planet_class = pc_habitat }
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+					planet_event = { id = gai_resettlement.7 }
+				}
+				break = yes
+			}
+			ELSE_IF = {
+				LIMIT = {
+					any_owned_planet = {
+					is_controlled_by = root 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 5 
+						}
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+				}
+				random_owned_planet = {
+					limit = { 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 5 
+						}
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+					planet_event = { id = gai_resettlement.7 }
+				}
+				break = yes
+			}
+			ELSE_IF = {
+				LIMIT = {
+					any_owned_planet = {
+					is_controlled_by = root 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 4 
+						}
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+				}
+				random_owned_planet = {
+					limit = { 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 4 
+						}
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+					planet_event = { id = gai_resettlement.7 }
+				}
+				break = yes
+			}
+			ELSE_IF = {
+				LIMIT = {
+					any_owned_planet = {
+					is_controlled_by = root 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 3 
+						}
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+				}
+				random_owned_planet = {
+					limit = { 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 3 
+						}
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+					planet_event = { id = gai_resettlement.7 }
+				}
+				break = yes
+			}
+			ELSE_IF = {
+				LIMIT = {
+					any_owned_planet = {
+					is_controlled_by = root 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 2 
+						}
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+				}
+				random_owned_planet = {
+					limit = { 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 2 
+						}
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+					planet_event = { id = gai_resettlement.7 }
+				}
+				break = yes
+			}
+			ELSE_IF = {
+				LIMIT = {
+					any_owned_planet = {
+					is_controlled_by = root 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 1 
+						}
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+				}
+				random_owned_planet = {
+					limit = { 
+						count_pops = { 
+							limit = { 
+								OR = {
+									is_sapient = yes
+									has_trait = trait_mechanical
+								}
+								OR = {
+									has_citizenship_type = { type = citizenship_full }
+									has_citizenship_type = { type = citizenship_limited }
+									has_citizenship_type = { type = citizenship_slavery }
+								}
+							} 
+							count = 1 
+						}
+						is_colony = yes
+						free_housing > 0
+						free_jobs > 0
+						is_under_colonization = no
+						has_orbital_bombardment = no
+					}
+					planet_event = { id = gai_resettlement.7 }
+				}
+				break = yes
+			}
+		}#Regular empires race to 10 pops on a planet
+	}
+}
+
+country_event = {
+	id = gai_resettlement.20
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		IF = { #Exchange an unemployed slave pop for a resident/full citizenship pop that is in a worker tier job
+			limit = {
+				any_owned_planet = {
+					has_building_construction = no
+					is_controlled_by = root
+					NOR = {
+						num_pops = 1
+						AND = {
+							num_pops > 4
+							num_pops < 11
+						}
+						num_pops = 15
+						num_pops = 20
+						num_pops = 25
+						num_pops = 30
+						num_pops = 35
+						num_pops = 40
+						num_pops = 45
+						num_pops = 50
+						num_pops = 55
+						num_pops = 60
+						num_pops = 65
+						num_pops = 70
+						num_pops = 75
+						num_pops = 80
+					}
+					any_owned_pop = {
+						is_unemployed = yes
+						NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+						NOR = {
+							is_pop_category = specialist
+							is_pop_category = ruler
+						}
+					}
+				}
+				any_owned_planet = {
+					is_controlled_by = root
+					free_jobs > 0
+					free_housing > 0
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_controlled_by = root
+					has_building_construction = no
+					NOR = {
+						num_pops = 1
+						AND = {
+							num_pops > 4
+							num_pops < 11
+						}
+						num_pops = 15
+						num_pops = 20
+						num_pops = 25
+						num_pops = 30
+						num_pops = 35
+						num_pops = 40
+						num_pops = 45
+						num_pops = 50
+						num_pops = 55
+						num_pops = 60
+						num_pops = 65
+						num_pops = 70
+						num_pops = 75
+						num_pops = 80
+					}
+					any_owned_pop = {
+						is_unemployed = yes
+						NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+						NOR = {
+							is_pop_category = specialist
+							is_pop_category = ruler
+						}
+					}
+				}
+				planet_event = { id = gai_resettlement.201 }
+			}
+		}#Exchange an unemployed slave pop for a resident/full citizenship pop that is in a worker tier job
+		ELSE_IF = { #Move bio_trophies to new worlds that are ready to house them
+			limit = {
+				any_owned_planet = {
+					is_controlled_by = root
+					count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count > 2 }
+				}
+				any_owned_planet = {
+					is_controlled_by = root
+					OR = {
+						has_building = building_organic_sanctuary 
+						has_building = building_organic_paradise
+					}
+					NOT = { count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count >= 1 } }
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					OR = {
+						has_building = building_organic_sanctuary 
+						has_building = building_organic_paradise
+					}
+					NOT = { count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count >= 1 } }
+				}
+				planet_event = { id = gai_resettlement.90 }
+			}
+		} #Move bio_trophies to new worlds that are ready to house them
+		ELSE_IF = { #Move unemployed slaves to new worlds with free jobs
+			limit = {
+				any_owned_planet = {
+					is_controlled_by = root
+					any_owned_pop = {
+						OR = {
+							has_job = servant
+							has_job = slave_toiler
+							is_unemployed = yes
+						}
+						has_citizenship_type = { type = citizenship_slavery }
+					}
+				}
+				any_owned_planet = {
+					is_controlled_by = root
+					any_owned_pop = {
+						is_unemployed = no
+						is_pop_category = worker
+						OR = {
+							has_citizenship_type = { type = citizenship_full }
+							has_citizenship_type = { type = citizenship_limited }
+						}
+					}
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_controlled_by = root
+					any_owned_pop = {
+						OR = {
+							has_job = servant
+							has_job = slave_toiler
+							is_unemployed = yes
+						}
+						has_citizenship_type = { type = citizenship_slavery }
+					}
+				}
+				planet_event = { id = gai_resettlement.200 }
+			}
+		}#Move unemployed slaves to new worlds with free jobs
+		ELSE_IF = { #If any city world has free jobs and housing move pops to them.
+			limit = {
+				any_owned_planet = {
+					is_controlled_by = root 
+					is_planet_class = pc_city
+					is_under_colonization = no
+					is_colony = yes
+					free_housing > 0
+					free_jobs > 0
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_controlled_by = root
+					is_planet_class = pc_city
+					is_under_colonization = no
+					is_colony = yes
+					free_housing > 0
+					free_jobs > 0
+				}
+				IF = {
+					limit = { 
+						NOT = { has_planet_flag = gai_maniacs_flag_thanks_man }
+					}
+					set_planet_flag = gai_maniacs_flag_thanks_man
+				}
+				planet_event = { id = gai_resettlement.8 }
+			}
+		} #If any habitat has free jobs and housing move pops to them.
+		ELSE_IF = { #If any habitat has free jobs and housing move pops to them.
+			limit = {
+				any_owned_planet = {
+					is_controlled_by = root 
+					is_planet_class = pc_habitat
+					is_under_colonization = no
+					is_colony = yes
+					free_housing > 0
+					free_jobs > 0
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_controlled_by = root
+					is_planet_class = pc_habitat
+					is_under_colonization = no
+					is_colony = yes
+					free_housing > 0
+					free_jobs > 0
+				}
+				planet_event = { id = gai_resettlement.8 }
+			}
+		} #If any habitat has free jobs and housing move pops to them.
+	}
+}
+
+planet_event = {
+	id = gai_resettlement.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_planet_flag = { flag = gai_resettlement_3 days = 3 }
+		
+		IF = { #Assimilators
+			limit = {
+				owner = { has_valid_civic = civic_machine_assimilator }
+				ROOT = {
+					count_pops = {
+						limit = {
+							has_trait = trait_cybernetic
+						}
+						count < 1
+					}
+				}
+				owner = {
+					any_owned_pop = {
+						has_trait = trait_cybernetic
+						root = { habitability = { who = prev value >= 0.3 } }
+					}
+				}
+			}
+			owner = {
+				random_owned_planet = {
+					limit = {
+						NOR = {
+							num_pops = 1
+							num_pops = 5
+							num_pops = 10
+							num_pops = 15
+							num_pops = 20
+							num_pops = 25
+							num_pops = 30
+							num_pops = 35
+							num_pops = 40
+							num_pops = 45
+							num_pops = 50
+							num_pops = 55
+							num_pops = 60
+							num_pops = 65
+							num_pops = 70
+							num_pops = 75
+							num_pops = 80
+						}
+						count_pops = {
+							limit = {
+								has_trait = trait_cybernetic
+								root = { habitability = { who = prev value >= 0.3 } }
+							}
+							count > 1
+						}
+					}
+					set_timed_planet_flag = { flag = gai_resettlement_3_took_pop days = 3 }
+					random_owned_pop = {
+						limit = {
+							has_trait = trait_cybernetic
+							root = { habitability = { who = prev value >= 0.3 } }
+						}
+						resettle_pop = {
+							pop = this
+							planet = root
+						}
+					}
+				}
+			}
+		}
+		ELSE = {
+			owner = {
+				random_owned_planet = {
+					limit = {
+						has_orbital_bombardment = no
+						NOT = { has_planet_flag = gai_resettlement_3 }
+						OR = {
+							is_capital = no
+							years_passed < 10
+						}
+						NOR = {
+							num_pops = 1
+							num_pops = 5
+							num_pops = 10
+							num_pops = 15
+							num_pops = 20
+							num_pops = 25
+							num_pops = 30
+							num_pops = 35
+							num_pops = 40
+							num_pops = 45
+							num_pops = 50
+							num_pops = 55
+							num_pops = 60
+							num_pops = 65
+							num_pops = 70
+							num_pops = 75
+							num_pops = 80
+						}
+					}
+					set_timed_planet_flag = { flag = gai_resettlement_3_took_pop days = 3 }
+					random_owned_pop = {
+						limit = { 
+							is_sapient = yes
+							NOT = { has_job = replicator }
+							is_organic_species = no
+							root = { habitability = { who = prev value >= 0.3 } }
+						}
+						resettle_pop = {
+							pop = this
+							planet = root
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = gai_resettlement.70
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_planet_flag = { flag = gai_resettlement_70 days = 3 }
+		owner = {
+			set_timed_country_flag = { flag = gai_settlement days = 40 }
+			random_owned_planet = {
+				limit = {
+					has_orbital_bombardment = no
+					NOT = { has_planet_flag = gai_resettlement_70 }
+		   
+					 
+					   
+			 
+					   
+						
+						   
+																													 
+			   
+									 
+								
+		 
+		
+	   
+	  
+						 
+					any_owned_pop = {
+						is_sapient = yes 
+						is_being_purged = no
+						root = { habitability = { who = prev value >= 0.3 } }
+						OR = {
+							has_citizenship_type = { type = citizenship_full }
+							has_citizenship_type = { type = citizenship_limited }
+							has_citizenship_type = { type = citizenship_slavery }
+							has_citizenship_type = { type = citizenship_robot_servitude }
+							has_citizenship_type = { type = citizenship_full_machine }
+						}
+						NOR = {
+							is_pop_category = specialist
+							is_pop_category = ruler
+							has_job = spawning_drone
+							has_job = roboticist
+						}
+					}
+					NOR = {
+						num_pops = 1
+						num_pops = 5
+						num_pops = 10
+						num_pops = 15
+						num_pops = 20
+						num_pops = 25
+						num_pops = 30
+						num_pops = 35
+						num_pops = 40
+						num_pops = 45
+						num_pops = 50
+						num_pops = 55
+						num_pops = 60
+						num_pops = 65
+						num_pops = 70
+						num_pops = 75
+						num_pops = 80
+					}
+				}
+				set_timed_planet_flag = { flag = gai_resettlement_70_took_pop days = 3 }
+				random_owned_pop = {
+					limit = { 
+						is_sapient = yes 
+						is_being_purged = no
+						root = { habitability = { who = prev value >= 0.3 } }
+						OR = {
+							has_citizenship_type = { type = citizenship_full }
+							has_citizenship_type = { type = citizenship_limited }
+							has_citizenship_type = { type = citizenship_slavery }
+							has_citizenship_type = { type = citizenship_robot_servitude }
+							has_citizenship_type = { type = citizenship_full_machine }
+						}
+						NOR = {
+							is_pop_category = specialist
+							is_pop_category = ruler
+							has_job = spawning_drone
+							has_job = roboticist
+						}
+					}
+					resettle_pop = {
+						pop = this
+						planet = root
+					}
+				}
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = gai_resettlement.7
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_planet_flag = { flag = gai_resettlement_7 days = 3 }
+		owner = {
+			set_timed_country_flag = { flag = gai_settlement days = 40 }
+			random_owned_planet = {
+				limit = {
+					has_orbital_bombardment = no
+					NOT = { has_planet_flag = gai_resettlement_7 }
+						 
+		   
+					 
+					   
+			 
+					   
+						
+						   
+																													 
+			   
+									 
+								
+		 
+		
+	   
+	  
+					any_owned_pop = {
+						is_sapient = yes 
+						is_being_purged = no
+						root = { habitability = { who = prev value >= 0.3 } }
+						OR = {
+							has_citizenship_type = { type = citizenship_full }
+							has_citizenship_type = { type = citizenship_limited }
+							has_citizenship_type = { type = citizenship_slavery }
+							has_citizenship_type = { type = citizenship_robot_servitude }
+							has_citizenship_type = { type = citizenship_full_machine }
+						}
+						NOR = {
+							is_pop_category = specialist
+							is_pop_category = ruler
+							has_job = spawning_drone
+							has_job = roboticist
+						}
+					}
+					NOR = {
+						num_pops = 1
+						num_pops = 5
+						num_pops = 10
+						num_pops = 15
+						num_pops = 20
+						num_pops = 25
+						num_pops = 30
+						num_pops = 35
+						num_pops = 40
+						num_pops = 45
+						num_pops = 50
+						num_pops = 55
+						num_pops = 60
+						num_pops = 65
+						num_pops = 70
+						num_pops = 75
+						num_pops = 80
+					}
+				}
+				set_timed_planet_flag = { flag = gai_resettlement_7_took_pop days = 3 }
+				random_owned_pop = {
+					limit = { 
+						is_sapient = yes 
+						is_being_purged = no
+						root = { habitability = { who = prev value >= 0.3 } }
+						OR = {
+							has_citizenship_type = { type = citizenship_full }
+							has_citizenship_type = { type = citizenship_limited }
+							has_citizenship_type = { type = citizenship_slavery }
+							has_citizenship_type = { type = citizenship_robot_servitude }
+							has_citizenship_type = { type = citizenship_full_machine }
+						}
+						NOR = {
+							is_pop_category = specialist
+							is_pop_category = ruler
+							has_job = spawning_drone
+							has_job = roboticist
+			 
+				 
+																  
+		 
+									
+		
+						}
+					}
+					resettle_pop = {
+						pop = this
+						planet = root
+					}
+				}
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = gai_resettlement.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_planet_flag = { flag = not_this_planet_lol days = 3 }
+		owner = {
+			random_owned_planet = {
+				limit = {
+					has_orbital_bombardment = no
+					NOT = { has_planet_flag = not_this_planet_lol }
+					#NOT = { has_planet_flag = gai_8_took_pop }
+					NOT = { is_capital = yes }
+					NOR = { 
+						count_pops = { limit = { is_sapient = yes } count = 1 }
+						count_pops = { limit = { is_sapient = yes } count = 5 }
+						count_pops = { limit = { is_sapient = yes } count = 10 }
+						count_pops = { limit = { is_sapient = yes } count = 15 }
+						count_pops = { limit = { is_sapient = yes } count = 20 }
+						count_pops = { limit = { is_sapient = yes } count = 25 }
+						count_pops = { limit = { is_sapient = yes } count = 30 }
+						count_pops = { limit = { is_sapient = yes } count = 35 }
+						count_pops = { limit = { is_sapient = yes } count = 40 }
+						count_pops = { limit = { is_sapient = yes } count = 45 }
+						count_pops = { limit = { is_sapient = yes } count = 50 }
+						count_pops = { limit = { is_sapient = yes } count = 55 }
+						count_pops = { limit = { is_sapient = yes } count = 60 }
+						count_pops = { limit = { is_sapient = yes } count = 65 }
+						count_pops = { limit = { is_sapient = yes } count = 70 }
+						count_pops = { limit = { is_sapient = yes } count = 75 }
+						count_pops = { limit = { is_sapient = yes } count = 80 }
+					}
+				}
+				set_timed_planet_flag = { flag = gai_8_took_pop days = 3 }
+				random_owned_pop = {
+					limit = { 
+						is_sapient = yes 
+						is_being_purged = no
+						root = { habitability = { who = prev value >= 0.3 } }
+						NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+						NOR = {
+							is_pop_category = specialist
+							is_pop_category = ruler
+							has_job = farmer
+							has_job = agri_drone
+						}
+					}
+					resettle_pop = {
+						pop = this
+						planet = root
+					}
+				}
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = gai_resettlement.9
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_planet_flag = { flag = gai_resettlement_9 days = 3 }
+		while = {
+			count = 19
+			IF = {
+				limit = {
+					count_pops = { limit = { has_citizenship_type = { type = citizenship_organic_trophy } } count < 18 }
+				}
+				owner = {
+					random_owned_planet = {
+						limit = {
+							count_pops = { 
+								limit = { 
+									has_citizenship_type = { type = citizenship_organic_trophy } 
+									root = { habitability = { who = prev value >= 0.49 } }
+								}
+								count > 18
+							}
+						}
+						random_owned_pop = {
+							limit = {
+								has_citizenship_type = { type = citizenship_organic_trophy }
+								root = { habitability = { who = prev value >= 0.49 } }
+							}
+							resettle_pop = {
+								pop = this
+								planet = root
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = gai_resettlement.90
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_planet_flag = { flag = gai_resettlement_90 days = 3 }
+		owner = {
+			random_owned_planet = {
+				limit = {
+					any_owned_pop = {
+						has_citizenship_type = { type = citizenship_organic_trophy } 
+						root = { habitability = { who = prev value > 0.4 } }
+					}
+				}
+				set_timed_planet_flag = { flag = gai_resettlement_90_selected days = 3 }
+				random_owned_pop = {
+					limit = {
+						has_citizenship_type = { type = citizenship_organic_trophy }
+						root = { habitability = { who = prev value > 0.4 } }
+					}
+					resettle_pop = {
+						pop = this
+						planet = root
+					}
+				}
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = gai_resettlement.95
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_planet_flag = { flag = gai_resettlement_95 days = 3 }
+		owner = {
+			random_owned_planet = {
+				limit = {
+					count_pops = {
+						limit = { 
+							has_citizenship_type = { type = citizenship_slavery } 
+							root = { habitability = { who = prev value >= 0.19 } }
+						}
+						count > 1
+					}
+				}
+				random_owned_pop = {
+					limit = {
+						has_citizenship_type = { type = citizenship_slavery } 
+						root = { habitability = { who = prev value >= 0.19 } }
+					}
+					resettle_pop = {
+						pop = this
+						planet = root
+					}
+				}
+			}
+		}
+		IF = {
+			limit = {
+				owner = { NOT = { has_country_flag = gai_machines_have_organics } }
+			}
+			owner = { country_event = { id = gai_survey_pops.2 } }
+		}
+	}
+}
+
+planet_event = {
+	id = gai_resettlement.96
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_planet_flag = { flag = gai_resettlement_95 days = 3 }
+		owner = {
+			random_owned_planet = {
+				limit = {
+					count_pops = {
+						limit = { 
+							has_citizenship_type = { type = citizenship_slavery } 
+							root = { habitability = { who = prev value >= 0.19 } }
+						}
+						count > 38
+					}
+				}
+				random_owned_pop = {
+					limit = {
+						has_citizenship_type = { type = citizenship_slavery } 
+						root = { habitability = { who = prev value >= 0.19 } }
+					}
+					resettle_pop = {
+						pop = this
+						planet = root
+					}
+				}
+			}
+		}
+		IF = {
+			limit = {
+				owner = { NOT = { has_country_flag = gai_machines_have_organics } }
+			}
+															
+			owner = { country_event = { id = gai_survey_pops.2 } }
+		}
+	}
+}
+
+planet_event = {
+	id = gai_resettlement.200
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_planet_flag = { flag = gai_resettlement_200 days = 3 }
+		set_timed_planet_flag = { flag = gai_resettlement_start_exchange days = 3 }
+		owner = {
+			random_owned_planet = {
+				limit = {
+					any_owned_pop = {
+						is_sapient = yes
+						OR = {
+							has_citizenship_type = { type = citizenship_full }
+							has_citizenship_type = { type = citizenship_limited }
+							root = { habitability = { who = prev value >= 0.3 } }
+						}
+						is_pop_category = worker
+					}
+					NOT = { has_planet_flag = gai_resettlement_start_exchange }
+				}
+				set_timed_planet_flag = { flag = gai_resettlement_end_exchange days = 3 }
+				save_event_target_as = send_pop
+				random_owned_pop = {
+					limit = {
+						is_sapient = yes
+						OR = {
+							has_citizenship_type = { type = citizenship_full }
+							has_citizenship_type = { type = citizenship_limited }
+							root = { habitability = { who = prev value >= 0.3 } }
+						}
+						is_pop_category = worker
+					}
+					resettle_pop = {
+						pop = this
+						planet = root
+					}
+				}
+			}
+		}
+		random_owned_pop = {
+			limit = {
+				has_citizenship_type = { type = citizenship_slavery }
+				OR = {
+					has_job = servant
+					has_job = slave_toiler
+					is_unemployed = yes
+				}
+			}
+			resettle_pop = {
+				pop = this
+				planet = event_target:send_pop
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = gai_resettlement.201
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_timed_planet_flag = { flag = gai_resettlement_201 days = 3 }
+		set_timed_planet_flag = { flag = gai_resettlement_201_start_exchange days = 3 }
+		owner = {
+			random_owned_planet = {
+				limit = {
+					free_jobs > 0
+					free_housing > 0
+					NOT = { has_planet_flag = gai_resettlement_201_start_exchange }
+				}
+				set_timed_planet_flag = { flag = gai_resettlement_201_end_exchange days = 3 }
+				save_event_target_as = send_pop_201
+			}
+		}
+		random_owned_pop = {
+			limit = {
+				is_unemployed = yes
+				NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+				NOR = {
+					is_pop_category = specialist
+					is_pop_category = ruler
+				}
+			}
+			resettle_pop = {
+				pop = this
+				planet = event_target:send_pop_201
+			}
+		}
+	}
+}#Exchange an unemployed slave pop for a resident/full citizenship pop that is in a worker tier job

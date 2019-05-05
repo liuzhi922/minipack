@@ -1,0 +1,137 @@
+@EdictPG1Cost = 500
+
+@EdictPG1Duration = 36
+
+pg_energy_upgrade = {
+	length = 1
+	modifier = {	
+	}
+	
+	resources = {
+		category = edicts
+		cost = {
+			influence = @EdictPG1Cost
+		}
+	}
+
+	length = 36000
+
+	potential = {
+		has_country_flag = energy_age
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = pg_trait_psionic
+			any_owned_pop = {
+				        OR = { pop_has_trait = trait_psionic
+
+				               pop_has_trait = trait_latent_psionic
+                        	 }  
+			}
+		}
+	}
+
+
+	effect = {
+		custom_tooltip = pg_energy_upgrade
+		hidden_effect = {
+		create_species = {
+			is_mod = no
+			name = this
+			namelist = this
+			plural = this
+			class = "GESTALT"
+			portrait = "unbidden_blue"
+			traits = {
+				trait = "trait_gestalt"
+			}
+			
+			pops_auto_growth = 1.0
+			
+			pops_can_be_colonizers = yes
+			pops_can_migrate = yes
+			pops_can_reproduce = yes
+			pops_can_join_factions = no
+			pop_maintenance = 1
+			can_generate_leaders = yes
+			pops_can_be_slaves = no
+			pops_have_happiness = yes
+		        consumer_goods = yes
+			
+			effect = {
+				rename_species = {
+					prompt_country = prev #If targeted country is a player they will get a popup asking for a name/plural/adjective combo. Otherwise the species will get a random name from the specified name_list
+				}
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				species = {
+					  OR = { has_trait = trait_psionic
+				                 has_trait = trait_latent_psionic
+                                 	}
+				}
+			}
+			change_species = last_created
+
+		}
+
+		every_owned_ship = {
+			limit = {
+				is_ship_class = shipclass_colonizer
+				species = {
+					  OR = { has_trait = trait_psionic
+				               has_trait = trait_latent_psionic
+                                 	}
+				}
+			}
+			change_species = last_created
+		}
+
+		every_owned_army = {
+			limit = {
+				exists = species
+				exists = planet
+				species = {
+                                          OR = { has_trait = trait_psionic
+				                 has_trait = trait_latent_psionic
+                                 	}
+				}
+			}
+			planet = {
+				create_army = {
+					name = random
+					owner = root
+					type = "gestalt_army"
+					species = this
+				}
+			}
+			remove_army = yes
+		}
+		
+		every_owned_leader = {
+			change_species = last_created
+			change_leader_portrait = species
+		}
+		every_pool_leader = {
+			change_species = last_created
+			change_leader_portrait = species
+		}
+		change_dominant_species = { species = last_created }
+		
+		every_owned_leader = {
+			limit = {
+				species = { has_trait = trait_gestalt }
+			}
+
+			if = {
+				limit = { leader_class = ruler }
+				add_ruler_trait = leader_trait_ruler_gestalt
+				remove_trait = leader_trait_ruler_chosen
+				remove_trait = leader_trait_ruler_psionic
+			    }
+		    }
+        }	
+    }
+}

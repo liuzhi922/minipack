@@ -1,0 +1,352 @@
+# # Land Clearance Underground
+# planet_edict = {
+# 	name = "land_clearance_2"
+# 	cost = { influence = 150 energy = 1000 }
+# 	length = 0
+	
+# 	potential = {
+# 		habitable_structure = no
+# 		owner = {
+# 			has_ascension_perk = ap_mastery_of_nature
+# 		}
+# 		NOT = { has_planet_flag = land_clearance_happened_ground }
+# 	}
+# 	allow = {
+# 		if = {
+# 			limit= { has_planet_flag = land_clearance_construction }
+# 			custom_tooltip = {
+# 				fail_text = land_clearance_construction_first
+# 				NOT = { has_planet_flag = land_clearance_construction }
+# 			}
+# 		}
+# 		if = {
+# 			limit = { 
+# 				NOT = { has_planet_flag = land_clearance_construction }
+# 				planet_size <= 24
+# 			}
+# 			custom_tooltip = {
+# 				fail_text = land_clearance_first
+# 				has_planet_flag = land_clearance_happened
+# 			}
+# 		}
+# 	}
+# 	effect = {
+# 		add_modifier = {
+# 			modifier = "pm_subterranean_construction"
+# 			days = 1800
+# 		}
+# 		if = {
+# 			limit = { has_planet_flag = land_clearance_happened_sky }
+# 				if = {
+# 					limit = {
+# 						planet_size <= 21
+# 					}
+# 					custom_tooltip = masterclearance_increase_size_3	
+# 					else = {
+# 						if = {
+# 							limit = {
+# 								planet_size <= 22
+# 							}
+# 							custom_tooltip = masterclearance_increase_size_2	
+# 							else = {
+# 								if = {
+# 									limit = {
+# 										planet_size <= 24
+# 									}
+# 									custom_tooltip = masterclearance_increase_size_1
+# 									else = { custom_tooltip = masterclearance_increase_size_0 }
+# 								}
+# 							}
+# 						}
+# 					}
+# 				}
+# 			else = {
+# 				if = {
+# 					limit = {
+# 						planet_size <= 18
+# 					}
+# 					custom_tooltip = masterclearance_increase_size_3	
+# 					else = {
+# 						if = {
+# 							limit = {
+# 								planet_size <= 22
+# 							}
+# 							custom_tooltip = masterclearance_increase_size_2	
+# 							else = {
+# 								if = {
+# 									limit = {
+# 										planet_size <= 24
+# 									}
+# 									custom_tooltip = masterclearance_increase_size_1
+# 									else = { custom_tooltip = masterclearance_increase_size_0 }
+# 								}
+# 							}
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 		hidden_effect = {
+# 			set_planet_flag = land_clearance_construction
+# 			planet_event = {
+# 				id = masterclearance.1 
+# 			}
+# 		}
+# 	}
+# 	ai_weight = {
+# 		weight = 8
+# 		modifier = {
+# 			factor = 0
+# 			free_pop_tiles > 1
+# 		}
+# 		modifier = {
+# 			factor = 0
+# 			owner = {
+# 				influence < 500
+# 			}
+# 		}
+# 	}
+# }
+
+
+# # Land Clearance Sky
+# planet_edict = {
+# 	name = "land_clearance_3"
+# 	cost = { influence = 200 energy = 2000}
+# 	length = 0
+	
+# 	potential = {
+# 		OR = { 
+# 			habitable_structure = no
+# 			is_planet_class = pc_ringworld_habitable
+# 		}	
+# 		owner = {
+# 			has_ascension_perk = ap_mastery_of_nature
+# 		}
+# 		NOT = { has_planet_flag = land_clearance_happened_sky }
+# 	}	
+# 	allow = {
+# 		if = {
+# 			limit= { has_planet_flag = land_clearance_construction }
+# 			custom_tooltip = {
+# 				fail_text = land_clearance_construction_first
+# 				NOT = { has_planet_flag = land_clearance_construction }
+# 			}
+# 		}
+# 		if = {
+# 			limit = { 
+# 				NOT = { has_planet_flag = land_clearance_construction }
+# 				planet_size <= 24
+# 			}
+# 			custom_tooltip = {
+# 				fail_text = land_clearance_first
+# 				has_planet_flag = land_clearance_happened
+# 			}
+# 		}
+# 	}
+# 	effect = {
+# 		add_modifier = {
+# 			modifier = "pm_sky_construction"
+# 			days = 1800
+# 		}
+# 		if = {
+# 			limit = { has_planet_flag = land_clearance_happened_sky }
+# 				if = {
+# 					limit = {
+# 						planet_size <= 21
+# 					}
+# 					custom_tooltip = masterclearance_increase_size_3	
+# 					else = {
+# 						if = {
+# 							limit = {
+# 								planet_size <= 22
+# 							}
+# 							custom_tooltip = masterclearance_increase_size_2	
+# 							else = {
+# 								if = {
+# 									limit = {
+# 										planet_size <= 24
+# 									}
+# 									custom_tooltip = masterclearance_increase_size_1
+# 									else = { custom_tooltip = masterclearance_increase_size_0 }
+# 								}
+# 							}
+# 						}
+# 					}
+# 				}
+# 			else = {
+# 				if = {
+# 					limit = {
+# 						planet_size <= 18
+# 					}
+# 					custom_tooltip = masterclearance_increase_size_3	
+# 					else = {
+# 						if = {
+# 							limit = {
+# 								planet_size <= 22
+# 							}
+# 							custom_tooltip = masterclearance_increase_size_2	
+# 							else = {
+# 								if = {
+# 									limit = {
+# 										planet_size <= 24
+# 									}
+# 									custom_tooltip = masterclearance_increase_size_1
+# 									else = { custom_tooltip = masterclearance_increase_size_0 }
+# 								}
+# 							}
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 		hidden_effect = { 
+# 			set_planet_flag = land_clearance_construction
+# 			planet_event = { 
+# 				id = masterclearance.10 
+# 			}
+			
+# 		}
+# 	}
+# 	ai_weight = {
+# 		weight = 6
+# 		modifier = {
+# 			factor = 0
+# 			free_pop_tiles > 1
+# 		}
+# 		modifier = {
+# 			owner = {
+# 				influence < 500
+# 			}
+# 			factor = 0
+# 		}
+# 	}
+# }
+
+# # Reopen Foundry
+# planet_edict = {
+# 	name = "Open_Foundry"
+# 	cost = { influence = 50 }
+# 	length = 0
+	
+# 	potential = {
+# 		has_planet_modifier = { pm_subterranean_foundry_closed }
+# 	}
+# 	effect = {
+# 		if = {
+# 			limit = { 
+# 				owner = { 
+# 					has_special_project = foundry_investigation
+# 				}
+# 			}
+# 			add_modifier = {
+# 				modifier = "pm_subterranean_foundry_investigation"
+# 				days = -1
+# 			}
+# 			else = {
+# 				add_modifier = {
+# 					modifier = "pm_subterranean_foundry"
+# 					days = -1
+# 				}
+# 			}
+# 		}
+# 		hidden_effect = {
+# 			remove_modifier = {
+# 				modifier = "pm_subterranean_foundry_closed"
+# 			}
+# 			set_planet_flag = foundry_risk
+# 			remove_planet_flag = foundry_safe
+# 		}
+# 	}
+# }
+
+# # Investigate Foundry
+# planet_edict = {
+# 	name = "Investigate_Foundry"
+# 	cost = { influence = 50 }
+# 	length = 0
+	
+# 	potential = {
+# 		has_planet_modifier = { pm_subterranean_foundry_closed }
+# 		owner = { 
+# 			NOT = { has_special_project = foundry_investigation }
+# 		}
+# 	}
+# 	effect = {
+# 		enable_special_project = {
+# 			name = "foundry_investigation"
+# 			location = this
+# 			owner = root
+# 		}
+# 		owner = { set_country_flag = foundry_investigation }
+# 	}
+# }
+
+
+# # Safety Protocols
+# planet_edict = {
+# 	name = "safety_protocols"
+# 	cost = { influence = 25 }
+# 	length = 0
+	
+# 	potential = {
+# 		has_planet_modifier = { pm_subterranean_foundry }
+# 		owner = {
+# 			has_country_flag = safety_protocols
+# 		}
+# 	}
+# 	effect = {
+# 		add_modifier = {
+# 			modifier = "pm_subterranean_foundry_safe"
+# 			days = -1
+# 		}
+# 		hidden_effect = {
+# 			remove_modifier = {
+# 				modifier = "pm_subterranean_foundry"
+# 			}
+# 			set_planet_flag = foundry_safe
+# 			set_planet_flag = safety_cooldown
+# 			remove_planet_flag = foundry_risk
+# 			planet_event = { 
+# 				id = masterclearance.39
+# 				months = 6
+# 			}
+# 		}
+# 	}
+# }
+
+# # Disable Protocols
+# planet_edict = {
+# 	name = "disable_protocols"
+# 	cost = { influence = 25 }
+# 	length = 0
+	
+# 	potential = {
+# 		has_planet_modifier = { pm_subterranean_foundry_safe }
+# 	}
+# 	allow = {
+# 		custom_tooltip = {
+# 			fail_text = "safety_cooldown"
+# 			has_planet_flag = safety_cooldown
+# 		}
+# 	}
+# 	effect = {
+# 		add_modifier = {
+# 			modifier = "pm_subterranean_foundry"
+# 			days = -1
+# 		}
+# 		hidden_effect = {
+# 			remove_modifier = {
+# 				modifier = "pm_subterranean_foundry_safe"
+# 			}
+# 			set_planet_flag = foundry_risk
+# 			remove_planet_flag = foundry_safe
+# 			set_planet_flag = safety_cooldown
+# 			planet_event = { 
+# 				id = masterclearance.39
+# 				months = 6
+# 			}
+# 		}
+# 	}
+# }
+

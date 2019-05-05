@@ -1,0 +1,39 @@
+leader_trait_ruler_gestalt = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_chosen_one.dds"
+	immortal_leaders = yes
+	leader_potential_add = {
+                Species = { has_trait = "trait_gestalt" }
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		planet_jobs_produces_mult = 0.1
+		pop_government_ethic_attraction = 0.5
+		
+	}
+	leader_class = { ruler }
+	leader_trait = { ruler }
+	initial = yes
+        requires_traits = { trait_gestalt }
+	randomized = yes
+	opposites = { "leader_trait_ruler_psionic" }
+}
+
+leader_trait_ruler_millionaire = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/trait_millionaire.dds"
+	immortal_leaders = yes
+	leader_potential_add = {
+	}
+	modifier = {
+		pop_happiness = 0.05
+		pop_government_ethic_attraction = 0.15
+		planet_jobs_worker_produces_mult = 0.05
+	}
+	leader_class = { ruler }
+	leader_trait = { ruler }
+	initial = no
+	randomized = no
+}

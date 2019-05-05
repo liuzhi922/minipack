@@ -1,0 +1,33 @@
+# Project Gestalt
+
+special_project = {
+	key = "PROJECT_GESTALT"
+	cost = 30000
+	tech_department = society_technology
+	picture = GFX_evt_psionics
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	
+	event_scope = planet_event
+	
+	requirements = {
+	}
+	
+	on_success = {
+	        every_country = {
+				limit = { 
+					is_ai = no
+					has_communications = root
+					NOT = { is_same_value = root }
+				}
+			}
+		owner = {
+			country_event = { id = pg.2 }
+		}
+	}
+	
+	on_fail = {
+	}
+	
+	on_start = {
+	}
+}

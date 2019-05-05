@@ -1,0 +1,106 @@
+change_pc_to_normal = {
+	change_pc = rl_habitable_normal
+	root = {
+		switch = {
+			trigger = ideal_planet_class
+			pc_desert = {
+				prev = {
+					change_pc = pc_desert
+				}
+			}
+			pc_tropical = {
+				prev = {
+					change_pc = pc_tropical
+				}
+			}
+			pc_arid = {
+				prev = {
+					change_pc = pc_arid
+				}
+			}
+			pc_continental = {
+				prev = {
+					change_pc = pc_continental
+				}
+			}
+			pc_ocean = {
+				prev = {
+					change_pc = pc_ocean
+				}
+			}
+			pc_tundra = {
+				prev = {
+					change_pc = pc_tundra
+				}
+			}
+			pc_arctic = {
+				prev = {
+					change_pc = pc_arctic
+				}
+			}
+			pc_alpine = {
+				prev = {
+					change_pc = pc_alpine
+				}
+			}
+			pc_savannah = {
+				prev = {
+					change_pc = pc_savannah
+				}
+			}
+			pc_gaia = {
+				prev = {
+					change_pc = pc_gaia
+				}
+			}
+			pc_nuked = {
+				prev = {
+					change_pc = pc_nuked
+				}
+			}
+		}
+	}
+}
+
+destroy_buildings_and_colony = {
+	remove_all_buildings = yes
+	destroy_colony = yes
+}
+
+create_starbase_starport_from_planet = {
+	owner = {
+		save_event_target_as = starbase_owner
+	}
+	solar_system = {
+		create_starbase = yes
+		starbase = {
+			set_starbase_size = starbase_starport
+		}
+	}
+}
+
+create_starbase = {
+	if = {
+		limit = {
+			exists = starbase
+		}
+		starbase = {
+			set_owner = event_target:starbase_owner
+		}
+	}
+	else = {
+		create_starbase = {
+			size = starbase_outpost
+			owner = event_target:starbase_owner
+		}
+	}
+}
+
+starbase_add_shipyard_0 = {
+	starbase = {
+		set_starbase_module = {
+			slot = 0
+			module = shipyard
+		}
+	}
+}

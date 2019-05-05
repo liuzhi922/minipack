@@ -1,0 +1,13 @@
+objectTypes = {
+	pdxmesh = {
+		name = "sectoid_portrait_mesh"
+		file = "gfx/models/portraits/sectoid/sectoid_portrait.mesh"
+		scale = 0.65
+		
+		animation = { id = "idle" type = "sectoid_portrait_idle_animation" }
+		animation = { id = "idle2" type = "sectoid_portrait_idle2_animation" }
+		animation = { id = "idle3" type = "sectoid_portrait_idle3_animation" }
+		animation = { id = "idle4" type = "sectoid_portrait_idle4_animation" }
+		animation = { id = "happy" type = "sectoid_portrait_happy_animation" }
+	}
+}

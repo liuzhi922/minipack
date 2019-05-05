@@ -1,0 +1,290 @@
+namespace = vb_psi_vortex
+
+@staring_food = 700
+@starving = 150
+@hungry = 300
+@peckish = 450
+@fed = 600
+@well_fed = 750
+@full = 900
+@engorged = 1050
+@max = 1200
+@food_factor = 10
+
+@price = -300
+
+#Creation of the country
+event = {
+	id = vb_psi_vortex.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_country = {
+			name = "Bleak Vortex"
+			type = bleak_vortex
+			flag = {
+				icon = {
+					category = "human"
+					file = "flag_human_1.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "circle.dds"
+				}
+				colors ={
+					"blue"
+					"black"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			save_event_target_as = vortex
+		}
+		random_country = {
+			limit = { is_country_type = global_event }
+			country_event = { id = vb_psi_vortex.2 days = 1 }
+		}
+		
+	}
+}
+
+#Contact on day 2
+country_event = {
+	id = vb_psi_vortex.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		# random_country = {
+			# limit = { is_country_type = vb_psi_bleak_vortex }
+			# save_event_target_as = vortex
+		# }
+		every_country = {
+			limit = { has_civic = civic_vb_psi_soul_eater }
+			establish_communications_no_message = event_target:vortex
+		}
+	}
+}
+
+#Vortex lobby
+country_event = {
+	id = vb_psi_vortex.3
+	title = VB_PSI_BLEAK_VORTEX_TITLE
+	desc = vb_psi_vortex.3.desc
+	
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	
+	picture_event_data = {
+		portrait = shroud1
+		room = shroud_room
+	}
+	
+	trigger = {
+		FROM = { is_country_type = bleak_vortex }
+		NOT = { has_country_flag = vb_psi_vortex_diplo }
+	}
+	
+	immediate = {
+		set_country_flag = vb_psi_vortex_diplo
+		IF = {
+			limit = {
+				NOT = {
+					any_owned_planet = { has_planet_flag = vb_psi_desired_by_vortex@root }
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					is_capital = no
+					count_pops = {
+						limit = { has_trait = trait_vb_psi_soul_eater }
+						count > 4
+					}
+				}
+				every_planet = {
+					limit = { has_planet_flag = vb_psi_desired_by_vortex@root }
+					remove_planet_flag = vb_psi_desired_by_vortex@root
+				}
+				set_timed_planet_flag = { flag = vb_psi_desired_by_vortex@root days = 360 }
+			}
+		}
+		random_owned_planet = {
+			limit = { has_planet_flag = vb_psi_desired_by_vortex@root }
+			save_event_target_as = desired_planet
+		}
+	}
+	
+	after = {
+		remove_country_flag = vb_psi_vortex_diplo
+	}
+	
+	#Exit, at the top
+	option = {
+		name = vb_psi_vortex.3.q
+	}
+	
+	#Trade planet for sustenance
+	option = {
+		name = vb_psi_vortex.3.a
+		
+		allow = {
+			custom_tooltip = {
+				fail_text = vb_psi_vortex.recently_petitioned
+				NOT = { has_modifier = vb_psi_petitioned_vortex }
+			}
+			custom_tooltip = {
+				fail_text = vb_psi_vortex.not_hungry_enough
+				OR = {
+					# always = yes
+					has_modifier = vb_psi_food_level_0
+					has_modifier = vb_psi_food_level_1
+					has_modifier = vb_psi_food_level_2
+				}
+			}
+			custom_tooltip = {
+				fail_text = vb_psi_vortex.no_valid_planet
+				exists = event_target:desired_planet
+				event_target:desired_planet = {
+					is_capital = no
+					count_pops = {
+						limit = { has_trait = trait_vb_psi_soul_eater }
+						count > 4
+					}
+				}
+			}
+		}
+		
+		hidden_effect = {
+			country_event = { id = vb_psi_vortex.4 }
+		}
+	}
+	
+	#Trade sustenance for resources
+	option = {
+		name = vb_psi_vortex.3.b
+		custom_tooltip = vb_psi_vortex.3.b.tooltip
+		allow = {
+			custom_tooltip = {
+				fail_text = vb_psi_vortex.recently_petitioned
+				NOT = { has_modifier = vb_psi_petitioned_vortex }
+			}
+			custom_tooltip = {
+				fail_text = vb_psi_vortex.too_hungry
+				NOR = {
+					has_modifier = vb_psi_food_level_0
+					has_modifier = vb_psi_food_level_1
+					has_modifier = vb_psi_food_level_2
+					has_modifier = vb_psi_food_level_3
+					has_modifier = vb_psi_food_level_4
+				}
+			}
+		}
+		
+		hidden_effect = {
+			change_variable = {
+				which = vb_psi_food
+				value = @price
+			}
+			add_modifier = {
+				modifier = vb_psi_petitioned_vortex
+				days = 1800
+			}
+		}
+		
+		add_modifier = {
+			modifier = vb_psi_vortex_boon
+			days = 720
+		}
+	}
+}
+
+country_event = {
+	id = vb_psi_vortex.4
+	title = VB_PSI_BLEAK_VORTEX_TITLE
+	desc = vb_psi_vortex.4.desc
+	
+	is_triggered_only = yes
+	diplomatic = yes
+	force_open = yes
+	
+	location = event_target:desired_planet
+	
+	picture_event_data = {
+		portrait = shroud1
+		room = shroud_room
+	}
+	
+	immediate = {
+		set_country_flag = vb_psi_vortex_diplo
+	}
+	
+	after = {
+		remove_country_flag = vb_psi_vortex_diplo
+	}
+	
+	#Disagree
+	option = {
+		name = vb_psi_vortex.4.b
+	}
+	
+	#Agree
+	option = {
+		name = vb_psi_vortex.4.a
+		
+		allow = {
+			custom_tooltip = {
+				fail_text = vb_psi_vortex.no_longer_valid
+				exists = event_target:desired_planet
+				event_target:desired_planet = {
+					is_capital = no
+					owner = {
+						is_same_value = root
+					}
+					count_pops = {
+						limit = { has_trait = trait_vb_psi_soul_eater }
+						count > 4
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			add_modifier = {
+				modifier = vb_psi_petitioned_vortex
+				days = 1800
+			}
+		}
+		
+		event_target:desired_planet = {
+			IF = {
+				limit = {
+					NOR = {
+						is_planet_class = pc_habitat
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				# destroy_colony = yes
+				change_pc = pc_shrouded
+			}
+			IF = {
+				limit = {
+					is_planet_class = pc_habitat
+				}
+				# destroy_colony = yes
+				remove_planet = yes
+			}
+			IF = {
+				limit = {
+					is_planet_class = pc_ringworld_habitable
+				}
+				# destroy_colony = yes
+				change_pc = pc_ringworld_habitable_damaged
+			}
+		}
+	}
+	
+	
+}

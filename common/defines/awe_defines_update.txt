@@ -1,0 +1,13 @@
+NGameplay = {
+		WAR_EXHAUSTION_HIGH_THRESHOLD		  = 2.0		# Apply negative modifier and show alert if war exhaustion >= this
+		ENFORCE_STATUS_QUO_ENABLED	 		  = no		# Can status quo be enforced at high WE?
+		ENFORCE_STATUS_QUO_MONTHS			  = 24	
+}
+NAI = {
+		PEACE_WAR_EXHAUSTION_FACTOR = 150
+		PEACE_OCCUPATION_FACTOR = 150
+		PEACE_STATUS_QUO_FACTOR = -50
+		PEACE_HIGH_WE_STATUS_QUO_FACTOR = 150
+		PEACE_DEMAND_SURRENDER_FACTOR = -75
+		PEACE_RELATIVE_NAVY_STRENGTH_FACTOR = 100			
+}

@@ -1,0 +1,1038 @@
+##############################
+#### 	   	ZoFE Weaponry
+####			By Kolyn
+##############################
+
+
+namespace = fallen_weaponry
+
+event = {
+	id = fallen_weaponry.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		
+		every_planet = {
+			limit = { 
+				has_planet_flag = fallen_empire_world
+				is_capital = yes
+				owner = {
+					OR = {
+						has_ethic = ethic_fanatic_spiritualist
+						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_fanatic_xenophile
+						has_ethic = ethic_fanatic_xenophobe
+						has_ethic = ethic_gestalt_consciousness
+					}
+				}
+			}
+			if = {
+				limit = { 
+					owner = { has_ethic = ethic_fanatic_spiritualist }
+				}
+				set_planet_flag = fallen_spiritualist_capital
+			}
+			if = {
+				limit = { 
+					owner = { has_ethic = ethic_fanatic_materialist }
+				}
+				set_planet_flag = fallen_materialist_capital
+			}
+			if = {
+				limit = { 
+					owner = { has_ethic = ethic_fanatic_xenophile }
+				}
+				set_planet_flag = fallen_xenophile_capital
+			}
+			if = {
+				limit = { 
+					owner = { has_ethic = ethic_fanatic_xenophobe }
+				}
+				set_planet_flag = fallen_xenophobe_capital
+			}
+			if = {
+				limit = { 
+					owner = { has_ethic = ethic_gestalt_consciousness }
+				}
+				set_planet_flag = fallen_machine_capital
+			}
+		}	
+	}
+}
+
+#Hidden Weapon Facility
+planet_event = {
+	id = fallen_weaponry.2
+	title = fallen_weaponry.2.name
+	desc = fallen_weaponry.2.desc
+	picture = GFX_evt_society_research
+	
+	trigger = {
+		OR = {
+			has_planet_flag = fallen_spiritualist_capital
+			has_planet_flag = fallen_materialist_capital
+			has_planet_flag = fallen_xenophile_capital
+			has_planet_flag = fallen_xenophobe_capital
+			has_planet_flag = fallen_machine_capital
+		}
+		NOT = {
+			has_planet_flag = weapons_facility_raided
+		}
+		owner = {
+			is_country_type = ascended_empire
+		}
+		end_game_years_passed >= 0
+	}
+	
+	mean_time_to_happen = {
+		years = 5
+	}
+	
+	immediate = {
+		set_planet_flag = weapons_facility_raided
+	}
+	
+	option = {
+		name = fallen_weaponry.2.a
+		trigger = {
+			root = {
+				has_planet_flag = fallen_spiritualist_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_psi_deflector
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_psi_deflector"
+				location = this
+				owner = root.owner
+			}		
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_psi_missile_system
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_PSI_MISSILES"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}	
+	}
+	
+	option = {
+		name = fallen_weaponry.2.b
+		trigger = {
+			root = {
+				has_planet_flag = fallen_materialist_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_dark_matter_plating
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_DARK_MATTER_PLATING"
+				location = this
+				owner = root.owner
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_shadow_strike_craft
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_SHADOW_STRIKE_CRAFT"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}	
+	}
+	
+	option = {
+		name = fallen_weaponry.2.c
+		trigger = {
+			root = {
+				has_planet_flag = fallen_xenophile_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_improved_dragon_armor
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_IMPROVED_DRAGON_ARMOR"
+				location = this
+				owner = root.owner
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_hellfire_autocannons
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_HELLFIRE_AUTOCANNON"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}	
+	}
+	
+	option = {
+		name = fallen_weaponry.2.d
+		trigger = {
+			root = {
+				has_planet_flag = fallen_xenophobe_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_titan_armor
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_TITAN_ARMOR"
+				location = this
+				owner = root.owner
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_terror_cannon
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_TERROR_CANNON"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}
+	}
+	
+	option = {
+		name = fallen_weaponry.2.e
+		trigger = {
+			root = {
+				has_planet_flag = fallen_machine_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_dark_energy_shield
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_DARK_ENERGY_SHIELD"
+				location = this
+				owner = root.owner
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_ion_disruptor
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_ION_DISRUPTOR"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 5000 }
+			add_resource = { society_research = 5000 }
+			add_resource = { engineering_research = 5000 }
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2011
+	title = fallen_weaponry.2011.name
+	desc = fallen_weaponry.2011.desc
+	picture = GFX_evt_psionics
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_psi_deflector
+			add_tech_progress = {
+				tech = tech_psi_deflector
+				progress = 0.50
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2012
+	title = fallen_weaponry.2012.name
+	desc = fallen_weaponry.2012.desc
+	picture = GFX_evt_psionics
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_psi_missile_system
+			add_tech_progress = {
+				tech = tech_psi_missile_system
+				progress = 0.50
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2021
+	title = fallen_weaponry.2021.name
+	desc = fallen_weaponry.2021.desc
+	picture = GFX_evt_small_space_battle
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_dark_matter_plating
+			add_tech_progress = {
+				tech = tech_dark_matter_plating
+				progress = 0.50
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2022
+	title = fallen_weaponry.2022.name
+	desc = fallen_weaponry.2022.desc
+	picture = GFX_evt_technosphere
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_shadow_strike_craft
+			add_tech_progress = {
+				tech = tech_shadow_strike_craft
+				progress = 0.50
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2031
+	title = fallen_weaponry.2031.name
+	desc = fallen_weaponry.2031.desc
+	picture = GFX_evt_space_dragon
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_improved_dragon_armor
+			add_tech_progress = {
+				tech = tech_improved_dragon_armor
+				progress = 0.50
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2032
+	title = fallen_weaponry.2032.name
+	desc = fallen_weaponry.2032.desc
+	picture = GFX_evt_small_space_battle
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_hellfire_autocannons
+			add_tech_progress = {
+				tech = tech_hellfire_autocannons
+				progress = 0.50
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2041
+	title = fallen_weaponry.2041.name
+	desc = fallen_weaponry.2041.desc
+	picture = GFX_evt_small_space_battle
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_titan_armor
+			add_tech_progress = {
+				tech = tech_titan_armor
+				progress = 0.50
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2042
+	title = fallen_weaponry.2042.name
+	desc = fallen_weaponry.2042.desc
+	picture = GFX_evt_small_space_battle
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_terror_cannon
+			add_tech_progress = {
+				tech = tech_terror_cannon
+				progress = 0.50
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2051
+	title = fallen_weaponry.2051.name
+	desc = fallen_weaponry.2051.desc
+	picture = GFX_evt_small_space_battle
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_dark_energy_shield
+			add_tech_progress = {
+				tech = tech_dark_energy_shield
+				progress = 0.50
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.2052
+	title = fallen_weaponry.2052.name
+	desc = fallen_weaponry.2052.desc
+	picture = GFX_evt_small_space_battle
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_ion_disruptor
+			add_tech_progress = {
+				tech = tech_ion_disruptor
+				progress = 0.50
+			}
+		}
+	}
+}
+
+
+#Omni Weaponry
+planet_event = {
+	id = fallen_weaponry.3
+	title = fallen_weaponry.3.name
+	desc = fallen_weaponry.3.desc
+	picture = GFX_evt_fallen_empire
+	
+	trigger = {
+		OR = {
+			has_planet_flag = fallen_spiritualist_capital
+			has_planet_flag = fallen_materialist_capital
+			has_planet_flag = fallen_xenophile_capital
+			has_planet_flag = fallen_xenophobe_capital
+			has_planet_flag = fallen_machine_capital
+		}
+		has_planet_flag = weapons_facility_raided
+		NOT = {
+			has_planet_flag = omni_weapons_raided
+		}
+		owner = {
+			is_country_type = ascended_empire
+		}
+		end_game_years_passed >= 10
+	}
+	
+	mean_time_to_happen = {
+		years = 5
+	}
+	
+	immediate = {
+		set_planet_flag = omni_weapons_raided
+	}
+	
+	option = {
+		name = fallen_weaponry.3.a
+		trigger = {
+			root = {
+				has_planet_flag = fallen_spiritualist_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_emitter
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_OMNI_EMITTER"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = fallen_weaponry.3.b
+		trigger = {
+			root = {
+				has_planet_flag = fallen_materialist_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_lance
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_OMNI_LANCE"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = fallen_weaponry.3.c
+		trigger = {
+			root = {
+				has_planet_flag = fallen_xenophile_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_cannon
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_OMNI_CANNON"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = fallen_weaponry.3.d
+		trigger = {
+			root = {
+				has_planet_flag = fallen_xenophobe_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_massive_autocannons
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_MASSIVE_AUTOCANNONS"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+	
+	option = {
+		name = fallen_weaponry.3.e
+		trigger = {
+			root = {
+				has_planet_flag = fallen_machine_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_omni_lance
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_OMNI_LANCE"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 10000 }
+			add_resource = { society_research = 10000 }
+			add_resource = { engineering_research = 10000 }
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.301
+	title = fallen_weaponry.301.name
+	desc = fallen_weaponry.301.desc
+	picture = GFX_evt_fallen_empire
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_omni_emitter
+			add_tech_progress = {
+				tech = tech_omni_emitter
+				progress = 0.25
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.302
+	title = fallen_weaponry.302.name
+	desc = fallen_weaponry.302.desc
+	picture = GFX_evt_fallen_empire
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_omni_lance
+			add_tech_progress = {
+				tech = tech_omni_lance
+				progress = 0.25
+			}
+		}
+	}
+}
+
+
+planet_event = {
+	id = fallen_weaponry.303
+	title = fallen_weaponry.303.name
+	desc = fallen_weaponry.303.desc
+	picture = GFX_evt_fallen_empire
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_omni_cannon
+			add_tech_progress = {
+				tech = tech_omni_cannon
+				progress = 0.25
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.304
+	title = fallen_weaponry.304.name
+	desc = fallen_weaponry.304.desc
+	picture = GFX_evt_fallen_empire
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_massive_autocannons
+			add_tech_progress = {
+				tech = tech_massive_autocannons
+				progress = 0.25
+			}
+		}
+	}
+}
+
+#Titan Weaponry
+planet_event = {
+	id = fallen_weaponry.4
+	title = fallen_weaponry.4.name
+	desc = fallen_weaponry.4.desc
+	picture = GFX_evt_fallen_empire_awakes
+	
+	trigger = {
+		OR = {
+			has_planet_flag = fallen_spiritualist_capital
+			has_planet_flag = fallen_materialist_capital
+			has_planet_flag = fallen_xenophile_capital
+			has_planet_flag = fallen_xenophobe_capital
+			has_planet_flag = fallen_machine_capital
+		}
+		AND = {
+			has_planet_flag = weapons_facility_raided
+			has_planet_flag = omni_weapons_raided
+		}
+		NOT = {
+			has_planet_flag = titan_weapons_raided
+		}
+		owner = {
+			is_country_type = ascended_empire
+		}
+		end_game_years_passed >= 15
+	}
+	
+	mean_time_to_happen = {
+		years = 5
+	}
+	
+	immediate = {
+		set_planet_flag = titan_weapons_raided
+	}
+	
+	option = {
+		name = fallen_weaponry.4.a
+		trigger = {
+			root = {
+				has_planet_flag = fallen_spiritualist_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_portal_generator
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_PORTAL_GENERATOR"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = fallen_weaponry.4.b
+		trigger = {
+			root = {
+				has_planet_flag = fallen_materialist_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_dimensional_weapon
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_DIMENSIONAL_WEAPON"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = fallen_weaponry.4.c
+		trigger = {
+			root = {
+				has_planet_flag = fallen_xenophile_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_dragon_breath
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_DRAGON_BREATH"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = fallen_weaponry.4.d
+		trigger = {
+			root = {
+				has_planet_flag = fallen_xenophobe_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_stellarite_weapon
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_STELLARITE_WEAPON"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+	
+	option = {
+		name = fallen_weaponry.4.e
+		trigger = {
+			root = {
+				has_planet_flag = fallen_machine_capital
+			}
+		}
+		if = {
+			limit = {
+				root.owner = {
+					NOT = {
+						has_technology = tech_scrapper_weapon
+					}
+				}
+			}
+			enable_special_project = {
+				name = "PROJECT_SCRAPPER_WEAPON"
+				location = this
+				owner = root.owner
+			}
+		}
+		root.owner = {
+			add_resource = { physics_research = 20000 }
+			add_resource = { society_research = 20000 }
+			add_resource = { engineering_research = 20000 }
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.401
+	title = fallen_weaponry.401.name
+	desc = fallen_weaponry.401.desc
+	picture = GFX_evt_dimensional_horror
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_portal_generator
+			add_tech_progress = {
+				tech = tech_portal_generator
+				progress = 0.10
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.402
+	title = fallen_weaponry.402.name
+	desc = fallen_weaponry.402.desc
+	picture = GFX_evt_dimensional_horror
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_dimensional_weapon
+			add_tech_progress = {
+				tech = tech_dimensional_weapon
+				progress = 0.10
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.403
+	title = fallen_weaponry.403.name
+	desc = fallen_weaponry.403.desc
+	picture = GFX_evt_space_dragon
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_dragon_breath
+			add_tech_progress = {
+				tech = tech_dragon_breath
+				progress = 0.10
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.404
+	title = fallen_weaponry.404.name
+	desc = fallen_weaponry.404.desc
+	picture = GFX_evt_stellarites
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_stellarite_weapon
+			add_tech_progress = {
+				tech = tech_stellarite_weapon
+				progress = 0.10
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = fallen_weaponry.405
+	title = fallen_weaponry.405.name
+	desc = fallen_weaponry.405.desc
+	picture = GFX_evt_fallen_empire_awakes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		root.owner = {
+			add_research_option = tech_scrapper_weapon
+			add_tech_progress = {
+				tech = tech_scrapper_weapon
+				progress = 0.10
+			}
+		}
+	}
+}

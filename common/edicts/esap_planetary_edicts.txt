@@ -1,0 +1,1957 @@
+##########################################################################
+# Planet edicts
+##########################################################################
+
+# Variables:
+#  name, the name of the edict, also serves as localisation key.
+#  influence_cost, the base influence cost of activating the edict.
+#  potential, planet or country trigger to decide whether the edict should be shown.
+#  allow, planet or country trigger to decide if whether this edict can be activated.
+#  effect, an effect that is executed when this trigger activates.
+#  prerequisites, tech requirements for this trigger.
+#  ai_will_do, determines AI scoring for edict
+#  modifier, a list of modifiers
+#  length, number of days the trigger is active.
+
+# Sets the edict-cost for all edicts with this variable
+@standardEdictCost = 150
+
+# Digs for more minerals
+planet_edict = {
+	name = "esap_deep_core_mining"
+	#influence_cost = 50
+	length = 0
+	
+	effect = {
+		add_modifier = {
+			modifier = "mod_esap_mining_1"
+			days = 6200
+		}
+		owner = {
+			add_energy = -500
+			add_influence = -50
+		}
+		if = {
+			limit = {
+				Not = {
+					has_planet_flag = have_used_deep_core_mining
+				}
+			}
+			set_planet_flag = have_used_deep_core_mining 
+			set_planet_flag = esap_deep_core_mining_1
+			switch = {
+				trigger = has_planet_flag 
+				
+				esap_deep_core_mining_10 = {
+					remove_planet_flag = esap_deep_core_mining_10 
+					set_planet_flag = esap_deep_core_mining_11  
+					every_tile = {
+						random_list = {
+							95 = { }
+							5 = {add_deposit = d_rich_mineral_deposit }			
+						}
+					}	
+				}
+				esap_deep_core_mining_9 = {
+					remove_planet_flag = esap_deep_core_mining_9 
+					set_planet_flag = esap_deep_core_mining_10  
+					every_tile = {
+						random_list = {
+							90 = { }
+							10 = {add_deposit = d_rich_mineral_deposit }			
+						}
+					}	
+				}
+				esap_deep_core_mining_8 = {
+					remove_planet_flag = esap_deep_core_mining_8 
+					set_planet_flag = esap_deep_core_mining_9  
+					every_tile = {
+						random_list = {
+							85 = { }
+							15 = {add_deposit = d_rich_mineral_deposit }			
+						}
+					}	
+				}
+				esap_deep_core_mining_7 = {
+					remove_planet_flag = esap_deep_core_mining_7 
+					set_planet_flag = esap_deep_core_mining_8  
+					every_tile = {
+						random_list = {
+							80 = { }
+							20 = {add_deposit = d_rich_mineral_deposit }			
+						}
+					}	
+				}
+				esap_deep_core_mining_6 = {
+					remove_planet_flag = esap_deep_core_mining_6 
+					set_planet_flag = esap_deep_core_mining_7  
+					every_tile = {
+						random_list = {
+							75 = { }
+							25 = {add_deposit = d_rich_mineral_deposit }			
+						}
+					}	
+				}
+				esap_deep_core_mining_5 = {
+					remove_planet_flag = esap_deep_core_mining_5 
+					set_planet_flag = esap_deep_core_mining_6  
+					every_tile = {
+						random_list = {
+							70 = { }
+							30 = {add_deposit = d_rich_mineral_deposit }			
+						}
+					}	
+				}
+				esap_deep_core_mining_4 = {
+					remove_planet_flag = esap_deep_core_mining_4 
+					set_planet_flag = esap_deep_core_mining_5  
+					every_tile = {
+						random_list = {
+							65 = { }
+							35 = {add_deposit = d_rich_mineral_deposit }			
+						}
+					}	
+				}
+				esap_deep_core_mining_3 = {
+					remove_planet_flag = esap_deep_core_mining_3 
+					set_planet_flag = esap_deep_core_mining_4  
+					every_tile = {
+						random_list = {
+							60 = { }
+							40 = {add_deposit = d_rich_mineral_deposit }			
+						}
+					}	
+				}
+				esap_deep_core_mining_2 = {
+					remove_planet_flag = esap_deep_core_mining_2 
+					set_planet_flag = esap_deep_core_mining_3  
+					every_tile = {
+						random_list = {
+							55 = { }
+							45 = {add_deposit = d_rich_mineral_deposit }			
+						}
+					}	
+				}
+				esap_deep_core_mining_1 = {
+					remove_planet_flag = esap_deep_core_mining_1 
+					set_planet_flag = esap_deep_core_mining_2  
+					every_tile = {
+						random_list = {
+							50 = { }
+							50 = {add_deposit = d_rich_mineral_deposit }			
+						}
+					}	
+				}
+			}
+		}
+		
+	}
+	
+	potential = {
+		owner = {
+			has_ascension_perk = ap_esap_mining_1 
+		}
+		Not = {
+			has_modifier = mod_esap_ecumenopolis
+		}
+		Not = {
+			has_planet_flag = esap_deep_core_mining_11
+		}
+		planet = {
+			NOT = { is_planet_class = pc_habitat }
+		}
+	}
+	
+	allow = {
+		owner = {
+			energy > 499
+			influence > 49
+		}
+		Not = {
+			has_modifier = mod_esap_mining_1
+		}
+	}
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+# Creates a Forge World
+planet_edict = {
+	name = "esap_forge_world"
+	#influence_cost = 100
+	length = 0
+	
+	effect = {
+		add_modifier = {
+			modifier = "mod_esap_mining_2"
+			days = -1
+		}
+		owner = {
+			add_energy = -1500			
+			add_influence = -100
+		}
+	}
+	
+	potential = {
+		owner = {
+			has_ascension_perk = ap_esap_mining_2 
+		}
+		Not = {
+			has_modifier = mod_esap_ecumenopolis
+		}
+		Not = {
+			has_modifier = mod_esap_mining_2			
+		}
+		planet = {
+			NOT = { is_planet_class = pc_habitat }
+		}
+	}
+	
+	allow = {
+		owner = {
+			energy > 1499
+			influence > 99
+		}
+	}
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+# Removes forge world
+planet_edict = {
+	name = "esap_de_forge_world"
+	#influence_cost = 100
+	length = 0
+	
+	effect = {
+		remove_modifier = "mod_esap_mining_2"
+		owner = {
+			add_energy = -2500
+		}
+	}
+	
+	potential = {
+		#owner = {
+		#	has_ascension_perk = ap_esap_mining_2 
+		#}
+		has_modifier = mod_esap_mining_2
+		planet = {
+			NOT = { is_planet_class = pc_habitat }
+		}
+	}
+	
+	allow = {
+		owner = {
+			energy > 2499
+		}
+	}
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+# Creates an ecumenopolis
+planet_edict = {
+	name = "esap_ecumenopolis"
+	influence_cost = 0
+	length = 0
+	
+	effect = {
+		every_tile = {
+			clear_deposits = yes
+		}
+		Hidden_effect = {
+			add_modifier = {
+				modifier = "mod_esap_ecumenopolis"
+				days = -1
+			}
+		}
+		owner = {
+			add_influence = -250
+		}
+		switch = {
+			trigger = num_pops
+			1 = { owner = { add_energy = -200 } }
+			2 = { owner = { add_energy = -400 } }
+			3 = { owner = { add_energy = -600 } }
+			4 = { owner = { add_energy = -800 } }
+			5 = { owner = { add_energy = -1000 } }
+			6 = { owner = { add_energy = -1200 } }
+			7 = { owner = { add_energy = -1400 } }
+			8 = { owner = { add_energy = -1600 } }
+			9 = { owner = { add_energy = -1800 } }
+			10 = { owner = { add_energy = -2000 } }
+			11 = { owner = { add_energy = -2200 } }
+			12 = { owner = { add_energy = -2400 } }
+			13 = { owner = { add_energy = -2600 } }
+			14 = { owner = { add_energy = -2800 } }
+			15 = { owner = { add_energy = -3000 } }
+			16 = { owner = { add_energy = -3200 } }
+			17 = { owner = { add_energy = -3400 } }
+			18 = { owner = { add_energy = -3600 } }
+			19 = { owner = { add_energy = -3800 } }
+			20 = { owner = { add_energy = -4000 } }
+			21 = { owner = { add_energy = -4200 } }
+			22 = { owner = { add_energy = -4400 } }
+			23 = { owner = { add_energy = -4600 } }
+			24 = { owner = { add_energy = -4800 } }
+			25 = { owner = { add_energy = -5000 } }
+			26 = { owner = { add_energy = -5200 } }
+			27 = { owner = { add_energy = -5400 } }
+			28 = { owner = { add_energy = -5600 } }
+			29 = { owner = { add_energy = -5800 } }
+			30 = { owner = { add_energy = -6000 } }    
+		}		
+	}
+	
+	potential = {
+		owner = {
+			has_ascension_perk = ap_esap_ecumenopolis
+		}
+		Not = {
+			has_modifier = mod_esap_mining_2
+		}
+		Not = {
+			has_modifier = mod_esap_ecumenopolis
+		}
+		planet = {
+			NOT = { is_planet_class = pc_habitat }
+		}
+	}
+	
+	allow = {
+		owner = {
+			influence > 249
+		}
+		custom_tooltip = {
+			fail_text = "esap_ecumenopolis_edict_req_1"
+			OR = {
+				AND = { num_pops = 1 owner = { energy > 199 } }
+				AND = { num_pops = 2 owner = { energy > 399 } }
+				AND = { num_pops = 3 owner = { energy > 599 } }
+				AND = { num_pops = 4 owner = { energy > 799 } }
+				AND = { num_pops = 5 owner = { energy > 999 } }
+				AND = { num_pops = 6 owner = { energy > 1199 } }
+				AND = { num_pops = 7 owner = { energy > 1399 } }
+				AND = { num_pops = 8 owner = { energy > 1599 } }
+				AND = { num_pops = 9 owner = { energy > 1799 } }
+				AND = { num_pops = 10 owner = { energy > 1999 } }
+				AND = { num_pops = 11 owner = { energy > 2199 } }
+				AND = { num_pops = 12 owner = { energy > 2399 } }
+				AND = { num_pops = 13 owner = { energy > 2599 } }
+				AND = { num_pops = 14 owner = { energy > 2799 } }
+				AND = { num_pops = 15 owner = { energy > 2999 } }
+				AND = { num_pops = 16 owner = { energy > 3199 } }
+				AND = { num_pops = 17 owner = { energy > 3399 } }
+				AND = { num_pops = 18 owner = { energy > 3599 } }
+				AND = { num_pops = 19 owner = { energy > 3799 } }
+				AND = { num_pops = 20 owner = { energy > 3999 } }
+				AND = { num_pops = 21 owner = { energy > 4199 } }
+				AND = { num_pops = 22 owner = { energy > 4399 } }
+				AND = { num_pops = 23 owner = { energy > 4599 } }
+				AND = { num_pops = 24 owner = { energy > 4799 } }
+				AND = { num_pops = 25 owner = { energy > 4999 } }
+				AND = { num_pops = 26 owner = { energy > 5199 } }
+				AND = { num_pops = 27 owner = { energy > 5399 } }
+				AND = { num_pops = 28 owner = { energy > 5599 } }
+				AND = { num_pops = 29 owner = { energy > 5799 } }
+				AND = { num_pops = 30 owner = { energy > 5999 } }
+			}
+		}
+		custom_tooltip = {
+			fail_text = "esap_ecumenopolis_edict_req_2"
+			Not = {
+				any_tile = {
+					has_blocker = yes
+				}
+			}			
+		}
+	} 
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+#  Removes an ecumenopolis
+planet_edict = {
+	name = "esap_de_ecumenopolis"
+	#influence_cost = 100
+	length = 0
+	
+	effect = {
+		remove_modifier = "mod_esap_ecumenopolis"
+		owner = {
+			add_energy = -2000
+			add_minerals = -2000
+		}
+	}
+	
+	potential = {
+		#owner = {
+		#	has_ascension_perk = ap_esap_ecumenopolis
+		#}
+		has_modifier = mod_esap_ecumenopolis
+		planet = {
+			NOT = { is_planet_class = pc_habitat }
+		}
+	}
+	
+	allow = {
+		owner = {
+			energy > 1999
+			minerals > 1999
+		}		
+	}
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+# searcher for more resources
+planet_edict = {
+	name = "esap_nature_2"
+	#influence_cost = 100
+	length = 0
+	
+	effect = {
+		owner = {
+			add_energy = -500
+		}
+		if = {
+			limit = {
+				Not = {
+					has_planet_flag = have_used_nature_2
+				}
+			}
+			set_planet_flag = have_used_nature_2
+			set_planet_flag = esap_nature_2_1
+			switch = {
+				trigger = has_planet_flag 
+				
+				esap_nature_2_5 = {
+					remove_planet_flag = esap_nature_2_5
+					set_planet_flag = esap_nature_2_6  
+					set_timed_planet_flag = {
+						flag = esap_nature_2_cd
+						days = 18000
+					}
+					every_tile = {
+						random_list = {
+							95 = { }
+							5 = {
+								if = {
+									limit = {
+										has_resource = { type = minerals amount > 0 }
+									}
+									add_deposit = d_rich_mineral_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = energy amount > 0 }
+									}
+									add_deposit = d_rich_energy_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = food amount > 0 }
+									}
+									add_deposit = d_rich_farmland_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = society_research amount > 0 }
+									}
+									add_deposit = d_rich_society_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = physics_research amount > 0 }
+									}
+									add_deposit = d_rich_physics_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = engineering_research amount > 0 }
+									}
+									add_deposit = d_rich_engineering_deposit
+								}		
+								if = {
+									limit = {
+										And = {
+											has_resource = { type = minerals amount < 1 }
+											has_resource = { type = energy amount < 1 }
+											has_resource = { type = food amount < 1 }
+											has_resource = { type = society_research amount < 1 }
+											has_resource = { type = physics_research amount < 1 }
+											has_resource = { type = engineering_research amount < 1 }										
+										}
+									}
+									random_list = {
+										1 = {add_deposit = d_rich_mineral_deposit }
+										1 = {add_deposit = d_rich_energy_deposit }
+										1 = {add_deposit = d_rich_farmland_deposit }
+										1 = {add_deposit = d_rich_society_deposit }
+										1 = {add_deposit = d_rich_physics_deposit }
+										1 = {add_deposit = d_rich_engineering_deposit }
+									}
+								}								
+							}			
+						}
+					}	
+				}			
+				esap_nature_2_4 = {
+					remove_planet_flag = esap_nature_2_4
+					set_planet_flag = esap_nature_2_5  
+					set_timed_planet_flag = {
+						flag = esap_nature_2_cd
+						days = 18000
+					}
+					every_tile = {
+						random_list = {
+							85 = { }
+							15 = {
+								if = {
+									limit = {
+										has_resource = { type = minerals amount > 0 }
+									}
+									add_deposit = d_rich_mineral_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = energy amount > 0 }
+									}
+									add_deposit = d_rich_energy_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = food amount > 0 }
+									}
+									add_deposit = d_rich_farmland_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = society_research amount > 0 }
+									}
+									add_deposit = d_rich_society_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = physics_research amount > 0 }
+									}
+									add_deposit = d_rich_physics_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = engineering_research amount > 0 }
+									}
+									add_deposit = d_rich_engineering_deposit
+								}		
+								if = {
+									limit = {
+										And = {
+											has_resource = { type = minerals amount < 1 }
+											has_resource = { type = energy amount < 1 }
+											has_resource = { type = food amount < 1 }
+											has_resource = { type = society_research amount < 1 }
+											has_resource = { type = physics_research amount < 1 }
+											has_resource = { type = engineering_research amount < 1 }										
+										}
+									}
+									random_list = {
+										1 = {add_deposit = d_rich_mineral_deposit }
+										1 = {add_deposit = d_rich_energy_deposit }
+										1 = {add_deposit = d_rich_farmland_deposit }
+										1 = {add_deposit = d_rich_society_deposit }
+										1 = {add_deposit = d_rich_physics_deposit }
+										1 = {add_deposit = d_rich_engineering_deposit }
+									}
+								}							
+							}			
+						}
+					}	
+				}
+				esap_nature_2_3 = {
+					remove_planet_flag = esap_nature_2_3
+					set_planet_flag = esap_nature_2_4
+					set_timed_planet_flag = {
+						flag = esap_nature_2_cd
+						days = 18000
+					}
+					every_tile = {
+						random_list = {
+							70 = { }
+							30 = {
+								if = {
+									limit = {
+										has_resource = { type = minerals amount > 0 }
+									}
+									add_deposit = d_rich_mineral_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = energy amount > 0 }
+									}
+									add_deposit = d_rich_energy_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = food amount > 0 }
+									}
+									add_deposit = d_rich_farmland_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = society_research amount > 0 }
+									}
+									add_deposit = d_rich_society_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = physics_research amount > 0 }
+									}
+									add_deposit = d_rich_physics_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = engineering_research amount > 0 }
+									}
+									add_deposit = d_rich_engineering_deposit
+								}								
+								if = {
+									limit = {
+										And = {
+											has_resource = { type = minerals amount < 1 }
+											has_resource = { type = energy amount < 1 }
+											has_resource = { type = food amount < 1 }
+											has_resource = { type = society_research amount < 1 }
+											has_resource = { type = physics_research amount < 1 }
+											has_resource = { type = engineering_research amount < 1 }										
+										}
+									}
+									random_list = {
+										1 = {add_deposit = d_rich_mineral_deposit }
+										1 = {add_deposit = d_rich_energy_deposit }
+										1 = {add_deposit = d_rich_farmland_deposit }
+										1 = {add_deposit = d_rich_society_deposit }
+										1 = {add_deposit = d_rich_physics_deposit }
+										1 = {add_deposit = d_rich_engineering_deposit }
+									}
+								}	
+							}			
+						}
+					}	
+				}
+				esap_nature_2_2 = {
+					remove_planet_flag = esap_nature_2_2
+					set_planet_flag = esap_nature_2_3  
+					set_timed_planet_flag = {
+						flag = esap_nature_2_cd
+						days = 18000
+					}
+					every_tile = {
+						random_list = {
+							50 = { }
+							50 = {
+								if = {
+									limit = {
+										has_resource = { type = minerals amount > 0 }
+									}
+									add_deposit = d_rich_mineral_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = energy amount > 0 }
+									}
+									add_deposit = d_rich_energy_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = food amount > 0 }
+									}
+									add_deposit = d_rich_farmland_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = society_research amount > 0 }
+									}
+									add_deposit = d_rich_society_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = physics_research amount > 0 }
+									}
+									add_deposit = d_rich_physics_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = engineering_research amount > 0 }
+									}
+									add_deposit = d_rich_engineering_deposit
+								}									
+								if = {
+									limit = {
+										And = {
+											has_resource = { type = minerals amount < 1 }
+											has_resource = { type = energy amount < 1 }
+											has_resource = { type = food amount < 1 }
+											has_resource = { type = society_research amount < 1 }
+											has_resource = { type = physics_research amount < 1 }
+											has_resource = { type = engineering_research amount < 1 }										
+										}
+									}
+									random_list = {
+										1 = {add_deposit = d_rich_mineral_deposit }
+										1 = {add_deposit = d_rich_energy_deposit }
+										1 = {add_deposit = d_rich_farmland_deposit }
+										1 = {add_deposit = d_rich_society_deposit }
+										1 = {add_deposit = d_rich_physics_deposit }
+										1 = {add_deposit = d_rich_engineering_deposit }
+									}
+								}			
+							}			
+						}
+					}	
+				}
+				esap_nature_2_1 = {
+					remove_planet_flag = esap_nature_2_1
+					set_planet_flag = esap_nature_2_2
+					set_timed_planet_flag = {
+						flag = esap_nature_2_cd
+						days = 18000
+					}
+					every_tile = {
+						random_list = {
+							25 = { }
+							75 = {
+								if = {
+									limit = {
+										has_resource = { type = minerals amount > 0 }
+									}
+									add_deposit = d_rich_mineral_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = energy amount > 0 }
+									}
+									add_deposit = d_rich_energy_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = food amount > 0 }
+									}
+									add_deposit = d_rich_farmland_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = society_research amount > 0 }
+									}
+									add_deposit = d_rich_society_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = physics_research amount > 0 }
+									}
+									add_deposit = d_rich_physics_deposit
+								}
+								if = {
+									limit = {
+										has_resource = { type = engineering_research amount > 0 }
+									}
+									add_deposit = d_rich_engineering_deposit
+								}				
+								if = {
+									limit = {
+										And = {
+											has_resource = { type = minerals amount < 1 }
+											has_resource = { type = energy amount < 1 }
+											has_resource = { type = food amount < 1 }
+											has_resource = { type = society_research amount < 1 }
+											has_resource = { type = physics_research amount < 1 }
+											has_resource = { type = engineering_research amount < 1 }										
+										}
+									}
+									random_list = {
+										1 = {add_deposit = d_rich_mineral_deposit }
+										1 = {add_deposit = d_rich_energy_deposit }
+										1 = {add_deposit = d_rich_farmland_deposit }
+										1 = {add_deposit = d_rich_society_deposit }
+										1 = {add_deposit = d_rich_physics_deposit }
+										1 = {add_deposit = d_rich_engineering_deposit }
+									}
+								}								
+							}			
+						}
+					}	
+				}
+			}
+		}	
+	}
+	
+	potential = {
+		owner = {
+			has_ascension_perk = ap_esap_nature_2
+		}
+		planet = {
+			NOT = { is_planet_class = pc_habitat }
+		}
+		Not = {
+			 has_planet_flag =  esap_nature_2_6
+		}
+	}
+	
+	allow = {
+		owner = {
+			energy > 499
+		}
+		Not = {
+			has_modifier = mod_esap_ecumenopolis
+		}
+		custom_tooltip = {
+			fail_text = "esap_nature_2_edict_req_1"
+			Not = {
+				 has_planet_flag =  esap_nature_2_cd
+			}
+		}
+	}
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+#  Removes negative modifiers
+planet_edict = {
+	name = "esap_nature_2_remove_neg"
+	#influence_cost = 100
+	length = 0
+	
+	effect = {
+		owner = {
+			add_energy = -500
+			add_influence = -100
+		}
+		switch = {
+			trigger = has_modifier 
+			
+			weak_magnetic_field = {remove_modifier = "weak_magnetic_field" }
+			tidal_locked = {remove_modifier = "tidal_locked" }
+			mineral_poor = {remove_modifier = "mineral_poor" }
+			bleak_planet = {remove_modifier = "bleak_planet" }
+			irradiated_planet = {remove_modifier = "irradiated_planet" }
+			high_gravity = {remove_modifier = "high_gravity" }
+		}
+	}
+	
+	potential = {
+		owner = {
+			has_ascension_perk = ap_esap_nature_2
+		}
+		Or = {
+			has_modifier = weak_magnetic_field
+			has_modifier = tidal_locked
+			has_modifier = mineral_poor
+			has_modifier = bleak_planet
+			has_modifier = irradiated_planet
+			has_modifier = high_gravity
+		}
+		planet = {
+			NOT = { is_planet_class = pc_habitat }
+		}
+	}
+	
+	allow = {
+		owner = {
+			energy > 499
+			influence > 99
+		}		
+	}
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+#  Removes neutral modifiers
+planet_edict = {
+	name = "esap_nature_2_remove_neu"
+	#influence_cost = 100
+	length = 0
+	
+	effect = {
+		owner = {
+			add_energy = -500
+			add_influence = -100
+		}
+		switch = {
+			trigger = has_modifier 
+			
+			hazardous_weather = {remove_modifier = "hazardous_weather" }
+			dangerous_wildlife = {remove_modifier = "dangerous_wildlife" }
+			unstable_tectonics = {remove_modifier = "unstable_tectonics" }
+			asteroid_impacts = {remove_modifier = "asteroid_impacts" }
+			wild_storms = {remove_modifier = "wild_storms" }
+			atmospheric_aphrodisiac = {remove_modifier = "atmospheric_aphrodisiac" }
+		}
+	}
+	
+	potential = {
+		owner = {
+			has_ascension_perk = ap_esap_nature_2
+		}
+		Or = {
+			has_modifier = hazardous_weather
+			has_modifier = dangerous_wildlife
+			has_modifier = unstable_tectonics
+			has_modifier = asteroid_impacts
+			has_modifier = wild_storms
+			has_modifier = atmospheric_aphrodisiac
+		}
+		planet = {
+			NOT = { is_planet_class = pc_habitat }
+		}
+	}
+	
+	allow = {
+		owner = {
+			energy > 499
+			influence > 99
+		}		
+	}
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+# Fetches species
+planet_edict = {
+	name = "esap_give_assylum"
+	#influence_cost = 100
+	length = 0
+	
+	effect = {
+		Hidden_Effect = {
+			Random_Country = {
+				limit = {
+					has_communications = root.owner
+					any_owned_pop = {
+						Not = {
+							root.owner = {
+								any_owned_pop_species = {
+									is_same_species = prevprev
+								}
+							}
+						}
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+					}				
+				}				
+				random_owned_pop = {
+					limit = {
+						Not = {
+							root.owner = {
+								any_owned_pop_species = {
+									is_same_species = prevprev
+								}
+							}
+						}
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+					}
+					save_global_event_target_as = esap_assylum_spec_1
+				}
+			}
+			Random_Country = {
+				limit = {
+					has_communications = root.owner
+					any_owned_pop = {
+						Not = {
+							root.owner = {
+								any_owned_pop_species = {
+									is_same_species = prevprev
+								}
+							}
+						}
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_assylum_spec_1
+						}
+					}				
+				}
+				random_owned_pop = {
+					limit = {
+						Not = {
+							root.owner = {
+								any_owned_pop_species = {
+									is_same_species = prevprev
+								}
+							}
+						}
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_assylum_spec_1
+						}
+					}
+					save_global_event_target_as = esap_assylum_spec_2
+				}
+			}
+			Random_Country = {
+				limit = {
+					has_communications = root.owner
+					any_owned_pop = {
+						Not = {
+							root.owner = {
+								any_owned_pop_species = {
+									is_same_species = prevprev
+								}
+							}
+						}
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_assylum_spec_1
+							is_same_species = event_target:esap_assylum_spec_2
+						}
+					}				
+				}				
+				random_owned_pop = {
+					limit = {
+						Not = {
+							root.owner = {
+								any_owned_pop_species = {
+									is_same_species = prevprev
+								}
+							}
+						}
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_assylum_spec_1
+							is_same_species = event_target:esap_assylum_spec_2
+						}
+					}
+					save_global_event_target_as = esap_assylum_spec_3
+				}
+			}
+			Random_Country = {
+				limit = {
+					has_communications = root.owner
+					any_owned_pop = {
+						Not = {
+							root.owner = {
+								any_owned_pop_species = {
+									is_same_species = prevprev
+								}
+							}
+						}
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							has_trait = trait_robotic_1
+							has_trait = trait_robotic_2
+							has_trait = trait_robotic_3
+							has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_assylum_spec_1
+							is_same_species = event_target:esap_assylum_spec_2
+							is_same_species = event_target:esap_assylum_spec_3
+						}
+					}				
+				}				
+				random_owned_pop = {
+					limit = {
+						Not = {
+							root.owner = {
+								any_owned_pop_species = {
+									is_same_species = prevprev
+								}
+							}
+						}
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_assylum_spec_1
+							is_same_species = event_target:esap_assylum_spec_2
+							is_same_species = event_target:esap_assylum_spec_3
+						}
+					}
+					save_global_event_target_as = esap_assylum_spec_4
+				}
+			}
+			Random_Country = {
+				limit = {
+					has_communications = root.owner
+					any_owned_pop = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.3
+							}
+						}
+						Nor = {
+							has_trait = trait_robotic_1
+							has_trait = trait_robotic_2
+							has_trait = trait_robotic_3
+							has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_assylum_spec_1.species
+							is_same_species = event_target:esap_assylum_spec_2.species
+							is_same_species = event_target:esap_assylum_spec_3.species
+							is_same_species = event_target:esap_assylum_spec_4.species
+						}
+					}				
+				}				
+				random_owned_pop = {
+					limit = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.3
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_assylum_spec_1
+							is_same_species = event_target:esap_assylum_spec_2
+							is_same_species = event_target:esap_assylum_spec_3
+							is_same_species = event_target:esap_assylum_spec_4
+						}
+					}
+					save_global_event_target_as = esap_assylum_spec_5
+				}
+			}
+		}
+		custom_tooltip = "esap_give_assylum_effect"
+		owner = {
+			add_influence = -50
+		}
+		Hidden_Effect = {
+			#clear_global_event_target = event_target:esap_assylum_spec_1
+			#clear_global_event_target = event_target:esap_assylum_spec_2
+			#clear_global_event_target = event_target:esap_assylum_spec_3
+			#clear_global_event_target = event_target:esap_assylum_spec_4
+		}
+		Hidden_effect = {
+			set_timed_planet_flag = {
+				flag = esap_used_grant_assylum
+				days = 900
+			}			
+			planet_event = {
+				id = esap.22
+			}
+		}		
+	}
+	
+	potential = {
+		owner = {
+			has_ascension_perk = ap_esap_xenophile_1
+		}
+	}
+	
+	allow = {	
+		custom_tooltip = {
+			fail_text = "esap_give_assylum_req_1"
+			Not = {
+				 has_planet_flag = esap_used_grant_assylum
+			}
+		}
+		custom_tooltip = {
+			fail_text = "esap_give_assylum_req_2"
+			any_tile = {
+				has_pop = no
+				has_blocker = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = "esap_give_assylum_req_3"
+			any_country = {
+				has_communications = root.owner
+				Not = {
+					is_same_empire = root.owner
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "esap_give_assylum_req_4"
+			owner = {
+				influence > 49
+			}	
+		}
+		custom_tooltip = {
+			fail_text = "esap_give_assylum_req_5"
+			owner = {
+				energy > 249
+			}	
+		}
+		
+	}
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+# Rare techs - border range
+planet_edict = {
+	name = "esap_rare_tech_sensors"
+	influence_cost = 150
+	length = 3600
+	
+	prerequisites = {
+		"tech_esap_rare_tech_sensor"
+	}
+	
+	modifier = {
+		planet_sensor_range_mult = 1.50
+	}
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+# Rare techs - border range
+planet_edict = {
+	name = "esap_rare_tech_borders"
+	influence_cost = 150
+	length = 3600
+	
+	prerequisites = {
+		"tech_esap_rare_tech_borders"
+	}
+	
+	modifier = {
+		planet_border_mult = 1.00
+	}
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+# Consume Planet
+planet_edict = {
+	name = "esap_hive_consume_planet"
+	influence_cost = 0
+	length = 0
+	
+	effect = {
+		owner = {
+			add_influence = -100			
+		}
+		every_tile = {
+			root.owner = {
+				if = {
+					limit = {
+						root = {
+							Not = {
+								has_planet_flag = esap_planet_consumed
+							}
+						}
+					}
+					add_monthly_resource_mult = {
+						resource = food
+						value = 2
+						min = 5
+						max = 250
+					}
+					add_monthly_resource_mult = {
+						resource = minerals
+						value = 2
+						min = 5
+						max = 1500
+					}	
+					add_monthly_resource_mult = {
+						resource = energy
+						value = 2
+						min = 5
+						max = 250
+					}
+					else = {
+						add_monthly_resource_mult = {
+							resource = food
+							value = 1
+							min = 3
+							max = 50
+						}
+						add_monthly_resource_mult = {
+							resource = minerals
+							value = 1
+							min = 3
+							max = 50
+						}	
+						add_monthly_resource_mult = {
+							resource = energy
+							value = 1
+							min = 3
+							max = 50
+						}					
+					}
+				}	
+			}		
+		}
+		hidden_effect = {
+			clear_planet_modifiers = yes
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					Not = {
+						has_planet_flag = esap_planet_consumed
+					}
+				}
+				set_planet_flag = esap_planet_consumed
+			}
+			if = {
+				limit = {
+					Not = {
+						has_modifier = mod_esap_planet_consumed
+					}
+				}
+				add_modifier = {
+					modifier = "mod_esap_planet_consumed"
+					days = -1
+				}
+			}
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+			switch = {
+				trigger = has_modifier 
+				
+				hazardous_weather = {remove_modifier = "hazardous_weather" }
+				dangerous_wildlife = {remove_modifier = "dangerous_wildlife" }
+				unstable_tectonics = {remove_modifier = "unstable_tectonics" }
+				asteroid_impacts = {remove_modifier = "asteroid_impacts" }
+				wild_storms = {remove_modifier = "wild_storms" }
+				atmospheric_aphrodisiac = {remove_modifier = "atmospheric_aphrodisiac" }
+			
+				weak_magnetic_field = {remove_modifier = "weak_magnetic_field" }
+				tidal_locked = {remove_modifier = "tidal_locked" }
+				mineral_poor = {remove_modifier = "mineral_poor" }
+				bleak_planet = {remove_modifier = "bleak_planet" }
+				irradiated_planet = {remove_modifier = "irradiated_planet" }
+				high_gravity = {remove_modifier = "high_gravity" }
+			}
+		}
+		change_pc = pc_barren
+	}
+	
+	potential = {
+		owner = {
+			has_ascension_perk = ap_esap_hive_consume_planet
+		}
+		NOT = { 
+			has_planet_flag = esap_planet_consumed
+		}
+		is_capital = no
+	}
+	
+	allow = {
+		owner = {
+			influence > 99
+		}		
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Converts pops to spiritualist
+planet_edict = {
+	name = "esap_spiritualist_2_convert"
+	influence_cost = 100
+	length = 0
+	
+	effect = {
+		custom_tooltip = "esap_spiritualist_2_convert_effect"
+		#owner = {
+		#	add_influence = -100
+		#}
+		hidden_effect = {
+			planet = {
+				random_owned_pop = {
+					limit = {
+						Not = {
+							has_ethic = ethic_spiritualist
+						}
+					}
+					pop_change_ethic = ethic_spiritualist
+				}				
+				random_list = {
+					2 = { }
+					1 = {
+						random_owned_pop = {
+							limit = {
+								Not = {
+									has_ethic = ethic_spiritualist
+								}
+							}
+							pop_change_ethic = ethic_spiritualist
+						}	
+					}			
+				}
+				random_list = {
+					2 = { }
+					1 = {
+						random_owned_pop = {
+							limit = {
+								Not = {
+									has_ethic = ethic_spiritualist
+								}
+							}
+							pop_change_ethic = ethic_spiritualist
+						}	
+					}			
+				}
+				random_list = {
+					2 = { }
+					1 = {
+						random_owned_pop = {
+							limit = {
+								Not = {
+									has_ethic = ethic_spiritualist
+								}
+							}
+							pop_change_ethic = ethic_spiritualist
+						}	
+					}			
+				}
+				planet = {
+					set_timed_planet_flag = { 
+						flag = esap_convert_cd
+						days = 720 
+					}
+				}
+			}		
+		}
+		
+	}
+	
+	potential = {
+		owner = {
+			has_ascension_perk = ap_esap_spiritualist_2
+		}
+		planet = {
+			any_owned_pop = {
+				Not = {
+					has_ethic = ethic_spiritualist
+				}
+			}
+		}
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "esap_spiritualist_2_convert_req_2"
+			planet = {
+				Not = {
+					has_planet_flag = esap_convert_cd
+				}
+			}	
+		}	
+		custom_tooltip = {
+			fail_text = "esap_spiritualist_2_convert_req_1"
+			owner = {
+				influence > 99
+			}	
+		}		
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Raids for Slaves
+planet_edict = {
+	name = "esap_raid_for_slaves"
+	#influence_cost = 100
+	length = 0
+	
+	effect = {
+		custom_tooltip = "esap_raid_for_slaves_effect_1"
+		custom_tooltip = "esap_raid_for_slaves_effect_2"
+		Hidden_Effect = {
+			Random_Country = {
+				limit = {
+					has_communications = root.owner
+					is_neighbor_of = root.owner
+					any_owned_pop = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						has_citizenship_type = { 
+							country = root.owner
+							type = citizenship_slavery
+						}
+					}				
+				}				
+				random_owned_pop = {
+					limit = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						has_citizenship_type = { 
+							country = root.owner
+							type = citizenship_slavery
+						}
+					}
+					save_global_event_target_as = esap_slave_raid_spec_1
+				}
+			}
+			Random_Country = {
+				limit = {
+					has_communications = root.owner
+					is_neighbor_of = root.owner
+					any_owned_pop = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_slave_raid_spec_1
+						}
+						has_citizenship_type = { 
+							country = root.owner
+							type = citizenship_slavery
+						}
+					}				
+				}				
+				random_owned_pop = {
+					limit = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_slave_raid_spec_1
+						}
+						has_citizenship_type = { 
+							country = root.owner
+							type = citizenship_slavery
+						}
+					}
+					save_global_event_target_as = esap_slave_raid_spec_2
+				}
+			}
+			Random_Country = {
+				limit = {
+					has_communications = root.owner
+					is_neighbor_of = root.owner
+					any_owned_pop = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_slave_raid_spec_1
+							is_same_species = event_target:esap_slave_raid_spec_2
+						}
+						has_citizenship_type = { 
+							country = root.owner
+							type = citizenship_slavery
+						}
+					}				
+				}				
+				random_owned_pop = {
+					limit = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_slave_raid_spec_1
+							is_same_species = event_target:esap_slave_raid_spec_2
+						}
+						has_citizenship_type = { 
+							country = root.owner
+							type = citizenship_slavery
+						}
+					}
+					save_global_event_target_as = esap_slave_raid_spec_3
+				}
+			}
+			Random_Country = {
+				limit = {
+					has_communications = root.owner
+					is_neighbor_of = root.owner
+					any_owned_pop = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_slave_raid_spec_1
+							is_same_species = event_target:esap_slave_raid_spec_2
+							is_same_species = event_target:esap_slave_raid_spec_3
+						}
+						has_citizenship_type = { 
+							country = root.owner
+							type = citizenship_slavery
+						}
+					}				
+				}				
+				random_owned_pop = {
+					limit = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_slave_raid_spec_1
+							is_same_species = event_target:esap_slave_raid_spec_2
+							is_same_species = event_target:esap_slave_raid_spec_3
+						}
+						has_citizenship_type = { 
+							country = root.owner
+							type = citizenship_slavery
+						}
+					}
+					save_global_event_target_as = esap_slave_raid_spec_4
+				}
+			}
+			Random_Country = {
+				limit = {
+					has_communications = root.owner
+					is_neighbor_of = root.owner
+					any_owned_pop = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_slave_raid_spec_1
+							is_same_species = event_target:esap_slave_raid_spec_2
+							is_same_species = event_target:esap_slave_raid_spec_3
+							is_same_species = event_target:esap_slave_raid_spec_4
+						}
+						has_citizenship_type = { 
+							country = root.owner
+							type = citizenship_slavery
+						}
+					}				
+				}				
+				random_owned_pop = {
+					limit = {
+						root = {
+							habitability {
+								who = prev 
+								value > 0.4 
+							}
+						}
+						Nor = {
+							pop_has_trait = trait_robotic_1
+							pop_has_trait = trait_robotic_2
+							pop_has_trait = trait_robotic_3
+							pop_has_trait = trait_hive_mind
+						}
+						Nor = {
+							is_same_species = event_target:esap_slave_raid_spec_1
+							is_same_species = event_target:esap_slave_raid_spec_2
+							is_same_species = event_target:esap_slave_raid_spec_3
+							is_same_species = event_target:esap_slave_raid_spec_4
+						}
+						has_citizenship_type = { 
+							country = root.owner
+							type = citizenship_slavery
+						}
+					}
+					save_global_event_target_as = esap_slave_raid_spec_5
+				}
+			}
+		}
+		owner = {
+			add_influence = -10
+		}
+		Hidden_Effect = {
+			#clear_global_event_target = event_target:esap_slave_raid_spec_1
+			#clear_global_event_target = event_target:esap_slave_raid_spec_2
+			#clear_global_event_target = event_target:esap_slave_raid_spec_3
+			#clear_global_event_target = event_target:esap_slave_raid_spec_4
+			#clear_global_event_target = event_target:esap_slave_raid_spec_5
+		}
+		Hidden_effect = {
+			set_timed_planet_flag = {
+				flag = esap_raided_for_slaves
+				days = 360
+			}		
+			planet_event = {
+				id = esap.47
+			}
+		}
+	}
+	
+	potential = {
+		owner = {
+			has_ascension_perk = ap_esap_xenophobe_1
+		}
+	}
+	
+	allow = {	
+		custom_tooltip = {
+			fail_text = "esap_raid_for_slaves_req_1"
+			Not = {
+				has_planet_flag = esap_raided_for_slaves
+			}
+		}
+		custom_tooltip = {
+			fail_text = "esap_esap_give_assylum_req_2"
+			any_tile = {
+				has_pop = no
+				has_blocker = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = "esap_raid_for_slaves_req_3"
+			any_country = {
+				has_communications = root.owner
+				Not = {
+					is_same_empire = root.owner
+				}
+				is_neighbor_of = root.owner
+			}
+		}
+		custom_tooltip = {
+			fail_text = "esap_raid_for_slaves_req_4"
+			owner = {
+				influence > 9
+			}	
+		}
+		custom_tooltip = {
+			fail_text = "esap_raid_for_slaves_req_5"
+			owner = {
+				energy > 49
+			}	
+		}
+	}
+	
+	ai_weight = {
+		#weight = 1
+	}
+}
+
+
+# Expands a habitat
+planet_edict = {
+	name = "esap_habitat_2"
+	#influence_cost = 100
+	length = 0
+	
+	effect = {
+		owner = {
+			add_influence = -10
+			add_minerals = -300
+		}
+		add_modifier = {
+			modifier = mod_esap_habitat_expansion
+			days = 540
+		}
+		hidden_effect = {
+			planet_event = { 
+				id = esap.49
+				days = 540 
+			}
+		}
+	}
+	
+	potential = {
+		owner = {
+			has_ascension_perk = ap_esap_habitat_2
+		}
+		planet = {
+			is_planet_class = pc_habitat
+			planet_size < 25
+		}
+	}
+	
+	allow = {	
+		custom_tooltip = {
+			fail_text = "esap_edict_habitat_2_req_1"
+			owner = {
+				influence > 9
+			}	
+		}
+		custom_tooltip = {
+			fail_text = "esap_edict_habitat_2_req_2"
+			owner = {
+				minerals > 299
+			}	
+		}
+		planet = {
+			Not = {
+				has_modifier = mod_esap_habitat_expansion
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

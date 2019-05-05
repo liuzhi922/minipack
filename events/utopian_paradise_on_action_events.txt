@@ -1,0 +1,12 @@
+namespace = zofe_action
+
+#Base Mod Activation Check
+event = {
+	id = zofe_action.6
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = zofe_utopian_paradise_activated
+	}
+}

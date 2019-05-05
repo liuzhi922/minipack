@@ -1,0 +1,36 @@
+decision_shrouded_world = {
+	owned_planets_only = yes
+
+
+
+	resources = {
+		category = decisions
+		cost = {
+            influence = 100
+            sr_zro = 1000
+		}
+	}
+	
+	potential = {
+		NOT = { has_modifier = shrouded_world }
+		owner = { 
+            is_regular_empire = yes 
+            has_ascension_perk = ap_shrouded_worlds
+		}
+		habitable_structure = no
+	}
+	
+	allow = {
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = shrouded_world
+			days = -1
+		}	
+	}
+	
+	ai_weight = {
+		weight = 10
+	}
+}

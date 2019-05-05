@@ -1,0 +1,844 @@
+namespace = quibble_funding
+
+
+country_event = { #FUNDING LEVEL
+	id = quibble_funding.1
+	title = "quibble.5.name"
+	desc = "quibble.5.desc"
+	
+	custom_gui = quibble_spy_window
+
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:quibble_leader
+		room = quibble_5_room
+	}
+
+	diplomatic = yes
+
+	option = { #STANDARD FUNDING #################################################
+		name = quibble_funding.a
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			random_list = {
+				100 = {
+					modifier = { 
+						factor = 1.50
+						has_country_flag = fail_limit
+					}
+					modifier = { 
+						factor = 0
+						OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+						
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:sabotage
+                        }
+                        country_event = { id = quibble_funding.2 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:boost
+                        }
+                        country_event = { id = quibble_funding.3 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:tech
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:phys
+                            }
+                            country_event = { id = quibble_funding.4 }
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:soc
+                            }
+                            country_event = { id = quibble_funding.5 }
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:eng
+                            }
+                            country_event = { id = quibble_funding.6 }
+                        }
+					}
+                    IF = {
+                        limit = {
+                            is_same_value = event_target:station
+                        }
+                        country_event = { id = quibble_funding.10 }
+                    }
+                }
+				10 = { #lose
+					modifier = { 
+                        add = 10
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 1000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 100000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 10000000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+                    }
+                    IF = {
+                        limit = {
+						    is_same_value = event_target:sabotage
+                        }
+                        country_event = { id = quibble_funding.7 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:boost
+                        }
+                        country_event = { id = quibble_funding.8 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:tech
+                        }
+                        country_event = { id = quibble_funding.9 } 
+					}
+                    IF = {
+                        limit = {
+                            is_same_value = event_target:station
+                        }
+                        country_event = { id = quibble_funding.11 }
+                    }
+				}
+			}
+		}
+	}
+    option = { #IMPROVED FUNDING ##############################################
+		name = quibble_funding.b
+        custom_gui = quibble_spy_option
+        allow = { 
+			resource_stockpile_compare = { resource = influence value >= 50 }
+		}
+		add_resource = { influence = -50 }
+		hidden_effect = {
+			random_list = {
+				10000 = {
+					modifier = { 
+						factor = 1.50
+						has_country_flag = fail_limit
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:sabotage
+                        }
+                        country_event = { id = quibble_funding.2 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:boost
+                        }
+                        country_event = { id = quibble_funding.3 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:tech
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:phys
+                            }
+                            country_event = { id = quibble_funding.4 }
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:soc
+                            }
+                            country_event = { id = quibble_funding.5 }
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:eng
+                            }
+                            country_event = { id = quibble_funding.6 }
+                        }
+					}
+                }
+				2 = { #lose
+					modifier = { 
+                        add = 10
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 1000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 100000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 10000000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+                    }
+                    IF = {
+                        limit = {
+						    is_same_value = event_target:sabotage
+                        }
+                        country_event = { id = quibble_funding.7 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:boost
+                        }
+                        country_event = { id = quibble_funding.8 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:tech
+                        }
+                        country_event = { id = quibble_funding.9 } 
+					}
+				}
+			}
+		}
+	}
+    option = { #ADVANCED FUNDING ###########################################
+		name = quibble_funding.c
+        custom_gui = quibble_spy_option
+        allow = { 
+			resource_stockpile_compare = { resource = influence value >= 100 }
+		}
+		add_resource = { influence = -100 }
+		hidden_effect = {
+			random_list = {
+				1000000 = {
+					modifier = { 
+						factor = 1.50
+						has_country_flag = fail_limit
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:sabotage
+                        }
+                        country_event = { id = quibble_funding.2 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:boost
+                        }
+                        country_event = { id = quibble_funding.3 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:tech
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:phys
+                            }
+                            country_event = { id = quibble_funding.4 }
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:soc
+                            }
+                            country_event = { id = quibble_funding.5 }
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:eng
+                            }
+                            country_event = { id = quibble_funding.6 }
+                        }
+					}
+                }
+				2 = { #lose
+					modifier = { 
+                        add = 10
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 1000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 100000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 10000000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+                    }
+                    IF = {
+                        limit = {
+						    is_same_value = event_target:sabotage
+                        }
+                        country_event = { id = quibble_funding.7 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:boost
+                        }
+                        country_event = { id = quibble_funding.8 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:tech
+                        }
+                        country_event = { id = quibble_funding.9 } 
+					}
+				}
+			}
+		}
+	}
+    option = { #MAXIMUM ###########################################
+		name = quibble_funding.d
+        custom_gui = quibble_spy_option
+        allow = { 
+			
+			resource_stockpile_compare = { resource = influence value >= 150 }
+		}
+		add_resource = { influence = -150 }
+		hidden_effect = {
+			random_list = {
+				100000000 = {
+					modifier = { 
+						factor = 1.50
+						has_country_flag = fail_limit
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:sabotage
+                        }
+                        country_event = { id = quibble_funding.2 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:boost
+                        }
+                        country_event = { id = quibble_funding.3 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:tech
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:phys
+                            }
+                            country_event = { id = quibble_funding.4 }
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:soc
+                            }
+                            country_event = { id = quibble_funding.5 }
+                        }
+                        IF = {
+                            limit = {
+                                is_same_value = event_target:eng
+                            }
+                            country_event = { id = quibble_funding.6 }
+                        }
+					}
+                }
+				2 = { #lose
+					modifier = { 
+                        add = 10
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = low_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 1000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = low_med_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 100000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = medium_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+					}
+					modifier = { 
+                        add = 10000000
+                        OR = {
+                            event_target:firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:firstsabotagetarget2 = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:secondsabotagetarget2 = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                            event_target:tech_firstsabotagetarget = { 
+                                has_policy_flag = high_anti_propaganda_funding
+                            }
+                        }
+                    }
+                    IF = {
+                        limit = {
+						    is_same_value = event_target:sabotage
+                        }
+                        country_event = { id = quibble_funding.7 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:boost
+                        }
+                        country_event = { id = quibble_funding.8 } 
+					}
+					IF = {
+                        limit = {
+						    is_same_value = event_target:tech
+                        }
+                        country_event = { id = quibble_funding.9 } 
+					}
+				}
+			}
+		}
+	}
+	
+	option = { #OUT
+		name = quibble_funding.f
+		custom_gui = quibble_spy_option
+		hidden_effect = {
+			remove_country_flag = current_espionage2
+		}
+	}
+}
+
+#################### WIN DECIDE SCALE ########################################
+
+country_event = { #SABOTAGE  WIN CHANCE DECIDE
+	id = quibble_funding.2
+    is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        random_list = {
+            10 = {
+                country_event = { id = quibble_spy.7 days = 50 random = 10 }
+            }
+            30 = {
+                country_event = { id = quibble_spy.8 days = 50 random = 10 }
+            }
+            10 = {
+                modifier = {
+                    factor = 0
+                    event_target:firstsabotagetarget = { 
+                        is_at_war_with = event_target:secondsabotagetarget
+                    }
+                }
+                country_event = { id = quibble_spy.1000 days = 50 random = 10 }
+            }
+            10 = {
+                country_event = { id = quibble_spy.1200 days = 50 random = 10 }
+            }
+        }
+    }
+}
+
+country_event = { #BOOST WIN CHANCE DECIDE
+	id = quibble_funding.3
+    is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        random_list = {
+            30 = {
+                country_event = { id = quibble_spy_good_relations.7 days = 30 random = 10 }
+            }
+            30 = {
+                country_event = { id = quibble_spy_good_relations.8 days = 30 random = 10 }
+            }
+        }
+    }
+}
+
+country_event = { ##TECH WIN PHYSICS
+	id = quibble_funding.4
+    is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        random_list = {
+            10 = { 
+                country_event = { id = quibble_spy_tech.31 days = 30 random = 10 }
+            }
+            10 = { #get boost
+                country_event = { id = quibble_spy_tech_phys.10 days = 30 random = 10 }
+
+            }
+            20 = { #get tech
+                country_event = { id = quibble_spy_tech_phys.1 days = 30 random = 10 }
+
+            }
+        }
+    }
+}
+country_event = { ##TECH WIN SOCIETY
+	id = quibble_funding.5
+    is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        random_list = {
+            30 = { #get techj ai notices
+                country_event = { id = quibble_spy_tech.33 days = 30 random = 10 }
+            }
+            10 = { #get boost
+                country_event = { id = quibble_spy_tech_soc.10 days = 30 random = 10 }
+            }
+            30 = { #get tech
+                country_event = { id = quibble_spy_tech_soc.1 days = 30 random = 10 }
+            }
+        }
+    }
+}
+country_event = { ##TECH WIN ENGINEERING
+	id = quibble_funding.6
+    is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        random_list = {
+            10 = { #get techj ai notices
+                country_event = { id = quibble_spy_tech.32 days = 30 random = 10 }
+            }
+            10 = { #get boost
+                country_event = { id = quibble_spy_tech_eng.10 days = 30 random = 10 }
+
+            }
+            20 = { #get tech
+                country_event = { id = quibble_spy_tech_eng.1 days = 30 random = 10 }
+
+            }
+        }
+    }
+}
+
+country_event = { ##STATION WIN 
+	id = quibble_funding.10
+    is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        random_list = {
+            30 = {
+                country_event = { id = quibble_spy_station.601 days = 60 random = 10 }
+            }
+            30 = {
+                country_event = { id = quibble_spy_station.602 days = 60 random = 10 }
+            }
+        }
+    }
+}
+
+##################################### LOSE DECIDE SCALE ######################
+
+country_event = { #SABOTAGE LOSE CHANCE DECIDE
+	id = quibble_funding.7
+    is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        country_event = { id = quibble_spy.6 days = 50 random = 10 }
+    }
+}
+
+country_event = { #BOOST LOSE CHANCE DECIDE
+	id = quibble_funding.8
+    is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        country_event = { id = quibble_spy_good_relations.6 days = 30 random = 10 }
+    }
+}
+
+country_event = { ##TECH LOSE CHANCE DECIDE
+	id = quibble_funding.9
+    is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        country_event = { id = quibble_spy_tech.6 days = 30 random = 10 }
+
+    }
+}
+
+country_event = { ##STATION LOSE CHANCE DECIDE
+	id = quibble_funding.11
+    is_triggered_only = yes
+	hide_window = yes
+    immediate = {
+        random_list = {
+            20 = {
+                country_event = { id = quibble_spy_station.702 days = 60 random = 10 }
+            }
+            
+            10 = {
+                country_event = { id = quibble_spy_station.703 days = 60 random = 10 }
+            }
+            
+            30 = {
+                country_event = { id = quibble_spy_station.704 days = 60 random = 10 }                
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+GESTALT = {
+	archetype = ENERGY
+
+	playable = { has_global_flag = game_started }
+	randomized = no
+	robotic = no
+	
+	gender = no
+
+	portraits = {
+				"unbidden_blue"
+				"unbidden_green"
+				"unbidden_black"
+				"unbidden_aquamarine"
+	}
+
+	graphical_culture = extra_dimensional_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+
+
+}
+
+GESTALTSE = {
+	archetype = ENERGY
+
+	playable = { has_global_flag = game_started }
+	randomized = no
+	robotic = no
+	
+	gender = no
+
+	portraits = {
+				"unbidden_red"
+				"unbidden_yellow"
+				"unbidden_cyan"
+				"unbidden_white"
+	}
+
+	graphical_culture = extra_dimensional_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}
