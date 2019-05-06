@@ -1,27 +1,23 @@
 #########################
 ####mod ethic rebuild####
 ethic_categories = {
-	
+
 	soc = {
 		opinions = {}
 	}
-	
+
 	grn = {
 		opinions = {}
 	}
-	
-	
+
 	elt = {
 		opinions = {}
-	}	
-	
-	
-	
+	}
 }
 
 
 
-	
+
 
 ethic_socialism = {
 	cost = 1
@@ -29,22 +25,22 @@ ethic_socialism = {
 	category_value = 1
 
 	fanatic_variant = ethic_fanatic_socialism
-	
+
 	tags = {
 				EGALITARIAN_ETHIC_ALLOWS_UTOPIA
-	
+
 	}
-	
+
 	country_modifier = {
 	    pop_growth_speed = 0.1
 		pop_housing_usage_mult = -0.05
-		
-	}	
-	
+
+	}
+
 	random_weight = {
 		value = 100
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_SOCIALISM_POS
 		trigger = {
@@ -54,7 +50,7 @@ ethic_socialism = {
 			}
 		}
 	}
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_FACTION_POS
 		trigger = {
@@ -63,7 +59,7 @@ ethic_socialism = {
 				has_ethic = ethic_fanatic_socialism
 			}
 			has_faction = socialists
-		}		
+		}
 	}
 
 	pop_attraction_tag = {
@@ -71,17 +67,17 @@ ethic_socialism = {
 		trigger = {
 			exists = ruler
 			ruler = { leader_of_faction = socialists }
-		}		
+		}
 	}
-	
-	
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_RULER_TRAIT_FERTILITY_POS
 		trigger = {
 			exists = ruler
 			ruler = { has_trait = "trait_ruler_fertility_preacher" }
-		}		
-	}	
+		}
+	}
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CIVIC_POS
@@ -90,7 +86,7 @@ ethic_socialism = {
 				has_valid_civic = civic_socialistic
 			}
 		}
-	}	
+	}
 
 
 
@@ -103,8 +99,8 @@ ethic_socialism = {
 				}
 			}
 		}
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_COMMUNAL_POS
 		trigger = {
@@ -114,10 +110,10 @@ ethic_socialism = {
 				}
 			}
 		}
-	}		
-	
-		
-	
+	}
+
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_WASTEFUL_NEG
 		trigger = {
@@ -127,7 +123,7 @@ ethic_socialism = {
 				}
 			}
 		}
-	}	
+	}
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CONSUMER_GOODS_POS
@@ -137,15 +133,15 @@ ethic_socialism = {
 					OR = {
 						has_living_standard = { type = living_standard_shared_burden }
 						has_living_standard = { type = living_standard_utopian }
-						has_living_standard = { type = living_standard_good }						
+						has_living_standard = { type = living_standard_good }
 					}
 				}
 			}
 		}
-	}	
-	
+	}
 
-	
+
+
 	country_attraction = {
 		value = 1
 		modifier = {
@@ -159,16 +155,16 @@ ethic_socialism = {
 					capital_scope = {
 						has_observation_outpost = yes
 						observation_outpost = {
-							has_mission = native_indoctrination		
+							has_mission = native_indoctrination
 						}
-						observation_outpost_owner = { 
+						observation_outpost_owner = {
 							OR = {
 								has_ethic = ethic_fanatic_socialism
 								has_ethic = ethic_socialism
-							}							
-						}				
+							}
+						}
 					}
-				}				
+				}
 			}
 		}
 		# Effects of indoctrination mission
@@ -178,7 +174,7 @@ ethic_socialism = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_fanatic_socialism }
 			}
@@ -189,11 +185,11 @@ ethic_socialism = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_socialism }
 			}
-		}	
+		}
 		modifier = {
 			factor = 2
 			NOR = {
@@ -201,11 +197,11 @@ ethic_socialism = {
 				has_ethic = ethic_fanatic_socialism
 			}
 			has_faction = socialists
-		}	
+		}
 		modifier = {
 			factor = 1.5
 			exists = ruler
-			ruler = { leader_of_faction = socialists }				
+			ruler = { leader_of_faction = socialists }
 		}
 		modifier = {
 			factor = 2
@@ -221,11 +217,11 @@ ethic_socialism = {
 	# from = planet
 	pop_attraction = {
 		value = 1
-		
+
 		modifier = {
 			factor = 0
 			has_trait = trait_hive_mind
-		}	
+		}
 		modifier = {
 			factor = 1.5
 			has_trait = "trait_natural_sociologists"
@@ -233,21 +229,21 @@ ethic_socialism = {
 		modifier = {
 			factor = 1.5
 			has_trait = "trait_conservational"
-		}	
+		}
 		modifier = {
 			factor = 0.75
 			has_trait = "trait_wasteful"
-		}			
+		}
 
 		modifier = {
 			factor = 1.25
 			OR = {
 				has_living_standard = { type = living_standard_shared_burden }
 			}
-		}	
-		
-	}	
-	
+		}
+
+	}
+
 
 }
 
@@ -257,29 +253,29 @@ ethic_fanatic_socialism = {
 	category = "soc"
 	category_value = 0
 
-	
+
 	use_for_pops = no
-	
+
 	regular_variant = ethic_socialism
-	
+
 	tags = {
 				EGALITARIAN_ETHIC_ALLOWS_UTOPIA
 	}
-	
-	
+
+
 	country_modifier = {
 		pop_growth_speed = 0.15
 		pop_housing_usage_mult = -0.1
 		pop_government_ethic_attraction = 0.15
 		trade_value_mult = -0.05
-	}	
-		
-		
-	
+	}
+
+
+
 	random_weight = {
 		value = 150
-	}	
-	
+	}
+
 
 }
 
@@ -291,25 +287,25 @@ ethic_capitalism = {
 	cost = 1
 	category = "soc"
 	category_value = 3
-	
+
 	category_opposite = yes
-	
-    fanatic_variant = ethic_fanatic_capitalism	
-	
+
+    fanatic_variant = ethic_fanatic_capitalism
+
 	tags = {
 	          ELITIST_ETHIC_ALLOWS_STRATIFIED
-	}	
-	
+	}
+
 	country_modifier = {
 		             trade_value_mult = 0.1
 
-	}		
-	
+	}
+
 	random_weight = {
 		value = 100
-	}	
-	
-	
+	}
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CAPITALISM_POS
 		trigger = {
@@ -319,7 +315,7 @@ ethic_capitalism = {
 			}
 		}
 	}
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_FACTION_POS
 		trigger = {
@@ -328,7 +324,7 @@ ethic_capitalism = {
 				has_ethic = ethic_fanatic_capitalism
 			}
 			has_faction = bankers
-		}		
+		}
 	}
 
 	pop_attraction_tag = {
@@ -336,17 +332,17 @@ ethic_capitalism = {
 		trigger = {
 			exists = ruler
 			ruler = { leader_of_faction = bankers }
-		}		
+		}
 	}
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_RULER_TRAIT_INVESTOR_POS
 		trigger = {
 			exists = ruler
 			ruler = { has_trait = "trait_ruler_investor" }
-		}		
+		}
 	}
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CIVIC_POS
 		trigger = {
@@ -355,7 +351,7 @@ ethic_capitalism = {
 
 			}
 		}
-	}	
+	}
 
 
 
@@ -368,8 +364,8 @@ ethic_capitalism = {
 				}
 			}
 		}
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_WASTEFUL_POS
 		trigger = {
@@ -379,8 +375,8 @@ ethic_capitalism = {
 				}
 			}
 		}
-	}		
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_SOLITARY_POS
 		trigger = {
@@ -390,8 +386,8 @@ ethic_capitalism = {
 				}
 			}
 		}
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CONSERVATIONAL_NEG
 		trigger = {
@@ -401,10 +397,10 @@ ethic_capitalism = {
 				}
 			}
 		}
-	}		
-	
-	
-	
+	}
+
+
+
 	country_attraction = {
 		value = 1
 		modifier = {
@@ -418,16 +414,16 @@ ethic_capitalism = {
 					capital_scope = {
 						has_observation_outpost = yes
 						observation_outpost = {
-							has_mission = native_indoctrination		
+							has_mission = native_indoctrination
 						}
-						observation_outpost_owner = { 
+						observation_outpost_owner = {
 							OR = {
 								has_ethic = ethic_fanatic_capitalism
 								has_ethic = ethic_capitalism
-							}							
-						}				
+							}
+						}
 					}
-				}				
+				}
 			}
 		}
 		# Effects of indoctrination mission
@@ -437,7 +433,7 @@ ethic_capitalism = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_fanatic_capitalism }
 			}
@@ -448,23 +444,23 @@ ethic_capitalism = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_capitalism }
 			}
-		}	
+		}
 		modifier = {
 			factor = 2
 			NOR = {
 				has_ethic = ethic_capitalism
 				has_ethic = ethic_fanatic_capitalism
 			}
-			has_faction = bankers	
-		}	
+			has_faction = bankers
+		}
 		modifier = {
 			factor = 1.5
 			exists = ruler
-			ruler = { leader_of_faction = bankers }				
+			ruler = { leader_of_faction = bankers }
 		}
 		modifier = {
 			factor = 2
@@ -480,11 +476,11 @@ ethic_capitalism = {
 	# from = planet
 	pop_attraction = {
 		value = 1
-		
+
 		modifier = {
 			factor = 0
 			has_trait = trait_hive_mind
-		}	
+		}
 		modifier = {
 			factor = 1.5
 			has_trait = "trait_thrifty"
@@ -492,15 +488,15 @@ ethic_capitalism = {
 		modifier = {
 			factor = 0.75
 			has_trait = "trait_conservational"
-		}	
+		}
 		modifier = {
 			factor = 1.5
 			has_trait = "trait_wasteful"
-		}			
+		}
 
-		
-	}		
-	
+
+	}
+
 
 }
 
@@ -509,32 +505,32 @@ ethic_fanatic_capitalism = {
 	cost = 2
 	category = "soc"
 	category_value = 4
-	
-	category_opposite = yes
-	
-	use_for_pops = no
-	
-	regular_variant = ethic_capitalism
-	
-	tags = {
-	
-	   ELITIST_ETHIC_ALLOWS_STRATIFIED
-	  
-	}	
 
-    country_modifier = { 
+	category_opposite = yes
+
+	use_for_pops = no
+
+	regular_variant = ethic_capitalism
+
+	tags = {
+
+	   ELITIST_ETHIC_ALLOWS_STRATIFIED
+
+	}
+
+    country_modifier = {
 
 		             trade_value_mult = 0.15
 					 species_leader_exp_gain = 0.33
 					 planet_crime_no_happiness_mult = 0.25
-					 
 
-    }					 
-	
+
+    }
+
 	random_weight = {
 		value = 150
-	}	
-	
+	}
+
 
 }
 
@@ -546,27 +542,25 @@ ethic_green = {
 	cost = 1
 	category = "grn"
 	category_value = 1
-	
+
     fanatic_variant = ethic_fanatic_green
 
 	tags = {
 
-	}		
-		
-
-	
-	country_modifier = {
-		planet_pops_consumer_goods_upkeep_mult = -0.15
-
-		
 	}
-	
-	
+
+
+
+	country_modifier = {
+		pop_environment_tolerance = 0.1
+	}
+
+
 	random_weight = {
 		value = 100
-	}	
-	
-	
+	}
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_GREEN_POS
 		trigger = {
@@ -575,8 +569,8 @@ ethic_green = {
 				has_ethic = ethic_fanatic_green
 			}
 		}
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_FACTION_POS
 		trigger = {
@@ -585,25 +579,25 @@ ethic_green = {
 				has_ethic = ethic_fanatic_green
 			}
 			has_faction = environmentalists
-		}		
-	}	
-	
+		}
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_RULER_FACTION_POS
 		trigger = {
 			exists = ruler
 			ruler = { leader_of_faction = environmentalists }
-		}		
+		}
 	}
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_RULER_TRAIT_WORLD_SHAPER_POS
 		trigger = {
 			exists = ruler
 			ruler = { has_trait = "trait_ruler_world_shaper" }
-		}		
+		}
 	}
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CIVIC_POS
 		trigger = {
@@ -621,10 +615,10 @@ ethic_green = {
 				has_tradition = tr_environmentalism_adopt
                 has_tradition = tr_harmony_adopt
 			}
-		}		
-	}	
+		}
+	}
 
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_AGRARIAN_POS
 		trigger = {
@@ -637,7 +631,7 @@ ethic_green = {
 			}
 		}
 	}
-		
+
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CONSERVATIONAL_POS
@@ -648,8 +642,8 @@ ethic_green = {
 				}
 			}
 		}
-	}		
-	
+	}
+
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_ADAPTIVE_POS
@@ -663,8 +657,8 @@ ethic_green = {
 				}
 			}
 		}
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_WASTEFUL_NEG
 		trigger = {
@@ -674,7 +668,7 @@ ethic_green = {
 				}
 			}
 		}
-	}	
+	}
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_INDUSTRIOUS_NEG
@@ -685,8 +679,8 @@ ethic_green = {
 				}
 			}
 		}
-	}		
-	
+	}
+
 	# from = planet
 	country_attraction = {
 		value = 1
@@ -701,46 +695,46 @@ ethic_green = {
 					capital_scope = {
 						has_observation_outpost = yes
 						observation_outpost = {
-							has_mission = native_indoctrination		
+							has_mission = native_indoctrination
 						}
-						observation_outpost_owner = { 
+						observation_outpost_owner = {
 							OR = {
 								has_ethic = ethic_fanatic_green
 								has_ethic = ethic_green
-							}							
-						}				
+							}
+						}
 					}
-				}				
+				}
 			}
 		}
-			
+
 		modifier = {
 			factor = 2
 			NOR = {
 				has_ethic = ethic_green
 				has_ethic = ethic_fanatic_green
 			}
-			has_faction = environmentalists	
+			has_faction = environmentalists
 		}
-			
+
 		modifier = {
 			factor = 1.5
 			is_country_type = default
 			exists = ruler
-			ruler = { leader_of_faction = environmentalists }				
-		}				
-			
+			ruler = { leader_of_faction = environmentalists }
+		}
+
 		modifier = {
 			factor = 2
 			has_ethic = ethic_green
 		}
-		
+
 		modifier = {
 			factor = 3
 			has_ethic = ethic_fanatic_green
 		}
 
-	
+
 		# Effects of indoctrination mission
 		modifier = {
 			factor = 10
@@ -748,7 +742,7 @@ ethic_green = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_fanatic_green }
 			}
@@ -759,21 +753,21 @@ ethic_green = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_green }
 			}
-		}		
+		}
 	}
-	
+
 	# from = planet
 	pop_attraction = {
 		value = 1
-		
+
 		modifier = {
 			factor = 0
 			has_trait = trait_hive_mind
-		}	
+		}
 
 
 
@@ -785,12 +779,12 @@ ethic_green = {
 			factor = 1.4
 			has_trait = "trait_extremely_adaptive"
 		}
-		
+
 		modifier = {
 			factor = 1.75
 			has_trait = "trait_agrarian"
 		}
-		
+
 		modifier = {
 			factor = 0.5
 			has_trait = "trait_industrious"
@@ -799,9 +793,9 @@ ethic_green = {
 		modifier = {
 			factor = 0.75
 			has_trait = "trait_wasteful"
-		}		
-					
-	}		
+		}
+
+	}
 
 }
 
@@ -812,24 +806,24 @@ ethic_fanatic_green = {
 	category_value = 0
 
 	regular_variant = ethic_green
-	
+
 	use_for_pops = no
-	
+
 	tags = {
-		
-	}		
-	
-	country_modifier = {
-		pop_environment_tolerance = 0.1
-		planet_pops_consumer_goods_upkeep_mult = -0.25
-		planet_miners_minerals_produces_mult = -0.07
+
 	}
-	
-	
+
+	country_modifier = {
+		pop_environment_tolerance = 0.15
+		country_resource_food_mult = 0.15
+		planet_miners_minerals_produces_mult = -0.1
+	}
+
+
 	random_weight = {
 		value = 100
-	}	
-	
+	}
+
 
 }
 
@@ -841,20 +835,20 @@ ethic_industrial = {
 	category_value = 3
 
 	category_opposite = yes
-	
+
 	fanatic_variant = ethic_fanatic_industrial
-	
+
 	tags = {
-		
-	}		
-	
-	country_modifier = {
-		country_minerals_produces_mult = 0.1
-	
 
 	}
-	
-	
+
+	country_modifier = {
+		country_minerals_produces_mult = 0.1
+
+
+	}
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_INDUSTRIAL_POS
 		trigger = {
@@ -863,8 +857,8 @@ ethic_industrial = {
 				has_ethic = ethic_fanatic_industrial
 			}
 		}
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_FACTION_POS
 		trigger = {
@@ -873,26 +867,26 @@ ethic_industrial = {
 				has_ethic = ethic_fanatic_industrial
 			}
 			has_faction = manufacturers
-		}		
-	}	
-	
+		}
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_RULER_FACTION_POS
 		trigger = {
 			exists = ruler
 			ruler = { leader_of_faction = manufacturers }
-		}		
+		}
 	}
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_RULER_TRAIT_INDUSTRIALIST_POS
 		trigger = {
 			exists = ruler
 			ruler = { has_trait = "trait_ruler_industrialist" }
-		}		
-	}	
-	
-	
+		}
+	}
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_FREE_MARKET_POS
 		trigger = {
@@ -903,7 +897,7 @@ ethic_industrial = {
 		}
 	}
 
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CIVIC_POS
 		trigger = {
@@ -920,10 +914,10 @@ ethic_industrial = {
 			OR = {
 				has_tradition = tr_development_adopt
 			}
-		}		
-	}	
+		}
+	}
 
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_INDUSTRIOUS_POS
 		trigger = {
@@ -936,8 +930,8 @@ ethic_industrial = {
 			}
 		}
 	}
-		
-		
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_WASTEFUL_POS
 		trigger = {
@@ -947,7 +941,7 @@ ethic_industrial = {
 				}
 			}
 		}
-	}	
+	}
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_ENGINEERS_POS
@@ -958,7 +952,7 @@ ethic_industrial = {
 				}
 			}
 		}
-	}		
+	}
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CONSERVATIONAL_NEG
@@ -969,8 +963,8 @@ ethic_industrial = {
 				}
 			}
 		}
-	}		
-	
+	}
+
 
 
 	pop_attraction_tag = {
@@ -982,8 +976,8 @@ ethic_industrial = {
 				}
 			}
 		}
-	}		
-	
+	}
+
 	# from = planet
 	country_attraction = {
 		value = 1
@@ -998,46 +992,46 @@ ethic_industrial = {
 					capital_scope = {
 						has_observation_outpost = yes
 						observation_outpost = {
-							has_mission = native_indoctrination		
+							has_mission = native_indoctrination
 						}
-						observation_outpost_owner = { 
+						observation_outpost_owner = {
 							OR = {
 								has_ethic = ethic_fanatic_industrial
 								has_ethic = ethic_industrial
-							}							
-						}				
+							}
+						}
 					}
-				}				
+				}
 			}
 		}
-			
+
 		modifier = {
 			factor = 2
 			NOR = {
 				has_ethic = ethic_industrial
 				has_ethic = ethic_fanatic_industrial
 			}
-			has_faction = manufacturers	
+			has_faction = manufacturers
 		}
-			
+
 		modifier = {
 			factor = 1.5
 			is_country_type = default
 			exists = ruler
-			ruler = { leader_of_faction = manufacturers }				
-		}				
-			
+			ruler = { leader_of_faction = manufacturers }
+		}
+
 		modifier = {
 			factor = 2
 			has_ethic = ethic_industrial
 		}
-		
+
 		modifier = {
 			factor = 3
 			has_ethic = ethic_fanatic_industrial
 		}
 
-	
+
 		# Effects of indoctrination mission
 		modifier = {
 			factor = 10
@@ -1045,7 +1039,7 @@ ethic_industrial = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_fanatic_industrial }
 			}
@@ -1056,21 +1050,21 @@ ethic_industrial = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_industrial }
 			}
-		}		
+		}
 	}
-	
+
 	# from = planet
 	pop_attraction = {
 		value = 1
-		
+
 		modifier = {
 			factor = 0
 			has_trait = trait_hive_mind
-		}	
+		}
 
 
 
@@ -1082,12 +1076,12 @@ ethic_industrial = {
 			factor = 1.3
 			has_trait = "trait_wasteful"
 		}
-		
+
 		modifier = {
 			factor = 1.75
 			has_trait = "trait_industrious"
 		}
-		
+
 		modifier = {
 			factor = 0.5
 			has_trait = "trait_agrarian"
@@ -1096,15 +1090,15 @@ ethic_industrial = {
 		modifier = {
 			factor = 0.75
 			has_trait = "trait_conservational"
-		}		
-					
-	}			
+		}
 
-	
+	}
+
+
 	random_weight = {
 		value = 100
-	}	
-	
+	}
+
 
 }
 
@@ -1114,26 +1108,26 @@ ethic_fanatic_industrial = {
 	category = "grn"
     category_value = 4
 
-	
+
 	category_opposite = yes
-	
+
 	regular_variant = ethic_industrial
-	
-	use_for_pops = no	
-	
+
+	use_for_pops = no
+
 	country_modifier = {
 		country_minerals_produces_mult = 0.15
-        planet_building_build_speed_mult = 0.5
+    planet_building_build_speed_mult = 0.5
 		starbase_shipyard_build_speed_mult = 0.5
-        pop_happiness = -0.05		
+    pop_happiness = -0.05
 	}
-	
 
-	
+
+
 	random_weight = {
 		value = 100
-	}	
-	
+	}
+
 
 }
 
@@ -1146,21 +1140,21 @@ ethic_elitist = {
 	cost = 1
 	category = "elt"
     category_value = 1
-	
+
 	fanatic_variant = ethic_fanatic_elitist
-	
+
 	tags = {
-	
+
 			INDIVID_ETHIC_ALLOWS_STRATIFIED
-		
-	}	
-	
+
+	}
+
 	country_modifier = {
 		leader_skill_levels = 1
 		leader_age = 15
 	}
-	
-	
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_ELITIST_POS
 		trigger = {
@@ -1170,7 +1164,7 @@ ethic_elitist = {
 			}
 		}
 	}
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CIVIC_POS
 		trigger = {
@@ -1189,15 +1183,15 @@ ethic_elitist = {
 		trigger = {
 			any_owned_planet = {
 				any_owned_pop = {
-				 
-					    is_same_species = root.owner 
+
+					    is_same_species = root.owner
 						has_citizenship_type = { type = citizenship_limited country = root.owner }
-							
+
 				}
 			}
 		}
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_FREE_MARKET_POS
 		trigger = {
@@ -1206,8 +1200,8 @@ ethic_elitist = {
 				has_policy_flag = "free_market_2_economy"
 			}
 		}
-	}		
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_FACTION_POS
 		trigger = {
@@ -1216,9 +1210,9 @@ ethic_elitist = {
 				has_ethic = ethic_fanatic_elitist
 			}
 			has_faction = conservatives
-		}		
+		}
 	}
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_ENHANCED_LEADERS_POS
 		trigger = {
@@ -1228,18 +1222,18 @@ ethic_elitist = {
 				}
 		}
 	}
-	
 
 
-	
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_RULER_FACTION_POS
 		trigger = {
 			exists = ruler
 			ruler = { leader_of_faction = conservatives }
-		}		
-	}	
-		
+		}
+	}
+
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_OLIGARCH_GOV_POS
@@ -1247,7 +1241,7 @@ ethic_elitist = {
 			has_election_type = oligarchic
 		}
 	}
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_SLAVERY_POS
 		trigger = {
@@ -1258,7 +1252,7 @@ ethic_elitist = {
 				}
 			}
 		}
-	}	
+	}
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_TALENTED_POS
@@ -1269,8 +1263,8 @@ ethic_elitist = {
 				}
 			}
 		}
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CONFORMIST_POS
 		trigger = {
@@ -1280,8 +1274,8 @@ ethic_elitist = {
 				}
 			}
 		}
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_DEVIANTS_NEG
 		trigger = {
@@ -1291,8 +1285,8 @@ ethic_elitist = {
 				}
 			}
 		}
-	}		
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_SLOW_LEARN_NEG
 		trigger = {
@@ -1302,8 +1296,8 @@ ethic_elitist = {
 				}
 			}
 		}
-	}		
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_QUICK_LEARN_NEG
 		trigger = {
@@ -1313,8 +1307,8 @@ ethic_elitist = {
 				}
 			}
 		}
-	}		
-	
+	}
+
 	country_attraction = {
 		value = 1
 		modifier = {
@@ -1328,16 +1322,16 @@ ethic_elitist = {
 					capital_scope = {
 						has_observation_outpost = yes
 						observation_outpost = {
-							has_mission = native_indoctrination		
+							has_mission = native_indoctrination
 						}
-						observation_outpost_owner = { 
+						observation_outpost_owner = {
 							OR = {
 								has_ethic = ethic_fanatic_elitist
 								has_ethic = ethic_elitist
-							}							
-						}				
+							}
+						}
 					}
-				}				
+				}
 			}
 		}
 		# Effects of indoctrination mission
@@ -1347,7 +1341,7 @@ ethic_elitist = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_fanatic_elitist }
 			}
@@ -1358,23 +1352,23 @@ ethic_elitist = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_elitist }
 			}
-		}	
+		}
 		modifier = {
 			factor = 2
 			NOR = {
 				has_ethic = ethic_elitist
 				has_ethic = ethic_fanatic_elitist
 			}
-			has_faction = conservatives	
-		}	
+			has_faction = conservatives
+		}
 		modifier = {
 			factor = 1.5
 			exists = ruler
-			ruler = { leader_of_faction = conservatives }				
+			ruler = { leader_of_faction = conservatives }
 		}
 		modifier = {
 			factor = 2
@@ -1384,7 +1378,7 @@ ethic_elitist = {
 			factor = 3
 			has_ethic = ethic_fanatic_elitist
 		}
-		
+
 		modifier = {
 			factor = 1.5
 			is_enslaved = no
@@ -1398,13 +1392,13 @@ ethic_elitist = {
 		}
 		modifier = {
 			factor = 1.25
-			from = {	
+			from = {
 				NOT = {
 					any_owned_pop = {
 						is_same_species = root
 						is_robot_pop = no
 						is_enslaved = yes
-					}				
+					}
 				}
 				any_owned_pop = {
 					NOT = { is_same_species = root }
@@ -1412,18 +1406,18 @@ ethic_elitist = {
 					is_enslaved = yes
 				}
 			}
-		}		
-	
+		}
+
 	}
 
 	# from = planet
 	pop_attraction = {
 		value = 1
-		
+
 		modifier = {
 			factor = 0
 			has_trait = trait_hive_mind
-		}	
+		}
 		modifier = {
 			factor = 0.25
 			is_enslaved = yes
@@ -1432,20 +1426,20 @@ ethic_elitist = {
 			factor = 1.25
 			has_trait = "trait_conformists"
 		}
-		
+
 		modifier = {
 			factor = 0.75
 			has_trait = "trait_deviants"
-		}		
-	
-	}	
-	
+		}
 
-	
+	}
+
+
+
 	random_weight = {
 		value = 100
-	}	
-	
+	}
+
 
 }
 
@@ -1454,31 +1448,31 @@ ethic_fanatic_elitist = {
 	cost = 2
 	category = "elt"
     category_value = 0
-	
+
 	use_for_pops = no
-	
+
 	regular_variant = ethic_elitist
 
 	tags = {
-	
+
 			INDIVID_ETHIC_ALLOWS_STRATIFIED
 
-	}		
-	
+	}
+
 	country_modifier = {
 		leader_skill_levels = 2
 		leader_age = 20
 		pop_cat_ruler_happiness = 0.05
 		pop_cat_worker_happiness = -0.05
-		
-		
+
+
 	}
-	
-	
+
+
 	random_weight = {
 		value = 100
-	}	
-	
+	}
+
 
 }
 
@@ -1490,26 +1484,26 @@ ethic_pluralist = {
 	cost = 1
 	category = "elt"
     category_value = 3
-	
-	category_opposite = yes
-	
-	fanatic_variant = ethic_fanatic_pluralist
-	
-	tags = {
-	
-	   COLLECT_ETHIC_ALLOWS_UTOPIA
-	
 
-	}		
-	
+	category_opposite = yes
+
+	fanatic_variant = ethic_fanatic_pluralist
+
+	tags = {
+
+	   COLLECT_ETHIC_ALLOWS_UTOPIA
+
+
+	}
+
 	country_modifier = {
 	    country_leader_pool_size = 3
 		leaders_cost_mult = -0.3
 		leaders_upkeep_mult = -0.3
 
 	}
-	
-	
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_PLURALIST_POS
 		trigger = {
@@ -1519,7 +1513,7 @@ ethic_pluralist = {
 			}
 		}
 	}
-	
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_SLAVERY_POS
 		trigger = {
@@ -1530,8 +1524,8 @@ ethic_pluralist = {
 				}
 			}
 		}
-	}		
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_CIVIC_POS
 		trigger = {
@@ -1541,10 +1535,10 @@ ethic_pluralist = {
 				has_valid_civic = civic_peaceful_prosperity
 			}
 		}
-	}	
-	
-	
-	
+	}
+
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_FACTION_POS
 		trigger = {
@@ -1553,27 +1547,27 @@ ethic_pluralist = {
 				has_ethic = ethic_fanatic_pluralist
 			}
 			has_faction = labourites
-		}		
+		}
 	}
-	
 
-	
+
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_RULER_FACTION_POS
 		trigger = {
 			exists = ruler
 			ruler = { leader_of_faction = labourites }
-		}		
-	}	
-	
-	
+		}
+	}
+
+
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_DEMOCRATIC_GOV_POS
 		trigger = {
 			has_election_type = democratic
 		}
-	}	
+	}
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_SLOW_LEARN_POS
@@ -1584,8 +1578,8 @@ ethic_pluralist = {
 				}
 			}
 		}
-	}	
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_QUICK_LEARN_POS
 		trigger = {
@@ -1595,8 +1589,8 @@ ethic_pluralist = {
 				}
 			}
 		}
-	}		
-	
+	}
+
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_TALENTED_NEG
 		trigger = {
@@ -1606,10 +1600,10 @@ ethic_pluralist = {
 				}
 			}
 		}
-	}	
+	}
 
-	
-	
+
+
 	country_attraction = {
 		value = 1
 		modifier = {
@@ -1623,16 +1617,16 @@ ethic_pluralist = {
 					capital_scope = {
 						has_observation_outpost = yes
 						observation_outpost = {
-							has_mission = native_indoctrination		
+							has_mission = native_indoctrination
 						}
-						observation_outpost_owner = { 
+						observation_outpost_owner = {
 							OR = {
 								has_ethic = ethic_fanatic_pluralist
 								has_ethic = ethic_pluralist
-							}							
-						}				
+							}
+						}
 					}
-				}				
+				}
 			}
 		}
 		# Effects of indoctrination mission
@@ -1642,7 +1636,7 @@ ethic_pluralist = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_fanatic_pluralist }
 			}
@@ -1653,23 +1647,23 @@ ethic_pluralist = {
 			capital_scope = {
 				has_observation_outpost = yes
 				observation_outpost = {
-					has_mission = native_indoctrination		
+					has_mission = native_indoctrination
 				}
 				observation_outpost_owner = { has_ethic = ethic_pluralist }
 			}
-		}	
+		}
 		modifier = {
 			factor = 2
 			NOR = {
 				has_ethic = ethic_pluralist
 				has_ethic = ethic_fanatic_pluralist
 			}
-			has_faction = labourites	
-		}	
+			has_faction = labourites
+		}
 		modifier = {
 			factor = 1.5
 			exists = ruler
-			ruler = { leader_of_faction = labourites }				
+			ruler = { leader_of_faction = labourites }
 		}
 		modifier = {
 			factor = 2
@@ -1679,32 +1673,32 @@ ethic_pluralist = {
 			factor = 3
 			has_ethic = ethic_fanatic_pluralist
 		}
-	
+
 	}
 
 	# from = planet
 	pop_attraction = {
 		value = 1
-		
+
 		modifier = {
 			factor = 0
 			has_trait = trait_hive_mind
-		}	
+		}
 
 		modifier = {
 			factor = 1.5
 			has_trait = "trait_slow_learners"
 		}
-		
+
 		modifier = {
 			factor = 1.4
 			has_trait = "trait_quick_learners"
-		}		
-		
+		}
+
 		modifier = {
 			factor = 0.5
 			has_trait = "trait_talented"
-		}	
+		}
 
 		modifier = {
 			factor = 1.5
@@ -1715,15 +1709,15 @@ ethic_pluralist = {
 					is_enslaved = yes
 				}
 			}
-		}		
-	
-	}	
+		}
 
-	
+	}
+
+
 	random_weight = {
 		value = 100
-	}	
-	
+	}
+
 
 }
 
@@ -1732,37 +1726,33 @@ ethic_fanatic_pluralist = {
 	cost = 2
 	category = "elt"
     category_value = 4
-	
-	category_opposite = yes
-	
-	use_for_pops = no
-	
-    regular_variant = ethic_pluralist
-	
-	tags = {
-	
-	   COLLECT_ETHIC_ALLOWS_UTOPIA
-	
 
-	}		
-	
+	category_opposite = yes
+
+	use_for_pops = no
+
+    regular_variant = ethic_pluralist
+
+	tags = {
+
+	   COLLECT_ETHIC_ALLOWS_UTOPIA
+
+
+	}
+
 	country_modifier = {
 	    country_leader_pool_size = 4
 		leaders_cost_mult = -0.5
 		leaders_upkeep_mult = -0.5
 		pop_cat_worker_happiness = 0.05
 		pop_cat_ruler_happiness = -0.05
-		
+
 	}
-	
-	
+
+
 	random_weight = {
 		value = 100
-	}	
-	
-	
-}	
+	}
 
 
-
-
+}

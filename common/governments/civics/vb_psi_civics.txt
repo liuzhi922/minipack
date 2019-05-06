@@ -29,11 +29,6 @@ civic_vb_psi_soul_eater = {
 		}
 		ethics = {
 			OR = {
-				text = civic_tooltip_xenophobe
-				value = ethic_xenophobe
-				value = ethic_fanatic_xenophobe
-			}
-			OR = {
 				text = civic_tooltip_spiritualist
 				value = ethic_spiritualist
 				value = ethic_fanatic_spiritualist
@@ -42,6 +37,8 @@ civic_vb_psi_soul_eater = {
 				text = civic_tooltip_not_pacifist
 				value = ethic_pacifist
 				value = ethic_fanatic_pacifist
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
 			}
 		}
 		civics = {
@@ -53,7 +50,7 @@ civic_vb_psi_soul_eater = {
 		}
 
 	}
-	
+
 	random_weight = {
 		base = 30
 		modifier = {
@@ -66,7 +63,7 @@ civic_vb_psi_soul_eater = {
 			has_global_flag = game_started
 		}
 	}
-	
+
 	description = "civic_vb_psi_soul_eater_effects"
 }
 
@@ -76,7 +73,7 @@ civic_vb_psi_touched_by_the_shroud = {
 	playable = { host_has_dlc = "Utopia" }
 	modification = no
 	icon = "gfx/interface/icons/governments/civics/vb_psi_touched_by_shroud1.dds"
-	
+
 	possible = {
 		ethics = {
 			OR = {
@@ -85,12 +82,12 @@ civic_vb_psi_touched_by_the_shroud = {
 				value = ethic_fanatic_spiritualist
 			}
 		}
-		
+
 		civics = {
 			NOT = { value = civic_vb_psi_soul_eater }
 		}
 	}
-	
+
 	random_weight = {
 		base = 1
 		modifier = {
@@ -98,7 +95,7 @@ civic_vb_psi_touched_by_the_shroud = {
 			NOT = { host_has_dlc = "Utopia" }
 		}
 	}
-	
+
 	description = "civic_vb_psi_touched_by_the_shroud_effects"
 	modifier = {
 		all_technology_research_speed = 0.05
