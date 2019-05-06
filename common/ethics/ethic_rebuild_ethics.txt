@@ -1,22 +1,16 @@
 #########################
 ####mod ethic rebuild####
 ethic_categories = {
-
 	soc = {
 		opinions = {}
 	}
-
 	grn = {
 		opinions = {}
 	}
-
 	elt = {
 		opinions = {}
 	}
 }
-
-
-
 
 
 ethic_socialism = {
@@ -32,8 +26,8 @@ ethic_socialism = {
 	}
 
 	country_modifier = {
-	    pop_growth_speed = 0.1
-		pop_housing_usage_mult = -0.05
+	pop_growth_speed = 0.05
+	pop_housing_usage_mult = -0.05
 
 	}
 
@@ -241,10 +235,7 @@ ethic_socialism = {
 				has_living_standard = { type = living_standard_shared_burden }
 			}
 		}
-
 	}
-
-
 }
 
 
@@ -252,7 +243,6 @@ ethic_fanatic_socialism = {
 	cost = 2
 	category = "soc"
 	category_value = 0
-
 
 	use_for_pops = no
 
@@ -264,24 +254,16 @@ ethic_fanatic_socialism = {
 
 
 	country_modifier = {
-		pop_growth_speed = 0.15
+		pop_growth_speed = 0.1
 		pop_housing_usage_mult = -0.1
 		pop_government_ethic_attraction = 0.15
 		trade_value_mult = -0.05
 	}
 
-
-
 	random_weight = {
 		value = 150
 	}
-
-
 }
-
-
-
-
 
 ethic_capitalism = {
 	cost = 1
@@ -290,7 +272,7 @@ ethic_capitalism = {
 
 	category_opposite = yes
 
-    fanatic_variant = ethic_fanatic_capitalism
+  fanatic_variant = ethic_fanatic_capitalism
 
 	tags = {
 	          ELITIST_ETHIC_ALLOWS_STRATIFIED
