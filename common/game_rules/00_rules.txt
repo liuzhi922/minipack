@@ -195,7 +195,7 @@ species_can_live_on_planet = {
 		NOR = {
 			has_trait = trait_machine_unit
 			has_trait = trait_mechanical
-			NAND = {
+			AND = {
 				has_trait = trait_cybernetic
 				exists = owner
 				owner = {
@@ -469,17 +469,6 @@ can_declare_war = {
 			always = no
 		}
 	}
-	#if = {
-	#	limit = {
-	#		exists = root
-	#		ROOT = {
-	#			is_ai = yes
-	#		}
-	#	}
-	#	ROOT = {
-	#		is_at_war = no
-	#	}
-	#}
 }
 
 #Root = country
@@ -991,17 +980,10 @@ can_enter_system_by_jump = {
 
 # This = pop
 can_resettle_pop = {
-	IF = { 
-		limit = { is_shackled_robot = yes }
+	OR = {
+		owner = { has_policy_flag = resettlement_allowed }
+		owner = { is_gestalt = yes }
 		is_shackled_robot = yes
-	}
-	ELSE = {
-		owner = {
-			OR = {
-				has_policy_flag = resettlement_allowed
-				is_gestalt = yes
-			}
-		}
 	}
 }
 
@@ -1044,54 +1026,17 @@ pop_generates_crime = {
 
 # This = planet
 can_pops_grow_on_planet = {
-	OR = {
-		AND = {
-			exists = controller
-			controller = { is_ai = no }
-		}
-		gai_stop_pop = no
-	}
 	NOR = { 
 		has_modifier = planet_population_control
-		has_modifier = planet_population_control_gestalt
-		has_modifier = gai_stop_biotrophy
-		AND = { # conquered by crisis
-			exists = controller
-			controller = {
-				OR = {
-					is_country_type = ai_empire
-					is_country_type = swarm
-				}
-			}
-		}
+		has_modifier = planet_population_control_gestalt  
 	}
 }
  
 # This = planet
 can_pops_assemble_on_planet = {
-	OR = {
-		AND = {
-			exists = controller
-			controller = { is_ai = no }
-		}
-		gai_stop_pop = no
-	}
 	NOR = { 
-		has_modifier = planet_robot_assembly_control
-		has_modifier = planet_population_control_gestalt
-		AND = { # conquered by crisis
-			exists = controller
-			controller = {
-				OR = {
-					is_country_type = ai_empire
-					is_country_type = swarm
-				}
-			}
-			AND = {
-				exists = owner
-				OWNER = { NOT = { is_country_type = ai_empire } }
-			}
-		}
+		has_modifier = planet_population_control
+		has_modifier = planet_population_control_gestalt  
 	}
 }
 
@@ -1103,7 +1048,6 @@ can_pops_decline_on_planet = {
 # This = planet
 # Root = country
 can_force_grow_on_planet = {
-	exists = owner
 	owner = { NOT = { has_policy_flag = population_controls_not_allowed } }
 }
 
@@ -1126,8 +1070,8 @@ can_force_decline_on_planet = {
 # Root = country
 can_force_decline_species = {
 	OR = {
-		has_citizenship_type = { country = root type = citizenship_slavery }
-		has_citizenship_type = { country = root type = citizenship_robot_servitude }
+		has_citizenship_type = { type = citizenship_slavery }
+		has_citizenship_type = { type = citizenship_robot_servitude }
 	}
 }
 
@@ -1209,21 +1153,24 @@ can_build_branch_office_on_planet = {
 # This = country
 # Checked by is_criminal_syndicate trigger
 is_criminal_syndicate_rule = {
-	exists = this
 	has_authority = auth_corporate
 	has_valid_civic = civic_criminal_heritage
 }
 
 # This = planet
 can_crossbreed_species_on_planet = {
-	exists = owner
-	owner = { has_ascension_perk = ap_xeno_compatibility }
-	count_species = {
-		limit = { 
-			is_crossbreeding_possible = yes
-		}
-		count >= 2
-	}
+    exists = owner
+    OR = {
+        has_building = building_brothel_house
+        has_building = building_brothel_house_branch_office 
+        owner = { has_ascension_perk = ap_xeno_compatibility }
+    }
+    count_species = {
+        limit = { 
+            is_crossbreeding_possible = yes
+        }
+        count >= 2
+    }
 }
 
 # This = species one
@@ -1263,23 +1210,9 @@ can_use_galactic_market = {
 # ROOT = country
 # THIS = pop
 can_be_sold_on_slave_market = {
-	NOT = { has_job = organic_battery }
 	OR = {
 		is_enslaved = yes
 		is_non_sapient_robot = yes
 		is_shackled_robot = yes
-	}
-	OR ={
-		ROOT = { is_ai = no }
-		has_citizenship_rights = no
-		AND = {
-			is_unemployed = yes
-			planet = {
-				count_pops = {
-					count > 3
-					limit = { is_unemployed = yes }
-				}
-			}
-		}
 	}
 }
