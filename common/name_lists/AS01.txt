@@ -1,0 +1,188 @@
+### Alien Suns 01
+AS01 = {
+
+	ship_names = {
+
+		generic = {
+			"True Ridge" "Forgotten Water" "Black Blade" "Fast Slithering Creature" "Raining Bone" "Shadow Grave" "Shadow Slithering Creature" "Raining Dagger" "Thorned Spike" "Sharp Shelled Raiders" "Raining Flopping Wing" "Raining Jaw" "Huge Branch" "Misty Cage" "White Waste" "Dark Sea" "Raining Crushed Moon" "Green Tusk" "Grey Fist" "Broken Spike" "Hungry Hunting Razor" "Death Sky" "Blue Asteroid" "White Spear" "Extinct Fist" "Bad World" "White Claw" "Sticky Vigilant" "Good Backspike" "Green Grip" "White Claw" "Tiny Tearing Fear" "Furry Fist" "Fog Flying Afterlife" "Forgotten Beach" "Bleeding Cleaver" "Crooked Raging Grief" "Black Gut" "Forgotten Barb" "Storm Blazing Grief" "Anniliated Spike" "Shadow Ridge" "Big Mound" "Grey Mound" "Chaos Snow" "Fog Creature" "Black Drooling Bearers" "Green Rage" "Orange Asteroid" "Yellow Innards" "Raining Conviction" "Jagged Desert" "Sleeping Fist" "Shadow Dust" "Death Branch" "Flaming Destroyers" "Green Muzzle" "Raining Tomb" "Broken Asteroid" "Grey Running Horror" "Yellow Crevasse" "Dark Entrails" "Unthinking Ocean" "White Club" "Dreaming Star" "Dreaming World" "Death Vigilant" "Forgotten Afterlife" "Storm Snow" "Green Loathing Blade" "Spikey Blade" "Raining Gas giant" "White Revenge" "Big Tentacle" "Unthinking Hill" "Death Mound" "Sticky Mound" "Black Torn Disgust" "Black Grip" "Dreaming Arm" "Pungent Lake" "Crooked Claw" "Unthinking Revenge" "Red Innards" "Furry Voice" "Unthinking Axe" "Unthinking Cleaver" "Red Arm" "Running Horizon" "Red Hold" "Blue Cliff" "Dim Destroyers" "Red Tusk" "Dark Moon" "White Hate" "Raining Tusk" "Raining Mind" "Rotten Cliff" "Boiling Sky" "Dim Spike" "Falling Mountain" "Dark Beast" "White Conviction" "Flaming Waste" "Grey Sky" "Grey Raiders" "Yellow Claw" "Shadow Loathing Tomb" "White End" "Raining Star" "Rotten Waste" "Dreaming Tentacle" "White Hill" "Red Arm" "Blue Sky" "Crooked Hook" "Green Ridge" "Hissing Blade" "Broken Star" "Black Jumping Vigilant" "Yellow Spike" "Flayed Torn Moon" "Raining Tusk" "Misty Sea" "Orange Gas giant" "Fog Innards" "Howling Cliff" "Red Spur" "Grey Flying Ones" "Crooked Lake" "Yellow Horror" "Dreaming Forest" "Orange Grieving Ones" "Fatal Scalp" "Yellow Saoring Blade" "Storm Reaper" "Red Moaning Crushers" "Black Hook" "Raining Mace" "Red Sleeping Razor" "White World" "Death Spur" "Grey Pincer" "Dread Crushers" "Gouged Horizon" "Sharp Rending Rage" "Chaos Paw" "Orange Pike" "Sharp Star" "Crooked Mountain" "Blue Fist" "Orange Oozing Razor" "White Lake" "Yellow Beach" "Orange Sky" "Raining Tusk" "Black Running Spike" "Diving Maw" "Shadow Reaper" "Fog Blade" "Buzzing Crevasse" "Unthinking Fighting Rock" "Flaming Fighting Hunters" "Broken Jungle" "Blue Thing" "Grey Fist" "Screaming Horizon" "Unthinking Arm" "Raining Fist" "Black Star" "Anniliated Barb" "Forgotten Spike" "Fog Loathing Razor" "Doom Moaning Tooth" "Black Knife" "Dark Spur" "Orange Asteroid" "Green Sky" "Yellow Asteroid" "Raining Wing" "Raining Slithering Loathing" "Orange Moaning Creature" "Bleeding Sky" "Raining Raging Spike" "Grey Spike" "Hungry Star" "Green Jumping Tomb" "Misty Forest" "Jagged Star" "True Wing" "Green Pincer" "Dark Disgust" "Green Spur" "Yellow World" "Green Jelousy" "Dreaming Claw" "Shadow Asteroid" "Broken Sky" "Death Paw" "Dripping Asteroid" "Crooked Pincer" "Raining Horizon" "Orange Gas giant" "Misty Mace" "Misty Mountain" "Dripping Drop" "White Tearing Raiders" "Blue Jungle" "Slow Fist" "Orange Drooling Claw" "White Crushed Destroyers" "Forgotten Grip" "Red Conviction" "Green Gas giant" "Fuzzy Hunters" "Broken Slithering Slayers" "White Claw" "Fog Running Reaper" "Blue Bone" "Dark Drop" "White World" "Dark Ripped Spike" "Forgotten Fleeing Slayers" "Dead Mind" "Fast Hook" "Red Moaning Afterlife" "Black Cliff" "Dark Arm" "Red Blade" "Raining Mace" "Death Blade" "Forgotten Gut" "Burning Oozing End" "Black Crushers" "Red Knife" "Fog Asteroid" "Forgotten Torn Jelousy" "Grey Drooling Claw" "Black Fang" "Howling Grasp" "Misty Fang" "Dark Destroyers" "Blue Grave" "Flaming Torn Slayers" "Misty Mound" "Red Hook" "Shadow Club" "Furry Pike" "Misty End" "Raining Pincer" "White Talon" "Dripping Grave" "Green Destroyers" "Black Cleaver" "Fog Jelousy" "Plague Afterlife" "Dim Axe" "Forgotten Hook" "Black Water" "Green Snow" "Buzzing Arm" "Orange Cage" "Orange Tusk" "Orange Horizon" "Fast Canyon" "Dreaming Bone" "Broken Destroyers" "Death Star" "Unthinking Talon" "Forgotten Flying Bearers" "Stinking Wood" "Green Ocean" "Shinning Tentacle" "Forgotten Claw" "Blue Fist" "Forgotten Voice" "Running Hill" "Slashing Spike" "Shinning Claw" "Unthinking Tripe" "Red World" "Forgotten Club" "Blue Cliff" "Orange Slithering Disgust" "Yellow Barb" "Raining Star" "Raining Revenge" "Shadow Sleeping Thing" "Forgotten Entrails" "Shadow Axe" "True Hunters" "Red Stream" "Diving Drop" "Diving Mountain" "Forgotten Vigilance Horn" "Green Revenge" "Fog Ridge" "Unthinking Drooling Horror" "Blue Blade" "Dreaming Mound" "Yellow Horizon" "Forgotten Mace" "Raining Tusk" "Misty Star" "Orange Tusk" "Crooked Moon" "Grey Shredded Disgust" "Green Tomb" "Green Pincer" "Dreaming Ridge" "Orange Blade" "Boiling Crevasse" "Misty Ocean" "Grey Claw" "Red Gas giant" "Dripping Spike" "Unthinking Moon" "Gouged River" "Dark Gas giant" "Unthinking Shredded Backspike" "Dreaming Blade" "Dreaming Creature" "Red Bowels" "Shadow Jaw" "Red Cage" "Shadow World" "Bright Horror" "Dark Hill" "Black Bearers" "Yellow Cage" "Sharp Water" "White Innards" "Unthinking World" "Grey Cage" "Yellow Peak" "Extinct Star" "Raining Grief" "Misty World" "Green Blazing Bearers" "Red Wing" "Cracked Spear" "Blue Branch" "Death Cage" "Orange Moon" "Orange Hill" "Misty Bone" "Orange Sword" "Black Sky" "Falling Beast" "Forgotten Revenge" "Bloody Moon" "Green Creature" "Blue Crevasse" "Forgotten Hook" "Dreaming Entrails" "Raining World" "Hissing Innards" "Red World" "White Asteroid" "Raining Sword" "Blue Cave" "Death Spur" "Shinning Reaper" "Forgotten Sky" "Black Wing" "Dreaming Bowels" "Grey Cleaver" "Death Horn" "Bleeding Desert" "Green River" "Grey Paw" "Dreaming Ridge" "Green Canyon" "Huge Horizon" "Forgotten Star" "Misty Rending Spike" "Sharp Voice" "Raining Desert" "Fog Gas giant" "Misty Crushers" "Sharp Sky" "Dark Moon" "Misty Drooling Hunters" "Yellow Ones" "Furry Ocean" "Unthinking Star" "Shadow Reaper" "Red Pincer" "Dreaming Loathing" "Diving Spike" "Red Star" "Storm Grave" "Slashing Slithering Razor" "Yellow Blade" "Chaos Mind" "Huge Grieving Creature" "Shadow Backspike" "White Mace" "Grey Wing" "Fog Spike"
+		}
+
+		corvette = {
+        
+		}
+		
+		destroyer = {
+        
+		}
+		
+		cruiser = {
+        
+		}
+		
+		battleship = {
+        
+		}
+		
+		science = {
+        
+		}
+		
+		colonizer = {
+       
+		}
+		
+		constructor = {
+        
+		}
+		
+		
+		mining_station = { }
+		research_station = { }
+		wormhole_station = { }
+		terraform_station = { }
+		observation_station = { }
+		outpost_station = {
+			random_names = { }
+			sequential_name = "%O% Frontier Outpost"
+		}
+
+		military_station_small = {}
+		military_station_medium = {}
+		military_station_large = {}	
+	}
+
+	fleet_names = {
+		random_names = {
+	"White Moon" "Misty Dagger" "Misty Conviction" "Green Drop" "Orange Canyon" "Plague Fang" "Fog Blazing Raiders" "Raining Fist" "Unthinking Dagger" "Fog Mace" "Cracked Club" "Orange Waste" "Dreaming Loathing Horn" "Forgotten Lake" "Stinking Slayers" "Misty Loathing Bearers" "Shadow Drooling Blade" "Fast Star" "Sticky Disgust" "Yellow Moon" "Red Grasp" "Orange Spur" "Orange Hunting Ones" "Dreaming Cage" "Forgotten Disgust" "Misty Voice" "Dark Crushed Tomb" "True Sword" "Shadow Scalp" "Black Claw" "Rotten Bowels" "Raining Jelousy" "Unthinking Fist" "Burning Razor" "Dark Pincer" "Dark Knife" "Spitting Voice" "Bloody Horizon" "Slow Horizon" "Unthinking Backspike" "Black Entrails" "Dread Tearing Ones" "Bloody Fang" "Fog Stream" "Red Hate" "Death Dagger" "Black World" "Yellow Wood" "Fog Grip" "Unthinking Cave" "Green Tripe" "Fog Club" "Vile Crushed Raiders" "Yellow Revenge" "Raining Mace" "Crooked Loathing" "Fog Tooth" "Hungry Bone" "Grey Grip" "Orange Grip" "Raining Disgusting Tooth" "Grey Tentacle" "Yellow Gas giant" "Red Wing" "Flaming Screaming Ones" "Misty Sky" "Unthinking Tooth" "Vile Cliff" "Forgotten Asteroid" "Grey Pincer" "Death Pond" "Green Wing" "Death Hill" "White Moon" "Shinning Dust" "Dark Blade" "Black Peak" "Vile Disgust" "White Crushed Anger" "Blue Crawling Razor" "Grey Star" "Grey Spike" "Dark Drop" "Orange Flying Jelousy" "Grey Crawling Razor" "White Gas giant" "Orange Spear" "Dark Biting Afterlife" "Foul Creature" "Shadow Beach" "Death World" "Death Fang" "Shinning Hold" "Cracked Horror" "Grey Running Grave" "Gouged Mind" "Dreaming Moon" "White Mountain" "Red Claw" "Scorched Gas giant" 
+
+		}
+		sequential_name = "%O% White Fang"
+	}
+	
+	### ARMIES
+	army_names = {
+		defense_army = {
+			sequential_name = "%O% Black Blade"
+		}	
+		assault_army = {
+			sequential_name = "%O% Black Spear"
+		}
+		slave_army = {
+			sequential_name = "%O% Grey Running Neck"
+		}
+		clone_army = { 
+			sequential_name = "%O% Bad Herd"
+		}
+		robotic_army = {
+			sequential_name = "%O% Shining Claw"
+		}
+		android_army = {
+			sequential_name = "%O% Death Fist"
+		}
+		psionic_army = { 
+			sequential_name = "%O% Shadow Horror"
+		}
+		xenomorph_army = {
+			sequential_name = "%O% Foul Moaning Thing"
+		}
+		gene_warrior_army = {
+			sequential_name = "%O% Storm Jaw"
+		}
+		robotic_defense_army = {
+			sequential_name = "%O% Shining Palm"
+		}
+		android_defense_army = {
+			sequential_name = "%O% Death Razor"
+		}
+		occupation_army = {
+			sequential_name = "%O% Black Dagger"
+		}
+		robotic_occupation_army = {
+			sequential_name = "%O% Shining Fang"
+		}
+		android_occupation_army = {
+			sequential_name = "%O% Death Bearers"
+		}
+	}
+
+	### PLANETS
+
+	planet_names = {
+
+		generic = {
+			names = {
+			"Unthinking Paw" "Shredded Drooling Hate" "Dripping Blazing Ones" "Grey Grieving Thing" "Rotting Claw" "Growling Moon" "Black Screaming Cave" "Death Cave" "Dead Pike" "Fog Drop" "Death Beach" "Red Sword" "White Gas giant" "Broken Wing" "Grey Gas giant" "Fog Crushed Slayers" "Unthinking Grip" "Yellow Bone" "Slow Horn" "Orange Gas giant" "Dreaming Anger" "Anniliated Sky" "Dreaming Star" "Grey Revenge" "Grey Mountain" "Rotten Torn Cave" "Grey Gas giant" "Death Jaw" "Dark River" "Yellow Fist" "Stinking Drooling Horn" "Unthinking Knife" "Misty Beach" "Misty Moon" "Fog Star" "Fog Ocean" "Smelling Disgusting Ones" "Red Loathing" "Black Star" "Dripping Desert" "Dread Ones" "Grey Destroyers" "Forgotten Hill" "Furry Crushed Revenge" "Black Conviction" "White Ocean" "Red Horizon" "Green Star" "Yellow Drooling Hunters" "Sharp Oozing End" "Orange Tomb" "Dreaming World" "Death Backspike" "Yellow Gas giant" "Green Cliff" "Death Afterlife" "White Claw" "Unthinking Fang" "Orange Arm" "Yellow Claw" "Shadow Slayers" "Burning Crevasse" "Fog Pincer" "Dreaming Slithering Revenge" "Dreaming Hill" "Dripping Gut" "Raining Water" "Death Thing" "Yellow Saoring Thing" "Jagged Beast" "Unthinking Bone" "Sharp Snow" "Misty Ridge" "Raining Asteroid" "Rotting Gas giant" "Red Raging Spike" "Green Moaning Ones" "White Hunting Anger" "Red Hill" "Slashing Moon" "Grey Asteroid" "Forgotten Grip" "Dark Wing" "Huge Wing" "Tiny Wing" "Crooked Star" "Flaming World" "Grey Moon" "Good Wing" "Shadow Star" "Raining Dagger" "Orange Thrashing Vigilant" "Unthinking Gas giant" "Fog Rock" "Crushed Crawling Loathing" "Bloody Spear" "Spitting Ripped Horror" "Blue Grave" "Red Hook" "Raining Loathing" "Tiny Hill" "Forgotten Branch" "Red Ocean" "Black Sky" "Yellow Pike" "Rotting Conviction" "Huge Peak" "Flaming Lake" "Dreaming Wood" "Unthinking Rending Grief" "Fog Star" "Storm Spear" "Dreaming Mace" "Dreaming Hate" "Fog Spike" "Black Thrashing Backspike" "Dark Pike" "Fog Wood" "Fog Dagger" "Unthinking Spike" "Forgotten Vigilance Raiders" "Red Blazing Spike" "Burning Sea" "Grey Grieving Grief" "Forgotten Sky" "Unthinking Voice" "Diving Bowels" "Fast Slayers" "Yellow Star" "Red Drooling Backspike" "Dark Wood" "Grey Sea" "Death Gas giant" "Misty End" "Death Wing" "Red World" "Dark Backspike" "Warm World" "Raining Conviction" "Flayed Muzzle" "Grey Tooth" "Red Screaming Wing" "Crooked Thing" "Red Claw" "Shadow World" "Death Ocean" "Black Claw" "Broken Knife" "Dark Gut" "Orange Muzzle" "Shadow Vigilance Hate" "Death Sky" "Unthinking Cleaver" "White Waste" "Burning Mind" "Sticky Horror" "Extinct Bone" "Black Arm" "Broken Loathing" "Orange Star" "Tiny Claw" "Unthinking Gas giant" "Red Grip" "Dreaming Peak" "Boiling Star" "Rotting Entrails" "Fog Vigilant" "Unthinking Desert" "Fog Pond" "Grey Mound" "Black Mound" "Orange Flying Destroyers" "Green Horizon" "Red Sword" "Smelling Stream" "White Saoring Thing" "Red Thing" "Shadow Rock" "Furry Mountain" "Rotting Drop" "Dreaming Tripe" "Grey Oozing Horn" "White Hold" "Dreaming Sleeping Vigilant" "Bloody Moon" "Shadow Loathing Moon" "Forgotten Wing" "White Dagger" "White Grief" "Burning Pincer" "Unthinking Asteroid" "Flaming Drop" "Smelling Vigilance Star" "White Fleeing Horn" "Torn Bearers" "Sharp Razor" "Green Tentacle" "Fuzzy Fist" "White Forest" "Orange Waste" "Dreaming Branch" "Red Sky" "Raining Shelled Blade" "Green Hunters" "Death Sky" "Flaming Fist" "Shadow Running Creature" "Burning World" "Red Gas giant" "White Asteroid" "Bad Spur" "Vile Asteroid" "Fog Bone" "Screaming Crevasse" "Orange Cage" "Bleeding Bone" "Scorched Moon" "White Tripe" "Crooked Tomb" "Dreaming Gas giant" "Foul Drop" "Flaming Loathing Backspike" "Forgotten Screaming Ones" "Crushed Loathing" "Dripping Star" "Howling Vigilant" "Raining River" "Misty Conviction" "Dark Tusk" "Misty Arm" "Black Screaming Rage" "Diving Star" "Death Gas giant" "Jagged Horizon" "Grey Moon" "Fog Loathing Backspike" "Bright Sky" "Shredded Blade" "Flaming Creature" "Black Grieving Horror" "Thorned River" "Bloody Tomb" "Green Beast" "White Horizon" "Spitting Spike" "Yellow Pond" "Green Running Creature" "Dark Snow" "Unthinking Hill" "Flaming Asteroid" "Forgotten World" "Death Waste" "Fog Grief" "Furry Hate" "Blue Star" "Forgotten Talon" "Forgotten Claw" "Diving Horizon" "Pungent Jaw" "Scorched Star" "Black Lake" "Dreaming Mace" "Slow Axe" "Dripping Conviction" "Furry Star" "Unthinking Spike" "Dark Voice" "Huge Hook" "Blue Crevasse" "Blue Drop" "Shadow Sword" "Dark Moon" "Torn Dagger" "Doom Horizon" "White Axe" "Shadow Running Cave" "Warm Jelousy" "Forgotten Fleeing Claw" "Dreaming Wood" "Orange Moon" "Grey World" "Red Rock" "Torn Scalp" "Dark Dagger" "Freezing Branch" "Fog Crawling Loathing" "Fast Ridge" "Hissing Hill" "Unthinking Spear" "White Maw" "Blue Pike" "Green Wood" "Blue Slayers" "Dread Fang" "Green Talon" "Bleeding Beach" "Raining Mace" "Bad Voice" "Dark Fist" "Fatal Ones" "Misty Destroyers" "Scorched Entrails" "Swamp Water" "Misty Bone" "Stinking Canyon" "Grey Asteroid" "Rotting Thing" "Black Spear" "Green Star" "Grey Claw" "Green Spike" "Anniliated Bowels" "Orange Bowels" "Misty Grief" "Cracked Cage" "Vile Rock" "Misty Tearing Jelousy" "Black Wing" "Storm Drooling Revenge" "Yellow Bone" "Orange Cleaver" "White Grip" "Raining Club" "Grey Sky" "Blue Screaming Slayers" "Flaming Jaw" "Death Hunters" "Blighted Jungle" "Shadow Knife" "Raining Jungle" "Big Water" "Doom Lake" "Shinning Star" "Howling Crushed Spike" "Dread Conviction" "Green World" "Orange Buzzing Horror" "Orange Claw" "Anniliated Dust" "Death Creature" "Unthinking Rage" "White Cage" "Yellow Mountain" "Yellow Fist" "Swamp Claw" "Red Ones" "Dreaming Desert" "Misty Ripped Raiders" "Dreaming Hunting Raiders" "Fog Mace" "Dark Ripped Rage" "Plague Conviction" "Black Mound" "Death Hill" "Dreaming Asteroid" "Tiny Shelled Bearers" "True Rage" "White Shelled Crushers" "Grey Horizon" "Raining Peak" "Black Paw" "Red Mountain" "Dripping Thing" "Death Beach" "Green Star" "Red Gas giant" "Yellow Bone" "Green Voice" "Death Entrails" "Misty Maw" "Dreaming Raiders" "Orange Asteroid" "Red Sky" "Dreaming Tomb" "Dripping Slithering Grave" "Blue Bone" "Dark Dagger" "Blue Wood" "Misty Biting Grief" "Red Talon" "Unthinking Muzzle" "Shadow Innards" "Dripping Sky" "Howling Gas giant" "White Wood" "Scorched River" "Blue Fighting Tooth" "Dread Gas giant" "White Anger" "Unthinking Star" "Gouged Oozing Horror" "Green Cliff" "Misty Gas giant" "Red Flopping Fear" "Black Rock" "Green Destroyers" "Howling Axe" "White Ones" "Red Grip" "Flaming Mound" 
+			}
+		}
+		
+		pc_desert = {
+			names = {
+            
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+            
+			}
+		}
+		
+		pc_arid = {
+			names = {
+            
+			}
+		}
+		
+		pc_continental = {
+			names = {
+           
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+            
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+            
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+            
+			}
+		}
+		
+	}
+
+	### CHARACTERS
+
+	character_names = {
+		default = {
+			# A complete name
+			full_names = {
+			"Grey Pike" "Black Muzzle" "Black Gut" "Orange Saoring Tomb" "Green Spur" "Black Sleeping Claw" "Yellow Claw" "Grey Tripe" "Black Ripped Slayers" "Black Bone" "Red Claw" "Grey Bowels" "Green Screaming Creature" "White Blade" "Red Tripe" "Blue Pincer" "Red Barb" "Blue Crawling Slayers" "Black Claw" "Green Gut" "Black Flopping Rage" "White Spear" "Red Grip" "Blue Bowels" "Green Screaming Tooth" "Grey Knife" "Orange Blazing Destroyers" "Blue Tripe" "Red Fighting Rage" "Yellow Screaming Bearers" "White Grip" "Green Branch" "White Grip" "Yellow Cleaver" "Black Paw" "Black Spear" "Grey Claw" "Red Spear" "Yellow Bone" "White Bone" "Red Knife" "Grey Innards" "Blue Disgusting Razor" "Yellow Fang" "Red Pincer" "Blue Knife" "Yellow Cleaver" "Yellow Jaw" "Grey Loathing Ones" "Blue Mace" "White Hold" "Orange Entrails" "Orange Innards" "Orange Claw" "Black Talon" "White Voice" "Blue Shelled Grief" "Grey Knife" "Orange Buzzing Raiders" "Orange Entrails" "Orange Tusk" "Orange Tripe" "Black Sword" "Black Claw" "Grey Crawling Spike" "White Branch" "Grey Tusk" "Black Thrashing Creature" "Orange Screaming Bearers" "Black Fist" "Red Running Horror" "Black Spike" "Blue Bone" "White Sword" "Black Club" "Grey Blazing Backspike" "Red Rending Razor" "White Fang" "Black Cage" "Blue Hunting Horn" "Grey Jaw" "White Sword" "Orange Fist" "Orange Knife" "Blue Fist" "White Spike" "Red Thrashing Afterlife" "Blue Grieving Horror" "Blue Hold" "Orange Knife" "Grey Fang" "Blue Spur" "Red Biting Crushers" "Grey Tusk" "Green Grip" "Green Claw" "Yellow Running Hunters" "Orange Muzzle" "Blue Grip" "Orange Claw" "Yellow Muzzle" "Green Dagger" "Yellow Buzzing Creature" "White Blade" "Red Fist" "Orange Bone" "Yellow Club" "Blue Cleaver" "Red Scalp" "Black Paw" "Orange Saoring Horn" "Orange Branch" "Blue Bone" "Green Raging Rage" "Black Knife" "Black Vigilance Blade" "Orange Pike" "Black Oozing Revenge" "Blue Hold" "Green Fang" "Black Spike" "Red Club" "Yellow Fleeing Hunters" "Blue Fleeing Razor" "Orange Tearing Beast" "Orange Maw" "Grey Drooling Loathing" "Orange Spur" "Blue Wing" "Orange Moaning Tooth" "White Barb" "White Spear" "White Conviction" "Grey Thrashing Grief" "Blue Hook" "Green Spike" "Grey Thrashing Afterlife" "White Wing" "Green Pike" "Orange Crushed Revenge" "White Running Spike" "Red Shelled Jelousy" "Blue Hunting Vigilant" "White Vigilance Claw" "Green Tusk" "Green Fist" "White Drooling Anger" "White Arm" "Green Crawling Hate" "Blue Muzzle" "Green Claw" "Yellow Spike" "Red Vigilance Moon" "Red Hold" "Blue Cage" "White Sleeping Afterlife" "Yellow Fleeing Rage" "Grey Fist" "Red Flying Vigilant" "Blue Dagger" "Green Maw" "Black Arm" "Orange Blazing Grief" "Grey Knife" "Red Spike" "Black Cage" "White Claw" "Blue Jumping Destroyers" "Blue Drooling Tomb" "Blue Tusk" "Grey Cleaver" "Blue Pincer" "Red Blazing Hate" "Grey Fist" "Blue Paw" "Grey Bone" "Red Grip" "White Conviction" "Green Claw" "White Disgusting Crushers" "Green Claw" "White Fist" "Grey Branch" "Black Tusk" "Yellow Voice" "Yellow Oozing Anger" "Orange Talon" "Green Wing" "Blue Conviction" "Grey Dying Moon" "Yellow Talon" "Yellow Dagger" "Blue Pike" "Blue Sword" "White Shelled Disgust"  
+			}
+			
+			# Always combined with a second name
+			first_names = {
+			"Yellow Pincer" "Orange Fist" "Black Entrails" "White Club" "Forgotten Spear" "Fast Asteroid" "Spitting Eye" "Cracked Pond" "Grey Snow" "Misty Spear" "Autumn Running Spike" "Death Tree" "Dark Jaw" "Yellow Jumping Herd" "Shadow Blade" "White Asteroid" "Red Moaning Tree" "Green Spear" "Dim Asteroid" "Raining Skull" "Fog Bone" "Broken Claw" "Broken Spike" "Grey Tree" "Yellow Bone" "Bad Moon" "Dim Fist" "Shadow Leg" "Green Blade" "Fog Shelled Jaw" "Yellow Tooth" "Running Fist" "Dreaming Moon" "White Moon" "Grey Skull" "Black Slithering Nest" "Dark Skull" "Red Forest" "Storm Skull" "Raining Gas giant" "Buzzing Fist" "Bright Fern" "True Neck" "Dreaming Slithering Horror" "Autumn World" "Death Hunting Head" "Black Spear" "Shadow Fighting Backspike" "Raining Beach" "Red Shelled Nest" "White Moon" "Blue Eye" "Small Flopping beak" "Grey Moon" "Misty Fang" "Fuzzy Pike" "Yellow Spear" "Big Fern" "Dark Horizon" "Yellow Fist" "White Ridge" "Blue Gas giant" "Blue Spear" "Big Belly" "Misty Ocean" "Dreaming Spike" "Shadow Slithering star" "Dreaming Tooth" "Orange Pike" "Slow Fang" "Hissing Skull" "Dark Horizon" "Tiny Pike" "Shadow World" "Dreaming Bone" "Spring Fang" "Grey Skull" "Shinning Jumping Nest" "Spring Sky" "Fast Tree" "Dark Moon" "Grey Escaping spike" "Red Slithering star" "Foul Cliff" "Shadow Moaning Neck" "Forgotten Mound" "Hungry Blade" "Blue Forest" "Death Crawling Tooth" "Green Desert" "Good Beak" "Red Herd" "Green Drooling rock" "Black Jumping Herd" "Running Beast" "Death Escaping spike" "Dreaming Running Thing" "White Saoring Jaw" "Dreaming Sky" "Dreaming Horror" "White Stream" "Hungry Spear" "Dreaming Mountain" "Good Dying Egg" "Shadow Talon" "Black Peak" "Boiling Pike" "Howling Face" "Yellow Head" "Howling Star" "Blue Pike" "White Tooth" "Spitting Eye" "Death Eye" "Spikey Peak" "Grey Ridge" "Fog Cave" "Winter Sleeping Neck" "Dark Talon" "Orange Snow" "Blue Buzzing Thing" "Death Pike" "Flaming Claw" "Big Hunting Thing" "Red Sea" "Death Drop" "Green Water" "Yellow Hunting Tooth" "Buzzing Wing" "Dripping Fern" "Yellow Horizon" "Raining Star" "Winter Pike" "Forgotten Horn" "Orange Blade" "Red Tooth" "Green Blade" "Huge Moon" "Misty Fist" "Yellow Gas giant" "Red Beast" "White Forest" "Green Knife" "Shadow Tooth" "Bleeding Blade" "Howling Jumping Skull" "Shadow Moon" "Broken Flying Horn" "Grey Thing" "Orange Claw" "Tiny Peak" "Slow Blade" "Running Horn" "Huge Moon" "Black Jumping Thing" "Orange Fang" "Misty Sea" "Yellow Knife" "Red Blade" "Misty Knife" "Boiling Running Razor" "Spring Asteroid" "Tiny Star" "Crooked Horror" "Warm World" "Orange Crevasse" "Death Knife" "Screaming Knife" "Howling Asteroid" "Black Screaming Hoof" "Orange Spear" "Dark Asteroid" "Fog Pond" "Shinning Asteroid" "Flaming Wood" "Grey Desert" "Grey Tree" "Death Blazing beak" "Bleeding Blade" "Bright Pike" "Raining Pond" "Orange Fighting Horn" "Yellow Knife" "Red Pike" "Dreaming Hunting Hoof" "Yellow Screaming Egg" "Misty Backspike" "Spikey Knife" "Yellow Moon" "Flaming Drooling Razor" "Forgotten Sleeping Fern" "Flaming Blazing Claw" "Dark World" "Green Belly" "Flaming Eye" "Spring Skull" "Orange Sea" "Stinking Sleeping Tree" "Shadow Blazing Fern" "Blue Pike" "Shadow Claw" "Small Asteroid" "Forgotten Spear" "Grey Fang" "Sticky Horizon" "White Hunting Tooth" "Shadow Claw" "Raining World" "Forgotten Wing" "Huge Sky" "Fog Canyon" "Green Spear" "Fog Knife" "Big Claw" "Dim Flopping Tree" "Fog Star" "Bright Saoring Beast" "Shinning Claw" "Slow Knife" "Dreaming Drooling Horn" "Dreaming Ridge" "Death World" "Dripping Sky" "Diving Knife" "Huge Mountain" "Death Sky" "Bright Claw" "True Running cave" "Fog Canyon" "Green Tongue" "Dreaming Nest" "Spikey Asteroid" "Bright Sky" "Green Spear" "Green Fist" "Dreaming Blade" "Fog Forest" "Cracked Cliff" "Orange Desert" "Bloody Mountain" "Green Pike" "Shinning Eye" "White Spike" "Hungry Claw" "Shadow Water" "White Wing" "Forgotten World" "Red Tongue" "Green Sky" "Growling Star" "Spitting Nest" "Dreaming Knife" "Green Fang" "Spitting Tongue" "Autumn Fist" "Sticky Fist" "Death Tree" "Sharp Blade" "Falling Desert" "Dreaming Jungle" "Big Fang" "Bad Forest" "Bad Asteroid" "Spring Talon" "Freezing Blade" "Diving Rock" "Small Saoring Wing" "Red Blade" "Green Wood" "Slow Asteroid" "Yellow Canyon" "Fog Slithering tree" "Fast Blade"
+			}
+			
+			# Always combined with a first name
+			second_names = {
+			"the Rash" "the Wise" "the Fragrant" "the Vile" "the Dismembered" "the Unpredictable" "the Powerful" "the Peacemaker" "the Vile" "the Vile" "the Bright" "the Stalwart" "the Cruel" "the Judgmental" "the Stupid" "the Imperious" "the Dismembered" "the Merciful" "the Inebriated" "the Cunning" "the Talker" "the Tenacious" "the Unexpected" "the Executioner" "the Vile" "the Strong" "the Annoyed" "the Clever" "the Black" "the Superior" "the Wise" "the Fearful" "the Flatulent" "the Disloyal" "the Impervious" "the Unyielding" "the Conquerer" "the Shy" "the Brave" "the Fortunate" "the Conquerer" "the Sour" "the Seer" "the Tyrant" "the Fortunate" "the Mildly Annoyed" "the Fortunate" "the Strong" "the Fortunate" "the Cunning" "the Flatulent" "the Slow" "the Brave" "the Slow" "the Sleeping" "the Delimbed" "the Annoyed" "the Talker" "the Verbose" "the Inebriated" "the Flatulent" "the Unpredictable" "the Brash" "the Strong" "the Strong" "the Inebriated" "the Holy" "the Quick" "the Unpredictable" "the Stalwart" "the Stupid" "the Talker" "the Judgmental" "the Stupid" "the Judgmental" "the Weak" "the Protector" "the Executioner" "the Vile" "the Stout" "the Seer" "the Loyal" "the Patient" "the Executioner" "the Defender" "the Delimbed" "the Strong" "the Negotiator" "the Brave" "the Bright" "the Cunning" "the Betrayer" "the Shy" "the Shy" "the Mad" "the Still Living" "the Earnest" "the Black" "the Stubborn" "the Peacemaker" "the Cruel" "the Talker" "the Loyal" "the Still Living" "the Stupid" "the Able" "the Negotiator" "the Prolific" "the Negotiator" "the Powerful" "the Prolific" "the Clever" "the Tenacious" "the Executioner" "the Stubborn" "the Imperious" "the Clever" "the Proud" "the Inebriated" "the Flatulent" "the Still Living" "the Shy" "the Fragrant" "the Seer" "the Peacemaker" "the Clever" "the Wise" "the Brooding" "the Wise" "the Unexpected" "the Delimbed" "the Unyielding" "the Stalwart" "the Sober" "the Strong" "the Pontificator" "the Unyielding" "the Watchful" "the Stubborn" "the Coward" "the Betrayer" "the Fearful" "the Verbose" "the Steadfast" "the Tenacious" "the Loyal" "the Just" "the Dense" "the Cunning" "the Still Living" "the Peacemaker" "the Disloyal" "the Sober" "the Weak" "the Sour" "the Holy" "the Steadfast" "the Prolific" "the Clever" "the Betrayer" "the Flatulent" "the Unforgiving" "the Disloyal" "the Delimbed" "the Negotiator" "the Negotiator" "the Unexpected" "the Superior" "the Slow" "the Conquerer" "the Imperious" "the Stubborn" "the Unforgiving" "the Just" "the Sour" "the Cunning" "the Shy" "the Stalwart" "the Cruel" "the Coward" "the Strong" "the Cunning" "the Defender" "the Annoyed" "the Unpredictable" "the Inept" "the Shy" "the Pleasant" "the Shy" "the Bright" "the Able" "the Brave" "the Earnest" "the Seer" "the Betrayer" "the Powerful" "the Devious" "the Clever" "the Fragrant" "the Conquerer"
+			}
+			
+			regnal_first_names = {
+			}
+			
+			regnal_second_names = {
+			}
+		}
+	}
+}

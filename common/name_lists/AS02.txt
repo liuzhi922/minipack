@@ -1,0 +1,187 @@
+### Alien Suns 02
+AS02 = {
+
+
+	ship_names = {
+
+		generic = {
+			Iikee Ziizhizh Tkek Izhitee Iitk' Kteez'zh Ktiiz' Tkikte Zhiizhikt Zhiizh' Tkikt Zik Kteezh Tkikt Iitkeeze 'zitk Izhetki Itki'Eezee Kitk'zh Ti Eetke'Iikee Itki'Ikt' Tk'zh Tkiiktii Ikte Ik'k Ziiti 'ze'Ezh' Iikiizh Izhe'Eze Kek Zekek Eetketki Tk' Iit' Itek 'ktee'Itkii Iizii''ke Tkee Ziit'zh Zit Iik'ki Izhet Itee Iiktitkee Ktize Eki Z'k Ziiziizh Tkiizhi Ez''It' Eezheek Iiktee'Ike Etk' Zhee Iktii Ikt''Eke 'tkiikee Zhe Tk'ktii Tiitkiitk 'tk'zee Keez' Iizii Ktiitki Iktii'Ik' Eetk'tii Zh'ktet Ikee Iizhe'Eeki K'kte Et'z Eetk' Eektezee T'k Zhee Zhitiiz Kt'tiz K'zh 'tkeez Ze Ez''Ek' Zhiit Etii Iitk'k Zhekt Tkikee Ziikiit Iteez 'zh' Iikiiz' Ktitk Ikii Ike Eetkit Zheezek Tkik Eekez Tkiitki Ziitkez Tet Tiizh'tk Kezh' Teekt'kt Etkii Tit Izeezhi Kee Ektee'Iitk' Iikte''tke Itketki Kti Tit Ezh' Iikeetke Iiket' Tee T'ktii T'kte Ikikt Kteet' Eektiit Eeteetkii Ezhe'Itkee Eektii 'zhez Zhii Tketk 'ke''t' Te Ziikeek Ezhetkii Iit'kii Ite Kizh Etki'Ekt' Ti Tkeze Tk'zhek Eekiitk Ktiizeekt Tki Iizhi'Iite Kee Zet'k Keezh Teetk Zee Eetkitki Ekte Ektiizii 'zhe Iiziike 'tkekt Tkek Tkeezheekt Ektiitki Eeki Iket Iik'te Tkee Itiikt Izhiit Tkee Eetki'Eete Iti Ektii Kee Izet Iikteezh Etkez Kteektii Tk'k Etetk Z'kt'kt Ekti Ektiz' Ziizhii 'ze'Eekii Izhiiz 'kt't Iikteek Eez' Iktii Iziit' Tkee Ktiki 'titk 'k''Eez' Titee Tkeki Iitii'Ezhii Keezh Zetee Kteeziikt Eetke 'z' Iikee Ke Kt'ze
+		}
+
+		corvette = {
+
+		}
+		
+		destroyer = {
+		}
+		
+		cruiser = {
+		}
+		
+		battleship = {
+		}
+		
+		science = {
+		}
+		
+		colonizer = {
+		}
+		
+		constructor = {
+		}
+		
+		
+		mining_station = { }
+		research_station = { }
+		wormhole_station = { }
+		terraform_station = { }
+		observation_station = { }
+		outpost_station = {
+			random_names = { }
+			sequential_name = "%O% Frontier Outpost"
+		}
+
+		military_station_small = {}
+		military_station_medium = {}
+		military_station_large = {}	
+	}
+
+	fleet_names = {
+		random_names = {
+Eezee Iiktii'Ezhee Etke'It' 't''Izhee Ekte'Izhe Kit' T'tikt Ektiizh 'tkez Etkii Izhezhe Izhez Ktiizheek Iizii Ktezee Eekt'zii Ikii Kteetetk Eetkeete Iz' Zhit' Zhiizi Ikiizhi Zizh Zhiz Ekii Kt' Ktezh 'tkii Ktitk Ezee Tkiit 'ze'Iizhii Iike'Iitki 'kteekt Tkiizh Iteek Izheez' Ktii Tke Eekit 'tizii Iiketk Itk''Iikti Ktit Iteekt' Eekii Iiktee'Izhi Iikte'Itkii Tet T'zhiikt Tekt 'zhe'Eki Iitkii'Iikii 'zhe'Eektii Iiktitkee Zh' Ziiz Iikt''Iiti Kiki Z'kteetk Eezhize Izizh Kteezhii Tkezhii Ki Ik'kte Zeetk 'z'tke Ktekii 'tiikee Tkeekt Eezhiitk 'zh' Iize'Ezhee Kitkit 'kii'Etki Zhizhee Tk't Itee'Ekt' Izii'Eekii 'ktii Kiit't Eezhiizh Tkeez Iki'Eze Ik'kte Zeezhii Izitki Zi Zizh Zek Tketk Ektii Kizhiikt Iket Etk''Izhee Kikeet Ktee Ke 
+		}
+		sequential_name = "%O% Extraorbital Corps"
+	}
+	
+	### ARMIES
+	army_names = {
+		defense_army = {
+			sequential_name = "%O% Defense Army"
+		}
+			
+		assault_army = {
+			sequential_name = "%O% Assault Army"
+		}
+		
+		slave_army = {
+			sequential_name = "%O% Slave Army"
+		}
+		
+		clone_army = { 
+			sequential_name = "%O% Clone Division"
+		}
+		
+		robotic_army = {
+			sequential_name = "%O% Robot Division"
+		}
+		
+		android_army = {
+			sequential_name = "%O% Android Division"
+		}
+		
+		psionic_army = { 
+			sequential_name = "%O% Psionic Army"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "%O% Xenomorph Division"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "%O% Gene-Warrior Division"
+		}
+		robotic_defense_army = {
+			sequential_name = "%O% Turret Division"
+		}
+		android_defense_army = {
+			sequential_name = "%O% Android Division"
+		}
+		occupation_army = {
+			sequential_name = "%O% Occupation Army"
+		}
+		robotic_occupation_army = {
+			sequential_name = "%O% Robot Division"
+		}
+		android_occupation_army = {
+			sequential_name = "%O% Android Division"
+		}
+	}
+
+	### PLANETS
+
+	planet_names = {
+
+		generic = {
+			names = {
+				Kteezhi 'z'''k' Eet''Iitkee Ekiik Teetk Ize''tee Kt't Ki Eekik Kii 'tkee''kt' Zetiizh Ititki Teekt Tketezh Ktee Ek' Teekt Zhiz 'k't It'zh Eezizh Zhiite Zekt't Tkizh Etee'Ezee Iikti Eetk'tki Tki Kiitii Izh''Itkee Kiki Tiz Zhiitkee Kiiktii Zh' Zhiizhiiz Etkiiz Eeteez Zhetii Ki Ez'tke Eetiitki Iizheti Eetk'k Eetk'ktii Ete Ke Zi Eektii'Izee Iki''kii Eezhee Iizheti Ektiizi Tkek' Iitk''Ikee Iiktetki Tkik Tkikt Ktiit Ikti Eektitk Iiktez T'k Iikikti Iikti''tk' Ktee Kiizeez Teetkii Eetiizii Eekii'Eezhi Tii K'z Zhit Ki Izhe Ezhi 'zikt' Iktikt Ziti Tkek' Kiizii Ktitk'k Zhe Tiz' Ezhii Eteeze Zh'zhii 'tii Eeti'Eekti Ziike Zheti Zeek' Eetii''kti Itk'z' Izee Zii Iz'k Kee Ktizh
+				 Zhiktiizh Ktekii 'tkee Iitkii Iitkii Zh'ki 'teek 'ktee'Ekt' Iizheetki Kiktizh Tkeezeez Tk'keez 'tk'tki Zii Zhiz' Etik Zheezhiitk Ze Zitk Izetkee Zhiteek Eekeke Zi Zhii Itee'Iiktee Iktii Ikizhe Kteezh Ekike Ektee Itet 'tk'''k' Iktee Eeki''zii Kteeteekt 'z' Eetket 'zhet 'zhizh Ezitkii 'z't Eetii'Iizhii Zhe Etke Ktiit Ektiitk Ez'kt Itk'z Etee'Iik' 'ktii Ziit Zhiitkikt Tkiz Eezhi Z'zitk Ez''Iizi Kiit'tk Eze Zee Itez Zheeteekt Etkii Itikt Zeez Zitii Izh'tk Etik' Eke'Izhi Izhe'Iizhee Ketk Kiitiz Ktekte Iikii Teetk' Eeziktee Zhi T'k'tk Tkee Iiktekt Itket' Izee 'kiiktii Etii Zh'tee Iizi Iitki'Iiz' Etkit Tkeeti Ektii Tke Zhiktik Eezhi''ki Etkeet It'zhi Itki Eez'z Ete'Eze Eetkiiz Ktiizhi Ekteekte
+				 Ktiizhe Eet' 'tkee Itk'zh' Kte 'ziikii T'zhi 'tki'Izhee K'tk Zheezh Eeteezhee Tkee Keetkii Tkezh Tketkeezh Tk' Ziize Iitezhee Tk' K'zhii 'zee''ktee Ikt'tkii Tkezhii Iizii Eetkiizh' Eetezh Ezheekt Tiizhik Eekek T'kt Etki Zheete Tk'kt Eze Z'k Zi Ekikt Eekeetkee Ke T'k 'tkiit Eekiike Kee Eetkeezee Zet Zitke Zhii Kee Eetii'Iitki Eetee Kiitkitk Iizh' K'z 'tiikii Izh'''kii Zhiktiik Iikiikt Iizeke Eeteete Iitiitkii Tee Kti Zhezhikt Zektiiz Kt'titk 'zhikt 'zi'Ik' 'kekt Zhekt Kek 'tke Tekt' Tiktee Itit Etkeez Iziiktii Ekti 'ktize Tketkee 'zii 'kek Zheezh' Tkiizh Ez'k 'zhiite K'zhikt Kiz Tkik' Eetitki Ezh'''tke Eeze'Ezhe Keez 'tkiikt Kezii Ktee Zetee Ikte'Eeke Ezhi'Eetke Ete'Eezee Ekte
+
+			}
+		}
+		
+		pc_desert = {
+			names = {
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+			}
+		}
+		
+		pc_arid = {
+			names = {
+           }
+		}
+		
+		pc_continental = {
+			names = {
+           
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+            			}
+		}
+		
+		pc_tundra = {
+			names = {
+           
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+
+			}
+		}
+		
+	}
+
+	### CHARACTERS
+
+	character_names = {
+		default = {
+			# A complete name
+			full_names = {
+			Iikt't Tkii Iikt' Tkiikt Zii Zee Ezi Zhiik Kikt Ezheezhee Iteetk Zhiiti Ki Iikte'Eekii Ekee'Ikte Etkeetk' Iizi'Ikee Zee Ki Izhe'Itee Eek' Iitee'Itk' Eektitk Keetekt Kti Zhiitk'k Ikii T'ktez Ikte'Iitk' Eetketk 'kteezhe Tizhit Tkeezh' Tk'zh Ektetke Itki'Iit' Kt'zh Izii 'zh't Ik't 'zi'Ike Keetee 'zhii'Eekt' Eti'Eek' Zhik' Etkii'Ekti Zhii Kiizh Zhizh Kt'k Ze Izhiize Zhet Iitiizhii Ke Kt'tk'zh K'z Zhe Ezhi'Iizhi Zhitkeet Eetki Ekii'Iit' 'tee Iikeetk Tet 'kt''Iti Keet Eez't Iiziizhee Teeze Zh' Kektii Eekii'Ekte T'zhit Ktezhe Tiitket Zikti Kt'tee 'zizhi K'tkee Iizekt Tiiz't Ezhik Kt'ziz Eetiz' Ktiitkii Etiitk' 'te'Etii Iizh''Ezi Eezheektii Tkeek Eezee Iitke''ti Ektizhi Tk' Teetkeet Ikizii Tikt' Ikiikt' Zhizhekt T'tii Iiktee'Iik' Tkeezez Eetkee Izitk Zhiiz Kiiz' Keetk Ke Tkii Ketk Ikii Ze Ekiizhii Tkezh Zetk Ikeetk Etkezhee Kteziiz Zhit Tiketk Zhiikiik Zh' Zhee Ikti'Izhee Tk' Kt'zeekt Z't' Ktet Itii'Ezi 'kik Tiitke Tii Itke'Etki Tkee 'tkek Izek Tkizii Zhee 'ktizii Zhezee Zikt Ktiitke Teezh Titi Iizetkii Iitkiktii Keektee Ktiizeek Ktiiktiikt Iikt'ze Zeek't Ekii'Iizhee Ze 'kii'Eekii Titi Ezheet Keekii Zh'zik Kt' Tkitii Etiitkii 'k'zh T'ti Ize'Eekii Ikiikt Keetk Tkezh' 'zetk Ize'Ekte Iitiiz Ekte'Iit' Z'tiik Itkiiktii 'zhi'Iizhii Keetezh Tekee Teezhii 'tkee'Ezi Tkikt Zh'ti 'zh' Ktii Zheektik Ezi'Eki Eezek Zheez Etkee'Eezee Ikte Ititk Itkii'Eekti Iikti'Iit' Iizek' Etki Ktitk Tekezh Kii Tet Iktet Ktii
+			}
+			
+			# Always combined with a second name
+			first_names = {
+			}
+			
+			# Always combined with a first name
+			second_names = {
+			}
+			
+			regnal_first_names = {
+			}
+			
+			regnal_second_names = {
+			}
+		}
+	}
+}

@@ -1,0 +1,229 @@
+portraits = {
+ 
+ 	# Ithaqga
+		as1 = {	entity = "portrait_art12_as1_base" clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "arthropoid_01_greetings"
+			character_textures = {
+					"gfx/models/portraits/aliensuns/art12_as1.dds"
+					"gfx/models/portraits/aliensuns/art12_as1_1.dds"
+					"gfx/models/portraits/aliensuns/art12_as1_2.dds"
+			}
+	}
+    
+	#Nylarlakhee
+as2 = {	entity = "portrait_art12_as2_base" clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "greetings_arthopoid_special"
+			character_textures = {
+					"gfx/models/portraits/aliensuns/art12_as2_0.dds"
+					"gfx/models/portraits/aliensuns/art12_as2_4.dds"
+					"gfx/models/portraits/aliensuns/art12_as2_3.dds"
+					"gfx/models/portraits/aliensuns/art12_as2_1.dds"
+					"gfx/models/portraits/aliensuns/art12_as2_2.dds"
+			}
+	}
+	# Pree
+as3 = {	entity = "portrait_art15_as3_base" clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "avian_01_greetings"
+			character_textures = {
+					"gfx/models/portraits/aliensuns/art15_as3.dds"
+					"gfx/models/portraits/aliensuns/art15_as3_1.dds"
+					"gfx/models/portraits/aliensuns/art15_as3_2.dds"
+					"gfx/models/portraits/aliensuns/art15_as3_3.dds"
+			}
+    }
+	#eh'kangG
+	as4 = {	entity = "portrait_fun15_as4_base"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "greetings_arthopoid_special" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/fun15_as4.dds"
+					"gfx/models/portraits/aliensuns/fun15_as4_1.dds"
+					"gfx/models/portraits/aliensuns/fun15_as4_2.dds"
+					"gfx/models/portraits/aliensuns/fun15_as4_3.dds"
+			}
+	}
+	#Blorg2
+as5 = {	entity = "portrait_fun12_as5_entity"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "fungoid_02_greetings" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/fun12_as5_0.dds"
+					"gfx/models/portraits/aliensuns/fun12_as5_3.dds"
+					"gfx/models/portraits/aliensuns/fun12_as5_4.dds"
+					"gfx/models/portraits/aliensuns/fun12_as5_1.dds"
+					"gfx/models/portraits/aliensuns/fun12_as5_2.dds"
+	}}		
+	
+	#Murrundal
+	as6 = {	entity = "portrait_mol12_as6_base"	clothes_selector = "no_texture" hair_selector = "no_texture" 
+		greeting_sound = "fungoid_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/aliensuns/mol12_as6.dds"
+			"gfx/models/portraits/aliensuns/mol12_as6_1.dds"
+			"gfx/models/portraits/aliensuns/mol12_as6_2.dds"
+			"gfx/models/portraits/aliensuns/mol12_as6_3.dds"
+		}
+	}
+	# Irdon
+	as7  = {	entity = "portrait_fun13_as7_entity" clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "fungoid_01_greetings"
+			character_textures = {
+					"gfx/models/portraits/aliensuns/fun13_as7.dds"
+					"gfx/models/portraits/aliensuns/fun13_as7_1.dds"
+					"gfx/models/portraits/aliensuns/fun13_as7_2.dds"
+					"gfx/models/portraits/aliensuns/fun13_as7_3.dds"
+					"gfx/models/portraits/aliensuns/fun13_as7_4.dds"
+			}
+	}
+    
+	# Kukeri
+	as8 = {	entity = "portrait_mam7_as8_base"	clothes_selector = "no_texture" hair_selector = "no_texture" 
+		greeting_sound = "mammalian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/aliensuns/mam7_as8.dds"
+			"gfx/models/portraits/aliensuns/mam7_as8_1.dds"
+			"gfx/models/portraits/aliensuns/mam7_as8_2.dds"
+			"gfx/models/portraits/aliensuns/mam7_as8_3.dds"
+			"gfx/models/portraits/aliensuns/mam7_as8_4.dds"
+		}
+	}
+	# ayy lmao
+as9 = {	entity = "portrait_mam11_as9_base"	clothes_selector = "mam11_as9_c" hair_selector = "no_texture"	greeting_sound = "humanoid_portrait_g_male" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/mam11_as9.dds"
+					"gfx/models/portraits/aliensuns/mam11_as9_1.dds"
+			}
+	}
+	
+	# Sluggoth
+as10 = {	entity = "portrait_mol8_as10_base"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "molluscoid_01_greetings" 
+			character_textures = {
+			"gfx/models/portraits/aliensuns/mol8_as10.dds"
+			"gfx/models/portraits/aliensuns/mol8_as10_1.dds"
+			"gfx/models/portraits/aliensuns/mol8_as10_3.dds"
+			"gfx/models/portraits/aliensuns/mol8_as10_4.dds"
+			}
+	}
+
+	#The Cute
+	as11 = {	entity = "portrait_rep8_as11_base"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "cute_reptilian_greetings" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/rep8_as11.dds"
+					"gfx/models/portraits/aliensuns/rep8_as11_1.dds"
+					"gfx/models/portraits/aliensuns/rep8_as11_2.dds"
+					"gfx/models/portraits/aliensuns/rep8_as11_3.dds"
+					"gfx/models/portraits/aliensuns/rep8_as11_4.dds"
+			}
+	}
+
+	#KuyRhu
+as12 = {	entity = "portrait_fun15_as12_base"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "molluscoid_01_greetings" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/fun15_as12.dds"
+					"gfx/models/portraits/aliensuns/fun15_as12_1.dds"
+					"gfx/models/portraits/aliensuns/fun15_as12_2.dds"
+					"gfx/models/portraits/aliensuns/fun15_as12_3.dds"
+			}
+	}
+
+	# Lwyib Leill
+as13 = {	entity = "portrait_fun3_as13_base"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "molluscoid_generic_greeting" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/fun3_as13_0.dds"
+					"gfx/models/portraits/aliensuns/fun3_as13_2.dds"
+					"gfx/models/portraits/aliensuns/fun3_as13_3.dds"
+					"gfx/models/portraits/aliensuns/fun3_as13_6.dds"
+			}
+	}
+	
+	# Fishbearsquid
+as14 = {	entity = "portrait_mol8_as14_base"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "arthropoid_01_greetings" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/mol8_as14_0.dds"
+					"gfx/models/portraits/aliensuns/mol8_as14_1.dds"
+					"gfx/models/portraits/aliensuns/mol8_as14_2.dds"
+					"gfx/models/portraits/aliensuns/mol8_as14_3.dds"
+					"gfx/models/portraits/aliensuns/mol8_as14_4.dds"
+			}
+	}
+	
+	#Ryth
+	as15 = {	entity = "portrait_fungoid_14_entity"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "plantoid_greetings" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/fun14_as15.dds"
+					"gfx/models/portraits/aliensuns/fun14_as15_1.dds"
+					"gfx/models/portraits/aliensuns/fun14_as15_2.dds"
+					"gfx/models/portraits/aliensuns/fun14_as15_3.dds"
+			}
+	}
+	
+	#Uushaachr
+	as16_leader =  {	entity = "portrait_fun2_as16_base"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "molluscoid_01_greetings" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/fun2_as16.dds"
+					"gfx/models/portraits/aliensuns/fun2_as16_1.dds"
+					"gfx/models/portraits/aliensuns/fun2_as16_2.dds"
+					"gfx/models/portraits/aliensuns/fun2_as16_3.dds"
+			}
+	}
+	as16_pop =  {	entity = "portrait_fun2_as16_pop_base"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "molluscoid_01_greetings" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/fun2_as16.dds"
+					"gfx/models/portraits/aliensuns/fun2_as16_1.dds"
+					"gfx/models/portraits/aliensuns/fun2_as16_2.dds"
+					"gfx/models/portraits/aliensuns/fun2_as16_3.dds"
+			}
+	}
+	
+	# Nomouku
+	as17 =  {	entity = "portrait_rep14_as17_entity"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "reptilian_01_greetings" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/rep14_as17.dds"
+					"gfx/models/portraits/aliensuns/rep14_as17_1.dds"
+					
+					"gfx/models/portraits/aliensuns/rep14_as17_2.dds"
+					"gfx/models/portraits/aliensuns/rep14_as17_3.dds"
+					"gfx/models/portraits/aliensuns/rep14_as17_4.dds"
+			}
+	}
+
+	#Towo, what's this?
+	as18 = {	entity = "portrait_mol7_as18_base"	clothes_selector = "no_texture" hair_selector = "no_texture"	greeting_sound = "arthropoid_01_greetings" 
+			character_textures = {
+					"gfx/models/portraits/aliensuns/mol17_as18.dds"
+					"gfx/models/portraits/aliensuns/mol17_as18_1.dds"
+					"gfx/models/portraits/aliensuns/mol17_as18_2.dds"
+					"gfx/models/portraits/aliensuns/mol17_as18_3.dds"
+			}
+	}
+	#### end portraits
+	}
+	portrait_groups = {	
+	as16 = {
+		default = as16_pop
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					as16_leader
+				}
+			}
+		}
+species = { #generic portrait for a species
+			add = {
+				portraits = {
+					as16_leader
+				}
+			}
+		}	
+		#leader scope 
+		ruler = {
+				add = {
+				portraits = {
+					as16_leader
+				}
+			}
+		
+		}
+		leader = {
+				add = {
+				portraits = {
+					as16_leader
+				}
+			}
+		
+		}
+	}
+	#### end portrait groups
+}

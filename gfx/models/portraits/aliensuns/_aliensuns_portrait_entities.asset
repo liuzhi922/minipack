@@ -1,0 +1,398 @@
+#Nylarkhee/Ithaqga
+entity = {
+	name = "portrait_art12_as2_base"
+locator = { name = "root" 	position = { 0 -2 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1.0
+	
+	attach = { root = "portrait_art12_as2_entity" }
+	scale = 1
+
+	}
+entity = {
+	name = "portrait_art12_as1_base"
+locator = { name = "root" 	position = { 0 -2.3 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1.0
+	
+	attach = { root = "portrait_art12_as2_entity" }
+	scale = 1
+
+	}
+entity = {
+	name = "portrait_art12_as2_entity"
+	pdxmesh = "portrait_arthropoid_12_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 2.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}	
+	scale = 1.5
+}
+#Kukeri
+entity = {
+	name = "portrait_mam7_as8_base"
+locator = { name = "root" 	position = { 2 -5 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1.0
+	
+	attach = { root = "portrait_mam7_as8_entity" }
+	scale = 1
+
+	}
+entity = {
+	name = "portrait_mam7_as8_entity"
+	pdxmesh = "portrait_mammalian_07_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 3.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle4"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	scale = 1.2
+	
+}
+#Nloam
+entity = {
+	name = "portrait_mam11_as9_base"
+locator = { name = "root" 	position = { 0 -3.5 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1.0
+	
+	attach = { root = "portrait_mam11_as9_entity" }
+	scale = 1
+
+	}
+entity = {
+	name = "portrait_mam11_as9_entity"
+	pdxmesh = "portrait_mammalian_11_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"	animation = "idle" animation_blend_time = 0 animation_speed = 1.0 looping = no next_state = "idle" chance = 4.0 }
+	state = { name = "idle"	animation = "idle3" animation_blend_time = 0 animation_speed = 1.0 looping = no next_state = "idle" chance = 1.0 }
+	state = { name = "idle"	animation = "idle4" animation_blend_time = 0 animation_speed = 1.0 looping = no next_state = "idle" chance = 1.0 }
+	scale = 1.2
+}
+#Blorg2
+entity = {
+	name = "portrait_fun12_as5_entity"
+	pdxmesh = "portrait_fungoid_12_mesh"
+	default_state = idle
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 3.0 looping = no next_state = idle }
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle }
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle }
+	scale = 0.9
+}
+#Sluggoth/Fishbearsquid
+entity = {
+	name = "portrait_mol8_as10_base"
+locator = { name = "root" 	position = { 2 0 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1.0
+	
+	attach = { root = "portrait_mol8_as14_entity" }
+	scale = 1
+
+	}
+entity = {
+	name = "portrait_mol8_as14_base"
+locator = { name = "root" 	position = { 1.7 0 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1.0
+	
+	attach = { root = "portrait_mol8_as14_entity" }
+	scale = 1
+
+	}
+entity = {
+	name = "portrait_mol8_as14_entity"
+	pdxmesh = "portrait_molluscoid_08_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 3.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0 chance = 0.5 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle4"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	
+	scale = 1.2
+}
+#Nomouku
+entity = {
+	name = "portrait_rep14_as17_entity"
+	pdxmesh = "portrait_reptilian_14_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    chance = 3.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"   chance = 0.5 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"   chance = 1.0 looping = no next_state = idle}
+	scale = 1.2
+}
+#legs
+entity = {
+	name = "portrait_fun2_as16_base"
+locator = { name = "root" 	position = { 0 -5.9 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1.7
+	
+	attach = { root = "portrait_fun2_as16_entity" }
+
+}
+	entity = {
+	name = "portrait_fun2_as16_entity"
+	pdxmesh = "portrait_fungoid_02_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 5.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	scale = 1
+}
+entity = {
+	name = "portrait_fun2_as16_pop_base"
+locator = { name = "root" 	position = { 0 -5.9 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1.7
+	
+	attach = { root = "portrait_fun2_as16_pop_entity" }
+
+}
+	entity = {
+	name = "portrait_fun2_as16_pop_entity"
+	pdxmesh = "portrait_fungoid_02_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 5.0 looping = no next_state = idle}
+	scale = 1
+}
+#Murrundal
+entity = {
+	name = "portrait_mol12_as6_base"
+locator = { name = "root" 	position = { -0.5 -4.4 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1
+	
+	attach = { root = "portrait_mol12_as6_entity" }
+	scale = 1
+
+}
+entity = {
+	name = "portrait_mol12_as6_entity"
+	pdxmesh = "portrait_molluscoid_12_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 2.0 looping = no next_state = idle}
+	scale = 1.8
+}
+#Towo
+entity = {
+	name = "portrait_mol7_as18_base"
+locator = { name = "root" 	position = { 1 0.5 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1
+	
+	attach = { root = "portrait_mol7_as18_entity" }
+	scale = 1
+
+}
+entity = {
+	name = "portrait_mol7_as18_entity"
+	pdxmesh = "portrait_molluscoid_17_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle_1_1"     animation_blend_time = 1 chance = 1.0 looping = no next_state = "idle1_loop" }
+	state = { name = "idle1_loop"       animation = "idle_1_1"     animation_blend_time = 0 chance = 2.0 looping = no next_state = "idle1_loop" }
+	state = { name = "idle1_loop"       animation = "idle_1_2"     animation_blend_time = 1 chance = 1.0 looping = no next_state = "idle" }
+	state = { name = "idle"       animation = "idle_2_1"     animation_blend_time = 1 chance = 1.0 looping = no next_state = "idle2_loop" }
+	state = { name = "idle2_loop"       animation = "idle_2_1"     animation_blend_time = 0 chance = 2.0 looping = no next_state = "idle2_loop" }
+	state = { name = "idle2_loop"       animation = "idle_2_2"     animation_blend_time = 1 chance = 1.0 looping = no next_state = "idle" }
+	scale = 1.2
+}
+#Cute
+entity = {
+	name = "portrait_rep8_as11_base"
+locator = { name = "root" 	position = { 0 -11 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1
+	
+	attach = { root = "portrait_rep8_as11_entity" }
+	scale = 1
+}
+entity = {
+	name = "portrait_rep8_as11_entity"
+	pdxmesh = "portrait_reptilian_08_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0.45 chance = 3.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0.45 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0.45 chance = 0.5 looping = no next_state = idle}
+	
+	state = { name = "sad"       animation = "sad"    animation_blend_time = 0.45 chance = 3.0 looping = no next_state = sad}
+	state = { name = "sad"       animation = "sad2"    animation_blend_time = 0.45 chance = 1.0 looping = no next_state = sad}
+	scale = 1.7
+}
+#Irdon
+entity = {
+	name = "portrait_fun13_as7_entity"
+	pdxmesh = "portrait_fungoid_13_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 3.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	scale = 1.8
+
+}
+#Lwyib Leill
+entity = {
+	name = "portrait_fun3_as13_base"
+locator = { name = "root" 	position = { 0 -3 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1
+	
+	attach = { root = "portrait_fun3_as13_entity" }
+	scale = 1
+}
+entity = {
+	name = "portrait_fun3_as13_entity"
+	pdxmesh = "portrait_fungoid_03_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 4.0 looping = no next_state = idle }
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0 chance = 0.5 looping = no next_state = idle	}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0 chance = 2.0 looping = no next_state = idle	}
+	state = { name = "idle"       animation = "idle4"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle	}
+	scale = 1.2
+}
+#KuyRhu
+entity = {
+	name = "portrait_fun15_as12_base"
+locator = { name = "root" 	position = { 0 -5.5 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1
+	
+	attach = { root = "portrait_fun15_as12_entity" }
+	scale = 1
+}
+entity = {
+	name = "portrait_fun15_as12_entity"
+	pdxmesh = "portrait_fungoid_15_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 3.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	scale = 1.7
+}
+#eh'KahnGh
+entity = {
+	name = "portrait_fun15_as4_base"
+locator = { name = "root" 	position = { 0 -2.7 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1
+	
+	attach = { root = "portrait_fun15_as4_entity" }
+	scale = 1
+}
+entity = {
+	name = "portrait_fun15_as4_entity"
+	pdxmesh = "portrait_fungoid_15_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 3.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0 chance = 1.0 looping = no next_state = idle}
+	scale = 1.0
+}
+#Pree
+entity = {
+	name = "portrait_art15_as3_base"
+locator = { name = "root" 	position = { -1 -2.63 0 } }
+	
+	cull_radius = 1
+	
+	default_state = "idle"
+	state = { name = "idle"      state_time = 10 }
+	
+	scale = 1
+	
+	attach = { root = "portrait_art15_as3_entity" }
+	scale = 1
+}
+entity = {
+	name = "portrait_art15_as3_entity"
+	pdxmesh = "portrait_arthropoid_15_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0 chance = 2.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0 chance = 3.0 looping = no next_state = idle}
+	scale = 1.3
+}

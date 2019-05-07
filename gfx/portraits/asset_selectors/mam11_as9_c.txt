@@ -1,0 +1,79 @@
+# Nloam Clothing
+
+mam11_as9_c = {
+	default = "gfx/models/portraits/aliensuns/mam11_as9_c.dds"
+	
+	game_setup = {#will run with a limited country scope. species and government is set but the country does not actually exist
+		default = "gfx/models/portraits/aliensuns/mam11_as9_c.dds"
+	}
+	
+	#species scope
+	species = { #generic portrait for a species
+		default = "gfx/models/portraits/aliensuns/mam11_as9_c.dds"
+	}
+	
+	#pop scope
+	pop = { #for a specific pop
+random = {
+			list = {
+"gfx/models/portraits/aliensuns/mam11_as9_c.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c1.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c2.dds"
+}
+}
+	}
+	#leader scope
+	leader = { #scientists, generals, admirals, governor
+
+random = {
+trigger = {
+				and = {
+					or = {
+						owner = { has_ethic = ethic_xenophile }
+						owner = { has_ethic = ethic_fanatic_xenophile }
+						leader_of_faction = xenoist
+					}
+					or = {
+					leader_class = scientist
+					leader_class = admiral
+					}
+			}}
+			list = {
+"gfx/models/portraits/aliensuns/mam11_as9_c.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c1.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c2.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c4.dds"
+			}
+	}
+random = {
+			list = {
+"gfx/models/portraits/aliensuns/mam11_as9_c.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c1.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c2.dds"
+}
+}
+	}
+	#leader scope 
+	ruler = { #for rulers
+random = {
+trigger = {
+					or = {
+						owner = { has_ethic = ethic_xenophile }
+						owner = { has_ethic = ethic_fanatic_xenophile }
+						leader_of_faction = xenoist
+					}
+			}
+			list = {
+"gfx/models/portraits/aliensuns/mam11_as9_c.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c1.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c2.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c4.dds"
+			}
+	}
+random = {
+			list = {
+"gfx/models/portraits/aliensuns/mam11_as9_c.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c1.dds"
+"gfx/models/portraits/aliensuns/mam11_as9_c2.dds"
+}
+}

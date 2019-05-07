@@ -1,0 +1,185 @@
+### Alien Suns 06
+AS06 = {
+
+	ship_names = {
+
+		generic = {
+			Tereyt Rik "Tiirik Retiit" "Kukeyt Keykiir" "Kekeyk Kirur" Teyr Teykiit "Tit Riit" "Ker Teyk" "Kut Tike" "Kutu Riir" "Rekey Reyk" "Kitiik Rikiit" "Reyki Tiik" "Riir Rik" "Reriik Kikut" "Rur Tiit" "Rikur Riiteyr" Keyreykii Ritiit Reyt "Teykik Keteyt" "Ruku Teyr" "Keyt Keyr" "Rer Ter" "Ruter Titiir" "Teku Ret" Tiitiiki Tureyk Tetur "Rerut Tituk" Ketuku "Riik Terey" "Kiik Riiri" Reruk "Tikur Turer" "Ruk Rik" "Rutiik Ritiit" Tirute "Riiruk Kiteyr" "Keke Teyk" "Riruk Tetur" "Keytet Turik Ruk" "Kirey Teyk" Teyk Ketuk Keyt Kerek Tiit "Kur Riki" "Kiir Tiik" "Teyr Tiki" "Tiik Reri" Kut Kutur "Kek Kiirey" "Tit Keyt" Ret "Tiitet Ketuk" "Tetur Tekek" "Riirii Tek" Kereyr Ret Kiketu Keyrekii "Rut Keri" "Tuk Rit" "Reykey Riik" "Kikii Ker" "Rurii Riir" "Keyter Tiret" Keytirii "Tet Kiir" "Riik Teyt" Tik Rutiir "Rutu Rek" "Tet Reyt" Rukuri "Teyk Ruk" Riirukey "Tikey Rek" "Rer Tiit" Riik Rik Rer Rerur Keyt "Tiik Tiitii" "Riir Keyk" "Riit Kuk" Tiirerii Tukeyk "Ret Tet" Reytit Riiteku
+		}
+
+		corvette = {
+        "Taru Vayk" "Keyta Tit" Tayrit "Tov Kak" Root Vuruta "Vaykar Ritok" Ror Kukiv "Keytay Veyv" Reevaytii "Reyk Rov" "Vok Riitoo" "Rikay Tur" "Teykay Kook" Voot "Viiroo Kut" Kootayvu Kiirav "Vuvo Teyt" Kuriit "Toovak Vayvav" "Rookiik Raviik" Rariika Vayk Teytara Tar "Rakar Vaykat" "Kiivey Keyk" "Reevii Vuk" Kayt Kiteyki "Tatiiv Tireer" "Voor Raykey" Reekeyka "Reer Rayr" Tooteyvi Vatira Veetook "Raytut Vorak" Kateevee "Keek Teyt" "Tirook Tiikuv" "Viik Koov" "Vatay Toov" "Kakiv Titiiv" "Vatok Teykav" "Kok Teer" Ravuk "Tiit Kak" Katiiv Vutari Tav "Keeroo Reek" "Vayv Kiit" Veyr Vav "Teyv Keyt" "Vukiiv Reeteyr" "Rik Koot" "Kiir Riik" "Kat Vut" Tiiraykii "Vayv Tiree" Ruk Tutoorey "Reekiiv Keekeev" "Vatii Reet" "Keev Kikey" Vikoov "Koov Tayku" Kak "Tiiv Vayvi" "Ratu Kir" "Vatoov Raykat" "Tak Reeka" Tokeykey Kiivot Teykiiree "Riteet Ravov" Tiir "Tit Titay" Reykav Kurarii "Takee Roov" Vitiik Rat "Kotok Rayror" Tatuv "Teyvook Riitit" Votato Tayr Teyvar "Kuvoor Keeteer" Veyt Veetiitii "Vuvey Toov" Tayvara "Vooka Tav" Tut "Vira Var" "Rut Tato" "Viitok Kikeet" Viirak "Taytok Kiikeyr" Veytiita Tirit "Korir Tiireyt" "Titi Veek" Voorayvo Varat "Ruree Vayt" "Raykav Reerov" Koovut Rooreyt "Rika Rak" "Turor Ravir" "Veyk Tat" Tur "Rot Reekii" Rayritu Tayr Tuv Vayrat "Reyr Tak" Tat "Vukar Tukak" "Roova Tav" Riik "Kuvo Toov" "Keekee Kiv" Rikutoo Vivukii "Kiiteyv Teyrat" Keytav "Vareyt Veereyk" "Tuviiv Kurayr" "Reekeet Roveyt" "Keevu Ruk" "Rayreev Reyror" Vit "Vuti Koov" "Tatook Kaviik" Veevaka "Vareyt Koovayv" "Vir Ravu" Koorat Voot Kur "Roov Tiir" "Kav Rako" "Tuvuv Rootiiv" "Vuv Var" Ruvoot Kuk Reeriir "Kuk Vurii" "Kiroo Kayr" "Vaveev Kiivur" Kokoot "Vir Vut" Tar "Tur Veeti" Keetit Rakeyree Viiroka Rikeyta Varoov Roovavee Kooviivey Teykutoo "Vayt Kayr" Raytat "Kok Kor" "Rav Kikii" "Riiv Vov" "Rak Vook" "Kov Rayko" "Kar Vav" Takot Kirayt "Kiv Tirey" "Totii Vayv" "Tutut Keyveek" "Riir Ratu" Taytoorey "Tatayt Torov" "Kiiv Kiitey" "Keeki Ror" "Keevayk Veeroor" "Tak Tato" "Tor Kiiv" "Rat Rayvo" "Kur Teyka" "Veyk Keekay" Kayv "Teetii Rot" "Vak Var" "Keykeer Reytuv" "Vak Raykii"
+		}
+		
+		destroyer = {
+        "Tayt Rooru" "Ruv Reer" Taytavay "Veyr Roree" "Toviv Vokoov" "Koovay Tik" Kavav "Vov Vakay" "Raroo Vut" Kakayk Voovur Teyvok Voorar "Takii Tav" "Tiik Teet" "Tur Kut" "Reerar Teykeev" "Roovayv Tutiit" "Rat Reek" "Kayvat Koteyv" Turoota Teyteet "Votov Tivuk" "Tiiree Teek" Tak Kiit Kiitayr "Var Riitay" Rar "Veyv Riiv" "Tiit Tat" Ratiiva "Kak Roov" "Voov Veyt" Vovat "Teyr Tayvu" Vurara "Teeku Kav" "Veyt Var" "Viikov Reerayt" Kavoot Toorut "Tut Kook" "Vov Keet" Kayr "Raviiv Veyriir" Vayrar "Var Rat" "Vov Kiitay" "Kok Teyt" "Vuk Kavu" "Vook Rayvii" "Kok Kuvoo" "Rat Tik" "Vik Reekay" "Vat Keevay" "Taytayk Reykak" "Veek Vitee" Tatayr "Toviit Tukak" "Kiir Rayv" Tookiit Tuvurii Kak "Kik Rookee" "Koov Vov" "Kor Veet" "Raykey Keyr" "Rivir Reevar" "Rov Veet" "Kit Tarii" Rareeka Rav "Reykar Kukayr" "Kov Reyr" Veyriv "Vuro Rok" "Keekii Vur" Taviiv "Veeto Tak" Teytot "Vatir Tayteer" "Viitii Kak" "Veyteyk Tateek" "Rook Ruroo" "Tatav Rutayt" Tutoot Keytayk Ruk Riir Teyk Toreeru Vat "Kuk Raree" "Voka Teek" Veyreyv Rikeera Koviv Tot Tivav Keevara Titeyr Kook "Teek Roov" "Tir Rivay" Rook Rav "Koka Rak" Vuraytii Tiir "Riiv Viitu" "Tareer Viviir" "Kat Vur" "Vur Rooka" "Rir Tayt" "Ruroov Votak" Rayreyka "Reyk Tat" Tiirat Ririikee Teetir Keevayv "Kayva Veyr" "Kav Keyti" Tiir "Rav Tak" Koorivoo Rareer Vavuvoo Takav "Ruka Kat" Katakey "Keyt Vook" "Rayr Tukey" "Rava Keyr" Reyv "Tikav Veyteyt" Teetavi "Rut Rir" Vuveeta Tav "Vav Vook" Vir Roorayv Roriit "Vavik Kaveyt" "Veetey Kuk" "Tatar Rooriir" "Tookay Kut" Keytoot "Tooro Rayv" Vavak Teyvorii Reet Koorayra "Kav Vak" "Riir Tayk" Rot Vakeyto "Viir Tookey" Riiv "Teyt Vav" "Veyro Vayt" "Reeru Took" Kaytur "Kikov Kikoov" "Veyk Rutu" "Rayriir Rator" "Toori Tur" Ruvarey "Tikeet Taytayt" "Vuk Vooree" "Kayt Toova" Ror "Kateyk Reyvayt" "Kayvey Tor" Tut "Tak Tir" Vavitee Reek "Vuto Reyr" Reevov Reevukee "Reet Toora" "Tatat Tavoot" "Keyv Tiiv" "Rakayv Takot" Viir Reetayr Tovoov "Tat Keyt" "Vav Tak" "Toree Teyk" "Kayvit Vivayv" "Keykit Rayrook" "Kuk Rur" "Keekat Vookiv" "Vavi Rik" "Teer Rayti" "Voota Keyv"
+		}
+		
+		cruiser = {
+        "Took Ruva" "Tiitoo Rav" "Vor Veyv" Reytiir "Tovoo Tav" "Vavit Rativ" Tir "Keyv Vat" "Viv Vitey" Vak "Vor Karay" "Viveyv Kiivit" Takaki "Roov Vaku" Raytuv "Keev Viir" Teyv Keeroov Rayt "Viviv Keeveek" Viroor Kutiv Tirayv "Koor Ruri" "Kara Vit" "Rikiir Vaytiik" Tov "Viik Teyv" "Rayt Rayk" Riivoot Rayvako "Roray Tayr" Reekaka "Voov Tiir" "Kak Teyki" Vooriik "Voviit Vakeer" "Riik Rat" Reykavi "Rook Veyt" Vukayk "Rootii Reek" Keyveyvii "Reyt Rar" Riirayva Raykayva Kov Taykik Teyv "Vut Vak" "Tookiiv Veereyr" Vorot Rakeyv Tayrir "Tar Vayti" "Keeroo Rut" "Tok Tiir" "Kiir Vayti" "Kav Kat" "Keereek Tatar" "Kook Tiitay" "Rav Teyko" Kaytooree "Kook Koka" Kuturoo Rayveykii Kiteeki "Tir Reyv" Vuvur "Tak Tivee" "Rootu Veer" Teyvav "Tar Vuk" Taykirey "Tiivok Tayruv" "Kiitiik Vavat" "Rayrey Rir" "Took Rootee" "Kor Reer" "Ratey Kat" "Rov Teev" Kakiikoo Rak Rarikay "Rareek Kookiit" Tayk "Vayk Reero" Vooreyv "Kuk Veyr" "Kooki Tiit" "Reek Reek" Viiroov "Tovur Tiviv" "Teet Tar" Ritooto Koveeroo Tiitayr Kotur "Teevoot Vukiik" Keyrar Vator Vat "Kaka Kiiv" "Tavov Vookoov" "Tik Vayv" Veykeeka "Koviv Kavut" "Ruriv Kukeek" "Koovov Kaytik" "Rir Totee" Tareeva Veyv Koovayk Veykiiti "Veeko Rav" "Rooreyv Takeek" "Vuk Kut" Rovur Roov Keet Kataru Titoota Reyt "Tav Rayvii" Kotaka "Keyr Tiikay" "Turat Vookar" "Kar Tayv" Kook "Vurak Riikeer" "Rov Vir" "Tayr Vuvo" "Kayt Vati" "Teetu Tayk" Tatiik "Riiv Rivoo" Voot "Rir Voot" "Tak Keyv" "Vak Tor" "Rit Kuv" Reev Vayv Teetiiru "Reek Rov" Vokav "Keeviv Ratayk" "Vutu Riir" Kit "Vatayk Voovuk" "Riiveek Vovayt" Teerutoo "Kiikoo Viiv" Rateek Teyreyr Raytiir Toovito Kor "Vakiiv Taror" Vav "Kayrar Karor" Rureyki "Voor Ror" "Reyk Vooree" "Taveek Veyveet" "Rayt Veyr" Tatut "Kuvuk Riiveyt" "Kireyr Keyteyv" "Reytot Kiirok" "Veet Kayt" Veyvuvee "Kukay Viik" Kak "Tiiti Kayv" "Vuv Riivo" "Kayvi Kur" "Vat Kovey" "Vok Ratu" Vavootee Vuriv Reekook "Veyvov Varuv" "Vootook Vukiik" Took Voot "Viik Vuv" Tiit Reyveytoo Tavur Viik Kiikeeta Veetat Keyr "Tot Vut" "Tot Kuvii" "Teyt Vootee" "Veyt Tayka" "Viit Kuru" "Rook Rovoo"
+		}
+		
+		battleship = {
+        "Riiti Vayk" "Teyrav Tiivayr" Tokir "Tor Kov" "Tativ Tovur" Vayveyko Reytoor Karoov "Vov Totii" Kuk Kiivikey "Kayvii Kak" "Reytav Kiitak" "Rak Kav" "Roor Rak" "Teyr Vooto" Veyroor Kakitey Viiveekey "Tokot Taruv" "Tayk Ruvee" "Kar Rooto" Veytayrii Totavee Voor Kukoor Vor "Kaytir Kovit" Teetiik "Vika Viik" Varata Tur Vatut "Tukeyv Turav" "Reyr Koor" "Vat Ruk" Kayt Toor Rorayvii "Viir Kukii" Kuv "Teyrok Vutoov" Tukiirii "Reyto Kuv" Tirat "Toot Tik" Rayrayvey "Tok Tayra" Roriir "Keyroo Reev" Tar "Riirak Riirur" "Tik Ruko" Veytat "Teyveyt Viikav" Vaykayka Tateyk "Rak Kuk" "Tiiru Tat" "Teytuk Veevok" "Toorook Kurat" "Vuk Kuvee" "Riir Rayr" Kit "Kiv Tura" Kukeyra "Tatar Vavuv" Kakaykee "Tuva Voov" Ruvorii "Reykuv Kivar" "Rava Kur" "Veekeyk Kaykoot" "Reyrayk Tariit" "Tita Keyr" Tovook Kiivoot Rak Kiik "Tiikuk Kaykiik" "Teera Took" Veetayko "Rot Tiir" "Rut Roki" Viiv "Kok Kutii" "Kayk Vakey" "Vuray Rir" "Raka Riv" "Rok Kakay" "Keytar Vakuk" Reytayka Totiika Rootaru "Rok Voko" "Viro Tok" "Kiikii Rir" Rav Ruk Teyk Tovik "Reeriit Koteyk" Tayriiv Karoree Tikeekee Riir Teytuvey "Vav Koota" "Veyt Veykii" Kiv "Tiv Veyta" Riitutee "Tut Rur" "Voot Kirey" "Reev Kaykay" "Reetii Rak" Kiit Turokii Rar "Veeteyv Tutor" "Reyv Tavo" "Kit Ravo" "Vak Tuv" "Vaytoo Kut" Rivatoo "Tak Tooka" "Tit Keer" Variko "Rayk Ruroo" Teyk Teetiit "Veevu Toov" Vayv "Vokiiv Kuvoot" Tav "Reytayk Vareyt" "Reytoo Rar" "Teek Tiito" "Rayt Rov" "Ror Veyki" Tak "Vak Keek" "Kayr Keyti" Tayvor "Kok Kotoo" "Torik Rarav" Teyrir "Reevay Veev" "Viv Varoo" Rookuv "Riir Kiiki" Toot Viiteevey "Kat Rooku" "Rov Vivee" "Veet Teev" "Kukeyr Tutur" "Tooveyk Kooroot" "Tiir Koota" Veer Reekook Veer Vokeykee "Ror Kuva" Kav "Rook Kar" "Veerat Varak" Voor "Took Keev" "Rikiir Vitav" Riivik "Kota Vayk" Kiiveevay "Keer Taytee" Rovat Reyvar "Rovot Vukak" "Ritak Ravayr" Kiv Tayvav "Tayk Tak" "Ratar Reekav" Kurayt "Kiir Rayr" Vareytoo "Koor Tayt" "Voora Tayt" Rayr "Tuk Took" "Roor Varu" "Keek Vav" "Rook Rukee" "Tak Keeva" "Voro Rur" Tatoor Rotar "Tiit Ruvey" "Vav Tavo" "Toor Viiv" "Turar Viiteyt"
+		}
+		
+		science = {
+        Kayr "Teyr Rook" "Kotit Veyrav" "Vook Raykay" Tayriiri "Kako Viit" "Viiree Rit" "Tayrav Raytayk" Ritor "Veerayt Keereer" Tovooka "Viti Vat" Teekiik "Keer Kova" Tiik "Vivot Ruvur" Viirootu "Kikeet Tooreyt" "Vaytee Vav" Ratora "Rook Koroo" "Vata Rav" Vakir "Kaku Kov" Riitika Taykori "Rayr Kov" "Rakoot Kaveer" Vov "Ruvi Vav" "Riveet Vakiik" Keyrooti Tovaroo "Tiv Kuvii" Reeteyro Tak "Veykik Rator" "Kootayk Kavok" "Tot Var" "Teytayt Riitiiv" "Totii Ruk" Rak "Reev Riitay" Reyteyv Kikayt Kayveev "Vaytii Veet" Rov Kiv "Tiv Vayru" Katira "Kukeek Totik" "Teeka Keyr" "Tiiv Keytu" "Veek Veer" Toovata Kiivoot "Raka Reer" Koor Ratiiv Varot Teyt "Viik Kav" Teykok Ruk "Vak Tak" "Ror Vuko" "Kiiray Rak" "Veer Viiva" "Vuteer Tirit" "Tokay Teyt" "Karee Reet" Viir "Rar Katey" Tavotoo "Reyt Tayr" Kireer Vov "Tiir Tik" Kiik Kokav Koorak Riiteer Teyrayr "Vavu Toot" Riik "Reer Vuvey" Reekeyk Veeroov "Kareek Teevuk" "Rikot Vikor" Rak Rootiivi "Kukoot Tikeet" Veevava "Tootoov Vaviir" Kurarey "Rar Kayk" "Rayk Rooku" "Kar Reet" Kitoov "Kav Ravey" Taroot "Var Rovey" "Veyv Vik" "Tutoo Kak" Variiru Kiiv Rar Kiiveyk Rovur Teyv "Reyt Ravii" Viitavee "Tayr Rook" "Kat Vorii" "Rov Reev" "Vik Kutay" "Rook Keeva" Ruteyr "Reytoo Tuk" Tat "Ruroot Kitat" Rat Kut Kak "Took Kur" Vareetey "Katit Titak" Riit "Vuta Keyv" Vakiiti "Rirayr Tarut" "Kava Koov" "Keekoot Rateet" "Tayt Rika" "Kayta Keyr" "Vuv Keykee" "Kar Tiira" "Viiv Tov" Vat "Vuta Vot" Kiiriir Vayteyri "Kayr Keeta" "Riikiit Vaytat" Rayvura "Kot Tavi" Vok "Keerot Vavir" "Rakiit Raytak" Rik "Tokoo Keet" Teyvikey Kivur Kikeyt "Keeva Rav" Veerokii "Roteyv Vikat" Vuruvee "Voot Tor" "Ror Rooro" Rirukee "Rutey Kar" "Riti Koor" "Vak Teyri" "Katay Tar" "Tayka Keer" Vookoovey Vakoor "Rayveev Ratayk" Rikiik Taveet Roveyv "Koot Keera" "Rayr Kuv" Vavukey "Tarat Voriv" Kateyr Tiiv "Riitayt Veyrak" "Vayv Rutey" Kir "Vuv Tayt" "Vaviik Reekak" "Kit Tavi" Vukit Kot "Var Tayroo" Keek "Reyko Voov" Riviivo "Ravii Vat" Var "Rayvey Kav" Reer Toorayk "Tit Rav" Vaviit Kutooru
+		}
+		
+		colonizer = {
+        Tatoovoo Vov "Koko Rur" "Rit Roov" "Tori Teev" Kiirayr "Vutu Rat" "Keyv Tiiv" Kukuvii "Turay Rayk" "Vov Toor" "Viitayv Keeviiv" Vayr Toovayvay Riituti "Tayr Kat" Keev "Vur Rari" Rit "Rovut Teyroov" "Reyt Tat" Teevooku Keek "Tot Kakee" Koorat Vayveyt "Vook Riki" Kutir "Vuvo Reyv" "Tikey Rok" "Kok Tik" Rarata "Veyt Vor" Taveyki Kaytuv "Raytii Veyk" "Kayr Reev" "Raytiiv Keykov" "Rakay Teyt" Keeveyv "Kiiray Ror" "Keekayt Keytar" "Kokov Teetoov" Rutayt Kiivut Vokooku "Reyt Tirii" "Reyt Veekii" Turoor "Koor Tiir" "Vaytav Ruviv" "Teyt Ravee" Vaytit Kit Kateyt "Tat Veeroo" "Viv Vivoo" "Teyr Vara" Toov "Tuk Viikee" "Kiitoot Vavar" Veet "Vav Rak" "Kor Tiiree" "Veekoot Vaykayr" Rirook "Kiikeek Vuvot" Viiveek Ratovey "Keevii Tiv" "Keevor Kikoor" Kiikayr "Roov Kut" Rootav "Roov Reeka" Tatayri "Tikey Toor" Veytayta "Turik Tatav" Keykook Toteyr "Kayv Kata" "Roteev Vootar" Veyrov Reyroor Rayvayto "Kik Kiita" "Rayv Vor" Raviki "Keyt Kayru" Veer Koveyrey "Tiirey Tiiv" "Tireer Veyvur" "Teevor Kukak" "Roora Kut" Kak Vataku "Tak Tav" "Tatii Veyv" "Ritiit Katoov" Rakeevo "Voor Rik" Riiroka "Rav Tuki" "Reet Teyt" "Rootu Tir" Kiireyra "Koovee Var" Rat Keetat "Toovee Ruv" Teet Teyroot Viteek Kovurey "Teyv Tuv" Vaviru Keevitay "Reek Vor" "Keyk Viirii" "Tiiv Taykey" "Vatav Tiiteyr" "Riiveyr Reeveyv" Tar "Kiiv Kiiree" "Reytoo Toot" "Koor Teyv" Tarokay "Vata Tiiv" "Reet Kuk" "Kar Vav" Veek Tokuvee "Tir Voovey" "Tatay Rar" Kov Viv Vakoru "Veetiik Katook" "Kar Tuk" Riiriitee "Kayv Keyro" Keer "Raykit Rireyv" "Reykiik Tuvav" Kiiroovi Kitat "Kakey Rir" "Raytut Ratuv" Kiikara "Vayt Vokay" Tiriiray Reyveeva "Vur Tiir" "Katov Varoov" "Rayt Rayt" Kitookee Rookiitey Tut "Vut Kava" Kok "Tooto Tur" "Kiiv Rookoo" "Kootey Kir" Tiit "Kayt Kavu" "Kor Kav" "Veyr Tiir" Veetootee Tut "Toovoo Vayt" "Veev Keyr" Rurooree Vovot Vooreet Tootot Kootuv "Kar Rukay" "Kot Reyt" Teyrokoo Viitayta Reyrok Tiiriiru Kavayt Vootayr "Reyro Vor" "Keetok Tayteyk" "Kuk Kuk" "Rur Veyt" Tit Teytitii "Took Kiik" "Tukok Teekov" "Rookayr Teytok" "Vayv Reyk" "Rat Rikii" "Kikey Rot" "Rurok Tooreev" "Tateev Tuvur"
+		}
+		
+		constructor = {
+        Kur Teyvar Tak "Tokoo Vav" "Veyvoo Tot" Vookut "Rooro Kur" "Rayr Keyvey" "Tiik Reet" "Kiit Rak" Vookav "Kook Roka" "Koot Veyri" Roveyv Rookayr Kikeyv Rav "Kuti Koov" "Tir Tata" Tiikuray "Vooro Kiit" "Votor Kakat" "Tuk Teer" "Tor Koor" "Tureyk Veykir" Rotat "Viitu Riiv" "Vur Kuvii" Reytut "Tiiteyt Roviir" "Tar Torey" "Kar Kiru" Kiiveykay Reev "Roor Kuku" "Vutay Kiv" "Vov Vok" Kak "Tuk Kirii" Reekeeva "Vit Veev" Tayviik Rookiit "Vat Reyta" "Teyv Tir" "Rayta Reer" "Vayva Tav" "Kayr Rakoo" "Kooruk Rokeer" Reyt Vooriree "Toot Keyr" "Keyk Tuk" "Ritu Veer" Keyvoov "Veek Kayt" "Vikey Veyt" "Vuku Root" "Kooka Rok" Keyv Viit "Tiir Keev" "Kirak Viirar" "Veekur Teyvoor" "Tiiv Kuvu" "Raruv Kikak" Riitiik "Riirii Reer" "Rat Riira" "Kiivey Kayr" "Tuv Kiiti" "Variik Kakiiv" "Vot Keekoo" "Tiireyk Tiriv" Teyrut "Kav Kiitee" Rooriiray "Tikiir Tayrat" Reykat "Votay Tiv" Totayt Reekaytay "Rav Vurey" Kayriitay Tiv Reet Raytovu "Kar Kur" "Rayr Kitay" Kakak Keeviitey "Tiik Vit" Kur "Vir Vuri" Kav "Keyr Kit" "Kiit Kik" "Riik Kat" "Toorii Rar" Rur "Riik Tooku" "Keykeet Takik" Kav "Kiik Rok" Rayvayt "Kot Voot" "Vot Kikoo" Rookot "Veyr Vav" "Kiivoov Titook" "Tayr Vovey" Tak "Tik Vava" Kit "Reyviit Teyvat" "Taka Rayk" Varat "Tuvay Koov" Tootaytu Rar Koov Tiivat "Vayrayk Vavik" Kayt "Rayr Tara" "Keyri Rayk" Rat "Rokey Tiit" Kiikor "Keet Roree" Kootatey "Keev Teeray" Viir "Vuruk Teekoot" "Vaykak Titayv" "Kayk Turii" "Tuk Rati" "Tookuk Tivut" Voovak Kuk Riirayvee Veyvorey Kayroor Rayvayka "Riiri Keet" Reyroovu Veyv "Veek Vita" "Kaykay Kuv" Vak Tayveer "Kuvay Rar" Rariita Vook Ravita "Teyk Tiiroo" "Tukiv Vitayv" "Veyva Teyt" Kukeykii "Teyr Tavu" "Tuv Totey" "Tiiv Riit" "Tar Kooroo" "Viirak Rooveer" Root Reer Reer "Tiik Teytii" Kayt Tar Kaviivi Kiikarii Vayrata Teekir "Kitar Ravat" "Vit Vit" "Tayv Koovoo" "Kayr Reek" "Vayr Reevii" "Reerir Teyrik" "Kayk Koovee" "Kitee Kok" "Turiv Vayrov" "Keerit Rayvoot" "Vuviit Kiivoor" Vavoor "Riivee Rit" Tak "Vot Ruv" "Vikar Rutiv" Kavatu "Rovav Vavoot" Toot "Toovav Rovov" Riivut "Kooroo Keyk" Koovar Rikur Reyriiroo Tukavii
+                 
+		}
+		
+		
+		mining_station = { }
+		research_station = { }
+		wormhole_station = { }
+		terraform_station = { }
+		observation_station = { }
+		outpost_station = {
+			random_names = { }
+			sequential_name = "%O% Frontier Outpost"
+		}
+
+		military_station_small = {}
+		military_station_medium = {}
+		military_station_large = {}	
+	}
+
+	fleet_names = {
+		random_names = {
+"Kik Tiriik" "Tut Tiriik" "Kut Tiriik" "Riik Tiriik" "Ret Tiriik" "Kiit Tiriik" "Ket Tiriik" "Ker Tiriik" "Tik Tiriik" "Teyt Tiriik" "Rur Tiriik" "Kur Tiriik" "Kur Tiriik" "Tuk Tiriik" "Kuk Tiriik" "Reyk Tiriik" "Tur Tiriik" "Kiit Tiriik" "Kiir Tiriik"
+		}
+		sequential_name = "%O% Extraorbital Corps"
+	}
+	
+	### ARMIES
+	army_names = {
+		defense_army = {
+			sequential_name = "%O% Defense Army"
+		}
+			
+		assault_army = {
+			sequential_name = "%O% Assault Army"
+		}
+		
+		slave_army = {
+			sequential_name = "%O% Slave Army"
+		}
+		
+		clone_army = { 
+			sequential_name = "%O% Clone Division"
+		}
+		
+		robotic_army = {
+			sequential_name = "%O% Robot Division"
+		}
+		
+		android_army = {
+			sequential_name = "%O% Android Division"
+		}
+		
+		psionic_army = { 
+			sequential_name = "%O% Psionic Army"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "%O% Xenomorph Division"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "%O% Gene-Warrior Division"
+		}
+	}
+
+	### PLANETS
+
+	planet_names = {
+
+		generic = {
+			names = {
+				"Keyra Toot" "Voov Rira" "Vayk Tooko" "Keek Reyv" Kakot Tarik "Teevat Vayrir" Rarik "Kakii Keer" "Kara Keet" Keevoot "Toor Reyvi" Rotak "Kiir Vooru" "Tayt Tuka" "Keyk Teyt" "Vat Veev" Tiit Kayr "Kookii Vot" Reer "Rakoo Keyr" "Vir Teet" "Viir Kik" Teyteyv Kiirayt Vut Kootiiv Kokayv "Keetov Kootiir" "Kovu Kat" "Vavoo Tayk" Rukuto Vutayr "Kaykee Toot" "Tikoor Viirov" Teekiiv "Kika Veyk" "Viiv Teek" "Rootee Kak" "Kuk Tiit" Vayr "Reyrit Kakuv" Vuv "Kor Keev" Rar "Kavi Veek" "Taykuv Tiikut" Veytur "Riita Rar" Kavaytii Teyrokee "Teev Reev" "Koot Taytee" Vayveyki "Kiv Tik" "Rakiiv Rariir" "Tiit Reyt" Tovayru "Tayt Vuka" "Kar Rat" "Rur Rayt" "Vukok Kikayt" "Rak Roro" "Kir Kar" "Kiiri Kook" "Rayta Veet" "Kuvir Rakik" "Rat Riikoo" Veyreyk Rikeykoo "Riir Turo" "Vav Veetee" "Tik Ruva" "Veyti Tiit" "Tiikay Kir" "Kuv Rato" "Vayr Viika" "Tut Vir" Keek Vutoovoo "Riik Vuka" "Kooteev Titut" Reetuv "Kota Keyt" Reekoovii Tiirurii Tiikatu "Vurayk Ritiv" "Koti Vat" "Veeto Koov" "Tuk Kiivoo" Keyreyru Koot Tivayvo "Taykar Tovayk" "Viikii Keek" "Karee Tiir" Keev Keevakay "Reyreyr Vooteer" "Tak Kota" Toveyka Teykav "Vita Teyk" "Koteer Kirir" Kirur Kuk Toovuv "Kookey Kayr" "Vav Varo" "Tivi Rak" "Takeyr Vikur" "Veyv Kiri" "Kayr Teyvii" "Veeka Vayr" Kayv Kootat "Tayvi Voot" "Keek Rovoo" Voorat "Reyvey Tut" "Rayvee Reev" Veyt Kooveyv Vir Veykeeva "Kiikayr Rateyr" "Rit Voorey" "Tovuv Tokok" "Tiit Rut" "Kik Viiku" Reyt Keek "Turoor Riikeyt" Veev "Kayv Rivee" Tatatoo Veerak "Karu Viir" Kureykey "Roorav Keyreyk" Tootatey "Veevu Vav" "Veyr Reyt" "Rura Kat" "Veyr Tavee" "Keyva Vav" "Rayr Kiivo" "Tiik Kiirey" "Rayk Vorey" "Keer Tiri" Teytivoo "Vat Vatey" "Takiiv Virir" "Vat Vira" "Ravee Tit" Teytoov "Viit Took" Vovooru Roovukii Teereyk Vaytayk "Rot Kavii" Tiivoro Vat Kiir Kovov "Teyt Reyk" Vat "Keytey Viir" "Kavii Kit" Koov Ravar Vukav Vov Teyrootu "Teetey Tiiv" Ror Kitotii "Taki Veev" Rookooti Raturu Keytuv "Tari Riv" "Rit Veetu" "Riv Tit" Tiitayra "Koot Kir" Kavit "Riitu Veer" Veeriiv "Tivey Tuv" "Kat Tayray" "Keykey Vir" Kut Reerav "Tor Kaki" "Toov Reyka" "Teevov Tutook"
+			}
+		}
+		
+		pc_desert = {
+			names = {
+            "Ritii Rir Kiiker" "Rir Kiiker" "Ritut Titut Kiiker" "Kiitutey Kiiker" "Kukey Tut Kiiker" "Teykur Ruker Kiiker" "Ret Kiiker" "Tiriit Kiiker" "Riir Rik Kiiker" "Ruket Kiiker" "Kiiteytu Kiiker" "Reyk Teki Kiiker" "Tet Kiiker" "Reykiit Reykeyk Kiiker" "Riteytey Kiiker" "Keyrek Kiiker" "Keyr Rere Kiiker" "Kiik Keykii Kiiker" "Kiku Teyk Kiiker" "Tut Ririi Kiiker" "Tir Kiiker" "Keykiik Riiter Kiiker" "Rek Kiiker""Ketiri Kiiker" "Ruteyk Kiiker""Ritit Kiiker" "Ritek Tikek Kiiker" "Riiteyti Kiiker" "Ret Teyki Kiiker" "Tetii Kuk Kiiker"
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+            "Rerur Reytur Kutek" "Retii Reyt Kutek" "Titir Kutek" "Kir Kutek" "Kitiirey Kutek" "Keyr Tut Kutek" "Kiit Kutek" "Kir Ker Kutek" "Kit Kutek" "Keyt Kutek" "Rutii Tur Kutek" "Riik Kit Kutek" "Teki Riit Kutek" "Ket Kutek" "Rikeyk Kutek" "Kek Kutek" "Kurek Kutek" "Keyk Kutek" "Riitete Kutek" "Tekik Kutek" "Tut Kutek" "Tukeyk Kutek" "Reykey Kiit Kutek" "Teriir Tirit Kutek" "Kur Tur Kutek" "Riikutii Kutek" "Keyk Kutek" "Keyt Rutii Kutek" "Ket Reykey Kutek" "Kikek Tiriit Kutek" "Retey Ret Kutek" "Rer Tiike Kutek" "Ter Kiir Kutek" "Tek Kutek" "Reyre Reyt Kutek" "Keykekey Kutek" "Teyt Teyke Kutek" "Turitii Kutek" "Kiik Reyr Kutek" "Kiir Kutek" "Teykit Kiriir Kutek" "Turiit Tekit Kutek" "Teyk Rek Kutek" "Teykuk Kutek" "Kuk Keyt Kutek" "Kik Kiik Kutek" "Reyritii Kutek" "Tureyti Kutek" "Keyt Kutek" "Tiit Tiki Kutek"
+			}
+		}
+		
+		pc_arid = {
+			names = {
+            "Riiket Tiik" "Tiikey Tet Tiik" "Ruk Tiik" "Ret Tiik" "Kiit Rure Tiik" "Tureyk Kuruk Tiik" "Ritek Reter Tiik" "Tiir Tiik" "Reyrey Reyr Tiik" "Riitetu Tiik" "Riik Tiik" "Kiir Riki Tiik" "Teytu Tiik Tiik" "Tiite Tur Tiik" "Reyket Tiik" "Kut Keyt Tiik" "Tiikiir Rutik Tiik" "Ter Riirii Tiik" "Reyt Tiik" "Keyk Rur Tiik" "Rekitu Tiik" "Teyrey Riik Tiik" "Teykeku Tiik" "Keruku Tiik" "Rut Ker Tiik" "Rir Tiik" "Kiireku Tiik" "Rit Tiik" "Rerey Keyt Tiik" "Tiirut Tiik" "Kur Reyk Tiik" "Rut Kitey Tiik" "Kiir Tet Tiik" "Teyriite Tiik" "Rit Tukii Tiik" "Ker Kire Tiik" "Rerit Kukeyt Tiik" "Keytey Rut Tiik" "Ret Teyt Tiik" "Tiir Rut Tiik" "Kukeytii Tiik" "Rer Kur Tiik" "Kukutii Tiik" "Ret Tiik" "Teykut Tiik" "Tiitut Kukuk Tiik" "Teyruk Kiteyk Tiik" "Keyrer Tiik" "Tereyt Tikir Tiik" "Kiititu Tiik"
+			}
+		}
+		
+		pc_continental = {
+			names = {
+            "Ritik Ruk" "Kur Reyr Ruk" "Tiik Ruk" "Retik Ruk" "Tur Teyt Ruk" "Kikiit Kirik Ruk" "Tirit Ruk" "Tuk Ruk" "Tute Kuk Ruk" "Tit Rire Ruk" "Kur Ruk" "Rireke Ruk" "Keyriik Ruker Ruk" "Rutiikey Ruk" "Kiikur Ruk" "Teteyk Rurek Ruk" "Reytit Rutet Ruk" "Rir Reyki Ruk" "Tur Rure Ruk" "Kiirii Tiit Ruk" "Teyr Reyku Ruk" "Teyk Ruk" "Terit Ruk" "Riitit Keytuk Ruk" "Tir Ruk" "Titii Keyr Ruk" "Ritik Kerik Ruk" "Kiiteyr Ruruk Ruk" "Keret Tetet Ruk" "Teyt Ruk" "Ruter Ruk" "Tikiike Ruk" "Reyt Riir Ruk" "Kut Riti Ruk" "Keyte Keyt Ruk" "Tirek Teyrek Ruk" "Rut Ruk" "Kir Tekey Ruk" "Rikey Tut Ruk" "Kirut Ruk" "Tekiirii Ruk" "Teteti Ruk" "Teyr Tetii Ruk" "Keket Kiirit Ruk" "Tiiti Riir Ruk" "Reykiikey Ruk" "Riirir Teyteyr Ruk" "Tur Titi Ruk" "Tiiti Tiik Ruk" "Kit Tiik Ruk"
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+            "Rikii Teyt Ku" "Tukeyt Ku" "Riikiike Ku" "Rikukii Ku" "Riikutey Ku" "Kir Rikii Ku" "Riti Keyk Ku" "Kek Ku" "Tiik Tek Ku" "Tiit Ker Ku" "Kute Keyr Ku" "Keyki Tiir Ku" "Ketiit Ketiir Ku" "Kiite Reyr Ku" "Tureyt Ku" "Kiitet Rerur Ku" "Ret Tik Ku" "Ter Teytii Ku" "Ririrey Ku" "Tir Ku" "Kuk Kitu Ku" "Tireyk Kureyr Ku" "Tiireti Ku" "Kuke Reyr Ku" "Teteyr Ku" "Kiikek Reret Ku" "Reyr Riru Ku" "Kikirey Ku" "Tiiret Kiirek Ku" "Tir Kir Ku" "Tukiirii Ku" "Riir Ku" "Kuteyki Ku" "Kuk Retu Ku" "Ker Kiit Ku" "Rek Tiik Ku" "Rukeyke Ku" "Tirir Rekur Ku" "Turek Ku" "Teyri Kur Ku" "Kiir Terii Ku" "Retu Reyr Ku" "Keyrik Kitur Ku" "Tik Tek Ku" "Ket Ku" "Tukiir Ku" "Tur Ku" "Tir Ter Ku" "Kutiitii Ku" "Teyteyt Ku"
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+            "Ret Kiir Ker" "Tiikeykii Ker" "Titikii Ker" "Ret Tir Ker" "Teykit Ker" "Tirur Tiirir Ker" "Reyr Rute Ker" "Tiit Ker" "Keyk Ker" "Kiiru Ret Ker" "Keyreyru Ker" "Tiik Ker" "Reyt Tit Ker" "Tiik Teytey Ker" "Rikek Teykeyt Ker" "Ket Ker" "Tutit Rekiir Ker" "Tuke Tiit Ker" "Ret Riiru Ker" "Riirek Ker" "Keyte Kik Ker" "Reytek Ker" "Titeykii Ker" "Rur Tut Ker" "Tur Tit Ker" "Tirik Reyteyr Ker" "Rik Tiik Ker" "Keyruke Ker" "Kikeyt Kiikeyk Ker" "Ret Ker" "Ket Ker Ker" "Kuk Ker" "Reret Ker" "Tik Riire Ker" "Tek Kir Ker" "Kik Keyku Ker" "Tek Kiir Ker" "Riikeri Ker" "Tutey Rik Ker" "Keyte Kik Ker" "Reteyku Ker" "Ritey Teyt Ker" "Tiiriku Ker" "Reyr Ker" "Riikeyk Ker" "Ket Tire Ker" "Reyti Reyr Ker" "Kiirik Ker" "Keyketii Ker" "Teyk Tiri Ker"
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+            "Kir Keri" "Rir Keri" "Kik Keri" "Kit Retu Keri" "Titite Keri" "Rir Tet Keri" "Kiiter Kiter Keri" "Tit Tir Keri" "Kek Keri" "Tiikukii Keri" "Riitike Keri" "Ruk Keri" "Tiikuk Keri" "Tiriik Reyrit Keri" "Kurit Riitiik Keri" "Kiik Riikii Keri" "Kiireyki Keri" "Rekere Keri" "Keytii Riik Keri" "Keyturi Keri" "Riik Reyru Keri" "Tuk Reyk Keri" "Riketii Keri" "Tit Kiirey Keri" "Keyrike Keri" "Tukutii Keri" "Keku Tiik Keri" "Tutit Rekir Keri" "Riitiir Keri" "Tutuk Keri" "Kik Rekii Keri" "Keyk Retey Keri" "Teyt Tire Keri" "Kerii Kiik Keri" "Teytu Tiik Keri" "Tit Keri" "Rerit Keri" "Kikekey Keri" "Reytiki Keri" "Kerukey Keri" "Teytiit Teykik Keri" "Kitet Reyrir Keri" "Ket Kekey Keri" "Ker Keri" "Rek Reyr Keri" "Ket Keri" "Tute Tut Keri" "Reku Rut Keri" "Kiiriire Keri" "Kuriit Keri"
+			}
+		}
+		
+	}
+
+	### CHARACTERS
+
+	character_names = {
+		default = {
+			# A complete name
+			full_names = {
+			"Reyk Rekur Titeyk" "Reyk Keytey Kiik" "Reyk Kiteyr Reter" "Reyk Tek Tur" "Reyk Teykey Tiik" "Reyk Tiik" "Reyk Ter Kiik" "Reyk Ket Tiik" "Reyk Teyrik" "Reyk Teyk Titu" "Reyk Tetit" "Reyk Riiker" "Reyk Teyk Keru" "Reyk Turiire" "Reyk Teyt Rukey" "Reyk Kiikuk" "Reyk Tute Riir" "Reyk Keyk" "Reyk Reyti Tuk" "Reyk Tir Teyr" "Reyk Kuk Rek" "Reyk Kiit Riirey" "Reyk Keyk Kikey" "Reyk Kiitetey" "Reyk Kuk Reytii" "Reyk Tikeyk Keykik" "Reyk Rurut" "Reyk Tiik Rer" "Reyk Teyt Kikii" "Reyk Reyre Rik" "Reyk Tikeyt" "Reyk Reyke Kek" "Reyk Rukeyr Teyker" "Reyk Riituru" "Reyk Rek Reykii" "Reyk Teyk" "Reyk Kerete" "Reyk Keyr Tik" "Reyk Teytii Rek" "Reyk Teriitii" "Reyk Ruk Tur" "Reyk Tetek Teykir" "Reyk Reyrutii" "Reyk Kiir Kiiti" "Reyk Tiik Tiike" "Reyk Reyt" "Reyk Reyket Kikek" "Reyk Kukur" "Reyk Tekiir" "Reyk Kiitik" "Reyk Kiit" "Reyk Kutiik Kiikek" "Reyk Tur Rutii" "Reyk Tiiku Kir" "Reyk Rekeyk Reykuk" "Reyk Kerii Rer" "Reyk Teyk Keyr" "Reyk Tuk" "Reyk Turer Teyrer" "Reyk Ret Kirey" "Reyk Rir" "Reyk Rek" "Reyk Tuk Reyk" "Reyk Ririik" "Reyk Kiik" "Reyk Kiiruk" "Reyk Tik Reykii" "Reyk Teyke Ret" "Reyk Reyreke" "Reyk Tet" "Reyk Tetirii" "Reyk Kikitu" "Reyk Tut Tike" "Reyk Teyrir" "Reyk Kik Tetu" "Reyk Kitikey" "Reyk Kireyt" "Reyk Rutiir" "Reyk Tereyr Riikuk" "Reyk Reyre Teyk" "Reyk Keyt" "Reyk Riir Reyte" "Reyk Tiikeyt" "Reyk Reykey Keyk" "Reyk Kiiriir Tiiter" "Reyk Tiku Tek" "Reyk Tiir Keyr" "Reyk Tiit" "Reyk Kir Tiiru" "Reyk Rik Ker" "Reyk Tuk Ket" "Reyk Tutit Keykiik" "Reyk Tekeyk" "Reyk Rit Tir" "Reyk Titik Tikik" "Reyk Rikik Kuteyt" "Reyk Terii Rer" "Reyk Kiir" "Reyk Tiir" "Reyk Kuk Tiik"
+			}
+			
+			# Always combined with a second name
+			first_names = {
+				"Teyk Reyt" "Teyk Tiiteyru" "Teyk Kuk Kit" "Teyk Kuk Reku" "Teyk Reyk" "Teyk Kiitete" "Teyk Tur" "Teyk Rur" "Teyk Ruk Kik" "Teyk Keykeyti" "Teyk Tekuk" "Teyk Reyrer Ririt" "Teyk Kut Riiku" "Teyk Kit Reyri" "Teyk Teytik" "Teyk Riiker Rurir" "Teyk Riitutii" "Teyk Keykeyt" "Teyk Kiitey Keyt" "Teyk Keyriik" "Teyk Teretu" "Teyk Teteyk" "Teyk Titiikii" "Teyk Kitire" "Teyk Kureyk Reret" "Teyk Kiir Ket" "Teyk Kiit" "Teyk Rek Tiikii" "Teyk Turu Kit" "Teyk Kitu Keyr" "Teyk Kit" "Teyk Tirite" "Teyk Kure Rit" "Teyk Riite Rek" "Teyk Riit" "Teyk Kuk Ruki" "Teyk Kitut Kiitek" "Teyk Reyr Kur" "Teyk Riitit" "Teyk Kiitii Tir" "Teyk Tirek" "Teyk Ter Rek" "Teyk Keyr Kuk" "Teyk Tiiket Tiiteyt" "Teyk Tiki Riir" "Teyk Teyteyr Kikiir" "Teyk Tiirer" "Teyk Tut" "Teyk Rukir" "Teyk Reyr Tiru" "Teyk Ruriru" "Teyk Teyk Tiik" "Teyk Tetiir" "Teyk Keyr Riiru" "Teyk Rir" "Teyk Teyt Ret" "Teyk Tir Tuti" "Teyk Rekiirii" "Teyk Keyriiti" "Teyk Rir" "Teyk Rut Ret" "Teyk Kiitir Riikut" "Teyk Kiit Reke" "Teyk Tutik Tureyr" "Teyk Kiikiirii" "Teyk Riikiiti" "Teyk Teriti" "Teyk Tekii Reyt" "Teyk Rit Titi" "Teyk Ter" "Teyk Tit" "Teyk Reyk Rerii" "Teyk Tiket" "Teyk Tir" "Teyk Reyk Tiiru" "Teyk Turitu" "Teyk Rek Keyki" "Teyk Riike Kut" "Teyk Tek Kerey" "Teyk Reykiitii" "Teyk Tut" "Teyk Rir Ket" "Teyk Tiit Kiik" "Teyk Reykit Kukiir" "Teyk Tiit" "Teyk Teyr Rik" "Teyk Reyre Ker" "Teyk Ret Teyri" "Teyk Kik" "Teyk Tuk Riir" "Teyk Keteyti" "Teyk Tuk Kiiti" "Teyk Tikiit" "Teyk Kukiir Tiikuk" "Teyk Turu Teyk" "Teyk Retuk" "Teyk Rit Keyrii" "Teyk Riiri Keyk" "Teyk Tiite Kir" "Teyk Ketik"
+
+			}
+			
+			# Always combined with a first name
+			second_names = {
+				Kir Reyk Riik Tiik Tiit Reykek Keyret Tet Rekir Kukir Kikur Tiiriit Tuk Kikeyt Tet Riit Ret Kir Tutur Riirer Ker Kit Keyr Teyreyk Teyket Riit Tiir Rekiik Keytur Rukeyt Tur Ket Tut Reyter Kik Keruk Ret Kiker Kikit Rur Tut Keykut Kur Teyreyr Kekek Retut Ruk Tur Riiteyt Ket Turit Keyr Tirek Reyrer Tir Tiir Kiit Riit Riker Kiruk Riik Keyr Keyteyt Kit Keyt Tekut Retir Reyt Keyrur Kiir Ret Tiir Kit Rek Rurik Tekiit Kireyr Kiiter Teykut Tiitiir Riitir Kut Teket Keytur Tiitiit Kiit Ket Ter Ket Rikuk Ret Rekut Rutut Rereyt Tetiit Reytet Keyr Kerit Turiik Keruk
+			}
+			
+			regnal_first_names = {
+				Keeytuet Kiereer Tiikiit Tiek Kuet Riek Reereek Keetiit Reekiek Tiitiek Tiit Keeykier Tuereeyr Tuekiik Tiit Kier Tiir Teeyreer Tuek Riikiik Kiek Reeyk Tiek Keet Teer Keeyt Kuekeeyr Keeyreeyt Teeyr Keet Keeyteer Kier Ruekeeyt Kiet Tuetiit Keetuek Ruetiik Tiireeyt Tieteeyr Kiet Tuekuet Kiiteeyt Rueriik Tiekeeyk Kuet Kiekeeyt Kietuet Tiir Tiikiit Keet Riet Kier Tuek Kiet Kuetiet Tier Tuek Reetiek Teek Riek Keet Tiik Riikuet Tiit Tueriet Riek Kiekuer Riikeeyk Riet Reeyreet Kiit Tiet Keeyt Tiir Teeyt Teereer Tuekeeyk Tiireek Tiek Riiruet Kuer Riir Reeyruet Riikuer Reeykeer Ruek Keeytiet Tiekuer Tiitiet Keereet Riit Teek Tiek Kuet Keek Kiik Tiik Teek Riekuet Teeteeyt
+
+			}
+			
+			regnal_second_names = {
+				Rot Tayrook Rotoor Tar Tator Rar Rakat Rookoor Rar Tot Raykak Rak Rarayk Rokat Rokayt Kayk Takat Takayt Kat Koor Rak Takar Toor Ratar Tok Kak Rak Took Rakar Tarook Took Kar Totok Rook Kar Raytoor Tat Kook Rakar Rot Rayk Karat Kookayt Tot Tayt Rakat Koor Rayt Koorat Rat Karoot Tayr Root Rorayr Toroor Tayk Rak Toor Kar Ror Kat Tak Tator Ratayt Tayt Kaykayk Korayk Rarayt Rayk Tayrak Tar Katot Rayrak Tok Torayt Tak Takot Tayr Kor Tat Roorok Rat Toor Kook Kokook Koot Kayr Rootayr Koor Rorot Raykayk Rot Rar Tot Kar Roorayk Rakot Took Rayk Rayt
+			}
+		}
+	}
+}

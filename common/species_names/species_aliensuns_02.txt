@@ -1,0 +1,613 @@
+# Generated species derive their names from here
+
+### Alien Suns
+AS = {
+	BurningBone = {
+		name = "Burning Bone"
+		plural = "Burning Bones"
+		home_planet = "Shredded Skull"
+		home_system = "Flayed Axe"
+		name_list = "AS01"
+	}
+	
+	GreyTongue = {
+		name = "Grey Tongue"
+		plural = "Grey Tongues"
+		home_planet = "Slow Flying Rock"
+		home_system = "Forgotten Star"
+		name_list = "AS01"
+	}
+	
+	BrokenSkyPeople = {
+		name = "Broken Sky People"
+		plural = "Broken Sky Peoples"
+		home_planet = "Fog Nest"
+		home_system = "Raining Star"
+		name_list = "AS01"
+	}
+	
+	MistyClaw = {
+		name = "Misty Claw"
+		plural = "Misty Claws"
+		home_planet = "Orange Talon"
+		home_system = "Small Pond"
+		name_list = "AS01"
+	}
+	
+	ehKangG = {
+		name = "ehKangG'"
+		plural = "ehKangGi"
+		home_planet = "K'KankK'ee"
+		home_system = "ingTr"
+		name_list = "AS01"
+	}
+	
+	GreyBelly = {
+		name = "Grey Belly"
+		plural = "Grey Bellies"
+		home_planet = "Sleeping World"
+		home_system = "Bright Thing"
+		name_list = "AS01"
+	}
+	
+	DeathTongue = {
+		name = "Death Tongue"
+		plural = "Death Tongues"
+		home_planet = "Grey World"
+		home_system = "Bright Star"
+		name_list = "AS01"
+	}
+
+	KteeItkii = {
+		name = "Ktee'Itkii"
+		plural = "Ktee'Itkii"
+		home_planet = "Zet'k"
+		home_system = "Kt'tiz"
+		name_list = "AS02"
+	}
+	
+	Kee = {
+		name = "Kee"
+		plural = "Kee"
+		home_planet = "Zhetkii"
+		home_system = "Zhetkii"
+		name_list = "AS02"
+	}
+	
+	Eetkee = {
+		name = "Eetkee"
+		plural = "Eetkee"
+		home_planet = "Itki'Iit'"
+		home_system = "Ezhi'Iizhi"
+		name_list = "AS02"
+	}
+	
+	Zhii = {
+		name = "Zhii"
+		plural = "Zhii"
+		home_planet = "Iike"
+		home_system = "Iiktii"
+		name_list = "AS02"
+	}
+	
+	Kizh = {
+		name = "Kizh"
+		plural = "Kizh"
+		home_planet = "Eekiitk"
+		home_system = "Iit'kii"
+		name_list = " AS02"
+	}
+
+	Zsakhuuthlp = {
+		name = "Zsakhuuthlp"
+		plural = "Zsakhuuthlpi"
+		home_planet = "Chraazs"
+		home_system = "Annahshaa"
+		name_list = "AS03"
+	}
+	
+	GenraKemthys = {
+		name = "Genra-Kemthys"
+		plural = "Genra-Kemthys"
+		home_planet = "Tabakhdet"
+		home_system = "Anikhefkharayt"
+		name_list = "AS03"
+	}
+	
+	Uuzsaans = {
+		name = "Uuzsaans"
+		plural = "Uuzsaansi"
+		home_planet = "Chruuhhhuu"
+		home_system = "Chruuhhhuu"
+		name_list = "AS03"
+	}
+	
+	Zsuuthlpa = {
+		name = "Zsuuthlpa"
+		plural = "Zsuuthlpians"
+		home_planet = "Uussash"
+		home_system = "Chuunnuhhh"
+		name_list = "AS03"
+	}
+
+	Uushaachr = {
+		name = "Uushaachr"
+		plural = "Uushaachrians"
+		home_planet = "Unsabla"
+		home_system = "Chrahshuuhsh"
+		name_list = "AS03"
+	}
+#############
+	Sosshol = {
+		name = "Sosshol"
+		plural = "A'Sossholians"
+		home_planet = "S'u'k's'o'd'"
+		home_system = "Bukhdab"
+		name_list = "AS04"
+	}
+	
+	Rning = {
+		name = "Rning"
+		plural = "Rning'rning"
+		home_planet = "Dok'shub"
+		home_system = "Sho'sdab"
+		name_list = "AS04"
+	}
+	
+	Khamdob = {
+		name = "Kha'md'o'b"
+		plural = "Kha'md'o'bi"
+		home_planet = "Duksa'd"
+		home_system = "Kha'mso'm"
+		name_list = "AS04"
+	}
+	
+	Kakhdok = {
+		name = "K'a'khdo'k"
+		plural = "K'a'khdo'ki"
+		home_planet = "Shoshsa'd"
+		home_system = "K'u'hkok'"
+		name_list = "AS04"
+	}
+
+	Shossham = {
+		name = "Sho'ssha'm"
+		plural = "Sho'ssha'mians"
+		home_planet = "Ko'shso'm"
+		home_system = "Dho'dkok"
+		name_list = "AS04"
+	}
+	#####################
+	
+	CaovVirah = {
+		name = "Caov Virah"
+		plural = "Caov Virahean"
+		home_planet = "Peov Vomik"
+		home_system = "Dthaael Ngahus"
+		name_list = "AS05"
+	}
+	
+	Ryth = {
+		name = "Ryth"
+		plural = "Rythians"
+		home_planet = "Weik Geshuf"
+		home_system = "Wuaog Rushuf"
+		name_list = "AS05"
+	}
+	
+	KeiaelFashuf = {
+		name = "Keiael Fashuf"
+		plural = "Keiael Fashufi"
+		home_planet = "Peeg Pegas"
+		home_system = "Ngaeg Ngamak"
+		name_list = "AS05"
+	}
+	
+	NgaaelTufac = {
+		name = "Ngaael Tufac"
+		plural = "Ngaael Tufaci"
+		home_planet = "BYaeg Fashuf"
+		home_system = "Voum Peshuf"
+		name_list = "AS05"
+	}
+
+	GeefPejil = {
+		name = "Geef Pejil"
+		plural = "Geef Pejili"
+		home_planet = "Wuaef Wefach"
+		home_system = "Peyiv Bukeih"
+		name_list = "AS05"
+	}
+############
+	Kukeri = {
+		name = "Kukeri"
+		plural = "Kukeri"
+		home_planet = "Kuker"
+		home_system = "Riiri"
+		name_list = "AS06"
+	}
+	
+	Keytayk = {
+		name = "Keytayk"
+		plural = "Keytayks"
+		home_planet = "Reekay"
+		home_system = "Veyteyt"
+		name_list = "AS06"
+	}
+
+	Ghakhda = {
+		name = "Ghakhda"
+		plural = "Ghakhdas"
+		home_planet = "Muzkak"
+		home_system = "Shukkak"
+		name_list = "AS06"
+	}
+	
+	Rir = {
+		name = "Rir"
+		plural = "Rirs"
+		home_planet = "Rook Veyt"
+		home_system = "Vooreyv"
+		name_list = "AS06"
+	}
+	
+	Reetiek = {
+		name = "Reetiek"
+		plural = "Reetieks"
+		home_planet = "Kiet"
+		home_system = "Rereyt"
+		name_list = "AS06"
+	}
+##################	
+	MaenNul = {
+		name = "Maen Nul"
+		plural = "Maen Nullians"
+		home_planet = "Neen"
+		home_system = "Baaw Nan"
+		name_list = "AS07"
+	}
+	
+	Po = {
+		name = "Po"
+		plural = "Poean"
+		home_planet = "Dameron"
+		home_system = "Finn"
+		name_list = "AS01"
+	}
+	
+	Naeb = {
+		name = "Naeb"
+		plural = "Naebians"
+		home_planet = "Buen Bawul"
+		home_system = "Buen Bawul"
+		name_list = "AS7"
+	}
+	
+	BuenWub = {
+		name = "Buen Wub"
+		plural = "Buen Wubbians"
+		home_planet = "Wuen Bab"
+		home_system = "Meuw Wunel"
+		name_list = "AS07"
+	}
+	
+	Irdon = {
+		name = "Irdon"
+		plural = "Irdonians"
+		home_planet = "Neen Nubem"
+		home_system = "Neen Nubem"
+		name_list = "AS07"
+	}
+##############	
+	ehTingHn = {
+		name = "ehTingHn"
+		plural = "ehTingHnians"
+		home_planet = "inKri'"
+		home_system = "HrihGraAa"
+		name_list = "AS08"
+	}
+
+	kninkG = {
+		name = "Kn'inkG"
+		plural = "Kn'inkG"
+		home_planet = "HnoOo'enk"
+		home_system = "K'aAa"
+		name_list = "AS08"
+	}
+
+	Kpiadvran = {
+		name = "Kpiadvran"
+		plural = "Kpiadvrans"
+		home_planet = "Njetdgon"
+		home_system = "Wmoesvran"
+		name_list = "AS08"
+	}
+	
+	Dnohtvub = {
+		name = "Dnohtvub"
+		plural = "Dnohtvubi"
+		home_planet = "Dnohvran"
+		home_system = "Npakncaq"
+		name_list = "AS08"
+	}
+	################
+	KuyRhu = {
+		name = "KuyRhu"
+		plural = "KuyRhuian"
+		home_planet = "Uueua'a"
+		home_system = "Ieoue'e"
+		name_list = "AS09"
+	}
+
+	Rhitoo = {
+		name = "Rhitoo"
+		plural = "Rhitoo"
+		home_planet = "Iayiuu'e"
+		home_system = "Aooeau'u"
+		name_list = "AS09"
+	}
+
+	Rhooyehi = {
+		name = "Rhooyehi"
+		plural = "Rhooyehians"
+		home_planet = "Uueoeu'a"
+		home_system = "Ouyaoe'e"
+		name_list = "AS09"
+	}
+	
+	Tuorgel = {
+		name = "Tuorgel"
+		plural = "Tuorgellians"
+		home_planet = "Aauoo'iy"
+		home_system = "Iueuu'iu"
+		name_list = "AS09"
+	}
+	
+		Towo = {
+		name = "Towo"
+		plural = "Towitians"
+		home_planet = "Uooeio'u"
+		home_system = "Oauua'a"
+		name_list = "AS09"
+	}
+	#####################
+		Qiawnok = {
+		name = "Qiawnok"
+		plural = "Qiawnoki"
+		home_planet = "Puibjodth"
+		home_system = "Koabcol"
+		name_list = "AS10"
+	}
+
+		Geoalfoen = {
+		name = "Geoalfoen"
+		plural = "Geoalfoeninas"
+		home_planet = "Neesmes"
+		home_system = "Qiefdov"
+		name_list = "AS10"
+	}
+	
+		Ruarmes = {
+		name = "Ruarmes"
+		plural = "Ruarmes"
+		home_planet = "Ruigshuk"
+		home_system = "Neawdov"
+		name_list = "AS10"
+	}
+	
+		Guoawwel = {
+		name = "Guoawwel"
+		plural = "Guoawwelians"
+		home_planet = "Neigroch"
+		home_system = "Geigroch"
+		name_list = "AS10"
+	}
+	
+		DaarruS = {
+		name = "DaarruS"
+		plural = "DaarruS"
+		home_planet = "DuigruS"
+		home_system = "Qiesvoc"
+		name_list = "AS10"
+	}
+	###############
+		Edliovce = {
+		name = "Edliovce"
+		plural = "Edliovcians"
+		home_planet = "Ighuavno"
+		home_system = "Acqoipce"
+		name_list = "AS11"
+	}
+	
+		Aacsaedge = {
+		name = "Aacsaedge"
+		plural = "Aacsaedge"
+		home_planet = "Ejwuavno"
+		home_system = "Acqoorci"
+		name_list = "AS11"
+	}
+		Ivroejta = {
+		name = "Ivroejta"
+		plural = "Ivroejtians"
+		home_planet = "Aacsaudva"
+		home_system = "Iobqiulha"
+		name_list = "AS11"
+	}
+		Aqnauorho = {
+		name = "Aqnauorho"
+		plural = "Aqnauorhians"
+		home_planet = "AknouoZhco"
+		home_system = "Uwtuejta"
+		name_list = "AS11"
+	}
+		Edliejmu = {
+		name = "Edliejmu"
+		plural = "Edliejmians"
+		home_planet = "EldooZhco"
+		home_system = "Aqnaualryi"
+		name_list = "AS11"
+	}
+	##############
+		Ivav = {
+		name = "Ivav"
+		plural = "Ivavians"
+		home_planet = "Oowiw "
+		home_system = "Afam"
+		name_list = "AS12"
+	}
+	
+		Uzhyug = {
+		name = "Uzhyug"
+		plural = "Uzhyugi"
+		home_planet = "Otih"
+		home_system = "Oduj"
+		name_list = "AS12"
+	}
+	
+		Uqeed = {
+		name = "Uqeed"
+		plural = "Uqeedians"
+		home_planet = "Ubav"
+		home_system = "Oabih"
+		name_list = "AS12"
+	}
+	
+		UtipOtig = {
+		name = "Utip Otig"
+		plural = "Utip Otigs"
+		home_planet = "Emiw Eesom"
+		home_system = "Asam Asig"
+		name_list = "AS12"
+	}
+	
+		Asiw = {
+		name = "Asiw"
+		plural = "Asiw"
+		home_planet = "Eesav Otav"
+		home_system = "Otuyn Otioq"
+		name_list = "AS12"
+	}
+	
+	##########
+	
+	Pree = {
+		name = "Pree"
+		plural = "Pree"
+		home_planet = "Kreh"
+		home_system = "PaaGnhr"
+		name_list = "AS13"
+	}
+	
+		Keeee = {
+		name = "Keeee"
+		plural = "Keeeeshi"
+		home_planet = "PooKaa"
+		home_system = "HaKraa"
+		name_list = "AS13"
+	}
+	
+		PeeReo = {
+		name = "PeeReo"
+		plural = "PeeReoosians"
+		home_planet = "KaGne"
+		home_system = "PaaHeee RaGnaa"
+		name_list = "AS3"
+	}
+	
+		ProKraaKo = {
+		name = "ProKraa Ko"
+		plural = "ProKraa Ko"
+		home_planet = "Praa"
+		home_system = "Praa HreeRooaa"
+		name_list = "AS13"
+	}
+	
+		ProoKreRoaa = {
+		name = "ProoKre Roaa"
+		plural = "ProoKre Roaani"
+		home_planet = "Haoo"
+		home_system = "HreKrooaa"
+		name_list = "AS13"
+	}
+	################
+		LwiybLeill = {
+		name = "Lwiyb Leill"
+		plural = "Lwiyb Leillians"
+		home_planet = "Lwiyb"
+		home_system = "Wboib"
+		name_list = "AS14"
+	}
+	
+		Lwaiw = {
+		name = "Lwaiw"
+		plural = "Lwaiwians"
+		home_planet = "Lwaiw"
+		home_system = "Loibjb"
+		name_list = "AS14"
+	}
+	
+		OiQoin = {
+		name = "Oi Qoin"
+		plural = "Oi Qoins"
+		home_planet = "Qoin"
+		home_system = "Jbwiyn Qoinb"
+		name_list = "AS14"
+	}
+	
+		Jbneijb = {
+		name = "Jbneijb"
+		plural = "Jbneijbi"
+		home_planet = "Jbnei"
+		home_system = "Leijbl"
+		name_list = "AS14"
+	}
+	
+		Iy = {
+		name = "Iy"
+		plural = "Iyti"
+		home_planet = "Iya"
+		home_system = "Boijb"
+		name_list = "AS14"
+	}
+	
+		UwaujonIovare = {
+		name = "Uwaujon Iovare"
+		plural = "Uwaujon Iovareans"
+		home_planet = "Yanafed Igoja"
+		home_system = "Iyfuemog Iqeja"
+		name_list = "AS15"
+	}
+	
+		IovataenIloge = {
+		name = "Iovataen Iloge"
+		plural = "Iovataen Ilogeans"
+		home_planet = "Iyfuefed Ulore"
+		home_system = "Uxikov Ilohau"
+		name_list = "AS15"
+	}
+	
+		InuthruwOpavu= {
+		name = "Inuthruw Opavu"
+		plural = "Inuthruw Opavuians"
+		home_planet = "Inangov Uduadyi"
+		home_system = "Inekov Eqiho"
+		name_list = "AS15"
+	}
+	
+		UlododIgore = {
+		name = "Ulodod Igore"
+		plural = "Ulodod Igoreans"
+		home_planet = "Ulodod Ilohu"
+		home_system = "Inukov Eweqa"
+		name_list = "AS15"
+	}
+	
+		InukovInudyi = {
+		name = "Inukov Inudyi"
+		plural = "Inukov Inudyians"
+		home_planet = "Atijib Uxire"
+		home_system = "Iyfuethruw Igomo"
+		name_list = "AS15"
+	}
+	
+}

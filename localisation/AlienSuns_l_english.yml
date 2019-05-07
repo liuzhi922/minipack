@@ -1,0 +1,66 @@
+﻿l_english:
+
+ ####################################
+ # Species Classes
+ ####################################
+ 
+ AS:0 "Alien Suns"
+ AS_desc:1 "Species Class has no effect on your Empire, but Carnivore-class Species may consider other Alien Suns to be less alien than other Species Classes."
+ AS_plural:0 "Alien Suns"
+ AS_insult_01:0 "Kootiiki"
+ AS_insult_plural_01:0 "Ahliliedia"
+ AS_compliment_01:0 "UnwallAunall"
+ AS_compliment_plural_01:0 "Iickoortuss"
+ AS_spawn:0 "Dwha"
+ AS_spawn_plural:0 "Dwhas"
+ AS_sound_01:0 "growling"
+ AS_sound_02:0 "grunting"
+ AS_sound_03:0 "yapping"
+ AS_sound_04:0 "yowling"
+ AS_sound_05:0 "mewling"
+ AS_organ:0 "Qehex"
+ AS_mouth:0 "Thwa"
+ name_list_AS01:0 "Alien Suns 1"
+ name_list_AS01_desc:0 " "
+ 
+ name_list_AS02:0 "Alien Suns 2"
+ name_list_AS02_desc:0 " "
+ 
+ name_list_AS03:0 "Alien Suns 3"
+ name_list_AS03_desc:0 " "
+ 
+ name_list_AS04:0 "Alien Suns 4"
+ name_list_AS04_desc:0 " "
+ 
+ name_list_AS05:0 "Alien Suns 5"
+ name_list_AS05_desc:0 " "
+ 
+ name_list_AS06:0 "Alien Suns 6"
+ name_list_AS06_desc:0 " "
+ 
+ name_list_AS07:0 "Alien Suns 7"
+ name_list_AS07_desc:0 " "
+ 
+ name_list_AS08:0 "Alien Suns 8"
+ name_list_AS08_desc:0 " "
+ 
+ name_list_AS09:0 "Alien Suns 9"
+ name_list_AS09_desc:0 " "
+ 
+ name_list_AS10:0 "Alien Suns 10"
+ name_list_AS10_desc:0 " "
+ 
+ name_list_AS11:0 "Alien Suns 11"
+ name_list_AS11_desc:0 " "
+ 
+ name_list_AS12:0 "Alien Suns 12"
+ name_list_AS12_desc:0 " "
+ 
+ name_list_AS13:0 "Alien Suns 13"
+ name_list_AS13_desc:0 " "
+ 
+ name_list_AS14:0 "Alien Suns 14"
+ name_list_AS14_desc:0 " "
+
+ name_list_AS15:0 "Alien Suns 15"
+ name_list_AS15_desc:0 " "

@@ -1,0 +1,3 @@
+is_organic_species = {
+	NOT = { is_robotic_species = yes }
+}

@@ -1,0 +1,211 @@
+### Alien Suns 03
+AS03 = {
+
+
+	ship_names = {
+	
+		generic = {
+	"Athluthlpa Nnushaa" "Aazsuthlp Annaasa" "Shuhuhhh Khuzsu" "Uuhhhassu Athluublaa" Athluuh "Uunsaahhhuu Ushu" "Achuzs Chraablahhh" Zsaanna Zsuhsha "Uhuuthlpu Nsuushuunn" "Akhathla Uuthukhuu" "Uukhash Hhhuubluzs" "Hshuhhhaa Achuuthl" "Khaass Ssaathlp" Aathlpu Assuunsaa Ahshasz Thuhath Bluchra Nnurr "Uchuush Huusash" Uuchrunsuu "Khas Uthuu" "Aakhuchra Nsaasz" "Khublash Aahshuukh" Aashaah Aahuthla "Uushach Ubla" "Chruhhhaans Uublas" Aablaazs "Uuhshaath Hhhuzsa" Uurruutha Zsuubl Uuhshaakh "Achuusza Uchuthlpu" Nnaakhathl "Hshaasz Nnaach" "Annaarr Thluuthlash" "Hshuunn Ssuzsuu" "Atha Uthlpaa" Shannu "Thluuzs Aaszuunn" Ussaa Aathublaa "Nnaathlpaa Usakh" "Chrathl Aahhhuu" "Shuuhsh Rrabl" Nsuussakh Ukhaa "Uuhuchuu Uushuuhhh" Ukhuns "Uuzsaans Thlaahuusz" Uunnasaa "Aathaa Uublu" Szann Chruuhhh "Shathlp Achu" "Atha Athlaa" "Saahhhuu Aabluuchaa" "Chruushukh Chubl" Unsu "Uuhshubla Uthlpuuhhhaa" "Thaans Suuthl" Shaarruush Khannaa Hshabluuth "Uublaa Uurruuzs" Aannuukh Uhshuuszu Ukha "Ukhublaa Unnathlp" "Rruuzsus Aszaa" Assarr "Ahaachra Uunnazsaa" "Uszabl Hhhaathahsh" Aakhushaa "Hachra Uchuusz" Bluuchaathlp Uzsa Athuthlp "Ssuuss Thuuss" Uublaachraa "Urra Athlpurru" "Thluthlpah Ssuussaa" "Thlpuszuns Uchraa" "Zsuuchaahhh Nsubl" Ssuzs "Uuchraa Uchruu" "Shaass Uthluch" "Aazsannaa Uzsu" Thlaathlpa Nnath Aahuuchr Chraathlp "Uuzsazsuu Blaazs" Chach Ashuszaa "Suuhsh Haasz" "Thlpachrass Blaahshaa" "Unsuuzs Assuu" Uushuunn "Annaarruu Unsuthl" "Szaath Uuszaa" "Hhhaashu Ubluu" "Rraath Aahhhuhaa" "Thlpahhhuush Hhhunnu" "Thlansa Urra" Aassaakh "Uublaa Asha" Khuunna "Uubluusz Nsuuthlpaa" "Uuchrahhh Uhuuthlu" Uchruuch Annahshaa Uthlpuuhu "Hhhashah Aakha" "Akhaach Nsaann" "Shaakhu Uthlpa" Athlpusz "Hhhuthlush Hshachr" Thlaachruhhh Sachruch Usuusz "Blukhaa Chahhhuu" "Chruthlaa Chaazs" "Uushuu Uthlpahhhaa" Rruuhhh Uhshaahhh "Achrubl Aahhhaazs" "Ahshuusz Uunsa" Nnachruuhhh Zsuurrabl "Thluuss Hhhaashuhhh" "Uuhaathlpuu Khathl" "Khassaass Zsaannaa" Nsuuchaach Arra Uuhshaaha Zsuszarr "Asu Blarr" "Thlaannaach Chruunnuu" "Bluthash Thlpaabl" Huus Uunnaahhha Uublu "Athakhaa Khuuzs" Uuchaa "Arraa Rruuchuu" "Achruusaa Zsuubla" Uussansuu "Athansaa Khuuchans" "Hshuss Thuunnuu" Thurrazs Chruuhhhuu "Thlassuusz Nnaazsuu" Uchurr "Aathlu Rrathlp" "Shahhhaa Nnazsu" "Hshasuu Achabl" "Ablaa Uunnaacha" "Uuthuhsh Uublahsh" Aathluuns Rruussuu Uukhakh "Ahhhaa Zsakhuuthlp" "Saannu Blarraabl" "Ashaa Uuzsussuu" Thaath "Thaach Annaa" Zsaathath Usuu Uubluuh "Szahaabl Nnurrass" Thlpuussaahhh "Aachathlpaa Chaasha" Aathaa Nsuha Aasa Urraass "Uuhuuthlp Chruuzs" Aassuthlp "Aahu Shakhuthlp" Uchrablaa Nsaathlp "Ukhush Chrassa" "Usza Sah" Nsaazsu "Uchuu Uushu" "Aszuuhaa Athuukha" Khathlakh Nnuuhhhakh "Hshubluunn Chraazs" "Chruuhhhuu Chasz" "Nnaakhuu Uunsu" "Aathaa Uuzsachuu" Uuszaans "Shuuthlp Ahuzsaa" Uchathlpuu Assaa Uuszaash Uushaassaa Nsuuszuu "Hhhaachr Aazsuu" "Aashaabl Uuhshuubl" "Athlpas Szurru" Hshuuchruuchr Uunsublaa Szuuth Ushasz "Chraash Thlunnuthlp" "Aahhhaasaa Uusahshaa" "Blabl Hhhushaah" "Aazsuutha Szash" Zsahshaa Shaathlu Rraarruuthlp Ssuubl Huusaass "Uuhhhaakh Uukhunnuu" Hhhuch "Aahuu Uuzsazsa" Ahshuubl "Thukhuch Uuthaa" Szaash "Uuthu Ssaaszuus" "Zsuuthlaans Uushassaa" "Ubluu Uussu" "Ashuucha Aachrathla" Aahshaathuu Uunnas Uhshurru "Usann Szaakhachr" "Haahshuu Akhuthl" "Thlaakh Szusaah" "Uuthaannuu Szachr" "Thlaarrath Aasaabl" Nnuuhuuhsh Uukhu Hhhachr "Uurrurr Azsans" Uunsuu Shuurruu Aachaa Aasuuzs Uusza "Aachraa Assasz" Aachahaa Aassaahsh Uusaachaa "Ususz Uukha" "Aansaansa Hhhannuh" Haashuch "Suurraa Rruthu" Suthlahsh "Szach Zsaathlp" "Khuuthl Shachu" "Achurruu Aachuu" Uuthlazsa Aazsabl Uuhsha Szuthlpuuchr Shathlurr "Nsuukhaa Ahaahshaa" Uhshaa Chussa Shaabluu Chraahsh "Ussuhsh Azsachr" Uuzsaachr Uhshuu "Azsuus Ssaabl" "Assaathla Zsuunnuthl" "Hhhahsh Chruthu" "Ukhussuu Ubluchra" "Uublaassu Khushaass" Chuussaach "Uhaarr Uushaash" "Ukhubl Thlpushaa" "Khaathlpuu Zsablaah" Ssuuthluu "Urruss Aansahsh" Usuus Nsansuuzs "Uuhuu Sharraann" Uushaa Ussuuhsh Athaathlp "Thlasz Nnaahaabl" Hhhuunsa Unnaathla Aachrurruu Unnuucha "Chablu Rrakh" Shukhaa Aannuu Zsuhhhakh "Uszuush Rrakhahsh" Szushuns Achuszaa 	 
+		}
+
+		corvette = {
+        
+		}
+		
+		destroyer = {
+        
+		}
+		
+		cruiser = {
+        
+		}
+		
+		battleship = {
+        
+		}
+		
+		science = {
+        
+		}
+		
+		colonizer = {
+       
+		}
+		
+		constructor = {
+        
+		}
+		
+		
+		mining_station = {
+        
+         }
+		
+        research_station = {
+        
+        }
+		wormhole_station = {
+        
+         }
+		terraform_station = {
+        
+         }
+		observation_station = {
+        
+         }
+		outpost_station = {
+		
+             }
+			sequential_name = "%O% Frontier Outpost"
+		}
+
+		military_station_small = {}
+		military_station_medium = {}
+		military_station_large = {}	
+	}
+
+	fleet_names = {
+		random_names = {
+	"Thluushu Nnaachraa" "Aannachu Arrash" "Aachuus Suuchru" "Ssuhu Chraarr" "Uhansa Blaathl" Bluuhuu "Khaachraabl Uublahuu" Rruuthachr "Azsaathlaa Aahhhachr" Chruuns "Hhhuth Arrahhha" "Thunnass Rraarr" "Uuchurraa Aazsaarruu" Chuunnurr Ublathl "Nnachr Chruchr" Aaszaa "Ablu Achra" "Arrahsh Thlublaathl" "Aathaaszuu Uuhhhaa" Uuchraann Aachraarr Sasu "Acha Khuhhhasz" "Huhaarr Khaathl" Aathluthlp "Athlpuuchu Aachrann" Ssaann Thlass "Ashasz Aszuha" "Aaszaazsuu Nnuunsath" Blakh Hhhuuthluuthl "Aathuubl Ssathlathlp" Huucha "Uuchruu Haanna" Sass Thlpaachraakh Abluu "Uusahshuu Uushaachaa" Akha "Shuusz Asublaa" "Uusash Aahshublaa" Thluuh Nsuthlpaa Nsuthurr Uszuushu Tharr Athlpu Aszuu Usansaa Azsucha Asahhhu Uzsubl Suhsh Uuhshaahhhuu "Rruuchr Sathluu" "Sazs Khutha" "Uuhhhah Nnuchraa" "Uszuukhu Ukhuukhaa" Rruussu "Szuuhathlp Szaathl" Uuhhhaashu Thlaassuuch Aannunsa Aahhha Assuthlpu "Szuublukh Thlaahshuu" Uuthlpubl Aahhhathlpaa "Uunnuuhshu Chruunnuu" "Aaszuuzsuu Ahuuthlp" Szuuzsuuhhh "Ashu Azsuuhhhu" "Hshachahsh Zsuuthlpa" "Aazsa Suthluu" Chaabl "Zsaathluu Khathlpu" "Blasu Ubluu" Chruuhhhu Nnuthlu "Hhhaath Nsans" Zsunn Hshush Abla Thlpachru "Suchu Rrunna" Ansa Asu Thlaachuu Ahshu Uhachra Hhhuuss Suthlath Ablaa Uuzsaa Khuuszu "Uhsharr Athuusz" "Nsaachuchr Aabluzs" "Uushaach Aannuuhhh"
+		}
+		sequential_name = "%O% Extraorbital Corps"
+	}
+	
+	### ARMIES
+	army_names = {
+		defense_army = {
+			sequential_name = "%O% Defense Army"
+		}
+			
+		assault_army = {
+			sequential_name = "%O% Assault Army"
+		}
+		
+		slave_army = {
+			sequential_name = "%O% Slave Army"
+		}
+		
+		clone_army = { 
+			sequential_name = "%O% Clone Division"
+		}
+		
+		robotic_army = {
+			sequential_name = "%O% Robot Division"
+		}
+		
+		android_army = {
+			sequential_name = "%O% Android Division"
+		}
+		
+		psionic_army = { 
+			sequential_name = "%O% Psionic Army"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "%O% Xenomorph Division"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "%O% Gene-Warrior Division"
+		}
+				robotic_defense_army = {
+			sequential_name = "%O% Turret Division"
+		}
+		android_defense_army = {
+			sequential_name = "%O% Android Division"
+		}
+		occupation_army = {
+			sequential_name = "%O% Occupation Army"
+		}
+		robotic_occupation_army = {
+			sequential_name = "%O% Robot Division"
+		}
+		android_occupation_army = {
+			sequential_name = "%O% Android Division"
+		}
+	}
+
+	### PLANETS
+
+	planet_names = {
+
+		generic = {
+			names = {
+	Aachruu Uucha Chaathlp "Uhaathla Nsuushuunn" "Ushabla Uthlpuu" "Uushaachra Uurrachru" "Nnuunsu Nsuuthl" Saarr "Uubla Acharraa" Urruunn "Blaszu Uuthluth" "Aszaa Uuhaans" "Ukhuu Ahshusa" "Athlu Athuukhu" Uuchraansu "Uchrunna Uhusza" Ssasha Aahasz "Nsahshush Ssuush" Nsanna Thlpaachra Aahhha "Ashu Rrahhhush" "Suthlp Ssuthunn" "Aassaabluu Shuublaahhh" Uuthabl "Rrahshuuchr Athuurraa" "Szaah Hathaach" "Akhuchu Utha" "Aathu Aahshu" "Thlpaarruuth Hashaa" "Thuuthlpaa Uuhublu" "Uuthluush Uchuusha" "Aarraa Chruhsh" Hhhazs "Suuhuu Thusu" Saathluuch Uuszuthaa "Ansarr Aachrahsh" "Shuuhu Nnuuthuuth" Harraahhh Nnathlpuu Akhaannaa Uusucha "Ussuubluu Bluunn" Hhhuuchra Athlaaszaa "Aasunsa Unsabla" "Uthluunsa Athlpuuszuu" "Sunn Nnas" Aabluublaa Aahaachaa Chablaa "Aachuu Bluukhuuss" "Szuchuuzs Suchaa" "Aszazs Sasus" Uuhhhakh "Saabluush Thlpuukhuchr" "Szaassuu Uunsunnuu" Usathl Thlpukhuu "Aarraahaa Uchurr" Uthlpuus "Ublaathlu Uuhhhuu" Rruhhhu "Aahhhuu Aahshaa" Chuchu "Uuzsachruu Achru" Uchachu "Nnuuzs Usassaa" Zsuusz Achuuzs Khasaah Uhuuchr Thluush "Nsuhhhu Uszus" "Chrathlpa Huchuu" "Thuuhhh Nsathlpath" "Nsas Suukh" Uhshannuu "Zsassathlp Surr" "Unnuu Uuthlpuuns" "Ashuthlpu Thlpuzsuu" "Ussathl Thlpuhhhaachr" "Chrahshuuhsh Chaaszuthlp" "Uussaa Ussuuss" "Chrashaann Uuchrath" "Suszath Ussach" Urra Ssarra "Aathlpuu Uurruthlu" Unnuunnuu Uuchrannu Saahaa Thussaa Huushachr "Hhhuthuuthl Uuthlpaahhh" Uuszuu "Hhhathluuhhh Huuzsathlp" "Rruhshusz Hshuunn" "Uunnukh Thlannaa" "Uhshaarraa Zsarruuns" "Uuchrazsa Shasz" "Chruurraach Aassuh" "Chuuthlpa Uuchaa" "Khaahas Uuthlpu" Aathla Uusuurru Nnachu Nnuthlaa "Uzsukha Aarruubl" "Uuthlpus Athuu" Uszuuthla "Uszuu Ssuzs" Uunnach Ablahshu Aassuusa "Blaach Thazsaahhh" Zsazsu Shansahsh "Rraathass Ansuu" "Aszu Saathlputhlp" Aahshuush "Chashuthlp Aakhaa" Hshuuthlp "Szuuhshu Aahhhuns" "Nsaahaa Chuunnuhhh" Akhathu "Zsuunn Uublaas" Aasuthaa "Thlpukhuuhsh Shuh" Thlpachaakh "Achathlaa Assaathluu" Aahuzs "Nsaathlann Ussu" Achuuthla "Nsaash Achraa" Shannusz "Uushaachr Athluuth" Szaahhh Uuthlpuurruu "Athlpann Chruuhshathlp" "Arru Hshaathlpuu" "Aszushu Uushaa" "Unnu Subl" Thluhsh Ssuuthaass "Blaakhush Nnuchuuh" "Hhhuuns Chruunnuu" "Blansa Uuszath" "Szaabla Ssuuthlpaath" Hazsuurr Ssunsaa "Uuhannu Aakhuu" Zsuhhha Ssuunnuth "Aahhhuuhshaa Thlpaabl" "Zsazsaa Hshathuuzs" "Aashus Khaatha" "Charru Ansaahsha" Zsaabla "Hhhaas Athlpaach" "Athluchu Urruunsa" "Hhhuukhaasz Szaasaachr" "Rraabl Thaasaass" Nnaachusz Uuzsaa Annathlpuu "Uzsaannu Assuss" "Thlpaathuuthl Bluh" Thluusaasz "Uuthlputhlpu Ushuuzsa" Hshaathl Ahu Ansaathlp "Ansaakhuu Blunn" Urrath "Hshabl Arras" "Uszuchaa Chruussaach" Zsazsuuhsh "Uha Zsuuzs" Rraarru Rruunn "Haass Uurruhaa" Aha Szuuhhhuu Uuhuusu Uuszuuchr Uthlannaa Unnaah "Uuhaass Rrush" "Nnathl Uchuuthaa" Ahhhuu Zsaarru "Thlpaass Akhu" "Hshaachuu Zsuuzsa" Hhhuth Khathlathl Rraahsh Nsuuns Ansashuu Akhu Chraach Hshaahhhuhsh "Szusz Aasuu" "Uthaath Uunsaahu" "Aahuusz Blahhh" Uuthahsh "Chaann Khaashath" "Uuthlpuu Hhhuuthlurr" Uthansaa Thlusuu "Chuzsaach Uuchruunnaa" "Aszaahsh Athlu" Chaash "Sahshaash Thlussaabl" Hasz "Blazsuu Uussash" Chransuu "Uusaansuu Nsaazsachr" Hshublazs "Sahshaa Aszu" "Aakhaach Uuszahhhu" "Khuuthl Aszuthl" "Ssahu Uussuuh" Thluunnuurr "Chruuthu Usaa" Uussaans "Thluuhhhaa Thlpaash" "Blakhuu Uuszablu" "Aabluubl Thunsa" "Hshachu Aathazsu" Hahhh Hhhussaa Aassasza Uuchranna Bluukhuu "Ublu Habluu" "Rraasz Annuunsa" Athluthl "Shuuchu Ahshuchraa" "Aachahhhaa Blaathl" Uhaathlp Thuunsuu Rraannu Uussuuhhh "Shaachakh Thluusath" "Ahhhaannaa Nsaachuuthl" "Rrann Hshaachrah" "Huurr Aathlpuubl" "Saablaach Aachruuhhh" "Aacha Hshaahshaass" Szuss Annaahsha Ssurr "Uukhaahhh Hhhuhhh" "Aakhuukh Ukhu" Uzsuuth Ahsharr Zsuzsu Chuusha "Thlpunnu Athlpass" Aahaathlpa Uuthaa Ushuhu Aansaannu Uussaakh Thluublaa "Chaansaas Hhhathaa" Aathurru "Athlpuuthlpa Hhhusz" "Akhuns Uuthuusz" "Uuszu Aachuu" "Achrukh Thlpaathlpaahhh" Thlachuu "Habl Uussathla" "Shushaakh Uthlputhlu" Shuukha Hshaahhhu "Uusza Chuurru" Uussuuth Thuuthuh "Khuhuu Shuusz" "Khuuss Aathus" "Nsuns Athluchu" "Aachaa Haasu" "Ahhha Azsushuu" Khuuhshukh "Zsarra Thlpuusush" Uthaasz "Uusaash Uthass" Thluunsaans "Aannunsaa Uuthlaa" Nnathlpas Nsarrunn "Athlpaakh Chrarra" "Aahhhaa Chushaas" Nsasu "Nsaahsh Ussa" Uuthuuzs
+			}
+		}
+		
+		pc_desert = {
+			names = {
+            
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+            
+			}
+		}
+		
+		pc_arid = {
+			names = {
+            
+			}
+		}
+		
+		pc_continental = {
+			names = {
+            
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+            
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+          
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+           
+			}
+		}
+		
+	}
+
+	### CHARACTERS
+
+	character_names = {
+		default = {
+			# A complete name
+			full_names = {
+			"Earl UAachuuthlp XCVII" "Duke ChrKhas DL" "Noble UUzsaarraa DCCVII" "Baronet ThlpThuhhh C" "Noble BlZsaazsurr DCCCXC" "Duke AaUzsuuchr cm" "Baronet UuUkhaahsha XCVII" "Baron KhNsunsaah XCVIII" "Baronet KhRrass XCIV" "Duke UuAthlpuu cm" "Noble AUnsaa XCV" "Knight AUuchuu XCV" "Noble HshHhhuurruh DL" "Knight ChrThahsh DCCVII" "Baronet HshRraassuu XCIV" "Earl HshShablahsh DCCCXC" "Baron ShZsuuss MDCCC" "Noble UuArrubl DI" "Baronet ChrChrukh XCVII" "Baronet NsChuushu DL" "Noble HhhThlpach DCCVII" "Earl RrSsaassa DXXX" "Earl UUshakhu DI" "Knight AUthlaa DCCVII" "Duke ShHhhuunn XCIV" "Baronet UuUusu DCCVII" "Baronet HshSzuuzsu XCVIII" "Duke HshNnathlpa XCIV" "Knight AUshuuthl DL" "Earl NnNsuunsaa cm" "Baron UAnnuunnuu XCVIII" "Duke AaAassu C" "Baronet HChruthl XCIV" "Duke ThThlpaash XCV" "Baron AAkhu DCCCXC" "Baronet AaUrraakh XCVIII" "Baronet KhKhathl MD" "Duke NsThluuth MD" "Knight ThlpHshah XCV" "Duke UuUunsaaha XCV" "Noble ShThlus C" "Duke AUusa DCCVII" "Earl UAchrarr DXXX" "Baronet ZsThaszuhhh DCCCXC" "Earl SzNnuuss XCV" "Earl AAnnu C" "Baron KhSsuublaath XCV" "Baronet SThlpaathlpuusz MDCCC" "Duke AaUhuuhu XCIV" "Noble AAhaath cm" "Earl UAaszuth DXXX" "Baronet ShSzucha DCCVII" "Baronet UuUuhshuzs cm" "Earl ChrBlablu XCV" "Baronet SHuuthuu cm" "Noble AUuhshaa DI" "Baronet UuUhshaasz C" "Noble UUshaachraa DCCVII" "Baron UuUrra MD" "Earl UuUssaashaa DCCVII" "Noble SzZsuublu cm" "Knight AaUuhshuthuu DCCVII" "Knight UUzsathluu DCCCXC" "Earl AaUushaa XCVIII" "Earl SzHshansaa MD" "Noble RrHhhuuthluuth XCVIII" "Noble UuUshaassaa cm" "Earl UAhshach MDCCC" "Duke NnBluuthass MD" "Earl UUuszahhh MDCCC" "Baron ChrKhaathu DI" "Earl AaUhshu XCVIII" "Baron UuUushuuzsaa XCVII" "Baronet NnRraahach DCCVII" "Earl AaAarraarraa C" "Baron NsSzaath cm" "Baronet UAthlpaakh DCCVII" "Earl UAzsaann XCVIII" "Knight UuUkhu XCVIII" "Knight AUuhhhu XCVII" "Earl ChNsurr DCCCXC" "Noble RrKhunn DXXX" "Baron ShSabl DCCVII" "Duke HhhSaaszuchr XCVIII" "Noble UAashunn DCCVII" "Earl ThChraasa C" "Knight AAathann DCCVII" "Noble HNnaannaathlp XCIV" "Duke UuAhhhaazsaa DXXX" "Earl ChrThlahsh DCCCXC" "Baronet HBlaas DCCVII" "Knight SSsaahsh DCCVII" "Baronet HhhThlpaahshaa DL" "Noble UuUsunsuu MD" "Duke ZsHhhathaa C" "Noble SsSusasz DCCCXC" "Duke NsSuuthuu DCCVII" "Baron HshSzuurraach DXXX" "Knight HSuuthl XCVIII" "Noble UuAannuuss MD" "Duke HshThlpuunn C" "Duke UAakha MD" "Duke AUhshablaa DCCVII" "Earl AUurrazs cm" "Earl UuAbluuthlaa MD" "Earl ZsHuuhshunn DL" "Earl ThlZsuukh DCCCXC" "Noble UUurruu XCIV" "Knight HThlpaannuhsh cm" "Duke ShSsuthu XCIV" "Earl KhShahuu DI" "Knight UuUuhaakhaa DI" "Knight SzThuunn XCIV" "Baronet SzZsukhu C" "Knight BlChraachaass XCV" "Duke UUuszuu DI" "Knight AAthlazsaa XCIV" "Baronet RrNsuuzsaa cm" "Earl UuAnnaachr XCV" "Duke UuUuhshahsh DI" "Noble UuUhsha XCIV" "Earl ChrHhhaahuu DL" "Noble SzHhhuha DCCCXC" "Baronet NsChruuthluhsh DL" "Baron AaAahshu cm" "Earl HhhThahhhurr DCCCXC" "Baronet RrZsaathluuch DCCCXC" "Baron UuUnnarru DXXX" "Earl ThChrakh XCVIII" "Baron UuUuszaa DCCCXC" "Earl ThlpHshuuszaathl C" "Duke AaAhhhuutha cm" "Baronet NnSzassaathlp DXXX" "Noble UuUuhu cm" "Earl AaUurrublu XCVIII" "Duke ThSzuuhhh XCVIII" "Noble KhHabluuns MDCCC" "Noble KhHshuukhuhsh MD" "Earl SsSsushaa DXXX" "Knight ThNnahu DXXX" "Earl BlThuhhhu DL" "Earl ThlpThlpaathlp MD" "Earl AUubluhhha DCCVII" "Earl UuUunsu DCCCXC" "Baronet ChRruthluu DXXX" "Baronet SsSzuuszaathl C" "Earl ShSassans C" "Duke AUuchrahhh XCVII" "Baron SzThukhuzs DI" "Baronet UAkhuu DCCVII" "Earl HHuunn MD" "Duke UuUsuhhh DCCCXC" "Earl UUussaazsuu MD" "Baronet ChrChruunnuu DXXX" "Baron UuAnsu XCIV" "Duke AUukhaatha XCIV" "Baronet ChrChruhsh DCCVII" "Baron UAzsaakh XCVII" "Baron AaAathlaazsuu MD" "Noble UuUushuuch DXXX" "Duke UuUunsa DCCVII" "Baron HshHhhuussaazs XCVIII" "Earl UUhhhaachraa MDCCC" "Earl ChrNsahhh C" "Baron ShThluuch XCVIII" "Earl HSsurruu DL" "Baron UUuchu XCIV" "Duke ThlThlaahaathl DXXX" "Noble ChShah XCVII" "Duke HshThlaahuu XCIV" "Knight AUssahshuu DXXX" "Baron AAachraa DCCCXC" "Baronet AaAchaa DI" "Earl UUuchraa DL" "Baronet AaUuhhhash XCVII" "Baronet AaUussuuss cm" "Baronet RrHshaathuuch DI" "Baron UUussaach DCCCXC" "Earl ThShunnuu XCV" "Earl UAarruuhhhuu DCCVII" "Duke KhHshaachr DCCVII" "Duke UuAthlpans XCVII" "Duke AaUzsuh DL" "Baronet AaAansuuzsuu MDCCC" "Duke SzSzaassuu DI" "Baronet HhhBluublu XCVII" "Duke SzSsaash MDCCC" "Knight HshKhunsa DL" "Baron SsRraabl MDCCC" "Noble BlKhuuthlp XCVII" "Duke SzChrasz DCCVII" "Duke UUkhakh XCVII" "Baron ChThaha MDCCC" "Baron ZsSzuzs MDCCC" "Baron HhhChassu MDCCC" "Knight AaUkhazs C" "Noble UUukhuuhhhuu XCVIII" "Noble HshThlpuss DXXX" "Earl UAassaa XCIV" "Baronet KhNsablu XCV" 
+
+			}
+			
+			# Always combined with a second name
+			first_names = {
+			
+			}
+			
+			# Always combined with a first name
+			second_names = {
+			
+			}
+			
+			regnal_first_names = {
+			
+			}
+			
+			regnal_second_names = {
+		
+			}
+		}
+	}
+}
