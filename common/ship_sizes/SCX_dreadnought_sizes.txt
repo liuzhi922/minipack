@@ -8,7 +8,7 @@
 
 @scx_dreadnought_hp = 6200
 @scx_dreadnought_evasion = 5
-@scx_dreadnought_build_time = 960
+@scx_dreadnought_build_time = 1440
 
 @scx_dreadnought_upkeep_energy = 3.6
 @scx_dreadnought_upkeep_alloys = 1.1
@@ -39,13 +39,13 @@ SCX_Dreadnought = {
 	base_buildtime = @scx_dreadnought_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	
+
 	default_behavior = scx_bhv_dreadnought_def
-	
+
 	prerequisites = { "tech_scx_dreadnought_1" }
-	
+
 	combat_disengage_chance = 0.50
-	
+
 	class = shipclass_military
 	construction_type = starbase_shipyard
 	required_component_set = "power_core"
@@ -53,17 +53,17 @@ SCX_Dreadnought = {
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
 	required_component_set = "combat_computers"
-	
+
 	possible_starbase = {
 		has_starbase_size >= starbase_citadel
 	}
-	
+
 	empire_limit = {
 		base = 1
 		max = 20
 		naval_cap_div = 60
 	}
-	
+
 	resources = {
 		category = ships
 		upkeep = {

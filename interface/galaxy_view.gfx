@@ -285,10 +285,9 @@ spriteTypes = {
 		name = "GFX_trait_points_icon"
 		texturefile = "gfx/interface/icons/trait_points_icon.dds"
 	}
-	spriteType = {  
-
-		name = "icon222"  
-	
-		texturefile = "gfx/interface/icons/icon222.dds"
+	# [NO MORE RELATIVE POWER] transparent icon
+	spriteType = {
+		name = "GFX_transparent"
+		texturefile = "gfx/transparent.dds"
 	}
 }

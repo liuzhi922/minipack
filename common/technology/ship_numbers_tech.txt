@@ -4,42 +4,33 @@ ship_numbers_tech = {
 	start_tech = no
 	category = {industry}
 	tier = 0
-	
+
 	modifier = {
-        ship_hull_mult = 0.55
-        ship_shield_mult = 0.55
-        ship_armor_mult = 0.55
-        weapon_type_strike_craft_weapon_damage_mult = 0.55        
-        ship_weapon_damage = 0.75
-        ship_fire_rate_mult = -0.65
-        country_command_limit_mult = -0.25
-        country_naval_cap_mult = -0.30
-        shipclass_military_station_damage_mult = 0.3
-        ship_upkeep_mult = 0.25
-		
+    ship_hull_mult = 0.55
+    ship_shield_mult = 0.55
+    ship_armor_mult = 0.55
+    weapon_type_strike_craft_weapon_damage_mult = 0.55
+    ship_weapon_damage = 0.75
+    ship_fire_rate_mult = -0.65
+    country_command_limit_mult = -0.25
+    country_naval_cap_mult = -0.30
+    shipclass_military_station_damage_mult = 0.3
+    ship_upkeep_mult = 0.25
+
 		#Corvettes
 		ship_corvette_cost_mult = 0.5
 		shipsize_corvette_build_speed_mult = -0.5
-		
+
 		#Destroyers
 		ship_destroyer_cost_mult = 0.5
 		shipsize_destroyer_build_speed_mult = -0.5
-		
+
 		#Cruisers
 		ship_cruiser_cost_mult = 0.5
 		shipsize_cruiser_build_speed_mult = -0.5
-		
+
 		#Battleships
 		ship_battleship_cost_mult = 0.5
 		shipsize_battleship_build_speed_mult = -0.5
-		
-		#Carriers
-		shipsize_SCX_Carrier_cost_mult = 0.5
-		shipsize_SCX_Carrier_build_speed_mult = -0.5
-		
-		
-		#Dreadnoughts
-		shipsize_SCX_Dreadnought_cost_mult = 0.5
-		shipsize_SCX_Dreadnought_build_speed_mult = -0.5
 	}
 }

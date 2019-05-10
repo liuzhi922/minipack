@@ -8,7 +8,7 @@
 
 @scx_carrier_hp = 1800
 @scx_carrier_evasion = 7
-@scx_carrier_build_time = 360
+@scx_carrier_build_time = 540
 
 @scx_carrier_upkeep_energy = 1.8
 @scx_carrier_upkeep_alloys = 0.6
@@ -38,11 +38,11 @@ SCX_Carrier = {
 	base_buildtime = @scx_carrier_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	
+
 	default_behavior = scx_bhv_carrier_def
 
 	prerequisites = { "tech_scx_carrier_1" }
-	
+
 	combat_disengage_chance = 1.00
 
 	class = shipclass_military
@@ -52,7 +52,7 @@ SCX_Carrier = {
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
 	required_component_set = "combat_computers"
-	
+
 	resources = {
 		category = ships
 		upkeep = {

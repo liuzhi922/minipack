@@ -2,12 +2,12 @@
  ###################################################
  # Decisions
  ###################################################
- 
+
  decision_subterranean_construction:0 "Subterranean Cities"
  decision_subterranean_construction_desc:0 "We need more room for our people. Lay plans for an underground metropolis. Windows are overrated. \n§YProvides bonus resources, science, or defense§! \nMore effective on larger worlds."
  decision_sky_construction:0 "Sky Islands"
  decision_sky_construction_desc:0 "We will live in the sky and look down upon those beneath us, no matter the expense. \n§YProvides bonus trade, growth, unity, or influence§! \nMore effective on smaller worlds."
- 
+
  subterranean_city_unlock: "§HUnlocks Decision:§! §E$decision_subterranean_construction$§!"
  subterranean_city_effect: "Grants extra districts, planet bonuses and jobs. More effective on larger worlds."
  sky_island_unlock: "§HUnlocks Decision:§! §E$decision_sky_construction$§!"
@@ -22,7 +22,7 @@
  decision_sky_expansion_desc: "Expand our Floating City. Increases districts by 1 less than the last expansion, provides additional sky jobs, but will not change the sky island planet modifier."
  decision_sky_expansion_2: "Final Sky Island Expansion"
  decision_sky_expansion_2_desc: "$decision_sky_expansion_desc$"
- 
+
  decision_reopen_foundry:0 "Reopen Our Foundry"
  decision_reopen_foundry_desc:0 "Closing the foundry was a drastic step, the time has come to open its doors once again"
  decision_investigate_foundry: "$foundry_investigation$"
@@ -53,7 +53,7 @@
  land_clearance_first:0 "§RWe should build on all open land before we consider such a grand project.§!"
  one_percent_already:0 "The wealthiest members of our society already have a home. They request never to be bothered again."
  land_clearance_construction_first:0 "§ROur top engineers are already busy with a major construction project. You do want our best engineers for such a ambitious project don't you?§!"
- 
+
  ban_already:0 "There is nothing more to ban"
  investigation_already:0 "We have already issued a special project to investigate the unconfirmed link between seismic disturbances and the Foundry. Link remains unconfirmed. This is fine."
  safety_cooldown:0 "We can only change safety protocols once every six months. Otherwise it gets confusing"
@@ -69,41 +69,41 @@
  ###################################################
  # Planet Modifiers
  ###################################################
- 
+
  pm_subterranean_construction:0 "Subterranean Construction"
  pm_subterranean_construction_desc:0 "A massive excavation project is underway to expand our colony underground. Public notice- We are not responsible for minor earthquakes or sinkholes, live here at your own risk"
- 
+
  pm_subterranean_fortress:0 "Subterranean Fortress"
  pm_subterranean_fortress_desc:0 "An extensive network of fortified bunkers and artificial caverns protect key personnel from harm."
- 
+
  pm_subterranean_foundry:0 "Subterranean Foundry"
  pm_subterranean_foundry_desc:0 "Production forges powered by heat from the planetary core. Slightly volatile when venting, minimal risk of global inferno."
 
  pm_subterranean_refinery: "Subterranean Refinery"
  pm_subterranean_refinery_desc: "An underground processor that pipes refined rare compounds directly to planet side industries. Excess material is vented into the air, making locals spend more time indoors."
- 
+
  pm_subterranean_lab: "Subterranean Laboratory"
- pm_subterranean_lab_desc: "Contains all manners of magnets and coils for smashing stuff into other stuff at ultra-high speeds and a near endless supply of beakers." 
- 
+ pm_subterranean_lab_desc: "Contains all manners of magnets and coils for smashing stuff into other stuff at ultra-high speeds and a near endless supply of beakers."
+
  pm_sky_construction:"Flying Fabrication"
  pm_sky_construction_desc:0 "A massive scaffold holds up what will become a floating city. This physics defying structure inspires awe in the populace."
- 
+
  pm_sky_mall:0 "Sky Mall"
  pm_sky_mall_desc:0 "The pinnacle of capitalism floats above this planet. It comes with a catalog found in the backseat pocket of all planetary transport pods."
- 
+
  pm_sky_green:0 "Sky Green"
  pm_sky_green_desc:0 "Vacation in the sky on our idyllic floating island, the view is out of this world."
- 
+
  pm_sky_estate:0 "Sky Estate"
- pm_sky_estate_desc:0 "The richest of the rich live out their secluded lives on a bejewelled island floating among the clouds. 99% of the population think this is unfair." 
+ pm_sky_estate_desc:0 "The richest of the rich live out their secluded lives on a bejewelled island floating among the clouds. 99% of the population think this is unfair."
 
  pm_sky_roost: "Sky Roost"
  pm_sky_roost_desc: "An idyllic space for the development of young hatchlings under the watchful eyes of the hive."
- 
+
  pm_sky_factory: "Sky Factory"
  pm_sky_factory_desc: "A completely non-threatening self-aware robot assembly plant. Just don’t tell it to stop building robots."
 
- 
+
  pm_fine:0 "Discontent"
  pm_fine_desc:0 "Our population is upset that we are not paying attention to their problems. This is fine."
  pm_ban_demonstrations:0 "Demonstrations Banned"
@@ -122,7 +122,7 @@
  pm_impending_doom_desc:0 "The planetary crust is crumbling. If something does not happen soon, the entire planet could fracture. §RIf devastation reachers 100%, the planet will crack.§!"
  pm_fracture: "Cracking Crust"
  pm_fracture_desc: "A second Foundry Fracture has surfaced, and planet integrity loss is accelerating. Is there no Hope?"
- 
+
  pm_ash_cloud: "Ash Cloud"
  pm_ash_cloud_desc: "A plume of superheated debris has been ejected high into the atmosphere. It will blot out the sun for years to come."
  pm_ash_cloud_gestalt: "$pm_ash_cloud$"
@@ -148,7 +148,7 @@
  d_subterranean_refinery_desc: "$pm_subterranean_refinery_desc$"
  d_subterranean_lab: "$pm_subterranean_lab$"
  d_subterranean_lab_desc: "$pm_subterranean_lab_desc$"
- 
+
  d_sky_construction:"$pm_sky_construction$"
  d_sky_construction_desc:0 "$pm_sky_construction_desc$"
  d_sky_mall:0 "$pm_sky_mall$"
@@ -160,7 +160,7 @@
  d_sky_roost: "$pm_sky_roost$"
  d_sky_roost_desc: "$pm_sky_roost_desc$"
  d_sky_factory: "$pm_sky_factory$"
- d_sky_factory_desc: "$pm_sky_factory_desc$" 
+ d_sky_factory_desc: "$pm_sky_factory_desc$"
 
  d_seismic_rift: "£blocker£ Seismic Rift"
  d_seismic_rift_desc: "A devastating earthquake has split a large urban area in two. The lowest members of our society are taking advantage of this situation."
@@ -199,7 +199,7 @@
 
  masternature_subterranean_expansion:0 "§YFor 90 Months:§! \nMonthly £minerals£ Minerals: §R-50§! \nHappiness §R-10%§!"
  masternature_sky_expansion:0 "§YFor 90 Months:§! \nMonthly £alloys£ Alloys: §R-20§! \nHappiness §G+10%§!"
- 
+
  mod_planets_alloys_produces_add: "Monthly £alloys£ Alloys"
  mod_planet_buildings_volatile_motes_upkeep_mult: "Building £volatile_motes£ Upkeep"
  mod_planet_buildings_exotic_gases_upkeep_mult: "Building £exotic_gases£ Upkeep"
@@ -210,11 +210,11 @@
  mod_planet_metallurgists_influence_upkeep_add: "£influence£ $INFLUENCE$ upkeep for £job_foundry£ $job_foundry_plural$"
 
  monthly_devastation: "§R+5§! Monthly Devastation"
- 
+
  ###################################################
  # Jobs
  ###################################################
- 
+
  job_subterranean_soldier: "Subterranean Soldier"
  job_subterranean_soldier_plural: "Subterranean Soldiers"
  job_subterranean_soldier_desc: "No soldier wants to be on the front lines. But if that is your lot in life, it is good to have the front lines be 10 meters of reinforced concrete. For some reason our leaders think this is a good place to be as well."
@@ -294,7 +294,7 @@
  mod_job_sky_spawning_drone_per_pop: "§G+1§! £mod_job_sky_spawning_drone_add£ $job_sky_spawning_drone$ per $VALUE$ £pop£"
  mod_job_sky_spawning_drone_per_pop_short: "\n§G+1§! £mod_job_sky_spawning_drone_add£ per $VALUE$ £pop£"
  mod_job_sky_spawning_drone_add: "$job_sky_spawning_drone_plural$"
- 
+
  job_sky_replicator: "Aerial Assembler"
  job_sky_replicator_plural: "Aerial Assemblers"
  job_sky_replicator_desc: "These robot assemblers are taking robotics to new heights!"
@@ -318,7 +318,7 @@
  mod_job_sky_noble_per_pop: "§G+1§! £mod_job_sky_noble_add£ $job_sky_noble$ per $VALUE$ £pop£"
  mod_job_sky_noble_per_pop_short: "\n§G+1§! £mod_job_sky_noble_add£ per $VALUE$ £pop£"
  mod_job_sky_noble_add: "$job_sky_noble_plural$"
- 
+
  job_sky_ranger: "Sky Ranger"
  job_sky_ranger_plural: "Sky Rangers"
  job_sky_ranger_desc: "Working tirelessly to keep the skies safe, clean, and a fantastic place to visit."
@@ -332,17 +332,17 @@
  job_sky_maintenance_desc: "Efficiency is not to be wasted, no problem is too small for your local flying maintenance drone."
  job_sky_maintenance_effect_desc: "$job_sky_maintenance_plural$ turn £energy£ into £simple_drone_produces_mult£ §Y$mod_planet_jobs_simple_drone_produces_mult$§!, £unity£ §Y$unity$§!, and £mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!"
  mod_job_sky_maintenance_per_pop: "§G+1§! £mod_job_sky_maintenance_add£ $job_sky_maintenance$ per $VALUE$ £pop£"
- mod_job_sky_maintenance_per_pop_short: "\n§G+1§! £mod_job_sky_maintenance_add£ per $VALUE$ £pop£" 
+ mod_job_sky_maintenance_per_pop_short: "\n§G+1§! £mod_job_sky_maintenance_add£ per $VALUE$ £pop£"
  mod_job_sky_maintenance_add: "$job_sky_maintenance_plural$"
 
 
  ###################################################
  # Events
  ###################################################
- 
+
  MasterNature.1.name:0 "Plans for a Subterranean Complex on [Root.Planet.GetName]"
  MasterNature.1.desc:0 "Our grand excavation project is underway! While some residents may complain of local tremors and ground displacement, the occasional collapsed city block is a small price to pay for progress. Now, what should our subterranean city become? \n\nOur Generals have proposed a nearly impenetrable underground fortress with enough food and capacity to shelter the more important members of society should our world ever suffer from orbital bombardment. However our head of engineering has proposed a radical geothermal foundry that could revolutionize planetary production methods. \n\nA few fringe environmental groups have raised objections to this idea on the grounds that upsetting planetary tectonics might have unforeseen consequences, while local representatives of the artisan troupe have petitioned that the sulfur fumes of the forges would ruin their olfactory artwork. However, these naysayers are of little importance, so what shall we build?"
- 
+
  MasterNature.fortress.name:0 "Open an underground Fortress"
  MasterNature.fortress.tooltip:0 "Defense is the best defense. \n\n§H$ON_COMPLETION$:§! \n\n§EPlanet Modifier:§! \n§G-20%§! $MOD_PLANET_ORBITAL_BOMBARDMENT_DAMAGE$ \n§G+50%§! $MOD_ARMY_DAMAGE_MULT$ \n\n§ENew Jobs:§! \n§G+1§! £mod_job_subterranean_soldier_add£ $job_subterranean_soldier$ per 50 £pop£ \n$job_subterranean_soldier_effect_desc$"
  MasterNature.fortress_expanded.tooltip: "Defense is the best defense. \n\n§H$ON_COMPLETION$:§! \n§G+1§! £mod_job_subterranean_soldier_add£ $job_subterranean_soldier$ per 50 £pop£ \n$job_subterranean_soldier_effect_desc$"
@@ -350,7 +350,7 @@
  MasterNature.2.desc:0 "Our grand excavation project is complete. It marks a new era for [Root.Planet.GetName], thousands of our citizens can now live out their entire lives and never see the sun. Some should probably still go outside, but the important point is they no longer have to.\n\nLocal military commanders boast that the fortress blast doors could withstand a direct gigacannon impact. They have quieted down after our Fleet Admiral offered to personally test this theory, but there is little doubt that should any ordinance breach our atmosphere, the safest place to be is underground."
  MasterNature.fortress2.name:0 "Open the blast doors"
  MasterNature.fortress2.tooltip:0 "Keep your gigacannon in its battleship, Admiral. \n\n§G+1§! £mod_job_subterranean_soldier_add£ $job_subterranean_soldier$ per 50 £pop£ \n$job_subterranean_soldier_effect_desc$ \n\n§E$NEW_DISTRICTS$§!"
- 
+
  MasterNature.foundry.name:0 "Establish a great Foundry"
  MasterNature.foundry.tooltip:0 "Delve too greedily and too deep. \n\n§H$ON_COMPLETION$:§! \n\n§EPlanet Modifier:§! \n§G+50%§! £alloys£ $alloys$ \n§R-20%§! $MOD_POP_ENVIRONMENT_TOLERANCE$ \n\n§ENew Jobs:§! \n§G+1§! £mod_job_subterranean_foundry_add£ $job_subterranean_foundry$ per 50 £pop£ \n$job_subterranean_foundry_effect_desc$"
  MasterNature.foundry_expanded.tooltip:0 "Delve too greedily and too deep. \n\n§H$ON_COMPLETION$:§! \n§G+1§! £mod_job_subterranean_foundry_add£ $job_subterranean_foundry$ per 50 £pop£ \n$job_subterranean_foundry_effect_desc$"
@@ -379,10 +379,10 @@
  MasterNature.labbuilt2.name:0 "I am sure they know what they are doing"
  MasterNature.labbuilt2.tooltip:0 "You can never have enough beakers. \n\n§G+1§! £mod_job_subterranean_researcher_add£ $job_subterranean_researcher$ per 50 £pop£ \n$job_subterranean_researcher_effect_desc$ \n\n§E$NEW_DISTRICTS$§!"
  MasterNature.labbuilt2_gestalt.tooltip:0 "You can never have enough beakers. \n\n§G+1§! £mod_job_subterranean_researcher_drone_add£ $job_subterranean_researcher_drone$ per 50 £pop£ \n$job_subterranean_researcher_drone_effect_desc$ \n\n§E$NEW_DISTRICTS$§!"
- 
+
  MasterNature.sky.name:0 "[Root.Planet.GetName] to Launch City in the Sky"
  MasterNature.sky.desc:0 "While we set off for the stars long ago, the last corner of untouched living space on [Root.Planet.GetName] lies between the cluttered ground and the great void. Today our scientists say we can inhabit the place our ancestors believed was home the gods. \n\nThere are many dreams for what this cloud city could be. Merchants, traders and corporate representatives have proposed a Sky Mall, described as an incredibly lucrative venture. Members of the Faction for a Better Tomorrow, a local activist group have released plans for a floating greenspace, an idealistic paradise accessible to all citizens. Last, a group of extraordinarily wealthy individuals that style themselves as the glorious 1% propose a series of personal estates that will isolate them from the grubby masses. They pledge increased support the government, yet such an elitist action would doubtless lead to social strife. What shall we build?"
- 
+
  MasterNature.skymall.name:0 "Build a shiny Sky Mall"
  MasterNature.skymall.tooltip:0 "Step 1. Build Island 2.?? 3. Profit. \n\n§H$ON_COMPLETION$:§! \n\n§EPlanet Modifier:§! \n§G+25%§! $MOD_TRADE_VALUE_MULT$ £mod_trade_value_mult£ \n§R+5%§! $mod_planet_pops_consumer_goods_upkeep_mult$ £mod_consumer_goods_upkeep_mult£ \n\n§ENew Jobs:§! \n§G+1§! £mod_job_sky_clerk_add£ $job_sky_clerk$ per 50 £pop£ \n$job_sky_clerk_effect_desc$"
  MasterNature.skymall_expanded.tooltip:0 "Step 1. Build Island 2.?? 3. Profit. \n\n§H$ON_COMPLETION$:§! \n§G+1§! £mod_job_sky_clerk_add£ $job_sky_clerk$ per 40 £pop£ \n$job_sky_clerk_effect_desc$"
@@ -390,7 +390,7 @@
  MasterNature.skymallbuilt.desc:0 "With the launch of SkyMall-[Root.Planet.GetName](TM), our citizens are open to a whole new realms of material extravagance. Corporate profits shatter all predicted benchmarks, and it is unclear how [Root.Owner.GetSpeciesClassPlural] before managed life without every known product conveniently available just above their heads."
  MasterNature.skymallbuilt2.name:0 "Cant I just order through the shroud.net?"
  MasterNature.skymallbuilt2.tooltip:0 "Yes but they overcharge for shipping. \n\n§G+1§! £mod_job_sky_clerk_add£ $job_sky_clerk$ per 40 £pop£ \n$job_sky_clerk_effect_desc$ \n\n§E$NEW_DISTRICTS$§!"
- 
+
  MasterNature.skygreen.name:0 "Found a beautiful Sky Green"
  MasterNature.skygreen.tooltip:0 "Next level nature. \n\n§H$ON_COMPLETION$:§! \n\n§EPlanet Modifier:§! \n§G+10%§! £unity $unity$ \n§G+10§! £mod_planet_stability_add£ $PLANET_STABILITY_TITLE$ \n\n§ENew Jobs:§! \n§G+1§! £mod_job_sky_ranger_add£ $job_sky_ranger$ per 50 £pop£ \n$job_sky_ranger_effect_desc$"
  MasterNature.skygreen_gestalt.tooltip: "Next level nature. \n\n§H$ON_COMPLETION$:§! \n\n§EPlanet Modifier:§! \n§G+10%§! £unity $unity$ \n§G+10§! £mod_planet_stability_add£ $PLANET_STABILITY_TITLE$ \n\n§ENew Jobs:§! \n§G+1§! £mod_job_sky_maintenance_add£ $job_sky_maintenance$ per 50 £pop£ \n$job_sky_maintenance_effect_desc$"
@@ -401,14 +401,14 @@
  MasterNature.skygreenbuilt2.name:0 "Wait, We dont charge an entrance fee?"
  MasterNature.skygreenbuilt2.tooltip:0 "Filthy Capitalist. \n\n§G+1§! £mod_job_sky_ranger_add£ $job_sky_ranger$ per 40 £pop£ \n$job_sky_ranger_effect_desc$ \n\n§E$NEW_DISTRICTS$§!"
  MasterNature.skygreenbuilt2_gestalt.tooltip:0 "Filthy Capitalist. \n\n§G+1§! £mod_job_sky_maintenance_add£ $job_sky_maintenance$ per 40 £pop£ \n$job_sky_maintenance_effect_desc$ \n\n§E$NEW_DISTRICTS$§!"
- 
+
  MasterNature.skyestate.name:0 "Establish Cloud Estates for the Elite"
  MasterNature.skyestate.tooltip:0 "Surely something will trickle down. \n\n§H$ON_COMPLETION$:§! \n\n§EPlanet Modifier:§! \n§G+50%§! $mod_pop_cat_ruler_happiness$ £mod_ruler_happiness£ \n§R-20%§! $mod_pop_cat_worker_happiness$ £mod_worker_unhappiness£ \n§RReplaces other Sky Island Modifiers§! \n\n§ENew Jobs:§! \n§G+1§! £mod_job_sky_noble_add£ $job_sky_noble$ per 100 £pop£ \n§G+1§! £mod_job_enforcer_add£ $job_enforcer$ per 66 £pop£ \n$job_sky_noble_effect_desc$ \n§H$EMPIRE_UNIQUE_BUILDING$§!"
  MasterNature.skyestatebuilt.name:0 "Wealth Gap becomes Air Gap in [Root.Owner.GetName]"
  MasterNature.skyestatebuilt.desc:0 "With the completion of the new cloud estate, the local elite have vowed never to set foot on [Root.Planet.GetName] again. Local authorities have relatively little sway with these cloud dwellers, and they are sure to do all that is in their considerable wealth and power to keep their high position. Some even threateningly proclaim that it is in our empire's best interests are to keep them happy, whatever that means. Down below, the rabble complain how this perfectly symbolizes the inherent inequality of the syst- but honestly, you cannot hear them from up here."
  MasterNature.skyestatebuilt2.name:0 "Do I get a house too?"
  MasterNature.skyestatebuilt2.tooltip:0 "Of course. \n\n§G+1§! £mod_job_sky_noble_add£ $job_sky_noble$ per 100 £pop£ \n§G+1§! £mod_job_enforcer_add£ $job_enforcer$ per 66 £pop£ \n$job_sky_noble_effect_desc$ \n\n§E$NEW_DISTRICTS$§!"
- 
+
  MasterNature.skyroost.name:0 "Shape an Idyllic Floating Roost"
  MasterNature.skyroost.tooltip:0 "Growth projections will be sky high. \n\n§H$ON_COMPLETION$:§! \n\n§EPlanet Modifier:§! \n§G+15%§! £mod_planet_amenities_no_happiness_mult£ $MOD_PLANET_AMENITIES_NO_HAPPINESS_MULT$ \n\n§ENew Jobs:§! \n§G+1§! £mod_job_sky_spawning_drone_add£ $job_sky_spawning_drone$ per 40 £pop£ \n$job_sky_spawning_drone_effect_desc$"
  MasterNature.skyroost_expanded.tooltip:0 "Growth projections will be sky high. \n\n§H$ON_COMPLETION$:§! \n§G+1§! £mod_job_sky_spawning_drone_add£ $job_sky_spawning_drone$ per 40 £pop£ \n$job_sky_spawning_drone_effect_desc$"
@@ -418,8 +418,8 @@
  MasterNature.skyroostbuilt2.tooltip:0 "1 out of 1 respondent agree. \n\n§G+1§! £mod_job_sky_spawning_drone_add£ $job_sky_spawning_drone$ per 40 £pop£ \n$job_sky_spawning_drone_effect_desc$ \n\n§E$NEW_DISTRICTS$§!"
 
  MasterNature.skyfactory.name:0 "Forge a Flying Robot Factory"
- MasterNature.skyfactory.tooltip:0 "Don't worry, the factory is flying, not the robots. \n\n§H$ON_COMPLETION$:§! \n\n§EPlanet Modifier:§! \n§G+25%§! $MOD_PLANET_POP_ASSEMBLY_MULT$ £mod_planet_pop_assembly_mult£ \n§R+10%§! $mod_planet_pop_assemblers_upkeep_mult$ £assembly_cost£ \n\n§ENew Jobs:§! \n§G+1§! £mod_job_sky_roboticist_add£ $job_sky_roboticist$ per 40 £pop£ \n$job_sky_roboticist_effect_desc$"
- MasterNature.skyfactory_gestalt.tooltip: "Don't worry, the factory is flying, not the robots. \n\n§H$ON_COMPLETION$:§! \n\n§EPlanet Modifier:§! \n§G+25%§! $mod_planet_pop_assembly_mult$ £mod_planet_pop_assembly_mult£  \n§R+10%§! $mod_planet_pop_assemblers_upkeep_mult$ £assembly_cost£ \n\n§ENew Jobs:§! \n§G+1§! £mod_job_sky_replicator_add£ $job_sky_replicator$ per 40 £pop£ \n$job_sky_replicator_effect_desc$"
+ MasterNature.skyfactory.tooltip:0 "Don't worry, the factory is flying, not the robots. \n\n§H$ON_COMPLETION$:§! \n\n§EPlanet Modifier:§! \n§G+10%§! $MOD_PLANET_POP_ASSEMBLY_MULT$ £mod_planet_pop_assembly_mult£ \n§R+10%§! $mod_planet_pop_assemblers_upkeep_mult$ £assembly_cost£ \n\n§ENew Jobs:§! \n§G+1§! £mod_job_sky_roboticist_add£ $job_sky_roboticist$ per 40 £pop£ \n$job_sky_roboticist_effect_desc$"
+ MasterNature.skyfactory_gestalt.tooltip: "Don't worry, the factory is flying, not the robots. \n\n§H$ON_COMPLETION$:§! \n\n§EPlanet Modifier:§! \n§G+10%§! $mod_planet_pop_assembly_mult$ £mod_planet_pop_assembly_mult£  \n§R+10%§! $mod_planet_pop_assemblers_upkeep_mult$ £assembly_cost£ \n\n§ENew Jobs:§! \n§G+1§! £mod_job_sky_replicator_add£ $job_sky_replicator$ per 40 £pop£ \n$job_sky_replicator_effect_desc$"
  MasterNature.skyfactory_expanded.tooltip:0 "Don't worry, the factory is flying, not the robots. \n\n§H$ON_COMPLETION$:§! \n§G+1§! £mod_job_sky_roboticist_add£ $job_sky_roboticist$ per 40 £pop£ \n$job_sky_roboticist_effect_desc$"
  MasterNature.skyfactory_gestalt_expanded.tooltip: "Don't worry, the factory is flying, not the robots. \n\n§H$ON_COMPLETION$:§! \n§G+1§! £mod_job_sky_replicator_add£ $job_sky_replicator$ per 40 £pop£ \n$job_sky_replicator_effect_desc$"
  MasterNature.skyfactorybuilt.name:0 "Cloud Robotics: the Next Big Thing on [Root.Planet.GetName]"
@@ -483,7 +483,7 @@
  ###################################################
  # Repeated References for Translation
  ###################################################
- 
+
  ON_COMPLETION:0 "On completion"
  NEW_DISTRICTS:0 "New districts available"
  TIME_DELAY:0 "Will take some time to complete"

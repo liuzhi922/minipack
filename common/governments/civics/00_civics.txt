@@ -43,10 +43,10 @@ civic_defenders_faith = {
 	}
 	random_weight = { base = 5 }
 	modifier = {
-
-			 army_morale = 0.25
-			 army_morale_damage_mult = 0.25
-			 army_health = 0.25
+			ship_fire_rate_mult = 0.1
+			army_morale = 0.25
+			army_morale_damage_mult = 0.25
+			army_health = 0.25
 
 	}
 }

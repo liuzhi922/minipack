@@ -9,14 +9,14 @@
 @planet_type_bonus = 1.5
 
 
-#Biolumen World 
+#Biolumen World
 
 d_hunterreserve = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-		
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -28,7 +28,7 @@ d_hunterreserve = {
 			job_researcher_per_pop = 0.05 # 1 per 20
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -44,7 +44,7 @@ d_hunterreserve = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_calculator_add = 3
 		}
 	}
@@ -52,7 +52,7 @@ d_hunterreserve = {
 	potential = {
 			is_planet_class = pc_biolumen
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -63,9 +63,9 @@ d_hunterreserve = {
 d_artificial_flora = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-		
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -76,7 +76,7 @@ d_artificial_flora = {
 			job_researcher_add = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -86,13 +86,13 @@ d_artificial_flora = {
 			job_brain_drone_add = 3
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_calculator_add = 3
 		}
 	}
@@ -100,7 +100,7 @@ d_artificial_flora = {
 	potential = {
 			is_planet_class = pc_technoorganic
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -108,9 +108,9 @@ d_artificial_flora = {
 d_peace_museum = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-		
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -121,7 +121,7 @@ d_peace_museum = {
 			job_culture_worker_add = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -131,13 +131,13 @@ d_peace_museum = {
 			job_brain_drone_add = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_calculator_add = 2
 		}
 	}
@@ -145,19 +145,19 @@ d_peace_museum = {
 	potential = {
 			is_planet_class = pc_technoorganic
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
 }
-	
+
 #Crystal World
 d_crystal_temple = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -168,7 +168,7 @@ d_crystal_temple = {
 			job_templeresearcher_per_pop = 0.05 # 1 per 20
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -178,13 +178,13 @@ d_crystal_temple = {
 			job_brain_drone_add = 3
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_calculator_add = 3
 		}
 	}
@@ -192,7 +192,7 @@ d_crystal_temple = {
 	potential = {
 			is_planet_class = pc_crystal
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -200,9 +200,9 @@ d_crystal_temple = {
 d_crystal_pillars = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -213,7 +213,7 @@ d_crystal_pillars = {
 			building_crystal_mines_max = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -223,13 +223,13 @@ d_crystal_pillars = {
 			building_crystal_mines_max = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			building_crystal_mines_max = 2
 		}
 	}
@@ -237,7 +237,7 @@ d_crystal_pillars = {
 	potential = {
 			is_planet_class = pc_crystal
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -247,9 +247,9 @@ d_crystal_pillars = {
 d_floating_islands = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -259,7 +259,7 @@ d_floating_islands = {
 			job_eludium_expert_add = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -269,13 +269,13 @@ d_floating_islands = {
 			job_eludium_expert_add = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_eludium_expert_add = 2
 		}
 	}
@@ -283,7 +283,7 @@ d_floating_islands = {
 	potential = {
 			is_planet_class = pc_floating
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -292,9 +292,9 @@ d_floating_islands = {
 d_tiyanki_cleanup = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -305,7 +305,7 @@ d_tiyanki_cleanup = {
 		job_tiyankicleanup_add = 5
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -315,13 +315,13 @@ d_tiyanki_cleanup = {
 			job_brain_drone_add = 5
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_calculator_add = 5
 		}
 	}
@@ -329,7 +329,7 @@ d_tiyanki_cleanup = {
 	potential = {
 			is_planet_class = pc_graveyard
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -338,9 +338,9 @@ d_tiyanki_cleanup = {
 d_tiyanki_station = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -351,7 +351,7 @@ d_tiyanki_station = {
 		job_tiyankirecycler_add = 5
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -361,13 +361,13 @@ d_tiyanki_station = {
 			job_brain_drone_add = 5
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_calculator_add = 5
 		}
 	}
@@ -375,7 +375,7 @@ d_tiyanki_station = {
 	potential = {
 			is_planet_class = pc_graveyard
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -385,9 +385,9 @@ d_tiyanki_station = {
 d_archive_dataports = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-		
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -398,7 +398,7 @@ d_archive_dataports = {
 			job_archivist_add = 3
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -408,13 +408,13 @@ d_archive_dataports = {
 			job_brain_drone_add = 4
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_calculator_add = 4
 		}
 	}
@@ -422,7 +422,7 @@ d_archive_dataports = {
 	potential = {
 			is_planet_class = pc_archive
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -430,9 +430,9 @@ d_archive_dataports = {
 d_interdimensional_lab = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-		
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -442,7 +442,7 @@ d_interdimensional_lab = {
 			job_interdimensional_researcher_add = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -452,13 +452,13 @@ d_interdimensional_lab = {
 			job_brain_drone_add = 4
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_calculator_add = 4
 		}
 	}
@@ -466,7 +466,7 @@ d_interdimensional_lab = {
 	potential = {
 			is_planet_class = pc_archive
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -475,10 +475,10 @@ d_interdimensional_lab = {
 d_virtual_obersvation_post = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-	
-		
+
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -488,7 +488,7 @@ d_virtual_obersvation_post = {
 			job_virtual_observers_add = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -498,13 +498,13 @@ d_virtual_obersvation_post = {
 			job_brain_drone_add = 4
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_calculator_add = 4
 		}
 	}
@@ -512,7 +512,7 @@ d_virtual_obersvation_post = {
 	potential = {
 			is_planet_class = pc_archive
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -521,9 +521,9 @@ d_virtual_obersvation_post = {
 d_geothermal_slurry_site = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-	
+
 	planet_modifier = {
 		planet_miners_minerals_produces_mult = 0.05
 	}
@@ -538,7 +538,7 @@ d_geothermal_slurry_site = {
 			job_slurry_distillers_per_pop = 0.04 # 1 per 20
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -549,13 +549,13 @@ d_geothermal_slurry_site = {
 			job_gas_extraction_drone_add = 1
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_fabricator_add = 2
 			job_gas_extraction_drone_add = 1
 		}
@@ -564,7 +564,7 @@ d_geothermal_slurry_site = {
 	potential = {
 			is_planet_class = pc_geothermal
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -575,7 +575,7 @@ d_nightside_mining_operations = {
 	category = deposit_cat_rare
 
 	use_weights_for_terraforming_swap_types = no
-	
+
 	planet_modifier = {
 		planet_miners_minerals_produces_mult = 0.05
 	}
@@ -590,7 +590,7 @@ d_nightside_mining_operations = {
 			job_nightside_miner_per_pop = 0.04 # 1 per 20
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -601,13 +601,13 @@ d_nightside_mining_operations = {
 			job_crystal_mining_drone_add = 1
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_mining_drone_add = 2
 			job_crystal_mining_drone_add = 1
 		}
@@ -616,7 +616,7 @@ d_nightside_mining_operations = {
 	potential = {
 			is_planet_class = pc_tidallylocked
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -627,7 +627,7 @@ d_ancient_motes = {
 	category = deposit_cat_rare
 
 	use_weights_for_terraforming_swap_types = no
-	
+
 	planet_modifier = {
 		planet_jobs_energy_produces_mult = 0.05
 	}
@@ -642,7 +642,7 @@ d_ancient_motes = {
 			job_volatile_miner_per_pop = 0.04 # 1 per 20
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -653,13 +653,13 @@ d_ancient_motes = {
 			job_mote_harvesting_drone_add = 1
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_technician_drone_add = 2
 			job_mote_harvesting_drone_add = 1
 		}
@@ -668,7 +668,7 @@ d_ancient_motes = {
 	potential = {
 			is_planet_class = pc_superhabitable
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -679,7 +679,7 @@ d_biolumen_nature_preserve = {
 	category = deposit_cat_rare
 
 	use_weights_for_terraforming_swap_types = no
-	
+
 	planet_modifier = {
 		planet_jobs_society_research_produces_mult = 0.05
 	}
@@ -694,7 +694,7 @@ d_biolumen_nature_preserve = {
 			job_jungle_ranger_per_pop = 0.04 # 1 per 20
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -705,13 +705,13 @@ d_biolumen_nature_preserve = {
 			job_brain_drone_add = 1
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_technician_drone_add = 2
 			job_brain_drone_add = 1
 		}
@@ -720,7 +720,7 @@ d_biolumen_nature_preserve = {
 	potential = {
 			is_planet_class = pc_biolumen
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -731,7 +731,7 @@ d_eludium_centre = {
 	category = deposit_cat_rare
 
 	use_weights_for_terraforming_swap_types = no
-	
+
 	planet_modifier = {
 		planet_jobs_physics_research_produces_mult = 0.05
 	}
@@ -746,7 +746,7 @@ d_eludium_centre = {
 			job_eludium_expert_per_pop = 0.04 # 1 per 20
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -757,13 +757,13 @@ d_eludium_centre = {
 			job_eludium_hive_per_pop = 0.04 # 1 per 20
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_eludium_robot_add = 1
 			job_eludium_robot_per_pop = 0.04 # 1 per 20
 		}
@@ -772,7 +772,7 @@ d_eludium_centre = {
 	potential = {
 			is_planet_class = pc_floating
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -783,7 +783,7 @@ d_crystal_guild = {
 	category = deposit_cat_rare
 
 	use_weights_for_terraforming_swap_types = no
-	
+
 	planet_modifier = {
 		planet_jobs_food_produces_mult = 0.05
 	}
@@ -798,7 +798,7 @@ d_crystal_guild = {
 			job_crystal_carver_per_pop = 0.04 # 1 per 25
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -809,13 +809,13 @@ d_crystal_guild = {
 			job_crystal_hive_per_pop = 0.04 # 1 per 25
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_crystal_robot_add = 1
 			job_crystal_robot_per_pop = 0.04 # 1 per 25
 		}
@@ -824,7 +824,7 @@ d_crystal_guild = {
 	potential = {
 			is_planet_class = pc_crystal
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -833,9 +833,9 @@ d_crystal_guild = {
 d_holy_temple = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
-	
+
 	use_weights_for_terraforming_swap_types = no
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -846,7 +846,7 @@ d_holy_temple = {
 			job_priest_per_pop = 0.05 # 1 per 20
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -856,13 +856,13 @@ d_holy_temple = {
 			job_brain_drone_add = 3
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_calculator_add = 3
 		}
 	}
@@ -870,7 +870,7 @@ d_holy_temple = {
 	potential = {
 			is_planet_class = pc_crystal
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -881,7 +881,7 @@ d_graveyard_well = {
 	category = deposit_cat_rare
 
 	use_weights_for_terraforming_swap_types = no
-	
+
 	planet_modifier = {
 		planet_jobs_energy_produces_mult = 0.05
 	}
@@ -896,7 +896,7 @@ d_graveyard_well = {
 			job_tiyanki_roughneck_per_pop = 0.04 # 1 per 25
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -907,13 +907,13 @@ d_graveyard_well = {
 			job_technician_drone_add = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_gas_extraction_drone_add = 1
 			job_technician_drone_add = 2
 		}
@@ -922,7 +922,7 @@ d_graveyard_well = {
 	potential = {
 			is_planet_class = pc_crystal
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -933,7 +933,7 @@ d_subsurface_assembly = {
 	category = deposit_cat_rare
 
 	use_weights_for_terraforming_swap_types = no
-	
+
 	planet_modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.05
 	}
@@ -945,10 +945,10 @@ d_subsurface_assembly = {
 		}
 		modifier = {
 			job_synth_assembler_add = 1
-			job_synth_assembler_per_pop = 0.04 # 1 per 25
+			job_synth_assembler_per_pop = 0.013 # 1 per 75
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -959,13 +959,13 @@ d_subsurface_assembly = {
 			job_brain_drone_add = 2
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_alloy_drone_add = 1
 			job_brain_drone_add = 2
 		}
@@ -974,7 +974,7 @@ d_subsurface_assembly = {
 	potential = {
 			is_planet_class = pc_crystal
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}

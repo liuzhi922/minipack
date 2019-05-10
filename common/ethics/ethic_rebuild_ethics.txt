@@ -1101,7 +1101,7 @@ ethic_fanatic_industrial = {
 		country_minerals_produces_mult = 0.15
     planet_building_build_speed_mult = 0.2
 		starbase_shipyard_build_speed_mult = 0.1
-    pop_happiness = -0.05
+    pop_happiness = -0.1
 	}
 
 
@@ -1444,18 +1444,12 @@ ethic_fanatic_elitist = {
 	country_modifier = {
 		leader_skill_levels = 2
 		leader_age = 20
-		pop_cat_ruler_happiness = 0.05
 		pop_cat_worker_happiness = -0.05
-
-
 	}
-
 
 	random_weight = {
 		value = 100
 	}
-
-
 }
 
 
@@ -1472,19 +1466,14 @@ ethic_pluralist = {
 	fanatic_variant = ethic_fanatic_pluralist
 
 	tags = {
-
 	   COLLECT_ETHIC_ALLOWS_UTOPIA
-
-
 	}
 
 	country_modifier = {
-	    country_leader_pool_size = 3
-		leaders_cost_mult = -0.3
-		leaders_upkeep_mult = -0.3
-
+	  country_leader_pool_size = 1
+		leaders_cost_mult = -0.1
+		leaders_upkeep_mult = -0.1
 	}
-
 
 	pop_attraction_tag = {
 		desc = POP_ATTRACTION_PLURALIST_POS
@@ -1655,7 +1644,6 @@ ethic_pluralist = {
 			factor = 3
 			has_ethic = ethic_fanatic_pluralist
 		}
-
 	}
 
 	# from = planet
@@ -1692,15 +1680,11 @@ ethic_pluralist = {
 				}
 			}
 		}
-
 	}
-
 
 	random_weight = {
 		value = 100
 	}
-
-
 }
 
 
@@ -1716,25 +1700,17 @@ ethic_fanatic_pluralist = {
     regular_variant = ethic_pluralist
 
 	tags = {
-
 	   COLLECT_ETHIC_ALLOWS_UTOPIA
-
-
 	}
 
 	country_modifier = {
-	    country_leader_pool_size = 4
-		leaders_cost_mult = -0.5
-		leaders_upkeep_mult = -0.5
-		pop_cat_worker_happiness = 0.05
+	  country_leader_pool_size = 2
+		leaders_cost_mult = -0.2
+		leaders_upkeep_mult = -0.2
 		pop_cat_ruler_happiness = -0.05
-
 	}
-
 
 	random_weight = {
 		value = 100
 	}
-
-
 }

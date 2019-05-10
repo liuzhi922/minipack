@@ -1,5 +1,5 @@
 ﻿l_english:
- 
+
 ################################################################
 # ACADEMY
 ################################################################
@@ -22,7 +22,7 @@ tr_est_academy_3_desc:0 "§YLeader Experience Gain§! increased by §G+25%§!."
 tr_est_academy_3_delayed:0 "We value learning. Not just for the knowledge itself, but also for the process by which we learn. A true leader learns as much from failure as they do success."
 
 tr_est_academy_4:0 "Towers of Ivory"
-tr_est_academy_4_desc:0 "Provide §Y1§! £job_head_researcher£ §Y$job_head_researcher$ Job§! on planets with a £building  §Y$building_research_lab_3$§!."
+tr_est_academy_4_desc:0 "Provide §Y1§! £job_researcher£ §Y$job_researcher$ Job§! on planets with a £building  §Y$building_research_lab_3$§!."
 tr_est_academy_4_delayed:0 "Cutting-edge research is best left to the experts. In their ivory towers, our scientists are free to study, experiment, and develop without outside interference."
 
 tr_est_academy_5:0 "Military Schools"
@@ -349,7 +349,7 @@ tr_est_chivalry_5_delayed:0 "Battle offers a chance to prove ones worth like non
 
 tr_est_chivalry_finish:0 "Chivalry Traditions finished"
 tr_est_chivalry_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_chivalry_adopt$ allows every ruler to select a virtue, providing a set of bonuses."
-tr_est_chivalry_finish_effect_AI:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_chivalry_adopt$ increase §Y$MOD_LEADER_RULER_SKILL_LEVELS$§! by §Y2§!" 
+tr_est_chivalry_finish_effect_AI:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_chivalry_adopt$ increase §Y$MOD_LEADER_RULER_SKILL_LEVELS$§! by §Y2§!"
 
 ### Swap - The Swarm ###
 
@@ -492,9 +492,9 @@ tr_est_cybernetics_5_delayed:0 "Why should be spend our life's in this world, wh
 tr_est_cybernetics_finish:0 "Cybernetics Traditions finished"
 tr_est_cybernetics_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_cybernetics_adopt$ §HUnlocks Buildings:§! £building  $building_est_cybernetics_finish_automated_farm$, $building_est_cybernetics_finish_automated_power_plant$ and $building_est_cybernetics_finish_automated_mine$\n§EThey produce §G6§! £energy  §YEnergy Credits§!/§G10§! £food  §YFood§!/§G6§! £minerals  §YMinerals§! respectively, while reducing §Y$mod_district_generator_max$§!/§Y$mod_district_farming_max$§!/§Y$mod_district_mining_max$§! by §Y1§! on the planet. Each planet can maximum contain three of each building.§!\n\n"
 tr_est_cybernetics_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_cybernetics_adopt$ Increases §YBuilding Speed§! by §G+25%§! and reduces §YBuilding Upkeep§! by §G-10%§!."
-  
+
 ### Swap - Biogenesis ###
- 
+
 tradition_est_biogenesis:0 "Biogenesis"
 tradition_est_biogenesis_desc:0 "Our civilization is not built, but grown. We are one single great organism, spreading through the galaxy."
 tr_est_biogenesis_adopt:0 "Biogenesis Traditions"
@@ -540,10 +540,10 @@ tr_est_biogenesis_5_ap_delayed:0 "Evolution is a process without a goal. Our for
 
 tr_est_biogenesis_finish:0 "Biogenesis Traditions finished"
 tr_est_biogenesis_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_biogenesis_adopt$ unlocks a policy which lets you convert a monthly amount of £food  §YFood§! to £minerals  §YMinerals§!."
-tr_est_biogenesis_AI_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_biogenesis_adopt$ increases £food  §YFood§! and £minerals  §YMinerals§! output by §G+10%§!." 
- 
+tr_est_biogenesis_AI_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_biogenesis_adopt$ increases £food  §YFood§! and £minerals  §YMinerals§! output by §G+10%§!."
+
 ### Swap - Serverbound ###
- 
+
 tradition_est_processing:0 "Serverbound"
 tradition_est_processing_desc:0 "Vast server halls, buried beneath the surface of our planets, provides massive processing power and thus extends the capacity of our very mind."
 tr_est_processing_adopt:0 "Serverbound Traditions"
@@ -572,9 +572,9 @@ tr_est_processing_5_delayed:0 "As we spread across the galaxy our previous signa
 
 tr_est_processing_finish:0 "Serverbound Traditions finished"
 tr_est_processing_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_processing_adopt$ increases §YEnergy Storage Capacity§! by §G100000%§!."
- 
+
 ### Swap - Shroudborn (psi) ###
- 
+
 tradition_est_shroudborn_ap:0 "Shroudborn"
 tradition_est_shroudborn_ap_desc:0 "We always believed our origins lay in the mortal world. But since the awakening, we have begun to realise that maybe we are, in fact, creatures of the shroud."
 tr_est_shroudborn_ap_adopt:0 "Shroudborn Traditions"
@@ -639,7 +639,7 @@ tr_est_faith_2_delayed:0 "The words of our faith are distributed to all citizens
 #tr_est_faith_3_delayed:0 "Our citizen regularly visits various places of worship. There they can find inner peace, hope, or guidance in their faith."
 tr_est_faith_3:0 "The Clergy"
 tr_est_faith_3_desc:0 "Provide §Y1§! £job_priest£ §Y$job_priest$ Job§! per §Y35§! £pop£ Pops on a planet."
-tr_est_faith_3_spiritualist_desc:0 "§Y$job_priest$§! produce §Y1§! additional £unity  §YUnity§! and consume §Y1§! less £consumer_goods  §YConsumer Goods§!." 
+tr_est_faith_3_spiritualist_desc:0 "§Y$job_priest$§! produce §Y1§! additional £unity  §YUnity§! and consume §Y1§! less £consumer_goods  §YConsumer Goods§!."
 tr_est_faith_3_delayed:0 "The foremost servants of our faith, the clergy, provides our citizen with inner peace, hope, and guidance in their faith."
 
 tr_est_faith_4:0 "Preachers"
@@ -763,7 +763,7 @@ tr_est_confederacy_5_delayed:0 "So large is our realm that one can travel for a 
 
 tr_est_confederacy_finish:0 "Confederacy Traditions finished"
 tr_est_confederacy_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_confederacy_adopt$ reduces penalty from empire size by §G-5%§!."
- 
+
 ### Swap - Subminds ###
 
 tradition_est_subminds:0 "Subminds"
@@ -1078,10 +1078,10 @@ tr_est_isolation_5_GC_delayed:0 "There is only us, and the void. The void greets
 
 tr_est_isolation_finish:0 "Isolation Traditions finished"
 tr_est_isolation_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_isolation_adopt$ increases the £happiness  §Y$MOD_POP_HAPPINESS$§! of all £pops  Pops by §G+10%§! while we are not at war."
- 
+
 tr_est_isolation_finish_GC:0 "Isolation Traditions finished"
 tr_est_isolation_finish_GC_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_est_isolation_adopt$ increases £influence£ §Y$mod_country_influence_produces_add$§! by §G1§! while we are not at war."
- 
+
 ### Swap - Proselytism ###
 
 tradition_est_proselytism:0 "Proselytism"
