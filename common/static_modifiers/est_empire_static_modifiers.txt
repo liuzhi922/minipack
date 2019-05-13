@@ -11,11 +11,11 @@ mod_est_shroudborn_2 = {
 mod_est_hacking_2 = {
 	ship_sensor_range_add = -1
 	planet_sensor_range_add = -1
-	country_starbase_influence_cost_mult = 0.25
+	country_starbase_influence_cost_mult = 0.10
 }
 mod_est_hacking_4 = {
-	all_technology_research_speed = -0.10
-	planet_buildings_upkeep_mult = 0.15
+	all_technology_research_speed = -0.5
+	planet_buildings_upkeep_mult = 0.5
 }
 
 #Aesthetics
