@@ -177,7 +177,7 @@ tr_est_aesthetics_2 = {
 			}
 		}	
 		modifier = {		
-			rivalries_influence_produces_mult = 0.25
+			rivalries_influence_produces_mult = 0.10
 		}
 		weight = {factor =  1}
 	}
