@@ -71,12 +71,22 @@ mod_est_foundation_1 = {
 	planet_jobs_engineering_research_produces_mult = 0.10
 	planet_jobs_physics_research_produces_mult = 0.10
 	planet_jobs_society_research_produces_mult = 0.10
-	planet_jobs_unity_produces_mult = 0.15
+	planet_jobs_unity_produces_mult = 0.10
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_est_foundation.dds"
 	icon_frame = 1
 }
 mod_est_foundation_2_1 = {
+	planet_jobs_energy_produces_mult = 0.05
+	planet_jobs_engineering_research_produces_mult = 0.05
+	planet_jobs_physics_research_produces_mult = 0.05
+	planet_jobs_society_research_produces_mult = 0.05
+	trade_value_mult = 0.05
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_est_foundation_2.dds"
+	icon_frame = 1
+}
+mod_est_foundation_2_2 = {
 	planet_jobs_energy_produces_mult = 0.10
 	planet_jobs_engineering_research_produces_mult = 0.10
 	planet_jobs_physics_research_produces_mult = 0.10
@@ -86,22 +96,12 @@ mod_est_foundation_2_1 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_est_foundation_2.dds"
 	icon_frame = 1
 }
-mod_est_foundation_2_2 = {
-	planet_jobs_energy_produces_mult = 0.20
-	planet_jobs_engineering_research_produces_mult = 0.20
-	planet_jobs_physics_research_produces_mult = 0.20
-	planet_jobs_society_research_produces_mult = 0.20
-	trade_value_mult = 0.20
-
-	icon = "gfx/interface/icons/planet_modifiers/pm_est_foundation_2.dds"
-	icon_frame = 1
-}
 mod_est_foundation_2_3 = {
-	planet_jobs_energy_produces_mult = 0.30
-	planet_jobs_engineering_research_produces_mult = 0.30
-	planet_jobs_physics_research_produces_mult = 0.30
-	planet_jobs_society_research_produces_mult = 0.30
-	trade_value_mult = 0.30
+	planet_jobs_energy_produces_mult = 0.15
+	planet_jobs_engineering_research_produces_mult = 0.15
+	planet_jobs_physics_research_produces_mult = 0.15
+	planet_jobs_society_research_produces_mult = 0.15
+	trade_value_mult = 0.15
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_est_foundation_2.dds"
 	icon_frame = 1
