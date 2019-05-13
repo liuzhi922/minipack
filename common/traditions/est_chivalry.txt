@@ -176,7 +176,7 @@ tr_est_chivalry_finish = {
 			has_ethic = ethic_gestalt_consciousness
 		}	
 		modifier = {	
-			country_admin_cap_add = 25
+			country_admin_cap_add = 15
 			ascension_perks_add = 1
 		}
 		weight = {factor = 1 }
@@ -261,7 +261,7 @@ tr_est_chivalry_2 = {
 			has_ethic = ethic_gestalt_consciousness
 		}	
 		modifier = {
-			country_naval_cap_mult = 0.15
+			country_naval_cap_mult = 0.05
 			country_command_limit_mult = 0.10
 		}
 		weight = {factor = 2 }
@@ -291,7 +291,7 @@ tr_est_chivalry_3 = {
 			has_ethic = ethic_gestalt_consciousness
 		}	
 		modifier = {
-			shipsize_corvette_build_speed_mult = 1.00
+			shipsize_corvette_build_speed_mult = 0.20
 			ship_corvette_cost_mult = -0.10
 		}
 		weight = {factor = 1 }
@@ -322,7 +322,6 @@ tr_est_chivalry_4 = {
 		}	
 		modifier = {
 			colony_start_num_pops_add = 1
-			planet_colony_development_speed_mult = 0.25
 		}
 		weight = {factor = 1 }
 	}
