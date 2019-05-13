@@ -4,8 +4,8 @@
 
 #Shroudborn/Hacking
 mod_est_shroudborn_2 = {
-	country_starbase_influence_cost_mult = 0.15
-	country_claim_influence_cost_mult = 0.15
+	country_starbase_influence_cost_mult = 0.10
+	country_claim_influence_cost_mult = 0.10
 }
 
 mod_est_hacking_2 = {
