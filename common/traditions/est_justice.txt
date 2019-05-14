@@ -12,7 +12,7 @@ tr_est_justice_adopt = {
 			has_ethic = ethic_gestalt_consciousness
 		}	
 		modifier = {
-			country_naval_cap_mult = 0.20
+			country_naval_cap_mult = 0.10
 		}
 		weight = {factor = 1 }
 	}
@@ -300,7 +300,7 @@ tr_est_justice_5 = {
 	}
 	
 	modifier = {
-		country_base_influence_produces_mult = 0.25
+		country_base_influence_produces_mult = 0.10
 	}
 	
 	tradition_swap = {
@@ -317,8 +317,8 @@ tr_est_justice_5 = {
 			}
 		}	
 		modifier = {
-			max_rivalries = 2
-			rivalries_influence_produces_mult = 0.2
+			max_rivalries = 1
+			rivalries_influence_produces_mult = 0.1
 		}
 		weight = {factor = 1 }
 	}
