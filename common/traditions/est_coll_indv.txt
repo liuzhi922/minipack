@@ -142,8 +142,8 @@ tr_est_coll_indv_finish = {
 			has_country_flag = est_uses_individualism_traditions
 		}	
 		modifier = {
-			pop_cat_ruler_political_power = 0.50
-			planet_jobs_ruler_produces_mult = 0.50
+			pop_cat_ruler_political_power = 0.15
+			planet_jobs_ruler_produces_mult = 0.15
 			ascension_perks_add = 1
 		}
 		weight = {factor =  1}
@@ -329,7 +329,7 @@ tr_est_coll_indv_2 = {
 			has_ethic = ethic_gestalt_consciousness
 		}	
 		modifier = {		
-			ship_speed_mult = 0.15
+			ship_speed_mult = 0.05
 		}
 		weight = {factor =  1}
 	}
@@ -470,7 +470,7 @@ tr_est_coll_indv_4 = {
 			has_ethic = ethic_gestalt_consciousness
 		}	
 		modifier = {		
-			country_war_exhaustion_mult = -0.25
+			country_war_exhaustion_mult = -0.10
 		}
 		weight = {factor =  1}
 	}
