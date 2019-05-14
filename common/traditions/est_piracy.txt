@@ -170,7 +170,6 @@ tr_est_piracy_3 = {
 	}
 	
 	modifier = {
-		max_rivalries = 1
 	}
 
 	tradition_swap = {
