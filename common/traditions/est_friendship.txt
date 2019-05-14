@@ -189,7 +189,7 @@ tr_est_friendship_1 = {
 			}
 		}	
 		modifier = {
-			pop_category_slave_upkeep_mult = -0.50
+			pop_category_slave_upkeep_mult = -0.25
 		}
 		weight = {factor =  1}
 	}
@@ -471,7 +471,7 @@ tr_est_friendship_3 = {
 			est_no_rivals = no
 		}	
 		modifier = {
-			max_rivalries = 3
+			max_rivalries = 1
 		}
 		weight = {factor =  1}
 	}
@@ -501,7 +501,7 @@ tr_est_friendship_3 = {
 			has_civic = civic_inwards_perfection
 		}	
 		modifier = {	
-			country_war_exhaustion_mult = -0.25	
+			country_war_exhaustion_mult = -0.10	
 		}
 		weight = {factor =  1}
 	}
@@ -530,7 +530,7 @@ tr_est_friendship_4 = {
 			est_no_rivals = no
 		}	
 		modifier = {
-			rivalries_influence_produces_mult = 0.3
+			rivalries_influence_produces_mult = 0.1
 		}
 		weight = {factor =  1}
 	}
@@ -559,7 +559,7 @@ tr_est_friendship_4 = {
 			has_civic = civic_inwards_perfection
 		}	
 		modifier = {
-			pop_environment_tolerance = 0.10
+			pop_environment_tolerance = 0.05
 			army_health = 0.10
 		}
 		weight = {factor =  1}
