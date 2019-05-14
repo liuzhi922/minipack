@@ -94,8 +94,8 @@ tr_est_spaceborn_3 = {
 	}
 	
 	modifier = {
-		ship_speed_mult = 0.25
-		ship_interstellar_speed_mult = 0.25
+		ship_speed_mult = 0.15
+		ship_interstellar_speed_mult = 0.15
 	}
 	
 	ai_weight = {
