@@ -290,7 +290,7 @@ mod_est_cooperativity_5_machines = {
 
 #Piracy
 mod_est_piracy_finish = {
-	planet_jobs_produces_mult = -0.25
+	planet_jobs_produces_mult = -0.10
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_est_piracy_finish.dds"
 	icon_frame = 3
