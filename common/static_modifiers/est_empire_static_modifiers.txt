@@ -551,14 +551,14 @@ mod_est_justice_finish_2 = {
 }
 #Destruction
 mod_est_destruction_4 = {
-	country_unity_produces_mult = -0.20
-	pop_growth_speed = -0.20
+	country_unity_produces_mult = -0.10
+	pop_growth_speed = -0.05
 }
 mod_est_destruction_5_no_rivals = {
-	country_base_influence_produces_add = 2
+	country_base_influence_produces_add = 1
 }
 mod_est_destruction_finish = {
-	country_war_exhaustion_mult = 0.20
+	country_war_exhaustion_mult = 0.10
 }
 
 #Liberty
