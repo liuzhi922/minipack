@@ -1220,9 +1220,6 @@ gun_rights = {
 interstellar_telecom = {
 
 	potential = {
-	
-	            
-		
 	}
 	
 	
@@ -1232,21 +1229,12 @@ interstellar_telecom = {
 		policy_flags = {
 			none_telecom
 		}
-		
 		modifier = {
-
 		}
-			
 	}	
-	
-
-	
-
 		 
 	option = {
 		name = "civilian_telecom"
-			
-		
 		policy_flags = {
 			civilian_telecom
 		}
@@ -1256,28 +1244,15 @@ interstellar_telecom = {
 		}		
 		
 		modifier = {
-  
-        country_admin_cap_add = 10
-		station_researchers_produces_mult = 0.05
-		science_ship_survey_speed = 0.15
-		country_naval_cap_mult = -0.5
-	
+			country_admin_cap_add = 15
+			station_researchers_produces_mult = 0.15
+			science_ship_survey_speed = 0.15
+			country_naval_cap_mult = -0.25
 		}	
 
     AI_weight = {							
-						
-	
 	            }	
-	
 	}	
-	
-	
-
-	
-	
-	
-	
-	
 	
 	option = {
 		name = "military_telecom"
@@ -1293,9 +1268,9 @@ interstellar_telecom = {
 		
 		modifier = {
                      
-        country_naval_cap_mult = 0.33
-		country_starbase_capacity_add = 7
-		station_researchers_produces_mult = -0.1
+        country_naval_cap_mult = 0.1
+		country_starbase_capacity_add = 2
+		station_researchers_produces_mult = -0.2
 		
 
 	
