@@ -346,8 +346,8 @@ tr_est_order_3 = {
 			has_policy_flag = slavery_allowed
 		}
 		modifier = {
-			planet_jobs_slave_food_produces_mult = 0.15
-			planet_jobs_slave_minerals_produces_mult = 0.15
+			planet_jobs_slave_food_produces_mult = 0.10
+			planet_jobs_slave_minerals_produces_mult = 0.10
 		}
 		weight = {
 			factor = 1

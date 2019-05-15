@@ -120,7 +120,7 @@ tr_est_industry_2 = {
 	}
 	
 	modifier = {
-		category_industry_research_speed_mult = 0.15
+		category_industry_research_speed_mult = 0.05
 	}
 	
 	ai_weight = {
@@ -140,7 +140,7 @@ tr_est_industry_3 = {
 
 tr_est_industry_4 = {
 	modifier = {
-		starbase_shipyard_build_speed_mult = 0.25
+		starbase_shipyard_build_speed_mult = 0.10
 	}
 
 	tradition_swap = {
@@ -152,7 +152,7 @@ tr_est_industry_4 = {
 			est_uses_robots = yes
 		}
 		modifier = {
-			planet_pop_assembly_mult = 0.20
+			planet_pop_assembly_mult = 0.10
 		}
 
 		weight = {

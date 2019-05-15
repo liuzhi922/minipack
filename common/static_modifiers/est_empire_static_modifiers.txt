@@ -4,18 +4,18 @@
 
 #Shroudborn/Hacking
 mod_est_shroudborn_2 = {
-	country_starbase_influence_cost_mult = 0.15
-	country_claim_influence_cost_mult = 0.15
+	country_starbase_influence_cost_mult = 0.10
+	country_claim_influence_cost_mult = 0.10
 }
 
 mod_est_hacking_2 = {
 	ship_sensor_range_add = -1
 	planet_sensor_range_add = -1
-	country_starbase_influence_cost_mult = 0.25
+	country_starbase_influence_cost_mult = 0.10
 }
 mod_est_hacking_4 = {
-	all_technology_research_speed = -0.10
-	planet_buildings_upkeep_mult = 0.15
+	all_technology_research_speed = -0.5
+	planet_buildings_upkeep_mult = 0.5
 }
 
 #Aesthetics
@@ -486,8 +486,8 @@ mod_est_proselytism_1_spiritualist_fanatic = {
 mod_est_proselytism_2 = {
 	ship_fire_rate_mult = 0.10
 	army_morale = 0.25
-	country_naval_cap_mult = 0.15
-	starbase_shipyard_build_speed_mult = 0.15
+	country_naval_cap_mult = 0.10
+	starbase_shipyard_build_speed_mult = 0.05
 }
 mod_est_proselytism_4_authoritarian = {
 	pop_ethic_authoritarian_attraction_mult = 0.25
@@ -551,14 +551,14 @@ mod_est_justice_finish_2 = {
 }
 #Destruction
 mod_est_destruction_4 = {
-	country_unity_produces_mult = -0.20
-	pop_growth_speed = -0.20
+	country_unity_produces_mult = -0.10
+	pop_growth_speed = -0.05
 }
 mod_est_destruction_5_no_rivals = {
-	country_base_influence_produces_add = 2
+	country_base_influence_produces_add = 1
 }
 mod_est_destruction_finish = {
-	country_war_exhaustion_mult = 0.20
+	country_war_exhaustion_mult = 0.10
 }
 
 #Liberty

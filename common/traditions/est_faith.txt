@@ -138,7 +138,7 @@ tr_est_faith_adopt = {
 			}
 		}
 		modifier = {
-			rivalries_influence_produces_mult = 0.25
+			rivalries_influence_produces_mult = 0.10
 		}
 		weight = {
 			factor = 1
@@ -489,8 +489,8 @@ tr_est_faith_4 = {
 			est_is_machine_empire = yes
 		}
 		modifier = {
-			ship_speed_mult = 0.10
-			planet_pop_assembly_mult = 0.15
+			ship_speed_mult = 0.05
+			planet_pop_assembly_mult = 0.05
 		}
 		weight = {
 			factor = 1

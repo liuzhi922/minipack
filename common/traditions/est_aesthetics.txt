@@ -177,7 +177,7 @@ tr_est_aesthetics_2 = {
 			}
 		}	
 		modifier = {		
-			rivalries_influence_produces_mult = 0.25
+			rivalries_influence_produces_mult = 0.10
 		}
 		weight = {factor =  1}
 	}
@@ -244,8 +244,7 @@ tr_est_aesthetics_3 = {
 			}
 		}	
 		modifier = {
-			country_trade_attractiveness = 0.05
-			planet_immigration_pull_mult = 0.25
+                        country_unity_produces_mult = 0.10
 		}
 		weight = {factor =  1}
 	}

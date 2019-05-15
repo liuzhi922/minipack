@@ -127,7 +127,7 @@ tr_est_natural_finish = {
 			has_authority = auth_machine_intelligence
 		}	
 		modifier = {	
-			country_society_tech_research_speed = 0.20
+			country_society_tech_research_speed = 0.15
 			ascension_perks_add = 1
 		}
 		weight = {factor =  1}
