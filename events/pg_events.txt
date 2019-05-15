@@ -256,24 +256,24 @@ country_event = {
 #	desc = "pg.6.desc"
 #	diplomatic = yes
 #	force_open = yes
-#	
+#
 #	picture_event_data = {
 #		portrait = shroud1
 #		room = shroud_room
 #	}
-#	
+#
 #	is_triggered_only = yes
 #
 #	immediate = {
 #		set_country_flag = shroud_diplomacy_engaged
 #	}
-#	
+#
 #	after = {
 #		hidden_effect = {
 #			remove_country_flag = shroud_diplomacy_engaged
 #		}
 #	}
-#	
+#
 #	option = {
 #		name = "pg.6.a"
 #		custom_tooltip = "stranger.y.tooltip"
@@ -281,7 +281,7 @@ country_event = {
 #		hidden_effect = {
 #			set_country_flag = soul_eaters
 #		    change_government = { civic = civic_vb_psi_soul_eater }
-#			country_event = { id = vortex.2 } 
+#			country_event = { id = vortex.2 }
 #			every_owned_pop = {
 #				limit = {
 #					species = { NOT = { has_trait = trait_mechanical }}
@@ -294,7 +294,7 @@ country_event = {
 #				set_variable = {
 #					which = vb_psi_food value = @staring_food
 #				}
-#				vb_psi_calculate_sustenance = yes	
+#				vb_psi_calculate_sustenance = yes
 #				country_event = { id = vb_psi_souleater.4 }
 #				set_country_flag = shroud_diplomacy_engaged
 #			}
@@ -313,7 +313,7 @@ country_event = {
 	desc = "pg.4.desc"
 	picture = GFX_evt_robot_assembly_plant
 	show_sound = event_laboratory_sound
-	
+
 	is_triggered_only = yes
 
 	immediate = {
@@ -328,7 +328,7 @@ country_event = {
 				trait = "trait_machine_unit"
 				trait = "trait_singlemind"
 			}
-			
+
 			effect = {
 				if = { limit = { host_has_dlc = "Synthetic Dawn Story Pack" }
 				prev = {
@@ -345,14 +345,14 @@ country_event = {
 						}
 					}
 				}
-				
+
 				save_event_target_as = new_single_mind_species
 			}
 		}
 		every_owned_pop = {
 			limit = {
 				species = {
-					has_trait = trait_mechanical 
+					has_trait = trait_mechanical
 				}
 			}
 			change_species = event_target:new_single_mind_species
@@ -400,7 +400,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "pg.4.a"
 		hidden_effect = {
@@ -415,11 +415,25 @@ country_event = {
 			country_remove_ethic = ethic_fanatic_militarist
 			country_remove_ethic = ethic_militarist
 			country_remove_ethic = ethic_fanatic_pacifist
-			country_remove_ethic = ethic_pacifist	
+			country_remove_ethic = ethic_pacifist
 			country_remove_ethic = ethic_fanatic_spiritualist
 			country_remove_ethic = ethic_spiritualist
 			country_remove_ethic = ethic_fanatic_materialist
 			country_remove_ethic = ethic_materialist
+
+			#add overhaul ethics
+			country_remove_ethic = ethic_socialism
+			country_remove_ethic = ethic_fanatic_socialism
+			country_remove_ethic = ethic_capitalism
+			country_remove_ethic = ethic_fanatic_capitalism
+			country_remove_ethic = ethic_industrial
+			country_remove_ethic = ethic_fanatic_industrial
+			country_remove_ethic = ethic_green
+			country_remove_ethic = ethic_fanatic_green
+			country_remove_ethic = ethic_elitist
+			country_remove_ethic = ethic_fanatic_elitist
+			country_remove_ethic = ethic_pluralist
+			country_remove_ethic = ethic_fanatic_pluralist
 
 			country_add_ethic = ethic_gestalt_consciousness
 			change_government = {
@@ -475,7 +489,7 @@ country_event = {
 #	desc = "pg.7.desc"
 #	picture = GFX_evt_psionics
 #	show_sound = event_the_great_awakening
-#	
+#
 #	is_triggered_only = yes
 #
 #	immediate = {
@@ -484,7 +498,7 @@ country_event = {
 #			add_trait = trait_hive_mind
 #		}
 #	}
-#	
+#
 #	option = {
 #		name = "pg.7.a"
 #		hidden_effect = {
@@ -499,7 +513,7 @@ country_event = {
 #			country_remove_ethic = ethic_fanatic_militarist
 #			country_remove_ethic = ethic_militarist
 #			country_remove_ethic = ethic_fanatic_pacifist
-#			country_remove_ethic = ethic_pacifist	
+#			country_remove_ethic = ethic_pacifist
 #			country_remove_ethic = ethic_fanatic_spiritualist
 #			country_remove_ethic = ethic_spiritualist
 #			country_remove_ethic = ethic_fanatic_materialist
@@ -531,8 +545,8 @@ country_event = {
 #				class = ruler
 #				species = owner_main_species
 #				skill = 10
-#				traits = { 
-#					trait = leader_trait_ruler_hive_mind 
+#				traits = {
+#					trait = leader_trait_ruler_hive_mind
 #					trait = leader_trait_ruler_chosen
 #				}
 #			}
