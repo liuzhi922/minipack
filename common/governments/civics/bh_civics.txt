@@ -1,0 +1,24 @@
+civic_bio_harvesters = {
+	playable = { host_has_dlc = "Synthetic Dawn Story Pack" }
+	potential = { authority = { value = auth_machine_intelligence } }
+	homeworld = pc_machine
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_machine_terminator
+				value = civic_machine_assimilator
+                value = civic_machine_servitor
+			}
+		}
+	}
+	modification = no
+	random_weight = {
+		base = 5
+		modifier = {
+			# civic has no effect after galaxy generation, disable for random generation
+			factor = 0
+			has_global_flag = game_started
+		}
+	}
+	description = civic_bio_harvesters_effects
+}

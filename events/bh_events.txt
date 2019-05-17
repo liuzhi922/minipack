@@ -1,0 +1,132 @@
+namespace = bio_harvest
+
+# Begin Harvesting Planet
+planet_event = {
+    id = bio_harvest.1
+    title = bio_harvest.1.title
+    desc = bio_harvest.1.desc
+
+    picture = GFX_evt_gray_gooed_planet
+    
+    is_triggered_only = yes
+
+    trigger = {
+        owner = {
+            has_civic = civic_bio_harvesters
+        }
+        NOR = {
+            is_planet_class = pc_machine
+            is_planet_class = pc_habitat 
+            is_planet_class = pc_ringworld_habitable
+        }
+    }
+
+    option = {
+		name = OK
+        custom_tooltip = bio_harvest.1.tooltip
+        hidden_effect = {
+            add_modifier = {
+                modifier = "bh_harvested_modifier"
+                days = -1
+            }
+            
+            destroy_colony = yes
+            change_pc = pc_bh_harvested
+            clear_deposits = yes
+            add_deposit = bh_harvested_planet_deposit_large
+        }
+	}
+}
+
+# Harvested Planet is Terraformed
+planet_event = {
+    id = bio_harvest.2
+
+    is_triggered_only = yes
+    hide_window = yes
+
+    trigger = {
+        is_planet_class = pc_bh_harvested
+    }
+    immediate = {
+        remove_modifier = "bh_harvested_modifier"
+        clear_deposits = yes
+    }    
+}
+
+# Prepare capital world for game start
+country_event = {
+    id = bio_harvest.3
+
+    is_triggered_only = yes
+    hide_window = yes
+
+    trigger = {
+        owner = {
+            has_civic = civic_bio_harvesters
+        }
+    }
+    immediate = {
+        random_owned_planet = {
+            limit = { is_capital = yes }
+            set_planet_size = 25
+            remove_all_districts = yes
+            every_deposit = {
+                limit = { is_blocker = yes }
+                clear_blocker = yes
+            }
+
+            add_district = district_nexus
+            add_district = district_nexus
+            add_district = district_generator_uncapped
+            add_district = district_generator_uncapped
+            add_district = district_generator_uncapped
+            add_district = district_generator_uncapped
+            add_district = district_mining_uncapped
+            add_district = district_mining_uncapped
+            add_district = district_mining_uncapped
+            add_district = district_mining_uncapped
+        }
+    }
+}
+
+
+# Direct Commands, won't be triggered in-game
+# -------------------------------------------
+
+# Create a Harvested World
+planet_event = {
+    id = bio_harvest.10
+    
+    is_triggered_only = yes
+    hide_window = yes
+
+    immediate = {
+        add_modifier = {
+            modifier = "bh_harvested_modifier"
+            days = -1
+        }
+        
+        change_pc = pc_bh_harvested
+        clear_deposits = yes
+        add_deposit = bh_harvested_planet_deposit_large
+    }
+}
+
+# Reset Harvested Worlds
+planet_event = {
+    id = bio_harvest.11
+    
+    is_triggered_only = yes
+    hide_window = yes
+    
+    trigger = {
+        is_planet_class = pc_bh_harvested
+    }
+
+    immediate = {
+        remove_modifier = "bh_harvested_modifier"
+        change_pc = pc_barren
+        clear_deposits = yes
+    }
+}
