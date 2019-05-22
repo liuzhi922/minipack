@@ -50,7 +50,7 @@ trait_thrifty = {
 	cost = 2
 	allowed_archetypes = { BIOLOGICAL }
 	opposites = { "trait_hive_mind" }
-	custom_tooltip = TRAIT_THRIFTY_EFFECT	
+	custom_tooltip = TRAIT_THRIFTY_EFFECT
 }
 
 trait_natural_engineers = {
@@ -280,7 +280,7 @@ trait_communal = {
 	opposites = { "trait_solitary" }
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	modifier = {
 		pop_housing_usage_mult = -0.1
 	}
@@ -292,7 +292,7 @@ trait_solitary = {
 	opposites = { "trait_communal" }
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	modifier = {
 		pop_housing_usage_mult = 0.1
 	}
@@ -318,7 +318,7 @@ trait_repugnant = {
 	opposites = { "trait_charismatic" }
 	allowed_archetypes = { BIOLOGICAL }
 	custom_tooltip = TRAIT_REPUGNANT_EFFECT
-	
+
 	ai_weight = {
 		weight = 0
 	}
@@ -326,13 +326,13 @@ trait_repugnant = {
 
 trait_uplifted = {
 	cost = 0
-	
+
 	initial = no
 	modification = no
 	randomized = no
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	ai_weight = {
 		weight = 0
 	}
@@ -344,7 +344,7 @@ trait_conformists = {
 	modifier = { pop_government_ethic_attraction = 0.30 }
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	opposites = { "trait_deviants" "trait_hive_mind" "trait_machine_unit" }
 	ai_weight = {
 		weight = 0
@@ -357,7 +357,7 @@ trait_deviants = {
 	modifier = { pop_government_ethic_attraction = -0.15 }
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	opposites = { "trait_conformists" "trait_hive_mind" "trait_machine_unit" }
 	ai_weight = {
 		weight = 0
@@ -394,11 +394,11 @@ trait_fleeting = {
 trait_decadent = {
 	cost = -1
 	potential_crossbreeding_chance = 1.0
-	
+
 	opposites = { "trait_hive_mind" }
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	modifier = {
 		pop_cat_worker_happiness = -0.1
 		pop_cat_slave_happiness = -0.1
@@ -443,7 +443,7 @@ trait_wasteful = {
 
 trait_cybernetic = {
 	cost = 0
-	
+
 	opposites = { "trait_latent_psionic" "trait_psionic" }
 
 	improves_leaders = yes
@@ -452,7 +452,7 @@ trait_cybernetic = {
 	modification = no
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	modifier = {
 		pop_environment_tolerance = 0.20
 		army_damage_mult = 0.1
@@ -465,7 +465,7 @@ trait_latent_psionic = {
 	cost = 0
 	potential_crossbreeding_chance = 0.25
 	icon = "gfx/interface/icons/traits/trait_psionic_species.dds"
-	
+
 	opposites = { "trait_cybernetic" }
 
 	initial = no
@@ -473,7 +473,7 @@ trait_latent_psionic = {
 	modification = no
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.05
 		planet_jobs_physics_research_produces_mult = 0.05
@@ -486,7 +486,7 @@ trait_psionic = {
 	cost = 0
 	potential_crossbreeding_chance = 0.25
 	icon = "gfx/interface/icons/traits/trait_psionic_species.dds"
-	
+
 	opposites = { "trait_cybernetic" }
 
 	improves_leaders = yes
@@ -495,7 +495,7 @@ trait_psionic = {
 	modification = no
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.10
 		planet_jobs_physics_research_produces_mult = 0.10
@@ -514,7 +514,7 @@ trait_self_modified = {
 	modification = no
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	modifier = {
 	}
 }
@@ -671,20 +671,20 @@ trait_enigmatic_intelligence_failed = {
 trait_bioadaptability = { #green
 	cost = 0
 	potential_crossbreeding_chance = 0.33
-	
+
 	initial = no
 	modification = no
 	randomized = no
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	modifier = {
 		pop_environment_tolerance = 0.05
 	}
 	slave_cost = {
 		energy = 25
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
@@ -693,20 +693,20 @@ trait_bioadaptability = { #green
 trait_social_pheromones = { #red
 	cost = 0
 	potential_crossbreeding_chance = 0.33
-	
+
 	initial = no
 	modification = no
 	randomized = no
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	modifier = {
 		pop_housing_usage_mult = -0.05
 	}
 	slave_cost = {
 		energy = 25
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
@@ -715,13 +715,13 @@ trait_social_pheromones = { #red
 trait_limited_regeneration = { #blue
 	cost = 0
 	potential_crossbreeding_chance = 0.33
-	
+
 	initial = no
 	modification = no
 	randomized = no
 
 	allowed_archetypes = { BIOLOGICAL }
-	
+
 	modifier = {
 		army_damage_mult = 0.1
 		leader_age = 10
@@ -729,7 +729,7 @@ trait_limited_regeneration = { #blue
 	slave_cost = {
 		energy = 25
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
@@ -759,8 +759,8 @@ trait_inspired = {
 	potential_crossbreeding_chance = 1.0
 	modifier = {
 		pop_ethic_spiritualist_attraction_mult = 0.10
-		planet_jobs_ruler_produces_mult = 0.25		
-		planet_jobs_specialist_produces_mult = 0.10	
+		planet_jobs_ruler_produces_mult = 0.25
+		planet_jobs_specialist_produces_mult = 0.10
 
 	}
 }
@@ -875,10 +875,10 @@ trait_thermophile = {
 	allowed_archetypes = { BIOLOGICAL }
 	potential_crossbreeding_chance = 1.0
 	modifier = {
-		planet_jobs_minerals_produces_mult = 0.25
-		planet_jobs_alloys_produces_mult = 0.25
-		pop_housing_usage_mult = 0.15
-		pop_environment_tolerance = -0.15
+		planet_jobs_minerals_produces_mult = 0.15
+		planet_jobs_alloys_produces_mult = 0.15
+		pop_housing_usage_mult = 0.10
+		pop_environment_tolerance = -0.10
 	}
 }
 
@@ -945,7 +945,7 @@ trait_sanguine = {
 }
 
 trait_metallotolerant = {
-	cost = 1
+	cost = 2
 	initial = yes
 	randomized = yes
 	allowed_archetypes = { BIOLOGICAL }
@@ -1073,15 +1073,15 @@ trait_urban = {
 }
 
 trait_allergies = {
-	cost = -2
+	cost = -3
 	initial = yes
 	randomized = yes
 	opposites = { "trait_immunodeficient" }
 	allowed_archetypes = { BIOLOGICAL }
 	potential_crossbreeding_chance = 1.0
 	modifier = {
-		planet_jobs_produces_mult = -0.03
-		pop_environment_tolerance = -0.05
+		planet_jobs_produces_mult = -0.05
+		pop_environment_tolerance = -0.1
 	}
 }
 
@@ -1109,7 +1109,7 @@ trait_anxious = {
 	potential_crossbreeding_chance = 1.0
 	modifier = {
 		planet_jobs_ruler_produces_mult = -0.15
-		pop_cat_ruler_happiness = -0.15	
+		pop_cat_ruler_happiness = -0.15
 		pop_cat_specialist_happiness = -0.10
 		pop_cat_worker_happiness = -0.05
 	}
@@ -1151,6 +1151,7 @@ trait_undisciplined = {
 		army_experience_gain_mult = -0.75
 		admiral_skill_levels = -3
 		general_skill_levels = -3
+		army_collateral_damage_mult = 0.5
 	}
 }
 
@@ -1176,8 +1177,9 @@ trait_despondent = {
 	allowed_archetypes = { BIOLOGICAL }
 	potential_crossbreeding_chance = 1.0
 	modifier = {
-		pop_happiness = -0.30
-		leader_age = -15
+		planet_jobs_produces_mult = -0.1
+		pop_happiness = -0.20
+		leader_age = -20
 	}
 }
 
@@ -1252,4 +1254,3 @@ trait_sterile = {
 
 	}
 }
-

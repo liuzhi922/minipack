@@ -12,12 +12,12 @@ atmosphere_vacuum_0 = {
 			alloys = 5000
 			influence = 75
 		}
-		
+
 		upkeep = {
 			energy = 5
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_atmo_vacuum
 		no_scope = {
@@ -26,14 +26,14 @@ atmosphere_vacuum_0 = {
 			}
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_inside_border"
 			is_inside_border = from
 		}
 	}
-	
+
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -87,15 +87,15 @@ atmosphere_vacuum_0 = {
 			}
 		} # use these for all non-star megastructures
 	}
-	
+
 	ai_weight = {
 		factor = 1
-		
+
 		modifier = {
 			factor = 0.1
 			has_any_megastructure_in_empire = yes
 		}
-		
+
 		modifier = {
 			factor = 0
 			any_system_within_border = {
@@ -108,7 +108,7 @@ atmosphere_vacuum_0 = {
 			}
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -136,19 +136,19 @@ atmosphere_vacuum_1 = {
 		atmosphere_vacuum_0
 	}
 	build_time = 3600
-	
+
 	resources = {
 		category = megastructures
 		cost = {
 			alloys = 5500
 		}
-		
+
 		upkeep = {
 			energy = 25
 			alloys = 10
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_atmo_vacuum
 	}
@@ -163,24 +163,24 @@ atmosphere_vacuum_2 = {
 		atmosphere_vacuum_1
 	}
 	build_time = 2160
-	
+
 	resources = {
 		category = megastructures
 		cost = {
 			alloys = 3000
 		}
-		
+
 		upkeep = {
 			alloys = 35
 		}
-		
+
 		produces = {
 			energy = 200
-			exotic_gases = 30
-			volatile_motes = 30
+			exotic_gases = 15
+			volatile_motes = 15
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_atmo_vacuum
 	}
@@ -195,23 +195,23 @@ atmosphere_vacuum_2_d = {
 		atmosphere_vacuum_2
 	}
 	build_time = 1
-	
+
 	resources = {
 		category = megastructures
-		
+
 		upkeep = {
 			alloys = 35
 		}
-		
+
 		produces = {
 			energy = 100
 			rare_crystals = 100
 			minerals = 200
 		}
 	}
-	
+
 	upgrade_desc = hide
-	
+
 	potential = {
 		always = no
 	}

@@ -176,8 +176,6 @@ on_entering_system = {
 on_press_begin = {
 	events = {
 		gigamoon.100
-		gigamenu.1
-		gigamenu.999
 	}
 }
 
