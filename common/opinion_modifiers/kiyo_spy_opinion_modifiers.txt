@@ -1,0 +1,21 @@
+opinion_kiyo_spy_envoy_bad_relations = {
+	opinion = {
+		base = 30
+	}
+
+	accumulative = yes
+	decay = {
+		base = -1	
+	}
+}
+
+opinion_kiyo_spy_envoy_bad_relations = {
+	opinion = {
+		base = -30
+	}
+
+	accumulative = yes
+	decay = {
+		base = 1	
+	}
+}

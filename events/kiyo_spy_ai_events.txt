@@ -1,0 +1,266 @@
+namespace = kiyo_event_ai
+
+#Make when AI does spying more random
+country_event = {
+	id = kiyo_event_ai.0
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		random_list = {
+			60 = { country_event = { id = kiyo_event_ai.1 days = 60 random = 180 } }
+			40 = {
+				remove_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_spying_on }
+				set_timed_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_spying_cooldown days = 360 }
+			}
+		}
+	}
+}
+
+#Espionage Choice Window (AI)
+country_event = {
+	id = kiyo_event_ai.1
+	title = kiyo_event_ai.1.title
+	desc = kiyo_event_ai.1.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = {
+		name = kiyo_event_trigger.1.a
+		custom_tooltip = kiyo_event_trigger.1.a.desc
+		trigger = { kiyo_spy_scandal_req = yes }
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 6
+				OR = {
+					has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue2 }
+					has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue3 }
+					has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue4 }
+					has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue5 }
+				}
+			}
+		}
+		
+		hidden_effect = { country_event = { id = kiyo_event_spy.11 days = 1 random = 60 } }
+	}
+	
+	option = {
+		name = kiyo_event_trigger.1.b
+		custom_tooltip = kiyo_event_trigger.1.b.desc
+		trigger = { kiyo_spy_drone_req = yes }
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 3
+				years_passed < 65
+			}
+			modifier = {
+				factor = 0
+				years_passed > 75
+			}
+		}
+		
+		hidden_effect = { country_event = { id = kiyo_event_spy.21 days = 1 random = 60 } }
+	}
+	
+	option = {
+		name = kiyo_event_trigger.1.c
+		custom_tooltip = kiyo_event_trigger.1.c.desc
+		trigger = { kiyo_spy_company_req = yes }
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 3
+				years_passed < 65
+			}
+			modifier = {
+				factor = 0
+				years_passed > 75
+			}
+		}
+		
+		hidden_effect = { country_event = { id = kiyo_event_spy.31 days = 1 random = 60 } }
+	}
+	
+	option = {
+		name = kiyo_event_trigger.1.d
+		custom_tooltip = kiyo_event_trigger.1.d.desc
+		trigger = { kiyo_spy_conserve_req = yes }
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 3
+				years_passed < 75
+			}
+		}
+		
+		hidden_effect = { country_event = { id = kiyo_event_spy.41 days = 1 random = 60 } }
+	}
+	
+	option = {
+		name = kiyo_event_trigger.1.e
+		custom_tooltip = kiyo_event_trigger.1.e.desc
+		trigger = { kiyo_spy_assassin_req = yes }
+		ai_chance = {
+			factor = 10
+		}
+		
+		hidden_effect = { country_event = { id = kiyo_event_spy.61 days = 1 random = 60 } }
+	}
+	
+	option = {
+		name = kiyo_event_trigger.1.f
+		custom_tooltip = kiyo_event_trigger.1.f.desc
+		trigger = { kiyo_spy_hijack_req = yes }
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 3
+				is_at_war_with = event_target:spyVictim
+			}
+		}
+		
+		hidden_effect = { country_event = { id = kiyo_event_spy.71 days = 1 random = 60 } }
+	}
+	
+	option = {
+		name = kiyo_event_trigger.1.g
+		custom_tooltip = kiyo_event_trigger.1.g.desc
+		trigger = { kiyo_spy_trade_req = yes }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				has_authority = auth_corporate
+			}
+		}
+		
+		hidden_effect = { country_event = { id = kiyo_event_spy.81 days = 1 random = 60 } }
+	}
+	
+	option = {
+		name = kiyo_event_trigger.1.aa
+		custom_tooltip = kiyo_event_trigger.1.aa.desc
+		trigger = { kiyo_spy_generic_sabotage_req = yes }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				years_passed >= 75
+			}
+		}
+		
+		hidden_effect = {
+			event_target:spyVictim = { save_event_target_as = sabotageVictim }
+			country_event = { id = kiyo_event_active.3 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_trigger.1.ab
+		custom_tooltip = kiyo_event_trigger.1.ab.desc
+		trigger = { kiyo_spy_generic_sabotage_req = yes }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				relative_power = { who = event_target:spyVictim category = capacity value <= inferior }
+			}
+			modifier = {
+				factor = 2
+				relative_power = { who = event_target:spyVictim category = technology value <= equivalent }
+			}
+		}
+		
+		hidden_effect = {
+			event_target:spyVictim = { save_event_target_as = sabotageVictim }
+			country_event = { id = kiyo_event_active.6 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_trigger.2.a
+		custom_tooltip = kiyo_event_trigger.2.a.desc
+		trigger = { kiyo_spy_hacker_req = yes }
+		ai_chance = {
+			factor = 10
+		}
+		
+		hidden_effect = { country_event = { id = kiyo_event_spy.51 days = 1 random = 60 } }
+	}
+	
+	option = {
+		name = kiyo_event_trigger.2.b
+		custom_tooltip = kiyo_event_trigger.2.b.desc
+		trigger = { kiyo_spy_droneprod_req = yes }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				relative_power = { who = event_target:spyVictim category = capacity value <= inferior }
+			}
+			modifier = {
+				factor = 2
+				relative_power = { who = event_target:spyVictim category = technology value <= inferior }
+			}
+		}
+		
+		hidden_effect = { country_event = { id = kiyo_event_spy.91 days = 1 random = 60 } }
+	}
+	
+	option = {
+		name = kiyo_event_trigger.2.c
+		custom_tooltip = kiyo_event_trigger.2.c.desc
+		trigger = { kiyo_spy_envoy_req = yes }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 3
+				OR = {
+					has_ai_personality_behaviour = liberator
+					has_ai_personality_behaviour = uplifter
+					has_ai_personality_behaviour = multispecies
+				}
+			}
+		}
+		
+		hidden_effect = { country_event = { id = kiyo_event_spy.108 days = 1 random = 60 } }
+	}
+	
+	option = {
+		name = kiyo_event_trigger.2.aa
+		custom_tooltip = kiyo_event_trigger.2.aa.desc
+		trigger = { kiyo_spy_generic_sabotage_req = yes }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				relative_power = { who = event_target:spyVictim category = technology value <= inferior }
+			}
+		}
+		
+		hidden_effect = {
+			event_target:spyVictim = { save_event_target_as = sabotageVictim }
+			country_event = { id = kiyo_event_active.4 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_trigger.2.ab
+		custom_tooltip = kiyo_event_trigger.2.ab.desc
+		trigger = { kiyo_spy_generic_sabotage_req = yes }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				event_target:spyVictim = { count_system_within_border = { count >= 50 } }
+			}
+		}
+		
+		hidden_effect = {
+			event_target:spyVictim = { save_event_target_as = sabotageVictim }
+			country_event = { id = kiyo_event_active.5 }
+		}
+	}
+}

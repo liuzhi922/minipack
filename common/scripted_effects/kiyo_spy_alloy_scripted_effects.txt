@@ -1,0 +1,380 @@
+kiyo_spy_calculate_alloys = {
+	if = { limit = { check_variable = { which = intrigue value < 5 } }
+		set_variable = { which = alloyVal value = 0 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value < 0 } }
+		set_variable = { which = alloyVal value = -1 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 5 } }
+		set_variable = { which = alloyVal value = 3 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 10 } }
+		set_variable = { which = alloyVal value = 8 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 15 } }
+		set_variable = { which = alloyVal value = 13 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 20 } }
+		set_variable = { which = alloyVal value = 18 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 25 } }
+		set_variable = { which = alloyVal value = 23 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 30 } }
+		set_variable = { which = alloyVal value = 28 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 35 } }
+		set_variable = { which = alloyVal value = 33 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 40 } }
+		set_variable = { which = alloyVal value = 38 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 45 } }
+		set_variable = { which = alloyVal value = 43 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 50 } }
+		set_variable = { which = alloyVal value = 48 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 55 } }
+		set_variable = { which = alloyVal value = 53 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 60 } }
+		set_variable = { which = alloyVal value = 58 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 65 } }
+		set_variable = { which = alloyVal value = 63 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 70 } }
+		set_variable = { which = alloyVal value = 68 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 75 } }
+		set_variable = { which = alloyVal value = 73 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 80 } }
+		set_variable = { which = alloyVal value = 78 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 85 } }
+		set_variable = { which = alloyVal value = 83 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 90 } }
+		set_variable = { which = alloyVal value = 88 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 95 } }
+		set_variable = { which = alloyVal value = 93 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 100 } }
+		set_variable = { which = alloyVal value = 98 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 110 } }
+		set_variable = { which = alloyVal value = 105 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 120 } }
+		set_variable = { which = alloyVal value = 115 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 130 } }
+		set_variable = { which = alloyVal value = 125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 140 } }
+		set_variable = { which = alloyVal value = 135 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 150 } }
+		set_variable = { which = alloyVal value = 145 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 160 } }
+		set_variable = { which = alloyVal value = 155 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 170 } }
+		set_variable = { which = alloyVal value = 165 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 180 } }
+		set_variable = { which = alloyVal value = 175 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 190 } }
+		set_variable = { which = alloyVal value = 185 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 200 } }
+		set_variable = { which = alloyVal value = 195 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 210 } }
+		set_variable = { which = alloyVal value = 205 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 220 } }
+		set_variable = { which = alloyVal value = 215 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 230 } }
+		set_variable = { which = alloyVal value = 225 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 240 } }
+		set_variable = { which = alloyVal value = 235 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 250 } }
+		set_variable = { which = alloyVal value = 245 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 260 } }
+		set_variable = { which = alloyVal value = 255 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 270 } }
+		set_variable = { which = alloyVal value = 265 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 280 } }
+		set_variable = { which = alloyVal value = 275 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 290 } }
+		set_variable = { which = alloyVal value = 285 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 300 } }
+		set_variable = { which = alloyVal value = 295 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 310 } }
+		set_variable = { which = alloyVal value = 305 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 320 } }
+		set_variable = { which = alloyVal value = 315 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 330 } }
+		set_variable = { which = alloyVal value = 325 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 340 } }
+		set_variable = { which = alloyVal value = 335 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 350 } }
+		set_variable = { which = alloyVal value = 345 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 360 } }
+		set_variable = { which = alloyVal value = 355 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 370 } }
+		set_variable = { which = alloyVal value = 365 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 380 } }
+		set_variable = { which = alloyVal value = 375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 390 } }
+		set_variable = { which = alloyVal value = 385 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 400 } }
+		set_variable = { which = alloyVal value = 395 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 410 } }
+		set_variable = { which = alloyVal value = 405 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 420 } }
+		set_variable = { which = alloyVal value = 415 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 430 } }
+		set_variable = { which = alloyVal value = 425 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 440 } }
+		set_variable = { which = alloyVal value = 435 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 450 } }
+		set_variable = { which = alloyVal value = 445 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 460 } }
+		set_variable = { which = alloyVal value = 455 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 470 } }
+		set_variable = { which = alloyVal value = 465 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 480 } }
+		set_variable = { which = alloyVal value = 475 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 490 } }
+		set_variable = { which = alloyVal value = 485 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 500 } }
+		set_variable = { which = alloyVal value = 495 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 525 } }
+		set_variable = { which = alloyVal value = 512 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 550 } }
+		set_variable = { which = alloyVal value = 537 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 575 } }
+		set_variable = { which = alloyVal value = 562 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 600 } }
+		set_variable = { which = alloyVal value = 587 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 625 } }
+		set_variable = { which = alloyVal value = 612 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 650 } }
+		set_variable = { which = alloyVal value = 637 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 675 } }
+		set_variable = { which = alloyVal value = 662 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 700 } }
+		set_variable = { which = alloyVal value = 687 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 725 } }
+		set_variable = { which = alloyVal value = 712 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 750 } }
+		set_variable = { which = alloyVal value = 737 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 775 } }
+		set_variable = { which = alloyVal value = 762 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 800 } }
+		set_variable = { which = alloyVal value = 787 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 825 } }
+		set_variable = { which = alloyVal value = 812 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 850 } }
+		set_variable = { which = alloyVal value = 837 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 875 } }
+		set_variable = { which = alloyVal value = 862 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 900 } }
+		set_variable = { which = alloyVal value = 887 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 925 } }
+		set_variable = { which = alloyVal value = 912 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 950 } }
+		set_variable = { which = alloyVal value = 937 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 975 } }
+		set_variable = { which = alloyVal value = 962 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1000 } }
+		set_variable = { which = alloyVal value = 987 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1050 } }
+		set_variable = { which = alloyVal value = 1025 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1100 } }
+		set_variable = { which = alloyVal value = 1075 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1150 } }
+		set_variable = { which = alloyVal value = 1125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1200 } }
+		set_variable = { which = alloyVal value = 1175 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1250 } }
+		set_variable = { which = alloyVal value = 1225 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1300 } }
+		set_variable = { which = alloyVal value = 1275 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1350 } }
+		set_variable = { which = alloyVal value = 1325 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1400 } }
+		set_variable = { which = alloyVal value = 1375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1450 } }
+		set_variable = { which = alloyVal value = 1425 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1500 } }
+		set_variable = { which = alloyVal value = 1475 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1550 } }
+		set_variable = { which = alloyVal value = 1525 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1600 } }
+		set_variable = { which = alloyVal value = 1575 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1650 } }
+		set_variable = { which = alloyVal value = 1625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1700 } }
+		set_variable = { which = alloyVal value = 1675 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1750 } }
+		set_variable = { which = alloyVal value = 1725 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1800 } }
+		set_variable = { which = alloyVal value = 1775 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1850 } }
+		set_variable = { which = alloyVal value = 1825 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1900 } }
+		set_variable = { which = alloyVal value = 1875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 1950 } }
+		set_variable = { which = alloyVal value = 1925 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 2000 } }
+		set_variable = { which = alloyVal value = 1975 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 2100 } }
+		set_variable = { which = alloyVal value = 2050 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 2200 } }
+		set_variable = { which = alloyVal value = 2150 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 2300 } }
+		set_variable = { which = alloyVal value = 2250 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 2400 } }
+		set_variable = { which = alloyVal value = 2350 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 2500 } }
+		set_variable = { which = alloyVal value = 2450 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 2600 } }
+		set_variable = { which = alloyVal value = 2550 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 2700 } }
+		set_variable = { which = alloyVal value = 2650 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 2800 } }
+		set_variable = { which = alloyVal value = 2750 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 2900 } }
+		set_variable = { which = alloyVal value = 2850 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 3000 } }
+		set_variable = { which = alloyVal value = 2950 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 3250 } }
+		set_variable = { which = alloyVal value = 3125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 3500 } }
+		set_variable = { which = alloyVal value = 3375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 3750 } }
+		set_variable = { which = alloyVal value = 3625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 4000 } }
+		set_variable = { which = alloyVal value = 3875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 4250 } }
+		set_variable = { which = alloyVal value = 4125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 4500 } }
+		set_variable = { which = alloyVal value = 4375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 4750 } }
+		set_variable = { which = alloyVal value = 4625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 5000 } }
+		set_variable = { which = alloyVal value = 4875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 6000 } }
+		set_variable = { which = alloyVal value = 5500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 7000 } }
+		set_variable = { which = alloyVal value = 6500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 8000 } }
+		set_variable = { which = alloyVal value = 7500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 9000 } }
+		set_variable = { which = alloyVal value = 8500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = alloys value <= 10000 } }
+		set_variable = { which = alloyVal value = 9500 }
+	}
+	else = {
+		set_variable = { which = alloyVal value = 10001 }
+	}
+}

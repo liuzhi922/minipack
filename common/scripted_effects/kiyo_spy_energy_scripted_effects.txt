@@ -1,0 +1,380 @@
+kiyo_spy_calculate_energy = {
+	if = { limit = { check_variable = { which = intrigue value < 3 } }
+		set_variable = { which = energyVal value = 0 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value < 0 } }
+		set_variable = { which = energyVal value = -1 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 5 } }
+		set_variable = { which = energyVal value = 3 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 10 } }
+		set_variable = { which = energyVal value = 8 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 15 } }
+		set_variable = { which = energyVal value = 13 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 20 } }
+		set_variable = { which = energyVal value = 18 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 25 } }
+		set_variable = { which = energyVal value = 23 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 30 } }
+		set_variable = { which = energyVal value = 28 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 35 } }
+		set_variable = { which = energyVal value = 33 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 40 } }
+		set_variable = { which = energyVal value = 38 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 45 } }
+		set_variable = { which = energyVal value = 43 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 50 } }
+		set_variable = { which = energyVal value = 48 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 55 } }
+		set_variable = { which = energyVal value = 53 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 60 } }
+		set_variable = { which = energyVal value = 58 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 65 } }
+		set_variable = { which = energyVal value = 63 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 70 } }
+		set_variable = { which = energyVal value = 68 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 75 } }
+		set_variable = { which = energyVal value = 73 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 80 } }
+		set_variable = { which = energyVal value = 78 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 85 } }
+		set_variable = { which = energyVal value = 83 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 90 } }
+		set_variable = { which = energyVal value = 88 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 95 } }
+		set_variable = { which = energyVal value = 93 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 100 } }
+		set_variable = { which = energyVal value = 98 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 110 } }
+		set_variable = { which = energyVal value = 105 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 120 } }
+		set_variable = { which = energyVal value = 115 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 130 } }
+		set_variable = { which = energyVal value = 125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 140 } }
+		set_variable = { which = energyVal value = 135 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 150 } }
+		set_variable = { which = energyVal value = 145 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 160 } }
+		set_variable = { which = energyVal value = 155 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 170 } }
+		set_variable = { which = energyVal value = 165 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 180 } }
+		set_variable = { which = energyVal value = 175 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 190 } }
+		set_variable = { which = energyVal value = 185 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 200 } }
+		set_variable = { which = energyVal value = 195 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 210 } }
+		set_variable = { which = energyVal value = 205 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 220 } }
+		set_variable = { which = energyVal value = 215 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 230 } }
+		set_variable = { which = energyVal value = 225 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 240 } }
+		set_variable = { which = energyVal value = 235 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 250 } }
+		set_variable = { which = energyVal value = 245 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 260 } }
+		set_variable = { which = energyVal value = 255 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 270 } }
+		set_variable = { which = energyVal value = 265 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 280 } }
+		set_variable = { which = energyVal value = 275 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 290 } }
+		set_variable = { which = energyVal value = 285 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 300 } }
+		set_variable = { which = energyVal value = 295 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 310 } }
+		set_variable = { which = energyVal value = 305 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 320 } }
+		set_variable = { which = energyVal value = 315 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 330 } }
+		set_variable = { which = energyVal value = 325 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 340 } }
+		set_variable = { which = energyVal value = 335 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 350 } }
+		set_variable = { which = energyVal value = 345 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 360 } }
+		set_variable = { which = energyVal value = 355 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 370 } }
+		set_variable = { which = energyVal value = 365 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 380 } }
+		set_variable = { which = energyVal value = 375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 390 } }
+		set_variable = { which = energyVal value = 385 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 400 } }
+		set_variable = { which = energyVal value = 395 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 410 } }
+		set_variable = { which = energyVal value = 405 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 420 } }
+		set_variable = { which = energyVal value = 415 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 430 } }
+		set_variable = { which = energyVal value = 425 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 440 } }
+		set_variable = { which = energyVal value = 435 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 450 } }
+		set_variable = { which = energyVal value = 445 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 460 } }
+		set_variable = { which = energyVal value = 455 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 470 } }
+		set_variable = { which = energyVal value = 465 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 480 } }
+		set_variable = { which = energyVal value = 475 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 490 } }
+		set_variable = { which = energyVal value = 485 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 500 } }
+		set_variable = { which = energyVal value = 495 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 525 } }
+		set_variable = { which = energyVal value = 512 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 550 } }
+		set_variable = { which = energyVal value = 537 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 575 } }
+		set_variable = { which = energyVal value = 562 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 600 } }
+		set_variable = { which = energyVal value = 587 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 625 } }
+		set_variable = { which = energyVal value = 612 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 650 } }
+		set_variable = { which = energyVal value = 637 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 675 } }
+		set_variable = { which = energyVal value = 662 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 700 } }
+		set_variable = { which = energyVal value = 687 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 725 } }
+		set_variable = { which = energyVal value = 712 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 750 } }
+		set_variable = { which = energyVal value = 737 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 775 } }
+		set_variable = { which = energyVal value = 762 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 800 } }
+		set_variable = { which = energyVal value = 787 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 825 } }
+		set_variable = { which = energyVal value = 812 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 850 } }
+		set_variable = { which = energyVal value = 837 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 875 } }
+		set_variable = { which = energyVal value = 862 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 900 } }
+		set_variable = { which = energyVal value = 887 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 925 } }
+		set_variable = { which = energyVal value = 912 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 950 } }
+		set_variable = { which = energyVal value = 937 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 975 } }
+		set_variable = { which = energyVal value = 962 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1000 } }
+		set_variable = { which = energyVal value = 987 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1050 } }
+		set_variable = { which = energyVal value = 1025 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1100 } }
+		set_variable = { which = energyVal value = 1075 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1150 } }
+		set_variable = { which = energyVal value = 1125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1200 } }
+		set_variable = { which = energyVal value = 1175 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1250 } }
+		set_variable = { which = energyVal value = 1225 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1300 } }
+		set_variable = { which = energyVal value = 1275 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1350 } }
+		set_variable = { which = energyVal value = 1325 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1400 } }
+		set_variable = { which = energyVal value = 1375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1450 } }
+		set_variable = { which = energyVal value = 1425 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1500 } }
+		set_variable = { which = energyVal value = 1475 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1550 } }
+		set_variable = { which = energyVal value = 1525 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1600 } }
+		set_variable = { which = energyVal value = 1575 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1650 } }
+		set_variable = { which = energyVal value = 1625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1700 } }
+		set_variable = { which = energyVal value = 1675 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1750 } }
+		set_variable = { which = energyVal value = 1725 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1800 } }
+		set_variable = { which = energyVal value = 1775 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1850 } }
+		set_variable = { which = energyVal value = 1825 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1900 } }
+		set_variable = { which = energyVal value = 1875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 1950 } }
+		set_variable = { which = energyVal value = 1925 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 2000 } }
+		set_variable = { which = energyVal value = 1975 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 2100 } }
+		set_variable = { which = energyVal value = 2050 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 2200 } }
+		set_variable = { which = energyVal value = 2150 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 2300 } }
+		set_variable = { which = energyVal value = 2250 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 2400 } }
+		set_variable = { which = energyVal value = 2350 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 2500 } }
+		set_variable = { which = energyVal value = 2450 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 2600 } }
+		set_variable = { which = energyVal value = 2550 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 2700 } }
+		set_variable = { which = energyVal value = 2650 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 2800 } }
+		set_variable = { which = energyVal value = 2750 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 2900 } }
+		set_variable = { which = energyVal value = 2850 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 3000 } }
+		set_variable = { which = energyVal value = 2950 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 3250 } }
+		set_variable = { which = energyVal value = 3125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 3500 } }
+		set_variable = { which = energyVal value = 3375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 3750 } }
+		set_variable = { which = energyVal value = 3625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 4000 } }
+		set_variable = { which = energyVal value = 3875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 4250 } }
+		set_variable = { which = energyVal value = 4125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 4500 } }
+		set_variable = { which = energyVal value = 4375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 4750 } }
+		set_variable = { which = energyVal value = 4625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 5000 } }
+		set_variable = { which = energyVal value = 4875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 6000 } }
+		set_variable = { which = energyVal value = 5500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 7000 } }
+		set_variable = { which = energyVal value = 6500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 8000 } }
+		set_variable = { which = energyVal value = 7500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 9000 } }
+		set_variable = { which = energyVal value = 8500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = energy value <= 10000 } }
+		set_variable = { which = energyVal value = 9500 }
+	}
+	else = {
+		set_variable = { which = energyVal value = 10001 }
+	}
+}

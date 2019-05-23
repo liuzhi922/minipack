@@ -1,0 +1,380 @@
+kiyo_spy_calculate_minerals = {
+	if = { limit = { check_variable = { which = intrigue value < 3 } }
+		set_variable = { which = mineralVal value = 0 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value < 0 } }
+		set_variable = { which = mineralVal value = -1 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 5 } }
+		set_variable = { which = mineralVal value = 3 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 10 } }
+		set_variable = { which = mineralVal value = 8 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 15 } }
+		set_variable = { which = mineralVal value = 13 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 20 } }
+		set_variable = { which = mineralVal value = 18 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 25 } }
+		set_variable = { which = mineralVal value = 23 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 30 } }
+		set_variable = { which = mineralVal value = 28 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 35 } }
+		set_variable = { which = mineralVal value = 33 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 40 } }
+		set_variable = { which = mineralVal value = 38 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 45 } }
+		set_variable = { which = mineralVal value = 43 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 50 } }
+		set_variable = { which = mineralVal value = 48 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 55 } }
+		set_variable = { which = mineralVal value = 53 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 60 } }
+		set_variable = { which = mineralVal value = 58 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 65 } }
+		set_variable = { which = mineralVal value = 63 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 70 } }
+		set_variable = { which = mineralVal value = 68 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 75 } }
+		set_variable = { which = mineralVal value = 73 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 80 } }
+		set_variable = { which = mineralVal value = 78 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 85 } }
+		set_variable = { which = mineralVal value = 83 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 90 } }
+		set_variable = { which = mineralVal value = 88 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 95 } }
+		set_variable = { which = mineralVal value = 93 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 100 } }
+		set_variable = { which = mineralVal value = 98 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 110 } }
+		set_variable = { which = mineralVal value = 105 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 120 } }
+		set_variable = { which = mineralVal value = 115 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 130 } }
+		set_variable = { which = mineralVal value = 125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 140 } }
+		set_variable = { which = mineralVal value = 135 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 150 } }
+		set_variable = { which = mineralVal value = 145 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 160 } }
+		set_variable = { which = mineralVal value = 155 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 170 } }
+		set_variable = { which = mineralVal value = 165 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 180 } }
+		set_variable = { which = mineralVal value = 175 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 190 } }
+		set_variable = { which = mineralVal value = 185 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 200 } }
+		set_variable = { which = mineralVal value = 195 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 210 } }
+		set_variable = { which = mineralVal value = 205 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 220 } }
+		set_variable = { which = mineralVal value = 215 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 230 } }
+		set_variable = { which = mineralVal value = 225 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 240 } }
+		set_variable = { which = mineralVal value = 235 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 250 } }
+		set_variable = { which = mineralVal value = 245 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 260 } }
+		set_variable = { which = mineralVal value = 255 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 270 } }
+		set_variable = { which = mineralVal value = 265 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 280 } }
+		set_variable = { which = mineralVal value = 275 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 290 } }
+		set_variable = { which = mineralVal value = 285 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 300 } }
+		set_variable = { which = mineralVal value = 295 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 310 } }
+		set_variable = { which = mineralVal value = 305 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 320 } }
+		set_variable = { which = mineralVal value = 315 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 330 } }
+		set_variable = { which = mineralVal value = 325 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 340 } }
+		set_variable = { which = mineralVal value = 335 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 350 } }
+		set_variable = { which = mineralVal value = 345 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 360 } }
+		set_variable = { which = mineralVal value = 355 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 370 } }
+		set_variable = { which = mineralVal value = 365 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 380 } }
+		set_variable = { which = mineralVal value = 375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 390 } }
+		set_variable = { which = mineralVal value = 385 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 400 } }
+		set_variable = { which = mineralVal value = 395 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 410 } }
+		set_variable = { which = mineralVal value = 405 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 420 } }
+		set_variable = { which = mineralVal value = 415 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 430 } }
+		set_variable = { which = mineralVal value = 425 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 440 } }
+		set_variable = { which = mineralVal value = 435 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 450 } }
+		set_variable = { which = mineralVal value = 445 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 460 } }
+		set_variable = { which = mineralVal value = 455 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 470 } }
+		set_variable = { which = mineralVal value = 465 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 480 } }
+		set_variable = { which = mineralVal value = 475 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 490 } }
+		set_variable = { which = mineralVal value = 485 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 500 } }
+		set_variable = { which = mineralVal value = 495 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 525 } }
+		set_variable = { which = mineralVal value = 512 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 550 } }
+		set_variable = { which = mineralVal value = 537 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 575 } }
+		set_variable = { which = mineralVal value = 562 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 600 } }
+		set_variable = { which = mineralVal value = 587 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 625 } }
+		set_variable = { which = mineralVal value = 612 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 650 } }
+		set_variable = { which = mineralVal value = 637 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 675 } }
+		set_variable = { which = mineralVal value = 662 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 700 } }
+		set_variable = { which = mineralVal value = 687 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 725 } }
+		set_variable = { which = mineralVal value = 712 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 750 } }
+		set_variable = { which = mineralVal value = 737 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 775 } }
+		set_variable = { which = mineralVal value = 762 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 800 } }
+		set_variable = { which = mineralVal value = 787 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 825 } }
+		set_variable = { which = mineralVal value = 812 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 850 } }
+		set_variable = { which = mineralVal value = 837 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 875 } }
+		set_variable = { which = mineralVal value = 862 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 900 } }
+		set_variable = { which = mineralVal value = 887 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 925 } }
+		set_variable = { which = mineralVal value = 912 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 950 } }
+		set_variable = { which = mineralVal value = 937 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 975 } }
+		set_variable = { which = mineralVal value = 962 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1000 } }
+		set_variable = { which = mineralVal value = 987 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1050 } }
+		set_variable = { which = mineralVal value = 1025 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1100 } }
+		set_variable = { which = mineralVal value = 1075 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1150 } }
+		set_variable = { which = mineralVal value = 1125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1200 } }
+		set_variable = { which = mineralVal value = 1175 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1250 } }
+		set_variable = { which = mineralVal value = 1225 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1300 } }
+		set_variable = { which = mineralVal value = 1275 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1350 } }
+		set_variable = { which = mineralVal value = 1325 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1400 } }
+		set_variable = { which = mineralVal value = 1375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1450 } }
+		set_variable = { which = mineralVal value = 1425 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1500 } }
+		set_variable = { which = mineralVal value = 1475 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1550 } }
+		set_variable = { which = mineralVal value = 1525 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1600 } }
+		set_variable = { which = mineralVal value = 1575 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1650 } }
+		set_variable = { which = mineralVal value = 1625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1700 } }
+		set_variable = { which = mineralVal value = 1675 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1750 } }
+		set_variable = { which = mineralVal value = 1725 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1800 } }
+		set_variable = { which = mineralVal value = 1775 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1850 } }
+		set_variable = { which = mineralVal value = 1825 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1900 } }
+		set_variable = { which = mineralVal value = 1875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 1950 } }
+		set_variable = { which = mineralVal value = 1925 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 2000 } }
+		set_variable = { which = mineralVal value = 1975 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 2100 } }
+		set_variable = { which = mineralVal value = 2050 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 2200 } }
+		set_variable = { which = mineralVal value = 2150 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 2300 } }
+		set_variable = { which = mineralVal value = 2250 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 2400 } }
+		set_variable = { which = mineralVal value = 2350 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 2500 } }
+		set_variable = { which = mineralVal value = 2450 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 2600 } }
+		set_variable = { which = mineralVal value = 2550 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 2700 } }
+		set_variable = { which = mineralVal value = 2650 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 2800 } }
+		set_variable = { which = mineralVal value = 2750 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 2900 } }
+		set_variable = { which = mineralVal value = 2850 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 3000 } }
+		set_variable = { which = mineralVal value = 2950 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 3250 } }
+		set_variable = { which = mineralVal value = 3125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 3500 } }
+		set_variable = { which = mineralVal value = 3375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 3750 } }
+		set_variable = { which = mineralVal value = 3625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 4000 } }
+		set_variable = { which = mineralVal value = 3875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 4250 } }
+		set_variable = { which = mineralVal value = 4125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 4500 } }
+		set_variable = { which = mineralVal value = 4375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 4750 } }
+		set_variable = { which = mineralVal value = 4625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 5000 } }
+		set_variable = { which = mineralVal value = 4875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 6000 } }
+		set_variable = { which = mineralVal value = 5500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 7000 } }
+		set_variable = { which = mineralVal value = 6500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 8000 } }
+		set_variable = { which = mineralVal value = 7500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 9000 } }
+		set_variable = { which = mineralVal value = 8500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = minerals value <= 10000 } }
+		set_variable = { which = mineralVal value = 9500 }
+	}
+	else = {
+		set_variable = { which = mineralVal value = 10001 }
+	}
+}

@@ -1,0 +1,593 @@
+#Variable Localization#
+
+defined_text = {
+	name = GetTradePolicy
+	text = {
+		trigger = {
+			NOR = {
+				has_ethic = ethic_gestalt_consciousness
+				has_policy_flag = trade_conversion_consumer_goods
+				has_policy_flag = trade_conversion_unity
+			}
+		}
+		localization_key = trade_policy_default
+	}
+	text = {
+		trigger = { has_policy_flag = trade_conversion_consumer_goods }
+		localization_key = trade_policy_consumer_goods
+	}
+	text = {
+		trigger = { has_policy_flag = trade_conversion_unity }
+		localization_key = trade_policy_unity
+	}
+}
+
+defined_text = {
+	name = GetTradePolicyA
+	text = {
+		trigger = {
+			OR = {
+				has_policy_flag = trade_conversion_consumer_goods
+				has_policy_flag = trade_conversion_unity
+			}
+		}
+		localization_key = trade_policy_default
+	}
+	text = {
+		trigger = {
+			NOR = {
+				has_ethic = ethic_gestalt_consciousness
+				has_policy_flag = trade_conversion_consumer_goods
+				has_policy_flag = trade_conversion_unity
+			}
+		}
+		localization_key = trade_policy_consumer_goods
+	}
+}
+
+defined_text = {
+	name = GetTradePolicyB
+	text = {
+		trigger = { has_policy_flag = trade_conversion_unity }
+		localization_key = trade_policy_consumer_goods
+	}
+	text = {
+		trigger = {
+			OR = {
+				NOR = {
+					has_ethic = ethic_gestalt_consciousness
+					has_policy_flag = trade_conversion_consumer_goods
+					has_policy_flag = trade_conversion_unity
+				}
+				has_policy_flag = trade_conversion_consumer_goods
+			}
+		}
+		localization_key = trade_policy_unity
+	}
+}
+
+defined_text = {
+	name = GetSpyingCooldown1
+	text = {
+		trigger = {
+			any_country = {
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy1 }
+				OR = {
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+				}
+			}
+		}
+		localization_key = kiyo_spy_cooldown
+	}
+	text = {
+		trigger = {
+			NOT = {
+				any_country = {
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spy1 }
+					OR = {
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+					}
+				}
+			}
+		}
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetSpyingCooldown2
+	text = {
+		trigger = {
+			any_country = {
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy2 }
+				OR = {
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+				}
+			}
+		}
+		localization_key = kiyo_spy_cooldown
+	}
+	text = {
+		trigger = {
+			NOT = {
+				any_country = {
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spy2 }
+					OR = {
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+					}
+				}
+			}
+		}
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetSpyingCooldown3
+	text = {
+		trigger = {
+			any_country = {
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy3 }
+				OR = {
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+				}
+			}
+		}
+		localization_key = kiyo_spy_cooldown
+	}
+	text = {
+		trigger = {
+			NOT = {
+				any_country = {
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spy3 }
+					OR = {
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+					}
+				}
+			}
+		}
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetSpyingCooldown4
+	text = {
+		trigger = {
+			any_country = {
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy4 }
+				OR = {
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+				}
+			}
+		}
+		localization_key = kiyo_spy_cooldown
+	}
+	text = {
+		trigger = {
+			NOT = {
+				any_country = {
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_spy4 }
+					OR = {
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+					}
+				}
+			}
+		}
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetLeaderType
+	text = {
+		trigger = { leader_class = ruler }
+		localization_key = kiyo_ruler
+	}
+	text = {
+		trigger = { leader_class = governor }
+		localization_key = kiyo_governors
+	}
+	text = {
+		trigger = { leader_class = scientist }
+		localization_key = kiyo_scientists
+	}
+	text = {
+		trigger = { leader_class = admiral }
+		localization_key = kiyo_admirals
+	}
+	text = {
+		trigger = { leader_class = general }
+		localization_key = kiyo_generals
+	}
+}
+
+defined_text = {
+	name = GetOverNavyCap
+	text = {
+		trigger = {
+			used_naval_capacity_percent > 1
+			check_variable = { which = intrigue value > 0 }
+		}
+		localization_key = kiyo_spy_overcap
+	}
+	text = {
+		trigger = { used_naval_capacity_percent <= 1 }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetStarving
+	text = {
+		trigger = {
+			resource_stockpile_compare = { resource = food value = 0 }
+			has_monthly_income = { resource = food value < 0 }
+			check_variable = { which = intrigue value > 0 }
+		}
+		localization_key = kiyo_spy_starving
+	}
+	text = {
+		trigger = {
+			OR = {
+				NAND = {
+					resource_stockpile_compare = { resource = food value = 0 }
+					has_monthly_income = { resource = food value < 0 }
+				}
+				check_variable = { which = intrigue value = 0 }
+			}
+		}
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetMineralDeficit
+	text = {
+		trigger = {
+			resource_stockpile_compare = { resource = minerals value = 0 }
+			has_monthly_income = { resource = minerals value < 0 }
+			check_variable = { which = intrigue value > 2 }
+		}
+		localization_key = kiyo_spy_mineraldeficit
+	}
+	text = {
+		trigger = {
+			OR = {
+				NAND = {
+					resource_stockpile_compare = { resource = minerals value = 0 }
+					has_monthly_income = { resource = minerals value < 0 }
+				}
+				check_variable = { which = intrigue value <= 2 }
+			}
+		}
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetAlloyDeficit
+	text = {
+		trigger = {
+			resource_stockpile_compare = { resource = alloys value = 0 }
+			has_monthly_income = { resource = alloys value < 0 }
+			check_variable = { which = intrigue value > 4 }
+		}
+		localization_key = kiyo_spy_alloydeficit
+	}
+	text = {
+		trigger = {
+			OR = {
+				NAND = {
+					resource_stockpile_compare = { resource = alloys value = 0 }
+					has_monthly_income = { resource = alloys value < 0 }
+				}
+				check_variable = { which = intrigue value <= 4 }
+			}
+		}
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetConsumerGoodsDeficit
+	text = {
+		trigger = {
+			resource_stockpile_compare = { resource = consumer_goods value = 0 }
+			has_monthly_income = { resource = consumer_goods value < 0 }
+			check_variable = { which = intrigue value > 4 }
+		}
+		localization_key = kiyo_spy_consumerdeficit
+	}
+	text = {
+		trigger = {
+			OR = {
+				NAND = {
+					resource_stockpile_compare = { resource = consumer_goods value = 0 }
+					has_monthly_income = { resource = consumer_goods value < 0 }
+				}
+				check_variable = { which = intrigue value <= 4 }
+			}
+		}
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetStrategicDeficit
+	text = {
+		trigger = {
+			check_variable = { which = intrigue value > 3 }
+			OR = {
+				AND = {
+					resource_stockpile_compare = { resource = volatile_motes value = 0 }
+					has_monthly_income = { resource = volatile_motes value < 0 }
+				}
+				AND = {
+					resource_stockpile_compare = { resource = exotic_gases value = 0 }
+					has_monthly_income = { resource = exotic_gases value < 0 }
+				}
+				AND = {
+					resource_stockpile_compare = { resource = rare_crystals value = 0 }
+					has_monthly_income = { resource = rare_crystals value < 0 }
+				}
+				AND = {
+					resource_stockpile_compare = { resource = sr_living_metal value = 0 }
+					has_monthly_income = { resource = sr_living_metal value < 0 }
+				}
+				AND = {
+					resource_stockpile_compare = { resource = sr_zro value = 0 }
+					has_monthly_income = { resource = sr_zro value < 0 }
+				}
+				AND = {
+					resource_stockpile_compare = { resource = sr_dark_matter value = 0 }
+					has_monthly_income = { resource = sr_dark_matter value < 0 }
+				}
+				AND = {
+					resource_stockpile_compare = { resource = nanites value = 0 }
+					has_monthly_income = { resource = nanites value < 0 }
+				}
+			}
+		}
+		localization_key = kiyo_spy_strategicdeficit
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					NAND = {
+						resource_stockpile_compare = { resource = volatile_motes value = 0 }
+						has_monthly_income = { resource = volatile_motes value < 0 }
+					}
+					NAND = {
+						resource_stockpile_compare = { resource = exotic_gases value = 0 }
+						has_monthly_income = { resource = exotic_gases value < 0 }
+					}
+					NAND = {
+						resource_stockpile_compare = { resource = rare_crystals value = 0 }
+						has_monthly_income = { resource = rare_crystals value < 0 }
+					}
+					NAND = {
+						resource_stockpile_compare = { resource = sr_living_metal value = 0 }
+						has_monthly_income = { resource = sr_living_metal value < 0 }
+					}
+					NAND = {
+						resource_stockpile_compare = { resource = sr_zro value = 0 }
+						has_monthly_income = { resource = sr_zro value < 0 }
+					}
+					NAND = {
+						resource_stockpile_compare = { resource = sr_dark_matter value = 0 }
+						has_monthly_income = { resource = sr_dark_matter value < 0 }
+					}
+					NAND = {
+						resource_stockpile_compare = { resource = nanites value = 0 }
+						has_monthly_income = { resource = nanites value < 0 }
+					}
+				}
+				check_variable = { which = intrigue value <= 3 }
+			}
+		}
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetEnergyDeficit
+	text = {
+		trigger = {
+			resource_stockpile_compare = { resource = energy value = 0 }
+			has_monthly_income = { resource = energy value < 0 }
+			check_variable = { which = intrigue value > 2 }
+		}
+		localization_key = kiyo_spy_energydeficit
+	}
+	text = {
+		trigger = {
+			OR = {
+				NAND = {
+					resource_stockpile_compare = { resource = energy value = 0 }
+					has_monthly_income = { resource = energy value < 0 }
+				}
+				check_variable = { which = intrigue value < 2 }
+			}
+		}
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetIntrigue0
+	text = {
+		trigger = { check_variable = { which = intrigue value = 0 } }
+		localization_key = kiyo_spy_zero
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = intrigue value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetSpy0
+	text = {
+		trigger = { check_variable = { which = spy_available value = 0 } }
+		localization_key = kiyo_spy_zero
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = spy_available value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetAlloys0
+	text = {
+		trigger = { check_variable = { which = alloyVal value = 0 } }
+		localization_key = kiyo_spy_unknown
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = alloyVal value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetConsumerGoods0
+	text = {
+		trigger = { check_variable = { which = consumerGoodsVal value = 0 } }
+		localization_key = kiyo_spy_unknown
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = consumerGoodsVal value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetMinerals0
+	text = {
+		trigger = { check_variable = { which = mineralVal value = 0 } }
+		localization_key = kiyo_spy_unknown
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = mineralVal value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetFood0
+	text = {
+		trigger = { check_variable = { which = foodVal value = 0 } }
+		localization_key = kiyo_spy_unknown
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = foodVal value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetEnergy0
+	text = {
+		trigger = { check_variable = { which = energyVal value = 0 } }
+		localization_key = kiyo_spy_unknown
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = energyVal value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetPhysics0
+	text = {
+		trigger = { check_variable = { which = physicsVal value = 0 } }
+		localization_key = kiyo_spy_unknown
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = physicsVal value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetSociety0
+	text = {
+		trigger = { check_variable = { which = societyVal value = 0 } }
+		localization_key = kiyo_spy_unknown
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = societyVal value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetEngineering0
+	text = {
+		trigger = { check_variable = { which = engineeringVal value = 0 } }
+		localization_key = kiyo_spy_unknown
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = engineeringVal value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetAscension0
+	text = {
+		trigger = { check_variable = { which = ascensionVal value = 0 } }
+		localization_key = kiyo_spy_zero
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = ascensionVal value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+defined_text = {
+	name = GetFleet0
+	text = {
+		trigger = { check_variable = { which = fleetVal value = 0 } }
+		localization_key = kiyo_spy_unknown
+	}
+	text = {
+		trigger = { NOT = { check_variable = { which = fleetVal value = 0 } } }
+		localization_key = kiyo_spy_noinfo
+	}
+}
+
+#Non-variable Localization#
+
+defined_text = {
+	name = GetFoodPower
+	text = {
+		trigger = {
+			NOR = {
+				has_authority = auth_machine_intelligence
+				has_country_flag = synthetic_empire
+			}
+			#has_ethic = ethic_gestalt_consciousness
+		}
+		localization_key = kiyo_spy_toxic_food
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_authority = auth_machine_intelligence
+				has_country_flag = synthetic_empire
+			}
+		}
+		localization_key = kiyo_spy_toxic_power
+	}
+}

@@ -1,0 +1,161 @@
+namespace = kiyo_event_spy_menu
+
+#How to use this Mod (Window for players)
+country_event = {
+	id = kiyo_event_spy_menu.0
+	title = kiyo_event_spy_menu.0.title
+	desc = kiyo_event_spy_menu.0.desc
+	custom_gui = "enclave_caravaneer_window"
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = { room = no_video_feed_room }
+	
+	option = {
+		name = kiyo_event_spy_menu.0.a
+		response_text = kiyo_event_spy_menu.0.a.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.0.b
+		response_text = kiyo_event_spy_menu.0.b.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.0.c
+		response_text = kiyo_event_spy_menu.0.c.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.0.d
+		response_text = kiyo_event_spy_menu.0.d.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.0.e
+		response_text = kiyo_event_spy_menu.0.e.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.0.f
+		response_text = kiyo_event_spy_menu.0.f.response
+		is_dialog_only = yes
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.exit
+
+		remove_country_flag = kiyo_spy_window
+	}
+}
+
+#View Spy Target Info (Main Menu for Players)
+country_event = {
+	id = kiyo_event_spy_menu.1
+	title = kiyo_event_spy_menu.1.title
+	desc = kiyo_event_spy_menu.1.desc
+	picture = GFX_evt_board_meeting
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = kiyo_spy_window
+		kiyo_spy_calculate_spy = yes
+		random_country = { limit = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy1 } } save_event_target_as = spyTarget1 }
+		random_country = { limit = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy2 } } save_event_target_as = spyTarget2 }
+		random_country = { limit = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy3 } } save_event_target_as = spyTarget3 }
+		random_country = { limit = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy4 } } save_event_target_as = spyTarget4 }
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.1.a
+		trigger = { any_country = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy1 } } }
+		ai_chance = { factor = 0 }
+		
+		hidden_effect = {
+			event_target:spyTarget1 = { save_event_target_as = spyObserved }
+			country_event = { id = kiyo_event_spy_menu.2 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.1.b
+		trigger = { any_country = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy2 } } }
+		ai_chance = { factor = 0 }
+		
+		hidden_effect = {
+			event_target:spyTarget2 = { save_event_target_as = spyObserved }
+			country_event = { id = kiyo_event_spy_menu.2 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.1.c
+		trigger = { any_country = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy3 } } }
+		ai_chance = { factor = 0 }
+		
+		hidden_effect = {
+			event_target:spyTarget3 = { save_event_target_as = spyObserved }
+			country_event = { id = kiyo_event_spy_menu.2 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.1.d
+		trigger = { any_country = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy4 } } }
+		ai_chance = { factor = 0 }
+		
+		hidden_effect = {
+			event_target:spyTarget4 = { save_event_target_as = spyObserved }
+			country_event = { id = kiyo_event_spy_menu.2 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.1.e
+		ai_chance = { factor = 0 }
+		
+		hidden_effect = { country_event = { id = kiyo_event_spy_menu.0 } }
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.exit
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = { remove_country_flag = kiyo_spy_window }
+	}
+}
+
+#Spy Target View
+country_event = {
+	id = kiyo_event_spy_menu.2
+	title = kiyo_event_spy_menu.2.title
+	desc = kiyo_event_spy_menu.2.desc
+	picture = GFX_evt_board_meeting
+	is_triggered_only = yes
+	
+	immediate = { event_target:spyObserved = { kiyo_spy_calculate_stats = yes } }
+	
+	option = {
+		name = kiyo_event_spy_menu.exit
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = { remove_country_flag = kiyo_spy_window }
+	}
+	
+	option = {
+		name = kiyo_event_spy_menu.remove
+		custom_tooltip = kiyo_event_spy_menu.remove.tooltip
+		trigger = { NOT = { has_relation_flag = { who = event_target:spyObserved flag = kiyo_spy_spying_on } } }
+		ai_chance = { factor = 0 }
+		
+		hidden_effect = {
+			set_timed_relation_flag = { flag = kiyo_spy_nospy who = event_target:spyObserved days = 360 }
+			kiyo_spy_remove_spy = yes
+			remove_country_flag = kiyo_spy_window
+		}
+	}
+}

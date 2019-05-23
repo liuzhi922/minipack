@@ -1,0 +1,265 @@
+namespace = kiyo_event_counterspy
+
+#Spy Check Regular
+country_event = {
+	id = kiyo_event_counterspy.1
+	title = kiyo_event_counterspy.1.title
+	desc = kiyo_event_counterspy.1.desc
+	picture = GFX_evt_city_planet
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = kiyo_spy_check
+		every_country = { limit = { kiyo_spy_is_spying_on_root = yes }
+			root = { set_relation_flag = { who = prev flag = kiyo_spy_checking } }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_counterspy.1.a
+		custom_tooltip = kiyo_event_counterspy.1.a.tooltip
+		ai_chance = {
+			factor = 33
+			modifier = { factor = 2 years_passed < 50 }
+		}
+		
+		hidden_effect = {
+			if = { limit = { any_country = { reverse_has_relation_flag = { who = prev flag = kiyo_spy_checking } } }
+				every_country = { limit = { reverse_has_relation_flag = { who = prev flag = kiyo_spy_checking } }
+					save_event_target_as = spyEmpire
+					root = { set_country_flag = kiyo_spy_check_victim_a save_event_target_as = spyVictim }
+					country_event = { id = kiyo_event_counterspy.2 days = 30 random = 60 }
+				}
+			}
+			country_event = { id = kiyo_event_counterspy.3 days = 150 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_counterspy.1.b
+		custom_tooltip = kiyo_event_counterspy.1.b.tooltip
+		ai_chance = {
+			factor = 33
+			modifier = { factor = 2 years_passed >= 50 }
+		}
+		
+		hidden_effect = {
+			if = { limit = { any_country = { reverse_has_relation_flag = { who = prev flag = kiyo_spy_checking } } }
+				every_country = { limit = { reverse_has_relation_flag = { who = prev flag = kiyo_spy_checking } }
+					save_event_target_as = spyEmpire
+					root = { set_country_flag = kiyo_spy_check_victim_b save_event_target_as = spyVictim }
+					country_event = { id = kiyo_event_counterspy.2 days = 30 random = 60 }
+				}
+			}
+			country_event = { id = kiyo_event_counterspy.3 days = 150 }
+		}
+	}
+}
+
+#Spy Check Spy Intervention
+country_event = {
+	id = kiyo_event_counterspy.2
+	title = kiyo_event_counterspy.2.title
+	desc = kiyo_event_counterspy.2.desc
+	picture = GFX_evt_city_planet
+	is_triggered_only = yes
+	
+	option = {
+		name = kiyo_event_counterspy.2.a
+		custom_tooltip = kiyo_event_counterspy.2.a.tooltip
+		ai_chance = {
+			factor = 40
+			modifier = { factor = 1.5 years_passed >= 50 }
+		}
+		
+		hidden_effect = {
+			if = { limit = { event_target:spyVictim = { has_relation_flag = { who = root flag = kiyo_spy_checking } } }
+				set_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_check_a }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_counterspy.2.b
+		custom_tooltip = kiyo_event_counterspy.2.b.tooltip
+		ai_chance = {
+			factor = 40
+			modifier = { factor = 1.5 years_passed < 50 }
+		}
+		
+		hidden_effect = {
+			if = { limit = { event_target:spyVictim = { has_relation_flag = { who = root flag = kiyo_spy_checking } } }
+				set_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_check_b }
+			}
+		}
+	}
+}
+
+#Spy Check Results Regular
+country_event = {
+	id = kiyo_event_counterspy.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				any_country = {
+					NOT = { has_relation_flag = { who = root flag = kiyo_spy_check_a } }
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_checking }
+				}
+				has_country_flag = kiyo_spy_check_victim_a
+			}
+			every_country = {
+				limit = {
+					NOT = { has_relation_flag = { who = root flag = kiyo_spy_check_a } }
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_checking }
+				}
+				kiyo_spy_trigger_decrease_intrigue = yes
+			}
+			every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_check_a } }
+				add_monthly_resource_mult = { resource = minerals value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = energy value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = food value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = physics_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = society_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = engineering_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = unity value = 2 max = 500 }
+			}
+			add_modifier = { modifier = kiyo_spy_check_unity days = 1800 }
+			country_event = { id = kiyo_event_counterspy.4 }
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					any_country = {
+						NOT = { has_relation_flag = { who = root flag = kiyo_spy_check_a } }
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_checking }
+					}
+				}
+				has_country_flag = kiyo_spy_check_victim_a
+			}
+			every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_check_a } }
+				add_monthly_resource_mult = { resource = minerals value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = energy value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = food value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = physics_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = society_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = engineering_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = unity value = 2 max = 500 }
+			}
+			add_modifier = { modifier = kiyo_spy_check_unity days = 1800 }
+			country_event = { id = kiyo_event_counterspy.5 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					NOT = { has_relation_flag = { who = root flag = kiyo_spy_check_b } }
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_checking }
+				}
+				root = { has_country_flag = kiyo_spy_check_victim_b }
+			}
+			every_country = {
+				limit = {
+					NOT = { has_relation_flag = { who = root flag = kiyo_spy_check_b } } 
+					reverse_has_relation_flag = { who = root flag = kiyo_spy_checking }
+				}
+				kiyo_spy_trigger_decrease_intrigue = yes
+			}
+			every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_check_b } }
+				add_monthly_resource_mult = { resource = minerals value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = energy value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = food value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = physics_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = society_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = engineering_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = unity value = 2 max = 500 }
+			}
+			add_modifier = { modifier = kiyo_spy_check_security days = 1800 }
+			country_event = { id = kiyo_event_counterspy.6 }
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					any_country = {
+						NOT = { has_relation_flag = { who = root flag = kiyo_spy_check_b } } 
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_checking }
+					}
+				}
+				root = { has_country_flag = kiyo_spy_check_victim_b }
+			}
+			every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_check_b } }
+				add_monthly_resource_mult = { resource = minerals value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = energy value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = food value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = physics_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = society_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = engineering_research value = 2 max = 500 }
+				add_monthly_resource_mult = { resource = unity value = 2 max = 500 }
+			}
+			add_modifier = { modifier = kiyo_spy_check_security days = 1800 }
+			country_event = { id = kiyo_event_counterspy.7 }
+		}
+		else = { log = "ERROR in kiyo_event_counterspy.3: The empire spy checking apparently did not make a choice. HUH?!" }
+		every_country = { limit = { reverse_has_relation_flag = { who = root flag = kiyo_spy_checking } }
+			remove_relation_flag = { who = root flag = kiyo_spy_check_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_check_b }
+			root = { remove_relation_flag = { who = prev flag = kiyo_spy_checking } }
+		}
+		remove_country_flag = kiyo_spy_check_victim_a
+		remove_country_flag = kiyo_spy_check_victim_b
+		remove_country_flag = kiyo_spy_check
+		if = { limit = { has_modifier = kiyo_spy_catchup }
+			set_timed_country_flag = { flag = kiyo_spy_check_cooldown days = 1800 }
+			country_event = { id = kiyo_event_notification.1 days = 1801 }
+		}
+		else = {
+			set_timed_country_flag = { flag = kiyo_spy_check_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.1 days = 3601 }
+		}
+	}
+}
+
+#Spy Check Results A Good
+country_event = {
+	id = kiyo_event_counterspy.4
+	title = kiyo_event_counterspy.2.title
+	desc = kiyo_event_counterspy.4.desc
+	picture = GFX_evt_city_planet
+	is_triggered_only = yes
+	
+	option = { name = GOOD }
+}
+
+#Spy Check Results A Bad
+country_event = {
+	id = kiyo_event_counterspy.5
+	title = kiyo_event_counterspy.2.title
+	desc = kiyo_event_counterspy.5.desc
+	picture = GFX_evt_city_planet
+	is_triggered_only = yes
+	
+	option = { name = OK }
+}
+
+#Spy Check Results B Good
+country_event = {
+	id = kiyo_event_counterspy.6
+	title = kiyo_event_counterspy.2.title
+	desc = kiyo_event_counterspy.6.desc
+	picture = GFX_evt_city_planet
+	is_triggered_only = yes
+	
+	option = { name = GOOD }
+}
+
+#Spy Check Results B Bad
+country_event = {
+	id = kiyo_event_counterspy.7
+	title = kiyo_event_counterspy.2.title
+	desc = kiyo_event_counterspy.7.desc
+	picture = GFX_evt_city_planet
+	is_triggered_only = yes
+	
+	option = { name = OK }
+}
