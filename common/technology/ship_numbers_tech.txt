@@ -16,21 +16,22 @@ ship_numbers_tech = {
     country_naval_cap_mult = -0.30
     shipclass_military_station_damage_mult = 0.3
     ship_upkeep_mult = 0.25
+	country_ship_upgrade_cost_mult = -0.55
 
-		#Corvettes
-		ship_corvette_cost_mult = 0.5
-		shipsize_corvette_build_speed_mult = -0.5
+	#Corvettes
+	ship_corvette_cost_mult = 0.5
+	shipsize_corvette_build_speed_mult = -0.5
 
-		#Destroyers
-		ship_destroyer_cost_mult = 0.5
-		shipsize_destroyer_build_speed_mult = -0.5
+	#Destroyers
+	ship_destroyer_cost_mult = 0.5
+	shipsize_destroyer_build_speed_mult = -0.5
 
-		#Cruisers
-		ship_cruiser_cost_mult = 0.5
-		shipsize_cruiser_build_speed_mult = -0.5
+	#Cruisers
+	ship_cruiser_cost_mult = 0.5
+	shipsize_cruiser_build_speed_mult = -0.5
 
-		#Battleships
-		ship_battleship_cost_mult = 0.5
-		shipsize_battleship_build_speed_mult = -0.5
+	#Battleships
+	ship_battleship_cost_mult = 0.5
+	shipsize_battleship_build_speed_mult = -0.5
 	}
 }
