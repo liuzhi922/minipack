@@ -103,7 +103,6 @@ on_leader_spawned = {
 # From = Planet
 on_ship_built = {
 	events = {
-		esap.11
 		esap.12
 		esap.27
 		esap.32

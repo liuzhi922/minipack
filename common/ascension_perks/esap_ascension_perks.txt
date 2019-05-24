@@ -179,8 +179,8 @@ ap_esap_artificial_procreation = {
 		}
 	}
 	modifier = {
-		pop_growth_speed = 0.30
-		planet_pops_food_upkeep_mult = -0.25
+		pop_growth_speed = 0.15
+		planet_pops_food_upkeep_mult = -0.15
 	}
 	potential = {
 		host_has_dlc = "Utopia"
@@ -719,7 +719,6 @@ ap_esap_gov_1 = {
 				id = esap.8
 			}
 		}
-
 	}
 
 	possible = {
@@ -809,7 +808,7 @@ ap_esap_gov_4 = {
 	}
 
 	modifier = {
-		country_influence_produces_mult = 0.50
+		country_influence_produces_mult = 0.25
 	}
 
 	potential = {
@@ -990,7 +989,7 @@ ap_one_vision = {
 
 ap_one_purpose = {
 	modifier = {
-		country_unity_produces_mult = 0.30
+		country_unity_produces_mult = 0.15
 	}
 
 	possible = {
@@ -1127,8 +1126,10 @@ ap_esap_colony_n_energy = {
 	}
 
 	potential = {
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_esap_colony_n_energy
+			has_authority = "auth_machine_intelligence"
+			has_authority = "auth_hive_mind"
 		}
 	}
 
@@ -1429,78 +1430,6 @@ ap_esap_not_colony = {
 		always = no
 		NOT = {
 			has_ascension_perk = ap_esap_not_colony
-		}
-	}
-
-	ai_weight = {
-		factor = 0
-	}
-}
-
-ap_esap_not_energy = {
-	on_enabled = {
-		custom_tooltip = ap_esap_not_energy_tooltip
-		hidden_effect = {
-			if = {
-				limit = {
-					has_tradition = tr_prosperity_administrative_operations
-				}
-				add_modifier = {
-					modifier = mod_esap_not_energy_prosp_ship_comp
-					days = -1
-				}
-			}
-			if = {
-				limit = {
-					has_tradition = tr_est_militarism_4
-				}
-				add_modifier = {
-					modifier = mod_esap_not_energy_militarism_comp
-					days = -1
-				}
-			}
-			if = {
-				limit = {
-					has_ascension_perk = ap_esap_hive_swarm_1
-				}
-				add_modifier = {
-					modifier = mod_esap_not_energy_swarm_comp
-					days = -1
-				}
-			}
-		}
-	}
-
-	modifier = {
-		ships_upkeep_mult = -0.75
-		starbase_stations_upkeep_mult = -0.80
-		planet_buildings_upkeep_mult = -0.80
-		armies_upkeep_mult = -1.0
-		country_energy_produces_mult = -0.75
-		country_minerals_produces_mult = -0.25
-		country_food_produces_mult = -0.25
-	}
-
-	possible = {
-		custom_tooltip = {
-			fail_text = "ap_esap_not_energy_req_1"
-			has_ascension_perk = ap_esap_border_n_colony
-		}
-		custom_tooltip = {
-			fail_text = "ap_esap_not_energy_req_2"
-			has_ascension_perk = ap_esap_unity_n_war
-		}
-		custom_tooltip = {
-			fail_text = "ap_esap_not_energy_req_3"
-			Not = {
-				has_ascension_perk = ap_esap_energy
-			}
-		}
-	}
-
-	potential = {
-		NOT = {
-			has_ascension_perk = ap_esap_not_energy
 		}
 	}
 
@@ -2262,7 +2191,7 @@ ap_esap_materialist_2 = {
 	}
 
 	modifier = {
-		all_technology_research_speed = 0.15
+		all_technology_research_speed = 0.05
 	}
 
 	potential = {
@@ -2576,10 +2505,10 @@ ap_esap_hive_swarm_1 = {
 	}
 
 	modifier = {
-		country_naval_cap_mult = 0.33
-		pop_growth_speed = 0.20
-		starbase_shipyard_build_speed_mult = 0.20
-		ships_upkeep_mult = -0.10
+		country_naval_cap_mult = 0.15
+		pop_growth_speed = 0.1
+		starbase_shipyard_build_speed_mult = 0.1
+		ships_upkeep_mult = -0.05
 	}
 
 	potential = {

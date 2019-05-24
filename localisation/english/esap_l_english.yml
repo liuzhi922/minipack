@@ -10,7 +10,7 @@
 
  ap_esap_psi_1:0 "Mind Disruption Fields"
  ap_esap_psi_1_desc:0 "As our psionic powers grow we have learned how to use them to influence the minds of other, psionically weaker, beings. We can use this to dampen and emphasize the emotions of our enemies, spreading depression, anger and fear throughout their empires."
- ap_esap_psi_1_tooltip:0 "Increase §Y$MOD_PLANET_UNREST_ADD$§! on all our §YRivals§! planets by §G30§!, reduce the £happiness  §Y$MOD_POP_HAPPINESS$§! of all their £pop  §YPops§! by §G-15%§! and reduce their £unity  §YUnity§! output by §G-25%§!."
+ ap_esap_psi_1_tooltip:0 "Reduce §YStability§! on all our §YRivals§! planets by §G-5§!, reduce the £happiness  §Y$MOD_POP_HAPPINESS$§! of all their £pop  §YPops§! by §G-10%§! and reduce their £unity  §YUnity§! output by §G-10%§!."
 
  ap_esap_bio_cyber_psi:0 "Ultimate Ascension"
  ap_esap_bio_cyber_psi_desc:0 "As we learns of the wonders in this galaxy we must not let our self be blinded by the possibility of other wonders lurking unseen."
@@ -31,7 +31,7 @@
 
  ap_esap_gov_1:0 "Bureaucratic Perfection"
  ap_esap_gov_1_desc:0 "While the bureaucracy is prone to malfunction it is not the case in our empire. From our administrators nothing but perfection is expected. "
- ap_esap_gov_1_tooltip:0 "§YGoverment Perk§!. §YEdict Duration§! increased by §G+100%§! plus an additional §G+20%§! for each §YGoverment Perk§! unlocked."
+ ap_esap_gov_1_tooltip:0 "§YGoverment Perk§!. §YEdict Duration§! increased by §G+20%§! plus an additional §G+20%§! for each §YGoverment Perk§! unlocked."
 
  ap_esap_gov_2:0 "Promotion of Excellence"
  ap_esap_gov_2_desc:0 "Along the billions of individuals inhabitation our worlds there are all the talents we ever need, if only we know how to find them. We know how to find them."
@@ -81,7 +81,7 @@
 
  ap_esap_colony:0 "Settle the Galaxy"
  ap_esap_colony_desc:0 "The galaxy is vast, but not endless. If we do not settle it someone else will."
- ap_esap_colony_tooltip:0 "Generates an additional §YColonizer§! whenever a §YColonizer§! is built."
+ #ap_esap_colony_tooltip:0 "Generates an additional §YColonizer§! whenever a §YColonizer§! is built."
  ap_esap_colony_req_1:0 "$TRIGGER_FAIL$Requires at least §G3§! planets."
  ap_esap_colony_req_2:0 "$TRIGGER_FAIL$May not have the §Y$ap_esap_not_colony$§! Ascension Perk."
 
@@ -122,7 +122,7 @@
 
  ap_esap_repeat_tech:0 "Technological Perfection"
  ap_esap_repeat_tech_desc:0 "A civilization can be judge by the technologies it controls. This is a race we will not lose; never will we be satisfied with what we know."
- ap_esap_repeat_tech_tooltip:0 "Increase §YResearch Speed§! by §G+50%§! while researching a repeatable technology."
+ ap_esap_repeat_tech_tooltip:0 "Increase §YResearch Speed§! by §G+25%§! while researching a repeatable technology."
  ap_esap_repeat_tech_req_1:0 "$TRIGGER_FAIL$Requires the §Y$ap_technological_ascendancy$§! Ascension Perk."
  ap_esap_repeat_tech_req_2:0 "$TRIGGER_FAIL$Must have researched at least on repeatable technology."
 
@@ -159,7 +159,7 @@
 
  ap_esap_colony_n_energy:0 "Imperial Ambitions"
  ap_esap_colony_n_energy_desc:0 "It is our ambition to create an empire like this galaxy has never seen."
- ap_esap_colony_n_energy_tooltip:0 "§Y$MOD_PLANET_BUILDING_BUILD_SPEED_MULT$§! increased by §G+100%§!, §Y$MOD_POP_GROWTH_SPEED$§! increased by §G+50%§! and §Y$MOD_PLANET_BUILDING_COST_MULT$§! decreased by §G-25%§! for newly founded colonies. This effect lasts for §Y10§! years."
+ ap_esap_colony_n_energy_tooltip:0 "§Y$MOD_PLANET_BUILDING_BUILD_SPEED_MULT$§! increased by §G+100%§!, §Y$MOD_POP_GROWTH_SPEED$§! increased by §G+25%§! and §Y$MOD_PLANET_BUILDING_COST_MULT$§! decreased by §G-25%§! for newly founded colonies. This effect lasts for §Y10§! years."
  ap_esap_colony_n_energy_req_1:0 "$TRIGGER_FAIL$Requires the §Y$ap_esap_colony$§! Ascension Perk."
  ap_esap_colony_n_energy_req_2:0 "$TRIGGER_FAIL$Requires the §Y$ap_esap_energy$§! Ascension Perk."
 
@@ -288,7 +288,7 @@
 
  ap_esap_pacifism_2:0 "The Age of Peace"
  ap_esap_pacifism_2_desc:0 "War has no winners, only losers. To bring fourth the true potential of our empire we must leave our petty squabbles behind. We will enter a new age, one of peace."
- ap_esap_pacifism_2_tooltip:0 "Increase £energy  §YEnergy§! and £unity §YUnity§! output by §G+1%§! for each year of peace. The bonus stack up to §Y50§! times and §Y5§! stack is reduced for each year of war."
+ ap_esap_pacifism_2_tooltip:0 "Increase £energy  §YEnergy§! and £unity §YUnity§! output by §G+0.5%§! for each year of peace. The bonus stack up to §Y50§! times and §Y5§! stack is reduced for each year of war."
 
  ap_esap_authoritarian_2:0 "Absolute Power"
  ap_esap_authoritarian_2_desc:0 "A nation, like a single organism, can have but one will that guides it through the universe. The citizens, like cells in a body, fulfills their function without questions. This is how it is, this is how it has been. This is how it always will be. "
