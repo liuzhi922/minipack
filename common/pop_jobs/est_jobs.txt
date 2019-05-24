@@ -78,6 +78,7 @@ est_engineer = {
 		category = planet_researchers
 		produces = {
 			engineering_research = 8
+			planet_pop_assembly_add = 1
 		}
 		produces = {
 			trigger = { 

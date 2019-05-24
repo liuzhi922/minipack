@@ -619,8 +619,7 @@ building_est_mechanicum_5_guild_of_engineers_1 = {
 			}
 		}
 		modifier = {
-			job_est_engineer_add = 3
-			job_technician_add = 3
+			job_est_engineer_add = 1
 		}
 	}
 	
@@ -633,9 +632,7 @@ building_est_mechanicum_5_guild_of_engineers_1 = {
 			}
 		}
 		modifier = {
-			job_est_engineer_add = 2
-			job_technician_add = 2
-			job_roboticist_add = 1
+			job_est_engineer_add = 1
 		}
 	}
 	
@@ -715,8 +712,8 @@ building_est_mechanicum_5_guild_of_engineers_2 = {
 			}
 		}
 		modifier = {
-			job_est_engineer_add = 5
-			job_technician_add = 5
+			job_est_engineer_add = 2
+			job_technician_add = 2
 		}
 	}
 	
@@ -729,9 +726,8 @@ building_est_mechanicum_5_guild_of_engineers_2 = {
 			}
 		}
 		modifier = {
-			job_est_engineer_add = 4
-			job_technician_add = 4
-			job_roboticist_add = 1
+			job_est_engineer_add = 2
+			job_technician_add = 2
 		}
 	}
 	
