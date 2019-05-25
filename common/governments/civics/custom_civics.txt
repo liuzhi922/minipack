@@ -2,10 +2,8 @@
 
 civic_eternal_watchers = {
   potential = {
-    authority = {
-      value = auth_machine_intelligence
-    }
   }
+  
   modification = no
   icon = "gfx/interface/icons/governments/civics/civic_isolationism.dds"
 
