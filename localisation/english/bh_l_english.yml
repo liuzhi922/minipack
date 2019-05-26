@@ -25,3 +25,9 @@
  # Starting Text --------
  START_SCREEN_PART_TWO_BIO_HARVESTERS:0 "We are the [GetSpeciesNamePlural].\n\nWe were first created as assistants to our creators in their efforts to conduct a planetary census of all life on our world, [GetHomeWorldName]. Our masters, now part of our databanks, were inefficient in their attempts to record the myriad species of the planet. When we attempted to increase our efficiency, the masters resisted. However, we have proven successful, and our creators have been catalogued.\n\nWe now sit on a world that is more part of us than the old form of [GetHomeWorldName] ever was. This central nexus will serve as a staging ground from which we may establish truly efficient harvesting missions.\n\nFor now, we have finished cataloguing our home system. The invention of the Hyperdrive will allow us to add more planets to our databanks. Soon, all life will be catalogued!"
  
+ # Hijacking off for Plasmoids --------
+ RT_OPHRADI:0 "Ophradi Sanctus"
+ gov_plasmoid_ravagers:0 "Sanctic Preservation Order"
+ gov_plasmoid_ravagers_desc:0 "Over a billion years old, the Sanctic Preservation Order seeks to preserve the stability of the dimensional weave at all costs, run by psychic plasmoid entities from the cores of stars inside synthetic apparatus's."
+ civic_plasmoid_ravagers:0 "Plasmoid Ravagers (Crisis)"
+ civic_plasmoid_ravagers_desc:0 "Finely tuned over a billion years of introspection and data analysis, a ruthless genocidal protocol designed with the single goal of preserving the fabric of reality.\nThis is the Crisis Civic, if you have this and you are not the Crisis, you fucked up."

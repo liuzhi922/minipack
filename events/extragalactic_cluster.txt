@@ -1,0 +1,323 @@
+# Used distar.11000 (spawn l-cluster) as reference
+# Written by TheIenzo
+
+namespace = extragalactic_cluster
+
+# Spawn the Hexagon Cluster
+country_event = {
+	id = extragalactic_cluster.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+	  NOT = {
+			has_global_flag = extragalactic_1_spawned
+			has_global_flag = extragalactic_4_spawned
+		}
+	}
+  immediate = {
+		set_global_flag = extragalactic_1_spawned
+    set_spawn_system_batch = begin
+		# batch-processes the spawn_system effects between "begin" and "end", so caches are recalculated only once rather than for every system spawned can also be used when removing and adding hyperlanes
+		# spawns first system; makes system positions originate from galactic core
+		no_scope = {
+      spawn_system = {
+				min_distance >=  0 # Dead Centre
+				max_distance <=  0 # Dead Centre
+				min_orientation_angle = 321 #20
+				max_orientation_angle = 322 #30
+				initializer = hexagon_cluster_01
+			}
+      random_system = {
+        limit = { has_star_flag = hexagon_cluster_01 }
+        save_global_event_target_as = hexagon_cluster_01
+        spawn_system = {
+					min_distance >= 25
+					max_distance <= 31
+					min_orientation_angle = 19
+					max_orientation_angle = 25
+					initializer = hexagon_cluster_02
+				}
+        spawn_system = {
+					min_distance >= 25
+					max_distance <= 31
+					min_orientation_angle = 70
+					max_orientation_angle = 78
+					initializer = hexagon_cluster_03
+				}
+				spawn_system = {
+					min_distance >= 25
+					max_distance <= 31
+					min_orientation_angle = 120
+					max_orientation_angle = 125
+					initializer = hexagon_cluster_04
+				}
+				spawn_system = {
+					min_distance >= 25
+					max_distance <= 31
+					min_orientation_angle = 200
+					max_orientation_angle = 205
+					initializer = hexagon_cluster_05
+				}
+				spawn_system = {
+					min_distance >= 40
+					max_distance <= 42
+					min_orientation_angle = 260
+					max_orientation_angle = 267
+					initializer = hexagon_cluster_06
+				}
+				spawn_system = {
+					min_distance >= 40
+					max_distance <= 45
+					min_orientation_angle = 320
+					max_orientation_angle = 325
+					initializer = hexagon_cluster_07
+				}
+      }
+    }
+    # tag systems
+    random_system = {
+			limit = { has_star_flag = hexagon_cluster_02 }
+			save_global_event_target_as = hexagon_cluster_02
+			spawn_system = {
+				min_distance >= 14
+				max_distance <= 18
+				min_orientation_angle = 310
+				max_orientation_angle = 325
+				initializer = hexagon_cluster_14
+			}
+		}
+    random_system = {
+			limit = { has_star_flag = hexagon_cluster_03 }
+			save_global_event_target_as = hexagon_cluster_03
+			spawn_system = {
+				min_distance >= 20
+				max_distance <= 21
+				min_orientation_angle = 100
+				max_orientation_angle = 102
+				initializer = hexagon_cluster_10
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = hexagon_cluster_04 }
+			save_global_event_target_as = hexagon_cluster_04
+			spawn_system = {
+				min_distance >= 20
+				max_distance <= 21
+				min_orientation_angle = 135
+				max_orientation_angle = 137
+				initializer = hexagon_cluster_08
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = hexagon_cluster_05 }
+			save_global_event_target_as = hexagon_cluster_05
+			spawn_system = {
+				min_distance >= 25
+				max_distance <= 27
+				min_orientation_angle = 225
+				max_orientation_angle = 227
+				initializer = hexagon_cluster_11
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = hexagon_cluster_06 }
+			save_global_event_target_as = hexagon_cluster_06
+			spawn_system = {
+				min_distance >= 29
+				max_distance <= 35
+				min_orientation_angle = 280
+				max_orientation_angle = 285
+				initializer = hexagon_cluster_13
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = hexagon_cluster_07 }
+			save_global_event_target_as = hexagon_cluster_07
+		}
+		random_system = {
+			limit = { has_star_flag = hexagon_cluster_08 }
+			save_global_event_target_as = hexagon_cluster_08
+			spawn_system = {
+				min_distance >= 40
+				max_distance <= 42
+				min_orientation_angle = 79
+				max_orientation_angle = 81
+				initializer = hexagon_cluster_09
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = hexagon_cluster_09 }
+			save_global_event_target_as = hexagon_cluster_09
+		}
+		random_system = {
+			limit = { has_star_flag = hexagon_cluster_10 }
+			save_global_event_target_as = hexagon_cluster_10
+		}
+		random_system = {
+			limit = { has_star_flag = hexagon_cluster_11 }
+			save_global_event_target_as = hexagon_cluster_11
+			spawn_system = {
+				min_distance >= 25
+				max_distance <= 28
+				min_orientation_angle = 288
+				max_orientation_angle = 290
+				initializer = hexagon_cluster_12
+			}
+		}
+		random_system = {
+			limit = { has_star_flag = hexagon_cluster_12 }
+			save_global_event_target_as = hexagon_cluster_12
+		}
+		random_system = {
+			limit = { has_star_flag = hexagon_cluster_13 }
+			save_global_event_target_as = hexagon_cluster_13
+		}
+		random_system = {
+			limit = { has_star_flag = hexagon_cluster_14 }
+			save_global_event_target_as = hexagon_cluster_14
+		}
+    # clear all hyperlanes to and within the cluster
+		every_system = {
+			limit = { has_star_flag = hexagon_cluster }
+			isolate_system = yes
+		}
+    # add hyperlanes
+    event_target:hexagon_cluster_01 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_01
+				to = event_target:hexagon_cluster_02
+			}
+		}
+    event_target:hexagon_cluster_01 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_01
+				to = event_target:hexagon_cluster_03
+			}
+		}
+		event_target:hexagon_cluster_01 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_01
+				to = event_target:hexagon_cluster_04
+			}
+		}
+		event_target:hexagon_cluster_01 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_01
+				to = event_target:hexagon_cluster_05
+			}
+		}
+		event_target:hexagon_cluster_01 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_01
+				to = event_target:hexagon_cluster_06
+			}
+		}
+		event_target:hexagon_cluster_01 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_01
+				to = event_target:hexagon_cluster_07
+			}
+		}
+		event_target:hexagon_cluster_02 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_02
+				to = event_target:hexagon_cluster_03
+			}
+		}
+		event_target:hexagon_cluster_03 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_03
+				to = event_target:hexagon_cluster_04
+			}
+		}
+		event_target:hexagon_cluster_04 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_04
+				to = event_target:hexagon_cluster_05
+			}
+		}
+		event_target:hexagon_cluster_05 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_05
+				to = event_target:hexagon_cluster_06
+			}
+		}
+		event_target:hexagon_cluster_06 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_06
+				to = event_target:hexagon_cluster_07
+			}
+		}
+		event_target:hexagon_cluster_07 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_07
+				to = event_target:hexagon_cluster_02
+			}
+		}
+		# upper pentagon
+		event_target:hexagon_cluster_04 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_04
+				to = event_target:hexagon_cluster_08
+			}
+		}
+		event_target:hexagon_cluster_08 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_08
+				to = event_target:hexagon_cluster_09
+			}
+		}
+		event_target:hexagon_cluster_09 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_09
+				to = event_target:hexagon_cluster_10
+			}
+		}
+		event_target:hexagon_cluster_10 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_10
+				to = event_target:hexagon_cluster_03
+			}
+		}
+		# lower pentagon
+		event_target:hexagon_cluster_05 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_05
+				to = event_target:hexagon_cluster_11
+			}
+		}
+		event_target:hexagon_cluster_11 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_11
+				to = event_target:hexagon_cluster_12
+			}
+		}
+		event_target:hexagon_cluster_12 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_12
+				to = event_target:hexagon_cluster_13
+			}
+		}
+		event_target:hexagon_cluster_13 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_13
+				to = event_target:hexagon_cluster_06
+			}
+		}
+		# far triangle
+		event_target:hexagon_cluster_14 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_14
+				to = event_target:hexagon_cluster_02
+			}
+		}
+		event_target:hexagon_cluster_14 = {
+			add_hyperlane = {
+				from = event_target:hexagon_cluster_14
+				to = event_target:hexagon_cluster_07
+			}
+		}
+    set_spawn_system_batch = end
+  }
+}
