@@ -12,7 +12,7 @@ big_brain_0 = {
 			alloys = 5000
 			influence = 300
 		}
-		
+
 		upkeep = {
 			energy = 10
 		}
@@ -25,7 +25,7 @@ big_brain_0 = {
 			}
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_inside_border"
@@ -92,7 +92,7 @@ big_brain_0 = {
 			}
 		}
 	}
-	
+
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -117,15 +117,15 @@ big_brain_0 = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 15
-		
+
 		modifier = {
 			factor = 0.1
 			has_any_megastructure_in_empire = yes
 		}
-		
+
 		modifier = {
 			factor = 0.1
 			any_system_within_border = {
@@ -134,12 +134,12 @@ big_brain_0 = {
 					has_megastructure = big_brain_2
 					has_megastructure = big_brain_3
 					has_megastructure = big_brain_4
-					has_megastructure = big_brain_5	
+					has_megastructure = big_brain_5
 				}
 			}
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -167,17 +167,17 @@ big_brain_1 = {
 			alloys = 10
 		}
 	}
-	
+
 	possible = {
 		from = { has_ascension_perk = ap_hyper_engineering }
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
-		every_system_planet = { 
+		every_system_planet = {
 			limit = { is_star = no }
-			remove_planet = yes 
+			remove_planet = yes
 		}
 		set_asteroid_belt = {
 			radius = 0
@@ -203,7 +203,7 @@ big_brain_2 = {
 		upkeep = {
 			alloys = 30
 		}
-		
+
 		produces = {
 			physics_research = 100
 			society_research = 100
@@ -235,7 +235,7 @@ big_brain_3 = {
 			alloys = 25
 			influence = 0.5
 		}
-		
+
 		produces = {
 			physics_research = 250
 			society_research = 250
@@ -267,7 +267,7 @@ big_brain_4 = {
 			alloys = 50
 			influence = 1
 		}
-		
+
 		produces = {
 			physics_research = 1000
 			society_research = 1000
@@ -299,14 +299,14 @@ big_brain_5 = {
 			alloys = 250
 			influence = 1.5
 		}
-		
+
 		produces = {
-			physics_research = 5000
-			society_research = 5000
-			engineering_research = 5000
+			physics_research = 4000
+			society_research = 4000
+			engineering_research = 4000
 		}
 	}
-		
+
 	possible = {
 		from = { has_ascension_perk = ap_hyper_engineering }
 	}
@@ -332,22 +332,22 @@ big_brain_6 = {
 			alloys = 250
 			influence = 1.5
 		}
-		
+
 		produces = {
 			physics_research = 5000
 			society_research = 5000
 			engineering_research = 5000
 		}
 	}
-	
+
 	potential = {
 		always = no
 	}
-	
+
 	possible = {
 		always = no
 	}
-	
+
 	on_build_complete = {
 		spawn_planet = {
 			class = "pc_virtual_world"
@@ -361,11 +361,11 @@ big_brain_6 = {
 					surveyor = FROM
 				}
 				set_all_comms_surveyed = yes
-				while = { 
-					limit = { 
+				while = {
+					limit = {
 						planet_size < 50
-					} 
-					change_planet_size = +1			
+					}
+					change_planet_size = +1
 				}
 				trigger_megastructure_icon = yes
 				set_planet_flag = megastructure
@@ -383,11 +383,11 @@ big_brain_6 = {
 					surveyor = FROM
 				}
 				set_all_comms_surveyed = yes
-				while = { 
-					limit = { 
+				while = {
+					limit = {
 						planet_size < 50
-					} 
-					change_planet_size = +1			
+					}
+					change_planet_size = +1
 				}
 				trigger_megastructure_icon = yes
 				set_planet_flag = megastructure
@@ -405,11 +405,11 @@ big_brain_6 = {
 					surveyor = FROM
 				}
 				set_all_comms_surveyed = yes
-				while = { 
-					limit = { 
+				while = {
+					limit = {
 						planet_size < 50
-					} 
-					change_planet_size = +1			
+					}
+					change_planet_size = +1
 				}
 				trigger_megastructure_icon = yes
 				set_planet_flag = megastructure
@@ -427,11 +427,11 @@ big_brain_6 = {
 					surveyor = FROM
 				}
 				set_all_comms_surveyed = yes
-				while = { 
-					limit = { 
+				while = {
+					limit = {
 						planet_size < 50
-					} 
-					change_planet_size = +1			
+					}
+					change_planet_size = +1
 				}
 				trigger_megastructure_icon = yes
 				set_planet_flag = megastructure

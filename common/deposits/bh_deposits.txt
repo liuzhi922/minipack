@@ -1,0 +1,54 @@
+bh_harvested_planet_deposit_small = {
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			minerals = 15
+			energy = 15
+			alloys = 4
+			society_research = 10
+			unity = 8
+		
+		}
+    }
+	station = shipclass_mining_station
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+bh_harvested_planet_deposit_moderate = {
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			minerals = 15
+        	energy = 15
+			alloys = 4
+        	society_research = 10
+			unity = 8
+		}
+    }
+	station = shipclass_mining_station
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+bh_harvested_planet_deposit_large = {
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			minerals = 15
+			energy = 15
+			alloys = 4
+			society_research = 10
+			unity = 8	
+		}
+    }
+	station = shipclass_mining_station
+	
+	drop_weight = {
+		weight = 0
+	}
+}

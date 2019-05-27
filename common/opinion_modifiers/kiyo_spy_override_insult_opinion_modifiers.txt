@@ -1,0 +1,13 @@
+# Insult opinion modifier
+# OVERRIDDEN TO PREVENT PEOPLE FROM KNOWING WHO YOU'RE SPYING ON
+opinion_insult = {
+	opinion = {
+		base = 0
+	}
+
+	unique = yes
+	monthly = yes
+	decay = {
+		base = 1	
+	}
+}

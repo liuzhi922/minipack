@@ -5,39 +5,39 @@
 
 #Everyone has this
 
-civic_technological_mastery = {						
+civic_technological_mastery = {
 	modification = no
 	icon = "gfx/interface/icons/governments/civics/civic_technocracy.dds"
 	potential = {
 		country_type = { value = ascended_empire }
 	}
 	random_weight = { base = 5 }
-	modifier = { 
-		planet_jobs_produces_mult = 0.5	
+	modifier = {
+		planet_jobs_produces_mult = 0.2
 	}
 }
 
-civic_hive_knowledge = {						
+civic_hive_knowledge = {
 	modification = no
 	icon = "gfx/interface/icons/governments/civics/civic_hive_pooled_knowledge.dds"
 	potential = {
 		country_type = { value = ascended_empire }
 	}
 	random_weight = { base = 5 }
-	modifier = { 
-		planet_jobs_produces_mult = 0.5				
+	modifier = {
+		planet_jobs_produces_mult = 0.5
 	}
 }
 
-civic_large_databanks = {						
+civic_large_databanks = {
 	modification = no
 	icon = "gfx/interface/icons/governments/civics/civic_machine_predictive_analysis.dds"
 	potential = {
 		country_type = { value = ascended_empire }
 	}
 	random_weight = { base = 5 }
-	modifier = { 
-		planet_jobs_produces_mult = 0.5				
+	modifier = {
+		planet_jobs_produces_mult = 0.5
 	}
 }
 
@@ -52,10 +52,10 @@ civic_galactic_superpower = {
 	}
 	random_weight = { base = 5 }
 	modifier = {
-		ship_weapon_damage = 0.25
-		ship_hull_mult = 0.25
-		ship_armor_mult = 0.25
-		ship_shield_mult = 0.25
+		ship_weapon_damage = 0.15
+		ship_hull_mult = 0.15
+		ship_armor_mult = 0.15
+		ship_shield_mult = 0.15
 	}
 }
 
@@ -83,8 +83,7 @@ civic_world_architect = {
 	random_weight = { base = 5 }
 	modifier = {
 		planet_jobs_minerals_produces_mult = 0.25
-		planet_jobs_alloys_produces_mult = 0.25
-		megastructure_build_speed_mult = 0.25
+		planet_jobs_alloys_produces_mult = 0.15
 		terraform_speed_mult = 0.25
 	}
 }
@@ -375,7 +374,7 @@ civic_master_race = {
 	}
 	random_weight = { base = 5 }
 	modifier = {
-		planet_jobs_slave_produces_mult = 0.25		
+		planet_jobs_slave_produces_mult = 0.25
 		pop_cat_slave_political_power = -0.25
 		pop_happiness = 0.25
 		pop_resettlement_cost_mult = -0.25
@@ -483,7 +482,7 @@ civic_national_humiliation = {
 		country_type = { value = lost_empire }
 	}
 	random_weight = { base = 1 }
-	modifier = { 
+	modifier = {
 		country_unity_produces_mult = -0.50
 		country_influence_produces_mult = -0.50
 	}
@@ -496,7 +495,7 @@ civic_societal_turmoil = {
 		country_type = { value = lost_empire }
 	}
 	random_weight = { base = 1 }
-	modifier = { 
+	modifier = {
 		pop_happiness = -0.25
 		planet_pops_consumer_goods_upkeep_mult = 0.25
 		planet_amenities_mult = -0.25
@@ -511,7 +510,7 @@ civic_treaty_bound = {
 		country_type = { value = lost_empire }
 	}
 	random_weight = { base = 1 }
-	modifier = { 
+	modifier = {
 		starbase_shipyard_build_time_mult = 0.5
 		starbase_shipyard_build_speed_mult = -0.5
 		starbase_shipyard_build_cost_mult = 0.5

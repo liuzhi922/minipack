@@ -12,12 +12,12 @@ crystal_drill_0 = {
 			alloys = 5000
 			influence = 75
 		}
-		
+
 		upkeep = {
 			energy = 5
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_crystal_drill
 		no_scope = {
@@ -26,14 +26,14 @@ crystal_drill_0 = {
 			}
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_inside_border"
 			is_inside_border = from
 		}
 	}
-	
+
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -87,15 +87,15 @@ crystal_drill_0 = {
 			}
 		} # use these for all non-star megastructures
 	}
-	
+
 	ai_weight = {
 		factor = 1
-		
+
 		modifier = {
 			factor = 0.1
 			has_any_megastructure_in_empire = yes
 		}
-		
+
 		modifier = {
 			factor = 0
 			any_system_within_border = {
@@ -108,7 +108,7 @@ crystal_drill_0 = {
 			}
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -128,19 +128,19 @@ crystal_drill_1 = {
 		crystal_drill_0
 	}
 	build_time = 1800
-	
+
 	resources = {
 		category = megastructures
 		cost = {
 			alloys = 2000
 		}
-		
+
 		upkeep = {
 			energy = 25
 			alloys = 5
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_crystal_drill
 	}
@@ -156,19 +156,19 @@ crystal_drill_2 = {
 		crystal_drill_1
 	}
 	build_time = 1800
-	
+
 	resources = {
 		category = megastructures
 		cost = {
 			alloys = 2000
 		}
-		
+
 		upkeep = {
 			energy = 30
 			alloys = 6
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_crystal_drill
 	}
@@ -184,24 +184,24 @@ crystal_drill_3 = {
 		crystal_drill_2
 	}
 	build_time = 1800
-	
+
 	resources = {
 		category = megastructures
 		cost = {
 			alloys = 1500
 		}
-		
+
 		upkeep = {
 			energy = 40
 			alloys = 7.5
 		}
-		
+
 		produces = {
-			rare_crystals = 50
+			rare_crystals = 25
 			minerals = 100
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_crystal_drill
 	}

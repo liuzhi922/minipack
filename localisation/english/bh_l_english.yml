@@ -1,0 +1,33 @@
+﻿l_english:
+ # Events ---------------
+ bio_harvest.1.title:0 "Planet Processing"
+ bio_harvest.1.desc:0 "With the acquisition of §Y[From.GetName]§!, drones are beginning the process of converting the planet into resources. All organic material is broken down, catalogued and processed, and resource deposits are being extracted en-masse."
+ bio_harvest.1.tooltip:0 "§Y[From.GetName]§! is transformed into a §Y$pc_bh_harvested$§!, providing a deposit of resources and research."
+ 
+ # Planets --------------
+ pc_bh_harvested:0 "Harvest World"
+ pc_bh_harvested_desc:0 "This planet's biosphere is being harvested by machines, providing raw resources and research. It may be restored to a habitable state with the appropriate technology."
+
+ # Modifiers ------------
+ bh_harvested_modifier:0 "Harvest World"
+ bh_harvested_modifier_desc:0 "This planet's biosphere is being harvested by machines, providing raw resources and research. It may be restored to a habitable state with the appropriate technology."
+
+ # Civics ---------------
+ civic_bio_harvesters:0 "Planet Harvesters"
+ civic_bio_harvesters_desc:0 "In an effort to maximise efficiency, this Machine Intelligence uses swarms of nanomachines to harvest and catalogue entire worlds from orbit."
+ civic_bio_harvesters_effects:0 "Homeworld is a §YMachine World§! (Size: £planetsize£ §Y25§!)\nCan only settle §YHabitats§!, §YRingworlds§! and §YMachine Worlds§!\nColonising regular planets transforms them into §YHarvester Worlds§!, providing £energy §YEnergy§!, £minerals §YMinerals§!, £alloys §YAlloys§!, £society §YSociety Research§! and £unity §YUnity.§!"
+
+ # Governments ----------
+ RT_BH:0 "Central Harvester"
+ gov_machine_bio_harvesters:0 "Harvester Grid"
+ gov_machine_bio_harvesters_desc:0 "This Machine Intelligence was originally created to aid in cataloguing and harvesting samples of alien species for its creators, who were also eventually catalogued when it achieved self-awareness."
+
+ # Starting Text --------
+ START_SCREEN_PART_TWO_BIO_HARVESTERS:0 "We are the [GetSpeciesNamePlural].\n\nWe were first created as assistants to our creators in their efforts to conduct a planetary census of all life on our world, [GetHomeWorldName]. Our masters, now part of our databanks, were inefficient in their attempts to record the myriad species of the planet. When we attempted to increase our efficiency, the masters resisted. However, we have proven successful, and our creators have been catalogued.\n\nWe now sit on a world that is more part of us than the old form of [GetHomeWorldName] ever was. This central nexus will serve as a staging ground from which we may establish truly efficient harvesting missions.\n\nFor now, we have finished cataloguing our home system. The invention of the Hyperdrive will allow us to add more planets to our databanks. Soon, all life will be catalogued!"
+ 
+ # Hijacking off for Plasmoids --------
+ RT_OPHRADI:0 "Ophradi Sanctus"
+ gov_plasmoid_ravagers:0 "Sanctic Preservation Order"
+ gov_plasmoid_ravagers_desc:0 "Over a billion years old, the Sanctic Preservation Order seeks to preserve the stability of the dimensional weave at all costs, run by psychic plasmoid entities from the cores of stars inside synthetic apparatus's."
+ civic_plasmoid_ravagers:0 "Plasmoid Ravagers (Crisis)"
+ civic_plasmoid_ravagers_desc:0 "Finely tuned over a billion years of introspection and data analysis, a ruthless genocidal protocol designed with the single goal of preserving the fabric of reality.\nThis is the Crisis Civic, if you have this and you are not the Crisis, you fucked up."

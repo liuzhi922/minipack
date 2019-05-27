@@ -1,0 +1,31 @@
+terraform_link = {
+	from = "pc_bh_harvested"
+	to = "pc_nuked"
+	
+	energy = 10000
+	duration = 3600
+	
+	condition = {
+		has_technology = "tech_climate_restoration"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+terraform_link = {
+	from = "pc_bh_harvested"
+	to = "pc_machine"
+	
+	energy = 10000
+	duration = 3600
+	
+	condition = {
+		has_ascension_perk = "ap_machine_worlds"
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

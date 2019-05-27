@@ -1,4 +1,4 @@
-﻿l_english: 
+﻿l_english:
 
 
  ethic_egalitarian:0 "Libertarian"
@@ -8,13 +8,13 @@
 
  personality_utopia_builders:0 "Utopia Builders"
  personality_utopia_builders_desc:0 "Utopia Builders values the economical and social prosperity of their species above everything else. The government, no matter of it's size, exist to make sure that nobody suffers from ant kind of need, sickness or poverty."
- 
+
  personality_adventurous_expansionist:0 "Aggressive Expansionist"
  personality_adventurous_expansionist_desc:0 "Aggressive Expansionists see the Galaxy as their legacy. They mostly focused on spreading their influence to every dark corner of Space they are able to reach out."
- 
+
  personality_paranoid_isolationists:0 "Paranoid Isolationist"
  personality_paranoid_isolationists_desc:0 "Paranoid Isolationists's goal is to completely isolate themselves from the outside world. They mind their own business and prefer everybody else to do just the same."
- 
+
  ethic_industrial:0 "Industrialist"
  ethic_fanatic_industrial:0 "Fanatic Industrialist"
  ethic_industrial_desc:1 "§LRapid and efficient infrastructure development is a fundamental necessity in any civilized society. Special attention must be paid to our workers in order to ensure future economic prosperity. Whatever cost we incur is a small price for the future we assure ourselves.§!\n"
@@ -23,7 +23,7 @@
  ethic_green_desc:1 "§LThe true values of a planet lie in its natural resources: its atmosphere, its flora and fauna, and its landscape. Our success so far lies in our ability to preserve and maintain these assets, whilst at the same time benefitting economically and societally from them. These biological systems are the sustaining wealth of any civilisation, and we would do well to remember that. §!\n"
  ethic_fanatic_green_desc:1 "§LOur musicians cannot compose a melody so profound as the songs of wildlife and the whispers of the trees. Our artists cannot capture the ineffable majesty of mountain tops, secluded lakes, or vast caverns. Whether by design or by chance, we have been born into a universe of transcendent natural beauty.§!\n"
 
- 
+
 
 
  RT_HIGH_TECHNICIAN:0 "SKYNET"
@@ -67,52 +67,52 @@
  RT_UNION:0 "Head of the Unions"
  RT_LABOUR:0 "Labour Committee Chairman"
  RT_GR_EMPEROR:0 "Great Emperor"
- RT_GR_EMPRESS:0 "Great Empress" 
+ RT_GR_EMPRESS:0 "Great Empress"
  RT_IRON_LORD:0 "Arch-Mechanician"
  HT_IRON_PRINCE:0 "Adept-Mechanician"
- RT_HIGH_OVERSEER:0 "High Overseer" 
+ RT_HIGH_OVERSEER:0 "High Overseer"
  RT_STAR_RULER:0 "Star Ruler"
- RT_STAR_MISTRESS:0 "Star Mistress" 
- 
- policy_mass_media:0 "Mass Media" 
+ RT_STAR_MISTRESS:0 "Star Mistress"
+
+ policy_mass_media:0 "Mass Media"
  policy_mass_media_name:0 "Mass Media"
- policy_mass_media_desc:0 " " 
- 
+ policy_mass_media_desc:0 " "
+
  free_mass_media:0 "Free Media"
  free_mass_media_name:0 "Free Media"
  free_mass_media_desc:0 " "
- 
+
  state_mass_media:0 "State Owned Media"
  state_mass_media_name:0 "State Owned Media"
- state_mass_media_desc:0 " "  
- 
+ state_mass_media_desc:0 " "
 
- gov_direct_democracy:0 "Cyber Democracy" 
+
+ gov_direct_democracy:0 "Cyber Democracy"
  RT_FIRST_SPEAKER:0 "Supervisor"
- 
+
  RT_DEMOS_CRATOS:0 "First Speaker"
- 
+
  power_plant_construction_speed_mult:0 "Power Plant Build Speed"
  science_lab_construction_speed_mult:0 "Science Lab Build Speed"
  autochthon_monument_construction_speed_mult:0 "Autochton Monument Build Speed"
  autochthon_monument_build_cost_mult:0 "Autochton Monument Build Cost"
- 
+
  POP_ATTRACTION_SOCIOLOGIST_POS:0 "§G+ Sociologist Pops in Empire§!"
  POP_ATTRACTION_CONSERVATIONAL_POS:0 "§G+ Conservational Pops in Empire§!"
  POP_ATTRACTION_WASTEFUL_NEG:0 "§G- Wasteful Pops in Empire§!"
  POP_ATTRACTION_THRIFTY_POS:0 "§G+ Thrifty Pops in Empire§!"
  POP_ATTRACTION_CONSERVATIONAL_NEG:0 "§G- Conservational Pops in Empire§!"
- POP_ATTRACTION_WASTEFUL_POS:0 "§G+ Wasteful Pops in Empire§!" 
- POP_ATTRACTION_AGRARIAN_POS:0 "§G+ Agrarian Pops in Empire§!" 
- POP_ATTRACTION_ADAPTIVE_POS:0 "§G+ Adaptive Pops in Empire§!" 
+ POP_ATTRACTION_WASTEFUL_POS:0 "§G+ Wasteful Pops in Empire§!"
+ POP_ATTRACTION_AGRARIAN_POS:0 "§G+ Agrarian Pops in Empire§!"
+ POP_ATTRACTION_ADAPTIVE_POS:0 "§G+ Adaptive Pops in Empire§!"
  POP_ATTRACTION_INDUSTRIOUS_NEG:0 "§G- Industrious Pops in Empire§!"
  POP_ATTRACTION_INDUSTRIOUS_POS:0 "§G+ Industrious Pops in Empire§!"
  POP_ATTRACTION_ENGINEERS_POS:0 "§G+ Engineers Pops in Empire§!"
- POP_ATTRACTION_AGRARIAN_NEG:0 "§G- Agrarian Pops in Empire§!" 
+ POP_ATTRACTION_AGRARIAN_NEG:0 "§G- Agrarian Pops in Empire§!"
  POP_ATTRACTION_PLANNED_ECONOMY_POS:0 "§G+ Planned economy is implemented in Empire§!"
  POP_ATTRACTION_FREE_MARKET_NEG:0 "§G- Free Market economy is implemented in Empire§!"
  POP_ATTRACTION_PLANNED_ECONOMY_NEG:0 "§G- Planned economy is implemented in Empire§!"
- POP_ATTRACTION_FREE_MARKET_POS:0 "§G+ Free Market economy is implemented in Empire§!" 
+ POP_ATTRACTION_FREE_MARKET_POS:0 "§G+ Free Market economy is implemented in Empire§!"
  POP_ATTRACTION_LEADER_ENHANCE_POS:0 "§G+ Unnatural Leader Enhancement is allowed in Empire§!"
  POP_ATTRACTION_OLIGARCH_GOV_POS:0 "§G+ Oligarchic Government§!"
  POP_ATTRACTION_CONFORMISTS_POS:0 "§G+ Conformists Pops in Empire§!"
@@ -131,8 +131,8 @@
  POP_ATTRACTION_GREEN_POS:0 "§G+ Ecologist Governing Ethics§!"
  POP_ATTRACTION_GREEN_NEG:0 "§G- Ecologist Governing Ethics§!"
  POP_ATTRACTION_INDUSTRIAL_POS:0 "§G+ Industrialist Governing Ethics§!"
- POP_ATTRACTION_INDUSTRIAL_NEG:0 "§G- Industrialist Governing Ethics§!" 
- 
+ POP_ATTRACTION_INDUSTRIAL_NEG:0 "§G- Industrialist Governing Ethics§!"
+
 
  civic_waste_recycle:0 "Waste Recycling"
 
@@ -142,47 +142,47 @@
  civic_timocracy:0 "Timocracy"
  civic_timocracy_desc:0 "This government is a form of "People's Aristocracy" - an elitist form of Republic, which has shut down most of the rights of a wider part of its population to restrain the citizenry and statuses to chosen ones. Allows §HCaste System§! form of society for §HDemocratic§! authority."
 
- 
+
 
  gov_demos_cratos:0 "Direct Democracy"
  gov_demos_cratos_desc:0 "This government is a form of democracy, where people directly decide on policy initiatives, either through vote or consensus."
  auth_democratic:0 "Indirect Democracy"
  auth_democratic_desc:0 "Indirect democracies have regular elections where all citizens can vote on who should represent them."
- 
+
  gov_plutocratic_oligarchy:0 "Plutocratic Oligarchy"
  gov_plutocratic_oligarchy_desc:0 "This government is a form of oligarchy, where power rests with a committee of powerful and influential leaders, that run the large bureaucratic engine overseeing all matters of the state."
 
- 
+
  gov_anarchy_state:0 "Anarcho-Syndicalism"
  gov_anarchy_state_desc:0 "The basic principles of anarcho-syndicalist society are solidarity, direct democracy, and workers' self-management. Syndicalists consider their economic theories a strategy for facilitating worker self-activity and as an alternative co-operative economic system with democratic values and production centered on meeting human needs."
- 
 
 
- 
+
+
  civic_tooltip_green:0 "Is some degree of §YEcologist§!"
  civic_tooltip_not_green:0 "Is not §YEcologist§!"
  civic_tooltip_industrial:0 "Is some degree of §YIndustrialist§!"
- civic_tooltip_not_industrial:0 "Is not §YIndustrialist§!" 
+ civic_tooltip_not_industrial:0 "Is not §YIndustrialist§!"
  civic_tooltip_socialism:0 "Is some degree of §YCollectivist§!"
- civic_tooltip_not_socialism:0 "Is not §YCollectivist§!"  
+ civic_tooltip_not_socialism:0 "Is not §YCollectivist§!"
  civic_tooltip_capitalism:0 "Is some degree of §YIndividualist§!"
- civic_tooltip_not_capitalism:0 "Is not §YIndividualist§!" 
+ civic_tooltip_not_capitalism:0 "Is not §YIndividualist§!"
  civic_tooltip_elitist:0 "Is some degree of §YElitist§!"
- civic_tooltip_not_elitist:0 "Is not §YElitist§!" 
+ civic_tooltip_not_elitist:0 "Is not §YElitist§!"
  civic_tooltip_pluralist:0 "Is some degree of §YEgalitarian§!"
- civic_tooltip_not_pluralist:0 "Is not §YEgalitarian§!"  
+ civic_tooltip_not_pluralist:0 "Is not §YEgalitarian§!"
 
 
  ETHIC_HAPPY_FACTIONS_2:0 "§EAll Factions, except §HTotalitarian§!, get §G+5§! §HHappiness§!"
 
- 
+
  temple_build_cost_mult:0 "Temple Build Cost"
  temple_construction_speed_mult:0 "Temple Build Speed"
 
- 
+
  edict_voice_people:0 "Freedom Festival"
  edict_voice_people_desc:0 " "
- 
+
  pft_bankers:0 "Traders Faction"
  pft_bankers_desc:1 " "
  pft_socialists:0 "Socialists Faction"
@@ -192,17 +192,17 @@
  pft_labourites:0 "Labourites Faction"
  pft_labourites_desc:1 "Labourites Factions represent the interests of working class and desire non-discrimination within existing social structures.\n\n§LEgalitarian ethos§!"
  pft_environmentalists:0 "Environmentalists Faction"
- pft_environmentalists_desc:1 " " 
+ pft_environmentalists_desc:1 " "
  pft_conservatives:0 "Aristocratic Faction"
- pft_conservatives_desc:0 " " 
- 
- pft_progressive_desc:1 "Progressive Factions favor personal freedoms and dislike non-democratic forms of government.\n\n§LLibertarian ethos§!" 
- 
+ pft_conservatives_desc:0 " "
+
+ pft_progressive_desc:1 "Progressive Factions favor personal freedoms and dislike non-democratic forms of government.\n\n§LLibertarian ethos§!"
+
  policy_mass_media:0 "Mass Media"
- 
+
  none_mass_media:0 "None"
  none_mass_media_desc:0 " "
- 
+
  policy_transportation_logistics:0 "Transportation & Logistics"
  policy_transportation_logistics_desc:0 "Allows to specialize your transportation infrastructure."
 
@@ -236,16 +236,16 @@ supply_transport:0 "Colony Supply"
 supply_transport_name:0 "Colony Supply"
 supply_transport_desc:0 "Increased colony development supply"
 
-supply_transport_adv:0 "Colony Supply (advanced)" 
+supply_transport_adv:0 "Colony Supply (advanced)"
 supply_transport_adv_name:0 "Colony Supply (advanced)"
 supply_transport_adv_desc:0 "Increased colony development supply"
 
- 
+
 ap_thought_control: "Totalitarian Utopia"
 ap_thought_control_desc: "The Empire's government uses the latest innovations in neurochemistry, psycho-engineering, and neurolinguistics to pacify the populace and ensure their absolute loyalty and resistance to outside ideas. \nUnlocks set of §YIndoctrination§! country Edicts, which allows to brainwash your population in order to shift it's Ethos in specific direction."
 requires_technology_big_brother:1 "$TRIGGER_FAIL$Requires §YFanatic Authoritarian§! ethos or §YThought Control State§! civic."
 
- 
+
 POP_ATTRACTION_SOCIALISM_POS:0 "§G+ Collectivist Governing Ethics§!"
 POP_ATTRACTION_RULER_TRAIT_FERTILITY_POS:0 "§G+ Ruler's "Fertility" Trait§!"
 POP_ATTRACTION_CIVIC_POS:0 "§G+ Empire's Active Civic§!"
@@ -489,14 +489,14 @@ ENERGY_INFRASTRUCTURE_DESC:0 "Constructing an "Energy Nexus" on every big (>15 t
 XENO_ZOO:0 "Xeno Zoo"
 NO_XENO_ZOO: "Build Xeno Zoo"
 XENO_ZOO_DESC:0 "Constructing an "Xeno Zoo" on every planet, where this is possible, will please the [Root.GetName]."
- 
+
 NO_MARKET_ECONOMY:0 "Planned Economy"
 MARKET_ECONOMY:0 "No Market Economy"
 NO_MARKET_ECONOMY_DESC: "Abolishing §YMarket§! economic policy will please the [Root.GetName]."
 
 NO_WELFARE_ECONOMY:0 "Deregulated Market"
 WELFARE_ECONOMY: "No Market Regulation"
-NO_WELFARE_ECONOMY_DESC:0 "Abolishing §YPlanned§! economic policy will please the [Root.GetName]." 
+NO_WELFARE_ECONOMY_DESC:0 "Abolishing §YPlanned§! economic policy will please the [Root.GetName]."
 
 PROGRESSIVE_CASTE:0 "$PROGRESSIVE_NO_CASTE$"
 
@@ -504,39 +504,39 @@ PROGRESSIVE_CASTE:0 "$PROGRESSIVE_NO_CASTE$"
  suppressed_egalitarian_desc:0 "The §HLibertarian§! Ethic is being suppressed by the government."
  promoted_egalitarian:0 "Libertarianism Promoted"
  promoted_egalitarian_desc:0 "The §HLibertarian§! Ethic is being promoted by the government."
- 
+
  suppressed_capitalism:0 "Individualism Suppressed"
  suppressed_capitalism_desc:0 "The §HIndividualist§! Ethic is being suppressed by the government."
  promoted_capitalism:0 "Individualism Promoted"
- promoted_capitalism_desc:0 "The §HIndividualist§! Ethic is being promoted by the government." 
- 
+ promoted_capitalism_desc:0 "The §HIndividualist§! Ethic is being promoted by the government."
+
  suppressed_socialism:0 "Collectivism Suppressed"
  suppressed_socialism_desc:0 "The §HCollectivist§! Ethic is being suppressed by the government."
  promoted_socialism:0 "Collectivism Promoted"
- promoted_socialism_desc:0 "The §HCollectivist§! Ethic is being promoted by the government." 
+ promoted_socialism_desc:0 "The §HCollectivist§! Ethic is being promoted by the government."
 
  suppressed_green:0 "Ecologism Suppressed"
  suppressed_green_desc:0 "The §HEcologist§! Ethic is being suppressed by the government."
  promoted_green:0 "Ecologism Promoted"
- promoted_green_desc:0 "The §HEcologist§! Ethic is being promoted by the government."   
- 
+ promoted_green_desc:0 "The §HEcologist§! Ethic is being promoted by the government."
+
  suppressed_industrial:0 "Industrialism Suppressed"
  suppressed_industrial_desc:0 "The §HIndustrialist§! Ethic is being suppressed by the government."
  promoted_industrial:0 "Industrialism Promoted"
- promoted_industrial_desc:0 "The §HIndustrialist§! Ethic is being promoted by the government."  
+ promoted_industrial_desc:0 "The §HIndustrialist§! Ethic is being promoted by the government."
 
  suppressed_pluralist:0 "Egalitarianism Suppressed"
  suppressed_pluralist_desc:0 "The §HEgalitarian§! Ethic is being suppressed by the government."
  promoted_pluralist:0 "Egalitarianism Promoted"
- promoted_pluralist_desc:0 "The §HEgalitarian§! Ethic is being promoted by the government."  
- 
+ promoted_pluralist_desc:0 "The §HEgalitarian§! Ethic is being promoted by the government."
+
  suppressed_elitist:0 "Elitism Suppressed"
  suppressed_elitist_desc:0 "The §HElitist§! Ethic is being suppressed by the government."
  promoted_elitist:0 "Elitism Promoted"
- promoted_elitist_desc:0 "The §HElitist§! Ethic is being promoted by the government." 
- 
+ promoted_elitist_desc:0 "The §HElitist§! Ethic is being promoted by the government."
 
- 
+
+
  16_FRIENDLY_GREETING:1 "Your government does a good job of curtailing the worst excesses of libertarianism, [From.GetSpeciesNamePlural]."
  04_INSULT_PROPOSE_COL_IND:0 "What a selfish people you are, always putting your individual selves foremost. libertarianism... ha! The [Root.GetName] will not survive the year."
  uplift.7215.c.tooltip:1 "The [From.From.From.GetName] gain the §Ylibertarian§! Ethic."
@@ -551,7 +551,7 @@ PROGRESSIVE_CASTE:0 "$PROGRESSIVE_NO_CASTE$"
  POP_ATTRACTION_EGALITARIAN_DIPLOMACY_POS:0 "§G+ Diplomacy with Libertarian Empires§!"
  POP_ATTRACTION_EGALITARIAN_DIPLOMACY_NEG:0 "§R- Diplomacy with Libertarian Empires§!"
  POP_ATTRACTION_EGALITARIAN_DIPLOMACY_NEG:0 "§R- Diplomacy with Libertarian Empires§!"
- 
+
  opinion_of_egalitarian_pos:0 "Free Libertarianists"
  opinion_of_egalitarian:0 "Libertarian Rabble"
  pft_progressive_desc:1 "Progressive Factions desire non-discrimination within existing social structures and dislike non-representative forms of government.\n\n§Libertarian Ethos§!"
@@ -560,116 +560,116 @@ PROGRESSIVE_CASTE:0 "$PROGRESSIVE_NO_CASTE$"
  egalitarian_unrest:0 "Unrest (Libertarian Attraction)"
  egalitarian_unrest_desc:0 "§HUnrest§! on this colony has caused local Pops to become more attracted to §YLibertarianism§!."
  egalitarian_unrest_desc:0 "§HUnrest§! on this colony has caused local Pops to become more attracted to §YLibertarianism§!."
- unrest.168.desc:0 "Greetings [Root.GetSpeciesName]. We are freedom fighters - former slaves - from the [old_owner.GetName], where we suffered much abuse under the oppression of [old_owner.GetRulerTitle] [old_owner.GetRulerName]. We have long admired your Libertarian standards, the "[new_owner.GetSpeciesAdj]" way, as we would refer to it back home, and we share your values. We have seceded and wish to be a part of your nation, if you will have us?" 
+ unrest.168.desc:0 "Greetings [Root.GetSpeciesName]. We are freedom fighters - former slaves - from the [old_owner.GetName], where we suffered much abuse under the oppression of [old_owner.GetRulerTitle] [old_owner.GetRulerName]. We have long admired your Libertarian standards, the "[new_owner.GetSpeciesAdj]" way, as we would refer to it back home, and we share your values. We have seceded and wish to be a part of your nation, if you will have us?"
 
- 
+
  opinion_socialism_pos_1:0 "Socialist Comrades"
  opinion_socialism_pos_2:0 "Socialist Comrades"
  opinion_socialism_pos_3:0 "Socialist Comrades"
  opinion_socialism_pos_4:0 "Socialist Comrades"
- 
+
  opinion_socialism_neg_1:0 "Communist Tyrants"
  opinion_socialism_neg_2:0 "Communist Tyrants"
  opinion_socialism_neg_3:0 "Communist Tyrants"
  opinion_socialism_neg_4:0 "Communist Tyrants"
- 
+
  opinion_capitalism_pos_1:0 "Free Marketeers"
  opinion_capitalism_pos_2:0 "Free Marketeers"
  opinion_capitalism_pos_3:0 "Free Marketeers"
  opinion_capitalism_pos_4:0 "Free Marketeers"
- 
+
  opinion_capitalism_neg_1:0 "Capitalist Exploiters"
  opinion_capitalism_neg_2:0 "Capitalist Exploiters"
  opinion_capitalism_neg_3:0 "Capitalist Exploiters"
- opinion_capitalism_neg_4:0 "Capitalist Exploiters" 
- 
+ opinion_capitalism_neg_4:0 "Capitalist Exploiters"
+
  opinion_green_pos_1:0 "Friends of Nature"
  opinion_green_pos_2:0 "Friends of Nature"
  opinion_green_pos_3:0 "Friends of Nature"
  opinion_green_pos_4:0 "Friends of Nature"
- 
+
  opinion_green_neg_1:0 "Dumb-ass Tree-Huggers"
  opinion_green_neg_2:0 "Dumb-ass Tree-Huggers"
  opinion_green_neg_3:0 "Dumb-ass Tree-Huggers"
- opinion_green_neg_4:0 "Dumb-ass Tree-Huggers" 
- 
+ opinion_green_neg_4:0 "Dumb-ass Tree-Huggers"
+
  opinion_industrial_pos_1:0 "Fellow Engineers"
  opinion_industrial_pos_2:0 "Fellow Engineers"
  opinion_industrial_pos_3:0 "Fellow Engineers"
  opinion_industrial_pos_4:0 "Fellow Engineers"
- 
+
  opinion_industrial_neg_1:0 "Rattle Metalheads"
  opinion_industrial_neg_2:0 "Rattle Metalheads"
  opinion_industrial_neg_3:0 "Rattle Metalheads"
- opinion_industrial_neg_4:0 "Rattle Metalheads"  
- 
+ opinion_industrial_neg_4:0 "Rattle Metalheads"
+
  opinion_pluralist_pos_1:0 "Egalitarian Brothers"
  opinion_pluralist_pos_2:0 "Egalitarian Brothers"
  opinion_pluralist_pos_3:0 "Egalitarian Brothers"
  opinion_pluralist_pos_4:0 "Egalitarian Brothers"
- 
+
  opinion_pluralist_neg_1:0 "Egalitarian Rabble"
  opinion_pluralist_neg_2:0 "Egalitarian Rabble"
  opinion_pluralist_neg_3:0 "Egalitarian Rabble"
- opinion_pluralist_neg_4:0 "Egalitarian Rabble" 
+ opinion_pluralist_neg_4:0 "Egalitarian Rabble"
 
  opinion_elitist_pos_1:0 "Noble Aristocrats"
  opinion_elitist_pos_2:0 "Noble Aristocrats"
  opinion_elitist_pos_3:0 "Noble Aristocrats"
  opinion_elitist_pos_4:0 "Noble Aristocrats"
- 
+
  opinion_elitist_neg_1:0 "Arrogant Rats"
  opinion_elitist_neg_2:0 "Arrogant Rats"
  opinion_elitist_neg_3:0 "Arrogant Rats"
- opinion_elitist_neg_4:0 "Arrogant Rats"  
- 
+ opinion_elitist_neg_4:0 "Arrogant Rats"
+
 
  LABOURITE_NO_CASTE:0 "Anti-Caste"
- LABOURITE_CASTE:0 "Caste System" 
+ LABOURITE_CASTE:0 "Caste System"
  LABOURITE_NO_CASTE_DESC:0 "Letting anybody in our Empire under a §YCaste System§! will greatly displease the [Root.GetName]."
- 
- 
+
+
  EQUAL_ARMY:0 "Egalitarian Military"
  NO_EQUAL_ARMY:0 "Egalitarian Military"
  EQUAL_ARMY_DESC:0 "Ensuring that no species in our Empire is subject to Limited or None Military Service will please the [Root.GetName]."
- 
+
  POP_ATTRACTION_LIMITED_CITIZEN_POS:0 "§G+ Limited Citizen Pops in Empire§!"
  POP_ATTRACTION_ELITIST_POS:0 "§G+ Elitist Governing Ethics§!"
  POP_ATTRACTION_PLURALIST_POS:0 "§G+ Egalitarian Governing Ethics§!"
  POP_ATTRACTION_ENHANCED_LEADERS_POS:0 "§G+ Leader Enhancement Policy in Empire§!"
- 
+
  policy_gun_rights:0 "Personal Weapons"
  policy_gun_rights_desc:0 " "
- 
+
  gun_rights_limited:0 "Limited"
  gun_rights_limited_name:0 "Limited"
  gun_rights_limited_desc:0 " "
- 
+
  gun_rights_allowed:0 "Allowed"
  gun_rights_allowed_name:0 "Allowed"
  gun_rights_allowed_desc:0 "Citizens are allowed to carry and use personal weapons."
- 
+
  gun_rights_disallowed:0 "Prohibited"
  gun_rights_disallowed_name:0 "Prohibited"
- gun_rights_disallowed_desc:0 "Citizens are prohibited to carry and use personal weapons." 
- 
+ gun_rights_disallowed_desc:0 "Citizens are prohibited to carry and use personal weapons."
+
  TOTALITARIAN_NO_GUN_RIGHTS:0 "Personal Weapons Banned"
  TOTALITARIAN_GUN_RIGHTS:0 "Ban Personal Weapons"
  TOTALITARIAN_NO_GUN_RIGHTS_DESC:0 "Prohibiting ordinary citizens of our Empire to carry §YPersonal Weapons§! will please the [Root.GetName]."
- 
+
  PROGRESSIVE_GUN_RIGHTS:0 "Personal Weapons Allowed"
  PROGRESSIVE_NO_GUN_RIGHTS:0 "Allow Personal Weapons"
  PROGRESSIVE_GUN_RIGHTS_DESC:0 "Allowing citizens of our Empire to carry and use §YPersonal Weapons§! will please the [Root.GetName]."
- 
+
  civic_tooltip_egalitarian:0 "Is some degree of §YLibertarian§!"
  civic_tooltip_not_egalitarian:0 "Is not §YLibertarian§!"
- 
+
  #leader notification
  ethic_rebuild_leaders_new:0 "New"
  ethic_rebuild_leaders_new.desc:0 "We have gained a new"
  ethic_rebuild_leaders_block.tooltip:0 "Don't show notifications for new leaders."
  ethic_rebuild_block:0 "Pass this information to my Deputy."
- 
+
  # lines without text
  # events
  ethic_rebuild_leaders.54.name:0 "$ethic_rebuild_leaders_new$ $governor$"
@@ -679,61 +679,61 @@ PROGRESSIVE_CASTE:0 "$PROGRESSIVE_NO_CASTE$"
  ethic_rebuild_leaders.56.name:0 "$ethic_rebuild_leaders_new$ $admiral$"
  ethic_rebuild_leaders.56.desc:0 "$ethic_rebuild_leaders_new.desc$ §P$admiral$.§!"
  ethic_rebuild_leaders.57.name:0 "$ethic_rebuild_leaders_new$ $general$"
- ethic_rebuild_leaders.57.desc:0 "$ethic_rebuild_leaders_new.desc$ §P$general$.§!" 
- 
- MOD_DISTANCE_TO_CAPITAL_STATIC_MODIFIER_EFFICIENCY_MULT:0 "Governing Ethic reduction due to Distance" 
- 
+ ethic_rebuild_leaders.57.desc:0 "$ethic_rebuild_leaders_new.desc$ §P$general$.§!"
+
+ MOD_DISTANCE_TO_CAPITAL_STATIC_MODIFIER_EFFICIENCY_MULT:0 "Governing Ethic reduction due to Distance"
+
  auth_dictatorial:0 "Dictatorial"
- auth_dictatorial_desc:0 "Dictatorial governments are ruled by a single individual for life that wields absolute control over the state." 
- 
+ auth_dictatorial_desc:0 "Dictatorial governments are ruled by a single individual for life that wields absolute control over the state."
+
  building_biomaterials_plant:0 "Industrial Bio-materials Plant"
  building_biomaterials_plant_desc:0 "This facility uses bio-mass to create organic based industrial composite materials, as well as a range of different bio-nutrients."
- 
- building_biofuel_plant:0 "Bio-fuel Refinery" 
- building_biofuel_plant_desc:0 "This facility houses industrial-grade equipment designed to isolate and extract compounds from various plants and crops. Such compounds are further studied and applied in industry, such as biofuels, crop development and natural health products." 
+
+ building_biofuel_plant:0 "Bio-fuel Refinery"
+ building_biofuel_plant_desc:0 "This facility houses industrial-grade equipment designed to isolate and extract compounds from various plants and crops. Such compounds are further studied and applied in industry, such as biofuels, crop development and natural health products."
 
  ethic_green:0 "Ecologist"
  ethic_fanatic_green:0 "Fanatic Ecologist"
- 
+
  civic_drone_brotherhood:0 "Drone Brotherhood"
  civic_drone_brotherhood_desc:0 "In this society working-class people (those, who engaged in low-tech industries) are traditionally glorified and form a global community, based on idealistic principles of collectivism and equality. £building  §YFarms§! and §YMines§! produce §Y0.2§! £unity  Unity each."
- 
+
  shipsize_military_station_small_construction_speed_mult:0 "Military Station Small Construction Speed"
  shipsize_military_station_medium_construction_speed_mult:0 "Military Station Medium Construction Speed"
  shipsize_military_station_large_construction_speed_mult:0 "Military Station Large Construction Speed"
- 
- 
 
- 
+
+
+
  civic_parliamentary_system:0 "Public Discussion"
- civic_parliamentary_system_desc:0 "In this society a free and lively public debate is being cherished and encouraged. Currying favor with one of the dominant political factions can prove to be quite advantageous. All Factions, except §HTotalitarian§!, get §G+3§! §HHappiness§!." 
- 
+ civic_parliamentary_system_desc:0 "In this society a free and lively public debate is being cherished and encouraged. Currying favor with one of the dominant political factions can prove to be quite advantageous. All Factions, except §HTotalitarian§!, get §G+3§! §HHappiness§!."
 
- 
+
+
  civic_nationalism:0 "Nationalism"
  civic_nationalism_desc:0 "A strong sense of nationalistic superiority and pride permeates all layers of this society. Traditions of §HUnity§! become unavailable for adoption."
- 
 
- 
+
+
 
  civic_private_property:0 "Energy Syndicate"
  civic_private_property_desc:0 "Market needs huge amount of energy to grow up! In order to enhance it's development, government privatize a significant part of it's generation facilities, to become a part of efficient Free Market economy.  £building  §Y$building_power_hub_1$§! and £building  §Y$building_power_hub_2$§! also produce §Y1§! £unity Unity."
- 
- civic_militia:0 "Private Military Corps"
- civic_militia_desc:0 "Corporate business in arms dealing and warfare has reached an influential position in this society and many aspects of maintaining the state military have been transferred to powerful corporations." 
- 
 
- 
+ civic_militia:0 "Private Military Corps"
+ civic_militia_desc:0 "Corporate business in arms dealing and warfare has reached an influential position in this society and many aspects of maintaining the state military have been transferred to powerful corporations."
+
+
+
  civic_public_medicine:0 "Public Medicine"
  civic_public_medicine_desc:0 "Government allocates funds for development and maintaining of the Public Healthcare System. Starts with §HFrontier Health§! technology. Buildings §HClinic§! and §HHospital§! provide additional §HUnity§!."
- 
- civic_public_education:0 "Public Education" 
- civic_public_education_desc:0 "Government allocates funds for development and maintaining of the Public School System." 
 
- 
- 
+ civic_public_education:0 "Public Education"
+ civic_public_education_desc:0 "Government allocates funds for development and maintaining of the Public School System."
+
+
+
  civic_monarchy:0 "Monarchy"
- civic_monarchy_desc:0 "A monarchy is a form of government in which a group, usually a family called the dynasty, embodies the country's national identity and one of its members, called the monarch, exercises a role of sovereignty." 
+ civic_monarchy_desc:0 "A monarchy is a form of government in which a group, usually a family called the dynasty, embodies the country's national identity and one of its members, called the monarch, exercises a role of sovereignty."
  civic_dictatorship:0 "Dictatorship"
  civic_dictatorship_desc:0 "Dictatorship is a form of government in which a country is ruled by one Person (a dictator) or by a Polity, and power is exercized through various mechanisms in order to ensure that the entity's power remains strong."
 
@@ -752,27 +752,27 @@ PROGRESSIVE_CASTE:0 "$PROGRESSIVE_NO_CASTE$"
 
 
  civic_ambassadors_assembly:0 "Ambassadors Assembly"
- civic_ambassadors_assembly_desc:0 "The government is dominated by a group of the most influential Diplomatic officials." 
+ civic_ambassadors_assembly_desc:0 "The government is dominated by a group of the most influential Diplomatic officials."
 
 
 
- 
+
  civic_demos_cratos:0 "Democracy"
  civic_demos_cratos_desc:0 "In Direct Democracy bureaucracy is decentralized and thus more efficient, while Government holds considerably little authority. Ordinary citizens are in power to decide on local and global policy initiatives directly, through a mechanism of plebiscite."
- 
+
  civic_empire_bureau:0 "Big Government"
- civic_empire_bureau_desc:0 "Enlarging the size of state bureaucracy increases the power of Government regulation, but invetably provides additional spendings and overall economic inefficiency." 
- 
+ civic_empire_bureau_desc:0 "Enlarging the size of state bureaucracy increases the power of Government regulation, but invetably provides additional spendings and overall economic inefficiency."
+
 
  civic_science_lobby:0 "Corporate Research"
  civic_science_lobby_desc:0 "Significant part of Government research programms has been outsourced to more efficient private Corporations."
- 
+
  tech_patriotic_call:0 "Doctrine: Patriotic Call"
  tech_patriotic_call_desc:0 "Unlocks special country edict, available only in times of War."
 
  tech_strategic_taxation:0 "Doctrine: Strategic Taxation"
  tech_strategic_taxation_desc:0 "Unlocks special country edict, available only in times of Peace."
- 
+
  edict_diversity_utopia:0 "Pan-Galactic Forum"
  edict_diversity_utopia_desc:0 " "
  edict_pan_galactic_league:0 "Pan-Galactic League"
@@ -789,89 +789,89 @@ PROGRESSIVE_CASTE:0 "$PROGRESSIVE_NO_CASTE$"
  edict_holy_inquisition_desc:0 " "
  edict_defcon_1: "Defence Condition 1"
  edict_defcon_1_desc: " "
- 
 
- 
+
+
  gov_corporate_nationalism:0 "Corporate Nationalism"
- gov_corporate_nationalism_desc:0 " " 
+ gov_corporate_nationalism_desc:0 " "
  gov_communist_dictatorship:0 "Communist Dictatorship"
  gov_communist_dictatorship_desc:0 " "
  gov_social_democracy:0 "Social Democracy"
  gov_social_democracy_desc:0 " "
 
- 
+
  civic_leadership_forge:0 "Leadership Forge"
- civic_leadership_forge_desc:0 "The Empire has traditions of a strong Leadership and famous for it's wise and agile pesronnel policy." 
- 
+ civic_leadership_forge_desc:0 "The Empire has traditions of a strong Leadership and famous for it's wise and agile pesronnel policy."
+
  ASCENSION_PERKS_NEW:0 "Ascension Perks"
- 
+
  gov_generic_stratocracy:0 "Stratocracy"
  gov_generic_stratocracy_desc:0 " "
- 
+
 civic_energy_syndicate:0 "Trade League"
 civic_energy_syndicate_desc:0 "The Empire has developed commodities market, dominated by a powerful consortium of Trade Companies."
 
 civic_public_works:0 "Social Infrastructure"
 civic_public_works_desc:0 "Government allocates substantional funds in development of social infrastructure and improvement of life quality in the colonies. Can conduct special planetary edict - §HHousing§! (cost 100 influence, increases §YGrowth§!, §YPlanetary Construction Speed§! and §YHappiness§!)."
- edict_housing:0 "Public Works" 
+ edict_housing:0 "Public Works"
  edict_housing_desc:0 "Planet's industry is majorly focused on housing and social infrastructure development, stimulating population growth."
- 
+
 
  civic_symbiotic_race:0 "Societal Symbiots"
  civic_symbiotic_race_desc:0 "A second, physically formidable species forms an integral part of this society. Despite their notable differences they are considered equal to the main species ruling their common homeworld largely due to their empathic attitude towards different forms of life. \nSub-civic of §YSyncretic Evolution§! for Xenophilic gameplay."
  civic_slave_race:0 "Slave Race"
- civic_slave_race_desc:0 "A second, physically formidable species forms an integral part of this society, although they are both feared and hated by the world's main species who consider them a threat. Thus they are declared lesser beings who are only good for hard labor. \nSub-civic of §YSyncretic Evolution§! for Xenophobic gameplay." 
- 
- ethic_rebuild_opinion_unity_finish:0 "Galaxy Unifiers"
- 	
+ civic_slave_race_desc:0 "A second, physically formidable species forms an integral part of this society, although they are both feared and hated by the world's main species who consider them a threat. Thus they are declared lesser beings who are only good for hard labor. \nSub-civic of §YSyncretic Evolution§! for Xenophobic gameplay."
 
- 
+ ethic_rebuild_opinion_unity_finish:0 "Galaxy Unifiers"
+
+
+
  civic_elite_navy:0 "Elite Navy"
  civic_elite_navy_desc:0 "Navy Forces are considered to be en Elite part of Imperial Army. Pilots and high-ranking navy officers recieve the best education and provision."
  #
- 
+
  gov_social_nationalism:0 "National-Socialism"
  gov_social_nationalism_desc:0 " "
- 
+
  gov_anarch_pacifism:0 "Anarcho-Pacifism"
- gov_anarch_pacifism_desc:0 " " 
- 
+ gov_anarch_pacifism_desc:0 " "
+
  gov_anarch_capitalism:0 "Anarcho-Capitalism"
- gov_anarch_capitalism_desc:0 " "  
- 
+ gov_anarch_capitalism_desc:0 " "
+
  shipsize_mining_station_construction_speed_mult:0 "Mining Station Build Speed"
- 
- edict_increase_planetsize_3:0 "Geo-engineering" 
+
+ edict_increase_planetsize_3:0 "Geo-engineering"
  edict_increase_planetsize_3_desc:0 "Local terraformation procedures allows us to increase the size of planet's inhabitable space."
- edict_increase_planetsize_3.tooltip:0 "Increase §Y[Root.GetName]§!'s size by §G1 tile§!." 
- 
- edict_increase_planetsize_1:0 "Pragmatic Development I" 
+ edict_increase_planetsize_3.tooltip:0 "Increase §Y[Root.GetName]§!'s size by §G1 tile§!."
+
+ edict_increase_planetsize_1:0 "Pragmatic Development I"
  edict_increase_planetsize_1_desc:0 "Efficient exploitation of planet's territories allows to increase the space, available for the development, but at a cost of lowering it's §YHabitability§!."
- edict_increase_planetsize_1.tooltip:0 "Increase §Y[Root.GetName]§!'s size by §G1 tile§! and reduce it's §YHabitability§! by §R3%§!." 
- 
- edict_increase_planetsize_2:0 "Pragmatic Development II" 
+ edict_increase_planetsize_1.tooltip:0 "Increase §Y[Root.GetName]§!'s size by §G1 tile§! and reduce it's §YHabitability§! by §R3%§!."
+
+ edict_increase_planetsize_2:0 "Pragmatic Development II"
  edict_increase_planetsize_2_desc:0 "Efficient exploitation of planet's territories allows to increase the space, available for the development, but at a cost of lowering it's §YHabitability§!."
- edict_increase_planetsize_2.tooltip:0 "Increase §Y[Root.GetName]§!'s size by §G1 tile§! and reduce it's §YHabitability§! by §R5%§!."  
- 
+ edict_increase_planetsize_2.tooltip:0 "Increase §Y[Root.GetName]§!'s size by §G1 tile§! and reduce it's §YHabitability§! by §R5%§!."
+
  free_market_1_economy:0 "Utopian Market"
  free_market_1_economy_name:0 "Utopian Market"
  free_market_1_economy_desc:0 "Policy can only be set in times of §HPeace§!."
- 
+
  free_market_2_economy:0 "Utopian Market (advanced)"
  free_market_2_economy_name:0 "Utopian Market (advanced)"
- free_market_2_economy_desc:0 "Policy can only be set in times of §HPeace§!."  
- 
+ free_market_2_economy_desc:0 "Policy can only be set in times of §HPeace§!."
+
  civic_peaceful_prosperity:0 "Prosperity"
- civic_peaceful_prosperity_desc:0 "Ideas of social and individual well-being prevail in this peaceful society." 
- 
+ civic_peaceful_prosperity_desc:0 "Ideas of social and individual well-being prevail in this peaceful society."
+
  building_gal_university:0 "Galactic University"
  building_gal_university_desc:0 "Galactic University is a homeland for Empire's top-quality educational programms."
- 
+
  civic_fortification:0 "Ministry of Defense"
  civic_fortification_desc:0 "Department of Defense uses all it's power to influence Empire's foreign policy and lobby for increased defense spendings. Prohibits to set §HMilitary Budget§! policy to §HLow Spendings§!."
- 
 
- 
+
+
 
 NO_ASCENSION_TRADITIONS:0 "No Ascension Traditions"
 ASCENSION_TRADITIONS:0 "No Ascension Traditions"
@@ -1027,10 +1027,10 @@ ap_anarchy_utopia_desc:0 "Free flow of Information is in the core of post-indust
 
 civic_mechanists_desc:0 "This society has been preoccupied with the idea of metallic automatons since the early Steam Age. Although many said it could not be done, the first true robots left the assembly lines long before even rudimentary space flight was achieved.\n Start the game with §Y4§! Pops being robots, and with the technology to build more."
 
- 
+
 civic_asceticism:0 "Ascetic"
-civic_asceticism_desc:0 "This society keeps strong tradition of abstinence from worldly pleasures, which brings peace to the mind and health to the body." 
- 
+civic_asceticism_desc:0 "This society keeps strong tradition of abstinence from worldly pleasures, which brings peace to the mind and health to the body."
+
 civic_fanatic:0 "Fundamentalist"
 civic_fanatic_desc:0 "This society is bonded by a set of very conservative and harsh beliefs and dogmas, deeply shared amongst the population. Diversity of opinion is not in favor here."
 
@@ -1039,7 +1039,7 @@ civic_empathy_desc:0 "People of this society have strong sense of spiritual kins
 
 
 civic_biotech:0 "Bio-Engineer"
-civic_biotech_desc:0 "Starts with §HCloning§! technology and increased chance of getting §HGene Tailoring§! technology." 
+civic_biotech_desc:0 "Starts with §HCloning§! technology and increased chance of getting §HGene Tailoring§! technology."
 
 gov_anarchy_communism:0 "Anarcho-Communism"
 gov_anarchy_communism_desc:0 " "
@@ -1051,9 +1051,9 @@ planned_1_economy_desc:0 " "
 
 planned_2_economy:0 "Utopian Welfare (advanced)"
 planned_2_economy_name:0 "Utopian Welfare (advanced)"
-planned_2_economy_desc:0 " " 
+planned_2_economy_desc:0 " "
 
-requires_spiritualism:0 "$TRIGGER_FAIL$Requires §YSpiritualist§! ethos." 
+requires_spiritualism:0 "$TRIGGER_FAIL$Requires §YSpiritualist§! ethos."
 
 MOD_SHIP_COMBAT_SPEED_MULT:2 "Ship Combat Speed"
 
@@ -1063,17 +1063,17 @@ shipsize_mining_station_upkeep_mult:0 "Mining Station Upkeep"
 
 capitalism_economy:0 "Market"
 capitalism_economy_name:0 "Market"
-capitalism_economy_desc:0 " " 
+capitalism_economy_desc:0 " "
 fan_capitalism_economy:0 "Market (adv)"
 fan_capitalism_economy_name:0 "Market (adv)"
-fan_capitalism_economy_desc:0 " "  
- 
+fan_capitalism_economy_desc:0 " "
+
 socialism_economy:0 "Planned"
 socialism_economy_name:0 "Planned"
-socialism_economy_desc:0 " " 
+socialism_economy_desc:0 " "
 fan_socialism_economy:0 "Planned (adv)"
 fan_socialism_economy_name:0 "Planned (adv)"
-fan_socialism_economy_desc:0 " " 
+fan_socialism_economy_desc:0 " "
 
 policy_economy_focus:0 "Economy Focus"
 policy_economy_focus_name:0 "Economy Focus"
@@ -1142,7 +1142,7 @@ triggered_opinion_ap_galactic_contender: "Due Respect"
 factions.1.desc.prosperity:1 "Their members lobby for a national focus on social and economic prosperity, and stability through peaceful means."
 factions.1.desc.progressive:0 "Their members work for freedom and justice for all denizens of our empire.\n\n"
 factions.2000.desc.progressive:0 "As a result of bringing this faction into their government, they have become more outwardly §HLibertarian§!.\n\n"
- 
+
 factions.1.desc.conservatives:0 "Their members work for a more rewarding personal account of each individual's percepted merits and accomplishments.\n\n"
 factions.1.desc.bankers:0 "Their members lobby for a national focus on financial growth and developing of free market.\n\n"
 factions.1.desc.socialists:0 "Their members work for economic equality for all denizens of our empire.\n\n"
@@ -1247,7 +1247,7 @@ CAPITALISM_INDOCTRINATION:0 "INDIVIDUALIST INDOCTRINATION"
 NO_CAPITALISM_INDOCTRINATION:0 "NO INDIVIDUALIST INDOCTRINATION"
 CAPITALISM_INDOCTRINATION_DESC:0 "Active §YIndoctrination: Individualism§! edict displeases the [Root.GetName]."
 
-requires_materialism:0 "$TRIGGER_FAIL$Requires §YMaterialist§! ethos." 
+requires_materialism:0 "$TRIGGER_FAIL$Requires §YMaterialist§! ethos."
 
 building_global_pds_1:0 "Global Planetary Defense System"
 building_global_pds_1_desc:0 "In case of a planetary bombardment, Global PDS will randomly target one bombarding ship and focus its fire until this ship is destroyed."
@@ -1287,9 +1287,9 @@ ethic_rebuild_opinion_unity_patrons:0 "Divine Patrons"
 
 
 
- 
+
 civic_tribals:0 "Elders Ring"
-civic_tribals_desc:0 "The government is overwatched by a council of society's Elders, who keeps and eye on preserving the Empire's safety from any potential outside threat." 
+civic_tribals_desc:0 "The government is overwatched by a council of society's Elders, who keeps and eye on preserving the Empire's safety from any potential outside threat."
 
 civic_trade_league:0 "Trade Syndicate"
 civic_trade_league_desc:0 "Trade Syndicate represents a consortium of wealthiest Corporations, which dominates Empire's economical and political life."
@@ -1314,41 +1314,41 @@ civic_innovative_economy_desc:0 "Capitalism can only be understood as an evoluti
  inquisition_army_desc:0 "Elite Inquisition Forces"
 
 
- 
+
  civic_liberal_democracy:0 "Theocratic Republic"
- civic_liberal_democracy_desc:0 "The government represents a spiritualistic form of Republic, where a religious council supervises the democratic process and serves in an advisory role." 
- 
+ civic_liberal_democracy_desc:0 "The government represents a spiritualistic form of Republic, where a religious council supervises the democratic process and serves in an advisory role."
+
 
 
 
  sr_sights:0 "Natural Wonder"
- sr_sights_desc:0 "This place of natural beauty would be perfect for setting up a high-class Resort!" 
- 
+ sr_sights_desc:0 "This place of natural beauty would be perfect for setting up a high-class Resort!"
+
 
  edict_pan_galactic_league:0 "Pan-Galactic League"
- edict_pan_galactic_league_desc:0 " " 
- 
+ edict_pan_galactic_league_desc:0 " "
+
 
  unity_patrons:0 "Patronage Legacy"
  unity_patrons_desc:0 " "
- 
 
 
 
- 
+
+
  edict_social_welfare:0 "Social Welfare Programs"
- edict_social_welfare_desc:0 " " 
+ edict_social_welfare_desc:0 " "
 
- 
+
  requires_adopt_environmentalism:0 "$TRIGGER_FAIL$Requires to adopt §YEnvironmentalism§! tradition tree."
  requires_adopt_development:0 "$TRIGGER_FAIL$Requires to adopt §YDevelopment§! tradition tree."
 
- 
+
  socialism_economy_synth:0 "Planned I (synthetics)"
  socialism_economy_synth_desc:0 " "
  fan_socialism_economy_synth:0 "Planned II (synthetics)"
  fan_socialism_economy_synth_desc:0 " "
-   
+
 
 
 
@@ -1358,18 +1358,18 @@ civic_innovative_economy_desc:0 "Capitalism can only be understood as an evoluti
 
 
 
- 
+
  civic_tooltip_xenologist_effects:0 "§YAncient Civilizations Anomalies:§!\n   Anomaly Research Speed: §G+50.0%§!\nAnomaly Fail Risk: §G-25.0%§!\n§Y$BIOLOGICAL_species_trait_points_add$§! increased by §G+1§!\n§Y$category_biology_research_speed_mult$§! increased by §G+30%§!\n§Y$category_new_worlds_research_speed_mult$§! increased by §G+30%§!\n§Y$pop_ethic_xenophile_attraction_mult$§! increased by §G+5%§!\n§Y$pop_ethic_materialist_attraction_mult$§! increased by §G+10%§!\n§Y$MOD_COUNTRY_PHYSICS_TECH_RESEARCH_SPEED$§! reduced by §G+10%§!\n"
- 
- 
- 
- 
- 
+
+
+
+
+
 civic_federalist:0 "Federalism"
-civic_federalist_desc:0 "Focuses on expansion through the peaceful development of Federation - a union of partially self-governing states under a central Government. Gets and increased opinion from Subjects and allows them to colonize outside their borders." 
- 
+civic_federalist_desc:0 "Focuses on expansion through the peaceful development of Federation - a union of partially self-governing states under a central Government. Gets and increased opinion from Subjects and allows them to colonize outside their borders."
+
 triggered_opinion_federalism:0 "Federal Leaders"
- 
+
 civic_hegemon:0 "Imperialism"
 civic_hegemon_desc:0 "Imperialistic Empire deals with it's Subjects from a position of domination and strength, obligating them with significant contributions to the Overlord. Subjects are allowed to colonize outside their borders."
 
@@ -1377,24 +1377,24 @@ civic_hegemon_desc:0 "Imperialistic Empire deals with it's Subjects from a posit
  ethic_fanatic_capitalism:0 "Fanatic Individualist"
  ethic_capitalism_desc:1 "§LThe core mechanism of expansion is a process of accumulation: one in which our profits reaped from the sale of goods and services can be reinvested into the furthering of our own prosperity. It would be unwise to forget the merits of such a system, especially with the unparalleled new opportunities afforded us by our galactic expansion.§!\n"
  ethic_fanatic_capitalism_desc:1 "§LThere is no greater imperative than the pursuit of personal wealth and prosperity. By setting our people against each other, ever greater fruits will be illuminated by the sparks of their clashing ambitions as they grow their fortunes. Only the best may become successful and rise to the fore of our civilization, and what is good for the best of us, is good for all of us.§!\n"
- 
+
  ethic_socialism:0 "Collectivist"
  ethic_fanatic_socialism:0 "Fanatic Collectivist"
 
  ethic_socialism_desc:0 "§LSociety works best when none are left behind, and this is best achieved by a societal control of the means of production, and fair redistribution of wealth. §!\n"
- ethic_fanatic_socialism_desc:0 "§LIndividual ownership of property the means of production is only an excuse to encourage greed and economic disparity. Only through absolute control of the elements can the equal distribution of wealth be achieved.§!\n"   
- 
+ ethic_fanatic_socialism_desc:0 "§LIndividual ownership of property the means of production is only an excuse to encourage greed and economic disparity. Only through absolute control of the elements can the equal distribution of wealth be achieved.§!\n"
+
  ethic_egalitarian_desc:1 "§LAny society that does not embrace true liberty of its members - where an individual can rise to any position with enough hard work - is not only deeply unfair, but ultimately counterproductive.§!\n"
  ethic_fanatic_egalitarian_desc:1 "§LBeware always those who would be despots, under the false presumption that their desires and agendas are somehow more imperative than those of their fellows. A society that does not see to the political rights of all of its members is not a society - it is a crime.§!\n"
- 
+
  civic_pilgrims:0 "Adventurous Pioneer"
  civic_pilgrims_desc:0 "This society have long-established nomadic traditions and strong adventurous spirit. People tend to vastly expand their territories, resettling as widely as it's possible."
- 
 
- 
 
-  
- 
+
+
+
+
 
 
 
@@ -1404,34 +1404,34 @@ civic_free_market:0 "Free Market"
 civic_free_market_desc:0 "An idealized economic system in which the prices for goods and services are determined by the open market and consumers, and the laws and forces of supply and demand are free from any intervention by a government, price-setting monopoly, or other authority."
 
 
- 
+
  civic_militarist_order:0 "Military Order"
- civic_militarist_order_desc:0 " " 
+ civic_militarist_order_desc:0 " "
 
 
- 
 
- 
 
- 
+
+
+
 civic_exploration:0 "Space Pioneer"
-civic_exploration_desc:0 "Starts with §HAutomated Exploration Protocols§! technology. Can construct §HDeep Space Scanner§!." 
+civic_exploration_desc:0 "Starts with §HAutomated Exploration Protocols§! technology. Can construct §HDeep Space Scanner§!."
 
 
 
-  
- ETHIC_ALLOWS_WELFARE_POLICY_1:0 "§EAllows to set §HPlanned§! economic policy: §G+20%§! §HPop Growth§!, §G+33%§! §HPlanet Construction Speed§!, §G+7%§! §HHappiness§!." 
- ETHIC_ALLOWS_WELFARE_POLICY_2:0 "§EAllows to set §HPlanned§! economic policy: §G+30%§! §HPop Growth§!, §G+50%§! §HPlanet Construction Speed§!, §G+50%§! §HShip Construction Speed§!, §G+10%§! §HHappiness§!, §R-5%§! §HEnergy§! £energy§!" 
+
+ ETHIC_ALLOWS_WELFARE_POLICY_1:0 "§EAllows to set §HPlanned§! economic policy: §G+20%§! §HPop Growth§!, §G+33%§! §HPlanet Construction Speed§!, §G+7%§! §HHappiness§!."
+ ETHIC_ALLOWS_WELFARE_POLICY_2:0 "§EAllows to set §HPlanned§! economic policy: §G+30%§! §HPop Growth§!, §G+50%§! §HPlanet Construction Speed§!, §G+50%§! §HShip Construction Speed§!, §G+10%§! §HHappiness§!, §R-5%§! §HEnergy§! £energy§!"
  ETHIC_ALLOWS_MARKET_POLICY_1:0 "§EAllows to set §HMarket§! economic policy: §G+5%§! §HEnergy§! £energy§"
  ETHIC_ALLOWS_MARKET_POLICY_2:0 "§EAllows to set §HMarket§! economic policy: §G+8%§! §HEnergy§! £energy, §G-8%§! buildings/ships §HUpkeep§!, §R-15%§! §HUnity§! £unity§!. §HHealthcare Campaign§! is not available."
- 
+
 DIPLOMACY_TRADITIONS:0 "Traditional Militarism"
 NO_DIPLOMACY_TRADITIONS:0 "No Traditional Prosperity"
-DIPLOMACY_TRADITIONS_DESC:0 "Adoption of §YProsperity§! traditions displeases the [Root.GetName]." 
+DIPLOMACY_TRADITIONS_DESC:0 "Adoption of §YProsperity§! traditions displeases the [Root.GetName]."
 
 ELITISM_TRADITION:0 "Traditional Elitism"
 NO_ELITISM_TRADITION:0 "No Traditional Meritocracy"
-ELITISM_TRADITION_DESC:0 "Adoption of §YMeritocracy§! traditions displeases the [Root.GetName]." 
+ELITISM_TRADITION_DESC:0 "Adoption of §YMeritocracy§! traditions displeases the [Root.GetName]."
 
 TECHNOLOGIST_NO_SPIRITUALISM:0 "Traditional Materialism"
 TECHNOLOGIST_SPIRITUALISM:0 "No Traditional Faith"
@@ -1445,12 +1445,12 @@ DEVELOPED_ENVIRONMENTALISM_DESC:0 "Active §YEnvironmental Economics§! or §YKe
 
 ENVIRONMENTAL_ECONOMY:0 "Traditional Environmentalism"
 NO_ENVIRONMENTAL_ECONOMY:0 "No Traditional Development"
-ENVIRONMENTAL_ECONOMY_DESC:0 "Adoption of §YDevelopment§! traditions displeases the [Root.GetName]."  
+ENVIRONMENTAL_ECONOMY_DESC:0 "Adoption of §YDevelopment§! traditions displeases the [Root.GetName]."
 
 MILITARY_ORDER:0 "Developed Militarism"
 MILITARY_ORDER_NO:0 "Develop Militarism"
-MILITARY_ORDER_DESC:0 "Active §YStratocracy§! or §YWar Crafter§! government civic will please the [Root.GetName]." 
- 
+MILITARY_ORDER_DESC:0 "Active §YStratocracy§! or §YWar Crafter§! government civic will please the [Root.GetName]."
+
 ISOLATIONIST_WAR_TRADITION:0 "Developed Isolationism"
 ISOLATIONIST_NO_WAR_TRADITION:0 "Develop Isolationism"
 ISOLATIONIST_WAR_TRADITION_DESC:0 "Active §YIsolationist§! government civic will please the [Root.GetName]."
@@ -1462,7 +1462,7 @@ DEVELOPMENT_ECONOMY_DESC:0 "Adoption of §YHarmony§! displeases the [Root.GetNa
 
 PROGRESSIVE_ANARCHY:0 "Developed Libertarianism"
 NO_PROGRESSIVE_ANARCHY:0 "Develop Libertarianism"
-PROGRESSIVE_ANARCHY_DESC:0 "Active §YSpirit of Freedom§! or §YPolitical Pluralism§! government civic will please the [Root.GetName]." 
+PROGRESSIVE_ANARCHY_DESC:0 "Active §YSpirit of Freedom§! or §YPolitical Pluralism§! government civic will please the [Root.GetName]."
 
 TRADITION_ANARCHY:0 "Traditional Liberty"
 NO_TRADITION_ANARCHY:0 "No Traditional Authority"
@@ -1474,8 +1474,8 @@ PROSPERITY_IDEOLOGY_DESC:0 "Active §YLand of Plenty§! or §YAgrarian Idyll§! 
 
 PROSPERITY_TRADITION:0 "Traditional Prosperity"
 NO_PROSPERITY_TRADITION:0 "No Traditional Supremacy"
-PROSPERITY_TRADITION_DESC:0 "Adoption of §YSupremacy§! traditions displeases the [Root.GetName]." 
- 
+PROSPERITY_TRADITION_DESC:0 "Adoption of §YSupremacy§! traditions displeases the [Root.GetName]."
+
 
 SOCIALISM_IDEOLOGY:0 "Traditional Commonwealth"
 NO_SOCIALISM_IDEOLOGY:0 "No Traditional Commerce"
@@ -1499,51 +1499,51 @@ TRADITIONALIST_SPIRITUALISM_DESC:0 "Adopting of §YDiscovery§! displeases the [
 
 PLURALISM_TRADITION:0 "Traditional Egalitarianism"
 NO_PLURALISM_TRADITION:0 "No Traditional Aristocracy"
-PLURALISM_TRADITION_DESC:0 "Adoption of §YAristocracy§! traditions displeases the [Root.GetName]." 
+PLURALISM_TRADITION_DESC:0 "Adoption of §YAristocracy§! traditions displeases the [Root.GetName]."
 
 
 XENOIST_NO_PURITY:0 "Traditional Unity"
 XENOIST_PURITY:0 "No Traditional Purity"
 XENOIST_NO_PURITY_DESC:0 "Adoption of §YPurity§! traditions displeases the [Root.GetName]."
 
- edict_loyalty:0 "Doctrine: Thought Control" 
+ edict_loyalty:0 "Doctrine: Thought Control"
  edict_loyalty_desc:0 " "
- 
-allow_edict_doctrine_loyalty:0 "Unlocks country edict §YDoctrine: Thought Control§!: increase §YGovernment Ethic Attraction§!, §YArmy Morale§! and §YInfluence Gain§!, reduce potential §YUnrest§! and decrease §YResearch Speed§! and §YEnergy Gain§!. Unlocks §YWill to Power§! technology research option." 
+
+allow_edict_doctrine_loyalty:0 "Unlocks country edict §YDoctrine: Thought Control§!: increase §YGovernment Ethic Attraction§!, §YArmy Morale§! and §YInfluence Gain§!, reduce potential §YUnrest§! and decrease §YResearch Speed§! and §YEnergy Gain§!. Unlocks §YWill to Power§! technology research option."
 
 
 
- requires_finish_hirerarchy_or_cyber:0 "$TRIGGER_FAIL$Requires to finish §YAuthority§! tradition tree, or have §YPolice State§! civic." 
+ requires_finish_hirerarchy_or_cyber:0 "$TRIGGER_FAIL$Requires to finish §YAuthority§! tradition tree, or have §YPolice State§! civic."
  requires_adopt_diversity:0 "$TRIGGER_FAIL$Requires to adopt §YUnity§! tradition tree."
  requires_finish_anarchy:0 "$TRIGGER_FAIL$Requires to finish §YLiberty§! tradition tree."
- 
+
  policy_military_budget:0 "State Budget Focus"
  policy_military_budget_desc:0 " "
- 
+
  military_budget_normal:0 "Balanced Spendings"
  military_budget_normal_name:0 "Balanced Spendings"
  military_budget_normal_desc:0 " "
- 
+
  military_budget_very_low:0 "Strong Statecraft Focus"
  military_budget_very_low_name:0 "Strong Statecraft Focus"
- military_budget_very_low_desc:0 " " 
- 
+ military_budget_very_low_desc:0 " "
+
  military_budget_low:0 "Statecraft Focus"
  military_budget_low_name:0 "Statecraft Focus"
- military_budget_low_desc:0 " " 
- 
+ military_budget_low_desc:0 " "
+
  military_budget_high:0 "Military Focus"
  military_budget_high_name:0 "Military Focus"
  military_budget_high_desc:0 " "
 
  military_budget_very_high:0 "Strong Military Focus"
  military_budget_very_high_name:0 "Strong Military Focus"
- military_budget_very_high_desc:0 " "   
- 
+ military_budget_very_high_desc:0 " "
+
  PROSPERITY_LOW_MILITARY:0 "Statecraft Budget Focus"
  PROSPERITY_NO_LOW_MILITARY:0 "Statecraft Budget Focus"
  PROSPERITY_LOW_MILITARY_DESC:0 "Keeping §YState Budget§! policy focused on §YStatecraft§ will please the [Root.GetName]."
-		
+
  PROSPERITY_NOT_BIG_MILITARY:0 "Regular Military Spendings"
  PROSPERITY_BIG_MILITARY:0 "Lower Military Spendings"
  PROSPERITY_NOT_BIG_MILITARY_DESC:0 "Keeping §YState Budget§! policy focused on §YMilitary§ displeases the [Root.GetName]."
@@ -1554,15 +1554,15 @@ allow_edict_doctrine_loyalty:0 "Unlocks country edict §YDoctrine: Thought Contr
 
  IMPERIALIST_NORMAL_MILITARY:0 "Regular Military Spendings"
  IMPERIALIST_NO_NORMAL_MILITARY:0 "Increase Military Spendings"
- IMPERIALIST_NORMAL_MILITARY_DESC:0 "Keeping §YState Budget§! policy focused on §YStatecraft§ displeases the [Root.GetName]." 
+ IMPERIALIST_NORMAL_MILITARY_DESC:0 "Keeping §YState Budget§! policy focused on §YStatecraft§ displeases the [Root.GetName]."
 
  IMPERIALIST_TRADITION:0 "Traditional Imperialism"
  IMPERIALIST_NO_TRADITION:0 "Traditional Imperialism"
- IMPERIALIST_TRADITION_DESC:0 "Adopting Traditions of §YSupremacy§! will please the [Root.GetName]."  
- 
+ IMPERIALIST_TRADITION_DESC:0 "Adopting Traditions of §YSupremacy§! will please the [Root.GetName]."
+
  CAPITALISM_TRADITION:0 "Traditional Capitalism"
  NO_CAPITALISM_TRADITION:0 "No Traditional Commonwealth"
- CAPITALISM_TRADITION_DESC:0 "Adoption of §YCommonwealth§! traditions displeases the [Root.GetName]." 
+ CAPITALISM_TRADITION_DESC:0 "Adoption of §YCommonwealth§! traditions displeases the [Root.GetName]."
 
 
 
@@ -1571,24 +1571,20 @@ allow_edict_doctrine_loyalty:0 "Unlocks country edict §YDoctrine: Thought Contr
 
  gov_jingoism:0 "Jingoistic Regime"
  gov_jingoism_desc:0 "This form of authoritarian governance is headed by a xenophobic demagogue and notions of national supremacy and manifest destiny dominate the politics."
- 
+
  observation.0002.name:0 "[From.GetSpeciesAdj] Societal Shift"
  observation.0002.start.desc:0 "Our agents operating clandestinely in orbit around and on the surface of [From.Capital.GetName] have met with success. Their efforts have shifted the societal values of the [From.GetName] in a direction favored by us."
  observation.0002.desc:0 "The [From.GetSpeciesNamePlural] have shifted their ethos to §YIndividualism§!."
- observation.0002.a:0 "They will thank us one day." 
- 
+ observation.0002.a:0 "They will thank us one day."
+
  observation.1002.desc:0 "The [From.GetSpeciesNamePlural] have shifted their ethos to §YCollectivism§!."
  observation.2002.desc:0 "The [From.GetSpeciesNamePlural] have shifted their ethos to §YElitism§!."
  observation.3002.desc:0 "The [From.GetSpeciesNamePlural] have shifted their ethos to §YEgalitarianism§!."
  observation.4002.desc:0 "The [From.GetSpeciesNamePlural] have shifted their ethos to §YEcologism§!."
  observation.5002.desc:0 "The [From.GetSpeciesNamePlural] have shifted their ethos to §YIndustrialism§!."
- 
-
 
 RT_DICTATOR:0 "Dictator"
 RT_PRESIDENT:0 "President"
-
-tr_domination_finish_effect:0 " "
 
 country_subjects_resource_unity_mult:0 "£unity Unity per Subject"
 country_subjects_resource_unity_max_mult:0 "£unity Unity per Subject max effect"
@@ -1604,7 +1600,7 @@ civic_peoples_republic:0 "Proletariat's Dictatorship"
 civic_peoples_republic_desc:0 "Government is a meritocratic form of dictatorship. There is an actual parliament, but it's dominated by a single political power - so-called "People's Party"."
 
 
- 
+
 civic_tribal_aristocracy:0 "Immutable Caste"
 civic_tribal_aristocracy_desc:0 "This society is a subject to a strict form of social stratification, with people being divided into rigid hierarchial groups of Masters and Slaves. Obligated to have §HCaste System§!. Building §HNeo-Coliseum§! provides additional §G+1§! §HUnity§! £unity."
 
@@ -1626,8 +1622,6 @@ tech_div_crusade_desc:0 "Unlocks country edict §YDivine Crusade§!. Pacifists c
 
 civic_tooltip_corporate_dominion_effects:0 " "
 
-tr_expansion_finish_effect:1 " "
-
 RECYCLING_CAMPAIGN:0 "Recycling Subsidies"
 NO_RECYCLING_CAMPAIGN:0 "No Recycling Subsidies"
 RECYCLING_CAMPAIGN_DESC:0 "Invoking a §YRecycling Campaign§! edict will please the [Root.GetName]."
@@ -1641,7 +1635,7 @@ gov_peoples_commissariat_desc:0 " "
 
 RT_DEPUTY:0 "People's Deputy"
 
- 
+
 
 
 
@@ -1659,4 +1653,4 @@ TRADITIONALIST_NO_ROBOTS:0 "No Robots"
 TRADITIONALIST_YES_ROBOTS_DESC:0 "Allowing robotic workers in the Empire will please the [Root.GetName]."
 
 civic_elite_troops:0 "Elite Troops"
-civic_elite_troops_desc:0 "Goverment allocates significant resources for training and maintaing of high-class military forces." 
+civic_elite_troops_desc:0 "Goverment allocates significant resources for training and maintaing of high-class military forces."

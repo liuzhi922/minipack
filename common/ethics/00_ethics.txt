@@ -241,7 +241,7 @@ ethic_fanatic_egalitarian = {
 	}
 
 	country_modifier = {
-		pop_factions_produces_mult = 0.5
+		pop_factions_produces_mult = 0.25
 		pop_citizen_happiness = 0.07
 		empire_size_penalty_mult = -0.05
 		country_unity_produces_mult = -0.1

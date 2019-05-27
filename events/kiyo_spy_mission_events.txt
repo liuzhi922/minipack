@@ -1,0 +1,2132 @@
+namespace = kiyo_event_spy
+
+#Spy Successful Mission
+country_event = {
+	id = kiyo_event_spy.1
+	title = kiyo_event_spy.1.title
+	desc = kiyo_event_spy.1.desc
+	picture = GFX_evt_alien_segregation
+	is_triggered_only = yes
+	
+	immediate = {
+		kiyo_spy_increase_intrigue = yes
+		if = { limit = { has_modifier = kiyo_spy_catchup }
+			add_monthly_resource_mult = { resource = minerals value = 20 }
+			add_monthly_resource_mult = { resource = energy value = 20 }
+			add_monthly_resource_mult = { resource = food value = 20 }
+			add_monthly_resource_mult = { resource = consumer_goods value = 20 }
+			add_monthly_resource_mult = { resource = alloys value = 20 }
+			add_monthly_resource_mult = { resource = physics_research value = 20 }
+			add_monthly_resource_mult = { resource = society_research value = 20 }
+			add_monthly_resource_mult = { resource = engineering_research value = 20 }
+			add_monthly_resource_mult = { resource = unity value = 20 }
+			add_monthly_resource_mult = { resource = influence value = 20 }
+		}
+	}
+	
+	option = { name = GOOD }
+}
+
+#Spy Failed Spy Check
+country_event = {
+	id = kiyo_event_spy.2
+	title = kiyo_event_spy.2.title
+	desc = kiyo_event_spy.2.desc
+	picture = GFX_evt_news_room
+	is_triggered_only = yes
+	
+	immediate = {
+		kiyo_spy_decrease_intrigue = yes
+	}
+	
+	option = { name = CURSES }
+}
+
+#Scandal Spy Intervention
+country_event = {
+	id = kiyo_event_spy.11
+	title = kiyo_event_spy.11.title
+	desc = kiyo_event_spy.11.desc
+	picture = GFX_evt_dark_alley
+	is_triggered_only = yes
+	
+	immediate = { save_event_target_as = spyEmpire }
+	
+	option = {
+		name = kiyo_event_spy.11.a
+		custom_tooltip = kiyo_event_spy.11.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_scandal_a days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_scandal_a } }
+				country_event = { id = kiyo_event_spy.12 days = 30 random = 60 }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.11.b
+		custom_tooltip = kiyo_event_spy.11.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_scandal_b days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_scandal_b } }
+				country_event = { id = kiyo_event_spy.12 days = 30 random = 60 }
+			}
+		}
+	}
+}
+
+#Scandal Regular
+country_event = {
+	id = kiyo_event_spy.12
+	title = kiyo_event_spy.12.title
+	desc = kiyo_event_spy.12.desc
+	picture = GFX_evt_news_room
+	is_triggered_only = yes
+	
+	immediate = {
+		random_owned_leader = { save_event_target_as = kiyo_spy_scandal_leader }
+		country_event = { id = kiyo_event_spy.13 days = 180 }
+	}
+	
+	option = {
+		name = kiyo_event_spy.12.a
+		custom_tooltip = kiyo_event_spy.12.a.tooltip
+		ai_chance = { factor = 60 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_victim_a }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.12.b
+		custom_tooltip = kiyo_event_spy.12.b.tooltip
+		ai_chance = { factor = 40 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_victim_b }
+			}
+		}
+	}
+}
+
+#Scandal Results Trigger
+country_event = {
+	id = kiyo_event_spy.13
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_b }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_victim_a }
+			}
+			add_modifier = { modifier = kiyo_spy_scandal_trial_good days = 1800 }
+			country_event = { id = kiyo_event_spy.14 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_a }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_victim_b } }
+			}
+			add_modifier = { modifier = kiyo_spy_scandal_bad days = 1800 }
+			if = {
+				limit = {
+					OR = {
+						reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_intrigue3 }
+						reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_intrigue4 }
+						reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_intrigue5 }
+					}
+				}
+				add_modifier = { modifier = kiyo_spy_scandal_bad_intrigue_3 days = 3600 }
+			}
+			event_target:spyEmpire = {
+				add_resource = { influence = 100 }
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.15 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_a }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_victim_b }
+			}
+			event_target:kiyo_spy_scandal_leader = { add_experience = 200 }
+			country_event = { id = kiyo_event_spy.16 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_b }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_victim_a } }
+			}
+			add_modifier = { modifier = kiyo_spy_scandal_bad days = 1800 }
+			if = {
+				limit = {
+					OR = {
+						reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_intrigue3 }
+						reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_intrigue4 }
+						reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_intrigue5 }
+					}
+				}
+				add_modifier = { modifier = kiyo_spy_scandal_bad_intrigue_3 days = 3600 }
+			}
+			event_target:spyEmpire = {
+				add_resource = { influence = 100 }
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.17 }
+		}
+		else = { log = "ERROR in kiyo_event_spy.13: The spying empire apparently did not make a choice. HUH?!" }
+		event_target:spyEmpire = {
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			remove_relation_flag = { who = root flag = kiyo_spy_scandal_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_scandal_b }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_victim_a }
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_scandal_victim_b }
+	}
+}
+
+#Scandal Results A Good
+country_event = {
+	id = kiyo_event_spy.14
+	title = kiyo_event_spy.12.title
+	desc = kiyo_event_spy.14.desc
+	picture = GFX_evt_news_room
+	is_triggered_only = yes
+	
+	option = { name = INTRIGUING }
+}
+
+#Scandal Results A Bad
+country_event = {
+	id = kiyo_event_spy.15
+	title = kiyo_event_spy.12.title
+	desc = kiyo_event_spy.15.desc
+	picture = GFX_evt_news_room
+	is_triggered_only = yes
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Scandal Results B Good
+country_event = {
+	id = kiyo_event_spy.16
+	title = kiyo_event_spy.12.title
+	desc = kiyo_event_spy.16.desc
+	picture = GFX_evt_news_room
+	is_triggered_only = yes
+	
+	option = { name = GOOD }
+}
+
+#Scandal Results B Bad
+country_event = {
+	id = kiyo_event_spy.17
+	title = kiyo_event_spy.12.title
+	desc = kiyo_event_spy.17.desc
+	picture = GFX_evt_news_room
+	is_triggered_only = yes
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Drone Interference Spy Intervention
+country_event = {
+	id = kiyo_event_spy.21
+	title = kiyo_event_spy.21.title
+	desc = kiyo_event_spy.21.desc
+	picture = GFX_evt_dark_alley
+	is_triggered_only = yes
+	
+	immediate = { save_event_target_as = spyEmpire }
+	
+	option = {
+		name = kiyo_event_spy.21.a
+		custom_tooltip = kiyo_event_spy.21.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_drone_a days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_drone_a } }
+				country_event = { id = kiyo_event_spy.22 days = 30 random = 60 }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.21.b
+		custom_tooltip = kiyo_event_spy.21.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_drone_b days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_drone_b } }
+				country_event = { id = kiyo_event_spy.22 days = 30 random = 60 }
+			}
+		}
+	}
+}
+
+#Drone Interference Regular
+country_event = {
+	id = kiyo_event_spy.22
+	title = kiyo_event_spy.22.title
+	desc = kiyo_event_spy.22.desc
+	picture = GFX_evt_hive_mind
+	is_triggered_only = yes
+	
+	immediate = { country_event = { id = kiyo_event_spy.23 days = 180 } }
+	
+	option = {
+		name = kiyo_event_spy.22.a
+		custom_tooltip = kiyo_event_spy.22.a.tooltip
+		ai_chance = { factor = 60 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_victim_a }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.22.b
+		custom_tooltip = kiyo_event_spy.22.b.tooltip
+		ai_chance = { factor = 40 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_victim_b }
+			}
+		}
+	}
+}
+
+#Drone Interference Results Trigger
+country_event = {
+	id = kiyo_event_spy.23
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_b }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_victim_a }
+			}
+			add_modifier = { modifier = kiyo_spy_drone_building_good days = 1800 }
+			country_event = { id = kiyo_event_spy.24 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_a }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_victim_b } }
+			}
+			add_modifier = { modifier = kiyo_spy_drone_bad days = 1800 }
+			event_target:spyEmpire = {
+				add_resource = { influence = 100 }
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.25 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_a }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_victim_b }
+			}
+			add_modifier = { modifier = kiyo_spy_drone_vital_good days = 1800 }
+			country_event = { id = kiyo_event_spy.26 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_b }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_victim_a } }
+			}
+			add_modifier = { modifier = kiyo_spy_drone_bad days = 1800 }
+			event_target:spyEmpire = {
+				add_resource = { influence = 100 }
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.27 }
+		}
+		else = { log = "ERROR in kiyo_event_spy.23: The spying empire apparently did not make a choice. HUH?!" }
+		event_target:spyEmpire = {
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			remove_relation_flag = { who = root flag = kiyo_spy_drone_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_drone_b }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_victim_a }
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_drone_victim_b }
+	}
+}
+
+#Drone Interference Results A Good
+country_event = {
+	id = kiyo_event_spy.24
+	title = kiyo_event_spy.22.title
+	desc = kiyo_event_spy.24.desc
+	picture = GFX_evt_hive_mind
+	is_triggered_only = yes
+	
+	option = { name = MARVELOUS }
+}
+
+#Drone Interference Results A Bad
+country_event = {
+	id = kiyo_event_spy.25
+	title = kiyo_event_spy.22.title
+	desc = kiyo_event_spy.25.desc
+	picture = GFX_evt_hive_mind
+	is_triggered_only = yes
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Drone Interference Results B Good
+country_event = {
+	id = kiyo_event_spy.26
+	title = kiyo_event_spy.22.title
+	desc = kiyo_event_spy.26.desc
+	picture = GFX_evt_hive_mind
+	is_triggered_only = yes
+	
+	option = { name = MARVELOUS }
+}
+
+#Drone Interference Results B Bad
+country_event = {
+	id = kiyo_event_spy.27
+	title = kiyo_event_spy.22.title
+	desc = kiyo_event_spy.27.desc
+	picture = GFX_evt_hive_mind
+	is_triggered_only = yes
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Upstart Company Spy Intervention
+country_event = {
+	id = kiyo_event_spy.31
+	title = kiyo_event_spy.31.title
+	desc = kiyo_event_spy.31.desc
+	picture = GFX_evt_dark_alley
+	is_triggered_only = yes
+	
+	immediate = { save_event_target_as = spyEmpire }
+	
+	option = {
+		name = kiyo_event_spy.31.a
+		custom_tooltip = kiyo_event_spy.31.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_company_a days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_company_a } }
+				country_event = { id = kiyo_event_spy.32 days = 30 random = 60 }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.31.b
+		custom_tooltip = kiyo_event_spy.31.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_company_b days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_company_b } }
+				country_event = { id = kiyo_event_spy.32 days = 30 random = 60 }
+			}
+		}
+	}
+}
+
+#Upstart Company Regular
+country_event = {
+	id = kiyo_event_spy.32
+	title = kiyo_event_spy.32.title
+	desc = kiyo_event_spy.32.desc
+	picture = GFX_evt_galactic_market
+	is_triggered_only = yes
+	
+	immediate = { country_event = { id = kiyo_event_spy.33 days = 180 } }
+	
+	option = {
+		name = kiyo_event_spy.32.a
+		custom_tooltip = kiyo_event_spy.32.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_victim_a }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.32.b
+		custom_tooltip = kiyo_event_spy.32.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_victim_b }
+			}
+		}
+	}
+}
+
+#Upstart Company Results Trigger
+country_event = {
+	id = kiyo_event_spy.33
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_b }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_victim_a }
+			}
+			add_monthly_resource_mult = { resource = minerals value = 12 min = 400 max = 3000 }
+			add_monthly_resource_mult = { resource = energy value = 12 min = 400 max = 3000 }
+			country_event = { id = kiyo_event_spy.34 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_a }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_victim_b } }
+			}
+			add_modifier = { modifier = kiyo_spy_scandal_bad days = 1800 }
+			event_target:spyEmpire = {
+				add_monthly_resource_mult = { resource = minerals value = 12 min = 400 max = 3000 }
+				add_monthly_resource_mult = { resource = energy value = 12 min = 400 max = 3000 }
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.35 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_a }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_victim_b }
+			}
+			add_resource = { influence = 100 }
+			country_event = { id = kiyo_event_spy.36 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_b }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_victim_a } }
+			}
+			add_modifier = { modifier = kiyo_spy_scandal_bad days = 1800 }
+			event_target:spyEmpire = {
+				add_resource = { influence = 100 }
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.37 }
+		}
+		else = { log = "ERROR in kiyo_event_spy.33: The spying empire apparently did not make a choice. HUH?!" }
+		event_target:spyEmpire = {
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			remove_relation_flag = { who = root flag = kiyo_spy_company_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_company_b }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_victim_a }
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_company_victim_b }
+	}
+}
+
+#Upstart Company Results A Good
+country_event = {
+	id = kiyo_event_spy.34
+	title = kiyo_event_spy.32.title
+	desc = kiyo_event_spy.34.desc
+	picture = GFX_evt_galactic_market
+	is_triggered_only = yes
+	
+	option = { name = INTERESTING }
+}
+
+#Upstart Company Results A Bad
+country_event = {
+	id = kiyo_event_spy.35
+	title = kiyo_event_spy.32.title
+	desc = kiyo_event_spy.35.desc
+	picture = GFX_evt_galactic_market
+	is_triggered_only = yes
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Upstart Company Results B Good
+country_event = {
+	id = kiyo_event_spy.36
+	title = kiyo_event_spy.32.title
+	desc = kiyo_event_spy.36.desc
+	picture = GFX_evt_galactic_market
+	is_triggered_only = yes
+	
+	option = { name = INTERESTING }
+}
+
+#Upstart Company Results B Bad
+country_event = {
+	id = kiyo_event_spy.37
+	title = kiyo_event_spy.32.title
+	desc = kiyo_event_spy.37.desc
+	picture = GFX_evt_galactic_market
+	is_triggered_only = yes
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Resource Conservation Spy Intervention
+country_event = {
+	id = kiyo_event_spy.41
+	title = kiyo_event_spy.41.title
+	desc = kiyo_event_spy.41.desc
+	picture = GFX_evt_dark_alley
+	is_triggered_only = yes
+	
+	immediate = { save_event_target_as = spyEmpire }
+	
+	option = {
+		name = kiyo_event_spy.41.a
+		custom_tooltip = kiyo_event_spy.41.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { limit = { is_species = root } add_modifier = { modifier = kiyo_spy_conserve_a days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_conserve_a } }
+				country_event = { id = kiyo_event_spy.42 days = 30 random = 60 }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.41.b
+		custom_tooltip = kiyo_event_spy.41.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { limit = { is_species = root } add_modifier = { modifier = kiyo_spy_conserve_b days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_conserve_b } }
+				country_event = { id = kiyo_event_spy.42 days = 30 random = 60 }
+			}
+		}
+	}
+}
+
+#Resource Conservation Regular
+country_event = {
+	id = kiyo_event_spy.42
+	title = kiyo_event_spy.42.title
+	desc = kiyo_event_spy.42.desc
+	picture = GFX_evt_mining_operations
+	is_triggered_only = yes
+	
+	immediate = { country_event = { id = kiyo_event_spy.43 days = 180 } }
+	
+	option = {
+		name = kiyo_event_spy.42.a
+		custom_tooltip = kiyo_event_spy.42.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_victim_a }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.42.b
+		custom_tooltip = kiyo_event_spy.42.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_victim_a }
+			}
+		}
+	}
+}
+
+#Resource Conservation Results Trigger
+country_event = {
+	id = kiyo_event_spy.43
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_b }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_victim_a }
+			}
+			add_modifier = { modifier = kiyo_spy_conserve_minerals_good days = 1800 }
+			country_event = { id = kiyo_event_spy.44 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_a }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_victim_b } }
+			}
+			event_target:spyEmpire = {
+				add_monthly_resource_mult = { resource = minerals value = 18 min = 600 max = 4000 }
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.45 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_a }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_victim_b }
+			}
+			add_modifier = { modifier = kiyo_spy_conserve_energy_good days = 1800 }
+			country_event = { id = kiyo_event_spy.46 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_b }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_victim_a } }
+			}
+			event_target:spyEmpire = {
+				add_monthly_resource_mult = { resource = energy value = 18 min = 600 max = 4000 }
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.47 }
+		}
+		else = { log = "ERROR in kiyo_event_spy.213: The spying empire apparently did not make a choice. HUH?!" }
+		event_target:spyEmpire = {
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			remove_relation_flag = { who = root flag = kiyo_spy_conserve_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_conserve_b }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_victim_a }
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_conserve_victim_b }
+	}
+}
+
+#Resource Conservation Results A Good
+country_event = {
+	id = kiyo_event_spy.44
+	title = kiyo_event_spy.42.title
+	desc = kiyo_event_spy.44.desc
+	picture = GFX_evt_mining_operations
+	is_triggered_only = yes
+	
+	option = { name = INTERESTING }
+}
+
+#Resource Conservation Results A Bad
+country_event = {
+	id = kiyo_event_spy.45
+	title = kiyo_event_spy.42.title
+	desc = kiyo_event_spy.45.desc
+	picture = GFX_evt_mining_operations
+	is_triggered_only = yes
+	
+	option = { name = PECULIAR }
+}
+
+#Resource Conservation Results B Good
+country_event = {
+	id = kiyo_event_spy.46
+	title = kiyo_event_spy.42.title
+	desc = kiyo_event_spy.46.desc
+	picture = GFX_evt_mining_operations
+	is_triggered_only = yes
+	
+	option = { name = INTERESTING }
+}
+
+#Resource Conservation Results B Bad
+country_event = {
+	id = kiyo_event_spy.47
+	title = kiyo_event_spy.42.title
+	desc = kiyo_event_spy.47.desc
+	picture = GFX_evt_mining_operations
+	is_triggered_only = yes
+	
+	option = { name = PECULIAR }
+}
+
+#Unknown Hacker Spy Intervention
+country_event = {
+	id = kiyo_event_spy.51
+	title = kiyo_event_spy.51.title
+	desc = kiyo_event_spy.51.desc
+	picture = GFX_evt_dark_alley
+	is_triggered_only = yes
+	
+	immediate = { save_event_target_as = spyEmpire }
+	
+	option = {
+		name = kiyo_event_spy.51.a
+		custom_tooltip = kiyo_event_spy.51.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_hacker_a days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_hacker_a } }
+				country_event = { id = kiyo_event_spy.52 days = 30 random = 60 }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.51.b
+		custom_tooltip = kiyo_event_spy.51.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_hacker_b days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_hacker_b } }
+				country_event = { id = kiyo_event_spy.52 days = 30 random = 60 }
+			}
+		}
+	}
+}
+
+#Unknown Hacker Regular
+country_event = {
+	id = kiyo_event_spy.52
+	title = kiyo_event_spy.52.title
+	desc = kiyo_event_spy.52.desc
+	picture = GFX_evt_synth_sabotage
+	is_triggered_only = yes
+	
+	immediate = { country_event = { id = kiyo_event_spy.53 days = 180 } }
+	
+	option = {
+		name = kiyo_event_spy.52.a
+		custom_tooltip = kiyo_event_spy.52.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_victim_a }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.52.b
+		custom_tooltip = kiyo_event_spy.52.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_victim_b }
+			}
+		}
+	}
+}
+
+#Unknown Hacker Results Trigger
+country_event = {
+	id = kiyo_event_spy.53
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_b }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_victim_a }
+			}
+			add_monthly_resource_mult = { resource = physics_research value = 18 min = 300 max = 2500 }
+			add_monthly_resource_mult = { resource = society_research value = 18 min = 300 max = 2500 }
+			add_monthly_resource_mult = { resource = engineering_research value = 18 min = 300 max = 2500 }
+			country_event = { id = kiyo_event_spy.54 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_a }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_victim_b } }
+			}
+			event_target:spyEmpire = {
+				add_monthly_resource_mult = { resource = physics_research value = 18 min = 300 max = 2500 }
+				add_monthly_resource_mult = { resource = society_research value = 18 min = 300 max = 2500 }
+				add_monthly_resource_mult = { resource = engineering_research value = 18 min = 300 max = 2500 }
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.55 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_a }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_victim_b }
+			}
+			add_resource = { influence = 150 }
+			country_event = { id = kiyo_event_spy.56 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_b }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_victim_a } }
+			}
+			event_target:spyEmpire = {
+				add_resource = { influence = 150 }
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.57 }
+		}
+		else = { log = "ERROR in kiyo_event_spy.53: The spying empire apparently did not make a choice. HUH?!" }
+		event_target:spyEmpire = {
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			remove_relation_flag = { who = root flag = kiyo_spy_hacker_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_hacker_b }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_victim_a }
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hacker_victim_b }
+	}
+}
+
+#Unknown Hacker Results A Good
+country_event = {
+	id = kiyo_event_spy.54
+	title = kiyo_event_spy.52.title
+	desc = kiyo_event_spy.54.desc
+	picture = GFX_evt_synth_sabotage
+	is_triggered_only = yes
+	
+	option = { name = INTRIGUING }
+}
+
+#Unknown Hacker Results A Bad
+country_event = {
+	id = kiyo_event_spy.55
+	title = kiyo_event_spy.52.title
+	desc = kiyo_event_spy.55.desc
+	picture = GFX_evt_synth_sabotage
+	is_triggered_only = yes
+	
+	option = { name = WORRYING }
+}
+
+#Unknown Hacker Results B Good
+country_event = {
+	id = kiyo_event_spy.56
+	title = kiyo_event_spy.52.title
+	desc = kiyo_event_spy.56.desc
+	picture = GFX_evt_synth_sabotage
+	is_triggered_only = yes
+	
+	option = { name = INTRIGUING }
+}
+
+#Unknown Hacker Results B Bad
+country_event = {
+	id = kiyo_event_spy.57
+	title = kiyo_event_spy.52.title
+	desc = kiyo_event_spy.57.desc
+	picture = GFX_evt_synth_sabotage
+	is_triggered_only = yes
+	
+	option = { name = WORRYING }
+}
+
+#Assassin for Hire Spy Intervention
+country_event = {
+	id = kiyo_event_spy.61
+	title = kiyo_event_spy.61.title
+	desc = kiyo_event_spy.61.desc
+	picture = GFX_evt_dark_alley
+	is_triggered_only = yes
+	
+	immediate = { save_event_target_as = spyEmpire }
+	
+	option = {
+		name = kiyo_event_spy.61.a
+		custom_tooltip = kiyo_event_spy.61.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_assassin_a days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_assassin_a } }
+				country_event = { id = kiyo_event_spy.62 days = 30 random = 60 }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.61.b
+		custom_tooltip = kiyo_event_spy.61.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_assassin_b days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_assassin_b } }
+				country_event = { id = kiyo_event_spy.62 days = 30 random = 60 }
+			}
+		}
+	}
+}
+
+#Assassin for Hire Regular
+country_event = {
+	id = kiyo_event_spy.62
+	title = kiyo_event_spy.62.title
+	desc = kiyo_event_spy.62.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	immediate = {
+		random_owned_leader = { limit = { NOT = { leader_class = ruler } }
+			save_event_target_as = kiyo_spy_assassin_leader
+		}
+		country_event = { id = kiyo_event_spy.63 days = 180 }
+	}
+	
+	option = {
+		name = kiyo_event_spy.62.a
+		custom_tooltip = kiyo_event_spy.62.a.tooltip
+		ai_chance = {
+			factor = 40
+			modifier = { factor = 1.5 is_at_war = yes }
+		}
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_victim_a }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.62.b
+		custom_tooltip = kiyo_event_spy.62.b.tooltip
+		ai_chance = {
+			factor = 40
+			modifier = { factor = 1.5 is_at_war = no }
+		}
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_victim_b }
+			}
+		}
+	}
+}
+
+#Assassin for Hire Results Trigger
+country_event = {
+	id = kiyo_event_spy.63
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_b }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_victim_a }
+			}
+			add_modifier = { modifier = kiyo_spy_assassin_guard days = 3600 }
+			event_target:kiyo_spy_assassin_leader = { add_experience = 200 }
+			country_event = { id = kiyo_event_spy.64 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_a }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_victim_b } }
+			}
+			add_modifier = { modifier = kiyo_spy_assassin_guard days = 3600 }
+			if = {
+				limit = { has_ethic = ethic_gestalt_consciousness }
+				add_modifier = { modifier = kiyo_spy_assassin_bad_gestalt days = 3600 }
+			}
+			else = {
+				add_modifier = { modifier = kiyo_spy_assassin_bad days = 3600 }
+			}
+			event_target:kiyo_spy_assassin_leader = { kill_leader = { show_notification = yes } }
+			event_target:spyEmpire = { kiyo_spy_trigger_increase_intrigue = yes }
+			country_event = { id = kiyo_event_spy.65 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_a }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_victim_b }
+			}
+			add_modifier = { modifier = kiyo_spy_assassin_warrant days = 3600 }
+			event_target:kiyo_spy_assassin_leader = { add_experience = 200 }
+			country_event = { id = kiyo_event_spy.66 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_b }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_victim_a } }
+			}
+			add_modifier = { modifier = kiyo_spy_assassin_warrant days = 3600 }
+			if = {
+				limit = { has_ethic = ethic_gestalt_consciousness }
+				add_modifier = { modifier = kiyo_spy_assassin_bad_gestalt days = 3600 }
+			}
+			else = {
+				add_modifier = { modifier = kiyo_spy_assassin_bad days = 3600 }
+			}
+			event_target:kiyo_spy_assassin_leader = { kill_leader = { show_notification = yes } }
+			event_target:spyEmpire = { kiyo_spy_trigger_increase_intrigue = yes }
+			country_event = { id = kiyo_event_spy.67 }
+		}
+		else = { log = "ERROR in kiyo_event_spy.63: The spying empire apparently did not make a choice. HUH?!" }
+		event_target:spyEmpire = {
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			remove_relation_flag = { who = root flag = kiyo_spy_assassin_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_assassin_b }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_victim_a }
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_assassin_victim_b }
+	}
+}
+
+#Assassin for Hire Results A Good
+country_event = {
+	id = kiyo_event_spy.64
+	title = kiyo_event_spy.62.title
+	desc = kiyo_event_spy.64.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = { name = INTRIGUING }
+}
+
+#Assassin for Hire Results A Bad
+country_event = {
+	id = kiyo_event_spy.65
+	title = kiyo_event_spy.62.title
+	desc = kiyo_event_spy.65.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = { name = WORRYING }
+}
+
+#Assassin for Hire Results B Good
+country_event = {
+	id = kiyo_event_spy.66
+	title = kiyo_event_spy.62.title
+	desc = kiyo_event_spy.66.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = { name = INTRIGUING }
+}
+
+#Assassin for Hire Results B Bad
+country_event = {
+	id = kiyo_event_spy.67
+	title = kiyo_event_spy.62.title
+	desc = kiyo_event_spy.67.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = { name = WORRYING }
+}
+
+#Naval Maintenance Spy Intervention
+country_event = {
+	id = kiyo_event_spy.71
+	title = kiyo_event_spy.71.title
+	desc = kiyo_event_spy.71.desc
+	picture = GFX_evt_dark_alley
+	is_triggered_only = yes
+	
+	immediate = { save_event_target_as = spyEmpire }
+	
+	option = {
+		name = kiyo_event_spy.71.a
+		custom_tooltip = kiyo_event_spy.71.a.tooltip
+		ai_chance = { factor = 45 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_hijack_a days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_hijack_a } }
+				country_event = { id = kiyo_event_spy.72 days = 30 random = 60 }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.71.b
+		custom_tooltip = kiyo_event_spy.71.b.tooltip
+		ai_chance = { factor = 55 }
+		
+		hidden_effect = {
+			random_owned_pop = { limit = { is_species = root } add_modifier = { modifier = kiyo_spy_hijack_b days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_hijack_b } }
+				country_event = { id = kiyo_event_spy.72 days = 30 random = 60 }
+			}
+		}
+	}
+}
+
+#Naval Maintenance Regular
+country_event = {
+	id = kiyo_event_spy.72
+	title = kiyo_event_spy.72.title
+	desc = kiyo_event_spy.72.desc
+	picture = GFX_evt_ship_offloading_cargo
+	is_triggered_only = yes
+	
+	immediate = { country_event = { id = kiyo_event_spy.73 days = 180 } }
+	
+	option = {
+		name = kiyo_event_spy.72.a
+		custom_tooltip = kiyo_event_spy.72.a.tooltip
+		ai_chance = {
+			factor = 40
+			modifier = { factor = 1.5 is_at_war = yes }
+		}
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_victim_a }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.72.b
+		custom_tooltip = kiyo_event_spy.72.b.tooltip
+		ai_chance = {
+			factor = 40
+			modifier = { factor = 1.5 is_at_war = no }
+		}
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_victim_b }
+			}
+		}
+	}
+}
+
+#Naval Maintenance Results Trigger
+country_event = {
+	id = kiyo_event_spy.73
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_b }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_victim_a }
+			}
+			add_modifier = { modifier = kiyo_spy_hijack_ai_good days = 3600 }
+			country_event = { id = kiyo_event_spy.74 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_a }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_victim_b } }
+			}
+			add_modifier = { modifier = kiyo_spy_hijack_ai_bad days = 3600 }
+			event_target:spyEmpire = { kiyo_spy_trigger_increase_intrigue = yes }
+			country_event = { id = kiyo_event_spy.75 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_a }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_victim_b }
+			}
+			add_modifier = { modifier = kiyo_spy_hijack_inventory_good days = 3600 }
+			country_event = { id = kiyo_event_spy.76 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_b }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_victim_a } }
+			}
+			kiyo_spy_destroy_ships = yes
+			event_target:spyEmpire = { kiyo_spy_trigger_increase_intrigue = yes }
+			country_event = { id = kiyo_event_spy.77 }
+		}
+		else = { log = "ERROR in kiyo_event_spy.73: The spying empire apparently did not make a choice. HUH?!" }
+		event_target:spyEmpire = {
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			remove_relation_flag = { who = root flag = kiyo_spy_hijack_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_hijack_b }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_victim_a }
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_hijack_victim_b }
+	}
+}
+
+#Naval Maintenance Results A Good
+country_event = {
+	id = kiyo_event_spy.74
+	title = kiyo_event_spy.72.title
+	desc = kiyo_event_spy.74.desc
+	picture = GFX_evt_ship_offloading_cargo
+	is_triggered_only = yes
+	
+	option = { name = INCREDIBLE }
+}
+
+#Naval Maintenance Results A Bad
+country_event = {
+	id = kiyo_event_spy.75
+	title = kiyo_event_spy.72.title
+	desc = kiyo_event_spy.75.desc
+	picture = GFX_evt_ship_offloading_cargo
+	is_triggered_only = yes
+	
+	option = { name = TERRIBLE }
+}
+
+#Naval Maintenance Results B Good
+country_event = {
+	id = kiyo_event_spy.76
+	title = kiyo_event_spy.72.title
+	desc = kiyo_event_spy.76.desc
+	picture = GFX_evt_ship_offloading_cargo
+	is_triggered_only = yes
+	
+	option = { name = INCREDIBLE }
+}
+
+#Naval Maintenance Results B Bad
+country_event = {
+	id = kiyo_event_spy.77
+	title = kiyo_event_spy.72.title
+	desc = kiyo_event_spy.77.desc
+	picture = GFX_evt_ship_offloading_cargo
+	is_triggered_only = yes
+	
+	option = { name = TERRIBLE }
+}
+
+#Change Trade Policy Spy Intervention
+country_event = {
+	id = kiyo_event_spy.81
+	title = kiyo_event_spy.81.title
+	desc = kiyo_event_spy.81.desc
+	picture = GFX_evt_dark_alley
+	is_triggered_only = yes
+	
+	immediate = { save_event_target_as = spyEmpire }
+	
+	option = {
+		name = kiyo_event_spy.81.a
+		custom_tooltip = kiyo_event_spy.81.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_trade_a days = 180 } }
+			event_target:spyVictim = {
+				root = {
+					set_relation_flag = { who = prev flag = kiyo_spy_trade_a }
+					if = {
+						limit = {
+							NOR = {
+								has_ethic = ethic_gestalt_consciousness
+								has_policy_flag = trade_conversion_consumer_goods
+								has_policy_flag = trade_conversion_unity
+							}
+						}
+						set_policy = { policy = trade_policy option = trade_policy_default cooldown = yes }
+					}
+					else_if = { limit = { has_policy_flag = trade_conversion_consumer_goods }
+						set_policy = { policy = trade_policy option = trade_policy_consumer_goods cooldown = yes }
+					}
+					else = { set_policy = { policy = trade_policy option = trade_policy_unity cooldown = yes } }
+				}
+				country_event = { id = kiyo_event_spy.82 days = 30 random = 60 }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.81.b
+		custom_tooltip = kiyo_event_spy.81.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { limit = { is_species = root } add_modifier = { modifier = kiyo_spy_trade_b days = 180 } }
+			event_target:spyVictim = {
+				root = {
+					set_relation_flag = { who = prev flag = kiyo_spy_trade_b }
+					if = {
+						limit = {
+							NOR = {
+								has_ethic = ethic_gestalt_consciousness
+								has_policy_flag = trade_conversion_consumer_goods
+								has_policy_flag = trade_conversion_unity
+							}
+						}
+						set_policy = { policy = trade_policy option = trade_policy_default cooldown = yes }
+					}
+					else_if = { limit = { has_policy_flag = trade_conversion_consumer_goods }
+						set_policy = { policy = trade_policy option = trade_policy_consumer_goods cooldown = yes }
+					}
+					else = { set_policy = { policy = trade_policy option = trade_policy_unity cooldown = yes } }
+				}
+				country_event = { id = kiyo_event_spy.82 days = 30 random = 60 }
+			}
+		}
+	}
+}
+
+#Change Trade Policy Regular
+country_event = {
+	id = kiyo_event_spy.82
+	title = kiyo_event_spy.82.title
+	desc = kiyo_event_spy.82.desc
+	picture = GFX_evt_busy_spaceport
+	is_triggered_only = yes
+	
+	immediate = { country_event = { id = kiyo_event_spy.83 days = 180 } }
+	
+	option = {
+		name = kiyo_event_spy.82.a
+		custom_tooltip = kiyo_event_spy.82.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_victim_a }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.82.b
+		custom_tooltip = kiyo_event_spy.82.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_victim_b }
+			}
+		}
+	}
+}
+
+#Change Trade Policy Results Trigger
+country_event = {
+	id = kiyo_event_spy.83
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_b }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_victim_a }
+			}
+			add_modifier = { modifier = kiyo_spy_trade_good days = 3600 }
+			country_event = { id = kiyo_event_spy.84 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_a }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_victim_b } }
+			}
+			add_modifier = { modifier = kiyo_spy_trade_bad days = 3600 }
+			if = {
+				limit = {
+					OR = {
+						has_policy_flag = trade_conversion_consumer_goods
+						has_policy_flag = trade_conversion_unity
+					}
+				}
+				set_policy = { policy = trade_policy option = trade_policy_default cooldown = yes }
+			}
+			else = { set_policy = { policy = trade_policy option = trade_policy_consumer_goods cooldown = yes } }
+			event_target:spyEmpire = {
+				if = { limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+					add_monthly_resource_mult = { resource = energy value = 12 }
+					add_monthly_resource_mult = { resource = unity value = 12 }
+					add_monthly_resource_mult = { resource = consumer_goods value = 12 }
+				}
+				else = {
+					add_monthly_resource_mult = { resource = energy value = 18 }
+					add_monthly_resource_mult = { resource = unity value = 18 }
+				}
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.85 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_a }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_victim_b }
+			}
+			add_modifier = { modifier = kiyo_spy_trade_good days = 3600 }
+			country_event = { id = kiyo_event_spy.86 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_b }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_victim_a } }
+			}
+			add_modifier = { modifier = kiyo_spy_trade_bad days = 3600 }
+			if = { limit = { has_policy_flag = trade_conversion_unity }
+				set_policy = { policy = trade_policy option = trade_policy_consumer_goods cooldown = yes }
+			}
+			else = { set_policy = { policy = trade_policy option = trade_policy_unity cooldown = yes } }
+			event_target:spyEmpire = {
+				if = { limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+					add_monthly_resource_mult = { resource = energy value = 12 }
+					add_monthly_resource_mult = { resource = unity value = 12 }
+					add_monthly_resource_mult = { resource = consumer_goods value = 12 }
+				}
+				else = {
+					add_monthly_resource_mult = { resource = energy value = 18 }
+					add_monthly_resource_mult = { resource = unity value = 18 }
+				}
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.87 }
+		}
+		else = { log = "ERROR in kiyo_event_spy.83: The spying empire apparently did not make a choice. HUH?!" }
+		event_target:spyEmpire = {
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			remove_relation_flag = { who = root flag = kiyo_spy_trade_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_trade_b }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_victim_a }
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_trade_victim_b }
+	}
+}
+
+#Change Trade Policy Results A Good
+country_event = {
+	id = kiyo_event_spy.84
+	title = kiyo_event_spy.82.title
+	desc = kiyo_event_spy.84.desc
+	picture = GFX_evt_busy_spaceport
+	is_triggered_only = yes
+	
+	option = { name = GOOD }
+}
+
+#Change Trade Policy Results A Bad
+country_event = {
+	id = kiyo_event_spy.85
+	title = kiyo_event_spy.82.title
+	desc = kiyo_event_spy.85.desc
+	picture = GFX_evt_busy_spaceport
+	is_triggered_only = yes
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Change Trade Policy Results B Good
+country_event = {
+	id = kiyo_event_spy.86
+	title = kiyo_event_spy.82.title
+	desc = kiyo_event_spy.86.desc
+	picture = GFX_evt_busy_spaceport
+	is_triggered_only = yes
+	
+	option = { name = GOOD }
+}
+
+#Change Trade Policy Results B Bad
+country_event = {
+	id = kiyo_event_spy.87
+	title = kiyo_event_spy.82.title
+	desc = kiyo_event_spy.87.desc
+	picture = GFX_evt_busy_spaceport
+	is_triggered_only = yes
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Sabotage Drone Production Spy Intervention
+country_event = {
+	id = kiyo_event_spy.91
+	title = kiyo_event_spy.91.title
+	desc = kiyo_event_spy.91.desc
+	picture = GFX_evt_dark_alley
+	is_triggered_only = yes
+	
+	immediate = { save_event_target_as = spyEmpire }
+	
+	option = {
+		name = kiyo_event_spy.91.a
+		custom_tooltip = kiyo_event_spy.91.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_droneprod_a days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_droneprod_a } }
+				country_event = { id = kiyo_event_spy.92 days = 30 random = 60 }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.91.b
+		custom_tooltip = kiyo_event_spy.91.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		hidden_effect = {
+			random_owned_pop = { limit = { is_species = root } add_modifier = { modifier = kiyo_spy_droneprod_b days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_droneprod_b } }
+				country_event = { id = kiyo_event_spy.92 days = 30 random = 60 }
+			}
+		}
+	}
+}
+
+#Sabotage Drone Production Regular
+country_event = {
+	id = kiyo_event_spy.92
+	title = kiyo_event_spy.92.title
+	desc = kiyo_event_spy.92.desc
+	picture = GFX_evt_busy_spaceport
+	is_triggered_only = yes
+	
+	immediate = { country_event = { id = kiyo_event_spy.93 days = 180 } }
+	
+	option = {
+		name = kiyo_event_spy.92.a
+		custom_tooltip = kiyo_event_spy.92.a.tooltip
+		ai_chance = { factor = 40 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_victim_a }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.92.b
+		custom_tooltip = kiyo_event_spy.92.b.tooltip
+		ai_chance = { factor = 60 }
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_victim_b }
+			}
+		}
+	}
+}
+
+#Sabotage Drone Production Results Trigger
+country_event = {
+	id = kiyo_event_spy.93
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_b }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_victim_a }
+			}
+			add_modifier = { modifier = kiyo_spy_droneprod_good days = 3600 }
+			country_event = { id = kiyo_event_spy.94 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_a }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_victim_b } }
+			}
+			add_modifier = { modifier = kiyo_spy_droneprod_bad_menial days = 1800 }
+			event_target:spyEmpire = { kiyo_spy_trigger_increase_intrigue = yes }
+			country_event = { id = kiyo_event_spy.95 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_a }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_victim_b }
+			}
+			add_modifier = { modifier = kiyo_spy_droneprod_good days = 3600 }
+			country_event = { id = kiyo_event_spy.96 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_b }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_victim_a } }
+			}
+			add_modifier = { modifier = kiyo_spy_droneprod_bad_complex days = 1800 }
+			event_target:spyEmpire = { kiyo_spy_trigger_increase_intrigue = yes }
+			country_event = { id = kiyo_event_spy.97 }
+		}
+		else = { log = "ERROR in kiyo_event_spy.93: The spying empire apparently did not make a choice. HUH?!" }
+		event_target:spyEmpire = {
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			remove_relation_flag = { who = root flag = kiyo_spy_droneprod_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_droneprod_b }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_victim_a }
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_droneprod_victim_b }
+	}
+}
+
+#Sabotage Drone Production Results A Good
+country_event = {
+	id = kiyo_event_spy.94
+	title = kiyo_event_spy.92.title
+	desc = kiyo_event_spy.94.desc
+	picture = GFX_evt_busy_spaceport
+	is_triggered_only = yes
+	
+	option = { name = GOOD }
+}
+
+#Sabotage Drone Production Results A Bad
+country_event = {
+	id = kiyo_event_spy.95
+	title = kiyo_event_spy.92.title
+	desc = kiyo_event_spy.95.desc
+	picture = GFX_evt_busy_spaceport
+	is_triggered_only = yes
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Sabotage Drone Production Results B Good
+country_event = {
+	id = kiyo_event_spy.96
+	title = kiyo_event_spy.92.title
+	desc = kiyo_event_spy.96.desc
+	picture = GFX_evt_busy_spaceport
+	is_triggered_only = yes
+	
+	option = { name = GOOD }
+}
+
+#Sabotage Drone Production Results B Bad
+country_event = {
+	id = kiyo_event_spy.97
+	title = kiyo_event_spy.92.title
+	desc = kiyo_event_spy.97.desc
+	picture = GFX_evt_busy_spaceport
+	is_triggered_only = yes
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Diplomatic Envoy Spy Save Event Target Neighbor
+country_event = {
+	id = kiyo_event_spy.108
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				is_country_type = default
+				NOT = { is_country = event_target:spyVictim }
+				is_neighbor_of = event_target:spyVictim
+				NOR = {
+					is_country = event_target:spyVictimNeighbor1
+					is_country = event_target:spyVictimNeighbor2
+					is_country = event_target:spyVictimNeighbor3
+					is_country = event_target:spyVictimNeighbor4
+					is_country = event_target:spyVictimNeighbor5
+					is_country = event_target:spyVictimNeighbor6
+					is_country = event_target:spyVictimNeighbor7
+					is_country = event_target:spyVictimNeighbor8
+					is_country = event_target:spyVictimNeighbor9
+				}
+			}
+			if = { limit = { NOT = { exists = event_target:spyVictimNeighbor1 } } save_event_target_as = spyVictimNeighbor1 }
+			else_if = { limit = { NOT = { exists = event_target:spyVictimNeighbor2 } } save_event_target_as = spyVictimNeighbor2 }
+			else_if = { limit = { NOT = { exists = event_target:spyVictimNeighbor3 } } save_event_target_as = spyVictimNeighbor3 }
+			else_if = { limit = { NOT = { exists = event_target:spyVictimNeighbor4 } } save_event_target_as = spyVictimNeighbor4 }
+			else_if = { limit = { NOT = { exists = event_target:spyVictimNeighbor5 } } save_event_target_as = spyVictimNeighbor5 }
+			else_if = { limit = { NOT = { exists = event_target:spyVictimNeighbor6 } } save_event_target_as = spyVictimNeighbor6 }
+			else_if = { limit = { NOT = { exists = event_target:spyVictimNeighbor7 } } save_event_target_as = spyVictimNeighbor7 }
+			else_if = { limit = { NOT = { exists = event_target:spyVictimNeighbor8 } } save_event_target_as = spyVictimNeighbor8 }
+			else_if = { limit = { NOT = { exists = event_target:spyVictimNeighbor9 } } save_event_target_as = spyVictimNeighbor9 }
+			else = { log = "[spyVictim.GetName] has too many neighbors or there is a problem." }
+		}
+		country_event = { id = kiyo_event_spy.109 }
+	}
+}
+
+#Diplomatic Envoy Spy Pick Neighbor
+country_event = {
+	id = kiyo_event_spy.109
+	title = kiyo_event_spy.109.title
+	desc = kiyo_event_spy.109.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = {
+		name = kiyo_event_spy.109.a
+		trigger = { exists = event_target:spyVictimNeighbor1 }
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			event_target:spyVictimNeighbor1 = { save_event_target_as = spyVictimTarget }
+			country_event = { id = kiyo_event_spy.101 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.109.b
+		trigger = { exists = event_target:spyVictimNeighbor2 }
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			event_target:spyVictimNeighbor2 = { save_event_target_as = spyVictimTarget }
+			country_event = { id = kiyo_event_spy.101 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.109.c
+		trigger = { exists = event_target:spyVictimNeighbor3 }
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			event_target:spyVictimNeighbor3 = { save_event_target_as = spyVictimTarget }
+			country_event = { id = kiyo_event_spy.101 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.109.d
+		trigger = { exists = event_target:spyVictimNeighbor4 }
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			event_target:spyVictimNeighbor4 = { save_event_target_as = spyVictimTarget }
+			country_event = { id = kiyo_event_spy.101 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.109.e
+		trigger = { exists = event_target:spyVictimNeighbor5 }
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			event_target:spyVictimNeighbor5 = { save_event_target_as = spyVictimTarget }
+			country_event = { id = kiyo_event_spy.101 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.109.f
+		trigger = { exists = event_target:spyVictimNeighbor6 }
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			event_target:spyVictimNeighbor6 = { save_event_target_as = spyVictimTarget }
+			country_event = { id = kiyo_event_spy.101 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.109.g
+		trigger = { exists = event_target:spyVictimNeighbor7 }
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			event_target:spyVictimNeighbor7 = { save_event_target_as = spyVictimTarget }
+			country_event = { id = kiyo_event_spy.101 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.109.h
+		trigger = { exists = event_target:spyVictimNeighbor8 }
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			event_target:spyVictimNeighbor8 = { save_event_target_as = spyVictimTarget }
+			country_event = { id = kiyo_event_spy.101 }
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.109.i
+		trigger = { exists = event_target:spyVictimNeighbor9 }
+		ai_chance = { factor = 1 }
+		
+		hidden_effect = {
+			event_target:spyVictimNeighbor9 = { save_event_target_as = spyVictimTarget }
+			country_event = { id = kiyo_event_spy.101 }
+		}
+	}
+}
+
+#Diplomatic Envoy Spy Intervention
+country_event = {
+	id = kiyo_event_spy.101
+	title = kiyo_event_spy.101.title
+	desc = kiyo_event_spy.101.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	immediate = { save_event_target_as = spyEmpire }
+	
+	option = {
+		name = kiyo_event_spy.101.a
+		custom_tooltip = kiyo_event_spy.101.a.tooltip
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 5
+				opinion = { who = event_target:spyVictim value >= 40 }
+			}
+		}
+		
+		hidden_effect = {
+			random_owned_pop = { add_modifier = { modifier = kiyo_spy_envoy_a days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_envoy_a } }
+				country_event = { id = kiyo_event_spy.102 days = 30 random = 60 }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.101.b
+		custom_tooltip = kiyo_event_spy.101.b.tooltip
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 5
+				opinion = { who = event_target:spyVictim value < 40 }
+			}
+		}
+		
+		hidden_effect = {
+			random_owned_pop = { limit = { is_species = root } add_modifier = { modifier = kiyo_spy_envoy_b days = 180 } }
+			event_target:spyVictim = {
+				root = { set_relation_flag = { who = prev flag = kiyo_spy_envoy_b } }
+				country_event = { id = kiyo_event_spy.102 days = 30 random = 60 }
+			}
+		}
+	}
+}
+
+#Diplomatic Envoy Regular
+country_event = {
+	id = kiyo_event_spy.102
+	title = kiyo_event_spy.102.title
+	desc = kiyo_event_spy.102.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	immediate = { country_event = { id = kiyo_event_spy.103 days = 180 } }
+	
+	option = {
+		name = kiyo_event_spy.102.a
+		custom_tooltip = kiyo_event_spy.102.a.tooltip
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 5
+				opinion = { who = event_target:spyVictimTarget value >= 40 }
+			}
+		}
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_victim_a }
+			}
+		}
+	}
+	
+	option = {
+		name = kiyo_event_spy.102.b
+		custom_tooltip = kiyo_event_spy.102.b.tooltip
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 5
+				opinion = { who = event_target:spyVictimTarget value < 40 }
+			}
+		}
+		
+		hidden_effect = {
+			if = { limit = { reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_spying_on } }
+				set_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_victim_b }
+			}
+		}
+	}
+}
+
+#Diplomatic Envoy Results Trigger
+country_event = {
+	id = kiyo_event_spy.103
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_b }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_victim_a }
+			}
+			add_resource = { influence = 100 }
+			country_event = { id = kiyo_event_spy.104 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_a }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_victim_b } }
+			}
+			add_opinion_modifier = { modifier = opinion_kiyo_spy_envoy_good_relations who = event_target:spyVictimTarget }
+			event_target:spyEmpire = {
+				if = {
+					limit = { event_target:spyEmpire = { is_ai = no } }
+					add_monthly_resource_mult = { resource = unity value = 12 }
+					add_resource = { influence = 150 }
+				}
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.105 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_a }
+				has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_victim_b }
+			}
+			add_resource = { influence = 100 }
+			country_event = { id = kiyo_event_spy.106 }
+		}
+		else_if = {
+			limit = {
+				reverse_has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_b }
+				NOT = { has_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_victim_a } }
+			}
+			add_opinion_modifier = { modifier = opinion_kiyo_spy_envoy_bad_relations who = event_target:spyVictimTarget }
+			event_target:spyEmpire = {
+				if = {
+					limit = { event_target:spyEmpire = { is_ai = no } }
+					add_monthly_resource_mult = { resource = unity value = 12 }
+					add_resource = { influence = 150 }
+				}
+				kiyo_spy_trigger_increase_intrigue = yes
+			}
+			country_event = { id = kiyo_event_spy.107 }
+		}
+		else = { log = "ERROR in kiyo_event_spy.103: The spying empire apparently did not make a choice. HUH?!" }
+		event_target:spyEmpire = {
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			remove_relation_flag = { who = root flag = kiyo_spy_envoy_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_envoy_b }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_victim_a }
+		remove_relation_flag = { who = event_target:spyEmpire flag = kiyo_spy_envoy_victim_b }
+	}
+}
+
+#Diplomatic Envoy Results A Good
+country_event = {
+	id = kiyo_event_spy.104
+	title = kiyo_event_spy.102.title
+	desc = kiyo_event_spy.104.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = { name = OK }
+}
+
+#Diplomatic Envoy Results A Bad
+country_event = {
+	id = kiyo_event_spy.105
+	title = kiyo_event_spy.102.title
+	desc = kiyo_event_spy.105.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	immediate = { event_target:spyVictimTarget = { country_event = { id = kiyo_event_spy.3 } } }
+	
+	option = { name = GOOD }
+}
+
+#Diplomatic Envoy Results B Good
+country_event = {
+	id = kiyo_event_spy.106
+	title = kiyo_event_spy.102.title
+	desc = kiyo_event_spy.106.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = { name = OK }
+}
+
+#Diplomatic Envoy Results B Bad
+country_event = {
+	id = kiyo_event_spy.107
+	title = kiyo_event_spy.102.title
+	desc = kiyo_event_spy.107.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	immediate = { event_target:spyVictimTarget = { country_event = { id = kiyo_event_spy.4 } } }
+	
+	option = { name = NOTIME }
+}
+
+#Diplomatic Envoy Indirect Result Good Relations
+country_event = {
+	id = kiyo_event_spy.3
+	title = kiyo_event_spy.3.title
+	desc = kiyo_event_spy.3.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = { name = OK }
+}
+
+#Diplomatic Envoy Indirect Result Bad Relations
+country_event = {
+	id = kiyo_event_spy.4
+	title = kiyo_event_spy.3.title
+	desc = kiyo_event_spy.4.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = { name = OK }
+}

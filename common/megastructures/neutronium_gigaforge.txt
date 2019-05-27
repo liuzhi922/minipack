@@ -6,7 +6,7 @@ neutronium_gigaforge_0 = {
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
 	build_time = 1800
-	
+
 	resources = {
 		category = megastructures
 		cost = {
@@ -18,7 +18,7 @@ neutronium_gigaforge_0 = {
 			energy = 5
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_neutronium_gigaforge
 		no_scope = {
@@ -27,7 +27,7 @@ neutronium_gigaforge_0 = {
 			}
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_inside_border"
@@ -49,7 +49,7 @@ neutronium_gigaforge_0 = {
 			has_no_non_gate_megastructure = yes
 		}
 	}
-	
+
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -77,7 +77,7 @@ neutronium_gigaforge_0 = {
 			}
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -94,7 +94,7 @@ neutronium_gigaforge_1 = {
 		neutronium_gigaforge_0
 	}
 	build_time = 2700
-	
+
 	resources = {
 		category = megastructures
 		cost = {
@@ -104,13 +104,13 @@ neutronium_gigaforge_1 = {
 		upkeep = {
 			energy = 25
 		}
-		
+
 		produces = {
 			engineering_research = 15
 			alloys = 20
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_neutronium_gigaforge
 	}
@@ -125,7 +125,7 @@ neutronium_gigaforge_2 = {
 		neutronium_gigaforge_1
 	}
 	build_time = 1800
-	
+
 	resources = {
 		category = megastructures
 		cost = {
@@ -135,13 +135,13 @@ neutronium_gigaforge_2 = {
 		upkeep = {
 			energy = 75
 		}
-		
+
 		produces = {
 			engineering_research = 50
 			alloys = 100
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_neutronium_gigaforge
 	}
@@ -165,13 +165,13 @@ neutronium_gigaforge_3 = {
 		upkeep = {
 			energy = 350
 		}
-		
+
 		produces = {
 			engineering_research = 250
 			alloys = 500
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_neutronium_gigaforge
 	}
@@ -204,7 +204,7 @@ neutronium_gigaforge_restored = {
 			}
 		}
 	}
-	
+
 	resources = {
 		category = megastructures
 		cost = {
@@ -214,17 +214,17 @@ neutronium_gigaforge_restored = {
 		upkeep = {
 			energy = 350
 		}
-		
+
 		produces = {
 			engineering_research = 250
-			alloys = 500
+			alloys = 250
 		}
 	}
-	
+
 	possible = {
 		from = { has_technology = tech_mega_engineering }
 	}
-	
+
 	on_build_complete = {
 		every_system_ambient_object = { destroy_ambient_object = this }
 	}

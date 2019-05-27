@@ -1,0 +1,299 @@
+kiyo_spy_ai_spy_1 = {
+	length = 0
+	resources = {
+		category = edicts
+		cost = {}
+	}
+	effect = {
+		hidden_effect = {
+			random_country = {
+				limit = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy1 } }
+				save_event_target_as = spyVictim
+				save_event_target_as = sabotageVictim
+			}
+			set_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_spying_on }
+			country_event = { id = kiyo_event_ai.0 days = 1 random = 1440 }
+			if = { limit = { is_ai = no } log = "Experimental Espionage Mod: HOW DID YOU GET THIS EDICT?! (kiyo_spy_ai_spy_1)" }
+		}
+	}
+	
+	potential = {
+		is_ai = yes
+		kiyo_spy_disabled_espionage = no
+		has_global_flag = galactic_market_founded
+		any_country = {
+			reverse_has_relation_flag = { who = root flag = kiyo_spy_spy1 }
+			NOR = {
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			}
+		}
+	}
+	
+	ai_weight = { weight = 10 }
+}
+
+kiyo_spy_ai_spy_2 = {
+	length = 0
+	resources = {
+		category = edicts
+		cost = {}
+	}
+	effect = {
+		hidden_effect = {
+			random_country = { limit = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy2 } }
+				save_event_target_as = spyVictim
+				save_event_target_as = sabotageVictim
+			}
+			set_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_spying_on }
+			country_event = { id = kiyo_event_ai.0 days = 1 random = 1440 }
+			if = { limit = { is_ai = no } log = "Experimental Espionage Mod: HOW DID YOU GET THIS EDICT?! (kiyo_spy_ai_spy_2)" }
+		}
+	}
+	
+	potential = {
+		is_ai = yes
+		kiyo_spy_disabled_espionage = no
+		has_global_flag = galactic_market_founded
+		any_country = {
+			reverse_has_relation_flag = { who = root flag = kiyo_spy_spy2 }
+			NOR = {
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			}
+		}
+	}
+	
+	ai_weight = { weight = 10 }
+}
+
+kiyo_spy_ai_spy_3 = {
+	length = 0
+	resources = {
+		category = edicts
+		cost = {}
+	}
+	effect = {
+		hidden_effect = {
+			random_country = { limit = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy3 } }
+				save_event_target_as = spyVictim
+				save_event_target_as = sabotageVictim
+			}
+			set_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_spying_on }
+			country_event = { id = kiyo_event_ai.0 days = 1 random = 1440 }
+			if = { limit = { is_ai = no } log = "Experimental Espionage Mod: HOW DID YOU GET THIS EDICT?! (kiyo_spy_ai_spy_3)" }
+		}
+	}
+	
+	potential = {
+		is_ai = yes
+		kiyo_spy_disabled_espionage = no
+		has_global_flag = galactic_market_founded
+		any_country = {
+			reverse_has_relation_flag = { who = root flag = kiyo_spy_spy3 }
+			NOR = {
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			}
+		}
+	}
+	
+	ai_weight = { weight = 10 }
+}
+
+kiyo_spy_ai_spy_4 = {
+	length = 0
+	resources = {
+		category = edicts
+		cost = {}
+	}
+	effect = {
+		hidden_effect = {
+			random_country = { limit = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy4 } }
+				save_event_target_as = spyVictim
+				save_event_target_as = sabotageVictim
+			}
+			set_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_spying_on }
+			country_event = { id = kiyo_event_ai.0 days = 1 random = 1440 }
+			if = { limit = { is_ai = no } log = "Experimental Espionage Mod: HOW DID YOU GET THIS EDICT?! (kiyo_spy_ai_spy_4)" }
+		}
+	}
+	
+	potential = {
+		is_ai = yes
+		kiyo_spy_disabled_espionage = no
+		has_global_flag = galactic_market_founded
+		any_country = {
+			reverse_has_relation_flag = { who = root flag = kiyo_spy_spy4 }
+			NOR = {
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown_denied }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			}
+		}
+	}
+	
+	ai_weight = { weight = 10 }
+}
+
+kiyo_spy_ai_remove_spy = {
+	length = 0
+	resources = {
+		category = edicts
+		cost = {}
+	}
+	effect = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spy1 }
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spy2 }
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spy3 }
+						reverse_has_relation_flag = { who = root flag = kiyo_spy_spy4 }
+					}
+					NOT = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_on } }
+					OR = {
+						relative_power = { who = root category = all value <= pathetic }
+						AND = {
+							relative_power = { who = root category = fleet value <= inferior }
+							relative_power = { who = root category = capacity value <= inferior }
+							relative_power = { who = root category = technology value <= inferior }
+						}
+					}
+				}
+				save_event_target_as = spyObserved
+				root = {
+					set_timed_relation_flag = { flag = kiyo_spy_nospy who = prev days = 360 }
+					kiyo_spy_remove_spy = yes
+				}
+			}
+			if = { limit = { is_ai = no } log = "Experimental Espionage Mod: HOW DID YOU GET THIS EDICT?! (kiyo_spy_ai_remove_spy)" }
+		}
+	}
+	
+	potential = {
+		is_ai = yes
+		kiyo_spy_disabled_espionage = no
+		has_global_flag = galactic_market_founded
+		any_country = {
+			OR = {
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy1 }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy2 }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy3 }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy4 }
+			}
+			NOT = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spying_on } }
+			OR = {
+				relative_power = { who = root category = all value <= pathetic }
+				AND = {
+					relative_power = { who = root category = fleet value <= inferior }
+					relative_power = { who = root category = capacity value <= inferior }
+					relative_power = { who = root category = technology value <= inferior }
+				}
+			}
+		}
+	}
+	
+	ai_weight = { weight = 10 }
+}
+
+kiyo_spy_ai_place_spy = {
+	length = 0
+	resources = {
+		category = edicts
+		cost = {}
+	}
+	effect = {
+		hidden_effect = {
+			kiyo_spy_calculate_spy = yes
+			if = { limit = { check_variable = { which = spy_available value > 0 } }
+				random_country = {
+					limit = {
+						is_country_type = default
+						NOT = { is_country = root }
+						has_communications = root
+						NOR = {
+							reverse_has_relation_flag = { who = root flag = kiyo_spy_spy1 }
+							reverse_has_relation_flag = { who = root flag = kiyo_spy_spy2 }
+							reverse_has_relation_flag = { who = root flag = kiyo_spy_spy3 }
+							reverse_has_relation_flag = { who = root flag = kiyo_spy_spy4 }
+							reverse_has_relation_flag = { who = root flag = kiyo_spy_nospy }
+							relative_power = { who = root category = all value <= pathetic }
+							AND = {
+								relative_power = { who = root category = fleet value <= inferior }
+								relative_power = { who = root category = capacity value <= inferior }
+								relative_power = { who = root category = technology value <= inferior }
+							}
+						}
+					}
+					 weights = {
+						base = 1
+						modifier = {
+							mult = 0.25
+							relative_power = { who = root category = all value = inferior }
+						}
+						modifier = {
+							mult = 3
+							is_neighbor_of = root
+						}
+						modifier = {
+							mult = 5
+							relative_power = { who = root category = all value >= superior }
+						}
+						modifier = {
+							mult = 5
+							relative_power = { who = root category = all value >= overwhelming }
+						}
+					}
+					if = {
+						limit = { NOT = { any_country = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy1 } } } }
+						root = { set_relation_flag = { who = prev flag = kiyo_spy_spy1 } }
+					}
+					else_if = {
+						limit = { NOT = { any_country = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy2 } } } }
+						root = { set_relation_flag = { who = prev flag = kiyo_spy_spy2 } }
+					}
+					else_if = {
+						limit = { NOT = { any_country = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy3 } } } }
+						root = { set_relation_flag = { who = prev flag = kiyo_spy_spy3 } }
+					}
+					else_if = {
+						limit = { NOT = { any_country = { reverse_has_relation_flag = { who = root flag = kiyo_spy_spy4 } } } }
+						root = { set_relation_flag = { who = prev flag = kiyo_spy_spy4 } }
+					}
+				}
+				kiyo_spy_calculate_spy = yes
+				if = { limit = { is_ai = no } log = "Experimental Espionage Mod: HOW DID YOU GET THIS EDICT?! (kiyo_spy_ai_place_spy)" }
+			}
+		}
+	}
+	
+	potential = {
+		is_ai = yes
+		kiyo_spy_disabled_espionage = no
+		has_global_flag = galactic_market_founded
+		check_variable = { which = spy_available value > 0 }
+		any_country = {
+			is_country_type = default
+			NOR = {
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy1 }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy2 }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy3 }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_spy4 }
+				reverse_has_relation_flag = { who = root flag = kiyo_spy_nospy }
+				relative_power = { who = root category = all value <= pathetic }
+				AND = {
+					relative_power = { who = root category = fleet value <= inferior }
+					relative_power = { who = root category = capacity value <= inferior }
+					relative_power = { who = root category = technology value <= inferior }
+				}
+			}
+		}
+	}
+	
+	ai_weight = { weight = 10 }
+}

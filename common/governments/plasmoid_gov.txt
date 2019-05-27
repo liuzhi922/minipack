@@ -1,0 +1,16 @@
+# Plasmoid Empire
+gov_plasmoid_ravagers = {
+	ruler_title = RT_OPHRADI
+	ruler_title_female = RT_OPHRADI
+
+	use_regnal_names = yes
+	dynastic_last_names = yes
+
+	possible = {
+		has_civic = civic_plasmoid_ravagers
+	}
+
+	weight = {
+		base = 10000
+	}
+}

@@ -1,0 +1,39 @@
+
+
+civic_eternal_watchers = {
+  potential = {
+  }
+  
+  modification = no
+  icon = "gfx/interface/icons/governments/civics/civic_isolationism.dds"
+
+  modifier = {
+    country_unity_produces_mult = 0.1
+    ship_sensor_range_add = 1
+    ship_home_territory_fire_rate_mult = 0.15
+  }
+}
+
+civic_plasmoid_ravagers = {
+  potential = {
+  		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		authority = { NOT = { value = auth_corporate } }
+  }
+  	possible = {
+		civics = {
+			NOR = {
+				value = civic_mechanists
+				value = civic_agrarian_idyll
+				value = civic_syncretic_evolution
+				value = civic_life_seeded
+			}
+		}
+	}
+  
+  modification = no
+  icon = "gfx/interface/icons/governments/civics/civic_isolationism.dds"
+
+  modifier = {
+    ship_sensor_range_add = 1
+  }
+}

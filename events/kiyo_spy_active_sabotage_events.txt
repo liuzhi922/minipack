@@ -1,0 +1,1208 @@
+namespace = kiyo_event_active
+
+#Bomb Threat Spy Choice
+country_event = {
+	id = kiyo_event_active.3
+	title = kiyo_event_active.3.title
+	desc = kiyo_event_active.3.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = {
+		name = kiyo_event_active.3.a
+		custom_tooltip = kiyo_event_active.3.a.tooltip
+		ai_chance = {
+			factor = 40
+			modifier = { factor = 1.5 is_at_war = yes }
+		}
+		
+		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_bomb days = 1800 } }
+		hidden_effect = {
+			event_target:sabotageVictim = {
+				random_system_within_border = {
+					limit = {
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							is_colonizable = no
+						}
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							has_owner = yes
+							owner = { is_country = event_target:sabotageVictim }
+						}
+					}
+					weights = {
+						base = 1
+						modifier = { mult = 5 count_planets = { limit = { is_colony = yes } count > 1 } }
+						modifier = { mult = 5 count_planets = { limit = { is_colony = yes } count > 2 } }
+						modifier = { mult = 5 count_planets = { limit = { is_colony = yes } count > 3 } }
+						modifier = { mult = 5 count_planets = { limit = { is_colony = yes } count > 4 } }
+						modifier = { mult = 5 count_planets = { limit = { is_colony = yes } count > 5 } }
+					}
+					random_system_planet = { limit = { is_colonizable = no }
+						save_event_target_as = bombA
+					}
+					random_system_planet = { limit = { has_owner = yes owner = { is_country = event_target:sabotageVictim } }
+						save_event_target_as = bombB
+					}
+				}
+				if = { limit = { NOT = { has_event_chain = kiyo_spy_active_bomb_chain } }
+					begin_event_chain = { event_chain = "kiyo_spy_active_bomb_chain" target = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_BOMB_A" location = event_target:bombA owner = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_BOMB_B" location = event_target:bombB owner = this }
+					country_event = { id = kiyo_event_active.31 }
+				}
+			}
+			set_relation_flag = { who = event_target:sabotageVictim flag = kiyo_spy_active_bomb_a }
+			remove_country_flag = kiyo_spy_active_window
+		}
+	}
+	
+	option = {
+		name = kiyo_event_active.3.b
+		custom_tooltip = kiyo_event_active.3.b.tooltip
+		ai_chance = {
+			factor = 50
+			modifier = { factor = 1.5 is_at_war = no }
+		}
+		
+		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_bomb days = 1800 } }
+		hidden_effect = {
+			event_target:sabotageVictim = {
+				random_system_within_border = {
+					limit = {
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							is_colonizable = no
+						}
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							has_owner = yes
+							owner = { is_country = event_target:sabotageVictim }
+						}
+					}
+					weights = {
+						base = 1
+						modifier = { mult = 5 count_planets = { limit = { is_colony = yes } count > 1 } }
+						modifier = { mult = 5 count_planets = { limit = { is_colony = yes } count > 2 } }
+						modifier = { mult = 5 count_planets = { limit = { is_colony = yes } count > 3 } }
+						modifier = { mult = 5 count_planets = { limit = { is_colony = yes } count > 4 } }
+						modifier = { mult = 5 count_planets = { limit = { is_colony = yes } count > 5 } }
+					}
+					random_system_planet = { limit = { is_colonizable = no }
+						save_event_target_as = bombA
+					}
+					random_system_planet = { limit = { has_owner = yes owner = { is_country = event_target:sabotageVictim } }
+						save_event_target_as = bombB
+					}
+				}
+				if = { limit = { NOT = { has_event_chain = kiyo_spy_active_bomb_chain } }
+					begin_event_chain = { event_chain = "kiyo_spy_active_bomb_chain" target = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_BOMB_A" location = event_target:bombA owner = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_BOMB_B" location = event_target:bombB owner = this }
+					country_event = { id = kiyo_event_active.31 }
+				}
+			}
+			set_relation_flag = { who = event_target:sabotageVictim flag = kiyo_spy_active_bomb_b }
+			remove_country_flag = kiyo_spy_active_window
+		}
+	}
+}
+
+#Bomb Threat Show
+country_event = {
+	id = kiyo_event_active.31
+	title = kiyo_event_active.31.title
+	desc = kiyo_event_active.31.desc
+	picture = GFX_evt_exploding_ship
+	is_triggered_only = yes
+	
+	option = { name = WORRYING }
+}
+
+#Bomb Threat Results Trigger
+country_event = {
+	id = kiyo_event_active.32
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_bomb_a }
+					prev = { has_country_flag = kiyo_spy_active_bomb_victim_a }
+				}
+			}
+			country_event = { id = kiyo_event_active.33 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_bomb_a }
+					prev = { NOT = { has_country_flag = kiyo_spy_active_bomb_victim_a } }
+				}
+			}
+			add_modifier = { modifier = kiyo_spy_active_bomb_orbital days = 1800 }
+			event_target:bombA.solar_system = {
+				every_fleet_in_system = {
+					limit = {
+						any_owned_ship = {
+							OR = {
+								is_ship_class = shipclass_mining_station
+								is_ship_class = shipclass_research_station
+								is_ship_class = shipclass_observation_station
+							}
+						}
+					}
+					destroy_fleet = this
+				}
+			}
+			country_event = { id = kiyo_event_active.34 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_bomb_b }
+					prev = { has_country_flag = kiyo_spy_active_bomb_victim_b }
+				}
+			}
+			country_event = { id = kiyo_event_active.35 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_bomb_b }
+					prev = { NOT = { has_country_flag = kiyo_spy_active_bomb_victim_b } }
+				}
+			}
+			event_target:bombA.solar_system = {
+				every_system_planet = { limit = { is_colony = yes owner = { is_country_type = default } }
+					kiyo_spy_blowup_planet = yes
+				}
+			}
+			country_event = { id = kiyo_event_active.36 }
+		}
+		else = { log = "ERROR in kiyo_event_active.32: The spying empire did not pick a choice somehow! HUH?!" }
+	}
+}
+
+#Bomb Threat Results A GOOD
+country_event = {
+	id = kiyo_event_active.33
+	title = kiyo_event_active.33.title
+	desc = kiyo_event_active.33.desc
+	picture = GFX_evt_exploding_ship
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_bomb_victim_a
+	}
+	
+	option = { name = GOOD }
+}
+
+#Bomb Threat Results A BAD
+country_event = {
+	id = kiyo_event_active.34
+	title = kiyo_event_active.33.title
+	desc = kiyo_event_active.34.desc
+	picture = GFX_evt_exploding_ship
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_bomb_victim_a
+	}
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Bomb Threat Results B GOOD
+country_event = {
+	id = kiyo_event_active.35
+	title = kiyo_event_active.33.title
+	desc = kiyo_event_active.35.desc
+	picture = GFX_evt_exploding_ship
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_bomb_victim_b
+	}
+	
+	option = { name = GOOD }
+}
+
+#Bomb Threat Results B BAD
+country_event = {
+	id = kiyo_event_active.36
+	title = kiyo_event_active.33.title
+	desc = kiyo_event_active.36.desc
+	picture = GFX_evt_exploding_ship
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_bomb_victim_b
+	}
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Contamination
+country_event = {
+	id = kiyo_event_active.4
+	title = kiyo_event_active.4.title
+	desc = kiyo_event_active.4.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = {
+		name = kiyo_event_active.4.a
+		custom_tooltip = kiyo_event_active.4.a.tooltip
+		ai_chance = { factor = 55 }
+		
+		event_target:sabotageVictim = {
+			if = {
+				limit = {
+					OR = {
+						has_authority = auth_machine_intelligence
+						has_country_flag = synthetic_empire
+					}
+				}
+				add_modifier = { modifier = kiyo_spy_active_toxic_machine days = 1800 }
+			}
+			else = { add_modifier = { modifier = kiyo_spy_active_toxic days = 1800 } }
+		}
+		hidden_effect = {
+			event_target:sabotageVictim = {
+				random_system_within_border = {
+					limit = {
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							is_colonizable = no
+						}
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							has_owner = yes
+							owner = { is_country = event_target:sabotageVictim }
+						}
+					}
+					random_system_planet = { limit = { is_colonizable = no }
+						save_event_target_as = toxicA
+					}
+					random_system_planet = { limit = { has_owner = yes owner = { is_country = event_target:sabotageVictim } }
+						save_event_target_as = toxicB
+					}
+				}
+				if = { limit = { NOT = { has_event_chain = kiyo_spy_active_toxic_chain } }
+					begin_event_chain = { event_chain = "kiyo_spy_active_toxic_chain" target = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_TOXIC_A" location = event_target:toxicA owner = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_TOXIC_B" location = event_target:toxicB owner = this }
+					country_event = { id = kiyo_event_active.41 }
+				}
+			}
+			set_relation_flag = { who = event_target:sabotageVictim flag = kiyo_spy_active_toxic_a }
+			remove_country_flag = kiyo_spy_active_window
+		}
+	}
+	
+	option = {
+		name = kiyo_event_active.4.b
+		custom_tooltip = kiyo_event_active.4.a.tooltip
+		ai_chance = { factor = 45 }
+		
+		event_target:sabotageVictim = {
+			if = {
+				limit = {
+					OR = {
+						has_authority = auth_machine_intelligence
+						has_country_flag = synthetic_empire
+					}
+				}
+				add_modifier = { modifier = kiyo_spy_active_toxic_machine days = 1800 }
+			}
+			else = { add_modifier = { modifier = kiyo_spy_active_toxic days = 1800 } }
+		}
+		hidden_effect = {
+			event_target:sabotageVictim = {
+				random_system_within_border = {
+					limit = {
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							is_colonizable = no
+						}
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							has_owner = yes
+							owner = { is_country = event_target:sabotageVictim }
+						}
+					}
+					random_system_planet = { limit = { is_colonizable = no }
+						save_event_target_as = toxicA
+					}
+					random_system_planet = { limit = { has_owner = yes owner = { is_country = event_target:sabotageVictim } }
+						save_event_target_as = toxicB
+					}
+				}
+				if = { limit = { NOT = { has_event_chain = kiyo_spy_active_toxic_chain } }
+					begin_event_chain = { event_chain = "kiyo_spy_active_toxic_chain" target = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_TOXIC_A" location = event_target:toxicA owner = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_TOXIC_B" location = event_target:toxicB owner = this }
+					country_event = { id = kiyo_event_active.41 }
+				}
+			}
+			set_relation_flag = { who = event_target:sabotageVictim flag = kiyo_spy_active_toxic_b }
+			remove_country_flag = kiyo_spy_active_window
+		}
+	}
+}
+
+#Contamination Show
+country_event = {
+	id = kiyo_event_active.41
+	title = kiyo_event_active.41.title
+	desc = kiyo_event_active.41.desc
+	picture = GFX_evt_disease_outbreak
+	is_triggered_only = yes
+	
+	option = { name = WORRYING }
+}
+
+#Contamination Results Trigger
+country_event = {
+	id = kiyo_event_active.42
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_toxic_a }
+					prev = { has_country_flag = kiyo_spy_active_toxic_victim_a }
+				}
+			}
+			country_event = { id = kiyo_event_active.43 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_toxic_a }
+					prev = { NOT = { has_country_flag = kiyo_spy_active_toxic_victim_a } }
+				}
+			}
+			add_modifier = { modifier = kiyo_spy_active_toxic_equipment days = 1800 }
+			country_event = { id = kiyo_event_active.44 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_toxic_b }
+					prev = { has_country_flag = kiyo_spy_active_toxic_victim_b }
+				}
+			}
+			country_event = { id = kiyo_event_active.45 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_toxic_b }
+					prev = { NOT = { has_country_flag = kiyo_spy_active_toxic_victim_b } }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_authority = auth_machine_intelligence
+						has_country_flag = synthetic_empire
+					}
+				}
+				add_modifier = { modifier = kiyo_spy_active_toxic_sustenance_machine days = 1800 }
+			}
+			else = {
+				add_modifier = { modifier = kiyo_spy_active_toxic_sustenance days = 1800 }
+			}
+			country_event = { id = kiyo_event_active.46 }
+		}
+		else = { log = "ERROR in kiyo_event_active.42: The spying empire did not pick a choice somehow! HUH?!" }
+	}
+}
+
+#Contamination Results A GOOD
+country_event = {
+	id = kiyo_event_active.43
+	title = kiyo_event_active.43.title
+	desc = kiyo_event_active.43.desc
+	picture = GFX_evt_colony_settlement
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_toxic_victim_a
+	}
+	
+	option = { name = GOOD }
+}
+
+#Contamination Results A BAD
+country_event = {
+	id = kiyo_event_active.44
+	title = kiyo_event_active.43.title
+	desc = kiyo_event_active.44.desc
+	picture = GFX_evt_colony_settlement
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_toxic_victim_a
+	}
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Contamination Results B GOOD
+country_event = {
+	id = kiyo_event_active.45
+	title = kiyo_event_active.43.title
+	desc = kiyo_event_active.45.desc
+	picture = GFX_evt_colony_settlement
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_toxic_victim_b
+	}
+	
+	option = { name = GOOD }
+}
+
+#Contamination Results B BAD
+country_event = {
+	id = kiyo_event_active.46
+	title = kiyo_event_active.43.title
+	desc = kiyo_event_active.46.desc
+	picture = GFX_evt_colony_settlement
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_toxic_victim_b
+	}
+	
+	option = { name = UNFORTUNATE }
+}
+
+#Leaked Data
+country_event = {
+	id = kiyo_event_active.5
+	title = kiyo_event_active.5.title
+	desc = kiyo_event_active.5.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = {
+		name = kiyo_event_active.5.a
+		custom_tooltip = kiyo_event_active.5.a.tooltip
+		ai_chance = { factor = 35 }
+		
+		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_leak days = 1800 } }
+		hidden_effect = {
+			event_target:sabotageVictim = {
+				random_system_within_border = {
+					limit = {
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							is_star = yes
+						}
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							has_owner = yes
+							owner = { is_country = event_target:sabotageVictim }
+						}
+					}
+					random_system_planet = { limit = { is_star = yes }
+						save_event_target_as = leakA
+					}
+					random_system_planet = { limit = { has_owner = yes owner = { is_country = event_target:sabotageVictim } }
+						save_event_target_as = leakB
+					}
+				}
+				if = { limit = { NOT = { has_event_chain = kiyo_spy_active_leak_chain } }
+					begin_event_chain = { event_chain = "kiyo_spy_active_leak_chain" target = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_LEAK_A" location = event_target:toxicA owner = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_LEAK_B" location = event_target:toxicB owner = this }
+					country_event = { id = kiyo_event_active.51 }
+				}
+			}
+			set_relation_flag = { who = event_target:sabotageVictim flag = kiyo_spy_active_leak_a }
+			remove_country_flag = kiyo_spy_active_window
+		}
+	}
+	
+	option = {
+		name = kiyo_event_active.5.b
+		custom_tooltip = kiyo_event_active.5.b.tooltip
+		ai_chance = { factor = 65 }
+		
+		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_leak days = 1800 } }
+		hidden_effect = {
+			event_target:sabotageVictim = {
+				random_system_within_border = {
+					limit = {
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							is_star = yes
+						}
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							has_owner = yes
+							owner = { is_country = event_target:sabotageVictim }
+						}
+					}
+					random_system_planet = { limit = { is_star = yes }
+						save_event_target_as = leakA
+					}
+					random_system_planet = { limit = { has_owner = yes owner = { is_country = event_target:sabotageVictim } }
+						save_event_target_as = leakB
+					}
+				}
+				if = { limit = { NOT = { has_event_chain = kiyo_spy_active_leak_chain } }
+					begin_event_chain = { event_chain = "kiyo_spy_active_leak_chain" target = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_LEAK_A" location = event_target:leakA owner = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_LEAK_B" location = event_target:leakB owner = this }
+					country_event = { id = kiyo_event_active.51 }
+				}
+			}
+			set_relation_flag = { who = event_target:sabotageVictim flag = kiyo_spy_active_leak_b }
+			remove_country_flag = kiyo_spy_active_window
+		}
+	}
+}
+
+#Leaked Data Show
+country_event = {
+	id = kiyo_event_active.51
+	title = kiyo_event_active.51.title
+	desc = kiyo_event_active.51.desc
+	picture = GFX_evt_star_chart
+	is_triggered_only = yes
+	
+	option = { name = OK }
+}
+
+#Leaked Data Results Trigger
+country_event = {
+	id = kiyo_event_active.52
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_leak_a }
+					prev = { has_country_flag = kiyo_spy_active_leak_victim_a }
+				}
+			}
+			country_event = { id = kiyo_event_active.53 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_leak_a }
+					prev = { NOT = { has_country_flag = kiyo_spy_active_leak_victim_a } }
+				}
+			}
+			add_modifier = { modifier = kiyo_spy_active_leak_hack days = 1800 }
+			country_event = { id = kiyo_event_active.54 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_leak_b }
+					prev = { has_country_flag = kiyo_spy_active_leak_victim_b }
+				}
+			}
+			country_event = { id = kiyo_event_active.55 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_leak_b }
+					prev = { NOT = { has_country_flag = kiyo_spy_active_leak_victim_b } }
+				}
+			}
+			add_modifier = { modifier = kiyo_spy_active_leak_physical days = 450 }
+			country_event = { id = kiyo_event_active.56 }
+		}
+		else = { log = "ERROR in kiyo_event_active.52: The spying empire did not pick a choice somehow! HUH?!" }
+	}
+}
+
+#Leaked Data Results A GOOD
+country_event = {
+	id = kiyo_event_active.53
+	title = kiyo_event_active.53.title
+	desc = kiyo_event_active.53.desc
+	picture = GFX_evt_star_chart
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_leak_victim_a
+	}
+	
+	option = { name = OK }
+}
+
+#Leaked Data Results A BAD
+country_event = {
+	id = kiyo_event_active.54
+	title = kiyo_event_active.53.title
+	desc = kiyo_event_active.54.desc
+	picture = GFX_evt_star_chart
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_leak_victim_a
+	}
+	
+	option = { name = WORRYING }
+}
+
+#Leaked Data Results B GOOD
+country_event = {
+	id = kiyo_event_active.55
+	title = kiyo_event_active.53.title
+	desc = kiyo_event_active.55.desc
+	picture = GFX_evt_star_chart
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_leak_victim_b
+	}
+	
+	option = { name = OK }
+}
+
+#Leaked Data Results B BAD
+country_event = {
+	id = kiyo_event_active.56
+	title = kiyo_event_active.53.title
+	desc = kiyo_event_active.56.desc
+	picture = GFX_evt_star_chart
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_leak_victim_b
+	}
+	
+	option = { name = DISCONCERTING }
+}
+
+#Orbital Miner Disappearance
+country_event = {
+	id = kiyo_event_active.6
+	title = kiyo_event_active.6.title
+	desc = kiyo_event_active.6.desc
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+	
+	option = {
+		name = kiyo_event_active.6.a
+		custom_tooltip = kiyo_event_active.6.a.tooltip
+		ai_chance = { factor = 50 }
+		
+		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_miner days = 1800 } }
+		hidden_effect = {
+			event_target:sabotageVictim = {
+				random_system_within_border = {
+					limit = {
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							is_colonizable = no
+							OR = {
+								has_deposit = d_energy_1
+								has_deposit = d_energy_2
+								has_deposit = d_energy_3
+								has_deposit = d_energy_4
+								has_deposit = d_energy_5
+								has_deposit = d_energy_6
+								has_deposit = d_energy_7
+								has_deposit = d_energy_8
+								has_deposit = d_energy_9
+								has_deposit = d_energy_10
+							}
+						}
+					}
+					random_system_planet = {
+						limit = {
+							is_colonizable = no
+							OR = {
+								has_deposit = d_energy_1
+								has_deposit = d_energy_2
+								has_deposit = d_energy_3
+								has_deposit = d_energy_4
+								has_deposit = d_energy_5
+								has_deposit = d_energy_6
+								has_deposit = d_energy_7
+								has_deposit = d_energy_8
+								has_deposit = d_energy_9
+								has_deposit = d_energy_10
+							}
+						}
+						save_event_target_as = minerA
+					}
+				}
+				random_system_within_border = {
+					limit = {
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							is_colonizable = no
+							OR = {
+								has_deposit = d_minerals_1
+								has_deposit = d_minerals_2
+								has_deposit = d_minerals_3
+								has_deposit = d_minerals_4
+								has_deposit = d_minerals_5
+								has_deposit = d_minerals_6
+								has_deposit = d_minerals_7
+								has_deposit = d_minerals_8
+								has_deposit = d_minerals_9
+								has_deposit = d_minerals_10
+							}
+						}
+					}
+					random_system_planet = {
+						limit = {
+							is_colonizable = no
+							OR = {
+								has_deposit = d_minerals_1
+								has_deposit = d_minerals_2
+								has_deposit = d_minerals_3
+								has_deposit = d_minerals_4
+								has_deposit = d_minerals_5
+								has_deposit = d_minerals_6
+								has_deposit = d_minerals_7
+								has_deposit = d_minerals_8
+								has_deposit = d_minerals_9
+								has_deposit = d_minerals_10
+							}
+						}
+						save_event_target_as = minerB
+					}
+				}
+				if = { limit = { NOT = { has_event_chain = kiyo_spy_active_miner_chain } }
+					begin_event_chain = { event_chain = "kiyo_spy_active_miner_chain" target = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_MINER_A" location = event_target:minerA owner = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_MINER_B" location = event_target:minerB owner = this }
+					country_event = { id = kiyo_event_active.61 }
+				}
+			}
+			set_relation_flag = { who = event_target:sabotageVictim flag = kiyo_spy_active_miner_a }
+			remove_country_flag = kiyo_spy_active_window
+		}
+	}
+	
+	option = {
+		name = kiyo_event_active.6.b
+		custom_tooltip = kiyo_event_active.6.b.tooltip
+		ai_chance = { factor = 50 }
+		
+		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_miner days = 1800 } }
+		hidden_effect = {
+			event_target:sabotageVictim = {
+				random_system_within_border = {
+					limit = {
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							is_colonizable = no
+							OR = {
+								has_deposit = d_energy_1
+								has_deposit = d_energy_2
+								has_deposit = d_energy_3
+								has_deposit = d_energy_4
+								has_deposit = d_energy_5
+								has_deposit = d_energy_6
+								has_deposit = d_energy_7
+								has_deposit = d_energy_8
+								has_deposit = d_energy_9
+								has_deposit = d_energy_10
+							}
+						}
+					}
+					random_system_planet = {
+						limit = {
+							is_colonizable = no
+							OR = {
+								has_deposit = d_energy_1
+								has_deposit = d_energy_2
+								has_deposit = d_energy_3
+								has_deposit = d_energy_4
+								has_deposit = d_energy_5
+								has_deposit = d_energy_6
+								has_deposit = d_energy_7
+								has_deposit = d_energy_8
+								has_deposit = d_energy_9
+								has_deposit = d_energy_10
+							}
+						}
+						save_event_target_as = minerA
+					}
+				}
+				random_system_within_border = {
+					limit = {
+						any_planet = {
+							solar_system = { is_same_value = prevprev }
+							is_colonizable = no
+							OR = {
+								has_deposit = d_minerals_1
+								has_deposit = d_minerals_2
+								has_deposit = d_minerals_3
+								has_deposit = d_minerals_4
+								has_deposit = d_minerals_5
+								has_deposit = d_minerals_6
+								has_deposit = d_minerals_7
+								has_deposit = d_minerals_8
+								has_deposit = d_minerals_9
+								has_deposit = d_minerals_10
+							}
+						}
+					}
+					random_system_planet = {
+						limit = {
+							is_colonizable = no
+							OR = {
+								has_deposit = d_minerals_1
+								has_deposit = d_minerals_2
+								has_deposit = d_minerals_3
+								has_deposit = d_minerals_4
+								has_deposit = d_minerals_5
+								has_deposit = d_minerals_6
+								has_deposit = d_minerals_7
+								has_deposit = d_minerals_8
+								has_deposit = d_minerals_9
+								has_deposit = d_minerals_10
+							}
+						}
+						save_event_target_as = minerB
+					}
+				}
+				if = { limit = { NOT = { has_event_chain = kiyo_spy_active_miner_chain } }
+					begin_event_chain = { event_chain = "kiyo_spy_active_miner_chain" target = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_MINER_A" location = event_target:minerA owner = this }
+					enable_special_project = { name = "KIYO_SPY_ACTIVE_MINER_B" location = event_target:minerB owner = this }
+					country_event = { id = kiyo_event_active.61 }
+				}
+			}
+			set_relation_flag = { who = event_target:sabotageVictim flag = kiyo_spy_active_miner_b }
+			remove_country_flag = kiyo_spy_active_window
+		}
+	}
+}
+
+#Orbital Miner Disappearance Show
+country_event = {
+	id = kiyo_event_active.61
+	title = kiyo_event_active.61.title
+	desc = kiyo_event_active.61.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes
+	
+	option = { name = WORRYING }
+}
+
+#Orbital Miner Disappearance Results Trigger
+country_event = {
+	id = kiyo_event_active.62
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_miner_a }
+					prev = { has_country_flag = kiyo_spy_active_miner_victim_a }
+				}
+			}
+			country_event = { id = kiyo_event_active.63 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_miner_a }
+					prev = { NOT = { has_country_flag = kiyo_spy_active_miner_victim_a } }
+				}
+			}
+			add_modifier = { modifier = kiyo_spy_active_miner_station days = 1440 }
+			country_event = { id = kiyo_event_active.64 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_miner_b }
+					prev = { has_country_flag = kiyo_spy_active_miner_victim_b }
+				}
+			}
+			country_event = { id = kiyo_event_active.65 }
+		}
+		else_if = {
+			limit = {
+				any_country = {
+					has_relation_flag = { who = prev flag = kiyo_spy_active_miner_b }
+					prev = { NOT = { has_country_flag = kiyo_spy_active_miner_victim_b } }
+				}
+			}
+			add_modifier = { modifier = kiyo_spy_active_miner_station days = 1440 }
+			country_event = { id = kiyo_event_active.66 }
+		}
+		else = { log = "ERROR in kiyo_event_active.62: The spying empire did not pick a choice somehow! HUH?!" }
+	}
+}
+
+#Orbital Miner Disappearance Results A GOOD
+country_event = {
+	id = kiyo_event_active.63
+	title = kiyo_event_active.63.title
+	desc = kiyo_event_active.63.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_miner_victim_a
+	}
+	
+	option = { name = OK }
+}
+
+#Orbital Miner Disappearance Results A BAD
+country_event = {
+	id = kiyo_event_active.64
+	title = kiyo_event_active.63.title
+	desc = kiyo_event_active.64.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_miner_victim_a
+	}
+	
+	option = { name = WORRYING }
+}
+
+#Orbital Miner Disappearance Results B GOOD
+country_event = {
+	id = kiyo_event_active.65
+	title = kiyo_event_active.63.title
+	desc = kiyo_event_active.65.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_miner_victim_b
+	}
+	
+	option = { name = OK }
+}
+
+#Orbital Miner Disappearance Results B BAD
+country_event = {
+	id = kiyo_event_active.66
+	title = kiyo_event_active.63.title
+	desc = kiyo_event_active.66.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_a } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_a }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_b } }
+			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_b }
+			remove_relation_flag = { who = root flag = kiyo_spy_spying_on }
+			set_timed_relation_flag = { who = root flag = kiyo_spy_spying_cooldown days = 3600 }
+			country_event = { id = kiyo_event_notification.0 days = 3601 }
+		}
+		remove_country_flag = kiyo_spy_active_miner_victim_b
+	}
+	
+	option = { name = DISCONCERTING }
+}

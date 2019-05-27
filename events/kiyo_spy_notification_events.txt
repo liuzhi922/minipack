@@ -1,0 +1,44 @@
+# File for all notification pop-ups
+
+namespace = kiyo_event_notification
+
+# Notification for spy out of cooldown
+country_event = {
+	id = kiyo_event_notification.0
+	title = kiyo_event_notification.title
+	desc = kiyo_event_notification.0.desc
+	picture = GFX_evt_board_meeting
+	is_triggered_only = yes
+	
+	trigger = {
+		NOR = {
+			has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+			has_relation_flag = { who = root flag = kiyo_spy_spying_cooldown }
+		}
+	}
+	
+	immediate = {
+		kiyo_spy_calculate_spy = yes
+		set_country_flag = kiyo_spy_first_calc
+	}
+	
+	option = { name = GOOD }
+}
+
+# Notification for counterespionage out of cooldown
+country_event = {
+	id = kiyo_event_notification.1
+	title = kiyo_event_notification.title
+	desc = kiyo_event_notification.1.desc
+	picture = GFX_evt_board_meeting
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_relation_flag = { who = root flag = kiyo_spy_check_cooldown } } }
+	
+	immediate = {
+		kiyo_spy_calculate_spy = yes
+		set_country_flag = kiyo_spy_first_calc
+	}
+	
+	option = { name = GOOD }
+}

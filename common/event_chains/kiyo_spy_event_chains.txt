@@ -1,0 +1,16 @@
+kiyo_spy_active_bomb_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_kiyo_spy.dds"
+	picture = GFX_evt_asteroid_field
+}
+kiyo_spy_active_toxic_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_kiyo_spy.dds"
+	picture = GFX_evt_colony_settlement
+}
+kiyo_spy_active_leak_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_kiyo_spy.dds"
+	picture = GFX_evt_synth_sabotage
+}
+kiyo_spy_active_miner_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_kiyo_spy.dds"
+	picture = GFX_evt_mining_station
+}

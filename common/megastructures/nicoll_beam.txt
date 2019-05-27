@@ -13,12 +13,12 @@ nicoll_beam_0 = {
 			alloys = 12500
 			influence = 500
 		}
-		
+
 		upkeep = {
 			energy = 10
 		}
 	}
-	
+
 	potential = {
 		has_ascension_perk = ap_hyper_engineering
 		has_technology = tech_nicoll_dyson_beam
@@ -28,7 +28,7 @@ nicoll_beam_0 = {
 			}
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_no_existing_nicoll_beam"
@@ -106,7 +106,7 @@ nicoll_beam_0 = {
 			}
 		}
 	}
-	
+
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -139,16 +139,16 @@ nicoll_beam_0 = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
-		
+
 		modifier = {
 			factor = 0
 			has_any_megastructure_in_empire = yes
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -174,23 +174,23 @@ nicoll_beam_1 = {
 		cost = {
 			alloys = 15000
 		}
-		
+
 		upkeep = {
 			alloys = 15
 		}
 	}
-	
+
 	potential = {
 		has_ascension_perk = ap_hyper_engineering
 		has_technology = tech_nicoll_dyson_beam
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
-		every_system_planet = { 
+		every_system_planet = {
 			limit = { is_star = no }
-			remove_planet = yes 
+			remove_planet = yes
 		}
 		set_asteroid_belt = {
 			radius = 0
@@ -213,17 +213,17 @@ nicoll_beam_2 = {
 		cost = {
 			alloys = 35000
 		}
-		
+
 		upkeep = {
 			alloys = 15
 		}
 	}
-	
+
 	potential = {
 		has_ascension_perk = ap_hyper_engineering
 		has_technology = tech_nicoll_dyson_beam
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -239,30 +239,30 @@ nicoll_beam_3 = {
 		nicoll_beam_2
 	}
 	build_time = 5400
-	
+
 	resources = {
 		category = megastructures
 		cost = {
 			alloys = 30000
 		}
-		
+
 		upkeep = {
 			alloys = 150
 		}
 	}
-	
+
 	potential = {
 		has_ascension_perk = ap_hyper_engineering
 		has_technology = tech_nicoll_dyson_beam
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
 		every_system_planet = {
 			solar_system = {
-				spawn_megastructure = { 
-					type = "nicoll_beam_side_gate" 
+				spawn_megastructure = {
+					type = "nicoll_beam_side_gate"
 					location = FROMFROM
 					owner = space_owner
 				}
@@ -281,23 +281,23 @@ nicoll_beam_4 = {
 		nicoll_beam_3
 	}
 	build_time = 5400
-	
+
 	resources = {
 		category = megastructures
 		cost = {
 			alloys = 27000
 		}
-		
+
 		upkeep = {
 			alloys = 350
 			influence = 1
 		}
-		
+
 		produces = {
 			sr_solar_energy = 200
 		}
 	}
-	
+
 	potential = {
 		has_ascension_perk = ap_hyper_engineering
 		has_technology = tech_nicoll_dyson_beam
@@ -327,18 +327,18 @@ nicoll_beam_5 = {
 		cost = {
 			energy = 1000
 		}
-		
+
 		upkeep = {
 			alloys = 350
 			influence = 1
 		}
 	}
-	
+
 	potential = {
 		has_ascension_perk = ap_hyper_engineering
 		has_technology = tech_nicoll_dyson_beam
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "cant_fire_at_nothing"
@@ -352,7 +352,7 @@ nicoll_beam_5 = {
 			}
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -374,7 +374,7 @@ nicoll_beam_6 = {
 			influence = 2
 		}
 	}
-	
+
 	potential = {
 		always = no
 	}
@@ -384,7 +384,7 @@ nicoll_beam_f1 = {
 	entity = "nicoll_laser_firing_1_entity"
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
-	
+
 	potential = {
 		always = no
 	}
@@ -394,7 +394,7 @@ nicoll_beam_f2 = {
 	entity = "nicoll_laser_firing_2_entity"
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
-	
+
 	potential = {
 		always = no
 	}
@@ -404,7 +404,7 @@ nicoll_beam_f3 = {
 	entity = "nicoll_laser_firing_3_entity"
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
-	
+
 	potential = {
 		always = no
 	}
@@ -414,7 +414,7 @@ nicoll_beam_f4 = {
 	entity = "nicoll_laser_firing_4_entity"
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
-	
+
 	potential = {
 		always = no
 	}
@@ -424,7 +424,7 @@ nicoll_beam_f5 = {
 	entity = "nicoll_laser_firing_5_entity"
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
-	
+
 	potential = {
 		always = no
 	}
@@ -434,7 +434,7 @@ nicoll_beam_f6 = {
 	entity = "nicoll_laser_firing_6_entity"
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
-	
+
 	potential = {
 		always = no
 	}
@@ -444,7 +444,7 @@ nicoll_beam_f7 = {
 	entity = "nicoll_laser_firing_7_entity"
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
-	
+
 	potential = {
 		always = no
 	}
@@ -454,7 +454,7 @@ nicoll_beam_f8 = {
 	entity = "nicoll_laser_firing_8_entity"
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
-	
+
 	potential = {
 		always = no
 	}
@@ -464,7 +464,7 @@ nicoll_beam_pew = {
 	entity = "nicoll_laser_firing_entity"
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
-	
+
 	potential = {
 		always = no
 	}
@@ -483,12 +483,12 @@ nicoll_beam_gate = {
 			alloys = 1000
 			sr_solar_energy = 10000
 		}
-		
+
 		upkeep = {
 			energy = 10
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_nicoll_dyson_beam
 		no_scope = {
@@ -497,7 +497,7 @@ nicoll_beam_gate = {
 			}
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_surveyed_system"
@@ -553,7 +553,7 @@ nicoll_beam_gate = {
 			}
 		}
 	}
-	
+
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -562,16 +562,16 @@ nicoll_beam_gate = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
-		
+
 		modifier = {
 			factor = 0
 			has_any_megastructure_in_empire = yes
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -594,7 +594,7 @@ nicoll_beam_gate_1 = {
 	upgrade_from = {
 		nicoll_beam_gate
 	}
-	
+
 	upgrade_desc = hide
 	potential = {
 		always = no
@@ -610,7 +610,7 @@ nicoll_beam_gate_2 = {
 	upgrade_from = {
 		nicoll_beam_gate_1
 	}
-	
+
 	upgrade_desc = hide
 	potential = {
 		always = no
@@ -622,7 +622,7 @@ nicoll_beam_side_gate = {
 	construction_entity = "nicoll_laser_gate_full_entity"
 	portrait = "GFX_megastructure_construction_background"
 	entity_offset = { x = 220 y = 0 }
-	
+
 	upgrade_desc = hide
 	potential = {
 		always = no
@@ -638,7 +638,7 @@ nicoll_beam_side_gate_1 = {
 	upgrade_from = {
 		nicoll_beam_side_gate
 	}
-	
+
 	upgrade_desc = hide
 	potential = {
 		always = no
@@ -659,7 +659,7 @@ nicoll_beam_target_marker = {
 			influence = 150
 		}
 	}
-	
+
 	potential = {
 		has_technology = tech_nicoll_dyson_beam
 		no_scope = {
@@ -668,7 +668,7 @@ nicoll_beam_target_marker = {
 			}
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "cant_two_markers"
@@ -710,7 +710,7 @@ nicoll_beam_target_marker = {
 			}
 		}
 	}
-	
+
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -739,11 +739,11 @@ nicoll_beam_target_marker = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -759,11 +759,11 @@ nicoll_beam_target_marker_1 = {
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
 	entity_offset = { x = 0 y = 0 }
-	
+
 	upgrade_from = {
 		nicoll_beam_target_marker
 	}
-	
+
 	upgrade_desc = hide
 	potential = {
 		always = no
@@ -775,11 +775,11 @@ nicoll_beam_target_marker_2 = {
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
 	entity_offset = { x = 0 y = 0 }
-	
+
 	upgrade_from = {
 		nicoll_beam_target_marker_1
 	}
-	
+
 	upgrade_desc = hide
 	potential = {
 		always = no
@@ -791,11 +791,11 @@ nicoll_beam_target_marker_b = {
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
 	entity_offset = { x = 0 y = 0 }
-	
+
 	upgrade_from = {
 		nicoll_beam_target_marker_1
 	}
-	
+
 	upgrade_desc = hide
 	potential = {
 		always = no
@@ -807,11 +807,11 @@ nicoll_beam_target_marker_c = {
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
 	entity_offset = { x = 0 y = 0 }
-	
+
 	upgrade_from = {
 		nicoll_beam_target_marker_1
 	}
-	
+
 	upgrade_desc = hide
 	potential = {
 		always = no
@@ -823,11 +823,11 @@ nicoll_beam_target_marker_d = {
 	construction_entity = ""
 	portrait = "GFX_megastructure_construction_background"
 	entity_offset = { x = 0 y = 0 }
-	
+
 	upgrade_from = {
 		nicoll_beam_target_marker_1
 	}
-	
+
 	upgrade_desc = hide
 	potential = {
 		always = no

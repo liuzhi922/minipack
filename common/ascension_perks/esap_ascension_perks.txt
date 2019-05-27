@@ -16,15 +16,15 @@ ap_engineered_evolution = {
 	possible = {
 		custom_tooltip = {
 			fail_text = "synthetic_empire_biological_ascension"
-			NOT = { 		
+			NOT = {
 				And = {
-					has_trait = trait_mechanical 
+					has_trait = trait_mechanical
 					Not = {
-						has_ascension_perk = ap_esap_bio_cyber_psi 					
+						has_ascension_perk = ap_esap_bio_cyber_psi
 					}
 				}
 			}
-		}	
+		}
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_1"
 			num_ascension_perks > 0
@@ -35,22 +35,22 @@ ap_engineered_evolution = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_not_ap_the_flesh_is_weak"
-			NOT = {				
+			NOT = {
 				And = {
 				has_ascension_perk = ap_the_flesh_is_weak
 					Not = {
-						has_ascension_perk = ap_esap_bio_cyber_psi 					
+						has_ascension_perk = ap_esap_bio_cyber_psi
 					}
 				}
 			}
 		}
 		custom_tooltip = {
 			fail_text = "requires_not_ap_mind_over_matter"
-			NOT = {				
+			NOT = {
 				And = {
-					has_ascension_perk = ap_mind_over_matter 
+					has_ascension_perk = ap_mind_over_matter
 					Not = {
-						has_ascension_perk = ap_esap_bio_cyber_psi 					
+						has_ascension_perk = ap_esap_bio_cyber_psi
 					}
 				}
 			}
@@ -67,7 +67,7 @@ ap_engineered_evolution = {
 
 		modify_species_cost_mult = @ap_engineered_evolution_COST_MULT
 	}
-	
+
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
@@ -77,7 +77,7 @@ ap_engineered_evolution = {
 		is_mechanical_empire = no
 		is_cyborg_empire = no
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -99,11 +99,11 @@ ap_evolutionary_mastery = {
 	possible = {
 		custom_tooltip = {
 			fail_text = "synthetic_empire_biological_ascension"
-			NOT = { 
+			NOT = {
 				And = {
-					has_trait = trait_mechanical 
+					has_trait = trait_mechanical
 					Not = {
-						has_ascension_perk = ap_esap_bio_cyber_psi_2				
+						has_ascension_perk = ap_esap_bio_cyber_psi_2
 					}
 				}
 			}
@@ -122,10 +122,10 @@ ap_evolutionary_mastery = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_not_ap_esap_bio_cyber_psi"
-			NOT = { 
+			NOT = {
 				And = {
-					has_ascension_perk = ap_esap_bio_cyber_psi 
-					NOT = { 
+					has_ascension_perk = ap_esap_bio_cyber_psi
+					NOT = {
 						has_ascension_perk = ap_esap_bio_cyber_psi_2
 					}
 				}
@@ -150,7 +150,7 @@ ap_evolutionary_mastery = {
 			has_authority = "auth_machine_intelligence"
 		}
 		is_mechanical_empire = no
-		is_cyborg_empire = no		
+		is_cyborg_empire = no
 	}
 	ai_weight = {
 		factor = 100
@@ -168,10 +168,10 @@ ap_esap_artificial_procreation = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_not_ap_esap_bio_cyber_psi"
-			NOT = { 
+			NOT = {
 				And = {
-					has_ascension_perk = ap_esap_bio_cyber_psi 
-					NOT = { 
+					has_ascension_perk = ap_esap_bio_cyber_psi
+					NOT = {
 						has_ascension_perk = ap_esap_bio_cyber_psi_2
 					}
 				}
@@ -179,8 +179,8 @@ ap_esap_artificial_procreation = {
 		}
 	}
 	modifier = {
-		pop_growth_speed = 0.30
-		planet_pops_food_upkeep_mult = -0.25
+		pop_growth_speed = 0.15
+		planet_pops_food_upkeep_mult = -0.15
 	}
 	potential = {
 		host_has_dlc = "Utopia"
@@ -205,7 +205,7 @@ ap_the_flesh_is_weak = {
 	modifier = {
 		planet_pops_robotics_upkeep_mult = -0.10
 		planet_pop_assembly_mult = 0.33
-	}	
+	}
 
 	possible = {
 		custom_tooltip = {
@@ -232,17 +232,28 @@ ap_the_flesh_is_weak = {
 			fail_text = "requires_not_ap_mind_over_matter"
 			NOT = { has_ascension_perk = ap_mind_over_matter }
 		}
+		custom_tooltip = {
+			fail_text = "requires_not_ap_esap_bio_cyber_psi"
+			NOT = {
+				And = {
+					has_ascension_perk = ap_esap_bio_cyber_psi
+					NOT = {
+						has_ascension_perk = ap_esap_bio_cyber_psi_2
+					}
+				}
+			}
+		}
 	}
-	
+
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
 			has_ascension_perk = ap_the_flesh_is_weak
 			has_authority = "auth_machine_intelligence"
 		}
-		is_mechanical_empire = no		
+		is_mechanical_empire = no
 	}
-	
+
 	ai_weight = {
 		factor = 20
 		modifier = {
@@ -255,7 +266,7 @@ ap_the_flesh_is_weak = {
 		modifier = {
 			factor = 0
 			num_owned_planets < 10
-		}		
+		}
 	}
 }
 
@@ -270,7 +281,7 @@ ap_synthetic_evolution = {
 		planet_jobs_robotic_produces_mult = 0.10
 		ROBOT_species_trait_points_add = 1
 		modify_species_cost_mult = -0.50
-	}		
+	}
 	possible = {
 		custom_tooltip = {
 			fail_text = "synthetic_empire_synthetic_ascension"
@@ -302,17 +313,17 @@ ap_synthetic_evolution = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_not_ap_esap_bio_cyber_psi"
-			NOT = { 
+			NOT = {
 				And = {
-					has_ascension_perk = ap_esap_bio_cyber_psi 
-					NOT = { 
+					has_ascension_perk = ap_esap_bio_cyber_psi
+					NOT = {
 						has_ascension_perk = ap_esap_bio_cyber_psi_2
 					}
 				}
 			}
 		}
 	}
-	
+
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
@@ -321,14 +332,14 @@ ap_synthetic_evolution = {
 		}
 		is_mechanical_empire = no
 	}
-	
+
 	ai_weight = {
 		factor = 100
 	}
 }
 
 ap_esap_cyber_1 = {
-	on_enabled = { 
+	on_enabled = {
 		custom_tooltip = ap_esap_cyber_1_tooltip
 		Hidden_effect = {
 			every_owned_pop = {
@@ -346,17 +357,17 @@ ap_esap_cyber_1 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_not_ap_esap_bio_cyber_psi"
-			NOT = { 
+			NOT = {
 				And = {
-					has_ascension_perk = ap_esap_bio_cyber_psi 
-					NOT = { 
+					has_ascension_perk = ap_esap_bio_cyber_psi
+					NOT = {
 						has_ascension_perk = ap_esap_bio_cyber_psi_2
 					}
 				}
 			}
 		}
 	}
-	
+
 	potential = {
 		always = no
 		host_has_dlc = "Utopia"
@@ -365,7 +376,7 @@ ap_esap_cyber_1 = {
 			has_authority = "auth_machine_intelligence"
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 5
 	}
@@ -398,28 +409,28 @@ ap_mind_over_matter = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_not_ap_the_flesh_is_weak"
-			NOT = {				
+			NOT = {
 				And = {
 				has_ascension_perk = ap_the_flesh_is_weak
 					Not = {
-						has_ascension_perk = ap_esap_bio_cyber_psi 					
+						has_ascension_perk = ap_esap_bio_cyber_psi
 					}
 				}
 			}
 		}
 		custom_tooltip = {
 			fail_text = "requires_not_ap_engineered_evolution"
-			NOT = {				
+			NOT = {
 				And = {
 					has_ascension_perk = ap_engineered_evolution
 					Not = {
-						has_ascension_perk = ap_esap_bio_cyber_psi 					
+						has_ascension_perk = ap_esap_bio_cyber_psi
 					}
 				}
 			}
 		}
 	}
-	
+
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
@@ -429,7 +440,7 @@ ap_mind_over_matter = {
 		is_mechanical_empire = no
 		is_cyborg_empire = no
 	}
-	
+
 	ai_weight = {
 		factor = 20
 		modifier = {
@@ -438,11 +449,11 @@ ap_mind_over_matter = {
 				has_ethic = ethic_spiritualist
 				has_ethic = ethic_fanatic_spiritualist
 			}
-		}	
+		}
 		modifier = {
 			factor = 0
 			num_owned_planets < 10
-		}		
+		}
 	}
 }
 
@@ -456,11 +467,11 @@ ap_transcendence = {
 	possible = {
 		custom_tooltip = {
 			fail_text = "synthetic_empire_psionic_ascension"
-			NOT = { 		
+			NOT = {
 				And = {
-				has_trait = trait_mechanical 
+				has_trait = trait_mechanical
 					Not = {
-						has_ascension_perk = ap_esap_bio_cyber_psi 					
+						has_ascension_perk = ap_esap_bio_cyber_psi
 					}
 				}
 			}
@@ -479,17 +490,17 @@ ap_transcendence = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_not_ap_esap_bio_cyber_psi"
-			NOT = { 
+			NOT = {
 				And = {
-					has_ascension_perk = ap_esap_bio_cyber_psi 
-					NOT = { 
+					has_ascension_perk = ap_esap_bio_cyber_psi
+					NOT = {
 						has_ascension_perk = ap_esap_bio_cyber_psi_2
 					}
 				}
 			}
 		}
 	}
-	
+
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
@@ -497,9 +508,9 @@ ap_transcendence = {
 			has_authority = "auth_machine_intelligence"
 		}
 		is_mechanical_empire = no
-		is_cyborg_empire = no		
+		is_cyborg_empire = no
 	}
-	
+
 	ai_weight = {
 		factor = 100
 	}
@@ -517,10 +528,10 @@ ap_esap_psi_1 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_not_ap_esap_bio_cyber_psi"
-			NOT = { 
+			NOT = {
 				And = {
-					has_ascension_perk = ap_esap_bio_cyber_psi 
-					NOT = { 
+					has_ascension_perk = ap_esap_bio_cyber_psi
+					NOT = {
 						has_ascension_perk = ap_esap_bio_cyber_psi_2
 					}
 				}
@@ -531,7 +542,7 @@ ap_esap_psi_1 = {
 	modifier = {
 		army_morale_damage_mult = 0.50
 	}
-	
+
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
@@ -539,7 +550,7 @@ ap_esap_psi_1 = {
 			has_authority = "auth_machine_intelligence"
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -553,7 +564,7 @@ ap_esap_bio_cyber_psi = {
 				Not = {
 					has_technology = tech_gene_tailoring
 				}
-			}		
+			}
 			add_research_option = tech_gene_tailoring
 		}
 		hidden_effect = {
@@ -574,7 +585,7 @@ ap_esap_bio_cyber_psi = {
 				Not = {
 					has_technology = tech_droid_workers
 				}
-			}		
+			}
 			add_research_option = tech_droid_workers
 		}
 		if = {
@@ -582,7 +593,7 @@ ap_esap_bio_cyber_psi = {
 				Not = {
 					has_technology = tech_psionic_theory
 				}
-			}		
+			}
 			add_research_option = tech_psionic_theory
 		}
 	}
@@ -593,25 +604,25 @@ ap_esap_bio_cyber_psi = {
 			Or = {
 				has_ascension_perk = ap_mind_over_matter
 				has_ascension_perk = ap_the_flesh_is_weak
-				has_ascension_perk = ap_engineered_evolution			
+				has_ascension_perk = ap_engineered_evolution
 			}
 		}
-		
+
 		custom_tooltip = {
 			fail_text = "bio_cyber_psi_req_2"
 			NOR = {
 				has_ascension_perk = ap_transcendence
 				has_ascension_perk = ap_synthetic_evolution
-				has_ascension_perk = ap_evolutionary_mastery			
+				has_ascension_perk = ap_evolutionary_mastery
 			}
 		}
-		
+
 		custom_tooltip = {
 			fail_text = "bio_cyber_psi_req_3"
 			NOR = {
 				has_ascension_perk = ap_esap_artificial_procreation
 				has_ascension_perk = ap_esap_cyber_1
-				has_ascension_perk = ap_esap_psi_1			
+				has_ascension_perk = ap_esap_psi_1
 			}
 		}
 		custom_tooltip = {
@@ -624,7 +635,7 @@ ap_esap_bio_cyber_psi = {
 		modify_species_cost_mult = -0.25
 		planet_pop_assembly_mult = 0.25
 	}
-	
+
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
@@ -632,7 +643,7 @@ ap_esap_bio_cyber_psi = {
 			has_authority = "auth_machine_intelligence"
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -646,7 +657,7 @@ ap_esap_bio_cyber_psi_2 = {
 				Not = {
 					has_technology = tech_gene_expressions
 				}
-			}		
+			}
 			add_research_option = tech_gene_expressions
 		}
 		if = {
@@ -654,7 +665,7 @@ ap_esap_bio_cyber_psi_2 = {
 				Not = {
 					has_technology = tech_synthetic_workers
 				}
-			}		
+			}
 			add_research_option = tech_synthetic_workers
 		}
 		if = {
@@ -662,7 +673,7 @@ ap_esap_bio_cyber_psi_2 = {
 				Not = {
 					has_technology = tech_synthetic_leaders
 				}
-			}		
+			}
 			add_research_option = tech_synthetic_leaders
 		}
 	}
@@ -682,7 +693,7 @@ ap_esap_bio_cyber_psi_2 = {
 		modify_species_cost_mult = 0.25
 		planet_pop_assembly_mult = -0.25
 	}
-	
+
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
@@ -690,7 +701,7 @@ ap_esap_bio_cyber_psi_2 = {
 			has_authority = "auth_machine_intelligence"
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -708,7 +719,6 @@ ap_esap_gov_1 = {
 				id = esap.8
 			}
 		}
-		
 	}
 
 	possible = {
@@ -716,13 +726,13 @@ ap_esap_gov_1 = {
 
 	modifier = {
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_gov_1
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -744,13 +754,13 @@ ap_esap_gov_2 = {
 	modifier = {
 		country_leader_pool_size = 3
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_gov_2
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -772,13 +782,13 @@ ap_esap_gov_3 = {
 	modifier = {
 		country_government_civic_points_add = 1
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_gov_3
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -798,15 +808,15 @@ ap_esap_gov_4 = {
 	}
 
 	modifier = {
-		country_influence_produces_mult = 0.50
+		country_influence_produces_mult = 0.25
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_gov_4
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -822,13 +832,13 @@ ap_esap_gov_5 = {
 		}
 		run_ai_strategic_data = yes
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_gov_5
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -856,13 +866,13 @@ ap_esap_art_of_war = {
 		ship_weapon_damage = 0.15
 		ship_hull_mult = 0.15
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_art_of_war
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 5
 	}
@@ -887,13 +897,13 @@ ap_esap_energy = {
 		country_energy_produces_mult = 0.20
 	  	trade_value_mult = 0.20
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_energy
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -921,13 +931,13 @@ ap_esap_colony = {
 		colony_start_num_pops_add = 1
 		planet_colony_development_speed_mult = 0.50
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_colony
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -938,7 +948,7 @@ ap_one_vision = {
 		country_unity_produces_mult = 0.10
 		pop_government_ethic_attraction = 0.50
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "ap_one_vision_req_1"
@@ -947,15 +957,15 @@ ap_one_vision = {
 			}
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_one_vision
 			has_authority = "auth_machine_intelligence"
-			has_authority = auth_hive_mind	
+			has_authority = auth_hive_mind
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -973,15 +983,15 @@ ap_one_vision = {
 		modifier = {
 			factor = 3
 			has_ethic = ethic_fanatic_spiritualist
-		}		
+		}
 	}
 }
 
 ap_one_purpose = {
 	modifier = {
-		country_unity_produces_mult = 0.30
+		country_unity_produces_mult = 0.15
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "ap_one_vision_req_1"
@@ -990,19 +1000,19 @@ ap_one_purpose = {
 			}
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_one_purpose
 		}
 		Or = {
 			has_authority = "auth_machine_intelligence"
-			has_authority = auth_hive_mind	
+			has_authority = auth_hive_mind
 		}
 	}
-	
+
 	ai_weight = {
-		factor = 10	
+		factor = 10
 	}
 }
 
@@ -1011,7 +1021,7 @@ ap_interstellar_dominion = {
 		country_starbase_influence_cost_mult = -0.20
 		country_claim_influence_cost_mult = -0.20
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "ap_interstellar_dominion_req_1"
@@ -1020,13 +1030,13 @@ ap_interstellar_dominion = {
 			}
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_interstellar_dominion
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -1055,7 +1065,7 @@ ap_esap_border_n_war = {
 			has_ascension_perk = ap_esap_art_of_war
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_border_n_war
@@ -1064,7 +1074,7 @@ ap_esap_border_n_war = {
 			has_country_flag = esap_addon_active
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1082,18 +1092,18 @@ ap_esap_border_n_colony = {
 			has_ascension_perk = ap_esap_colony
 		}
 	}
-	
+
 	modifier = {
 		starbase_outpost_influence_cost_mult = -0.25
 		planet_colony_development_speed_mult = 1.000
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_border_n_colony
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1114,13 +1124,15 @@ ap_esap_colony_n_energy = {
 			has_ascension_perk = ap_esap_energy
 		}
 	}
-	
+
 	potential = {
-		NOT = {
+		NOR = {
 			has_ascension_perk = ap_esap_colony_n_energy
+			has_authority = "auth_machine_intelligence"
+			has_authority = "auth_hive_mind"
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1139,25 +1151,25 @@ ap_esap_energy_n_unity = {
 		custom_tooltip = {
 			fail_text = "ap_esap_energy_n_unity_req_2"
 			Or = {
-				has_ascension_perk = ap_one_vision				
+				has_ascension_perk = ap_one_vision
 				Or = {
 					has_authority = "auth_machine_intelligence"
-					has_authority = auth_hive_mind	
+					has_authority = auth_hive_mind
 				}
 			}
 		}
 		custom_tooltip = {
 			fail_text = "ap_esap_energy_n_unity_req_3"
 			Or = {
-				has_ascension_perk = ap_one_purpose			
+				has_ascension_perk = ap_one_purpose
 				Nor = {
 					has_authority = "auth_machine_intelligence"
-					has_authority = auth_hive_mind	
+					has_authority = auth_hive_mind
 				}
 			}
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_energy_n_unity
@@ -1166,7 +1178,7 @@ ap_esap_energy_n_unity = {
 			has_country_flag = esap_addon_active
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1183,7 +1195,7 @@ ap_esap_unity_n_war = {
 				add_modifier = {
 					modifier = "mod_esap_unity_n_war"
 					days = -1
-				}				
+				}
 			}
 		}
 	}
@@ -1192,20 +1204,20 @@ ap_esap_unity_n_war = {
 		custom_tooltip = {
 			fail_text = "ap_esap_unity_n_war_req_1"
 			Or = {
-				has_ascension_perk = ap_one_vision				
+				has_ascension_perk = ap_one_vision
 				Or = {
 					has_authority = "auth_machine_intelligence"
-					has_authority = auth_hive_mind	
+					has_authority = auth_hive_mind
 				}
 			}
 		}
 		custom_tooltip = {
 			fail_text = "ap_esap_unity_n_war_req_3"
 			Or = {
-				has_ascension_perk = ap_one_purpose			
+				has_ascension_perk = ap_one_purpose
 				Nor = {
 					has_authority = "auth_machine_intelligence"
-					has_authority = auth_hive_mind	
+					has_authority = auth_hive_mind
 				}
 			}
 		}
@@ -1214,13 +1226,13 @@ ap_esap_unity_n_war = {
 			has_ascension_perk = ap_esap_art_of_war
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_unity_n_war
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1230,19 +1242,19 @@ ap_esap_not_war = {
 	on_enabled = {
 		#custom_tooltip = ap_esap_not_war_tooltip
 	}
-	
+
 	modifier = {
 		planet_buildings_cost_mult = -0.25
 		pop_growth_speed = 0.25
 		planet_building_build_speed_mult = 0.25
 		starbase_outpost_influence_cost_mult = -0.10
 		country_unity_produces_mult = 0.25
-		all_technology_research_speed = 0.15		
+		all_technology_research_speed = 0.15
 		ships_upkeep_mult = 0.25
 		armies_upkeep_mult = 0.25
 		country_naval_cap_mult = -0.5
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "ap_esap_not_war_req_1"
@@ -1262,13 +1274,13 @@ ap_esap_not_war = {
 			}
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_not_war
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1278,23 +1290,23 @@ ap_esap_not_border = {
 	on_enabled = {
 		if = {
 			limit = {
-				Not = {	
+				Not = {
 					has_country_flag = esap_addon_active
 				}
 			}
 			custom_tooltip = ap_esap_not_border_tooltip
 			else = {
-				custom_tooltip = ap_esap_not_border_addon_tooltip	
+				custom_tooltip = ap_esap_not_border_addon_tooltip
 			}
 		}
 	}
-	
+
 	modifier = {
 		country_admin_cap_add = 50
 		country_unity_produces_mult = 0.30
 		pop_happiness = 0.15
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "ap_esap_not_border_req_1"
@@ -1311,13 +1323,13 @@ ap_esap_not_border = {
 			}
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_not_border
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1336,16 +1348,16 @@ ap_esap_not_unity = {
 				add_modifier = {
 					modifier = "mod_esap_not_unity_faction"
 					days = -1
-				}			
+				}
 			}
 		}
 	}
-	
+
 	modifier = {
 		pop_growth_from_immigration = 0.50
 		pop_government_ethic_attraction = -1.0
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "ap_esap_not_unity_req_1"
@@ -1357,7 +1369,7 @@ ap_esap_not_unity = {
 		custom_tooltip = {
 			fail_text = "ap_esap_not_unity_req_2"
 			has_ascension_perk = ap_esap_colony_n_energy
-		}	
+		}
 		custom_tooltip = {
 			fail_text = "ap_esap_not_unity_req_3"
 			Not = {
@@ -1371,13 +1383,13 @@ ap_esap_not_unity = {
 			}
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_not_unity
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1387,10 +1399,10 @@ ap_esap_not_colony = {
 	on_enabled = {
 		custom_tooltip = ap_esap_not_colony_tooltip
 	}
-	
+
 	modifier = {
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "ap_esap_not_colony_req_1"
@@ -1413,86 +1425,14 @@ ap_esap_not_colony = {
 			}
 		}
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
 			has_ascension_perk = ap_esap_not_colony
 		}
 	}
-	
-	ai_weight = {
-		factor = 0
-	}
-}
 
-ap_esap_not_energy = {
-	on_enabled = {
-		custom_tooltip = ap_esap_not_energy_tooltip
-		hidden_effect = {
-			if = {
-				limit = {
-					has_tradition = tr_prosperity_administrative_operations
-				}
-				add_modifier = {
-					modifier = mod_esap_not_energy_prosp_ship_comp
-					days = -1
-				}
-			}
-			if = {
-				limit = {
-					has_tradition = tr_est_militarism_4
-				}
-				add_modifier = {
-					modifier = mod_esap_not_energy_militarism_comp
-					days = -1
-				}
-			}
-			if = {
-				limit = {
-					has_ascension_perk = ap_esap_hive_swarm_1
-				}
-				add_modifier = {
-					modifier = mod_esap_not_energy_swarm_comp
-					days = -1
-				}
-			}
-		}
-	}
-	
-	modifier = {
-		ships_upkeep_mult = -0.75
-		starbase_stations_upkeep_mult = -0.80
-		planet_buildings_upkeep_mult = -0.80
-		armies_upkeep_mult = -1.0
-		country_energy_produces_mult = -0.75
-		country_minerals_produces_mult = -0.25
-		country_food_produces_mult = -0.25
-	}
-	
-	possible = {
-		custom_tooltip = {
-			fail_text = "ap_esap_not_energy_req_1"
-			has_ascension_perk = ap_esap_border_n_colony
-		}
-		custom_tooltip = {
-			fail_text = "ap_esap_not_energy_req_2"
-			has_ascension_perk = ap_esap_unity_n_war
-		}
-		custom_tooltip = {
-			fail_text = "ap_esap_not_energy_req_3"
-			Not = {
-				has_ascension_perk = ap_esap_energy
-			}
-		}
-	}
-	
-	potential = {
-		NOT = {
-			has_ascension_perk = ap_esap_not_energy
-		}
-	}
-	
 	ai_weight = {
 		factor = 0
 	}
@@ -1541,14 +1481,14 @@ ap_esap_adv_comp = {
 		#	}
 		#}
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
 			has_ascension_perk = ap_esap_adv_comp
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1562,13 +1502,13 @@ ap_technological_ascendancy = {
 	modifier = {
 		all_technology_research_speed = 0.1
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_technological_ascendancy
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -1603,13 +1543,13 @@ ap_esap_rare_tech = {
 			num_rare_techs > 9
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_rare_tech
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1621,7 +1561,7 @@ ap_esap_repeat_tech = {
 		hidden_effect = {
 			switch = {
 				trigger = is_researching_technology
-				
+
 				tech_repeatable_improved_tile_mineral_output = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_engi" days = -1}}
 				tech_repeatable_improved_military_station_damage = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_engi" days = -1}}
 				tech_repeatable_improved_military_station_health = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_engi" days = -1}}
@@ -1634,14 +1574,14 @@ ap_esap_repeat_tech = {
 				tech_repeatable_weapon_type_strike_craft_fire_damage = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_engi" days = -1}}
 				tech_repeatable_weapon_type_strike_craft_fire_rate = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_engi" days = -1}}
 				tech_repeatable_reduced_building_time = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_engi" days = -1}}
-				
+
 				tech_repeatable_improved_tile_energy_output = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_phys" days = -1}}
 				tech_repeatable_improved_shield_output = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_phys" days = -1}}
 				tech_repeatable_weapon_type_energy_damage = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_phys" days = -1}}
 				tech_repeatable_weapon_type_energy_fire_rate = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_phys" days = -1}}
 				tech_repeatable_improved_planet_sensor_range = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_phys" days = -1}}
 				tech_repeatable_reduced_building_cost = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_phys" days = -1}}
-				
+
 				tech_repeatable_improved_tile_food_output = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_soc" days = -1}}
 				tech_repeatable_improved_sector_cap = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_soc" days = -1}}
 				tech_repeatable_improved_core_system_cap = {add_modifier = {modifier = "mod_ap_esap_repeat_tech_soc" days = -1}}
@@ -1674,13 +1614,13 @@ ap_esap_repeat_tech = {
 				has_technology = tech_repeatable_weapon_type_strike_craft_fire_damage
 				has_technology = tech_repeatable_weapon_type_strike_craft_fire_rate
 				has_technology = tech_repeatable_reduced_building_time
-				
+
 				has_technology = tech_repeatable_improved_tile_energy_output
 				has_technology = tech_repeatable_improved_shield_output
 				has_technology = tech_repeatable_weapon_type_energy_damage
 				has_technology = tech_repeatable_weapon_type_energy_fire_rate
 				has_technology = tech_repeatable_reduced_building_cost
-				
+
 				has_technology = tech_repeatable_improved_tile_food_output
 				has_technology = tech_repeatable_improved_core_system_cap
 				has_technology = tech_repeatable_improved_edict_length
@@ -1690,13 +1630,13 @@ ap_esap_repeat_tech = {
 			}
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_repeat_tech
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1717,14 +1657,14 @@ ap_esap_habitability = {
 	modifier = {
 		pop_environment_tolerance = 0.20
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_habitability
 			has_authority = "auth_machine_intelligence"
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1735,7 +1675,7 @@ ap_world_shaper = {
 		custom_tooltip = {
 			fail_text = "requires_technology_tech_climate_restoration"
 			has_technology = tech_climate_restoration
-		}	
+		}
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_2"
 			num_ascension_perks > 1
@@ -1745,11 +1685,11 @@ ap_world_shaper = {
 	modifier = {
 		terraforming_cost_mult = -0.25
 	}
-	
+
 	on_enabled = {
 		custom_tooltip = "allow_gaia"
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_world_shaper
@@ -1761,7 +1701,7 @@ ap_world_shaper = {
 			has_valid_civic = civic_machine_assimilator
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 5
 	}
@@ -1775,13 +1715,13 @@ ap_mastery_of_nature = {
 	modifier = {
 		deposit_blockers_cost_mult = -0.33
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_mastery_of_nature
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -1791,7 +1731,7 @@ ap_mastery_of_nature = {
 		modifier = {
 			factor = 0.1
 			num_ascension_perks > 1
-		}		
+		}
 	}
 }
 
@@ -1802,7 +1742,7 @@ ap_esap_nature_1 = {
 			every_owned_planet = {
 				planet_event = {
 					id = esap.19
-				}			
+				}
 			}
 		}
 	}
@@ -1813,24 +1753,24 @@ ap_esap_nature_1 = {
 			Or = {
 				has_ascension_perk = ap_mastery_of_nature
 				has_ascension_perk = ap_world_shaper
-				has_ascension_perk = ap_esap_habitability		
+				has_ascension_perk = ap_esap_habitability
 			}
 		}
 		custom_tooltip = {
 			fail_text = "ap_esap_nature_1_req_2"
 			Not = {
-				has_ascension_perk = ap_esap_mining_1	
+				has_ascension_perk = ap_esap_mining_1
 			}
 		}
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
 			has_ascension_perk = ap_esap_nature_1
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1851,14 +1791,14 @@ ap_esap_nature_2 = {
 			num_ascension_perks > 2
 		}
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
 			has_ascension_perk = ap_esap_nature_2
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1874,7 +1814,7 @@ ap_esap_mining_1 = {
 	}
 
 	possible = {
-		custom_tooltip = {			
+		custom_tooltip = {
 			fail_text = "ap_esap_mining_1_req_1"
 			Not = {
 				has_ascension_perk = ap_esap_nature_1
@@ -1889,14 +1829,14 @@ ap_esap_mining_1 = {
 		#	has_technology = tech_mining_network_4
 		#}
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
 			has_ascension_perk = ap_esap_mining_1
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1917,14 +1857,14 @@ ap_esap_mining_2 = {
 			num_ascension_perks > 2
 		}
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
 			has_ascension_perk = ap_esap_mining_2
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -1939,7 +1879,7 @@ ap_consecrated_worlds = {
 		custom_tooltip = "allow_edict_consectrated_worlds"
 		custom_tooltip = "describe_edict_consectrated_worlds"
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_consecrated_worlds
@@ -1949,7 +1889,7 @@ ap_consecrated_worlds = {
 			has_ethic = ethic_fanatic_spiritualist
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 	}
@@ -1983,13 +1923,13 @@ ap_esap_materialist_1 = {
 			has_ethic = ethic_fanatic_materialist
 		}
 	}
-	
-	modifier = {		
+
+	modifier = {
 		science_ship_survey_speed = 0.50
 		ship_anomaly_generation_chance_mult = 0.25
 		leader_scientists_cost_mult = -0.25
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2017,7 +1957,7 @@ ap_esap_xenophobe_1 = {
 			has_ethic = ethic_fanatic_xenophobe
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2054,7 +1994,7 @@ ap_esap_xenophile_1 = {
 			has_ethic = ethic_fanatic_xenophile
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2077,7 +2017,7 @@ ap_esap_militarist_1 = {
 			num_ascension_perks > 0
 		}
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
@@ -2088,7 +2028,7 @@ ap_esap_militarist_1 = {
 			has_ethic = ethic_fanatic_militarist
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2105,7 +2045,7 @@ ap_esap_pacifism_1 = {
 			num_ascension_perks > 0
 		}
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
@@ -2116,7 +2056,7 @@ ap_esap_pacifism_1 = {
 			has_ethic = ethic_fanatic_pacifist
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2139,7 +2079,7 @@ ap_esap_authoritarian_1 = {
 		planet_jobs_slave_produces_mult = 0.15
 		pop_cat_slave_political_power = -1.00
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_authoritarian_1
@@ -2149,7 +2089,7 @@ ap_esap_authoritarian_1 = {
 			has_ethic = ethic_fanatic_authoritarian
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2177,14 +2117,14 @@ ap_esap_egalitarian_1 = {
 									has_trait = trait_mechanical
 								}
 							}
-						}					
+						}
 					}
 				}
 				add_modifier = {
 					modifier = "mod_esap_egalitarian_1"
 					days = -1
 				}
-			}		
+			}
 		}
 	}
 
@@ -2194,7 +2134,7 @@ ap_esap_egalitarian_1 = {
 			num_ascension_perks > 0
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_egalitarian_1
@@ -2204,7 +2144,7 @@ ap_esap_egalitarian_1 = {
 			has_ethic = ethic_fanatic_egalitarian
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2225,14 +2165,14 @@ ap_esap_spiritualist_2 = {
 	modifier = {
 		pop_ethic_spiritualist_attraction_mult = 0.33
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_spiritualist_2
 		}
 		has_ethic = ethic_fanatic_spiritualist
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2251,16 +2191,16 @@ ap_esap_materialist_2 = {
 	}
 
 	modifier = {
-		all_technology_research_speed = 0.15
+		all_technology_research_speed = 0.05
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_materialist_2
 		}
 		has_ethic = ethic_fanatic_materialist
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2277,7 +2217,7 @@ ap_esap_xenophobe_2 = {
 			num_ascension_perks > 1
 		}
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
@@ -2286,7 +2226,7 @@ ap_esap_xenophobe_2 = {
 		has_ethic = ethic_fanatic_xenophobe
 		always = no
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2308,14 +2248,14 @@ ap_esap_xenophile_2 = {
 		country_trust_growth = 0.25
 		country_trust_cap_add = 25
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_xenophile_2
 		}
 		has_ethic = ethic_fanatic_xenophile
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2337,14 +2277,14 @@ ap_esap_militarist_2 = {
 		pop_happiness = 0.15
 		country_unity_produces_mult = 0.25
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_militarist_2
 		}
 		has_ethic = ethic_fanatic_militarist
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2375,14 +2315,14 @@ ap_esap_pacifism_2 = {
 
 	modifier = {
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_pacifism_2
 		}
 		has_ethic = ethic_fanatic_pacifist
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2404,7 +2344,7 @@ ap_esap_authoritarian_2 = {
 		planet_crime_add = -50
 		country_influence_produces_add = 3
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_authoritarian_2
@@ -2412,7 +2352,7 @@ ap_esap_authoritarian_2 = {
 		has_ethic = ethic_fanatic_authoritarian
 		has_country_flag = esap_addon_active
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2434,16 +2374,16 @@ ap_esap_egalitarian_2 = {
 			num_ascension_perks > 1
 		}
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
 			has_ascension_perk = ap_esap_egalitarian_2
 		}
 		has_ethic = ethic_fanatic_egalitarian
-		
+
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2466,14 +2406,19 @@ ap_esap_civic_mechanists = {
 	}
 	modifier = {
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_civic_mechanists
 		}
 		has_valid_civic = civic_mechanists
 	}
-	
+
+	modifier = {
+		planet_pops_robotics_upkeep_mult = -0.15
+		pop_assembly_speed = 0.15
+	}
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2490,7 +2435,7 @@ ap_esap_civic_syncretic_evolution = {
 			num_ascension_perks > 2
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_civic_syncretic_evolution
@@ -2498,7 +2443,7 @@ ap_esap_civic_syncretic_evolution = {
 		has_valid_civic = civic_syncretic_evolution
 		always = no
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2508,17 +2453,17 @@ ap_esap_civic_fanatic_purifiers = {
 	on_enabled = {
 		if = {
 			limit = {
-				Not = {	
+				Not = {
 					has_country_flag = esap_addon_active
 				}
 			}
 			custom_tooltip = ap_esap_civic_fanatic_purifiers_tooltip
 			else = {
-				custom_tooltip = ap_esap_civic_fanatic_purifiers_addon_tooltip		
+				custom_tooltip = ap_esap_civic_fanatic_purifiers_addon_tooltip
 			}
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_3"
@@ -2530,14 +2475,14 @@ ap_esap_civic_fanatic_purifiers = {
 		ship_fire_rate_mult = 0.10
 		army_damage_mult = 0.10
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_civic_fanatic_purifiers
 		}
 		has_valid_civic = civic_fanatic_purifiers
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2560,19 +2505,19 @@ ap_esap_hive_swarm_1 = {
 	}
 
 	modifier = {
-		country_naval_cap_mult = 0.33
-		pop_growth_speed = 0.20
-		starbase_shipyard_build_speed_mult = 0.20
-		ships_upkeep_mult = -0.10
+		country_naval_cap_mult = 0.15
+		pop_growth_speed = 0.1
+		starbase_shipyard_build_speed_mult = 0.1
+		ships_upkeep_mult = -0.05
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_hive_swarm_1
 		}
-		has_authority = auth_hive_mind 
+		has_authority = auth_hive_mind
 	}
-	
+
 	ai_weight = {
 		factor = 10
 	}
@@ -2596,15 +2541,15 @@ ap_esap_hive_swarm_2 = {
 
 	modifier = {
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
 			has_ascension_perk = ap_esap_hive_swarm_2
 		}
-		has_authority = auth_hive_mind 
+		has_authority = auth_hive_mind
 	}
-	
+
 	ai_weight = {
 		factor = 10
 	}
@@ -2614,13 +2559,13 @@ ap_esap_hive_devouring = {
 	on_enabled = {
 		if = {
 			limit = {
-				Not = {	
+				Not = {
 					has_country_flag = esap_addon_active
 				}
 			}
 			custom_tooltip = ap_esap_hive_devouring_tooltip
 			else = {
-				custom_tooltip = ap_esap_hive_devouring_addon_tooltip			
+				custom_tooltip = ap_esap_hive_devouring_addon_tooltip
 			}
 		}
 	}
@@ -2636,15 +2581,15 @@ ap_esap_hive_devouring = {
 		ship_hull_mult = 0.1
 		ship_shield_regen_add_perc = 0.005
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_hive_devouring
 		}
-		has_authority = auth_hive_mind 
+		has_authority = auth_hive_mind
 		has_valid_civic = civic_hive_devouring_swarm
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2664,14 +2609,14 @@ ap_esap_hive_consume_planet = {
 
 	modifier = {
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_hive_consume_planet
 		}
-		has_authority = auth_hive_mind 
+		has_authority = auth_hive_mind
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2685,7 +2630,7 @@ ap_esap_hive_mind = {
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_not_ap_engineered_evolution"
-			NOT = {				
+			NOT = {
 				has_ascension_perk = ap_engineered_evolution
 			}
 		}
@@ -2697,15 +2642,15 @@ ap_esap_hive_mind = {
 
 	modifier = {
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_hive_mind
 		}
-		has_authority = auth_hive_mind 
+		has_authority = auth_hive_mind
 		always = no
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -2724,18 +2669,18 @@ ap_hive_worlds = {
 			has_ascension_perk = ap_hive_worlds
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_tech_climate_restoration"
 			has_technology = tech_climate_restoration
-		}	
+		}
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_2"
 			num_ascension_perks > 1
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 	}
@@ -2750,7 +2695,7 @@ ap_synthetic_age = {
 		MACHINE_species_trait_points_add = 2
 		modify_species_cost_mult = -0.33
 	}
-	
+
 	potential = {
 		host_has_dlc = "Synthetic Dawn Story Pack"
 		has_authority = auth_machine_intelligence
@@ -2758,7 +2703,7 @@ ap_synthetic_age = {
 			has_ascension_perk = ap_synthetic_age
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_robomodding"
@@ -2770,9 +2715,9 @@ ap_synthetic_age = {
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_2"
 			num_ascension_perks > 1
-		}				
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 	}
@@ -2791,18 +2736,18 @@ ap_machine_worlds = {
 			has_ascension_perk = ap_machine_worlds
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_tech_climate_restoration"
 			has_technology = tech_climate_restoration
-		}	
+		}
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_2"
 			num_ascension_perks > 1
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 	}
@@ -2819,23 +2764,23 @@ ap_enigmatic_engineering = {
 			has_ascension_perk = ap_enigmatic_engineering
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_1"
 			num_ascension_perks > 0
 		}
 	}
-	
+
 	on_enabled = {
 		custom_tooltip = "no_rev_engineering"
 	}
-	
-	modifier = {		
+
+	modifier = {
 		ship_sensor_range_add = 2
 		ship_hyperlane_range_add = 4
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -2857,19 +2802,19 @@ ap_nihilistic_acquisition = {
 		}
 		NOT = { has_valid_civic = civic_barbaric_despoilers }
 	}
-	
+
 	on_enabled = {
 		custom_tooltip = "allow_raiding"
 	}
-	
-	possible = {	
+
+	possible = {
 		OR = {
 			is_authoritarian = yes
 			is_xenophobe = yes
 			has_ethic = ethic_gestalt_consciousness
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -2911,7 +2856,7 @@ ap_colossus = {
 			num_ascension_perks > 2
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -2920,7 +2865,7 @@ ap_colossus = {
 				has_valid_civic = civic_fanatic_purifiers
 				has_valid_civic = civic_machine_terminator
 			}
-		}	
+		}
 		modifier = {
 			factor = 0.1
 			is_xenophile = yes
@@ -2953,7 +2898,7 @@ ap_arcology_project = {
 			has_ascension_perk = ap_arcology_project
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_housing_2"
@@ -2962,14 +2907,14 @@ ap_arcology_project = {
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_2"
 			num_ascension_perks > 1
-		}		
+		}
 	}
-	
+
 	on_enabled = {
 		custom_tooltip = "allow_arcology_project"
 		custom_tooltip = "decision_arcology_project_effects"
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -2991,11 +2936,11 @@ ap_xeno_compatibility = {
 		}
 		is_regular_empire = yes
 	}
-	
+
 	modifier = {
 		planet_immigration_pull_mult = 0.33
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "civic_tooltip_xenophile"
@@ -3010,18 +2955,18 @@ ap_xeno_compatibility = {
 					has_trait = trait_machine_unit
 					has_trait = trait_hive_mind
 				}
-			}		
-		}	
+			}
+		}
 		custom_tooltip = {
 			fail_text = "requires_technology_gene_tailoring"
 			has_technology = tech_gene_tailoring
 		}
 	}
-	
+
 	on_enabled = {
 		custom_tooltip = "allow_crossbreeding"
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -3044,15 +2989,15 @@ ap_universal_transactions = {
 		is_megacorp = yes
 		is_criminal_syndicate = no
 	}
-	
+
 	modifier = {
 		planet_branch_offices_cost_mult = -0.15
 	}
-	
+
 	on_enabled = {
 		custom_tooltip = "free_commercial_pacts"
 	}
-	
+
 	ai_weight = {
 		factor = 10
 	}
@@ -3069,18 +3014,18 @@ ap_voidborn = {
 			has_ascension_perk = ap_voidborn
 		}
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_technology_starbase_4"
 			has_technology = tech_starbase_4
 		}
 	}
-	
+
 	on_enabled = {
 		custom_tooltip = "allow_habitats"
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -3109,7 +3054,7 @@ ap_esap_habitat_2 = {
 			has_ascension_perk = ap_voidborn
 		}
 	}
-	
+
 	potential = {
 		always = no
 		host_has_dlc = "Utopia"
@@ -3117,7 +3062,7 @@ ap_esap_habitat_2 = {
 			has_ascension_perk = ap_esap_habitat_2
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -3147,18 +3092,18 @@ ap_master_builders = {
 		custom_tooltip = {
 			fail_text = "requires_technology_zero_point_power"
 			has_technology = tech_zero_point_power
-		}		
+		}
 	}
 	modifier = {
 		megastructure_build_speed_mult = 0.5
 	}
-	
+
 	on_enabled = {
 		custom_tooltip = "ap_master_builders_habitat_size"
 		hidden_effect = {
 			every_planet_within_border = {
 				limit = {
-					is_planet_class = pc_habitat 
+					is_planet_class = pc_habitat
 					NOT = { has_modifier = master_builders_habitats }
 				}
 				add_modifier = {
@@ -3168,20 +3113,20 @@ ap_master_builders = {
 			}
 		}
 		if = {
-			limit = { 
+			limit = {
 				NOT = { has_technology = tech_mega_engineering }
 			}
 			add_research_option = tech_mega_engineering
-		}		
+		}
 	}
-	
+
 	potential = {
 		host_has_dlc = "Utopia"
 		NOT = {
 			has_ascension_perk = ap_master_builders
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -3202,7 +3147,7 @@ ap_galactic_wonders_utopia = {
 		custom_tooltip = "allow_dyson_sphere"
 		custom_tooltip = "allow_ring_world"
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_3"
@@ -3212,8 +3157,8 @@ ap_galactic_wonders_utopia = {
 			fail_text = "requires_mega_engineering"
 			has_technology = tech_mega_engineering
 		}
-	}				
-	
+	}
+
 	potential = {
 		host_has_dlc = "Utopia"
 		NOR = {
@@ -3221,7 +3166,7 @@ ap_galactic_wonders_utopia = {
 			has_ascension_perk = ap_galactic_wonders_utopia
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -3242,7 +3187,7 @@ ap_galactic_wonders_megacorp = {
 		custom_tooltip = "allow_mega_art_installation"
 		custom_tooltip = "allow_interstellar_assembly"
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_3"
@@ -3251,9 +3196,9 @@ ap_galactic_wonders_megacorp = {
 		custom_tooltip = {
 			fail_text = "requires_mega_engineering"
 			has_technology = tech_mega_engineering
-		}		
-	}				
-	
+		}
+	}
+
 	potential = {
 		host_has_dlc = "Megacorp"
 		NOR = {
@@ -3261,7 +3206,7 @@ ap_galactic_wonders_megacorp = {
 			has_ascension_perk = ap_galactic_wonders_megacorp
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -3286,7 +3231,7 @@ ap_galactic_wonders_utopia_and_megacorp = {
 		custom_tooltip = "allow_mega_art_installation"
 		custom_tooltip = "allow_interstellar_assembly"
 	}
-	
+
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_3"
@@ -3295,9 +3240,9 @@ ap_galactic_wonders_utopia_and_megacorp = {
 		custom_tooltip = {
 			fail_text = "requires_mega_engineering"
 			has_technology = tech_mega_engineering
-		}		
-	}				
-	
+		}
+	}
+
 	potential = {
 		host_has_dlc = "Utopia"
 		host_has_dlc = "Megacorp"
@@ -3305,7 +3250,7 @@ ap_galactic_wonders_utopia_and_megacorp = {
 			has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -3341,13 +3286,13 @@ ap_esap_smallworld = {
 			num_ascension_perks > 2
 		}
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_smallworld
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -3364,13 +3309,13 @@ ap_galactic_force_projection = {
 		country_naval_cap_add = 80
 		country_command_limit_add = 20
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_galactic_force_projection
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -3380,7 +3325,7 @@ ap_galactic_force_projection = {
 		modifier = {
 			factor = 1.5
 			num_owned_planets < 20
-		}	
+		}
 		modifier = {
 			factor = 2
 			has_ethic = ethic_militarist
@@ -3388,7 +3333,7 @@ ap_galactic_force_projection = {
 		modifier = {
 			factor = 3
 			has_ethic = ethic_fanatic_militarist
-		}		
+		}
 	}
 }
 
@@ -3397,7 +3342,7 @@ ap_shared_destiny = {
 		subject_integration_influence_cost_mult = -0.5
 		country_subject_trust_cap_add = 100
 	}
-	
+
 	potential = {
 		NOR = {
 			has_valid_civic = civic_fanatic_purifiers
@@ -3410,7 +3355,7 @@ ap_shared_destiny = {
 			has_ascension_perk = ap_shared_destiny
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 5
 		modifier = {
@@ -3432,7 +3377,7 @@ ap_defender_of_the_galaxy = {
 		}
 	}
 	modifier = {
-		description = ap_defender_of_the_galaxy_modifier_desc 
+		description = ap_defender_of_the_galaxy_modifier_desc
 		damage_vs_country_type_swarm_mult = 0.5
 		damage_vs_country_type_extradimensional_mult = 0.5
 		damage_vs_country_type_extradimensional_2_mult = 0.5
@@ -3445,20 +3390,20 @@ ap_defender_of_the_galaxy = {
 		custom_tooltip = "ap_defender_of_the_galaxy_effect_opinion"
 		# see triggered_opinion_ap_defender_of_the_galaxy
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_defender_of_the_galaxy
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 20
 		modifier = {
 			factor = 0
-			NOR = { 
+			NOR = {
 				has_global_flag = galactic_crisis_happened
-				has_global_flag = gray_goo_crisis_active	
+				has_global_flag = gray_goo_crisis_active
 			}
 		}
 	}
@@ -3476,7 +3421,7 @@ ap_galactic_contender = {
 		damage_vs_country_type_awakened_fallen_empire_mult = 0.33
 		damage_vs_country_type_gate_builders_mult = 0.33
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_galactic_contender
@@ -3487,20 +3432,20 @@ ap_galactic_contender = {
 				is_country_type = fallen_empire
 				is_country_type = awakened_fallen_empire
 			}
-		}		
+		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
 			factor = 0
 			NOR = {
-				any_neighbor_country = { 
+				any_neighbor_country = {
 					is_country_type = awakened_fallen_empire
 				}
 				any_country = {
 					is_country_type = fallen_empire
-				}				
+				}
 			}
 		}
 		modifier = {
@@ -3528,14 +3473,14 @@ ap_esap_military_station = {
 		#shipclass_military_station_hit_points_mult = 1.50
 		#shipclass_military_station_damage_mult = 0.50
 	}
-	
+
 	potential = {
 		always = no
 		NOT = {
 			has_ascension_perk = ap_esap_military_station
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -3561,18 +3506,18 @@ ap_esap_battleship = {
 	}
 
 	modifier = {
-		
-		ship_corvette_cost_mult = 0.25 
+
+		ship_corvette_cost_mult = 0.25
 		ship_destroyer_cost_mult = 0.25
 		ship_cruiser_cost_mult = 0.25
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_esap_battleship
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 0
 	}
@@ -3589,13 +3534,13 @@ ap_grasp_the_void = {
 	modifier = {
 		country_starbase_capacity_add = 5
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_grasp_the_void
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -3605,7 +3550,7 @@ ap_grasp_the_void = {
 		modifier = {
 			factor = 1.5
 			is_xenophobe = yes
-		}		
+		}
 	}
 }
 
@@ -3622,13 +3567,13 @@ ap_eternal_vigilance = {
 		shipclass_military_station_damage_mult = 0.25
 		starbase_defense_platform_capacity_add = 5
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_eternal_vigilance
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 		modifier = {
@@ -3646,13 +3591,13 @@ ap_executive_vigor = {
 	modifier = {
 		edict_length_mult = 0.50
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_executive_vigor
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 	}
@@ -3663,19 +3608,14 @@ ap_transcendent_learning = {
 		leader_skill_levels = 2
 		country_leader_pool_size = 1
 	}
-	
+
 	potential = {
 		NOT = {
 			has_ascension_perk = ap_transcendent_learning
 		}
 	}
-	
+
 	ai_weight = {
 		factor = 10
 	}
 }
-
-
-
-
-

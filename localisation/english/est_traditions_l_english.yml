@@ -431,10 +431,10 @@ tradition_est_benevolence:0 "Benevolence"
 tradition_est_benevolence_desc:0 "No unjust harm should befall our galactic neighbors by our hands. They have a place in this galaxy, just as we do."
 tr_est_benevolence_adopt:0 "Benevolence Traditions"
 tr_est_benevolence_adopt_desc:0 "$tradition_est_benevolence_desc$\n\n$tr_est_benevolence_adopt_effect$\n\n$tr_est_benevolence_finish_effect$"
-tr_est_benevolence_adopt_effect:0 "§E$TRADITIONS_ADOPT$:§!\n§YDiplomatic Upkeep Cost§! reduced by §G-33%§!."
+tr_est_benevolence_adopt_effect:0 "§E$TRADITIONS_ADOPT$:§!\n§YDiplomatic Upkeep Cost§! reduced by §G-10%§!."
 
 tr_est_benevolence_1:0 "Trade Deals"
-tr_est_benevolence_1_desc:0 "§Y$MOD_COUNTRY_TRADE_ATTRACTIVENESS$§! increased by §G+10%§! and £energy  §YEnergy Credit§! output is increased by §G+5%§!."
+tr_est_benevolence_1_desc:0 "§Y$MOD_COUNTRY_TRADE_FEE$§! decreased by §G-5%§!."
 tr_est_benevolence_1_delayed:0 "While we have no concept of possession, it is essential to many other beings in the galaxy. Through trade deals with other civilizations we may acquire goods that are hard to find on our own planets."
 
 tr_est_benevolence_2:0 "Peaceful Contacts"

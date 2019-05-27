@@ -15,9 +15,9 @@ mod_cyber_1_synthetic = {
 }
 
 mod_psi_1 = {
-	pop_happiness = -0.15
-	planet_unrest_add = 30
-	country_unity_produces_mult = -0.25
+	pop_happiness = -0.1
+	planet_stability_add = -5
+	country_unity_produces_mult = -0.1
 }
 
 mod_esap_multicult_liberty = {
@@ -28,34 +28,34 @@ mod_esap_multicult_justice = {
 	tradition_cost_num_xenos_mult = 0.25
 }
 
-mod_esap_battleship = {	
+mod_esap_battleship = {
 	ship_weapon_range_mult = 0.25
 	ship_hull_mult = 0.25
 	ship_armor_mult = 0.15
 }
 
 mod_ap_esap_repeat_tech_engi = {
-	country_engineering_tech_research_speed = 0.5
+	country_engineering_tech_research_speed = 0.25
 }
 
 mod_ap_esap_repeat_tech_soc = {
-	country_society_tech_research_speed = 0.5
+	country_society_tech_research_speed = 0.25
 }
 
 mod_ap_esap_repeat_tech_phys = {
-	country_physics_tech_research_speed = 0.5
+	country_physics_tech_research_speed = 0.25
 }
 
-mod_esap_colony_n_energy = {	
+mod_esap_colony_n_energy = {
 	planet_building_build_speed_mult = 1.00
 	planet_buildings_cost_mult = -0.25
-	pop_growth_speed = 0.50
+	pop_growth_speed = 0.25
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_colony_n_energy.dds"
 	icon_frame = 1
 }
 
-mod_esap_unity_n_war = {	
+mod_esap_unity_n_war = {
 	pop_happiness = 0.15
 	country_unity_produces_mult = 0.25
 }
@@ -71,25 +71,25 @@ mod_esap_mining_1 = {
 mod_esap_mining_2 = {
 	pop_environment_tolerance = -0.20
 	pop_happiness = -0.10
-	
+
 	planet_jobs_unity_produces_mult = -0.75
 	planet_jobs_engineering_research_produces_mult = -0.75
 	planet_jobs_physics_research_produces_mult = -0.75
 	planet_jobs_society_research_produces_mult = -0.75
 	planet_jobs_food_produces_mult = -0.75
 	planet_jobs_energy_produces_mult = -0.25
-	
+
 	spaceport_ship_build_speed_mult = 1.00
-	
+
 	planet_jobs_minerals_produces_mult = 0.50
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_mining_2.dds"
 	icon_frame = 2
 }
 
 mod_esap_egalitarian_1 = {
-	pop_growth_speed = 0.25
-	country_unity_produces_mult = 0.25
+	pop_growth_speed = 0.1
+	country_unity_produces_mult = 0.1
 }
 
 mod_esap_border_n_colony_hp = {
@@ -107,7 +107,7 @@ mod_esap_materialist = {
 
 mod_esap_planet_consumed = {
 	terraforming_cost_mult = 10.00
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_hive_consumed_planet.dds"
 	icon_frame = 3
 }
@@ -116,7 +116,7 @@ mod_esap_not_colony_core = {
 	planet_jobs_food_produces_mult = 0.25
 	planet_jobs_energy_produces_mult = 0.25
 	planet_jobs_minerals_produces_mult = 0.25
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_not_colony.dds"
 	icon_frame = 1
 }
@@ -125,7 +125,7 @@ mod_esap_not_colony_sector = {
 	planet_jobs_food_produces_mult = -0.15
 	planet_jobs_energy_produces_mult = -0.15
 	planet_jobs_minerals_produces_mult = -0.15
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_not_colony.dds"
 	icon_frame = 3
 }
@@ -139,7 +139,7 @@ mod_esap_not_unity_planet_0 = {
 	planet_jobs_physics_research_produces_mult = -0.15
 	planet_jobs_society_research_produces_mult = -0.15
 	planet_jobs_energy_produces_mult = -0.15
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_not_unity.dds"
 	icon_frame = 3
 }
@@ -150,7 +150,7 @@ mod_esap_not_unity_planet_1 = {
 	planet_jobs_society_research_produces_mult = -0.10
 	planet_jobs_energy_produces_mult = -0.10
 	planet_jobs_unity_produces_mult = -0.10
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_not_unity.dds"
 	icon_frame = 3
 }
@@ -161,13 +161,13 @@ mod_esap_not_unity_planet_2 = {
 	planet_jobs_society_research_produces_mult = -0.05
 	planet_jobs_energy_produces_mult = -0.05
 	planet_jobs_unity_produces_mult = -0.05
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_not_unity.dds"
 	icon_frame = 3
 }
 
 mod_esap_not_unity_planet_3 = {
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_not_unity.dds"
 	icon_frame = 2
 }
@@ -178,7 +178,7 @@ mod_esap_not_unity_planet_4 = {
 	planet_jobs_society_research_produces_mult = 0.05
 	planet_jobs_energy_produces_mult = 0.05
 	planet_jobs_unity_produces_mult = 0.05
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_not_unity.dds"
 	icon_frame = 1
 }
@@ -189,7 +189,7 @@ mod_esap_not_unity_planet_5 = {
 	planet_jobs_society_research_produces_mult = 0.10
 	planet_jobs_energy_produces_mult = 0.10
 	planet_jobs_unity_produces_mult = 0.10
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_not_unity.dds"
 	icon_frame = 1
 }
@@ -200,7 +200,7 @@ mod_esap_not_unity_planet_6 = {
 	planet_jobs_society_research_produces_mult = 0.15
 	planet_jobs_energy_produces_mult = 0.15
 	planet_jobs_unity_produces_mult = 0.15
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_not_unity.dds"
 	icon_frame = 1
 }
@@ -211,7 +211,7 @@ mod_esap_not_unity_planet_7 = {
 	planet_jobs_society_research_produces_mult = 0.20
 	planet_jobs_energy_produces_mult = 0.20
 	planet_jobs_unity_produces_mult = 0.20
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_not_unity.dds"
 	icon_frame = 1
 }
@@ -222,7 +222,7 @@ mod_esap_not_unity_planet_8 = {
 	planet_jobs_society_research_produces_mult = 0.25
 	planet_jobs_energy_produces_mult = 0.25
 	planet_jobs_unity_produces_mult = 0.25
-	
+
 	icon = "gfx/interface/icons/planet_modifiers/pm_esap_not_unity.dds"
 	icon_frame = 1
 }
@@ -313,8 +313,8 @@ mod_esap_xenophile_2 = {
 	country_naval_cap_mult = 0.25
 	ship_hull_mult = 0.15
 	country_food_produces_mult = 0.15
-	country_energy_produces_mult = 0.15	
-	country_minerals_produces_mult = 0.15	
+	country_energy_produces_mult = 0.15
+	country_minerals_produces_mult = 0.15
 }
 
 mod_esap_habitat_expansion = {

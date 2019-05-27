@@ -1,0 +1,47 @@
+kiyo_spy_scandal_req = { event_target:spyVictim = { NOR = { has_ethic = ethic_gestalt_consciousness is_at_war_with = root } } }
+kiyo_spy_drone_req = { event_target:spyVictim = { has_ethic = ethic_gestalt_consciousness NOT = { is_at_war_with = root } } }
+kiyo_spy_company_req = { event_target:spyVictim = { NOR = { has_ethic = ethic_gestalt_consciousness is_at_war_with = root } } }
+kiyo_spy_conserve_req = { event_target:spyVictim = { has_ethic = ethic_gestalt_consciousness NOT = { is_at_war_with = root } } }
+kiyo_spy_hacker_req = { always = yes }
+kiyo_spy_assassin_req = { always = yes }
+kiyo_spy_hijack_req = { always = yes }
+kiyo_spy_trade_req = {
+	event_target:spyVictim = { NOR = { has_ethic = ethic_gestalt_consciousness is_at_war_with = root } }
+	#Needs at least 3 intrigue
+	OR = {
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue3 }
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue4 }
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue5 }
+	}
+}
+kiyo_spy_droneprod_req = {
+	event_target:spyVictim = { has_ethic = ethic_gestalt_consciousness }
+	#Needs at least 3 intrigue
+	OR = {
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue3 }
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue4 }
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue5 }
+	}
+}
+kiyo_spy_envoy_req = {
+	any_country = {
+		is_country_type = default
+		is_neighbor_of = event_target:spyVictim
+	}
+	#Needs at least 2 intrigue
+	OR = {
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue2 }
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue3 }
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue4 }
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue5 }
+	}
+}
+kiyo_spy_generic_sabotage_req = {
+	#Generic Sabotaging Events need at least 2 intrigue
+	OR = {
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue2 }
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue3 }
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue4 }
+		has_relation_flag = { who = event_target:spyVictim flag = kiyo_spy_intrigue5 }
+	}
+}

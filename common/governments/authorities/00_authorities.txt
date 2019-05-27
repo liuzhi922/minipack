@@ -30,29 +30,29 @@ auth_direct_democratic = {
 	election_type = democratic
 
 	uses_mandates = yes
-	
+
 	possible = {
 		ethics = {
-		
+
 			NOR = {
 				value = ethic_authoritarian
-				value = ethic_fanatic_authoritarian				
+				value = ethic_fanatic_authoritarian
 				value = ethic_fanatic_elitist
 				value = ethic_gestalt_consciousness
 			}
-					
+
 		}
 	}
-	
+
 	country_modifier = {
 		country_society_tech_research_speed = 0.1
-	}	
-	
+	}
+
 	tags = {
 		AUTHORITY_ELECTION_DEMOCRATIC
-	}	
-	
-	
+	}
+
+
 }
 
 
@@ -73,11 +73,11 @@ auth_democratic = {
 			}
 		}
 	}
-	
+
 	country_modifier = {
 		 pop_factions_produces_mult = 0.1
-	}	
-	
+	}
+
 	tags = {
 		AUTHORITY_ELECTION_DEMOCRATIC
 	}
@@ -91,14 +91,13 @@ auth_oligarchic = {
 	max_election_candidates = 4
 
 	has_agendas = yes
-	
+
 	possible = {
 		ethics = {
 			NOR = {
 				value = ethic_gestalt_consciousness
 				value = ethic_fanatic_egalitarian
-				value = ethic_fanatic_authoritarian			
-				value = ethic_fanatic_pluralist				
+				value = ethic_fanatic_authoritarian
 			}
 		}
 	}
@@ -117,21 +116,22 @@ auth_dictatorial = {
 	max_election_candidates = 3
 
 	has_agendas = yes
-	
+
 	possible = {
 		ethics = {
 			NOR = {
 				value = ethic_gestalt_consciousness
 				value = ethic_egalitarian
 				value = ethic_fanatic_egalitarian
+				value = ethic_fanatic_pluralist
 			}
 		}
 	}
-	
+
 	country_modifier = {
 		 edicts_cost_mult = -0.15
-	}	
-	
+	}
+
 	tags = {
 		AUTHORITY_ELECTION_ON_RULER_DEATH
 	}
@@ -141,23 +141,23 @@ auth_imperial = {
 	has_heir = yes
 
 	has_agendas = yes
-	
+
 	possible = {
 		ethics = {
 			NOR = {
 				value = ethic_gestalt_consciousness
 				value = ethic_egalitarian
-				value = ethic_fanatic_egalitarian				
-				value = ethic_fanatic_pluralist	
-				
+				value = ethic_fanatic_egalitarian
+				value = ethic_fanatic_pluralist
+
 			}
 		}
 	}
-	
+
 	country_modifier = {
 		 edict_length_mult = 0.15
-	}		
-	
+	}
+
 	tags = {
 		AUTHORITY_HAS_HEIR
 	}
@@ -169,9 +169,9 @@ auth_hive_mind = {
 	has_factions = no
 	can_reform = no
 	localization_postfix = hive_mind
-	
+
 	valid_for_released_vassal = no
-	
+
 	playable = { host_has_dlc = "Utopia" }
 	possible = {
 		ethics = {
@@ -192,7 +192,7 @@ auth_hive_mind = {
 	country_modifier = {
 		pop_growth_speed = 0.25
 	}
-	
+
 	tags = {
 		AUTH_HIVE_MIND_AI_RESTRICTIONS
 		AUTH_HIVE_MIND_FOREIGN_POP_SURVIVAL
@@ -207,7 +207,7 @@ auth_machine_intelligence = {
 	has_factions = no
 	can_reform = no
 	localization_postfix = machine_intelligence
-	
+
 	valid_for_released_vassal = no
 
 	playable = {
@@ -243,11 +243,11 @@ auth_ancient_machine_intelligence = {
 	has_heir = no
 	election_type = none
 	can_reform = no
-	
+
 	valid_for_released_vassal = no
 
 	icon = "gfx/interface/icons/governments/authorities/auth_hive_mind.dds"
-	
+
 	potential = { country_type = { value = ai_empire } }
 }
 
@@ -260,7 +260,7 @@ auth_corporate = {
 	localization_postfix = corporate
 
 	has_agendas = yes
-	
+
 	playable = {
 		host_has_dlc = "Megacorp"
 	}
@@ -270,12 +270,12 @@ auth_corporate = {
 			NOT = { host_has_dlc = "Megacorp" }
 		}
 	}
-	
+
 	country_modifier = {
 		country_admin_cap_add = 20
 		empire_size_penalty_mult = 0.5
 	}
-	
+
 	possible = {
 		ethics = {
 			NOR = {
@@ -287,7 +287,7 @@ auth_corporate = {
 			}
 		}
 	}
-	
+
 	tags = {
 		AUTHORITY_ELECTION_OLIGARCHIC
 	}

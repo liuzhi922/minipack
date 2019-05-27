@@ -1,0 +1,31 @@
+namespace = sote_event
+
+event = {
+  id = sote_event.1
+  hide_window = yes
+  is_triggered_only = yes
+
+  immediate = {
+    every_country = {
+      if = {
+        limit = {
+          has_civic = civic_post_apocalyptic
+        }
+      }
+      every_owned_planet ={
+        limit ={
+          is_homeworld = yes
+		  NOR = {
+			is_planet_class = pc_biolumen
+			is_planet_class = pc_superhabitable
+			is_planet_class = pc_geothermal
+			is_planet_class = pc_tidallylocked
+			is_planet_class = pc_mushroom
+		  }
+        }
+        change_pc = pc_nuked
+        generate_pd_start_deposits_and_blockers = yes
+      }
+    }
+  }
+}

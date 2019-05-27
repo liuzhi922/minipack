@@ -1,0 +1,380 @@
+kiyo_spy_calculate_physics_research = {
+	if = { limit = { check_variable = { which = intrigue value < 2 } }
+		set_variable = { which = physicsVal value = 0 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value < 0 } }
+		set_variable = { which = physicsVal value = -1 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 5 } }
+		set_variable = { which = physicsVal value = 3 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 10 } }
+		set_variable = { which = physicsVal value = 8 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 15 } }
+		set_variable = { which = physicsVal value = 13 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 20 } }
+		set_variable = { which = physicsVal value = 18 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 25 } }
+		set_variable = { which = physicsVal value = 23 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 30 } }
+		set_variable = { which = physicsVal value = 28 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 35 } }
+		set_variable = { which = physicsVal value = 33 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 40 } }
+		set_variable = { which = physicsVal value = 38 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 45 } }
+		set_variable = { which = physicsVal value = 43 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 50 } }
+		set_variable = { which = physicsVal value = 48 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 55 } }
+		set_variable = { which = physicsVal value = 53 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 60 } }
+		set_variable = { which = physicsVal value = 58 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 65 } }
+		set_variable = { which = physicsVal value = 63 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 70 } }
+		set_variable = { which = physicsVal value = 68 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 75 } }
+		set_variable = { which = physicsVal value = 73 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 80 } }
+		set_variable = { which = physicsVal value = 78 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 85 } }
+		set_variable = { which = physicsVal value = 83 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 90 } }
+		set_variable = { which = physicsVal value = 88 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 95 } }
+		set_variable = { which = physicsVal value = 93 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 100 } }
+		set_variable = { which = physicsVal value = 98 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 110 } }
+		set_variable = { which = physicsVal value = 105 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 120 } }
+		set_variable = { which = physicsVal value = 115 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 130 } }
+		set_variable = { which = physicsVal value = 125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 140 } }
+		set_variable = { which = physicsVal value = 135 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 150 } }
+		set_variable = { which = physicsVal value = 145 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 160 } }
+		set_variable = { which = physicsVal value = 155 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 170 } }
+		set_variable = { which = physicsVal value = 165 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 180 } }
+		set_variable = { which = physicsVal value = 175 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 190 } }
+		set_variable = { which = physicsVal value = 185 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 200 } }
+		set_variable = { which = physicsVal value = 195 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 210 } }
+		set_variable = { which = physicsVal value = 205 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 220 } }
+		set_variable = { which = physicsVal value = 215 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 230 } }
+		set_variable = { which = physicsVal value = 225 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 240 } }
+		set_variable = { which = physicsVal value = 235 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 250 } }
+		set_variable = { which = physicsVal value = 245 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 260 } }
+		set_variable = { which = physicsVal value = 255 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 270 } }
+		set_variable = { which = physicsVal value = 265 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 280 } }
+		set_variable = { which = physicsVal value = 275 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 290 } }
+		set_variable = { which = physicsVal value = 285 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 300 } }
+		set_variable = { which = physicsVal value = 295 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 310 } }
+		set_variable = { which = physicsVal value = 305 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 320 } }
+		set_variable = { which = physicsVal value = 315 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 330 } }
+		set_variable = { which = physicsVal value = 325 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 340 } }
+		set_variable = { which = physicsVal value = 335 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 350 } }
+		set_variable = { which = physicsVal value = 345 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 360 } }
+		set_variable = { which = physicsVal value = 355 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 370 } }
+		set_variable = { which = physicsVal value = 365 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 380 } }
+		set_variable = { which = physicsVal value = 375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 390 } }
+		set_variable = { which = physicsVal value = 385 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 400 } }
+		set_variable = { which = physicsVal value = 395 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 410 } }
+		set_variable = { which = physicsVal value = 405 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 420 } }
+		set_variable = { which = physicsVal value = 415 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 430 } }
+		set_variable = { which = physicsVal value = 425 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 440 } }
+		set_variable = { which = physicsVal value = 435 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 450 } }
+		set_variable = { which = physicsVal value = 445 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 460 } }
+		set_variable = { which = physicsVal value = 455 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 470 } }
+		set_variable = { which = physicsVal value = 465 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 480 } }
+		set_variable = { which = physicsVal value = 475 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 490 } }
+		set_variable = { which = physicsVal value = 485 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 500 } }
+		set_variable = { which = physicsVal value = 495 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 525 } }
+		set_variable = { which = physicsVal value = 512 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 550 } }
+		set_variable = { which = physicsVal value = 537 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 575 } }
+		set_variable = { which = physicsVal value = 562 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 600 } }
+		set_variable = { which = physicsVal value = 587 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 625 } }
+		set_variable = { which = physicsVal value = 612 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 650 } }
+		set_variable = { which = physicsVal value = 637 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 675 } }
+		set_variable = { which = physicsVal value = 662 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 700 } }
+		set_variable = { which = physicsVal value = 687 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 725 } }
+		set_variable = { which = physicsVal value = 712 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 750 } }
+		set_variable = { which = physicsVal value = 737 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 775 } }
+		set_variable = { which = physicsVal value = 762 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 800 } }
+		set_variable = { which = physicsVal value = 787 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 825 } }
+		set_variable = { which = physicsVal value = 812 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 850 } }
+		set_variable = { which = physicsVal value = 837 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 875 } }
+		set_variable = { which = physicsVal value = 862 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 900 } }
+		set_variable = { which = physicsVal value = 887 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 925 } }
+		set_variable = { which = physicsVal value = 912 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 950 } }
+		set_variable = { which = physicsVal value = 937 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 975 } }
+		set_variable = { which = physicsVal value = 962 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1000 } }
+		set_variable = { which = physicsVal value = 987 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1050 } }
+		set_variable = { which = physicsVal value = 1025 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1100 } }
+		set_variable = { which = physicsVal value = 1075 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1150 } }
+		set_variable = { which = physicsVal value = 1125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1200 } }
+		set_variable = { which = physicsVal value = 1175 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1250 } }
+		set_variable = { which = physicsVal value = 1225 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1300 } }
+		set_variable = { which = physicsVal value = 1275 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1350 } }
+		set_variable = { which = physicsVal value = 1325 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1400 } }
+		set_variable = { which = physicsVal value = 1375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1450 } }
+		set_variable = { which = physicsVal value = 1425 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1500 } }
+		set_variable = { which = physicsVal value = 1475 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1550 } }
+		set_variable = { which = physicsVal value = 1525 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1600 } }
+		set_variable = { which = physicsVal value = 1575 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1650 } }
+		set_variable = { which = physicsVal value = 1625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1700 } }
+		set_variable = { which = physicsVal value = 1675 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1750 } }
+		set_variable = { which = physicsVal value = 1725 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1800 } }
+		set_variable = { which = physicsVal value = 1775 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1850 } }
+		set_variable = { which = physicsVal value = 1825 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1900 } }
+		set_variable = { which = physicsVal value = 1875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 1950 } }
+		set_variable = { which = physicsVal value = 1925 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 2000 } }
+		set_variable = { which = physicsVal value = 1975 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 2100 } }
+		set_variable = { which = physicsVal value = 2050 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 2200 } }
+		set_variable = { which = physicsVal value = 2150 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 2300 } }
+		set_variable = { which = physicsVal value = 2250 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 2400 } }
+		set_variable = { which = physicsVal value = 2350 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 2500 } }
+		set_variable = { which = physicsVal value = 2450 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 2600 } }
+		set_variable = { which = physicsVal value = 2550 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 2700 } }
+		set_variable = { which = physicsVal value = 2650 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 2800 } }
+		set_variable = { which = physicsVal value = 2750 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 2900 } }
+		set_variable = { which = physicsVal value = 2850 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 3000 } }
+		set_variable = { which = physicsVal value = 2950 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 3250 } }
+		set_variable = { which = physicsVal value = 3125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 3500 } }
+		set_variable = { which = physicsVal value = 3375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 3750 } }
+		set_variable = { which = physicsVal value = 3625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 4000 } }
+		set_variable = { which = physicsVal value = 3875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 4250 } }
+		set_variable = { which = physicsVal value = 4125 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 4500 } }
+		set_variable = { which = physicsVal value = 4375 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 4750 } }
+		set_variable = { which = physicsVal value = 4625 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 5000 } }
+		set_variable = { which = physicsVal value = 4875 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 6000 } }
+		set_variable = { which = physicsVal value = 5500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 7000 } }
+		set_variable = { which = physicsVal value = 6500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 8000 } }
+		set_variable = { which = physicsVal value = 7500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 9000 } }
+		set_variable = { which = physicsVal value = 8500 }
+	}
+	else_if = { limit = { has_monthly_income = { resource = physics_research value <= 10000 } }
+		set_variable = { which = physicsVal value = 9500 }
+	}
+	else = {
+		set_variable = { which = physicsVal value = 10001 }
+	}
+}

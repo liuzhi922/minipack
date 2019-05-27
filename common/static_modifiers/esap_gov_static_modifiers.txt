@@ -2,19 +2,19 @@
 
 
 mod_gov_1_1 = {
-	edict_length_mult = 1.20
+	edict_length_mult = 0.40
 }
 mod_gov_1_2 = {
-	edict_length_mult = 1.40
+	edict_length_mult = 0.60
 }
 mod_gov_1_3 = {
-	edict_length_mult = 1.60
+	edict_length_mult = 0.80
 }
 mod_gov_1_4 = {
-	edict_length_mult = 1.80
+	edict_length_mult = 1
 }
 mod_gov_1_5 = {
-	edict_length_mult = 2.00
+	edict_length_mult = 1.20
 }
 
 mod_gov_2_1 = {

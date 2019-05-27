@@ -1,0 +1,60 @@
+#Espionage Menu
+
+kiyo_spy = {
+	length = 0
+	resources = { category = edicts cost = {} }
+	effect = { hidden_effect = { country_event = { id = kiyo_event_spy_menu.1 } } }
+	
+	potential = {
+		is_country_type = default
+		kiyo_spy_disabled_espionage = no
+		has_global_flag = galactic_market_founded
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "kiyo_spy_view_open"
+			NOT = { has_country_flag = kiyo_spy_window }
+		}
+	}
+	
+	ai_weight = { weight = 0 }
+}
+
+kiyo_spy_check = {
+	length = 0
+	resources = {
+		category = edicts
+		cost = {
+			influence = 100
+			energy = 1000
+		}
+	}
+	effect = {
+		hidden_effect = { country_event = { id = kiyo_event_counterspy.1 } }
+	}
+	
+	potential = {
+		is_country_type = default
+		has_global_flag = galactic_market_founded
+		has_country_flag = kiyo_spy_first_calc
+	}
+	
+	allow = {
+		custom_tooltip = {
+			fail_text = "kiyo_spy_check_open"
+			NOR = {
+				has_country_flag = kiyo_spy_check
+				has_country_flag = kiyo_spy_check_cooldown
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			NOT = { any_country = { kiyo_spy_is_spying_on_root = yes } }
+		}
+	}
+}
