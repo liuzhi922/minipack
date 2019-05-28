@@ -1,0 +1,50 @@
+eco_crisis_minor = {
+	name = "Economic Recession"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		planet_jobs_energy_produces_mult = -0.30
+		planet_jobs_produces_mult = -0.05
+		trade_value_mult = -0.10
+		pop_happiness = -0.05
+}
+eco_crisis_major = {
+	name = "Economic Depression"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		planet_jobs_produces_mult = -0.075
+		planet_jobs_energy_produces_mult = -0.55
+		trade_value_mult = -0.15
+		pop_happiness = -0.10
+}
+eco_crisis_minor_alt = {
+	name = "Economic Recession (Alt)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		planet_jobs_produces_mult = -0.075
+		planet_jobs_energy_produces_mult = -0.10
+		country_trade_fee = 0.40
+		trade_value_mult = -0.15
+		pop_happiness = -0.025
+}
+eco_crisis_major_alt = {
+	name = "Economic Depression (Alt)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		planet_jobs_produces_mult = -0.10
+		planet_jobs_energy_produces_mult = -0.20
+		country_trade_fee = 0.60
+		trade_value_mult = -0.20
+		pop_happiness = -0.05
+}
+four_nation_bailout = {
+	name = "Four Nations Bailout"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		planet_jobs_produces_mult = 0.1
+		planet_jobs_energy_produces_mult = 0.1
+    		planet_jobs_unity_produces_mult = -0.25
+		country_resource_influence_mult = -0.25
+
+}
+hive_plague = {
+  name = "Plague of Tetlar's Palace"
+  icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+    pop_growth_speed = -0.35
+    planet_jobs_unity_produces_mult = -0.20
+    all_technology_research_speed = -0.10
+}
