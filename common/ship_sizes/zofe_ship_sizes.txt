@@ -38,7 +38,6 @@
 
 fe_escort = {
 	formation_priority = @destroyer_formation_priority
-	graphical_culture = { "fallen_spiritualist" "fallen_spiritualist_02" "fallen_materialist" "fallen_materialist_02" "fallen_xenophile" "fallen_xenophile_02" "fallen_xenophobe" "fallen_xenophobe_02" "fallen_militarist" "fallen_militarist_02" "fallen_pacifist" "fallen_pacifist_02" "fallen_authoritarian" "fallen_authoritarian_02" "fallen_egalitarian" "fallen_egalitarian_02" "fallen_hive_mind" "fallen_hive_mind_02" "fallen_machine" "fallen_machine_02" "fallen_megacorp" "aryan_01" }
 	max_speed = @speed_fast
 	acceleration = 0.3
 	rotation_speed = 0.2
@@ -93,7 +92,6 @@ fe_escort = {
 
 fe_battlecruiser = {
 	formation_priority = @battleship_formation_priority
-	graphical_culture = { "fallen_spiritualist" "fallen_spiritualist_02" "fallen_materialist" "fallen_materialist_02" "fallen_xenophile" "fallen_xenophile_02" "fallen_xenophobe" "fallen_xenophobe_02" "fallen_militarist" "fallen_militarist_02" "fallen_pacifist" "fallen_pacifist_02" "fallen_authoritarian" "fallen_authoritarian_02" "fallen_egalitarian" "fallen_egalitarian_02" "fallen_hive_mind" "fallen_hive_mind_02" "fallen_machine" "fallen_machine_02" "fallen_megacorp" "aryan_01" }
 	max_speed = @speed_slow
 	acceleration = 0.2
 	rotation_speed = 0.15
@@ -149,7 +147,6 @@ fe_battlecruiser = {
 fe_titan = {
 	formation_priority = @titan_formation_priority
 	#entity = titan_entity
-	graphical_culture = { "fallen_spiritualist" "fallen_spiritualist_02" "fallen_materialist" "fallen_materialist_02" "fallen_xenophile" "fallen_xenophile_02" "fallen_xenophobe" "fallen_xenophobe_02" "fallen_militarist" "fallen_militarist_02" "fallen_pacifist" "fallen_pacifist_02" "fallen_authoritarian" "fallen_authoritarian_02" "fallen_egalitarian" "fallen_egalitarian_02" "fallen_hive_mind" "fallen_hive_mind_02" "fallen_machine" "fallen_machine_02" "fallen_megacorp" "aryan_01" }
 	max_speed = @speed_slow
 	acceleration = 0.15
 	rotation_speed = 0.1
@@ -205,7 +202,6 @@ fe_titan = {
 
 fe_goliath = {
 	formation_priority = @goliath_formation_priority
-	graphical_culture = { "fallen_spiritualist" "fallen_spiritualist_02" "fallen_materialist" "fallen_materialist_02" "fallen_xenophile" "fallen_xenophile_02" "fallen_xenophobe" "fallen_xenophobe_02" "fallen_militarist" "fallen_militarist_02" "fallen_pacifist" "fallen_pacifist_02" "fallen_authoritarian" "fallen_authoritarian_02" "fallen_egalitarian" "fallen_egalitarian_02" "fallen_hive_mind" "fallen_hive_mind_02" "fallen_machine" "fallen_machine_02" "fallen_megacorp" "aryan_01" }
 	max_speed = @speed_very_slow
 	acceleration = 0.1
 	rotation_speed = 0.05
@@ -266,7 +262,6 @@ fe_goliath = {
 
 # Fallen Empire Defense Platform
 fe_small_station = {
-	graphical_culture = { "fallen_spiritualist" "fallen_spiritualist_02" "fallen_materialist" "fallen_materialist_02" "fallen_xenophile" "fallen_xenophile_02" "fallen_xenophobe" "fallen_xenophobe_02" "fallen_militarist" "fallen_militarist_02" "fallen_pacifist" "fallen_pacifist_02" "fallen_authoritarian" "fallen_authoritarian_02" "fallen_egalitarian" "fallen_egalitarian_02" "fallen_hive_mind" "fallen_hive_mind_02" "fallen_machine" "fallen_machine_02" "fallen_megacorp" "aryan_01" }
 	max_speed = 6
 	rotation_speed = 10
 	acceleration = 10
@@ -319,7 +314,6 @@ fe_small_station = {
 # Fallen Empire Large Military Station
 
 fe_large_station = {
-	graphical_culture = { "fallen_spiritualist" "fallen_spiritualist_02" "fallen_materialist" "fallen_materialist_02" "fallen_xenophile" "fallen_xenophile_02" "fallen_xenophobe" "fallen_xenophobe_02" "fallen_militarist" "fallen_militarist_02" "fallen_pacifist" "fallen_pacifist_02" "fallen_authoritarian" "fallen_authoritarian_02" "fallen_egalitarian" "fallen_egalitarian_02" "fallen_hive_mind" "fallen_hive_mind_02" "fallen_machine" "fallen_machine_02" "fallen_megacorp" "aryan_01" }
 	max_speed = 6
 	rotation_speed = 10
 	acceleration = 10
