@@ -1,0 +1,293 @@
+greetings = {
+
+	PLASMOID_NEUTRAL_GREETING_01 = {
+		weight = {
+				weight = 1001
+			}
+		trigger = {
+			has_civic = civic_plasmoid_ravagers
+			NOT = { is_at_war_with = FROM }
+		}
+	}
+	PLASMOID_NEUTRAL_GREETING_02 = {
+		weight = {
+				weight = 1001
+			}
+		trigger = {
+			has_civic = civic_plasmoid_ravagers
+			NOT = { is_at_war_with = FROM }
+		}
+	}
+	PLASMOID_NEUTRAL_GREETING_03 = {
+		weight = {
+				weight = 1001
+			}
+		trigger = {
+			has_civic = civic_plasmoid_ravagers
+			NOT = { is_at_war_with = FROM }
+		}
+	}
+	PLASMOID_WAR_GREETING_01 = {
+		weight = {
+				weight = 1001
+			}
+		trigger = {
+			has_civic = civic_plasmoid_ravagers
+			is_at_war_with = FROM
+		}
+	}
+	PLASMOID_WAR_GREETING_02 = {
+		weight = {
+				weight = 1001
+			}
+		trigger = {
+			has_civic = civic_plasmoid_ravagers
+			is_at_war_with = FROM
+		}
+	}
+	PLASMOID_WAR_GREETING_03 = {
+		weight = {
+				weight = 1001
+			}
+		trigger = {
+			has_civic = civic_plasmoid_ravagers
+			is_at_war_with = FROM
+		}
+	}
+	PLASMOID_VASSAL_GREETING_01 = {
+		weight = {
+				weight = 1001
+			}
+		trigger = {
+			has_civic = civic_plasmoid_ravagers
+			exists = overlord
+			overlord = { is_same_value = FROM }
+			NOT = { is_at_war_with = FROM }
+		}
+	}
+	PLASMOID_VASSAL_GREETING_02 = {
+		weight = {
+				weight = 1001
+			}
+		trigger = {
+			has_civic = civic_plasmoid_ravagers
+			exists = overlord
+			overlord = { is_same_value = FROM }
+			NOT = { is_at_war_with = FROM }
+		}
+	}
+}
+
+action_declare_war = {
+	propose = {
+		PLASMOID_DOW_PROPOSE_01 = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+		PLASMOID_DOW_PROPOSE_02 = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+		PLASMOID_DOW_PROPOSE_03 = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+	}
+	accept = {
+
+		PLASMOID_DOW_ACCEPT = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+	}
+}
+action_offer_peace = {
+	consider = {
+
+		PLASMOID_PEACE_CONSIDER = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+	}
+	propose = {
+	
+		# Gen Machine Empire
+		PLASMOID_PEACE_PROPOSE = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+	}
+	accept = {
+		PLASMOID_PEACE_ACCEPT = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+	}
+}
+
+action_invite_to_federation = {
+	consider = {
+		
+		PLASMOID_FEDERATION_OFFER = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+		
+	}
+	select = {
+		
+		PLASMOID_FEDERATION_OFFER = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+	}
+	propose = {
+		PLASMOID_FEDERATION_OFFER = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+	}
+	accept = {
+		
+		PLASMOID_FEDERATION_OFFER_ACCEPT = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+	}
+	refuse = {
+		
+		PLASMOID_FEDERATION_OFFER_REFUSE = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+	}
+}
+
+action_offer_trade_deal = {
+	propose = {
+		
+		PLASMOID_TRADE_PROPOSE = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+		
+	}
+	accept = {
+		
+		PLASMOID_TRADE_ACCEPT = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+		
+	}
+	refuse = {
+		PLASMOID_TRADE_CONSIDER = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+	}
+	consider = {
+		
+		PLASMOID_TRADE_CONSIDER = {
+			weight = {
+				weight = 1001
+			}
+			trigger = {
+				FROM = {
+			has_civic = civic_plasmoid_ravagers
+				}
+			}
+		}
+		
+	}		
+}
