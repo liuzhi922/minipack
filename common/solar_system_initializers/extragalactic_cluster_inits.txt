@@ -1,0 +1,1212 @@
+@base_moon_distance = 10
+
+#------------------------------------------
+# Hexagon Cluster; 14 systems
+
+# Archives
+hexagon_cluster_01 = {
+  name = "Ophidian"
+  class = sc_g
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { extragalactic_cluster hexagon_cluster_01 hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Ophidian"
+    class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+  }
+  
+  change_orbit = 45
+	
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "Ophidia"
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "Ophidia-B"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "Ophidia-C"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "Ophidia-D"
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+		}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "Ophidia-E"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "Ophidia-F"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "Ophidia-G"
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+	}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "Ophidia-H"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+	planet = {
+		class = "pc_ringworld_seam_damaged"
+		name = "Ophidia-I"
+		orbit_angle = 30
+		orbit_distance = 0
+		
+	}
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = "Ophidia-J"
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+		}
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "Ophidia-K"
+		orbit_angle = 30
+		orbit_distance = 0
+		
+	}
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "phidia-L"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+  init_effect = {
+		spawn_megastructure = {
+			type = "big_brain_5"
+		}
+	}
+}
+
+hexagon_cluster_02 = {
+  name = "Bangun-Bangun"
+  class = sc_m_giant
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { tiyanki_home_system extragalactic_cluster hexagon_cluster_02 hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Bangun-Bangun"
+    class = "pc_m_giant_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+  }
+  change_orbit = 100
+
+  planet = {
+    class = pc_gas_giant
+    orbit_distance = 0
+    orbit_angle = { min = 60 max = 300 }
+    size = 27
+    has_ring = yes
+    change_orbit = @base_moon_distance
+    moon = {
+			count = 1
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+    moon = {
+      count = { min = 0 max = 1}
+      class = rl_habitable_normal
+      size = { min = 11 max = 15 }
+			count = 1
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+  }
+  change_orbit = 40
+  asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 140
+	}
+  planet = {
+		count = 6
+		class = pc_ice_asteroid
+		orbit_distance = 0
+		orbit_angle = 60
+    init_effect = {
+      add_modifier = {
+        modifier = "asteroid_impacts"
+        days = -1
+      }
+      create_ambient_object = {
+        type = "abandoned_starbase_01_object"
+        location = this
+      }
+    }
+	}
+
+  planet = {
+    count = { min = 2 max = 4 }
+    class = pc_gas_giant
+    orbit_distance = 50
+    orbit_angle = { min = 60 max = 300 }
+    size = { min = 20 max = 27 }
+    has_ring = yes
+    change_orbit = @base_moon_distance
+    moon = {
+			count = { min = 0 max = 4 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+  }
+}
+
+# Ruined Dyson Sphere and tiyanki
+hexagon_cluster_03 = {
+  name = "Upsilon Deminos"
+  class = sc_g
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { tiyanki_home_system ruined_dyson_system  extragalactic_cluster hexagon_cluster_03 hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Upsilon Deminos"
+    class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 24
+		has_ring = no
+  }
+  change_orbit = 45
+  # random planet generator
+  planet = {
+    class = pc_gas_giant
+    orbit_distance = 30
+    orbit_angle = { min = 70 max = 300 }
+    size = 25
+    change_orbit = @base_moon_distance
+    moon = {
+      count = { min = 0 max = 1}
+      class = random_non_colonizable
+      size = { min = 7 max = 9 }
+      orbit_distance = 5
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+    }
+  }
+  change_orbit = 30
+  asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 105
+	}
+  planet = {
+		count = 6
+		class = pc_ice_asteroid
+		orbit_distance = 0
+		orbit_angle = 60
+	}
+  planet = {
+    class = rl_unhabitable_planets
+    count = { min = 2 max = 4}
+    orbit_distance = 30
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 11 max = 25 }
+    change_orbit = @base_moon_distance
+    moon = {
+      count = { min = 0 max = 1}
+      class = random_non_colonizable
+      size = { min = 7 max = 9 }
+      orbit_distance = 5
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+    }
+  }
+}
+
+# Ruined Science Nexus
+hexagon_cluster_04 = {
+  name = "Ki Registio"
+  class = sc_binary_3
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { ruined_nexus_system extragalactic_cluster hexagon_cluster_04 hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Ki Registio Major"
+    class = "pc_m_giant_star"
+		orbit_distance = 150
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+    satellite_naming_policy = upper_case_roman_numerals
+    change_orbit = 45
+    # random planet generator
+    planet = {
+      count = 4
+      orbit_distance = 30
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      change_orbit = base_moon_distance
+      satellite_naming_policy = lower_case_latin_letters
+      moon = {
+        count = { min = 0 max = 2}
+        class = random_non_colonizable
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+        satellite_naming_policy = lower_case_latin_letters
+      }
+    }
+  }
+  planet = {
+    name = "Ki Registio Minor"
+    class = "pc_f_star"
+		orbit_distance = 150
+		orbit_angle = 180
+		size = 25
+		has_ring = no
+    satellite_naming_policy = upper_case_roman_numerals
+    change_orbit = 35
+    planet = {
+      count = 2
+      size = { min = 14 max = 24 }
+      orbit_angle = { min = 90 max = 270 }
+      orbit_distance = 25
+      satellite_naming_policy = lower_case_latin_letters
+      change_orbit = @base_moon_distance
+      moon = {
+         count = { min = 0 max = 1 }
+         orbit_angle = { min = 90 max = 270 }
+         orbit_distance = 5
+      }
+      init_effect = {
+        create_ambient_object = {
+					type = "abandoned_starbase_01_object"
+					location = this
+				}
+				create_ambient_object = {
+					type = "medium_debris_01_object"
+					location = this
+				}
+      }
+    }
+    planet = {
+      class = pc_gas_giant
+      size = 25
+      orbit_angle = { min = 90 max = 270 }
+      orbit_distance = 25
+      has_ring = yes
+      satellite_naming_policy = lower_case_latin_letters
+      change_orbit = @base_moon_distance
+      moon = {
+        count = { min = 0 max = 1}
+        class = pc_nuked
+        size = 14
+        orbit_angle = { min = 90 max = 270 }
+        orbit_distance = 5
+      }
+      moon = {
+        class = pc_shattered
+        size = 9
+        orbit_angle = { min = 90 max = 270 }
+        orbit_distance = 5
+        init_effect = {
+          prevent_anomaly = yes
+          set_deposit = d_minerals_7
+        }
+      }
+      
+    }
+  }
+  
+}
+
+# pc_nuked
+hexagon_cluster_05 = {
+  name = "Delta Aedificum"
+  class = sc_trinary_1
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { nuked_system extragalactic_cluster hexagon_cluster_05 hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Delta Aedificum A"
+    class = "pc_g_star"
+		orbit_distance = 20
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+  }
+  planet = {
+    name = "Delta Aedificum B"
+    class = "pc_k_star"
+		orbit_distance = 20
+		orbit_angle = 180
+		size = 30
+		has_ring = no
+  }
+  planet = {
+    name = "Epsilon Aedificum"
+    class = "pc_f_star"
+		orbit_distance = 280
+		orbit_angle = 180
+		size = 30
+		has_ring = no
+    satellite_naming_policy = upper_case_roman_numerals
+    change_orbit = 45
+    planet = {
+      count = 3
+      orbit_distance = 30
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      change_orbit = @base_moon_distance
+      moon = {
+        count = { min = 0 max = 2}
+        class = random_non_colonizable
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+       }
+    }
+  }
+  change_orbit = -250
+  # random planet generator
+  planet = {
+    count = 2
+    orbit_distance = 30
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 11 max = 25 }
+    change_orbit = @base_moon_distance
+    moon = {
+      count = { min = 0 max = 1}
+      class = random_non_colonizable
+      size = { min = 7 max = 9 }
+      orbit_distance = 5
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+    }
+  }
+  planet = {
+    count = { min = 0 max = 1}
+    class = pc_nuked
+    orbit_distance = 30
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 11 max = 25 }
+    anomaly = "NUKE_PLANET_CAT"
+    moon = {
+      count = { min = 0 max = 1}
+      class = pc_shattered
+      size = { min = 7 max = 9 }
+      orbit_distance = @base_moon_distance
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+      init_effect = {
+        prevent_anomaly = yes
+        set_deposit = d_minerals_7
+      }
+    }
+      }
+  }
+
+# pc_shielded
+hexagon_cluster_06 = {
+  name = "Diwata"
+  class = sc_trinary_3
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { extragalactic_cluster hexagon_cluster_06 hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Diwata Maximus"
+    class = "pc_m_giant_star"
+		orbit_distance = 25
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+  }
+  planet = {
+    name = "Diwata Majoris"
+    class = "pc_f_star"
+		orbit_distance = 25
+		orbit_angle = 120
+		size = 30
+		has_ring = no
+  }
+  planet = {
+    name = "Diwata Minor"
+    class = "pc_k_star"
+		orbit_distance = 25
+		orbit_angle = 120
+		size = 25
+		has_ring = no
+  }
+  change_orbit = 65
+  planet = {
+    class = pc_shielded
+    orbit_distance = 30
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 18 max = 25 }
+    modifiers = none
+		flags = { fallen_shield_world }
+		init_effect = { prevent_anomaly = yes }
+    change_orbit = @base_moon_distance
+    moon = {
+      count = { min = 0 max = 1}
+      class = rl_habitable_normal
+      size = { min = 11 max = 14 }
+      orbit_distance = 5
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+    }
+  }
+  planet = {
+    count = { min = 4 max = 8}
+    orbit_distance = 30
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 11 max = 25 }
+    moon = {
+      count = { min = 0 max = 1}
+      class = random_non_colonizable
+      size = { min = 7 max = 9 }
+      orbit_distance = @base_moon_distance
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+    }
+  }
+}
+
+# ruined sentry array
+hexagon_cluster_07 = {
+  name = "Candurous"
+  class = sc_binary_2
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { extragalactic_cluster hexagon_cluster_07 ruined_sentry_system hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Candurous Xi"
+    class = "pc_neutron_star"
+		orbit_distance = 100
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+    change_orbit = 30
+    planet = {
+      count = 3
+      orbit_distance = 35
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      change_orbit = @base_moon_distance
+      init_effect = {
+				create_ambient_object = {
+					type = "abandoned_starbase_01_object"
+					location = this
+				}
+				create_ambient_object = {
+					type = "medium_debris_01_object"
+					location = this
+				}
+			}
+      moon = {
+        count = { min = 0 max = 2}
+        class = random_non_colonizable
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+    }
+  }
+
+  planet = {
+    name = "Candurous Nu"
+    class = "pc_a_star"
+		orbit_distance = 100
+		orbit_angle = 180
+		size = 30
+		has_ring = no
+    change_orbit = 30
+    planet = {
+      count = 2
+      orbit_distance = 35
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      change_orbit = @base_moon_distance
+      has_ring = yes
+      init_effect = {
+        add_modifier = {
+          modifier = "asteroid_impacts"
+          days = -1
+        }
+        create_ambient_object = {
+					type = "abandoned_starbase_01_object"
+					location = this
+				}
+				create_ambient_object = {
+					type = "medium_debris_01_object"
+					location = this
+				}
+      }
+      moon = {
+        count = { min = 0 max = 2}
+        class = pc_shattered
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+        init_effect = {
+          prevent_anomaly = yes
+          set_deposit = d_minerals_7
+        }
+      }
+    }
+    planet = {
+      class = pc_gas_giant
+      orbit_distance = 35
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      change_orbit = @base_moon_distance
+      init_effect = {
+				save_event_target_as = sentry_planet_1
+			}
+      moon = {
+        count = { min = 0 max = 1}
+        class = random_non_colonizable
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+      moon = {
+        count = { min = 0 max = 1}
+        class = rl_habitable_normal
+        size = { min = 12 max = 16 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+    }
+  }
+  init_effect = {
+		spawn_megastructure = {
+			type = "spy_orb_ruined"
+			location = event_target:sentry_planet_1
+		}
+		create_ambient_object = {
+			type = "large_debris_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "medium_debris_01_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "medium_debris_02_object"
+			location = solar_system
+		}
+		create_ambient_object = {
+			type = "small_debris_object"
+			location = solar_system
+		}
+	}
+}
+
+# Primitive
+hexagon_cluster_08 = {
+  name = "Beta Celebratare"
+  class = sc_trinary_3
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { primitive_system extragalactic_cluster hexagon_cluster_08 hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Beta Celebratare A"
+    class = "pc_k_star"
+		orbit_distance = 90
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+    planet = {
+      name = "Beta Celebratare B"
+      class = "pc_m_star"
+  		orbit_distance = 35
+  		orbit_angle = 180
+  		size = 30
+  		has_ring = no
+    }
+    change_orbit = 35
+    planet = {
+      count = 2
+      orbit_distance = 30
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      init_effect = {
+        add_modifier = {
+          modifier = "asteroid_impacts"
+          days = -1
+        }
+        create_ambient_object = {
+					type = "abandoned_starbase_01_object"
+					location = this
+				}
+				create_ambient_object = {
+					type = "medium_debris_01_object"
+					location = this
+				}
+      }
+      change_orbit = @base_moon_distance
+      moon = {
+        count = { min = 0 max = 1}
+        class = random_non_colonizable
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+    }
+    planet = {
+      count = 1
+      class = pc_gas_giant
+      orbit_distance = 30
+      orbit_angle = { min = 70 max = 300 }
+      size = 27
+      init_effect = {
+        create_ambient_object = {
+					type = "abandoned_starbase_01_object"
+					location = this
+				}
+				create_ambient_object = {
+					type = "medium_debris_01_object"
+					location = this
+				}
+      }
+      change_orbit = @base_moon_distance
+      moon = {
+        count = { min = 0 max = 1}
+        class = random_non_colonizable
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+      moon = {
+        count = { min = 0 max = 1}
+        class = rl_habitable_normal
+        size = 14
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+        init_effect = {
+    			prevent_anomaly = yes
+    			generate_primitives_on_planet = yes
+    		}
+      }
+    }
+  }
+  planet = {
+    name = "Beta Celebratare Minor"
+    class = "pc_m_star"
+		orbit_distance = 150
+		orbit_angle = 180
+		size = 25
+		has_ring = no
+    change_orbit = 30
+    planet = {
+      count = 3
+      orbit_distance = 30
+      orbit_angle = { min = 70 max = 300 }
+      size = { min = 11 max = 25 }
+      change_orbit = @base_moon_distance
+      init_effect = {
+        create_ambient_object = {
+					type = "abandoned_starbase_01_object"
+					location = this
+				}
+				create_ambient_object = {
+					type = "medium_debris_01_object"
+					location = this
+				}
+      }
+      moon = {
+        count = { min = 0 max = 2}
+        class = random_non_colonizable
+        size = { min = 7 max = 9 }
+        orbit_distance = 5
+        orbit_angle = { min = 60 max = 300}
+        has_ring = no
+      }
+    }
+  }
+}
+
+# wormhole terminal & tiyanki
+hexagon_cluster_09 = {
+  name = "Piscium Vortex"
+  class = sc_black_hole
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { tiyanki_home_system  extragalactic_cluster hexagon_cluster_09 hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Piscium Vortex"
+    class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+  }
+  change_orbit = 90
+  # random planet generator
+  planet = {
+    count = 1
+    class = pc_gas_giant
+    orbit_distance = 0
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 25 max = 30 }
+  }
+}
+
+# black hole & tiyanki
+hexagon_cluster_10 = {
+  name = "Bakunawa"
+  class = sc_black_hole
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { tiyanki_home_system extragalactic_cluster hexagon_cluster_10 hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Bakunawa"
+    class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+  }
+  change_orbit = 70
+
+  planet = {
+    count = { min = 0 max = 1}
+    class = pc_broken
+    orbit_distance = 45
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 11 max = 25 }
+    init_effect = {
+      prevent_anomaly = yes
+      set_deposit = d_minerals_8
+      create_ambient_object = {
+        type = "abandoned_starbase_01_object"
+        location = this
+      }
+      create_ambient_object = {
+        type = "medium_debris_01_object"
+        location = this
+      }
+    }
+  }
+  planet = {
+    count = 1
+    class = pc_gas_giant
+    orbit_distance = 50
+    orbit_angle = { min = 70 max = 300 }
+    size = 25
+  }
+}
+
+# Primitive
+hexagon_cluster_11 = {
+  name = "Theta Terrix"
+  class = sc_a
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { primitive_system extragalactic_cluster hexagon_cluster_11 hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Theta Terrix"
+    class = "pc_a_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+  }
+  change_orbit = 45
+  planet = {
+    count = 2
+    class = pc_shattered
+    orbit_distance = 45
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 11 max = 25 }
+    change_orbit = @base_moon_distance
+    init_effect = {
+      prevent_anomaly = yes
+      set_deposit = d_alloys_3
+      create_ambient_object = {
+				type = "abandoned_starbase_01_object"
+				location = this
+			}
+			create_ambient_object = {
+				type = "medium_debris_01_object"
+				location = this
+			}
+    }
+  }
+  asteroid_belt = {
+    type = rocky_asteroid_belt
+    radius = 180
+  }
+  change_orbit = 45
+  planet = {
+    count = { min = 1 max = 6 }
+    class = pc_asteroid
+    orbit_angle = 60
+    orbit_distance = 0
+  }
+  planet = {
+    count = { min = 0 max = 1}
+    class = pc_gas_giant
+    orbit_distance = 45
+    orbit_angle = { min = 70 max = 300 }
+    size = 28
+    change_orbit = @base_moon_distance
+    init_effect = {
+      create_ambient_object = {
+        type = "abandoned_starbase_01_object"
+        location = this
+      }
+      create_ambient_object = {
+        type = "medium_debris_01_object"
+        location = this
+      }
+    }
+    moon = {
+      count = { min = 0 max = 1}
+      class = pc_nuked
+      size = { min = 11 max = 18 }
+      orbit_distance = 7
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+      init_effect = {
+  			prevent_anomaly = yes
+  			generate_primitives_on_planet = yes
+  		}
+    }
+    moon = {
+      count = { min = 0 max = 1 }
+      class = random_non_colonizable
+      size = { min = 7 max = 9 }
+      orbit_distance = 7
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+    }
+  }
+  planet = {
+    count = 2
+    class = pc_gas_giant
+    orbit_distance = 45
+    orbit_angle = { min = 70 max = 300 }
+    size = 28
+    change_orbit = @base_moon_distance
+    init_effect = {
+      add_modifier = {
+        modifier = "asteroid_impacts"
+        days = -1
+      }
+      create_ambient_object = {
+        type = "abandoned_starbase_01_object"
+        location = this
+      }
+      create_ambient_object = {
+        type = "medium_debris_01_object"
+        location = this
+      }
+    }
+    moon = {
+      count = { min = 0 max = 1 }
+      class = random_non_colonizable
+      size = { min = 7 max = 9 }
+      orbit_distance = 5
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+    }
+    moon = {
+      count = { min = 0 max = 1 }
+      class = rl_habitable_normal
+      size = { min = 11 max = 18 }
+      orbit_distance = 7
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+    }
+    moon = {
+      count = { min = 0 max = 1 }
+      class = pc_shattered
+      size = { min = 7 max = 9 }
+      orbit_distance = 7
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+      init_effect = {
+        prevent_anomaly = yes
+        set_deposit = d_alloys_3
+      }
+    }
+  }
+}
+
+# tiyanki
+hexagon_cluster_12 = {
+  name = "Alcelaphinae"
+  class = sc_a
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { tiyanki_home_system extragalactic_cluster hexagon_cluster_12 hexagon_cluster}
+
+  # star
+  planet = {
+    name = "Alcelaphinae"
+    class = "pc_a_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+  }
+  change_orbit = 45
+  # random planet generator
+  planet = {
+    count = { min = 4 max = 7}
+    orbit_distance = 25
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 11 max = 25 }
+    change_orbit = @base_moon_distance
+    moon = {
+      count = { min = 0 max = 2}
+      class = random_non_colonizable
+      size = { min = 7 max = 9 }
+      orbit_distance = 5
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+    }
+  }
+  planet = {
+    count = 1
+    class = pc_gas_giant
+    orbit_distance = 45
+    orbit_angle = { min = 70 max = 300 }
+    size = 25
+    change_orbit = @base_moon_distance
+    moon = {
+      count = { min = 0 max = 2}
+      class = random_non_colonizable
+      size = { min = 7 max = 9 }
+      orbit_distance = 5
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+      init_effect = {
+        create_ambient_object = {
+          type = "abandoned_starbase_01_object"
+          location = this
+        }
+        create_ambient_object = {
+          type = "medium_debris_01_object"
+          location = this
+        }
+      }
+    }
+  }
+}
+
+# shielded
+hexagon_cluster_13 = {
+  name = "Omega Maguayan"
+  class = sc_black_hole
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { extragalactic_cluster hexagon_cluster_13 hexagon_cluster }
+  # star
+  planet = {
+    name = "Omega Maguayan"
+    class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+  }
+  change_orbit = 100
+  planet = {
+    count = { min = 0 max = 1}
+    class = pc_shattered
+    orbit_distance = 40
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 11 max = 25 }
+    init_effect = {
+      prevent_anomaly = yes
+      set_deposit = d_alloys_3
+      create_ambient_object = {
+        type = "abandoned_starbase_01_object"
+        location = this
+      }
+      create_ambient_object = {
+        type = "medium_debris_01_object"
+        location = this
+      }
+    }
+  }
+  planet = {
+    count = { min = 0 max = 1}
+    class = pc_shrouded
+    orbit_distance = 40
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 11 max = 25 }
+    init_effect = {
+      prevent_anomaly = yes
+      add_modifier = {
+        modifier = "asteroid_impacts"
+        days = -1
+      }
+      create_ambient_object = {
+        type = "abandoned_starbase_01_object"
+        location = this
+      }
+      create_ambient_object = {
+        type = "medium_debris_01_object"
+        location = this
+      }
+    }
+  }
+	planet = {
+    count = { min = 0 max = 1}
+    name = "Maguayan's Sentinel"
+		class = pc_shielded
+		orbit_distance = 40
+		orbit_angle =  { min = 1 max = 359 }
+		size = { min = 16 max = 24 }
+    has_ring = no
+		modifiers = none
+		flags = { fallen_shield_world }
+		init_effect = {
+      prevent_anomaly = yes
+      create_ambient_object = {
+        type = "abandoned_starbase_01_object"
+        location = this
+      }
+      create_ambient_object = {
+        type = "medium_debris_01_object"
+        location = this
+      }
+    }
+	}
+}
+
+# wormhole terminal
+hexagon_cluster_14 = {
+  name = "Agyu"
+  class = sc_pulsar
+  usage = misc_system_init
+  usage_odds = 0
+  flags = { extragalactic_cluster hexagon_cluster_14 hexagon_cluster }
+
+  # star
+  planet = {
+    name = "Agyu"
+    class = "pc_pulsar"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+  }
+  change_orbit = 45
+  # random planet generator
+  planet = {
+    count = 2
+    orbit_distance = 45
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 11 max = 25 }
+    change_orbit = @base_moon_distance
+    moon = {
+      count = { min = 0 max = 1}
+      class = random_non_colonizable
+      size = { min = 7 max = 9 }
+      orbit_distance = 5
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+      init_effect = {
+        create_ambient_object = {
+          type = "abandoned_starbase_01_object"
+          location = this
+        }
+      }
+    }
+  }
+  change_orbit = 45
+  asteroid_belt = {
+    type = rocky_asteroid_belt
+    radius = 180
+  }
+  planet = {
+    count = { min = 1 max = 6 }
+    class = pc_asteroid
+    orbit_distance = 0
+    orbit_angle = 60
+    init_effect = {
+      create_ambient_object = {
+        type = "abandoned_starbase_01_object"
+        location = this
+      }
+      create_ambient_object = {
+        type = "medium_debris_01_object"
+        location = this
+      }
+    }
+  }
+  planet = {
+    count = { min = 0 max = 3}
+    orbit_distance = 45
+    orbit_angle = { min = 70 max = 300 }
+    size = { min = 11 max = 25 }
+    change_orbit = @base_moon_distance
+    moon = {
+      count = { min = 0 max = 1}
+      class = random_non_colonizable
+      size = { min = 7 max = 9 }
+      orbit_distance = 5
+      orbit_angle = { min = 60 max = 300}
+      has_ring = no
+    }
+  }
+}

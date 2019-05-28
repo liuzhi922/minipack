@@ -953,6 +953,7 @@ system_blocks_sensors = {
 		is_inside_nebula = yes
 		has_star_flag = lcluster
 		has_star_flag = sealed_system
+		has_star_flag = hexagon_cluster
 	}
 }
 
@@ -974,6 +975,7 @@ can_enter_system_by_jump = {
 
 		# L-Cluster
 		NOT = { has_star_flag = lcluster }
+		NOT = { has_star_flag = hexagon_cluster }
 	}
 }
 
