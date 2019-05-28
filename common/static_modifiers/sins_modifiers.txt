@@ -1,0 +1,43 @@
+eco_crisis_minor = {
+	name = "Minor Economic Crisis"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.05
+		country_resource_energy_mult = -0.10
+    planet_jobs_produces_mult = -0.05
+    trade_value_mult = -0.10
+		pop_happiness = -0.05
+}
+eco_crisis_major = {
+	name = "Major Economic Crisis"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.10
+		planet_jobs_produces_mult = -0.075
+    country_resource_energy_mult = -0.15
+    trade_value_mult = -0.15
+		pop_happiness = -0.10
+}
+eco_crisis_minor_alt = {
+	name = "Minor Economic Crisis (Alt)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.10
+		planet_jobs_produces_mult = -0.075
+    country_trade_fee = .30
+    trade_value_mult = -0.15
+		pop_happiness = -0.025
+}
+eco_crisis_major_alt = {
+	name = "Major Economic Crisis (Alt)"
+	icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+		country_resource_influence_mult = -0.10
+		planet_jobs_produces_mult = -0.10
+    country_trade_fee = .50
+    trade_value_mult = -0.20
+		pop_happiness = -0.025
+}
+dutch_plague = {
+  name = "Plague of Tetlar's Palace"
+  icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+    pop_growth_speed = -0.35
+    country_resource_unity_mult = -0.20
+    all_technology_research_speed = -0.10
+}
