@@ -44,7 +44,21 @@ four_nation_bailout = {
 hive_plague = {
   name = "Plague of Tetlar's Palace"
   icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
-    pop_growth_speed = -0.35
-    planet_jobs_unity_produces_mult = -0.20
-    all_technology_research_speed = -0.10
+    pop_growth_speed = -0.50
+    planet_jobs_unity_produces_mult = -0.30
+    all_technology_research_speed = -0.15
+}
+hive_plague_advanced = {
+  name = "Neo-Javorian Pox"
+  icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+    pop_growth_speed = -0.70
+    planet_jobs_unity_produces_mult = -0.40
+    all_technology_research_speed = -0.20
+}
+jav_pox_spread = {
+  name = "Neo-Javorian Pox"
+  icon = "gfx/interface/icons/modifiers/mod_country_insult_efficiency.dds"	
+    pop_growth_speed = -0.25
+    planet_jobs_produces_mult = -0.10
+    pop_happiness = -0.15
 }
