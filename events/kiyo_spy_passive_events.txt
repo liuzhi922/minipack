@@ -6,19 +6,19 @@ country_event = {
 	title = kiyo_event_spy_passive.0.title
 	desc = kiyo_event_spy_passive.0.desc
 	picture = GFX_evt_board_meeting
-	
+
 	trigger = {
 		has_global_flag = galactic_market_founded
 		NOT = { has_country_flag = kiyo_spy_first_calc }
 		kiyo_spy_disabled_espionage = no
 		any_playable_country = { is_country = root }		#Check if playable
 	}
-	
+
 	immediate = {
 		kiyo_spy_calculate_spy = yes
 		set_country_flag = kiyo_spy_first_calc
 	}
-	
+
 	option = { name = GOOD }
 }
 
@@ -26,12 +26,12 @@ country_event = {
 country_event = {
 	id = kiyo_event_spy_passive.1
 	hide_window = yes
-	
+
 	trigger = {
 		is_country_type = primitive
 		NOT = { has_country_flag = kiyo_spy_primitive }
 	}
-	
+
 	immediate = { set_country_flag = kiyo_spy_primitive }
 }
 
@@ -40,15 +40,15 @@ event = {
 	id = kiyo_event_spy_passive.2
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	trigger = { has_global_flag = galactic_market_founded }
-	
+
 	immediate = {
 		every_country = { limit = { kiyo_spy_any_regular_comms = yes }
-		
+
 			#Free Speech Debuff
 			country_event = { id = kiyo_event_spy_passive.3 }
-			
+
 			#Catchup Mechanics
 			if = {
 				limit = {
@@ -57,6 +57,7 @@ event = {
 						is_country_type = default
 						NOT = { is_country = prev }
 						has_communications = prev
+						PREV = { NOT = { is_country_type = ascended_empire } }
 						OR = {
 							AND = {
 								is_neighbor_of = prev
@@ -79,7 +80,7 @@ country_event = {
 	id = kiyo_event_spy_passive.3
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = {
 			limit = {
@@ -120,7 +121,7 @@ country_event = {
 country_event = {
 	id = kiyo_event_spy_passive.4
 	hide_window = yes
-	
+
 	trigger = {
 		OR = {
 			has_country_flag = slave_rebels
@@ -128,7 +129,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = kiyo_spy_rebel_intrigue }
 	}
-	
+
 	immediate = {
 		every_country = {
 			limit = {
@@ -164,7 +165,7 @@ country_event = {
 	desc = kiyo_event_spy_passive.5.desc
 	picture = GFX_evt_board_meeting
 	is_triggered_only = yes
-	
+
 	option = { name = kiyo_event_spy_passive.5.a }
 }
 
@@ -173,9 +174,9 @@ planet_event = {
 	id = kiyo_event_spy_passive.6
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	trigger = { has_global_flag = galactic_market_founded }
-	
+
 	immediate = {
 		every_playable_country = { limit = { OR = { has_communications = prev.owner is_country = prev.owner } }
 			set_variable = { which = spy_total value = 1 }
@@ -211,7 +212,7 @@ planet_event = {
 				}
 				change_variable = { which = spy_total value = 1 }
 			}
-			
+
 			set_variable = { which = spy_available value = spy_total }
 			if = { limit = { any_country = { reverse_has_relation_flag = { who = prev flag = kiyo_spy_spy1 } } } change_variable = { which = spy_available value = -1 } }
 			if = { limit = { any_country = { reverse_has_relation_flag = { who = prev flag = kiyo_spy_spy2 } } } change_variable = { which = spy_available value = -1 } }
