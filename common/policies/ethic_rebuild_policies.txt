@@ -2045,7 +2045,6 @@ trade_policy = {
 
 
 artificial_intelligence_policy = {
-
 	potential = {	
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		can_set_ai_policy = yes
@@ -2122,12 +2121,13 @@ artificial_intelligence_policy = {
 		name = "ai_full_rights"
 
 		valid = {
-		  or = {
-			NOR = {
+		  OR = {
+			NOT = {
 				has_ethic = "ethic_spiritualist"
 				has_ethic = "ethic_fanatic_spiritualist"
 			}
 			has_valid_civic = civic_machine_cult
+			is_mechanical_empire = yes
 		  }
 			NOT = { has_policy_flag = robots_outlawed }
 		}
