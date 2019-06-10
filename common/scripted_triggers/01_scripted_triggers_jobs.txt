@@ -218,6 +218,7 @@ is_robotic_species = {
 		OR = {
 			is_archetype = ROBOT
 			is_archetype = MACHINE
+			is_archetype = SYNTHETIC_EX
 		}
 	}
 }
