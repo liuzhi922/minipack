@@ -7,7 +7,7 @@ country_event = {
 	desc = kiyo_event_active.3.desc
 	picture = GFX_evt_arguing_senate
 	is_triggered_only = yes
-	
+
 	option = {
 		name = kiyo_event_active.3.a
 		custom_tooltip = kiyo_event_active.3.a.tooltip
@@ -15,7 +15,7 @@ country_event = {
 			factor = 40
 			modifier = { factor = 1.5 is_at_war = yes }
 		}
-		
+
 		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_bomb days = 1800 } }
 		hidden_effect = {
 			event_target:sabotageVictim = {
@@ -57,7 +57,7 @@ country_event = {
 			remove_country_flag = kiyo_spy_active_window
 		}
 	}
-	
+
 	option = {
 		name = kiyo_event_active.3.b
 		custom_tooltip = kiyo_event_active.3.b.tooltip
@@ -65,7 +65,7 @@ country_event = {
 			factor = 50
 			modifier = { factor = 1.5 is_at_war = no }
 		}
-		
+
 		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_bomb days = 1800 } }
 		hidden_effect = {
 			event_target:sabotageVictim = {
@@ -116,7 +116,7 @@ country_event = {
 	desc = kiyo_event_active.31.desc
 	picture = GFX_evt_exploding_ship
 	is_triggered_only = yes
-	
+
 	option = { name = WORRYING }
 }
 
@@ -125,7 +125,7 @@ country_event = {
 	id = kiyo_event_active.32
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -144,20 +144,6 @@ country_event = {
 				}
 			}
 			add_modifier = { modifier = kiyo_spy_active_bomb_orbital days = 1800 }
-			event_target:bombA.solar_system = {
-				every_fleet_in_system = {
-					limit = {
-						any_owned_ship = {
-							OR = {
-								is_ship_class = shipclass_mining_station
-								is_ship_class = shipclass_research_station
-								is_ship_class = shipclass_observation_station
-							}
-						}
-					}
-					destroy_fleet = this
-				}
-			}
 			country_event = { id = kiyo_event_active.34 }
 		}
 		else_if = {
@@ -194,7 +180,7 @@ country_event = {
 	desc = kiyo_event_active.33.desc
 	picture = GFX_evt_exploding_ship
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_a }
@@ -210,7 +196,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_bomb_victim_a
 	}
-	
+
 	option = { name = GOOD }
 }
 
@@ -221,7 +207,7 @@ country_event = {
 	desc = kiyo_event_active.34.desc
 	picture = GFX_evt_exploding_ship
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_a }
@@ -237,7 +223,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_bomb_victim_a
 	}
-	
+
 	option = { name = UNFORTUNATE }
 }
 
@@ -248,7 +234,7 @@ country_event = {
 	desc = kiyo_event_active.35.desc
 	picture = GFX_evt_exploding_ship
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_a }
@@ -264,7 +250,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_bomb_victim_b
 	}
-	
+
 	option = { name = GOOD }
 }
 
@@ -275,7 +261,7 @@ country_event = {
 	desc = kiyo_event_active.36.desc
 	picture = GFX_evt_exploding_ship
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_bomb_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_bomb_a }
@@ -291,7 +277,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_bomb_victim_b
 	}
-	
+
 	option = { name = UNFORTUNATE }
 }
 
@@ -302,12 +288,12 @@ country_event = {
 	desc = kiyo_event_active.4.desc
 	picture = GFX_evt_arguing_senate
 	is_triggered_only = yes
-	
+
 	option = {
 		name = kiyo_event_active.4.a
 		custom_tooltip = kiyo_event_active.4.a.tooltip
 		ai_chance = { factor = 55 }
-		
+
 		event_target:sabotageVictim = {
 			if = {
 				limit = {
@@ -352,12 +338,12 @@ country_event = {
 			remove_country_flag = kiyo_spy_active_window
 		}
 	}
-	
+
 	option = {
 		name = kiyo_event_active.4.b
 		custom_tooltip = kiyo_event_active.4.a.tooltip
 		ai_chance = { factor = 45 }
-		
+
 		event_target:sabotageVictim = {
 			if = {
 				limit = {
@@ -411,7 +397,7 @@ country_event = {
 	desc = kiyo_event_active.41.desc
 	picture = GFX_evt_disease_outbreak
 	is_triggered_only = yes
-	
+
 	option = { name = WORRYING }
 }
 
@@ -420,7 +406,7 @@ country_event = {
 	id = kiyo_event_active.42
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -482,7 +468,7 @@ country_event = {
 	desc = kiyo_event_active.43.desc
 	picture = GFX_evt_colony_settlement
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_a }
@@ -498,7 +484,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_toxic_victim_a
 	}
-	
+
 	option = { name = GOOD }
 }
 
@@ -509,7 +495,7 @@ country_event = {
 	desc = kiyo_event_active.44.desc
 	picture = GFX_evt_colony_settlement
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_a }
@@ -525,7 +511,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_toxic_victim_a
 	}
-	
+
 	option = { name = UNFORTUNATE }
 }
 
@@ -536,7 +522,7 @@ country_event = {
 	desc = kiyo_event_active.45.desc
 	picture = GFX_evt_colony_settlement
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_a }
@@ -552,7 +538,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_toxic_victim_b
 	}
-	
+
 	option = { name = GOOD }
 }
 
@@ -563,7 +549,7 @@ country_event = {
 	desc = kiyo_event_active.46.desc
 	picture = GFX_evt_colony_settlement
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_toxic_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_toxic_a }
@@ -579,7 +565,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_toxic_victim_b
 	}
-	
+
 	option = { name = UNFORTUNATE }
 }
 
@@ -590,12 +576,12 @@ country_event = {
 	desc = kiyo_event_active.5.desc
 	picture = GFX_evt_arguing_senate
 	is_triggered_only = yes
-	
+
 	option = {
 		name = kiyo_event_active.5.a
 		custom_tooltip = kiyo_event_active.5.a.tooltip
 		ai_chance = { factor = 35 }
-		
+
 		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_leak days = 1800 } }
 		hidden_effect = {
 			event_target:sabotageVictim = {
@@ -629,12 +615,12 @@ country_event = {
 			remove_country_flag = kiyo_spy_active_window
 		}
 	}
-	
+
 	option = {
 		name = kiyo_event_active.5.b
 		custom_tooltip = kiyo_event_active.5.b.tooltip
 		ai_chance = { factor = 65 }
-		
+
 		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_leak days = 1800 } }
 		hidden_effect = {
 			event_target:sabotageVictim = {
@@ -677,7 +663,7 @@ country_event = {
 	desc = kiyo_event_active.51.desc
 	picture = GFX_evt_star_chart
 	is_triggered_only = yes
-	
+
 	option = { name = OK }
 }
 
@@ -686,7 +672,7 @@ country_event = {
 	id = kiyo_event_active.52
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -737,7 +723,7 @@ country_event = {
 	desc = kiyo_event_active.53.desc
 	picture = GFX_evt_star_chart
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_a }
@@ -753,7 +739,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_leak_victim_a
 	}
-	
+
 	option = { name = OK }
 }
 
@@ -764,7 +750,7 @@ country_event = {
 	desc = kiyo_event_active.54.desc
 	picture = GFX_evt_star_chart
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_a }
@@ -780,7 +766,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_leak_victim_a
 	}
-	
+
 	option = { name = WORRYING }
 }
 
@@ -791,7 +777,7 @@ country_event = {
 	desc = kiyo_event_active.55.desc
 	picture = GFX_evt_star_chart
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_a }
@@ -807,7 +793,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_leak_victim_b
 	}
-	
+
 	option = { name = OK }
 }
 
@@ -818,7 +804,7 @@ country_event = {
 	desc = kiyo_event_active.56.desc
 	picture = GFX_evt_star_chart
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_leak_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_leak_a }
@@ -834,7 +820,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_leak_victim_b
 	}
-	
+
 	option = { name = DISCONCERTING }
 }
 
@@ -845,12 +831,12 @@ country_event = {
 	desc = kiyo_event_active.6.desc
 	picture = GFX_evt_arguing_senate
 	is_triggered_only = yes
-	
+
 	option = {
 		name = kiyo_event_active.6.a
 		custom_tooltip = kiyo_event_active.6.a.tooltip
 		ai_chance = { factor = 50 }
-		
+
 		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_miner days = 1800 } }
 		hidden_effect = {
 			event_target:sabotageVictim = {
@@ -941,12 +927,12 @@ country_event = {
 			remove_country_flag = kiyo_spy_active_window
 		}
 	}
-	
+
 	option = {
 		name = kiyo_event_active.6.b
 		custom_tooltip = kiyo_event_active.6.b.tooltip
 		ai_chance = { factor = 50 }
-		
+
 		event_target:sabotageVictim = { add_modifier = { modifier = kiyo_spy_active_miner days = 1800 } }
 		hidden_effect = {
 			event_target:sabotageVictim = {
@@ -1046,7 +1032,7 @@ country_event = {
 	desc = kiyo_event_active.61.desc
 	picture = GFX_evt_mining_station
 	is_triggered_only = yes
-	
+
 	option = { name = WORRYING }
 }
 
@@ -1055,7 +1041,7 @@ country_event = {
 	id = kiyo_event_active.62
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -1106,7 +1092,7 @@ country_event = {
 	desc = kiyo_event_active.63.desc
 	picture = GFX_evt_mining_station
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_a }
@@ -1122,7 +1108,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_miner_victim_a
 	}
-	
+
 	option = { name = OK }
 }
 
@@ -1133,7 +1119,7 @@ country_event = {
 	desc = kiyo_event_active.64.desc
 	picture = GFX_evt_mining_station
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_a }
@@ -1149,7 +1135,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_miner_victim_a
 	}
-	
+
 	option = { name = WORRYING }
 }
 
@@ -1160,7 +1146,7 @@ country_event = {
 	desc = kiyo_event_active.65.desc
 	picture = GFX_evt_mining_station
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_a }
@@ -1176,7 +1162,7 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_miner_victim_b
 	}
-	
+
 	option = { name = OK }
 }
 
@@ -1187,7 +1173,7 @@ country_event = {
 	desc = kiyo_event_active.66.desc
 	picture = GFX_evt_mining_station
 	is_triggered_only = yes
-	
+
 	immediate = {
 		every_country = { limit = { has_relation_flag = { who = root flag = kiyo_spy_active_miner_a } }
 			remove_relation_flag = { who = root flag = kiyo_spy_active_miner_a }
@@ -1203,6 +1189,6 @@ country_event = {
 		}
 		remove_country_flag = kiyo_spy_active_miner_victim_b
 	}
-	
+
 	option = { name = DISCONCERTING }
 }

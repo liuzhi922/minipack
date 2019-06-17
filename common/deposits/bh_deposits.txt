@@ -41,9 +41,9 @@ bh_harvested_planet_deposit_large = {
 		produces = {
 			minerals = 15
 			energy = 15
-			alloys = 4
+			alloys = 2
 			society_research = 10
-			unity = 8	
+			unity = 5	
 		}
     }
 	station = shipclass_mining_station
