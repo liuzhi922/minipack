@@ -58,13 +58,10 @@ event = {
 						NOT = { is_country = prev }
 						has_communications = prev
 						PREV = { NOT = { is_country_type = ascended_empire } }
-						OR = {
-							AND = {
+						AND = {
 								is_neighbor_of = prev
 								relative_power = { who = prev category = technology value >= superior }
 								relative_power = { who = prev category = capacity value >= superior }
-							}
-							relative_power = { who = prev category = all value >= overwhelming }
 						}
 					}
 				}
